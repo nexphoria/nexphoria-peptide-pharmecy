@@ -82,7 +82,7 @@ export default function StyleguidePage() {
                 <p className="text-body font-medium">Primary Yellow-Green</p>
                 <p className="text-small text-muted-foreground">#C9DD69</p>
                 <p className="text-caption text-muted-foreground">
-                  oklch(0.87 0.13 120)
+                  RGB(201, 221, 105)
                 </p>
               </div>
             </div>
@@ -97,7 +97,7 @@ export default function StyleguidePage() {
                 <p className="text-body font-medium">Secondary Olive</p>
                 <p className="text-small text-muted-foreground">#A4B08A</p>
                 <p className="text-caption text-muted-foreground">
-                  oklch(0.70 0.06 120)
+                  RGB(164, 176, 138)
                 </p>
               </div>
             </div>
@@ -112,7 +112,7 @@ export default function StyleguidePage() {
                 <p className="text-body font-medium">Near Black</p>
                 <p className="text-small text-muted-foreground">#010101</p>
                 <p className="text-caption text-muted-foreground">
-                  oklch(0.04 0 0)
+                  RGB(1, 1, 1)
                 </p>
               </div>
             </div>
@@ -121,13 +121,11 @@ export default function StyleguidePage() {
             <div className="space-y-3">
               <div
                 className="h-32 rounded-lg border shadow-md"
-                style={{ backgroundColor: "oklch(0.96 0.01 85)" }}
+                style={{ backgroundColor: "#EAE7E3" }}
               />
               <div>
                 <p className="text-body font-medium">Cream</p>
-                <p className="text-small text-muted-foreground">
-                  oklch(0.96 0.01 85)
-                </p>
+                <p className="text-small text-muted-foreground">#EAE7E3</p>
                 <p className="text-caption text-muted-foreground">
                   Background
                 </p>
@@ -138,13 +136,11 @@ export default function StyleguidePage() {
             <div className="space-y-3">
               <div
                 className="h-32 rounded-lg shadow-md"
-                style={{ backgroundColor: "oklch(0.70 0.01 85)" }}
+                style={{ backgroundColor: "#7F7F7D" }}
               />
               <div>
                 <p className="text-body font-medium">Stone</p>
-                <p className="text-small text-muted-foreground">
-                  oklch(0.70 0.01 85)
-                </p>
+                <p className="text-small text-muted-foreground">#7F7F7D</p>
                 <p className="text-caption text-muted-foreground">
                   Neutral
                 </p>
@@ -155,13 +151,11 @@ export default function StyleguidePage() {
             <div className="space-y-3">
               <div
                 className="h-32 rounded-lg shadow-md"
-                style={{ backgroundColor: "oklch(0.25 0.01 85)" }}
+                style={{ backgroundColor: "#2D2D2D" }}
               />
               <div>
                 <p className="text-body font-medium">Charcoal</p>
-                <p className="text-small text-muted-foreground">
-                  oklch(0.25 0.01 85)
-                </p>
+                <p className="text-small text-muted-foreground">#2D2D2D</p>
                 <p className="text-caption text-muted-foreground">
                   Dark Neutral
                 </p>

@@ -58,5 +58,5 @@ brand-assets/Find Your Focus/*.psd
 # Playwright MCP temporary files
 .playwright-mcp/
 
-# Screenshots
-*.png
+# Root-level screenshots (testing)
+/*.png
