@@ -54,3 +54,9 @@ brand-assets/Find Your Focus/*.psd
 
 # MCP server configuration (contains API keys)
 .mcp.json
+
+# Playwright MCP temporary files
+.playwright-mcp/
+
+# Screenshots
+*.png
