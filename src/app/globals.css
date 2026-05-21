@@ -189,6 +189,19 @@
   .bg-brand-primary { background-color: var(--color-brand-primary); }
   .bg-brand-secondary { background-color: var(--color-brand-secondary); }
 
+  .text-near-black { color: var(--color-near-black); }
+  .text-cream { color: var(--color-cream); }
+  .text-stone { color: var(--color-stone); }
+  .text-charcoal { color: var(--color-charcoal); }
+
+  .bg-near-black { background-color: var(--color-near-black); }
+  .bg-cream { background-color: var(--color-cream); }
+  .bg-stone { background-color: var(--color-stone); }
+  .bg-charcoal { background-color: var(--color-charcoal); }
+
+  .border-brand-primary { border-color: var(--color-brand-primary); }
+  .border-brand-secondary { border-color: var(--color-brand-secondary); }
+
   /* Premium shadows */
   .shadow-luxury { box-shadow: var(--shadow-lg); }
   .shadow-brand { box-shadow: var(--shadow-brand); }
