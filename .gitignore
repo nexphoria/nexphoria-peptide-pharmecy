@@ -39,3 +39,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# large brand assets (PDFs over 50MB)
+brand-assets/*.pdf
+
+# Claude Code memory
+.claude/
+
+# Large brand asset files (>50MB)
+brand-assets/PSD Layouts/*.psd
+brand-assets/PSD Layouts/*.psb
+brand-assets/Presentation Images/*copy.jpg
+brand-assets/Find Your Focus/*.psd
