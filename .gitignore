@@ -51,3 +51,6 @@ brand-assets/PSD Layouts/*.psd
 brand-assets/PSD Layouts/*.psb
 brand-assets/Presentation Images/*copy.jpg
 brand-assets/Find Your Focus/*.psd
+
+# MCP server configuration (contains API keys)
+.mcp.json
