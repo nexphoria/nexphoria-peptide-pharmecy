@@ -63,7 +63,7 @@ export default function HomePage() {
                 className="text-xl text-charcoal max-w-2xl mb-16 leading-relaxed"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                Pharmaceutical-grade nootropic compounds manufactured under cGMP
+                Pharmaceutical-grade peptide compounds manufactured under cGMP
                 standards. Every batch third-party tested for identity, purity,
                 and potency.
               </p>
@@ -81,7 +81,7 @@ export default function HomePage() {
                            hover:border-brand-primary transition-all duration-300 flex items-center gap-2"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  View Research
+                  View Documentation
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
@@ -95,9 +95,9 @@ export default function HomePage() {
               className="flex gap-16 pt-16 border-t border-stone/20"
             >
               <div>
-                <div className="text-4xl font-medium mb-2">99.9%</div>
+                <div className="text-4xl font-medium mb-2">≥99%</div>
                 <div className="text-sm text-stone uppercase tracking-wider">
-                  Average Purity
+                  HPLC Purity
                 </div>
               </div>
               <div>
@@ -173,14 +173,15 @@ export default function HomePage() {
               className="text-6xl md:text-7xl font-medium mb-8 leading-tight max-w-4xl"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Engineered at the Intersection of
-              <span className="text-brand-primary"> Research and Precision</span>
+              Manufactured Under Pharmaceutical
+              <span className="text-brand-primary"> Standards</span>
             </h2>
 
             <p className="text-xl text-stone max-w-3xl leading-relaxed">
-              We develop nootropic compounds using pharmaceutical-grade processes
-              and rigorous quality control protocols. Every batch undergoes
-              third-party testing for molecular identity, purity, and potency.
+              Peptide compounds synthesized in cGMP-certified facilities.
+              Each production batch undergoes comprehensive third-party
+              analytical testing for molecular identity, structural purity,
+              and compound concentration.
             </p>
           </motion.div>
 
@@ -188,21 +189,21 @@ export default function HomePage() {
             {[
               {
                 icon: Microscope,
-                title: "Pharmaceutical cGMP Standards",
+                title: "cGMP Manufacturing",
                 description:
-                  "Manufactured in certified facilities adhering to current Good Manufacturing Practice regulations for consistent quality.",
+                  "Synthesized in certified facilities following current Good Manufacturing Practice regulations.",
               },
               {
                 icon: FlaskConical,
-                title: "Third-Party Verified",
+                title: "Independent Verification",
                 description:
-                  "Independent laboratory analysis confirms molecular identity, HPLC purity levels, and active compound concentration.",
+                  "Third-party laboratory testing via HPLC, MS, and NMR for identity, purity, and potency confirmation.",
               },
               {
                 icon: Beaker,
                 title: "Research Use Only",
                 description:
-                  "All compounds are intended for qualified research purposes and are not for human consumption.",
+                  "Compounds intended for qualified research purposes. Not for human consumption or clinical use.",
               },
             ].map((item, index) => (
               <motion.div
@@ -270,7 +271,7 @@ export default function HomePage() {
                 className="text-5xl md:text-6xl font-medium"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                Featured Compounds
+                Peptide Catalog
               </h2>
               <button className="hidden md:flex items-center gap-2 text-near-black hover:text-brand-primary transition-colors font-medium">
                 View All
@@ -283,30 +284,39 @@ export default function HomePage() {
             {[
               {
                 code: "NXP-001",
-                name: "Semax Acetate",
-                category: "Research Compound",
+                name: "Semax",
+                category: "Research Peptide",
                 sequence: "Met-Glu-His-Phe-Pro-Gly-Pro",
+                structure: "C₃₇H₅₁N₉O₁₀S",
+                mw: "813.92 g/mol",
                 purity: "≥99.2%",
                 cas: "80714-61-0",
-                storage: "−20°C, dessicated",
+                storage: "−20°C, desiccated",
+                handling: "Wear gloves, eye protection. Avoid inhalation.",
               },
               {
                 code: "NXP-007",
-                name: "Cerebrolysin Analog",
-                category: "Research Compound",
-                sequence: "Proprietary Peptide Complex",
+                name: "Selank",
+                category: "Research Peptide",
+                sequence: "Thr-Lys-Pro-Arg-Pro-Gly-Pro",
+                structure: "C₃₃H₅₇N₁₁O₉",
+                mw: "751.87 g/mol",
                 purity: "≥98.8%",
-                cas: "—",
+                cas: "129954-34-3",
                 storage: "2–8°C, protect from light",
+                handling: "Laboratory use only. Handle in ventilated area.",
               },
               {
                 code: "NXP-012",
                 name: "Noopept",
                 category: "Research Compound",
                 sequence: "N-phenylacetyl-L-prolylglycine ethyl ester",
+                structure: "C₁₇H₂₂N₂O₄",
+                mw: "318.37 g/mol",
                 purity: "≥99.6%",
                 cas: "157115-85-0",
-                storage: "Room temp, dessicated",
+                storage: "Room temp, desiccated, dark",
+                handling: "Avoid dust formation. Use in fume hood.",
               },
             ].map((product, index) => (
               <motion.div
@@ -349,14 +359,22 @@ export default function HomePage() {
                   <div className="space-y-4 mb-8">
                     <div className="pb-4 border-b border-white/10">
                       <div className="text-xs uppercase tracking-wider text-stone/70 mb-2">
-                        Sequence
+                        Peptide Sequence
                       </div>
-                      <div className="text-sm leading-relaxed">
+                      <div className="text-sm leading-relaxed font-mono">
                         {product.sequence}
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="pb-4 border-b border-white/10">
+                      <div className="text-xs uppercase tracking-wider text-stone/70 mb-2">
+                        Molecular Formula
+                      </div>
+                      <div className="text-sm font-mono">{product.structure}</div>
+                      <div className="text-xs text-stone/70 mt-1">MW: {product.mw}</div>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-4 pb-4 border-b border-white/10">
                       <div>
                         <div className="text-xs uppercase tracking-wider text-stone/70 mb-2">
                           HPLC Purity
@@ -367,26 +385,41 @@ export default function HomePage() {
                       </div>
                       <div>
                         <div className="text-xs uppercase tracking-wider text-stone/70 mb-2">
-                          CAS
+                          CAS Number
                         </div>
                         <div className="text-sm font-mono">{product.cas}</div>
                       </div>
                     </div>
 
-                    <div>
+                    <div className="pb-4 border-b border-white/10">
                       <div className="text-xs uppercase tracking-wider text-stone/70 mb-2">
-                        Storage
+                        Storage Conditions
                       </div>
                       <div className="text-sm">{product.storage}</div>
                     </div>
+
+                    <div>
+                      <div className="text-xs uppercase tracking-wider text-stone/70 mb-2">
+                        Handling
+                      </div>
+                      <div className="text-sm text-stone/90">{product.handling}</div>
+                    </div>
                   </div>
 
-                  <button
-                    className="w-full py-4 bg-white text-near-black font-medium
+                  <div className="space-y-2">
+                    <button
+                      className="w-full py-4 bg-white text-near-black font-medium
                              hover:bg-brand-primary transition-all duration-300 text-sm uppercase tracking-wider"
-                  >
-                    View COA &amp; Specs
-                  </button>
+                    >
+                      View COA Report
+                    </button>
+                    <button
+                      className="w-full py-3 border border-white/20 text-white font-medium
+                             hover:border-brand-primary hover:text-brand-primary transition-all duration-300 text-sm uppercase tracking-wider"
+                    >
+                      Download MSDS
+                    </button>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -411,16 +444,16 @@ export default function HomePage() {
               Beyond Boundaries, Beyond Limits
             </h2>
             <p className="text-lg text-charcoal leading-relaxed mb-8">
-              Nexphoria develops research-grade nootropic compounds for qualified
+              Nexphoria develops research-grade peptide compounds for qualified
               research institutions and licensed professionals. Our commitment to
-              pharmaceutical-grade manufacturing and third-party verification
-              ensures every compound meets the highest standards of purity and
-              consistency.
+              pharmaceutical-grade manufacturing and independent third-party
+              verification ensures every compound meets rigorous standards of
+              purity and molecular identity.
             </p>
             <button
               className="inline-flex items-center gap-2 text-near-black hover:text-brand-primary transition-colors font-medium"
             >
-              About Our Process
+              About Our Standards
               <ArrowRight className="w-4 h-4" />
             </button>
           </motion.div>
