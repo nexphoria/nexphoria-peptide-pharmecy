@@ -32,6 +32,10 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+
+# User data (waitlist, contacts) - sensitive
+/data/*.json
 
 # vercel
 .vercel
