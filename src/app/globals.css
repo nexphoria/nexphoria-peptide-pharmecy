@@ -298,6 +298,27 @@
     color: var(--text-primary);
   }
 
+  /* ==================== FORM INPUTS ==================== */
+  .nex-input-dark {
+    background-color: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    color: var(--text-primary);
+    padding: 0.875rem 1rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    transition: all var(--duration-base) var(--ease-out);
+  }
+
+  .nex-input-dark:focus {
+    outline: none;
+    border-color: var(--acid-green);
+    box-shadow: 0 0 0 3px rgba(198, 241, 132, 0.1);
+  }
+
+  .nex-input-dark::placeholder {
+    color: var(--text-tertiary);
+  }
+
   /* ==================== CARDS & COMPONENTS ==================== */
 
   /* Enhanced.com inspired product cards */
