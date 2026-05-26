@@ -309,10 +309,30 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                 {/* Checkout Button */}
                 <button
                   className="btn-acid w-full justify-center"
-                  onClick={() => {
-                    // In a real app, this would redirect to checkout
-                    console.log('Proceeding to checkout...', { items, totalPrice });
-                    closeDrawer();
+                  onClick={async () => {
+                    try {
+                      const cartItems = items.map(item => ({
+                        productSlug: item.product.slug,
+                        name: item.product.name,
+                        price: item.selectedDosage?.price || (item.format === 'pen' ? item.product.penPrice : item.product.price),
+                        quantity: item.quantity,
+                        size: item.selectedDosage?.size || item.product.size,
+                        format: item.format,
+                      }));
+                      const res = await fetch('/api/checkout', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ items: cartItems }),
+                      });
+                      const data = await res.json();
+                      if (data.url) {
+                        window.location.href = data.url;
+                      } else {
+                        console.error('Checkout error:', data.error);
+                      }
+                    } catch (err) {
+                      console.error('Checkout failed:', err);
+                    }
                   }}
                 >
                   Checkout <ArrowRight className="w-4 h-4" />
