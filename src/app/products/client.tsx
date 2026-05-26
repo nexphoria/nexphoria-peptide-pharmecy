@@ -17,7 +17,7 @@ const fadeUp = {
   }),
 };
 
-const allFilters = [...categories, "For Him", "For Her", "Bundles"];
+const allFilters = [...categories, "For Him", "For Her"];
 
 export default function ProductsClient({ initialCategory }: { initialCategory?: string }) {
   const [activeFilter, setActiveFilter] = useState(initialCategory || "All");
