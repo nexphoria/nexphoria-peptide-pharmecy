@@ -102,13 +102,11 @@ export default function ProductCard({
                 transition: "transform 0.3s ease"
               }}
             >
-              <img
-                src="/products/vial-hero-1.png"
-                alt={product.name}
-                className="w-full h-full object-contain"
-                style={{
-                  filter: `drop-shadow(0 0 20px ${product.accentColor}30)`
-                }}
+              <ProductVial
+                productName={product.name}
+                dosage={product.size}
+                category={product.category}
+                accentColor={product.accentColor}
               />
             </div>
           </div>

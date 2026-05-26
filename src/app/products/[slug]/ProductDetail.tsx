@@ -345,16 +345,32 @@ export default function ProductDetail({ product, related }: Props) {
               }}
             >
               <AnimatePresence mode="wait">
-                <motion.img
+                <motion.div
                   key={selectedFormat}
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.3 }}
-                  src={selectedFormat === 'pen' ? "/products/pen-hero-1.png" : "/products/vial-hero-1.png"}
-                  alt={`${product.name} - ${selectedFormat === 'pen' ? 'Pre-loaded Pen' : 'Lyophilized Vial'}`}
-                  className="w-full h-full object-contain"
-                />
+                  className="w-full h-full flex items-center justify-center"
+                >
+                  {selectedFormat === 'pen' ? (
+                    <div style={{ width: "320px", height: "90px" }}>
+                      <ProductPen
+                        productName={product.name}
+                        dosage={product.size}
+                      />
+                    </div>
+                  ) : (
+                    <div style={{ width: "280px", height: "400px" }}>
+                      <ProductVial
+                        productName={product.name}
+                        dosage={product.size}
+                        category={product.category}
+                        accentColor={product.accentColor}
+                      />
+                    </div>
+                  )}
+                </motion.div>
               </AnimatePresence>
             </motion.div>
           </div>

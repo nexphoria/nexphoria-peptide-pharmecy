@@ -249,9 +249,9 @@ export default function HomePage() {
           priority
           sizes="100vw"
         />
-        {/* Dark overlay 70% */}
+        {/* Dark overlay 50% — lets editorial hero show through */}
         <div className="absolute inset-0 z-10" style={{
-          background: "rgba(0,0,0,0.7)"
+          background: "linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.6) 100%)"
         }} />
 
         <div className="container-nex relative z-20 w-full py-24 md:py-32 pt-36 md:pt-40">
@@ -1052,7 +1052,7 @@ export default function HomePage() {
               style={{ borderRadius: "12px", aspectRatio: "4/3" }}
             >
               <Image
-                src="/find-your-focus.jpg"
+                src="/brand/find-your-focus.jpg"
                 alt="Find Your Focus — Nexphoria"
                 fill
                 className="object-cover"

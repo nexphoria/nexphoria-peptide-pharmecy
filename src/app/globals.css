@@ -557,4 +557,22 @@
   .bg-accent-cognitive { background-color: var(--accent-cognitive); }
   .bg-accent-weight { background-color: var(--accent-weight); }
   .bg-accent-wellness { background-color: var(--accent-wellness); }
+
+  /* ==================== ANNOUNCEMENTS & MARQUEE ==================== */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .announcement-track {
+    animation: marquee 180s linear infinite;
+  }
+
+  .announcement-track:hover {
+    animation-play-state: paused;
+  }
 }
