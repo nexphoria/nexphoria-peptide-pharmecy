@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import ScienceClient from "./client";
 
 export const metadata: Metadata = {
-  title: "The Science of Peptides",
+  title: "Testing & Analytical Methods",
   description:
-    "Educational overview of peptide biochemistry, analytical methods, and quality standards. HPLC, mass spectrometry, NMR, and cGMP manufacturing explained.",
+    "Educational overview of Nexphoria's analytical standards: HPLC purity testing, ESI-MS identity confirmation, cGMP manufacturing, and COA documentation.",
 };
 
 export default function SciencePage() {

@@ -4,7 +4,7 @@ import AboutClient from "./client";
 export const metadata: Metadata = {
   title: "About Nexphoria — Research-Grade Standards",
   description:
-    "Nexphoria was founded on a singular conviction: that research compounds should meet the same standards as pharmaceutical drugs. cGMP-certified, third-party tested.",
+    "Nexphoria was founded on the conviction that research compounds should meet pharmaceutical-grade standards. cGMP-certified, independently verified, fully documented.",
 };
 
 export default function AboutPage() {

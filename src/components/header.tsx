@@ -4,7 +4,9 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingCart } from "lucide-react";
+import { useCart } from "@/lib/cart";
+import CartDrawer from "@/components/cart/CartDrawer";
 
 const navLinks = [
   { href: "/products", label: "Products" },
@@ -13,127 +15,180 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
+const announcementItems = [
+  "FREE SHIPPING on orders over $200",
+  "COA with every order",
+  "Same-day shipping before 2PM ET",
+  "99.7%+ purity guaranteed",
+  "Trusted by 2,400+ researchers",
+];
+
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { openDrawer, getTotalItems } = useCart();
+  const totalItems = getTotalItems();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close menu on route change
-  useEffect(() => {
-    setMenuOpen(false);
-  }, []);
-
   return (
     <>
-      <motion.header
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-cream/95 backdrop-blur-md border-b border-stone/15 shadow-sm"
-            : "bg-transparent"
-        }`}
+      {/* Announcement bar */}
+      <div
+        className="fixed top-0 left-0 right-0 z-50 overflow-hidden bg-dark"
+        style={{ height: "36px" }}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="flex items-center h-full">
+          <div className="announcement-track flex items-center gap-0 whitespace-nowrap">
+            {[...announcementItems, ...announcementItems].map((item, i) => (
+              <span
+                key={i}
+                className="flex items-center gap-6 px-8 text-[10px] font-medium uppercase tracking-[0.18em] text-secondary"
+              >
+                <span className="w-1 h-1 rounded-full flex-shrink-0 bg-acid-green" />
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Main header */}
+      <motion.header
+        initial={{ opacity: 0, y: -8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className={`fixed left-0 right-0 z-40 transition-all duration-300 header-sticky ${
+          scrolled ? "header-solid backdrop-blur-md" : "header-transparent"
+        }`}
+        style={{ top: "36px" }}
+      >
+        <div className="container-nex">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="flex items-center flex-shrink-0">
               <Image
-                src="/brand/logo-black.svg"
+                src="/logo-green.svg" // Always use green logo for dark theme
                 alt="Nexphoria"
                 width={140}
-                height={48}
-                className="h-8 md:h-9 w-auto"
+                height={44}
+                className="h-7 md:h-8 w-auto"
                 priority
               />
             </Link>
 
-            {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center gap-8">
+            {/* Nav — center */}
+            <nav className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-charcoal hover:text-near-black transition-colors duration-200 tracking-wide"
+                  className="text-[11px] font-medium uppercase tracking-[0.14em] text-secondary hover:text-primary transition-colors duration-200"
                 >
                   {link.label}
                 </Link>
               ))}
             </nav>
 
-            {/* Desktop CTA */}
+            {/* Right: cart + CTA */}
             <div className="hidden md:flex items-center gap-4">
+              <button
+                onClick={openDrawer}
+                aria-label="Open cart"
+                className="relative p-2 text-secondary hover:text-primary transition-colors"
+              >
+                <ShoppingCart className="w-5 h-5" strokeWidth={1.5} />
+                {totalItems > 0 && (
+                  <motion.span
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    className="absolute -top-1 -right-1 w-5 h-5 bg-acid-green text-dark text-[10px] font-bold rounded-full flex items-center justify-center"
+                  >
+                    {totalItems > 99 ? '99+' : totalItems}
+                  </motion.span>
+                )}
+              </button>
               <Link
                 href="/products"
-                className="px-5 py-2.5 bg-near-black text-cream text-sm font-medium rounded-sm hover:bg-charcoal transition-colors duration-300"
+                className="btn-acid"
+                style={{ height: "38px", fontSize: "0.6rem", letterSpacing: "0.18em", padding: "0 1.25rem" }}
               >
-                Browse Compounds
+                Shop Now
               </Link>
             </div>
 
-            {/* Mobile Menu Toggle */}
-            <button
-              onClick={() => setMenuOpen((v) => !v)}
-              className="md:hidden p-2 text-near-black"
-              aria-label="Toggle menu"
-            >
-              {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            {/* Mobile menu button */}
+            <div className="md:hidden flex items-center gap-3">
+              <button
+                onClick={openDrawer}
+                className="relative p-2 text-primary"
+                aria-label="Open cart"
+              >
+                <ShoppingCart className="w-5 h-5" strokeWidth={1.5} />
+                {totalItems > 0 && (
+                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-acid-green text-dark text-[10px] font-bold rounded-full flex items-center justify-center">
+                    {totalItems > 99 ? '99+' : totalItems}
+                  </span>
+                )}
+              </button>
+              <button
+                onClick={() => setMenuOpen(v => !v)}
+                className="p-2 text-primary"
+                aria-label="Toggle menu"
+              >
+                {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              </button>
+            </div>
           </div>
         </div>
       </motion.header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile overlay menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="fixed inset-0 z-40 bg-cream flex flex-col"
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="fixed inset-0 z-40 flex flex-col bg-dark-panel"
+            style={{ top: "36px" }}
           >
-            {/* Header row in overlay */}
-            <div className="flex items-center justify-between h-16 px-6 border-b border-stone/20">
+            <div className="flex items-center justify-between h-16 px-6 border-b border-dark-border">
               <Link href="/" onClick={() => setMenuOpen(false)}>
                 <Image
-                  src="/brand/logo-black.svg"
+                  src="/logo-green.svg"
                   alt="Nexphoria"
-                  width={130}
-                  height={44}
-                  className="h-8 w-auto"
+                  width={120}
+                  height={40}
+                  className="h-7 w-auto"
                 />
               </Link>
               <button
                 onClick={() => setMenuOpen(false)}
-                className="p-2 text-near-black"
+                className="p-2 text-primary"
                 aria-label="Close menu"
               >
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5" />
               </button>
             </div>
 
-            {/* Nav Links */}
-            <nav className="flex flex-col px-6 pt-8 gap-1 flex-1">
+            <nav className="flex flex-col px-6 pt-10 gap-0 flex-1">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.href}
-                  initial={{ opacity: 0, x: 20 }}
+                  initial={{ opacity: 0, x: 16 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.08, duration: 0.3 }}
+                  transition={{ delay: i * 0.06, duration: 0.25 }}
                 >
                   <Link
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className="block py-4 text-3xl font-medium text-near-black border-b border-stone/10 hover:text-brand-primary transition-colors"
+                    className="block py-5 text-2xl font-bold border-b border-dark-border text-primary hover:text-acid-green transition-colors"
                     style={{ fontFamily: "var(--font-display)" }}
                   >
                     {link.label}
@@ -142,19 +197,30 @@ export function Header() {
               ))}
             </nav>
 
-            {/* Mobile CTA */}
-            <div className="px-6 pb-12">
+            <div className="px-6 pb-12 space-y-4">
+              <button
+                onClick={() => {
+                  setMenuOpen(false);
+                  openDrawer();
+                }}
+                className="btn-outline w-full justify-center"
+              >
+                View Cart ({totalItems})
+              </button>
               <Link
                 href="/products"
                 onClick={() => setMenuOpen(false)}
-                className="block w-full py-4 bg-near-black text-cream text-center font-medium rounded-sm"
+                className="btn-acid w-full justify-center"
               >
-                Browse Compounds
+                Shop Now
               </Link>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Cart Drawer */}
+      <CartDrawer />
     </>
   );
 }

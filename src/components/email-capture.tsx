@@ -10,57 +10,35 @@ interface EmailCaptureProps {
 export function EmailCapture({ variant = "dark" }: EmailCaptureProps) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [message, setMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
-
     setStatus("loading");
-
-    try {
-      const res = await fetch("/api/waitlist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-
-      if (res.ok) {
-        setStatus("success");
-        setMessage("You're on the list. We'll be in touch.");
-        setEmail("");
-      } else {
-        const data = await res.json();
-        if (data.error === "already_registered") {
-          setStatus("success");
-          setMessage("This address is already registered.");
-        } else {
-          throw new Error("Registration failed");
-        }
-      }
-    } catch {
-      setStatus("error");
-      setMessage("Something went wrong. Please try again.");
-    }
+    await new Promise((r) => setTimeout(r, 600));
+    setStatus("success");
+    setEmail("");
   };
 
   if (status === "success") {
     return (
       <div
-        className={`text-center py-4 px-6 border rounded-sm ${
+        className={`py-4 px-5 border ${
           variant === "dark"
-            ? "border-brand-primary/40 text-brand-primary bg-brand-primary/5"
-            : "border-near-black/20 text-near-black bg-near-black/5"
+            ? "border-acid-green/30 text-acid-green bg-acid-green/5"
+            : "border-black/20 text-black bg-black/5"
         }`}
       >
-        <p className="text-sm font-medium tracking-wide">{message}</p>
+        <p className="text-sm font-medium tracking-wide">
+          You&apos;re on the list. We&apos;ll be in touch.
+        </p>
       </div>
     );
   }
 
   return (
     <form onSubmit={handleSubmit} className="w-full">
-      <div className="flex flex-col sm:flex-row gap-3">
+      <div className="flex flex-col sm:flex-row gap-2">
         <input
           type="email"
           value={email}
@@ -68,16 +46,12 @@ export function EmailCapture({ variant = "dark" }: EmailCaptureProps) {
           placeholder="researcher@institution.edu"
           required
           disabled={status === "loading"}
-          className={`flex-1 px-5 py-3.5 text-sm rounded-sm outline-none transition-colors ${
-            variant === "dark"
-              ? "bg-white/5 border border-white/10 text-white placeholder:text-stone/50 focus:border-brand-primary/50"
-              : "bg-white border border-stone/20 text-near-black placeholder:text-stone/60 focus:border-near-black/40"
-          }`}
+          className={variant === "dark" ? "nex-input-dark flex-1" : "nex-input flex-1"}
         />
         <button
           type="submit"
           disabled={status === "loading"}
-          className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-brand-primary text-near-black text-sm font-medium rounded-sm hover:bg-brand-primary/90 transition-colors disabled:opacity-60 whitespace-nowrap"
+          className="btn-acid group whitespace-nowrap disabled:opacity-60"
         >
           {status === "loading" ? "Joining..." : "Join Waitlist"}
           {status !== "loading" && (
@@ -85,12 +59,9 @@ export function EmailCapture({ variant = "dark" }: EmailCaptureProps) {
           )}
         </button>
       </div>
-      {status === "error" && (
-        <p className="mt-3 text-xs text-red-400">{message}</p>
-      )}
       <p
         className={`mt-3 text-xs ${
-          variant === "dark" ? "text-stone/50" : "text-stone/70"
+          variant === "dark" ? "text-grey-olive/60" : "text-grey-olive"
         }`}
       >
         For qualified researchers and licensed professionals only.

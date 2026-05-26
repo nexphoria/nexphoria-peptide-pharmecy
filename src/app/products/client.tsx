@@ -1,267 +1,267 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { ArrowRight, FileText, Download, Lock } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { products, categories } from "@/lib/products";
+import { bundles, getBundleProducts } from "@/lib/bundles";
+import ProductCard from "@/components/ProductCard";
 
-const products = [
-  {
-    code: "NXP-001",
-    name: "Semax",
-    category: "Peptide",
-    sequence: "Met-Glu-His-Phe-Pro-Gly-Pro",
-    formula: "C₃₇H₅₁N₉O₁₀S",
-    mw: "813.92 g/mol",
-    purity: "≥99.2%",
-    cas: "80714-61-0",
-    storage: "−20°C, desiccated",
-    available: true,
-  },
-  {
-    code: "NXP-007",
-    name: "Selank",
-    category: "Peptide",
-    sequence: "Thr-Lys-Pro-Arg-Pro-Gly-Pro",
-    formula: "C₃₃H₅₇N₁₁O₉",
-    mw: "751.87 g/mol",
-    purity: "≥98.8%",
-    cas: "129954-34-3",
-    storage: "2–8°C, protect from light",
-    available: true,
-  },
-  {
-    code: "NXP-012",
-    name: "Noopept",
-    category: "Small Molecule",
-    sequence: "N-phenylacetyl-L-prolylglycine ethyl ester",
-    formula: "C₁₇H₂₂N₂O₄",
-    mw: "318.37 g/mol",
-    purity: "≥99.6%",
-    cas: "157115-85-0",
-    storage: "RT, desiccated, dark",
-    available: true,
-  },
-  { code: "NXP-013", name: null, category: "Peptide", available: false },
-  { code: "NXP-014", name: null, category: "Peptide", available: false },
-  { code: "NXP-015", name: null, category: "Small Molecule", available: false },
-  { code: "NXP-016", name: null, category: "Peptide", available: false },
-  { code: "NXP-017", name: null, category: "Custom", available: false },
-  { code: "NXP-018", name: null, category: "Peptide", available: false },
-  { code: "NXP-019", name: null, category: "Small Molecule", available: false },
-  { code: "NXP-020", name: null, category: "Peptide", available: false },
-  { code: "NXP-021", name: null, category: "Custom", available: false },
-];
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
+  }),
+};
 
-const categories = ["All", "Peptide", "Small Molecule", "Custom"];
+const allFilters = [...categories, "For Him", "For Her", "Bundles"];
 
-export default function ProductsClient() {
-  const [activeFilter, setActiveFilter] = useState("All");
+export default function ProductsClient({ initialCategory }: { initialCategory?: string }) {
+  const [activeFilter, setActiveFilter] = useState(initialCategory || "All");
 
-  const filtered = activeFilter === "All"
-    ? products
-    : products.filter((p) => p.category === activeFilter);
+  const showBundles = activeFilter === "Bundles";
+  const showForHim = activeFilter === "For Him";
+  const showForHer = activeFilter === "For Her";
+
+  const filtered = showBundles ? [] :
+    showForHim ? products.filter(p => p.forGender === "men-focus") :
+    showForHer ? products.filter(p => p.forGender === "women-focus") :
+    activeFilter === "All" ? products :
+    products.filter(p => p.category === activeFilter);
 
   return (
-    <div className="bg-cream text-near-black">
-      {/* Hero */}
-      <section className="relative pt-36 pb-20">
-        <div
-          className="absolute inset-0 opacity-[0.04] pointer-events-none"
-          style={{
-            backgroundImage: "url(/brand/chemical-pattern.svg)",
-            backgroundSize: "500px",
-            backgroundRepeat: "repeat",
-          }}
-        />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="inline-flex items-center gap-3 mb-8">
-              <div className="w-10 h-[2px] bg-brand-primary" />
-              <span className="text-xs uppercase tracking-[0.2em] text-charcoal font-medium">
-                Research Compounds
-              </span>
-            </div>
-            <h1
-              className="text-6xl md:text-7xl lg:text-8xl font-medium leading-[0.9] tracking-tight mb-6"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Peptide Catalog
-            </h1>
-            <p className="text-lg text-charcoal max-w-xl leading-relaxed">
-              cGMP-manufactured research compounds. Full Certificate of Analysis
-              and MSDS available for every lot.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Disclaimer banner */}
-      <div className="bg-near-black text-white py-4">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <p className="text-xs font-mono text-stone/80 text-center">
-            All compounds are for qualified research use only. Not for human consumption, diagnostic, or therapeutic use.
-            By accessing this catalog, you confirm you are a licensed researcher or qualified professional.
-          </p>
-        </div>
-      </div>
-
-      {/* Filter bar */}
-      <div className="sticky top-16 md:top-20 z-30 bg-cream/95 backdrop-blur-sm border-b border-stone/20 py-4">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="flex items-center gap-3 flex-wrap">
-            <span className="text-xs uppercase tracking-widest text-stone/60 mr-2">Filter:</span>
-            {categories.map((cat) => (
+    <>
+      {/* Category Filter */}
+      <div
+        className="border-b sticky top-14 md:top-[calc(56px+36px)] backdrop-blur-md z-20"
+        style={{
+          backgroundColor: "rgba(10, 10, 10, 0.95)",
+          borderColor: "var(--dark-border)"
+        }}
+      >
+        <div className="container-nex">
+          <div className="flex gap-0 overflow-x-auto py-4 -mb-px">
+            {allFilters.map((filter) => (
               <button
-                key={cat}
-                onClick={() => setActiveFilter(cat)}
-                className={`px-4 py-1.5 text-xs uppercase tracking-wider rounded-sm transition-colors ${
-                  activeFilter === cat
-                    ? "bg-near-black text-cream"
-                    : "border border-stone/30 text-charcoal hover:border-near-black"
+                key={filter}
+                onClick={() => setActiveFilter(filter)}
+                className={`flex-shrink-0 px-4 py-2 text-[10px] font-medium border-b-2 transition-colors whitespace-nowrap uppercase tracking-[0.16em] ${
+                  activeFilter === filter
+                    ? "border-acid-green text-acid-green"
+                    : "border-transparent text-secondary hover:text-primary"
                 }`}
               >
-                {cat}
+                {filter}
               </button>
             ))}
-            <span className="ml-auto text-xs text-stone/60">
-              {filtered.length} compound{filtered.length !== 1 ? "s" : ""}
-            </span>
           </div>
         </div>
       </div>
 
-      {/* Product grid */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.map((product, index) => (
-              <motion.div
-                key={product.code}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="group relative bg-near-black text-white overflow-hidden"
-              >
-                {/* Pattern bg */}
-                <div
-                  className="absolute inset-0 opacity-5"
-                  style={{
-                    backgroundImage: "url(/brand/chemical-pattern.svg)",
-                    backgroundSize: "300%",
-                    backgroundPosition: "center",
-                  }}
-                />
-                {/* Top accent */}
-                <div className={`absolute top-0 left-0 right-0 h-1 ${product.available ? "bg-brand-primary" : "bg-stone/30"}`} />
-
-                <div className="relative p-6">
-                  {product.available ? (
-                    <>
-                      <div className="text-xs uppercase tracking-[0.15em] text-brand-primary mb-4 font-medium">
-                        {product.category}
+      {/* BUNDLES VIEW */}
+      {showBundles && (
+        <div className="py-16 md:py-24 bg-dark-panel">
+          <div className="container-nex">
+            <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0} className="mb-12">
+              <span className="eyebrow mb-4 block">Stacks &amp; Bundles</span>
+              <h2 className="font-bold tracking-tight text-primary text-3xl lg:text-4xl"
+                style={{ fontFamily: "var(--font-display)" }}>
+                Curated for Your{" "}
+                <em className="italic text-acid-green">Goals</em>
+              </h2>
+            </motion.div>
+            <div className="grid md:grid-cols-2 gap-5">
+              {bundles.map((bundle, i) => {
+                const bundleProducts = getBundleProducts(bundle);
+                const individualTotal = bundleProducts.reduce((sum, p) => sum + (p?.price || 0), 0);
+                return (
+                  <motion.div key={bundle.slug}
+                    initial="hidden" animate="visible" variants={fadeUp} custom={i * 0.1}
+                    className="border border-dark-border-hover bg-dark-card overflow-hidden rounded-xl">
+                    <div className="p-7">
+                      <div className="flex items-start justify-between mb-4">
+                        <span className="eyebrow text-acid-green">{bundle.eyebrow}</span>
+                        <span className="badge-savings">
+                          Save ${bundle.savings}
+                        </span>
                       </div>
-                      <h3
-                        className="text-2xl font-medium mb-1"
-                        style={{ fontFamily: "var(--font-display)" }}
-                      >
-                        {product.name}
+                      <h3 className="text-2xl font-bold tracking-tight mb-3 text-primary"
+                        style={{ fontFamily: "var(--font-display)" }}>
+                        {bundle.name}
                       </h3>
-                      <div className="text-xs uppercase tracking-wider text-stone/60 mb-6">
-                        {product.code}
+                      <p className="text-sm leading-relaxed mb-5 text-secondary">{bundle.description}</p>
+                      <div className="space-y-2 mb-6 border-t border-b border-dark-border py-5">
+                        {bundleProducts.map((p) => p && (
+                          <div key={p.slug} className="flex items-center justify-between">
+                            <span className="text-sm text-primary">{p.name}</span>
+                            <span className="text-sm line-through text-tertiary">${p.price}</span>
+                          </div>
+                        ))}
                       </div>
-
-                      <div className="space-y-3 mb-6 text-sm">
-                        <div className="flex justify-between gap-4 py-2 border-b border-white/10">
-                          <span className="text-stone/60 text-xs uppercase tracking-wider">Formula</span>
-                          <span className="font-mono text-xs">{product.formula}</span>
+                      <div className="flex items-end justify-between mb-5">
+                        <div>
+                          <div className="text-xs mb-1 text-secondary">Bundle price</div>
+                          <div className="text-3xl font-bold text-acid-green"
+                            style={{ fontFamily: "var(--font-display)" }}>
+                            ${bundle.totalPrice}
+                          </div>
+                          <div className="text-xs text-secondary">vs ${individualTotal} individually</div>
                         </div>
-                        <div className="flex justify-between gap-4 py-2 border-b border-white/10">
-                          <span className="text-stone/60 text-xs uppercase tracking-wider">MW</span>
-                          <span className="font-mono text-xs">{product.mw}</span>
-                        </div>
-                        <div className="flex justify-between gap-4 py-2 border-b border-white/10">
-                          <span className="text-stone/60 text-xs uppercase tracking-wider">HPLC Purity</span>
-                          <span className="text-brand-primary font-medium">{product.purity}</span>
-                        </div>
-                        <div className="flex justify-between gap-4 py-2 border-b border-white/10">
-                          <span className="text-stone/60 text-xs uppercase tracking-wider">CAS</span>
-                          <span className="font-mono text-xs">{product.cas}</span>
-                        </div>
-                        <div className="flex justify-between gap-4 py-2">
-                          <span className="text-stone/60 text-xs uppercase tracking-wider">Storage</span>
-                          <span className="text-xs text-right">{product.storage}</span>
+                        <div className="flex flex-wrap gap-1.5 max-w-[180px]">
+                          {bundle.tags.map((tag) => (
+                            <span key={tag} className="badge-category text-[9px]">
+                              {tag}
+                            </span>
+                          ))}
                         </div>
                       </div>
-
-                      <div className="space-y-2">
-                        <button className="w-full py-3 bg-white text-near-black text-xs font-medium uppercase tracking-wider hover:bg-brand-primary transition-colors flex items-center justify-center gap-2">
-                          <FileText className="w-3.5 h-3.5" />
-                          View COA Report
-                        </button>
-                        <button className="w-full py-3 border border-white/20 text-white text-xs font-medium uppercase tracking-wider hover:border-brand-primary hover:text-brand-primary transition-colors flex items-center justify-center gap-2">
-                          <Download className="w-3.5 h-3.5" />
-                          Download MSDS
-                        </button>
-                      </div>
-                    </>
-                  ) : (
-                    // Coming soon placeholder
-                    <div className="flex flex-col items-center justify-center py-12 text-center">
-                      <Lock className="w-8 h-8 text-stone/30 mb-4" strokeWidth={1} />
-                      <div className="text-xs uppercase tracking-wider text-stone/40 font-mono mb-2">
-                        {product.code}
-                      </div>
-                      <div className="text-xs text-stone/30 uppercase tracking-widest">
-                        Coming Soon
-                      </div>
-                      <div className="mt-4 text-xs text-stone/20 uppercase tracking-wider">
-                        {product.category}
-                      </div>
+                      <Link href="/products" className="btn-acid w-full justify-center">
+                        Build This Stack <ArrowRight className="w-4 h-4" />
+                      </Link>
                     </div>
-                  )}
-                </div>
-              </motion.div>
-            ))}
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </div>
-      </section>
+      )}
+
+      {/* Products grid */}
+      {!showBundles && (
+        <div className="bg-dark min-h-screen">
+          <div className="container-nex pt-14 pb-10">
+            {/* Gender context banner */}
+            {(showForHim || showForHer) && (
+              <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}
+                className="mb-8 p-5 border border-dark-border bg-dark-card rounded-lg">
+                <p className="text-sm leading-relaxed text-secondary">
+                  {showForHim
+                    ? "Compounds particularly studied in the context of recovery, muscle growth, and GH optimization. Includes all research peptides tagged for men's health focus."
+                    : "Compounds particularly studied in the context of weight management, skin health, anti-aging, and vitality. Includes research peptides tagged for women's health focus."}
+                </p>
+              </motion.div>
+            )}
+
+            <p className="text-label mb-8 text-secondary">
+              {filtered.length} compound{filtered.length !== 1 ? "s" : ""}
+              {showForHim ? " · For Him" : showForHer ? " · For Her" : activeFilter !== "All" ? ` · ${activeFilter}` : ""}
+            </p>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {filtered.map((product, i) => (
+                <motion.div
+                  key={product.slug}
+                  initial="hidden"
+                  animate="visible"
+                  variants={fadeUp}
+                  custom={i * 0.04}
+                >
+                  <ProductCard product={product} showAddToCart={true} />
+                </motion.div>
+              ))}
+            </div>
+
+            {filtered.length === 0 && (
+              <div className="py-32 text-center">
+                <p className="text-secondary">No compounds in this category.</p>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Bundles section at bottom of "All" view */}
+      {!showBundles && activeFilter === "All" && (
+        <div id="bundles" className="border-t border-dark-border py-20 md:py-28 bg-dark-panel">
+          <div className="container-nex">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0} className="mb-12">
+              <span className="eyebrow mb-4 block">Stacks &amp; Bundles</span>
+              <h2 className="font-bold tracking-tight text-primary text-3xl lg:text-4xl"
+                style={{ fontFamily: "var(--font-display)" }}>
+                Goal-Based <em className="italic text-acid-green">Stacks</em>
+              </h2>
+            </motion.div>
+            <div className="grid md:grid-cols-2 gap-5">
+              {bundles.map((bundle, i) => {
+                const bundleProducts = getBundleProducts(bundle);
+                const individualTotal = bundleProducts.reduce((sum, p) => sum + (p?.price || 0), 0);
+                return (
+                  <motion.div key={bundle.slug}
+                    initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.1}
+                    className="border border-dark-border-hover bg-dark-card overflow-hidden rounded-xl">
+                    <div className="p-7">
+                      <div className="flex items-start justify-between mb-4">
+                        <span className="eyebrow text-acid-green">{bundle.eyebrow}</span>
+                        <span className="badge-savings">
+                          Save ${bundle.savings}
+                        </span>
+                      </div>
+                      <h3 className="text-2xl font-bold tracking-tight mb-2 text-primary"
+                        style={{ fontFamily: "var(--font-display)" }}>
+                        {bundle.name}
+                      </h3>
+                      <p className="text-sm mb-5 text-secondary">{bundle.description}</p>
+                      <div className="space-y-2 mb-5 border-t border-b border-dark-border py-4">
+                        {bundleProducts.map((p) => p && (
+                          <div key={p.slug} className="flex justify-between text-sm">
+                            <span className="text-primary">{p.name}</span>
+                            <span className="line-through text-tertiary">${p.price}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="flex items-center justify-between mb-5">
+                        <div>
+                          <div className="text-2xl font-bold text-acid-green"
+                            style={{ fontFamily: "var(--font-display)" }}>
+                            ${bundle.totalPrice}
+                          </div>
+                          <div className="text-xs text-secondary">vs ${individualTotal}</div>
+                        </div>
+                        <div className="flex flex-wrap gap-1 max-w-[160px]">
+                          {bundle.tags.map((tag) => (
+                            <span key={tag} className="badge-category text-[9px]">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      <button className="btn-acid w-full justify-center">
+                        Build This Stack <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Custom synthesis CTA */}
-      <section className="py-24 bg-white border-t border-stone/20">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-3 mb-6">
-              <div className="w-10 h-[2px] bg-brand-primary" />
-              <span className="text-xs uppercase tracking-[0.2em] text-charcoal font-medium">
-                Custom Synthesis
-              </span>
+      {!showBundles && (
+        <div className="border-t border-dark-border py-20 bg-dark-panel">
+          <div className="container-nex">
+            <div className="max-w-2xl">
+              <span className="eyebrow mb-4 block">Custom Synthesis</span>
+              <h2 className="font-bold tracking-tight mb-5 text-primary text-3xl"
+                style={{ fontFamily: "var(--font-display)" }}>
+                Need a specific compound?
+              </h2>
+              <p className="leading-relaxed mb-8 max-w-xl text-secondary">
+                We accept custom synthesis inquiries for defined peptide sequences not currently in
+                our catalog. Submit a request with your target sequence, required quantity, and purity specification.
+              </p>
+              <Link href="/contact" className="btn-outline">
+                Inquire About Custom Synthesis <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
-            <h2
-              className="text-4xl md:text-5xl font-medium mb-6 leading-tight"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Need a specific compound?
-            </h2>
-            <p className="text-charcoal leading-relaxed mb-8">
-              We accept custom synthesis inquiries for defined peptide sequences
-              not currently in our catalog. Submit a request with your target
-              sequence, required quantity, and purity specification.
-            </p>
-            <Link
-              href="/contact"
-              className="group inline-flex items-center gap-2 px-8 py-4 bg-near-black text-cream font-medium rounded-sm hover:bg-charcoal transition-colors"
-            >
-              Inquire About Custom Synthesis
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
           </div>
         </div>
-      </section>
-    </div>
+      )}
+    </>
   );
 }

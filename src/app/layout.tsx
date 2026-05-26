@@ -1,7 +1,23 @@
 import type { Metadata } from "next";
+import { Space_Grotesk, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import CartDrawer from "@/components/cart/CartDrawer";
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -71,11 +87,6 @@ const organizationSchema = {
     contactType: "customer service",
     email: "research@nexphoria.com",
   },
-  sameAs: [
-    "https://twitter.com/nexphoria",
-    "https://www.instagram.com/nexphoria",
-    "https://www.linkedin.com/company/nexphoria",
-  ],
 };
 
 export default function RootLayout({
@@ -84,17 +95,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full antialiased">
+    <html lang="en" className={`h-full antialiased ${dmSans.variable} ${spaceGrotesk.variable}`}>
       <head>
+        <link rel="icon" href="/favicon.png" type="image/png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-cream text-near-black">
+      <body className="min-h-full flex flex-col bg-dark text-primary">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <CartDrawer />
       </body>
     </html>
   );

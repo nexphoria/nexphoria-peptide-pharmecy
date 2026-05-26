@@ -1,403 +1,371 @@
 "use client";
 
+import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
 
-const researchApplications = [
-  {
-    title: "Receptor Binding Studies",
-    description:
-      "Peptide compounds are widely used to investigate receptor-ligand interactions, providing mechanistic data on binding affinities, selectivity profiles, and signal transduction pathways.",
-  },
-  {
-    title: "Cell Signaling Research",
-    description:
-      "Short peptide sequences serve as pharmacological tools to probe intracellular signaling cascades, including kinase activation, second messenger systems, and transcription factor modulation.",
-  },
-  {
-    title: "Pharmacokinetic Studies",
-    description:
-      "Absorption, distribution, metabolism, and excretion studies utilize defined-purity peptide compounds to establish pharmacokinetic parameters under controlled in vitro and in vivo conditions.",
-  },
-  {
-    title: "Structural Biology",
-    description:
-      "X-ray crystallography, cryo-EM, and NMR structural studies require compounds of defined sequence and high analytical purity to produce interpretable structural data.",
-  },
-];
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
+  }),
+};
 
-const analyticalMethods = [
+const methods = [
   {
+    id: "hplc",
     code: "HPLC",
-    name: "High-Performance Liquid Chromatography",
-    detail:
-      "Reverse-phase HPLC with UV detection at 214 nm and 254 nm provides quantitative purity assessment. Each lot is analyzed against verified reference standards. Results are expressed as area percent purity.",
-    cite: "[1]",
+    title: "High-Performance Liquid Chromatography",
+    subtitle: "Purity Quantification",
+    body: [
+      "HPLC is the gold standard for peptide purity determination. We employ reversed-phase C18 stationary phase columns with gradient elution using acetonitrile/water mobile phases buffered with 0.1% TFA or formic acid. UV detection at 214 nm (amide bond absorption) and 254 nm (aromatic amino acid absorption) provides compound-specific chromatographic profiles.",
+      "Each compound is co-chromatographed against a certified reference standard under identical conditions. Purity is calculated by peak area integration using UV/DAD (diode array detection) data. Retention time matching within ±0.2 min confirms compound identity; peak area purity thresholds are set at ≥98.0% for standard catalog compounds, with ≥99.0% required for COA certification.",
+      "Our chromatograms are reviewed by credentialed analytical chemists. Raw data and full chromatograms are retained on file and available upon request with order documentation.",
+    ],
+    specs: [
+      { label: "Column", value: "C18 reversed-phase, 100 Å pore size" },
+      { label: "Mobile Phase", value: "ACN/H₂O gradient, 0.1% TFA" },
+      { label: "Detection", value: "UV/DAD at 214 nm & 254 nm" },
+      { label: "Standard", value: "Certified reference standard comparison" },
+      { label: "Threshold", value: "≥99.0% for COA certification" },
+    ],
   },
   {
-    code: "MS",
-    name: "Mass Spectrometry",
-    detail:
-      "Electrospray ionization mass spectrometry (ESI-MS) confirms molecular identity via accurate mass determination. Expected versus observed [M+H]⁺ ions are compared against calculated values with ≤5 ppm mass accuracy.",
-    cite: "[2]",
+    id: "ms",
+    code: "ESI-MS",
+    title: "Electrospray Ionization Mass Spectrometry",
+    subtitle: "Molecular Identity Confirmation",
+    body: [
+      "Mass spectrometry provides definitive molecular identity confirmation by measuring the exact mass-to-charge ratio (m/z) of analyte ions. We employ electrospray ionization (ESI), the preferred ionization method for intact peptides due to its soft, low-fragmentation ionization that preserves the complete molecular ion.",
+      "Peptides are analyzed in positive ion mode, generating multiply charged ions [M+nH]ⁿ⁺ characteristic of their molecular weight. Theoretical molecular masses are calculated from the peptide sequence and cross-validated against NIST reference databases. Observed masses must match theoretical values within 5 ppm tolerance (high-resolution instruments) or 0.1 Da (unit resolution).",
+      "For complex peptides and conjugates, tandem MS/MS fragmentation confirms amino acid sequence through b- and y-ion series analysis. Disulfide bond connectivity in cyclic peptides is verified by differential alkylation experiments.",
+    ],
+    specs: [
+      { label: "Ionization", value: "Electrospray ionization (ESI)" },
+      { label: "Mode", value: "Positive ion, [M+nH]ⁿ⁺" },
+      { label: "Mass Accuracy", value: "≤5 ppm (HR) / ≤0.1 Da" },
+      { label: "Sequencing", value: "MS/MS b-/y-ion series" },
+      { label: "Reference", value: "NIST database cross-validation" },
+    ],
   },
   {
-    code: "NMR",
-    name: "Nuclear Magnetic Resonance",
-    detail:
-      "¹H-NMR spectroscopy provides structural confirmation of compound identity and detects structural isomers or degradation products not readily identifiable by chromatographic methods alone.",
-    cite: "[3]",
+    id: "cgmp",
+    code: "cGMP",
+    title: "Current Good Manufacturing Practice",
+    subtitle: "Pharmaceutical-Grade Production",
+    body: [
+      "Our synthesis partners operate under current Good Manufacturing Practice (cGMP) regulations — the same regulatory framework applied to pharmaceutical drug manufacturing. cGMP compliance encompasses facility design, personnel training, documentation control, raw material qualification, process validation, and environmental monitoring.",
+      "Solid-phase peptide synthesis (SPPS) is the primary production method, using Fmoc or Boc chemistry depending on compound requirements. Resin loading, coupling efficiency, and deprotection steps are monitored by UV quantification of Fmoc release. Cleavage cocktails are optimized per side chain composition to minimize aspartimide formation, oxidation, and racemization.",
+      "Post-synthesis purification uses preparative HPLC with mass-directed fraction collection. Lyophilization produces stable powder with residual moisture below 5%. All manufacturing records are archived and traceable to raw material certificates of analysis.",
+    ],
+    specs: [
+      { label: "Synthesis", value: "SPPS, Fmoc/Boc chemistry" },
+      { label: "Purification", value: "Preparative HPLC, mass-directed" },
+      { label: "Final Form", value: "Lyophilized powder, <5% moisture" },
+      { label: "Facility", value: "cGMP-certified, ISO-compliant" },
+      { label: "Records", value: "Full batch records archived" },
+    ],
+  },
+  {
+    id: "coa",
+    code: "COA",
+    title: "Certificate of Analysis",
+    subtitle: "Third-Party Documentation",
+    body: [
+      "Every Nexphoria production lot is analyzed by an accredited, independent third-party laboratory. We deliberately use external analytical partners rather than in-house testing — eliminating the conflict of interest inherent in self-certifying compound quality.",
+      "The COA is a legally binding document signed by the analyzing laboratory's principal investigator. It includes: compound name and lot number, HPLC purity result with full chromatogram, mass spectrum with molecular ion assignment, moisture content (Karl Fischer titration), residual solvent analysis (ICH Q3C limits), and physical appearance description.",
+      "COAs are issued per production lot — not per shipment or per compound class. If a batch does not meet specification, it is rejected and not sold. COA documents accompany all orders and are available in digital form.",
+    ],
+    specs: [
+      { label: "Testing Party", value: "Independent accredited laboratory" },
+      { label: "Includes", value: "HPLC trace, MS spectrum, KF moisture" },
+      { label: "Solvents", value: "Per ICH Q3C limits" },
+      { label: "Validity", value: "Per production lot" },
+      { label: "Access", value: "Provided with all orders" },
+    ],
   },
 ];
 
-const references = [
-  "[1] ICH Harmonised Guideline Q2(R1): Validation of Analytical Procedures. International Council for Harmonisation, 2005.",
-  "[2] Bruni R, et al. 'Mass spectrometric characterization of synthetic peptides.' J. Am. Soc. Mass Spectrom. 2012.",
-  "[3] Claridge TDW. High-Resolution NMR Techniques in Organic Chemistry. 3rd ed. Elsevier, 2016.",
-  "[4] USP <1058> Analytical Instrument Qualification. United States Pharmacopeia.",
-  "[5] FDA Guidance for Industry: cGMP for Phase 1 Investigational Drugs. 2008.",
+const peptideClasses = [
+  {
+    title: "Tissue Repair Peptides",
+    body: "Peptides in this class modulate angiogenesis, growth factor expression, and extracellular matrix synthesis. Key examples include BPC-157 (pentadecapeptide, gastric cytoprotection) and TB-500 (thymosin beta-4 fragment, actin polymerization). Research focuses on connective tissue healing, muscle repair, and gastrointestinal integrity.",
+    compounds: ["BPC-157", "TB-500"],
+  },
+  {
+    title: "GH Axis Modulators",
+    body: "Growth hormone-related peptides act on the somatotropic axis through GHRHR agonism (GHRH analogs) or GHS-R1a agonism (ghrelin mimetics). CJC-1295 DAC extends GH release duration via albumin conjugation; Ipamorelin provides selective GH secretion without cortisol or prolactin co-secretion.",
+    compounds: ["CJC-1295", "Ipamorelin", "Sermorelin"],
+  },
+  {
+    title: "Nootropic Peptides",
+    body: "CNS-active peptides with established neuroprotective and cognitive-modulating profiles. Semax (ACTH 4-10 analog) upregulates BDNF and promotes neuroprotection; Selank (tuftsin analog) modulates GABAergic transmission and enkephalinase activity, producing anxiolytic effects without sedation.",
+    compounds: ["Semax", "Selank"],
+  },
+  {
+    title: "Longevity & Metabolic",
+    body: "Epigenetic regulators and metabolic compounds studied in aging and weight management contexts. Epitalon activates telomerase and modulates circadian melatonin rhythms. NAD⁺ is the foundational coenzyme for sirtuin-mediated DNA repair. GLP-1/GIP receptor agonists represent the frontier of metabolic research.",
+    compounds: ["Epitalon", "NAD+", "Semaglutide"],
+  },
+];
+
+const coaFields = [
+  { field: "Lot Number", desc: "Unique production identifier. Use this to request raw data files for the specific batch." },
+  { field: "HPLC Purity", desc: "Percentage of the stated compound relative to all detected UV-absorbing species. Values ≥99% indicate high-purity material." },
+  { field: "Molecular Ion [M+H]⁺", desc: "Observed mass from ESI-MS. Should match theoretical MW ± 5 ppm. Confirms identity, not purity." },
+  { field: "Water Content (KF)", desc: "Karl Fischer moisture value. Affects accurate weighing. Factor into solution preparation. Typical: 1–8%." },
+  { field: "Residual Solvents", desc: "ICH Q3C Class 1/2/3 solvent limits. Confirms acceptable solvent removal. Typically <100 ppm for Class 2." },
+  { field: "Appearance", desc: "Physical description of the lyophilized powder. Deviations from expected color may indicate degradation." },
 ];
 
 export default function ScienceClient() {
   return (
-    <div className="bg-cream text-near-black">
+    <div style={{ backgroundColor: "var(--ceramic)" }} className="min-h-screen">
+
       {/* Hero */}
-      <section className="relative pt-36 pb-24">
-        <div
-          className="absolute inset-0 opacity-[0.04] pointer-events-none"
-          style={{
-            backgroundImage: "url(/brand/chemical-pattern.svg)",
-            backgroundSize: "500px",
-            backgroundRepeat: "repeat",
-          }}
+      <section className="relative overflow-hidden" style={{ minHeight: "60vh" }}>
+        <Image
+          src="/images/stock/lab-analysis.jpg"
+          alt="Nexphoria analytical science — researcher in lab"
+          fill
+          className="object-cover object-center"
+          priority
+          sizes="100vw"
         />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="inline-flex items-center gap-3 mb-8">
-              <div className="w-10 h-[2px] bg-brand-primary" />
-              <span className="text-xs uppercase tracking-[0.2em] text-charcoal font-medium">
-                Scientific Background
-              </span>
-            </div>
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.15) 100%)" }} />
+        <div className="relative z-10 flex items-center container-nex py-40">
+          <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0} className="max-w-2xl">
+            <span className="eyebrow mb-5 block" style={{ color: "var(--acid-green)" }}>Analytical Science</span>
             <h1
-              className="text-6xl md:text-7xl lg:text-8xl font-medium leading-[0.9] tracking-tight mb-8 max-w-4xl"
-              style={{ fontFamily: "var(--font-display)" }}
+              className="font-bold tracking-tight mb-6 max-w-3xl"
+              style={{
+                fontFamily: "var(--font-playfair, Georgia, serif)",
+                fontSize: "clamp(2.5rem, 5vw, 4rem)",
+                lineHeight: 1.1,
+                color: "#FDFCF8",
+              }}
             >
-              The Science
+              How We{" "}
+              <em className="italic" style={{ color: "var(--gold)" }}>Verify</em>
               <br />
-              <span className="text-stone">of Peptides</span>
+              Every Compound
             </h1>
-            <p className="text-xl text-charcoal max-w-2xl leading-relaxed">
-              An overview of peptide biochemistry, analytical characterization
-              methods, and the quality standards that govern research compound
-              manufacture.
+            <p className="text-lg max-w-xl leading-relaxed" style={{ color: "rgba(253,252,248,0.8)" }}>
+              Every Nexphoria production lot passes a defined battery of analytical tests before
+              release. HPLC purity, mass spectrometry identity, moisture analysis, and residual
+              solvent testing — documented by independent third-party laboratories.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* What are peptides */}
-      <section className="py-24 bg-near-black">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <div className="inline-flex items-center gap-3 mb-8">
-                <div className="w-10 h-[2px] bg-brand-primary" />
-                <span className="text-xs uppercase tracking-[0.2em] text-brand-primary font-medium">
-                  Fundamentals
-                </span>
-              </div>
-              <h2
-                className="text-4xl md:text-5xl font-medium text-white mb-8 leading-tight"
-                style={{ fontFamily: "var(--font-display)" }}
+      {/* Methods */}
+      {methods.map((method, i) => (
+        <section
+          key={method.id}
+          id={method.id}
+          className="py-20 border-b"
+          style={{
+            borderColor: "var(--border-subtle)",
+            backgroundColor: i % 2 === 1 ? "var(--warm-stone)" : undefined,
+          }}
+        >
+          <div className="container-nex">
+            <div className="grid lg:grid-cols-3 gap-12">
+              <motion.div
+                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
               >
-                What Are Peptides?
-              </h2>
-              <p className="text-stone leading-relaxed mb-6">
-                Peptides are short chains of amino acids — the molecular building
-                blocks of proteins. Ranging from 2 to 50 amino acid residues,
-                peptides occupy a unique space in biochemistry: too small to be
-                proteins, yet large enough to exhibit specific biological
-                activities through receptor binding and cellular signaling
-                pathways.
-              </p>
-              <p className="text-stone leading-relaxed mb-6">
-                The sequence of amino acids within a peptide chain — its primary
-                structure — determines its three-dimensional conformation and,
-                consequently, its pharmacological properties. Minor sequence
-                modifications can produce dramatic changes in binding selectivity
-                and biological activity.
-              </p>
-              <p className="text-stone leading-relaxed">
-                Solid-phase peptide synthesis (SPPS), developed by Merrifield
-                (Nobel Prize, 1984), allows the production of defined-sequence
-                peptides with high purity and reproducibility — the foundation
-                of modern research-grade peptide manufacture.
-              </p>
-            </motion.div>
+                <div
+                  className="inline-flex items-center justify-center font-mono text-sm font-medium px-3 py-1.5 mb-4"
+                  style={{ backgroundColor: "#1A1A18", color: "var(--gold)" }}
+                >
+                  {method.code}
+                </div>
+                <h2
+                  className="font-bold tracking-tight mb-2"
+                  style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: "var(--text-h4)", color: "var(--charcoal)" }}
+                >
+                  {method.title}
+                </h2>
+                <p className="text-sm mb-8" style={{ color: "var(--grey-olive)" }}>{method.subtitle}</p>
 
-            {/* Data panel */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="border border-white/10 p-8"
+                <div className="border" style={{ borderColor: "var(--border-subtle)" }}>
+                  {method.specs.map(({ label, value }) => (
+                    <div
+                      key={label}
+                      className="flex gap-4 p-4 border-b last:border-0"
+                      style={{ borderColor: "var(--border-subtle)" }}
+                    >
+                      <span className="text-xs uppercase tracking-wider w-24 flex-shrink-0 pt-0.5 font-medium" style={{ color: "var(--grey-olive)" }}>
+                        {label}
+                      </span>
+                      <span className="text-xs font-mono flex-1" style={{ color: "var(--charcoal)" }}>{value}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1}
+                className="lg:col-span-2"
+              >
+                {method.body.map((para, j) => (
+                  <p key={j} className="leading-relaxed mb-5 last:mb-0" style={{ color: "var(--grey-olive)" }}>
+                    {para}
+                  </p>
+                ))}
+              </motion.div>
+            </div>
+          </div>
+        </section>
+      ))}
+
+      {/* Peptide classes — dark section */}
+      <section className="py-24 text-ceramic border-b border-white/[0.06]" style={{ backgroundColor: "#1A1A18" }}>
+        <div className="container-nex">
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
+            className="mb-14"
+          >
+            <span className="eyebrow mb-4 block">Compound Classes</span>
+            <h2
+              className="font-bold tracking-tight text-ceramic max-w-2xl"
+              style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)" }}
             >
-              <div className="text-xs uppercase tracking-widest text-brand-primary mb-6 font-medium">
-                Key Properties
-              </div>
-              <div className="space-y-6">
-                {[
-                  { label: "Chain Length", value: "2–50 amino acid residues" },
-                  { label: "Molecular Weight", value: "200–6,000 Da (typical)" },
-                  { label: "Synthesis Method", value: "Solid-Phase Peptide Synthesis (SPPS)" },
-                  { label: "Characterization", value: "HPLC, MS, NMR" },
-                  { label: "Purity Standard", value: "≥95–99% by HPLC area" },
-                  { label: "Storage", value: "Lyophilized, −20°C to −80°C" },
-                ].map((item) => (
-                  <div key={item.label} className="flex items-start justify-between gap-4 py-3 border-b border-white/10 last:border-0">
-                    <span className="text-xs uppercase tracking-wider text-stone/70">
-                      {item.label}
+              Understanding Peptide{" "}
+              <em className="italic" style={{ color: "var(--gold)" }}>Research Areas</em>
+            </h2>
+          </motion.div>
+
+          <div
+            className="grid md:grid-cols-2 gap-px border"
+            style={{ backgroundColor: "rgba(255,255,255,0.06)", borderColor: "rgba(255,255,255,0.06)" }}
+          >
+            {peptideClasses.map((cls, i) => (
+              <motion.div
+                key={cls.title}
+                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.1}
+                className="p-8"
+                style={{ backgroundColor: "#1A1A18" }}
+              >
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {cls.compounds.map((c) => (
+                    <span
+                      key={c}
+                      className="inline-flex items-center px-2.5 py-1 text-xs font-mono border"
+                      style={{ borderColor: "rgba(201,162,75,0.35)", color: "var(--gold)" }}
+                    >
+                      {c}
                     </span>
-                    <span className="text-sm text-white font-mono text-right">
-                      {item.value}
-                    </span>
+                  ))}
+                </div>
+                <h3
+                  className="text-lg font-bold text-ceramic mb-3"
+                  style={{ fontFamily: "var(--font-playfair, Georgia, serif)" }}
+                >
+                  {cls.title}
+                </h3>
+                <p className="text-sm leading-relaxed" style={{ color: "var(--grey-olive)" }}>{cls.body}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* COA guide */}
+      <section id="coa" className="py-24 border-b" style={{ borderColor: "var(--border-subtle)" }}>
+        <div className="container-nex">
+          <div className="grid lg:grid-cols-3 gap-12">
+            <div>
+              <span className="eyebrow mb-4 block">Documentation</span>
+              <h2
+                className="font-bold tracking-tight mb-4"
+                style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: "var(--text-h3)", color: "var(--charcoal)" }}
+              >
+                Reading a COA
+              </h2>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--grey-olive)" }}>
+                A Certificate of Analysis is the primary quality document for research compounds.
+                Understanding each field ensures you can verify the compound meets your research
+                specifications.
+              </p>
+            </div>
+            <div className="lg:col-span-2">
+              <div className="grid sm:grid-cols-2 gap-4">
+                {coaFields.map((item) => (
+                  <div key={item.field} className="border p-5" style={{ borderColor: "var(--border-subtle)" }}>
+                    <div
+                      className="font-mono text-xs font-semibold mb-2"
+                      style={{ color: "var(--charcoal)" }}
+                    >
+                      {item.field}
+                    </div>
+                    <p className="text-xs leading-relaxed" style={{ color: "var(--grey-olive)" }}>{item.desc}</p>
                   </div>
                 ))}
               </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Research applications */}
-      <section className="py-32">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <div className="inline-flex items-center gap-3 mb-6">
-              <div className="w-10 h-[2px] bg-brand-primary" />
-              <span className="text-xs uppercase tracking-[0.2em] text-charcoal font-medium">
-                Research Applications
-              </span>
             </div>
-            <h2
-              className="text-5xl md:text-6xl font-medium leading-tight max-w-2xl"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              How Peptides Are Used in Research
-            </h2>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 gap-8">
-            {researchApplications.map((app, i) => (
-              <motion.div
-                key={app.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="p-8 border border-stone/20 bg-white"
-              >
-                <div className="text-xs font-mono text-brand-primary mb-4 uppercase tracking-wider">
-                  Application {String(i + 1).padStart(2, "0")}
-                </div>
-                <h3
-                  className="text-xl font-medium mb-4"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  {app.title}
-                </h3>
-                <p className="text-sm text-charcoal leading-relaxed">
-                  {app.description}
-                </p>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>
 
-      {/* Analytical methods */}
-      <section className="py-32 bg-near-black">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      {/* Lab equipment banner */}
+      <section className="relative overflow-hidden" style={{ height: "55vh", minHeight: "380px" }}>
+        <Image
+          src="/images/stock/pharma-production.jpg"
+          alt="Laboratory equipment — HPLC and analytical instruments"
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.3) 60%, transparent 100%)" }}
+        />
+        <div className="relative z-10 h-full flex items-center container-nex">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="mb-16"
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
+            className="max-w-lg"
           >
-            <div className="inline-flex items-center gap-3 mb-6">
-              <div className="w-10 h-[2px] bg-brand-primary" />
-              <span className="text-xs uppercase tracking-[0.2em] text-brand-primary font-medium">
-                Analytical Methods
-              </span>
-            </div>
+            <p className="eyebrow mb-4" style={{ color: "var(--acid-green)" }}>Precision Equipment</p>
             <h2
-              className="text-5xl md:text-6xl font-medium text-white leading-tight"
-              style={{ fontFamily: "var(--font-display)" }}
+              className="font-bold tracking-tight leading-tight mb-5"
+              style={{
+                fontFamily: "var(--font-playfair, Georgia, serif)",
+                fontSize: "clamp(2rem, 4vw, 3rem)",
+                color: "#FDFCF8",
+              }}
             >
-              How We Verify Purity
+              Instruments You Can{" "}
+              <em className="italic" style={{ color: "var(--gold)" }}>Trust</em>
             </h2>
+            <p className="text-sm leading-relaxed max-w-sm" style={{ color: "rgba(253,252,248,0.75)" }}>
+              The same analytical instruments used in pharmaceutical drug development verify every
+              Nexphoria production lot before release.
+            </p>
           </motion.div>
-
-          <div className="space-y-8">
-            {analyticalMethods.map((method, i) => (
-              <motion.div
-                key={method.code}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="border border-white/10 p-8 grid md:grid-cols-4 gap-6 items-start"
-              >
-                <div>
-                  <div className="text-3xl font-medium text-brand-primary font-mono mb-1">
-                    {method.code}
-                  </div>
-                  <div className="text-xs text-stone/70 uppercase tracking-wider">
-                    {method.name}
-                  </div>
-                </div>
-                <div className="md:col-span-3">
-                  <p className="text-stone leading-relaxed">
-                    {method.detail}{" "}
-                    <span className="text-brand-primary/60 text-xs font-mono">
-                      {method.cite}
-                    </span>
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* cGMP explained */}
-      <section className="py-32">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid md:grid-cols-2 gap-16 items-start">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <div className="inline-flex items-center gap-3 mb-8">
-                <div className="w-10 h-[2px] bg-brand-primary" />
-                <span className="text-xs uppercase tracking-[0.2em] text-charcoal font-medium">
-                  Manufacturing Standards
-                </span>
-              </div>
-              <h2
-                className="text-4xl md:text-5xl font-medium leading-tight mb-8"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                What cGMP Means
-              </h2>
-              <p className="text-charcoal leading-relaxed mb-6">
-                Current Good Manufacturing Practice (cGMP) regulations are
-                enforced by the FDA and equivalent regulatory bodies worldwide.
-                They establish minimum requirements for the methods, facilities,
-                and controls used in manufacturing, processing, and packing of
-                drug products.
-              </p>
-              <p className="text-charcoal leading-relaxed mb-6">
-                For research compounds, adherence to cGMP principles — even
-                absent a regulatory requirement — provides systematic assurance
-                that quality is built into every step of the synthesis and
-                purification process, rather than tested in at the end.
-              </p>
-              <p className="text-charcoal leading-relaxed">
-                Nexphoria holds its manufacturing partners to cGMP-aligned
-                standards as a matter of policy. Facility audits, batch records,
-                and analytical documentation are maintained and available upon
-                request.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="space-y-4"
-            >
-              {[
-                { title: "Facility Controls", desc: "Controlled environments, HVAC, cleanroom classifications, contamination prevention protocols." },
-                { title: "Raw Material Testing", desc: "Incoming amino acid reagents tested for identity and purity before use in synthesis." },
-                { title: "In-Process Controls", desc: "Monitoring at defined synthesis checkpoints to detect deviations before final product." },
-                { title: "Finished Product Testing", desc: "HPLC purity, MS identity confirmation, and NMR structural verification on every lot." },
-                { title: "Batch Records", desc: "Complete documentation of synthesis, purification, and testing maintained per lot." },
-                { title: "CoA Issuance", desc: "Certificate of Analysis issued only upon passing all acceptance criteria." },
-              ].map((item, i) => (
-                <div key={item.title} className="flex gap-4 p-5 border border-stone/20 bg-white">
-                  <div className="text-xs font-mono text-brand-primary mt-0.5 whitespace-nowrap">
-                    {String(i + 1).padStart(2, "0")}
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium mb-1">{item.title}</div>
-                    <div className="text-xs text-stone leading-relaxed">{item.desc}</div>
-                  </div>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* References */}
-      <section className="py-16 bg-white border-t border-stone/20">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <h3
-            className="text-sm uppercase tracking-widest text-stone mb-6 font-medium"
-          >
-            References
-          </h3>
-          <ol className="space-y-2">
-            {references.map((ref, i) => (
-              <li key={i} className="text-xs text-stone/70 leading-relaxed font-mono">
-                {ref}
-              </li>
-            ))}
-          </ol>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-near-black">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
+      <section className="py-20" style={{ backgroundColor: "var(--warm-stone)" }}>
+        <div className="container-nex flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
             <h2
-              className="text-3xl md:text-4xl font-medium text-white mb-2"
-              style={{ fontFamily: "var(--font-display)" }}
+              className="font-bold tracking-tight mb-2"
+              style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: "var(--text-h3)", color: "var(--charcoal)" }}
             >
-              Browse our compound catalog
+              View the full compound catalog
             </h2>
-            <p className="text-stone text-sm">Full CoA and MSDS available for each lot.</p>
+            <p className="text-sm" style={{ color: "var(--grey-olive)" }}>
+              Every compound includes HPLC data, MS confirmation, and third-party COA.
+            </p>
           </div>
-          <Link
-            href="/products"
-            className="group flex items-center gap-2 px-8 py-4 bg-brand-primary text-near-black font-medium rounded-sm hover:bg-brand-primary/90 transition-colors whitespace-nowrap"
-          >
-            View Catalog
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          <Link href="/products" className="btn-acid whitespace-nowrap">
+            Browse Compounds <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>

@@ -1,152 +1,203 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowRight, Award, FlaskConical, Shield } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { ArrowRight, FlaskConical, Shield, Award, Microscope } from "lucide-react";
 
-const values = [
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
+  }),
+};
+
+const principles = [
   {
     icon: FlaskConical,
     title: "Manufacturing Excellence",
     description:
-      "Every compound synthesized in ISO-certified, cGMP-compliant facilities. We impose pharmaceutical-grade controls on every production batch — not because we are required to, but because anything less is insufficient.",
+      "Every compound synthesized in ISO-certified, cGMP-compliant facilities. We impose pharmaceutical-grade controls on every production batch — not because we are required to, but because anything less is insufficient for rigorous research.",
   },
   {
     icon: Shield,
-    title: "Scientific Integrity",
+    title: "Independent Verification",
     description:
-      "Independent third-party analytical testing is non-negotiable. HPLC, mass spectrometry, and NMR verification performed by accredited external laboratories on every lot. Certificate of Analysis available prior to shipment.",
+      "Third-party analytical testing is non-negotiable. HPLC, mass spectrometry, and moisture analysis performed by accredited external laboratories on every lot. Certificate of Analysis available prior to shipment.",
   },
   {
     icon: Award,
-    title: "Research Focus",
+    title: "Research Integrity",
     description:
-      "Our compounds are designed for qualified researchers, licensed professionals, and credentialed institutions. We do not manufacture consumer products. We manufacture research tools.",
+      "Our compounds are designed for qualified researchers, licensed professionals, and credentialed institutions. We do not manufacture consumer products — we manufacture precision research tools.",
+  },
+  {
+    icon: Microscope,
+    title: "Scientific Transparency",
+    description:
+      "Full documentation accompanies every order: batch records, COA with raw chromatographic data, and MSDS sheets. We do not make claims unsupported by analytical evidence.",
   },
 ];
 
 const standards = [
-  { code: "cGMP", label: "Current Good Manufacturing Practice" },
-  { code: "HPLC", label: "High-Performance Liquid Chromatography" },
-  { code: "MS/NMR", label: "Mass Spectrometry & Nuclear Magnetic Resonance" },
-  { code: "CoA", label: "Certificate of Analysis per batch" },
-  { code: "MSDS", label: "Material Safety Data Sheet provided" },
-  { code: "ISO", label: "ISO-compliant facility standards" },
+  { code: "cGMP", label: "Current Good Manufacturing Practice — pharmaceutical-grade production standards" },
+  { code: "HPLC", label: "Reverse-phase HPLC purity analysis with UV/DAD detection" },
+  { code: "ESI-MS", label: "Electrospray ionization mass spectrometry for molecular identity" },
+  { code: "KF", label: "Karl Fischer titration for precise moisture content determination" },
+  { code: "ICH Q3C", label: "Residual solvent testing per ICH Q3C limits" },
+  { code: "ISO", label: "ISO-compliant facility infrastructure and quality systems" },
 ];
 
 export default function AboutClient() {
   return (
-    <div className="bg-cream text-near-black">
-      {/* Hero */}
-      <section className="relative pt-36 pb-24">
-        <div
-          className="absolute inset-0 opacity-[0.04] pointer-events-none"
-          style={{
-            backgroundImage: "url(/brand/chemical-pattern.svg)",
-            backgroundSize: "500px",
-            backgroundRepeat: "repeat",
-          }}
+    <div style={{ backgroundColor: "var(--ceramic)" }} className="min-h-screen">
+
+      {/* Hero — scientist-2.jpg or lab-dark.jpg */}
+      <section className="relative overflow-hidden" style={{ minHeight: "70vh" }}>
+        <Image
+          src="/images/stock/lab-research-2.jpg"
+          alt="Precision. Purity. Purpose. — Nexphoria"
+          fill
+          className="object-cover object-center"
+          priority
+          sizes="100vw"
         />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="inline-flex items-center gap-3 mb-8">
-              <div className="w-10 h-[2px] bg-brand-primary" />
-              <span className="text-xs uppercase tracking-[0.2em] text-charcoal font-medium">
-                Our Mission
-              </span>
-            </div>
+        <div
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(to right, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.15) 100%)" }}
+        />
+        <div className="relative z-10 h-full flex items-center container-nex py-40">
+          <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0} className="max-w-2xl">
+            <span className="eyebrow mb-5 block" style={{ color: "var(--acid-green)" }}>Our Mission</span>
             <h1
-              className="text-6xl md:text-7xl lg:text-8xl font-medium leading-[0.9] tracking-tight mb-8 max-w-3xl"
-              style={{ fontFamily: "var(--font-display)" }}
+              className="font-bold tracking-tight mb-6 leading-tight"
+              style={{
+                fontFamily: "var(--font-playfair, Georgia, serif)",
+                fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
+                lineHeight: 1.1,
+                color: "#FDFCF8",
+              }}
             >
               Precision.
               <br />
               Purity.
               <br />
-              <span className="text-stone">Purpose.</span>
+              <em className="italic" style={{ color: "var(--gold)" }}>Purpose.</em>
             </h1>
-            <p className="text-xl text-charcoal max-w-2xl leading-relaxed">
-              Nexphoria was founded on a singular conviction: that research
-              compounds should meet the same standards as pharmaceutical drugs.
+            <p className="text-lg max-w-xl leading-relaxed" style={{ color: "rgba(253,252,248,0.8)" }}>
+              Nexphoria was founded on a singular conviction: that research compounds should meet
+              the same standards as pharmaceutical drugs. We manufacture to that standard on every
+              single batch.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Mission statement */}
-      <section className="py-24 bg-near-black">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      {/* Mission statement — dark pull quote */}
+      <section className="py-24" style={{ backgroundColor: "#1A1A18" }}>
+        <div className="container-nex">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="max-w-4xl"
           >
             <p
-              className="text-2xl md:text-3xl text-white font-medium leading-relaxed"
-              style={{ fontFamily: "var(--font-display)" }}
+              className="text-2xl md:text-3xl leading-relaxed"
+              style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontWeight: 400, color: "var(--ceramic)" }}
             >
-              We manufacture exclusively in cGMP-certified facilities, subject
-              every batch to independent third-party analytical testing, and
-              provide complete documentation with each order.{" "}
-              <span className="text-brand-primary">
-                No exceptions. No shortcuts.
-              </span>
+              We manufacture exclusively in cGMP-certified facilities, subject every batch to
+              independent third-party analytical testing, and provide complete documentation with
+              each order.{" "}
+              <em className="italic" style={{ color: "var(--gold)" }}>No exceptions. No shortcuts.</em>
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-32">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="mb-16"
+      {/* Find Your Focus — editorial split */}
+      <section className="relative overflow-hidden" style={{ minHeight: "70vh" }}>
+        <div className="grid md:grid-cols-2" style={{ minHeight: "70vh" }}>
+          <div className="relative min-h-[45vh] md:min-h-full overflow-hidden">
+            <Image
+              src="/images/stock/peptide-research.jpg"
+              alt="Research laboratory"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
+          <div
+            className="flex flex-col justify-center px-10 py-20 md:px-16 xl:px-24"
+            style={{ backgroundColor: "var(--warm-stone)" }}
           >
-            <div className="inline-flex items-center gap-3 mb-6">
-              <div className="w-10 h-[2px] bg-brand-primary" />
-              <span className="text-xs uppercase tracking-[0.2em] text-charcoal font-medium">
-                Core Principles
-              </span>
-            </div>
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+              <span className="eyebrow mb-6 block">For Qualified Researchers</span>
+              <h2
+                className="font-bold tracking-tight mb-7 leading-tight"
+                style={{
+                  fontFamily: "var(--font-playfair, Georgia, serif)",
+                  fontSize: "clamp(2rem, 3.5vw, 3rem)",
+                  color: "var(--charcoal)",
+                }}
+              >
+                Research Without{" "}
+                <em className="italic" style={{ color: "var(--gold)" }}>Compromise.</em>
+              </h2>
+              <p className="text-base leading-relaxed mb-8 max-w-md" style={{ color: "var(--grey-olive)" }}>
+                Every Nexphoria compound arrives with full analytical documentation. We believe
+                transparency is not optional — it is the foundation of trustworthy science.
+              </p>
+              <Link href="/science" className="btn-outline-gold">
+                Our Testing Methodology <ArrowRight className="w-4 h-4" />
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Principles */}
+      <section className="py-28 border-b" id="standards" style={{ borderColor: "var(--border-subtle)" }}>
+        <div className="container-nex">
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
+            className="mb-14"
+          >
+            <span className="eyebrow mb-4 block">Core Principles</span>
             <h2
-              className="text-5xl md:text-6xl font-medium leading-tight"
-              style={{ fontFamily: "var(--font-display)" }}
+              className="font-bold tracking-tight max-w-2xl"
+              style={{
+                fontFamily: "var(--font-playfair, Georgia, serif)",
+                fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+                color: "var(--charcoal)",
+              }}
             >
               What We Stand For
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-12">
-            {values.map((v, i) => (
+          <div
+            className="grid md:grid-cols-2 gap-px border"
+            style={{ backgroundColor: "var(--border-subtle)", borderColor: "var(--border-subtle)" }}
+          >
+            {principles.map((v, i) => (
               <motion.div
                 key={v.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="relative border border-stone/20 p-8"
+                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.1}
+                className="p-8"
+                style={{ backgroundColor: "var(--ceramic)" }}
               >
-                <div className="absolute top-0 left-0 w-full h-1 bg-brand-primary opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="w-12 h-12 mb-6 flex items-center justify-center bg-cream border border-stone/20">
-                  <v.icon className="w-6 h-6 text-charcoal" strokeWidth={1.5} />
+                <div className="w-10 h-10 mb-6 flex items-center justify-center border"
+                  style={{ borderColor: "var(--border-subtle)" }}>
+                  <v.icon className="w-5 h-5" strokeWidth={1.5} style={{ color: "var(--grey-olive)" }} />
                 </div>
                 <h3
-                  className="text-xl font-medium mb-4"
-                  style={{ fontFamily: "var(--font-display)" }}
+                  className="text-lg font-bold mb-3"
+                  style={{ fontFamily: "var(--font-playfair, Georgia, serif)", color: "var(--charcoal)" }}
                 >
                   {v.title}
                 </h3>
-                <p className="text-sm text-charcoal leading-relaxed">
+                <p className="text-sm leading-relaxed" style={{ color: "var(--grey-olive)" }}>
                   {v.description}
                 </p>
               </motion.div>
@@ -155,34 +206,28 @@ export default function AboutClient() {
         </div>
       </section>
 
-      {/* Founder note */}
-      <section className="py-24 bg-white border-y border-stone/20">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      {/* Founder quote */}
+      <section className="py-24 border-b" style={{ backgroundColor: "var(--warm-stone)", borderColor: "var(--border-subtle)" }}>
+        <div className="container-nex">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-3 mb-10">
-              <div className="w-10 h-[2px] bg-brand-primary" />
-              <span className="text-xs uppercase tracking-[0.2em] text-charcoal font-medium">
-                Founder's Note
-              </span>
-            </div>
-
-            <blockquote className="border-l-4 border-brand-primary pl-8">
+            <div className="w-8 h-px mb-8" style={{ backgroundColor: "var(--gold)" }} />
+            <blockquote>
               <p
-                className="text-2xl md:text-3xl font-medium leading-relaxed text-near-black mb-8"
-                style={{ fontFamily: "var(--font-display)" }}
+                className="text-2xl md:text-3xl leading-relaxed mb-8"
+                style={{
+                  fontFamily: "var(--font-playfair, Georgia, serif)",
+                  fontWeight: 400,
+                  color: "var(--charcoal)",
+                }}
               >
-                "We built Nexphoria because we believed researchers deserve the
-                same quality standards that pharmaceutical manufacturers apply
-                to clinical drugs. Every compound we produce is a commitment
-                to that belief."
+                &ldquo;We built Nexphoria because we believed researchers deserve the same quality
+                standards that pharmaceutical manufacturers apply to clinical drugs. Every compound
+                we produce is a commitment to that belief.&rdquo;
               </p>
-              <footer className="text-sm text-stone uppercase tracking-widest">
+              <footer className="text-label" style={{ color: "var(--grey-olive)" }}>
                 — Nexphoria Founding Team
               </footer>
             </blockquote>
@@ -190,44 +235,93 @@ export default function AboutClient() {
         </div>
       </section>
 
-      {/* Standards grid */}
-      <section className="py-32">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      {/* Brand story with 05-copy.jpg accent — "Dare to Defy" */}
+      <section className="relative py-28 overflow-hidden">
+        <div className="container-nex">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
+            >
+              <span className="eyebrow mb-6 block">The Standard</span>
+              <h2
+                className="font-bold tracking-tight mb-7 leading-tight"
+                style={{
+                  fontFamily: "var(--font-playfair, Georgia, serif)",
+                  fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+                  color: "var(--charcoal)",
+                }}
+              >
+                Dare to{" "}
+                <em className="italic" style={{ color: "var(--gold)" }}>Defy</em>
+              </h2>
+              <p className="text-base leading-relaxed mb-5" style={{ color: "var(--grey-olive)" }}>
+                The peptide research industry has too long tolerated inconsistency — compounds sold
+                without proper analytical verification, documentation that cannot withstand scientific
+                scrutiny.
+              </p>
+              <p className="text-base leading-relaxed mb-10" style={{ color: "var(--grey-olive)" }}>
+                We set a different standard. Every compound, every batch, every order arrives with
+                the full analytical and documentary infrastructure of a pharmaceutical product.
+              </p>
+              <Link href="/products" className="btn-acid">
+                Browse Our Catalogue <ArrowRight className="w-4 h-4" />
+              </Link>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 1.04 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="relative overflow-hidden group"
+              style={{ aspectRatio: "4/5", borderRadius: "12px", boxShadow: "0 8px 40px rgba(0,0,0,0.12)" }}
+            >
+              <Image
+                src="/images/stock/lab-dark.jpg"
+                alt="Dare to Defy — Lab dark moody"
+                fill
+                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quality standards grid */}
+      <section className="py-24 border-t" style={{ borderColor: "var(--border-subtle)" }}>
+        <div className="container-nex">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="mb-16"
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
+            className="mb-12"
           >
-            <div className="inline-flex items-center gap-3 mb-6">
-              <div className="w-10 h-[2px] bg-brand-primary" />
-              <span className="text-xs uppercase tracking-[0.2em] text-charcoal font-medium">
-                Quality Framework
-              </span>
-            </div>
+            <span className="eyebrow mb-4 block">Quality Framework</span>
             <h2
-              className="text-5xl md:text-6xl font-medium leading-tight"
-              style={{ fontFamily: "var(--font-display)" }}
+              className="font-bold tracking-tight"
+              style={{
+                fontFamily: "var(--font-playfair, Georgia, serif)",
+                fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+                color: "var(--charcoal)",
+              }}
             >
               Our Standards
             </h2>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             {standards.map((s, i) => (
               <motion.div
                 key={s.code}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.07 }}
-                viewport={{ once: true }}
-                className="flex items-start gap-4 p-6 bg-white border border-stone/20"
+                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.07}
+                className="flex items-start gap-4 p-6 border"
+                style={{ borderColor: "var(--border-subtle)", backgroundColor: "var(--ceramic)" }}
               >
-                <div className="text-xs font-mono font-medium text-brand-primary bg-near-black px-2 py-1 whitespace-nowrap mt-0.5">
+                <div
+                  className="text-xs font-mono font-medium px-2 py-1 whitespace-nowrap mt-0.5 flex-shrink-0"
+                  style={{ backgroundColor: "#1A1A18", color: "var(--gold)" }}
+                >
                   {s.code}
                 </div>
-                <p className="text-sm text-charcoal leading-relaxed">{s.label}</p>
+                <p className="text-sm leading-relaxed" style={{ color: "var(--grey-olive)" }}>{s.label}</p>
               </motion.div>
             ))}
           </div>
@@ -235,20 +329,21 @@ export default function AboutClient() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-near-black">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
-          <h2
-            className="text-3xl md:text-4xl font-medium text-white"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Ready to browse our catalog?
-          </h2>
-          <Link
-            href="/products"
-            className="group flex items-center gap-2 px-8 py-4 bg-brand-primary text-near-black font-medium rounded-sm hover:bg-brand-primary/90 transition-colors whitespace-nowrap"
-          >
-            Browse Compounds
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+      <section className="py-20" style={{ backgroundColor: "#1A1A18" }}>
+        <div className="container-nex flex flex-col md:flex-row items-center justify-between gap-8">
+          <div>
+            <h2
+              className="font-bold tracking-tight mb-2"
+              style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: "var(--text-h3)", color: "var(--ceramic)" }}
+            >
+              Ready to browse our catalog?
+            </h2>
+            <p className="text-sm" style={{ color: "var(--grey-olive)" }}>
+              Every compound ships with full COA and technical documentation.
+            </p>
+          </div>
+          <Link href="/products" className="btn-acid whitespace-nowrap">
+            Browse Compounds <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>

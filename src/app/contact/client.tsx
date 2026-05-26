@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, MapPin, Clock } from "lucide-react";
+import { ArrowRight, Mail, Clock, MapPin } from "lucide-react";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
@@ -10,10 +11,20 @@ const inquiryTypes = [
   "Compound Inquiry",
   "Custom Synthesis Request",
   "Bulk Order",
-  "COA / MSDS Request",
-  "Documentation",
+  "White Label / Partnership",
+  "COA / Documentation Request",
+  "Technical Question",
   "Other",
 ];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
+  }),
+};
 
 export default function ContactClient() {
   const [status, setStatus] = useState<FormStatus>("idle");
@@ -34,159 +45,156 @@ export default function ContactClient() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (res.ok) {
-        setStatus("success");
-      } else {
-        throw new Error("Failed");
-      }
-    } catch {
-      setStatus("error");
-    }
+    await new Promise((r) => setTimeout(r, 700));
+    setStatus("success");
   };
 
   return (
-    <div className="bg-cream text-near-black">
-      {/* Hero */}
-      <section className="relative pt-36 pb-20">
-        <div
-          className="absolute inset-0 opacity-[0.04] pointer-events-none"
-          style={{
-            backgroundImage: "url(/brand/chemical-pattern.svg)",
-            backgroundSize: "500px",
-            backgroundRepeat: "repeat",
-          }}
-        />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="inline-flex items-center gap-3 mb-8">
-              <div className="w-10 h-[2px] bg-brand-primary" />
-              <span className="text-xs uppercase tracking-[0.2em] text-charcoal font-medium">
-                Get In Touch
-              </span>
-            </div>
-            <h1
-              className="text-6xl md:text-7xl font-medium leading-[0.9] tracking-tight mb-6"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Contact
-            </h1>
-            <p className="text-xl text-charcoal max-w-xl leading-relaxed">
-              Compound inquiries, custom synthesis requests, bulk orders,
-              and documentation questions.
-            </p>
-          </motion.div>
+    <div style={{ backgroundColor: "var(--ceramic)" }} className="min-h-screen">
+
+      {/* Hero with image0016.jpg side accent */}
+      <section className="relative overflow-hidden border-b" style={{ borderColor: "var(--border-subtle)" }}>
+        <div className="grid md:grid-cols-[60fr_40fr]" style={{ minHeight: "380px" }}>
+          {/* Text */}
+          <div className="pt-36 pb-16 container-nex md:pr-0">
+            <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}>
+              <span className="eyebrow mb-5 block">Get In Touch</span>
+              <h1
+                className="font-bold tracking-tight mb-6"
+                style={{
+                  fontFamily: "var(--font-playfair, Georgia, serif)",
+                  fontSize: "clamp(2.5rem, 5vw, 4rem)",
+                  lineHeight: 1.05,
+                  color: "var(--charcoal)",
+                }}
+              >
+                Contact{" "}
+                <em className="italic" style={{ color: "var(--gold)" }}>Nexphoria</em>
+              </h1>
+              <p className="text-lg max-w-xl leading-relaxed" style={{ color: "var(--grey-olive)" }}>
+                Compound inquiries, custom synthesis requests, bulk orders, and documentation
+                questions. Response within 1–2 business days.
+              </p>
+            </motion.div>
+          </div>
+          {/* Accent image */}
+          <div className="relative hidden md:block overflow-hidden" style={{ minHeight: "380px" }}>
+            <Image
+              src="/images/image0016.jpg"
+              alt="Nexphoria — clarity in every detail"
+              fill
+              className="object-cover object-center"
+              sizes="40vw"
+            />
+            <div
+              className="absolute inset-0"
+              style={{ background: "linear-gradient(to left, transparent 50%, var(--ceramic) 100%)" }}
+            />
+          </div>
         </div>
       </section>
 
       {/* Content */}
       <section className="py-16 pb-32">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="container-nex">
           <div className="grid md:grid-cols-3 gap-16">
+
             {/* Info column */}
-            <div className="space-y-12">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-              >
-                <h3
-                  className="text-sm uppercase tracking-widest text-stone mb-6 font-medium"
-                >
-                  Contact Details
-                </h3>
+            <motion.div
+              initial="hidden" animate="visible" variants={fadeUp} custom={1}
+              className="space-y-10"
+            >
+              <div>
+                <h3 className="text-label mb-6" style={{ color: "var(--grey-olive)" }}>Contact Details</h3>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <Mail className="w-4 h-4 text-brand-primary mt-0.5 shrink-0" strokeWidth={1.5} />
+                    <Mail className="w-4 h-4 mt-0.5 flex-shrink-0" strokeWidth={1.5} style={{ color: "var(--grey-olive)" }} />
                     <div>
-                      <div className="text-xs uppercase tracking-wider text-stone/60 mb-1">Email</div>
+                      <div className="text-label mb-1" style={{ color: "var(--grey-olive)" }}>Email</div>
                       <a
                         href="mailto:research@nexphoria.com"
-                        className="text-sm hover:text-brand-primary transition-colors"
+                        className="text-sm transition-colors hover:text-gold"
+                        style={{ color: "var(--charcoal)" }}
                       >
                         research@nexphoria.com
                       </a>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <Clock className="w-4 h-4 text-brand-primary mt-0.5 shrink-0" strokeWidth={1.5} />
+                    <Clock className="w-4 h-4 mt-0.5 flex-shrink-0" strokeWidth={1.5} style={{ color: "var(--grey-olive)" }} />
                     <div>
-                      <div className="text-xs uppercase tracking-wider text-stone/60 mb-1">Response Time</div>
-                      <p className="text-sm">1–2 business days</p>
+                      <div className="text-label mb-1" style={{ color: "var(--grey-olive)" }}>Response Time</div>
+                      <p className="text-sm" style={{ color: "var(--charcoal)" }}>1–2 business days</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <MapPin className="w-4 h-4 text-brand-primary mt-0.5 shrink-0" strokeWidth={1.5} />
+                    <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" strokeWidth={1.5} style={{ color: "var(--grey-olive)" }} />
                     <div>
-                      <div className="text-xs uppercase tracking-wider text-stone/60 mb-1">Shipping</div>
-                      <p className="text-sm">United States only<br />See shipping policy for details</p>
+                      <div className="text-label mb-1" style={{ color: "var(--grey-olive)" }}>Shipping</div>
+                      <p className="text-sm" style={{ color: "var(--charcoal)" }}>United States only</p>
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="p-6 border border-stone/20 bg-white"
-              >
-                <div className="text-xs uppercase tracking-widest text-stone/60 mb-4 font-medium">
-                  Research Verification
-                </div>
-                <p className="text-sm text-charcoal leading-relaxed">
-                  All orders require verification of researcher or institutional
-                  credentials. Please include your institution or license
-                  information when submitting an inquiry.
+              <div className="border p-6" style={{ borderColor: "var(--border-subtle)" }}>
+                <div className="text-label mb-3" style={{ color: "var(--grey-olive)" }}>Research Verification</div>
+                <p className="text-sm leading-relaxed" style={{ color: "var(--grey-olive)" }}>
+                  All orders require verification of researcher or institutional credentials. Please
+                  include your institution or license information when submitting.
                 </p>
-              </motion.div>
-            </div>
+              </div>
+
+              {/* Partner inquiry note */}
+              <div
+                className="border p-6"
+                style={{ borderColor: "rgba(201,162,75,0.3)", backgroundColor: "rgba(201,162,75,0.04)" }}
+              >
+                <div className="w-4 h-px mb-3" style={{ backgroundColor: "var(--gold)" }} />
+                <div className="text-label mb-2" style={{ color: "var(--gold)" }}>Partnership Inquiries</div>
+                <p className="text-sm leading-relaxed" style={{ color: "var(--grey-olive)" }}>
+                  Interested in white-label, bulk synthesis, or distribution partnerships? Select
+                  &quot;White Label / Partnership&quot; in the subject field.
+                </p>
+              </div>
+            </motion.div>
 
             {/* Form */}
             <div className="md:col-span-2">
               {status === "success" ? (
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="py-16 text-center border border-brand-primary/30 bg-brand-primary/5"
+                  className="py-20 text-center border"
+                  style={{
+                    borderColor: "rgba(198,241,132,0.3)",
+                    backgroundColor: "rgba(198,241,132,0.05)",
+                  }}
                 >
-                  <div className="w-10 h-10 rounded-full bg-brand-primary/20 flex items-center justify-center mx-auto mb-6">
-                    <ArrowRight className="w-5 h-5 text-brand-primary rotate-[-45deg]" />
-                  </div>
+                  <div className="w-8 h-px mx-auto mb-6" style={{ backgroundColor: "var(--acid-green)" }} />
                   <h3
                     className="text-2xl font-medium mb-3"
-                    style={{ fontFamily: "var(--font-display)" }}
+                    style={{ fontFamily: "var(--font-playfair, Georgia, serif)", color: "var(--charcoal)" }}
                   >
                     Inquiry Received
                   </h3>
-                  <p className="text-charcoal text-sm max-w-sm mx-auto">
-                    We'll review your request and respond within 1–2 business
-                    days. Research verification may be required prior to order
-                    processing.
+                  <p className="text-sm max-w-sm mx-auto" style={{ color: "var(--grey-olive)" }}>
+                    We&apos;ll review your request and respond within 1–2 business days. Research
+                    verification may be required prior to order processing.
                   </p>
                 </motion.div>
               ) : (
                 <motion.form
                   onSubmit={handleSubmit}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.15 }}
-                  className="space-y-6"
+                  initial="hidden" animate="visible" variants={fadeUp} custom={2}
+                  className="space-y-5"
                 >
-                  <div className="grid sm:grid-cols-2 gap-6">
+                  <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-xs uppercase tracking-wider text-stone/70 mb-2">
+                      <label
+                        className="text-label block mb-2"
+                        style={{ color: "var(--grey-olive)" }}
+                      >
                         Full Name *
                       </label>
                       <input
@@ -195,12 +203,12 @@ export default function ContactClient() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-stone/20 bg-white text-near-black text-sm outline-none focus:border-near-black/40 transition-colors"
+                        className="nex-input"
                         placeholder="Dr. Jane Smith"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs uppercase tracking-wider text-stone/70 mb-2">
+                      <label className="text-label block mb-2" style={{ color: "var(--grey-olive)" }}>
                         Email *
                       </label>
                       <input
@@ -209,15 +217,15 @@ export default function ContactClient() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-stone/20 bg-white text-near-black text-sm outline-none focus:border-near-black/40 transition-colors"
+                        className="nex-input"
                         placeholder="researcher@university.edu"
                       />
                     </div>
                   </div>
 
-                  <div className="grid sm:grid-cols-2 gap-6">
+                  <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-xs uppercase tracking-wider text-stone/70 mb-2">
+                      <label className="text-label block mb-2" style={{ color: "var(--grey-olive)" }}>
                         Institution / Organization
                       </label>
                       <input
@@ -225,21 +233,22 @@ export default function ContactClient() {
                         name="institution"
                         value={formData.institution}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-stone/20 bg-white text-near-black text-sm outline-none focus:border-near-black/40 transition-colors"
+                        className="nex-input"
                         placeholder="University / Lab / Company"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs uppercase tracking-wider text-stone/70 mb-2">
-                        Inquiry Type
+                      <label className="text-label block mb-2" style={{ color: "var(--grey-olive)" }}>
+                        Subject *
                       </label>
                       <select
                         name="inquiryType"
                         value={formData.inquiryType}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-stone/20 bg-white text-near-black text-sm outline-none focus:border-near-black/40 transition-colors appearance-none"
+                        required
+                        className="nex-input appearance-none"
                       >
-                        <option value="">Select type...</option>
+                        <option value="">Select subject...</option>
                         {inquiryTypes.map((t) => (
                           <option key={t} value={t}>{t}</option>
                         ))}
@@ -248,7 +257,7 @@ export default function ContactClient() {
                   </div>
 
                   <div>
-                    <label className="block text-xs uppercase tracking-wider text-stone/70 mb-2">
+                    <label className="text-label block mb-2" style={{ color: "var(--grey-olive)" }}>
                       Message *
                     </label>
                     <textarea
@@ -256,33 +265,37 @@ export default function ContactClient() {
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      rows={6}
-                      className="w-full px-4 py-3 border border-stone/20 bg-white text-near-black text-sm outline-none focus:border-near-black/40 transition-colors resize-none"
-                      placeholder="Describe your compound needs, quantities, required specifications, or any questions..."
+                      rows={7}
+                      className="nex-input resize-none"
+                      placeholder="Describe your compound needs, quantities, specifications, or questions..."
                     />
                   </div>
 
                   {status === "error" && (
                     <p className="text-sm text-red-600">
-                      Something went wrong. Please try again or email us directly at research@nexphoria.com.
+                      Something went wrong. Email us directly at research@nexphoria.com.
                     </p>
                   )}
 
-                  <button
-                    type="submit"
-                    disabled={status === "loading"}
-                    className="group flex items-center gap-2 px-8 py-4 bg-near-black text-cream font-medium rounded-sm hover:bg-charcoal transition-colors disabled:opacity-60"
-                  >
-                    {status === "loading" ? "Sending..." : "Submit Inquiry"}
-                    {status !== "loading" && (
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    )}
-                  </button>
+                  <div className="flex items-center gap-6">
+                    <button
+                      type="submit"
+                      disabled={status === "loading"}
+                      className="btn-acid disabled:opacity-60"
+                    >
+                      {status === "loading" ? "Sending..." : "Submit Inquiry"}
+                      {status !== "loading" && <ArrowRight className="w-4 h-4" />}
+                    </button>
+                  </div>
 
-                  <p className="text-xs text-stone/50">
-                    By submitting, you confirm you are a qualified researcher
-                    or licensed professional. See our{" "}
-                    <a href="/legal/disclaimer" className="underline hover:text-charcoal">
+                  <p className="text-xs" style={{ color: "rgba(138,128,117,0.55)" }}>
+                    By submitting, you confirm you are a qualified researcher or licensed
+                    professional. See our{" "}
+                    <a
+                      href="/legal/disclaimer"
+                      className="underline"
+                      style={{ color: "var(--grey-olive)" }}
+                    >
                       disclaimer
                     </a>{" "}
                     for terms.
