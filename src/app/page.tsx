@@ -158,7 +158,7 @@ const GOAL_CARDS_CONFIG = [
   { goal: "Performance",  icon: Dumbbell,     color: "#C9A24B", desc: "Lean mass & GH optimization" },
   { goal: "Weight Loss",  icon: TrendingDown, color: "#EF4444", desc: "GLP-1 & metabolism support" },
   { goal: "Anti-Aging",   icon: Sparkles,     color: "#8B5CF6", desc: "Skin, longevity & cellular health" },
-  { goal: "Brain & Focus", icon: Brain,       color: "#3B82F6", desc: "Cognitive & nootropic peptides" },
+  { goal: "Brain & Focus", icon: Brain,       color: "#3B82F6", desc: "Cognitive & cellular research compounds" },
   { goal: "Wellness",     icon: Heart,        color: "#22C55E", desc: "Immunity, libido & vitality" },
 ] as const;
 
@@ -240,22 +240,21 @@ export default function HomePage() {
 
       {/* ========== HERO ========== */}
       <section className="relative flex items-center overflow-hidden" style={{ minHeight: "100vh" }}>
-        {/* Gradient background */}
-        <div className="absolute inset-0 z-0" style={{
-          background: "linear-gradient(135deg, #0a0a08 0%, #111110 60%, #141410 100%)"
-        }} />
-        {/* Animated pattern overlay */}
-        <div className="absolute inset-0 z-0 pattern-hero" />
-        {/* Accent glow */}
-        <div className="absolute inset-0 z-0 pointer-events-none" style={{
-          background: "radial-gradient(ellipse 60% 50% at 65% 50%, rgba(201,162,75,0.06) 0%, transparent 70%)",
-        }} />
-        {/* Bottom vignette */}
-        <div className="absolute bottom-0 left-0 right-0 h-48 z-0" style={{
-          background: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 100%)"
+        {/* Editorial hero background */}
+        <Image
+          src="/brand/editorial-hero.jpg"
+          alt="Research-Grade Peptides - Editorial Hero"
+          fill
+          className="object-cover object-center"
+          priority
+          sizes="100vw"
+        />
+        {/* Dark overlay 70% */}
+        <div className="absolute inset-0 z-10" style={{
+          background: "rgba(0,0,0,0.7)"
         }} />
 
-        <div className="container-nex relative z-10 w-full py-24 md:py-32 pt-36 md:pt-40">
+        <div className="container-nex relative z-20 w-full py-24 md:py-32 pt-36 md:pt-40">
           <div className="grid lg:grid-cols-[55fr_45fr] gap-10 xl:gap-16 items-center">
 
             {/* Left column */}
@@ -277,8 +276,8 @@ export default function HomePage() {
                   color: "#FDFCF8",
                 }}
               >
-                Precision Compounds for Peak{" "}
-                <em className="italic" style={{ color: "var(--acid-green)" }}>Performance</em>
+                Research-Grade Peptides.{" "}
+                <em className="italic" style={{ color: "var(--acid-green)" }}>Precision-Delivered.</em>
               </motion.h1>
               <motion.p
                 initial="hidden" animate="visible" variants={fadeUp} custom={3}
@@ -411,8 +410,15 @@ export default function HomePage() {
       </section>
 
       {/* ========== SHOP BY GOAL ========== */}
-      <section className="py-24 md:py-28 pattern-bg-dark" style={{ backgroundColor: "#1A1A18" }}>
-        <div className="container-nex">
+      <section className="relative py-24 md:py-28 pattern-bg-dark overflow-hidden" style={{ backgroundColor: "#1A1A18" }}>
+        {/* Cell pattern background */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          backgroundImage: "url(/brand/cell-pattern-1.png)",
+          backgroundSize: "400px auto",
+          backgroundRepeat: "repeat",
+          opacity: 0.05
+        }} />
+        <div className="container-nex relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="mb-14">
             <span className="eyebrow mb-4 block">Shop By Goal</span>
@@ -573,6 +579,55 @@ export default function HomePage() {
               View All 20 Compounds <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
+        </div>
+      </section>
+
+      {/* ========== THE SCIENCE ========== */}
+      <section className="relative py-24 md:py-32 overflow-hidden">
+        {/* Poster triptych background */}
+        <Image
+          src="/brand/poster-triptych.jpg"
+          alt="The Science - Research Methodology"
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 z-10" style={{
+          background: "rgba(0,0,0,0.75)"
+        }} />
+
+        <div className="container-nex relative z-20">
+          <div className="max-w-3xl">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+              <span className="eyebrow mb-5 block" style={{ color: "var(--acid-green)" }}>Research Methodology</span>
+              <h2 className="font-bold tracking-tight mb-6 text-primary"
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(2.5rem, 5vw, 4rem)",
+                  color: "#FDFCF8"
+                }}>
+                The Science Behind{" "}
+                <em className="italic" style={{ color: "var(--acid-green)" }}>Every Compound</em>
+              </h2>
+              <div className="space-y-4 mb-8">
+                <p className="text-lg leading-relaxed" style={{ color: "rgba(253,252,248,0.8)" }}>
+                  Each Nexphoria peptide undergoes rigorous analytical testing using pharmaceutical-grade instrumentation. HPLC purity analysis, mass spectrometry identity confirmation, and moisture content determination ensure every batch meets research specifications.
+                </p>
+                <p className="text-base leading-relaxed" style={{ color: "rgba(253,252,248,0.7)" }}>
+                  Manufactured in cGMP-certified facilities with complete batch documentation. Independent third-party COA included with every order.
+                </p>
+              </div>
+              <div className="flex gap-3">
+                <Link href="/science" className="btn-outline-gold">
+                  Our Testing Methods <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link href="/products" className="btn-acid">
+                  Browse Catalog
+                </Link>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -1038,14 +1093,27 @@ export default function HomePage() {
 
       {/* ========== PACKAGING JOURNEY ========== */}
       <section className="relative py-24 md:py-36 overflow-hidden pattern-bg-dark" style={{ backgroundColor: "#0D0D0C" }}>
-        <div className="container-nex relative">
+        {/* Boxes cascade hero background */}
+        <div className="absolute inset-0 pointer-events-none">
+          <Image
+            src="/brand/boxes-cascade.jpg"
+            alt="Premium packaging - cold-chain ready"
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0" style={{
+            background: "linear-gradient(to bottom, rgba(13,13,12,0.9) 0%, rgba(13,13,12,0.7) 50%, rgba(13,13,12,0.9) 100%)"
+          }} />
+        </div>
+        <div className="container-nex relative z-20">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="mb-16 max-w-xl">
-            <span className="eyebrow mb-4 block">The Experience</span>
+            <span className="eyebrow mb-4 block">Premium Packaging</span>
             <h2 className="font-bold tracking-tight text-primary"
               style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-              The Nexphoria{" "}
-              <em className="italic text-acid-green">Experience</em>
+              Cold-Chain Ready{" "}
+              <em className="italic text-acid-green">Delivery</em>
             </h2>
           </motion.div>
 

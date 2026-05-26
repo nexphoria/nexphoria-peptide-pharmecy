@@ -101,8 +101,8 @@ const peptideClasses = [
     compounds: ["CJC-1295", "Ipamorelin", "Sermorelin"],
   },
   {
-    title: "Nootropic Peptides",
-    body: "CNS-active peptides with established neuroprotective and cognitive-modulating profiles. Semax (ACTH 4-10 analog) upregulates BDNF and promotes neuroprotection; Selank (tuftsin analog) modulates GABAergic transmission and enkephalinase activity, producing anxiolytic effects without sedation.",
+    title: "Cognitive Research Peptides",
+    body: "CNS-active peptides with established neuroprotective and cognitive-modulating profiles for research applications. Semax (ACTH 4-10 analog) upregulates BDNF and promotes neuroprotection; Selank (tuftsin analog) modulates GABAergic transmission and enkephalinase activity, producing anxiolytic effects without sedation. For qualified research use only.",
     compounds: ["Semax", "Selank"],
   },
   {
@@ -128,14 +128,14 @@ export default function ScienceClient() {
       {/* Hero */}
       <section className="relative overflow-hidden" style={{ minHeight: "60vh" }}>
         <Image
-          src="/images/stock/lab-analysis.jpg"
+          src="/brand/science-hero.jpg"
           alt="Nexphoria analytical science — researcher in lab"
           fill
           className="object-cover object-center"
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.15) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 70%, transparent 100%)" }} />
         <div className="relative z-10 flex items-center container-nex py-40">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0} className="max-w-2xl">
             <span className="eyebrow mb-5 block" style={{ color: "var(--acid-green)" }}>Analytical Science</span>
@@ -167,13 +167,21 @@ export default function ScienceClient() {
         <section
           key={method.id}
           id={method.id}
-          className="py-20 border-b"
+          className="relative py-20 border-b overflow-hidden"
           style={{
             borderColor: "var(--border-subtle)",
             backgroundColor: i % 2 === 1 ? "var(--warm-stone)" : undefined,
           }}
         >
-          <div className="container-nex">
+          {/* Molecular pattern background */}
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: "url(/brand/molecular-pattern.png)",
+            backgroundSize: "600px auto",
+            backgroundRepeat: "repeat",
+            filter: "invert(1)",
+            opacity: 0.12
+          }} />
+          <div className="container-nex relative z-10">
             <div className="grid lg:grid-cols-3 gap-12">
               <motion.div
                 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
@@ -224,8 +232,15 @@ export default function ScienceClient() {
       ))}
 
       {/* Peptide classes — dark section */}
-      <section className="py-24 text-ceramic border-b border-white/[0.06]" style={{ backgroundColor: "#1A1A18" }}>
-        <div className="container-nex">
+      <section className="relative py-24 text-ceramic border-b border-white/[0.06] overflow-hidden" style={{ backgroundColor: "#1A1A18" }}>
+        {/* Cell pattern background */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          backgroundImage: "url(/brand/cell-pattern-2.png)",
+          backgroundSize: "500px auto",
+          backgroundRepeat: "repeat",
+          opacity: 0.08
+        }} />
+        <div className="container-nex relative z-10">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="mb-14"

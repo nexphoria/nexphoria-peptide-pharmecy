@@ -57,7 +57,7 @@ export default function AboutClient() {
       {/* Hero — scientist-2.jpg or lab-dark.jpg */}
       <section className="relative overflow-hidden" style={{ minHeight: "70vh" }}>
         <Image
-          src="/images/stock/lab-research-2.jpg"
+          src="/brand/brand-suite.jpg"
           alt="Precision. Purity. Purpose. — Nexphoria"
           fill
           className="object-cover object-center"
@@ -115,7 +115,7 @@ export default function AboutClient() {
         </div>
       </section>
 
-      {/* Find Your Focus — editorial split */}
+      {/* Research Precision — editorial split */}
       <section className="relative overflow-hidden" style={{ minHeight: "70vh" }}>
         <div className="grid md:grid-cols-2" style={{ minHeight: "70vh" }}>
           <div className="relative min-h-[45vh] md:min-h-full overflow-hidden">
