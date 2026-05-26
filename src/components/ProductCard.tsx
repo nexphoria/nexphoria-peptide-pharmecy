@@ -20,14 +20,14 @@ export default function ProductCard({
   showAddToCart = true,
   className = ""
 }: ProductCardProps) {
-  const { addItem } = useCart();
+  const { addItem, openDrawer } = useCart();
   const [isHovered, setIsHovered] = useState(false);
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     addItem(product);
-    // Optional: Add toast notification here
+    openDrawer();
   };
 
   // Determine the "from" price (lowest available price)
@@ -90,11 +90,11 @@ export default function ProductCard({
               }}
             />
 
-            {/* Product Vial/Pen */}
+            {/* Product Image */}
             <div
               style={{
                 height: "160px",
-                width: "80px",
+                width: "120px",
                 position: "relative",
                 zIndex: 1,
                 filter: `drop-shadow(0 8px 20px ${product.accentColor}25)`,
@@ -102,11 +102,13 @@ export default function ProductCard({
                 transition: "transform 0.3s ease"
               }}
             >
-              <ProductVial
-                productName={product.name}
-                dosage={product.dosages?.[0]?.size || product.size}
-                category={product.category}
-                accentColor={product.accentColor}
+              <img
+                src="/products/vial-hero-1.png"
+                alt={product.name}
+                className="w-full h-full object-contain"
+                style={{
+                  filter: `drop-shadow(0 0 20px ${product.accentColor}30)`
+                }}
               />
             </div>
           </div>

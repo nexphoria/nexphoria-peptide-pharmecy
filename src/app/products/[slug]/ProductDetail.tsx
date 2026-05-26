@@ -253,6 +253,8 @@ function MechanismSection({ product }: { product: Product }) {
 }
 
 export default function ProductDetail({ product, related }: Props) {
+  const [selectedFormat, setSelectedFormat] = useState<'vial' | 'pen'>('vial');
+
   return (
     <div className="bg-dark text-primary min-h-screen">
       {/* Back Navigation */}
@@ -330,7 +332,7 @@ export default function ProductDetail({ product, related }: Props) {
               }}
             />
 
-            {/* Large Product Vial */}
+            {/* Large Product Image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -342,24 +344,40 @@ export default function ProductDetail({ product, related }: Props) {
                 filter: `drop-shadow(0 20px 60px ${product.accentColor}30)`,
               }}
             >
-              <img
-                src={product.penAvailable ? "/products/pen-hero-1.png" : "/products/vial-hero-1.png"}
-                alt={`${product.name} - ${product.penAvailable ? 'Pre-loaded Pen' : 'Lyophilized Vial'}`}
-                className="w-full h-full object-contain"
-              />
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={selectedFormat}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.3 }}
+                  src={selectedFormat === 'pen' ? "/products/pen-hero-1.png" : "/products/vial-hero-1.png"}
+                  alt={`${product.name} - ${selectedFormat === 'pen' ? 'Pre-loaded Pen' : 'Lyophilized Vial'}`}
+                  className="w-full h-full object-contain"
+                />
+              </AnimatePresence>
             </motion.div>
           </div>
         </div>
 
         {/* Buy Box (Floating Right, Inside Hero) */}
         <div className="absolute top-8 right-8 w-80 hidden lg:block">
-          <BuyBox product={product} />
+          <BuyBox
+            product={product}
+            selectedFormat={selectedFormat}
+            onFormatChange={setSelectedFormat}
+          />
         </div>
       </section>
 
       {/* Mobile Buy Box */}
       <div className="lg:hidden">
-        <BuyBox product={product} className="mx-4 -mt-8 relative z-10" />
+        <BuyBox
+          product={product}
+          className="mx-4 -mt-8 relative z-10"
+          selectedFormat={selectedFormat}
+          onFormatChange={setSelectedFormat}
+        />
       </div>
 
       {/* Spec Grid (4-quadrant specs) */}

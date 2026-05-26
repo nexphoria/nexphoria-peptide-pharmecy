@@ -9,6 +9,8 @@ import { Product, ProductDosage } from "@/lib/products";
 interface BuyBoxProps {
   product: Product;
   className?: string;
+  selectedFormat?: 'vial' | 'pen';
+  onFormatChange?: (format: 'vial' | 'pen') => void;
 }
 
 type SubscriptionTier = {
@@ -24,9 +26,18 @@ const subscriptionTiers: SubscriptionTier[] = [
   { months: 6, label: "6 Month Supply", discount: 28, badge: "Best Value" },
 ];
 
-export default function BuyBox({ product, className = "" }: BuyBoxProps) {
+export default function BuyBox({
+  product,
+  className = "",
+  selectedFormat: externalFormat,
+  onFormatChange
+}: BuyBoxProps) {
   const { addItem, openDrawer } = useCart();
-  const [selectedFormat, setSelectedFormat] = useState<'vial' | 'pen'>('vial');
+  const [internalFormat, setInternalFormat] = useState<'vial' | 'pen'>('vial');
+
+  // Use external format state if provided, otherwise use internal state
+  const selectedFormat = externalFormat !== undefined ? externalFormat : internalFormat;
+  const setSelectedFormat = onFormatChange || setInternalFormat;
   const [selectedDosage, setSelectedDosage] = useState<ProductDosage | undefined>(
     product.dosages?.[0] || undefined
   );
@@ -295,7 +306,10 @@ export default function BuyBox({ product, className = "" }: BuyBoxProps) {
 
           {/* One-time purchase option */}
           <button
-            onClick={handleAddToCart}
+            onClick={() => {
+              addItem(product, selectedFormat, selectedDosage, 1); // 1 month = one-time
+              openDrawer();
+            }}
             className="w-full py-3 text-center text-sm text-secondary hover:text-primary border border-dark-border hover:border-dark-border-hover rounded-lg transition-colors"
           >
             Or buy one-time — ${basePrice}

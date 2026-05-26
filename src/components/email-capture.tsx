@@ -15,9 +15,31 @@ export function EmailCapture({ variant = "dark" }: EmailCaptureProps) {
     e.preventDefault();
     if (!email) return;
     setStatus("loading");
-    await new Promise((r) => setTimeout(r, 600));
-    setStatus("success");
-    setEmail("");
+
+    try {
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setEmail("");
+      } else {
+        const data = await response.json();
+        if (data.error === "already_registered") {
+          setStatus("success"); // Show success even for duplicates
+        } else {
+          setStatus("error");
+        }
+      }
+    } catch (error) {
+      console.error('Waitlist error:', error);
+      setStatus("error");
+    }
   };
 
   if (status === "success") {

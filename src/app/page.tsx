@@ -1214,8 +1214,31 @@ export default function HomePage() {
             </motion.div>
             <motion.form
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1}
-              className="flex flex-col sm:flex-row gap-2" onSubmit={(e) => e.preventDefault()}>
-              <input type="email" placeholder="your@email.com" className="nex-input-dark flex-1" />
+              className="flex flex-col sm:flex-row gap-2"
+              onSubmit={async (e) => {
+                e.preventDefault();
+                const form = e.target as HTMLFormElement;
+                const formData = new FormData(form);
+                const email = formData.get('email') as string;
+
+                if (!email) return;
+
+                try {
+                  await fetch('/api/waitlist', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email }),
+                  });
+                  // Simple success feedback - could enhance this
+                  (form.querySelector('button') as HTMLButtonElement).textContent = 'Added!';
+                  (form.querySelector('input') as HTMLInputElement).value = '';
+                } catch (error) {
+                  console.error('Waitlist error:', error);
+                }
+              }}>
+              <input type="email" name="email" placeholder="your@email.com" className="nex-input-dark flex-1" required />
               <button type="submit" className="btn-acid whitespace-nowrap">Get 10% Off</button>
             </motion.form>
             <p className="mt-5 text-xs" style={{ color: "rgba(138,128,117,0.55)" }}>
