@@ -335,17 +335,17 @@ export default function ProductDetail({ product, related }: Props) {
               initial={{ opacity: 0, scale: 0.8, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.5 }}
+              className="relative"
               style={{
                 height: "400px",
-                width: "200px",
+                width: "280px",
                 filter: `drop-shadow(0 20px 60px ${product.accentColor}30)`,
               }}
             >
-              <ProductVial
-                productName={product.name}
-                dosage={product.dosages?.[0]?.size || product.size}
-                category={product.category}
-                accentColor={product.accentColor}
+              <img
+                src={product.penAvailable ? "/products/pen-hero-1.png" : "/products/vial-hero-1.png"}
+                alt={`${product.name} - ${product.penAvailable ? 'Pre-loaded Pen' : 'Lyophilized Vial'}`}
+                className="w-full h-full object-contain"
               />
             </motion.div>
           </div>

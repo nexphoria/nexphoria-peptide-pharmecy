@@ -176,12 +176,11 @@ export default function Timeline({ product, className = "" }: TimelineProps) {
     >
       {/* Background pattern */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.03]"
+        className="absolute inset-0 pointer-events-none opacity-[0.08]"
         style={{
-          backgroundImage: "url(/dna-pattern.png)",
-          backgroundSize: "400px auto",
-          backgroundRepeat: "repeat",
-          filter: "invert(1)",
+          backgroundImage: "url(/brand/cell-pattern-1.png)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       />
 
