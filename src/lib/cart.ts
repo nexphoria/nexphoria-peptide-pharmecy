@@ -9,7 +9,9 @@ export interface CartItem {
     size: string;
     price: number;
   };
-  format: 'vial' | 'pen'; // vial is default, pen if penAvailable and selected
+  format: 'vial' | 'pen';
+  subscriptionMonths: number; // 1, 3, or 6
+  monthlyPrice: number; // price per month after discount
 }
 
 interface CartState {
@@ -17,7 +19,7 @@ interface CartState {
   isOpen: boolean;
 
   // Actions
-  addItem: (product: Product, format?: 'vial' | 'pen', selectedDosage?: { size: string; price: number }) => void;
+  addItem: (product: Product, format?: 'vial' | 'pen', selectedDosage?: { size: string; price: number }, subscriptionMonths?: number) => void;
   removeItem: (productSlug: string, format: 'vial' | 'pen') => void;
   updateQuantity: (productSlug: string, format: 'vial' | 'pen', quantity: number) => void;
   clearCart: () => void;
@@ -38,7 +40,7 @@ export const useCart = create<CartState>()(
       items: [],
       isOpen: false,
 
-      addItem: (product, format = 'vial', selectedDosage) => {
+      addItem: (product, format = 'vial', selectedDosage, subscriptionMonths = 1) => {
         const existingItemIndex = get().items.findIndex(
           item => item.product.slug === product.slug && item.format === format
         );
@@ -62,12 +64,17 @@ export const useCart = create<CartState>()(
           itemPrice = product.penPrice;
         }
 
+        // Apply subscription discount
+        const discountMap: Record<number, number> = { 1: 0, 3: 14, 6: 28 };
+        const discount = discountMap[subscriptionMonths] || 0;
+        const monthlyPrice = Math.round(itemPrice * (1 - discount / 100));
+
         if (existingItemIndex >= 0) {
           // Update existing item
           set(state => ({
             items: state.items.map((item, index) =>
               index === existingItemIndex
-                ? { ...item, quantity: item.quantity + 1 }
+                ? { ...item, quantity: item.quantity + 1, subscriptionMonths, monthlyPrice }
                 : item
             )
           }));
@@ -78,7 +85,9 @@ export const useCart = create<CartState>()(
               product,
               quantity: 1,
               selectedDosage: dosageInfo,
-              format
+              format,
+              subscriptionMonths,
+              monthlyPrice
             }]
           }));
         }
@@ -125,19 +134,7 @@ export const useCart = create<CartState>()(
 
       getTotalPrice: () => {
         return get().items.reduce((total, item) => {
-          let itemPrice = item.product.price;
-
-          // Use selected dosage price if available
-          if (item.selectedDosage) {
-            itemPrice = item.selectedDosage.price;
-          }
-
-          // Use pen price if pen format
-          if (item.format === 'pen' && item.product.penAvailable) {
-            itemPrice = item.product.penPrice;
-          }
-
-          return total + (itemPrice * item.quantity);
+          return total + (item.monthlyPrice * item.quantity * item.subscriptionMonths);
         }, 0);
       },
 

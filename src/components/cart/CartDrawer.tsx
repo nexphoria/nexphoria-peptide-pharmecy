@@ -314,10 +314,11 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                       const cartItems = items.map(item => ({
                         productSlug: item.product.slug,
                         name: item.product.name,
-                        price: item.selectedDosage?.price || (item.format === 'pen' ? item.product.penPrice : item.product.price),
+                        price: item.monthlyPrice || item.selectedDosage?.price || (item.format === 'pen' ? item.product.penPrice : item.product.price),
                         quantity: item.quantity,
                         size: item.selectedDosage?.size || item.product.size,
                         format: item.format,
+                        subscriptionMonths: item.subscriptionMonths || 1,
                       }));
                       const res = await fetch('/api/checkout', {
                         method: 'POST',

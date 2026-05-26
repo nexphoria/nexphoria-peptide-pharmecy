@@ -2,15 +2,27 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Plus, Minus, Check, ShoppingCart, Shield, FlaskConical, Truck } from "lucide-react";
+import { Plus, Minus, Check, ShoppingCart, Shield, FlaskConical, Truck, RefreshCw } from "lucide-react";
 import { useCart } from "@/lib/cart";
 import { Product, ProductDosage } from "@/lib/products";
-import { getSavingsPercentage } from "@/lib/cart";
 
 interface BuyBoxProps {
   product: Product;
   className?: string;
 }
+
+type SubscriptionTier = {
+  months: number;
+  label: string;
+  discount: number; // percentage off
+  badge?: string;
+};
+
+const subscriptionTiers: SubscriptionTier[] = [
+  { months: 1, label: "1 Month Supply", discount: 0 },
+  { months: 3, label: "3 Month Supply", discount: 14, badge: "Save 14%" },
+  { months: 6, label: "6 Month Supply", discount: 28, badge: "Best Value" },
+];
 
 export default function BuyBox({ product, className = "" }: BuyBoxProps) {
   const { addItem, openDrawer } = useCart();
@@ -18,31 +30,25 @@ export default function BuyBox({ product, className = "" }: BuyBoxProps) {
   const [selectedDosage, setSelectedDosage] = useState<ProductDosage | undefined>(
     product.dosages?.[0] || undefined
   );
+  const [selectedTier, setSelectedTier] = useState<SubscriptionTier>(subscriptionTiers[2]); // Default to best value
   const [quantity, setQuantity] = useState(1);
 
-  // Determine current price based on selections
-  const getCurrentPrice = () => {
+  // Base price based on format/dosage
+  const getBasePrice = () => {
     if (selectedFormat === 'pen' && product.penAvailable) {
       return product.penPrice;
     }
     return selectedDosage?.price || product.price;
   };
 
-  const currentPrice = getCurrentPrice();
-  const totalPrice = currentPrice * quantity;
-
-  // Calculate savings for larger dosages
-  const getSavings = (dosage: ProductDosage) => {
-    if (!product.dosages || product.dosages.length < 2) return 0;
-    const basePrice = product.dosages[0].price;
-    const pricePerUnit = dosage.price / parseFloat(dosage.size.replace('mg', ''));
-    const basePricePerUnit = basePrice / parseFloat(product.dosages[0].size.replace('mg', ''));
-    return Math.max(0, Math.round(((basePricePerUnit - pricePerUnit) / basePricePerUnit) * 100));
-  };
+  const basePrice = getBasePrice();
+  const discountedPrice = Math.round(basePrice * (1 - selectedTier.discount / 100));
+  const monthlyPrice = discountedPrice;
+  const totalPrice = monthlyPrice * selectedTier.months * quantity;
 
   const handleAddToCart = () => {
-    addItem(product, selectedFormat, selectedDosage);
-    openDrawer(); // Open cart drawer to show the added item
+    addItem(product, selectedFormat, selectedDosage, selectedTier.months);
+    openDrawer();
   };
 
   const handleQuantityChange = (delta: number) => {
@@ -69,24 +75,28 @@ export default function BuyBox({ product, className = "" }: BuyBoxProps) {
           backgroundColor: "var(--dark-card)"
         }}
       >
-        {/* Format Selection (Vial/Pen) */}
-        {product.penAvailable && (
-          <div
-            className="p-6 border-b"
-            style={{ borderColor: "var(--dark-border)" }}
-          >
-            <h3 className="text-sm font-semibold text-primary mb-3 uppercase tracking-wide">
-              Format
-            </h3>
-            <div className="grid grid-cols-2 gap-2">
-              {(['vial', 'pen'] as const).map((format) => (
+        {/* Format Selection (Vial/Pen) — ALWAYS SHOWN */}
+        <div
+          className="p-6 border-b"
+          style={{ borderColor: "var(--dark-border)" }}
+        >
+          <h3 className="text-sm font-semibold text-primary mb-3 uppercase tracking-wide">
+            Format
+          </h3>
+          <div className="grid grid-cols-2 gap-2">
+            {(['vial', 'pen'] as const).map((format) => {
+              const isAvailable = format === 'vial' || product.penAvailable;
+              return (
                 <button
                   key={format}
-                  onClick={() => setSelectedFormat(format)}
+                  onClick={() => isAvailable && setSelectedFormat(format)}
+                  disabled={!isAvailable}
                   className={`p-3 rounded-lg border transition-all duration-200 text-left ${
-                    selectedFormat === format
-                      ? 'border-acid-green bg-acid-green/10'
-                      : 'border-dark-border hover:border-dark-border-hover'
+                    !isAvailable
+                      ? 'opacity-40 cursor-not-allowed border-dark-border'
+                      : selectedFormat === format
+                        ? 'border-acid-green bg-acid-green/10'
+                        : 'border-dark-border hover:border-dark-border-hover'
                   }`}
                 >
                   <div className="flex items-center justify-between">
@@ -98,15 +108,15 @@ export default function BuyBox({ product, className = "" }: BuyBoxProps) {
                         {format === 'vial' ? 'Lyophilized' : 'Pre-loaded'}
                       </div>
                     </div>
-                    {selectedFormat === format && (
+                    {selectedFormat === format && isAvailable && (
                       <Check className="w-4 h-4 text-acid-green" />
                     )}
                   </div>
                 </button>
-              ))}
-            </div>
+              );
+            })}
           </div>
-        )}
+        </div>
 
         {/* Dosage Selection */}
         {selectedFormat === 'vial' && product.dosages && product.dosages.length > 1 && (
@@ -118,49 +128,107 @@ export default function BuyBox({ product, className = "" }: BuyBoxProps) {
               Dosage
             </h3>
             <div className="space-y-2">
-              {product.dosages.map((dosage) => {
-                const savings = getSavings(dosage);
-                return (
-                  <button
-                    key={dosage.size}
-                    onClick={() => setSelectedDosage(dosage)}
-                    className={`w-full p-4 rounded-lg border transition-all duration-200 text-left ${
-                      selectedDosage?.size === dosage.size
-                        ? 'border-acid-green bg-acid-green/10'
-                        : 'border-dark-border hover:border-dark-border-hover'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className="text-sm font-medium text-primary">
-                          {dosage.size}
-                        </div>
-                        <div className="text-lg font-bold text-primary">
-                          ${dosage.price}
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        {savings > 0 && (
-                          <span className="badge-savings text-xs px-2 py-1">
-                            Save {savings}%
-                          </span>
-                        )}
-                        {selectedDosage?.size === dosage.size && (
-                          <Check className="w-4 h-4 text-acid-green" />
-                        )}
-                      </div>
+              {product.dosages.map((dosage) => (
+                <button
+                  key={dosage.size}
+                  onClick={() => setSelectedDosage(dosage)}
+                  className={`w-full p-3 rounded-lg border transition-all duration-200 text-left ${
+                    selectedDosage?.size === dosage.size
+                      ? 'border-acid-green bg-acid-green/10'
+                      : 'border-dark-border hover:border-dark-border-hover'
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium text-primary">{dosage.size}</span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm font-bold text-primary">${dosage.price}</span>
+                      {selectedDosage?.size === dosage.size && (
+                        <Check className="w-4 h-4 text-acid-green" />
+                      )}
                     </div>
-                  </button>
-                );
-              })}
+                  </div>
+                </button>
+              ))}
             </div>
           </div>
         )}
 
-        {/* Quantity & Price */}
+        {/* Subscription Tier Selection ⭐ KEY FEATURE */}
+        <div
+          className="p-6 border-b"
+          style={{ borderColor: "var(--dark-border)" }}
+        >
+          <div className="flex items-center gap-2 mb-3">
+            <RefreshCw className="w-4 h-4 text-acid-green" />
+            <h3 className="text-sm font-semibold text-primary uppercase tracking-wide">
+              Subscribe & Save
+            </h3>
+          </div>
+          <div className="space-y-2">
+            {subscriptionTiers.map((tier) => {
+              const tierPrice = Math.round(basePrice * (1 - tier.discount / 100));
+              const isSelected = selectedTier.months === tier.months;
+              return (
+                <button
+                  key={tier.months}
+                  onClick={() => setSelectedTier(tier)}
+                  className={`w-full p-4 rounded-lg border transition-all duration-200 text-left relative ${
+                    isSelected
+                      ? 'border-acid-green bg-acid-green/10'
+                      : 'border-dark-border hover:border-dark-border-hover'
+                  }`}
+                >
+                  {/* Best Value badge */}
+                  {tier.badge === "Best Value" && (
+                    <span className="absolute -top-2 right-3 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-acid-green text-dark">
+                      Best Value
+                    </span>
+                  )}
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      {/* Radio indicator */}
+                      <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors ${
+                        isSelected ? 'border-acid-green' : 'border-dark-border-hover'
+                      }`}>
+                        {isSelected && (
+                          <div className="w-2.5 h-2.5 rounded-full bg-acid-green" />
+                        )}
+                      </div>
+                      <div>
+                        <div className="text-sm font-medium text-primary">
+                          {tier.label}
+                        </div>
+                        {tier.discount > 0 && (
+                          <div className="text-xs text-acid-green font-medium">
+                            Save {tier.discount}%
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      {tier.discount > 0 && (
+                        <div className="text-xs text-secondary line-through">
+                          ${basePrice}/mo
+                        </div>
+                      )}
+                      <div className="text-lg font-bold text-primary">
+                        ${tierPrice}<span className="text-xs text-secondary font-normal">/mo</span>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+          <p className="text-xs text-tertiary mt-3">
+            Auto-ships monthly. Cancel or modify anytime. Free shipping on 3+ month plans.
+          </p>
+        </div>
+
+        {/* Quantity & Price Summary */}
         <div className="p-6">
           {/* Quantity Selector */}
-          <div className="mb-6">
+          <div className="mb-5">
             <label className="text-sm font-semibold text-primary mb-3 block uppercase tracking-wide">
               Quantity
             </label>
@@ -185,40 +253,56 @@ export default function BuyBox({ product, className = "" }: BuyBoxProps) {
           </div>
 
           {/* Price Summary */}
-          <div className="mb-6">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-secondary">Unit Price</span>
-              <span className="text-sm text-primary">${currentPrice}</span>
+          <div className="mb-6 p-4 rounded-lg" style={{ backgroundColor: "var(--dark-panel)" }}>
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-sm text-secondary">Monthly</span>
+              <span className="text-sm text-primary">${monthlyPrice}/mo × {selectedTier.months} months</span>
             </div>
             {quantity > 1 && (
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm text-secondary">Quantity</span>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-sm text-secondary">Qty</span>
                 <span className="text-sm text-primary">×{quantity}</span>
               </div>
             )}
+            {selectedTier.discount > 0 && (
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-sm text-acid-green">You save</span>
+                <span className="text-sm text-acid-green font-medium">
+                  -${(basePrice * selectedTier.months * quantity - totalPrice).toFixed(0)}
+                </span>
+              </div>
+            )}
             <div
-              className="flex items-center justify-between pt-3 border-t"
+              className="flex items-center justify-between pt-3 mt-2 border-t"
               style={{ borderColor: "var(--dark-border)" }}
             >
-              <span className="text-lg font-semibold text-primary">Total</span>
+              <span className="text-base font-semibold text-primary">Total today</span>
               <span className="text-2xl font-bold text-acid-green">
-                ${totalPrice.toFixed(2)}
+                ${totalPrice.toFixed(0)}
               </span>
             </div>
           </div>
 
-          {/* Add to Cart Button */}
+          {/* Subscribe Button */}
           <button
             onClick={handleAddToCart}
-            className="btn-acid w-full justify-center mb-6 text-sm font-bold uppercase tracking-wide"
+            className="btn-acid w-full justify-center mb-4 text-sm font-bold uppercase tracking-wide"
             style={{ height: "52px" }}
           >
             <ShoppingCart className="w-4 h-4" />
-            ADD TO CART
+            SUBSCRIBE NOW
+          </button>
+
+          {/* One-time purchase option */}
+          <button
+            onClick={handleAddToCart}
+            className="w-full py-3 text-center text-sm text-secondary hover:text-primary border border-dark-border hover:border-dark-border-hover rounded-lg transition-colors"
+          >
+            Or buy one-time — ${basePrice}
           </button>
 
           {/* Trust Badges */}
-          <div className="space-y-2">
+          <div className="mt-6 space-y-2">
             {trustBadges.map((badge, index) => {
               const Icon = badge.icon;
               return (
@@ -241,8 +325,7 @@ export default function BuyBox({ product, className = "" }: BuyBoxProps) {
             style={{ borderColor: "var(--dark-border)" }}
           >
             <p className="text-xs text-tertiary leading-relaxed">
-              This product is intended for qualified research use only. Not for human consumption,
-              diagnostic, or therapeutic use.
+              For qualified research use only. Not for human consumption. Cancel subscription anytime.
             </p>
           </div>
         </div>
