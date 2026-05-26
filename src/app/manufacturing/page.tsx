@@ -57,10 +57,10 @@ const standards = [
 
 export default function ManufacturingPage() {
   return (
-    <div style={{ backgroundColor: "var(--ceramic)" }} className="min-h-screen">
+    <div className="min-h-screen bg-dark">
 
       {/* Hero */}
-      <section className="relative pt-36 pb-24 border-b overflow-hidden" style={{ borderColor: "var(--border-subtle)" }}>
+      <section className="relative pt-36 pb-24 border-b overflow-hidden" style={{ borderColor: "var(--dark-border)" }}>
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -79,15 +79,15 @@ export default function ManufacturingPage() {
                 fontFamily: "var(--font-playfair, Georgia, serif)",
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",
                 lineHeight: 1.1,
-                color: "var(--charcoal)",
+                color: "#FDFCF8",
               }}
             >
               Built to{" "}
-              <em className="italic" style={{ color: "var(--gold)" }}>Pharmaceutical</em>
+              <em className="italic" style={{ color: "var(--acid-green)" }}>Pharmaceutical</em>
               <br />
               Standards
             </h1>
-            <p className="text-lg max-w-2xl leading-relaxed" style={{ color: "var(--grey-olive)" }}>
+            <p className="text-lg max-w-2xl leading-relaxed text-secondary">
               Every Nexphoria compound is synthesized, purified, and released through a rigorous
               cGMP-aligned manufacturing process. No batch reaches your lab without passing our
               six-stage quality framework.
@@ -108,7 +108,7 @@ export default function ManufacturingPage() {
               style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontWeight: 400 }}
             >
               We impose pharmaceutical-grade manufacturing controls on research compounds because{" "}
-              <em className="italic" style={{ color: "var(--gold)" }}>
+              <em className="italic" style={{ color: "var(--acid-green)" }}>
                 the integrity of your research depends on the integrity of your reagents.
               </em>
             </p>
@@ -117,7 +117,7 @@ export default function ManufacturingPage() {
       </section>
 
       {/* Process steps */}
-      <section className="py-28 border-b" style={{ borderColor: "var(--border-subtle)" }}>
+      <section className="py-28 border-b" style={{ borderColor: "var(--dark-border)" }}>
         <div className="container-nex">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
@@ -129,26 +129,26 @@ export default function ManufacturingPage() {
               style={{
                 fontFamily: "var(--font-playfair, Georgia, serif)",
                 fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
-                color: "var(--charcoal)",
+                color: "#FDFCF8",
               }}
             >
               From Synthesis to{" "}
-              <em className="italic" style={{ color: "var(--gold)" }}>Your Lab</em>
+              <em className="italic" style={{ color: "var(--acid-green)" }}>Your Lab</em>
             </h2>
           </motion.div>
 
-          <div className="space-y-0 border-t" style={{ borderColor: "var(--border-subtle)" }}>
+          <div className="space-y-0 border-t" style={{ borderColor: "var(--dark-border)" }}>
             {steps.map((step, i) => (
               <motion.div
                 key={step.step}
                 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.07}
                 className="grid md:grid-cols-[120px_1fr] gap-8 py-10 border-b items-start"
-                style={{ borderColor: "var(--border-subtle)" }}
+                style={{ borderColor: "var(--dark-border)" }}
               >
                 <div className="flex items-center gap-4">
                   <div
                     className="text-xs font-mono font-medium px-3 py-1.5"
-                    style={{ backgroundColor: "#1A1A18", color: "var(--gold)" }}
+                    style={{ backgroundColor: "#1A1A18", color: "var(--acid-green)" }}
                   >
                     {step.step}
                   </div>
@@ -156,11 +156,11 @@ export default function ManufacturingPage() {
                 <div>
                   <h3
                     className="text-lg font-bold mb-2"
-                    style={{ fontFamily: "var(--font-playfair, Georgia, serif)", color: "var(--charcoal)" }}
+                    style={{ fontFamily: "var(--font-playfair, Georgia, serif)", color: "#FDFCF8" }}
                   >
                     {step.title}
                   </h3>
-                  <p className="text-sm leading-relaxed max-w-2xl" style={{ color: "var(--grey-olive)" }}>
+                  <p className="text-sm leading-relaxed max-w-2xl text-secondary">
                     {step.desc}
                   </p>
                 </div>
@@ -171,7 +171,7 @@ export default function ManufacturingPage() {
       </section>
 
       {/* Quality standards grid */}
-      <section className="py-24 border-b" style={{ backgroundColor: "var(--warm-stone)", borderColor: "var(--border-subtle)" }}>
+      <section className="py-24 border-b" style={{ backgroundColor: "var(--dark-panel)", borderColor: "var(--dark-border)" }}>
         <div className="container-nex">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
@@ -183,7 +183,7 @@ export default function ManufacturingPage() {
               style={{
                 fontFamily: "var(--font-playfair, Georgia, serif)",
                 fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
-                color: "var(--charcoal)",
+                color: "#FDFCF8",
               }}
             >
               Our Standards
@@ -196,17 +196,17 @@ export default function ManufacturingPage() {
                 key={s.code}
                 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.07}
                 className="flex items-start gap-4 p-6 border"
-                style={{ borderColor: "var(--border-subtle)", backgroundColor: "var(--ceramic)" }}
+                style={{ borderColor: "var(--dark-border)", backgroundColor: "var(--dark-card)" }}
               >
                 <div
                   className="text-xs font-mono font-medium px-2 py-1 whitespace-nowrap mt-0.5 flex-shrink-0"
-                  style={{ backgroundColor: "#1A1A18", color: "var(--gold)" }}
+                  style={{ backgroundColor: "#1A1A18", color: "var(--acid-green)" }}
                 >
                   {s.code}
                 </div>
                 <div>
-                  <div className="text-sm font-medium mb-1" style={{ color: "var(--charcoal)" }}>{s.label}</div>
-                  <p className="text-xs leading-relaxed" style={{ color: "var(--grey-olive)" }}>{s.sub}</p>
+                  <div className="text-sm font-medium mb-1" style={{ color: "#FDFCF8" }}>{s.label}</div>
+                  <p className="text-xs leading-relaxed text-secondary">{s.sub}</p>
                 </div>
               </motion.div>
             ))}
@@ -230,9 +230,9 @@ export default function ManufacturingPage() {
               }}
             >
               White-Label &{" "}
-              <em className="italic" style={{ color: "var(--gold)" }}>Custom Packaging</em>
+              <em className="italic" style={{ color: "var(--acid-green)" }}>Custom Packaging</em>
             </h2>
-            <p className="text-lg leading-relaxed mb-8" style={{ color: "var(--grey-olive)" }}>
+            <p className="text-lg leading-relaxed mb-8 text-secondary">
               We produce private-label peptide compounds for qualified distributors, research
               institutions, and branded product lines. Same cGMP standards, your branding.
             </p>
@@ -244,8 +244,8 @@ export default function ManufacturingPage() {
                 "Minimum quantities from 100mg — scalable to gram-scale",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "var(--gold)" }} />
-                  <span className="text-sm" style={{ color: "var(--grey-olive)" }}>{item}</span>
+                  <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "var(--acid-green)" }} />
+                  <span className="text-sm text-secondary">{item}</span>
                 </li>
               ))}
             </ul>
@@ -258,16 +258,16 @@ export default function ManufacturingPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20" style={{ backgroundColor: "var(--warm-stone)" }}>
+      <section className="py-20" style={{ backgroundColor: "var(--dark-panel)" }}>
         <div className="container-nex flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
             <h2
               className="font-bold tracking-tight mb-2"
-              style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: "var(--text-h3)", color: "var(--charcoal)" }}
+              style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: "var(--text-h3)", color: "#FDFCF8" }}
             >
               View the full compound catalog
             </h2>
-            <p className="text-sm" style={{ color: "var(--grey-olive)" }}>
+            <p className="text-sm text-secondary">
               Every compound includes HPLC data, MS confirmation, and third-party COA.
             </p>
           </div>

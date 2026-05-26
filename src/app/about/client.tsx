@@ -52,7 +52,7 @@ const standards = [
 
 export default function AboutClient() {
   return (
-    <div style={{ backgroundColor: "var(--ceramic)" }} className="min-h-screen">
+    <div className="min-h-screen bg-dark">
 
       {/* Hero — scientist-2.jpg or lab-dark.jpg */}
       <section className="relative overflow-hidden" style={{ minHeight: "70vh" }}>
@@ -84,7 +84,7 @@ export default function AboutClient() {
               <br />
               Purity.
               <br />
-              <em className="italic" style={{ color: "var(--gold)" }}>Purpose.</em>
+              <em className="italic" style={{ color: "var(--acid-green)" }}>Purpose.</em>
             </h1>
             <p className="text-lg max-w-xl leading-relaxed" style={{ color: "rgba(253,252,248,0.8)" }}>
               Nexphoria was founded on a singular conviction: that research compounds should meet
@@ -104,12 +104,12 @@ export default function AboutClient() {
           >
             <p
               className="text-2xl md:text-3xl leading-relaxed"
-              style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontWeight: 400, color: "var(--ceramic)" }}
+              style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontWeight: 400, color: "#FDFCF8" }}
             >
               We manufacture exclusively in cGMP-certified facilities, subject every batch to
               independent third-party analytical testing, and provide complete documentation with
               each order.{" "}
-              <em className="italic" style={{ color: "var(--gold)" }}>No exceptions. No shortcuts.</em>
+              <em className="italic" style={{ color: "var(--acid-green)" }}>No exceptions. No shortcuts.</em>
             </p>
           </motion.div>
         </div>
@@ -129,7 +129,7 @@ export default function AboutClient() {
           </div>
           <div
             className="flex flex-col justify-center px-10 py-20 md:px-16 xl:px-24"
-            style={{ backgroundColor: "var(--warm-stone)" }}
+            style={{ backgroundColor: "var(--dark-panel)" }}
           >
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
               <span className="eyebrow mb-6 block">For Qualified Researchers</span>
@@ -138,13 +138,13 @@ export default function AboutClient() {
                 style={{
                   fontFamily: "var(--font-playfair, Georgia, serif)",
                   fontSize: "clamp(2rem, 3.5vw, 3rem)",
-                  color: "var(--charcoal)",
+                  color: "#FDFCF8",
                 }}
               >
                 Research Without{" "}
-                <em className="italic" style={{ color: "var(--gold)" }}>Compromise.</em>
+                <em className="italic" style={{ color: "var(--acid-green)" }}>Compromise.</em>
               </h2>
-              <p className="text-base leading-relaxed mb-8 max-w-md" style={{ color: "var(--grey-olive)" }}>
+              <p className="text-base leading-relaxed mb-8 max-w-md text-secondary">
                 Every Nexphoria compound arrives with full analytical documentation. We believe
                 transparency is not optional — it is the foundation of trustworthy science.
               </p>
@@ -157,7 +157,7 @@ export default function AboutClient() {
       </section>
 
       {/* Principles */}
-      <section className="py-28 border-b" id="standards" style={{ borderColor: "var(--border-subtle)" }}>
+      <section className="py-28 border-b" id="standards" style={{ borderColor: "var(--dark-border)" }}>
         <div className="container-nex">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
@@ -169,7 +169,7 @@ export default function AboutClient() {
               style={{
                 fontFamily: "var(--font-playfair, Georgia, serif)",
                 fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
-                color: "var(--charcoal)",
+                color: "#FDFCF8",
               }}
             >
               What We Stand For
@@ -178,26 +178,26 @@ export default function AboutClient() {
 
           <div
             className="grid md:grid-cols-2 gap-px border"
-            style={{ backgroundColor: "var(--border-subtle)", borderColor: "var(--border-subtle)" }}
+            style={{ backgroundColor: "var(--dark-border)", borderColor: "var(--dark-border)" }}
           >
             {principles.map((v, i) => (
               <motion.div
                 key={v.title}
                 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.1}
                 className="p-8"
-                style={{ backgroundColor: "var(--ceramic)" }}
+                style={{ backgroundColor: "var(--dark-card)" }}
               >
                 <div className="w-10 h-10 mb-6 flex items-center justify-center border"
-                  style={{ borderColor: "var(--border-subtle)" }}>
-                  <v.icon className="w-5 h-5" strokeWidth={1.5} style={{ color: "var(--grey-olive)" }} />
+                  style={{ borderColor: "var(--dark-border)" }}>
+                  <v.icon className="w-5 h-5 text-secondary" strokeWidth={1.5} />
                 </div>
                 <h3
                   className="text-lg font-bold mb-3"
-                  style={{ fontFamily: "var(--font-playfair, Georgia, serif)", color: "var(--charcoal)" }}
+                  style={{ fontFamily: "var(--font-playfair, Georgia, serif)", color: "#FDFCF8" }}
                 >
                   {v.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "var(--grey-olive)" }}>
+                <p className="text-sm leading-relaxed text-secondary">
                   {v.description}
                 </p>
               </motion.div>
@@ -207,7 +207,7 @@ export default function AboutClient() {
       </section>
 
       {/* Founder quote */}
-      <section className="py-24 border-b" style={{ backgroundColor: "var(--warm-stone)", borderColor: "var(--border-subtle)" }}>
+      <section className="py-24 border-b" style={{ backgroundColor: "var(--dark-panel)", borderColor: "var(--dark-border)" }}>
         <div className="container-nex">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
@@ -220,14 +220,14 @@ export default function AboutClient() {
                 style={{
                   fontFamily: "var(--font-playfair, Georgia, serif)",
                   fontWeight: 400,
-                  color: "var(--charcoal)",
+                  color: "#FDFCF8",
                 }}
               >
                 &ldquo;We built Nexphoria because we believed researchers deserve the same quality
                 standards that pharmaceutical manufacturers apply to clinical drugs. Every compound
                 we produce is a commitment to that belief.&rdquo;
               </p>
-              <footer className="text-label" style={{ color: "var(--grey-olive)" }}>
+              <footer className="text-label text-secondary">
                 — Nexphoria Founding Team
               </footer>
             </blockquote>
@@ -248,18 +248,18 @@ export default function AboutClient() {
                 style={{
                   fontFamily: "var(--font-playfair, Georgia, serif)",
                   fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
-                  color: "var(--charcoal)",
+                  color: "#FDFCF8",
                 }}
               >
                 Dare to{" "}
-                <em className="italic" style={{ color: "var(--gold)" }}>Defy</em>
+                <em className="italic" style={{ color: "var(--acid-green)" }}>Defy</em>
               </h2>
-              <p className="text-base leading-relaxed mb-5" style={{ color: "var(--grey-olive)" }}>
+              <p className="text-base leading-relaxed mb-5 text-secondary">
                 The peptide research industry has too long tolerated inconsistency — compounds sold
                 without proper analytical verification, documentation that cannot withstand scientific
                 scrutiny.
               </p>
-              <p className="text-base leading-relaxed mb-10" style={{ color: "var(--grey-olive)" }}>
+              <p className="text-base leading-relaxed mb-10 text-secondary">
                 We set a different standard. Every compound, every batch, every order arrives with
                 the full analytical and documentary infrastructure of a pharmaceutical product.
               </p>
@@ -288,7 +288,7 @@ export default function AboutClient() {
       </section>
 
       {/* Quality standards grid */}
-      <section className="py-24 border-t" style={{ borderColor: "var(--border-subtle)" }}>
+      <section className="py-24 border-t" style={{ borderColor: "var(--dark-border)" }}>
         <div className="container-nex">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
@@ -300,7 +300,7 @@ export default function AboutClient() {
               style={{
                 fontFamily: "var(--font-playfair, Georgia, serif)",
                 fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
-                color: "var(--charcoal)",
+                color: "#FDFCF8",
               }}
             >
               Our Standards
@@ -313,15 +313,15 @@ export default function AboutClient() {
                 key={s.code}
                 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.07}
                 className="flex items-start gap-4 p-6 border"
-                style={{ borderColor: "var(--border-subtle)", backgroundColor: "var(--ceramic)" }}
+                style={{ borderColor: "var(--dark-border)", backgroundColor: "var(--dark-card)" }}
               >
                 <div
                   className="text-xs font-mono font-medium px-2 py-1 whitespace-nowrap mt-0.5 flex-shrink-0"
-                  style={{ backgroundColor: "#1A1A18", color: "var(--gold)" }}
+                  style={{ backgroundColor: "#1A1A18", color: "var(--acid-green)" }}
                 >
                   {s.code}
                 </div>
-                <p className="text-sm leading-relaxed" style={{ color: "var(--grey-olive)" }}>{s.label}</p>
+                <p className="text-sm leading-relaxed text-secondary">{s.label}</p>
               </motion.div>
             ))}
           </div>
@@ -334,11 +334,11 @@ export default function AboutClient() {
           <div>
             <h2
               className="font-bold tracking-tight mb-2"
-              style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: "var(--text-h3)", color: "var(--ceramic)" }}
+              style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: "var(--text-h3)", color: "#FDFCF8" }}
             >
               Ready to browse our catalog?
             </h2>
-            <p className="text-sm" style={{ color: "var(--grey-olive)" }}>
+            <p className="text-sm text-secondary">
               Every compound ships with full COA and technical documentation.
             </p>
           </div>

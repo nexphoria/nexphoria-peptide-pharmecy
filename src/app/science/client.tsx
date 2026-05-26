@@ -123,7 +123,7 @@ const coaFields = [
 
 export default function ScienceClient() {
   return (
-    <div style={{ backgroundColor: "var(--ceramic)" }} className="min-h-screen">
+    <div className="min-h-screen bg-dark">
 
       {/* Hero */}
       <section className="relative overflow-hidden" style={{ minHeight: "60vh" }}>
@@ -149,7 +149,7 @@ export default function ScienceClient() {
               }}
             >
               How We{" "}
-              <em className="italic" style={{ color: "var(--gold)" }}>Verify</em>
+              <em className="italic" style={{ color: "var(--acid-green)" }}>Verify</em>
               <br />
               Every Compound
             </h1>
@@ -169,8 +169,8 @@ export default function ScienceClient() {
           id={method.id}
           className="relative py-20 border-b overflow-hidden"
           style={{
-            borderColor: "var(--border-subtle)",
-            backgroundColor: i % 2 === 1 ? "var(--warm-stone)" : undefined,
+            borderColor: "var(--dark-border)",
+            backgroundColor: i % 2 === 1 ? "var(--dark-panel)" : undefined,
           }}
         >
           {/* Molecular pattern background */}
@@ -188,29 +188,29 @@ export default function ScienceClient() {
               >
                 <div
                   className="inline-flex items-center justify-center font-mono text-sm font-medium px-3 py-1.5 mb-4"
-                  style={{ backgroundColor: "#1A1A18", color: "var(--gold)" }}
+                  style={{ backgroundColor: "#1A1A18", color: "var(--acid-green)" }}
                 >
                   {method.code}
                 </div>
                 <h2
                   className="font-bold tracking-tight mb-2"
-                  style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: "var(--text-h4)", color: "var(--charcoal)" }}
+                  style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: "var(--text-h4)", color: "#FDFCF8" }}
                 >
                   {method.title}
                 </h2>
-                <p className="text-sm mb-8" style={{ color: "var(--grey-olive)" }}>{method.subtitle}</p>
+                <p className="text-sm mb-8 text-secondary">{method.subtitle}</p>
 
-                <div className="border" style={{ borderColor: "var(--border-subtle)" }}>
+                <div className="border" style={{ borderColor: "var(--dark-border)" }}>
                   {method.specs.map(({ label, value }) => (
                     <div
                       key={label}
                       className="flex gap-4 p-4 border-b last:border-0"
-                      style={{ borderColor: "var(--border-subtle)" }}
+                      style={{ borderColor: "var(--dark-border)" }}
                     >
-                      <span className="text-xs uppercase tracking-wider w-24 flex-shrink-0 pt-0.5 font-medium" style={{ color: "var(--grey-olive)" }}>
+                      <span className="text-xs uppercase tracking-wider w-24 flex-shrink-0 pt-0.5 font-medium text-secondary">
                         {label}
                       </span>
-                      <span className="text-xs font-mono flex-1" style={{ color: "var(--charcoal)" }}>{value}</span>
+                      <span className="text-xs font-mono flex-1" style={{ color: "#FDFCF8" }}>{value}</span>
                     </div>
                   ))}
                 </div>
@@ -221,7 +221,7 @@ export default function ScienceClient() {
                 className="lg:col-span-2"
               >
                 {method.body.map((para, j) => (
-                  <p key={j} className="leading-relaxed mb-5 last:mb-0" style={{ color: "var(--grey-olive)" }}>
+                  <p key={j} className="leading-relaxed mb-5 last:mb-0 text-secondary">
                     {para}
                   </p>
                 ))}
@@ -251,7 +251,7 @@ export default function ScienceClient() {
               style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)" }}
             >
               Understanding Peptide{" "}
-              <em className="italic" style={{ color: "var(--gold)" }}>Research Areas</em>
+              <em className="italic" style={{ color: "var(--acid-green)" }}>Research Areas</em>
             </h2>
           </motion.div>
 
@@ -271,7 +271,7 @@ export default function ScienceClient() {
                     <span
                       key={c}
                       className="inline-flex items-center px-2.5 py-1 text-xs font-mono border"
-                      style={{ borderColor: "rgba(201,162,75,0.35)", color: "var(--gold)" }}
+                      style={{ borderColor: "rgba(201,162,75,0.35)", color: "var(--acid-green)" }}
                     >
                       {c}
                     </span>
@@ -283,7 +283,7 @@ export default function ScienceClient() {
                 >
                   {cls.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "var(--grey-olive)" }}>{cls.body}</p>
+                <p className="text-sm leading-relaxed text-secondary">{cls.body}</p>
               </motion.div>
             ))}
           </div>
@@ -291,18 +291,18 @@ export default function ScienceClient() {
       </section>
 
       {/* COA guide */}
-      <section id="coa" className="py-24 border-b" style={{ borderColor: "var(--border-subtle)" }}>
+      <section id="coa" className="py-24 border-b" style={{ borderColor: "var(--dark-border)" }}>
         <div className="container-nex">
           <div className="grid lg:grid-cols-3 gap-12">
             <div>
               <span className="eyebrow mb-4 block">Documentation</span>
               <h2
                 className="font-bold tracking-tight mb-4"
-                style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: "var(--text-h3)", color: "var(--charcoal)" }}
+                style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: "var(--text-h3)", color: "#FDFCF8" }}
               >
                 Reading a COA
               </h2>
-              <p className="text-sm leading-relaxed" style={{ color: "var(--grey-olive)" }}>
+              <p className="text-sm leading-relaxed text-secondary">
                 A Certificate of Analysis is the primary quality document for research compounds.
                 Understanding each field ensures you can verify the compound meets your research
                 specifications.
@@ -311,14 +311,14 @@ export default function ScienceClient() {
             <div className="lg:col-span-2">
               <div className="grid sm:grid-cols-2 gap-4">
                 {coaFields.map((item) => (
-                  <div key={item.field} className="border p-5" style={{ borderColor: "var(--border-subtle)" }}>
+                  <div key={item.field} className="border p-5" style={{ borderColor: "var(--dark-border)" }}>
                     <div
                       className="font-mono text-xs font-semibold mb-2"
-                      style={{ color: "var(--charcoal)" }}
+                      style={{ color: "#FDFCF8" }}
                     >
                       {item.field}
                     </div>
-                    <p className="text-xs leading-relaxed" style={{ color: "var(--grey-olive)" }}>{item.desc}</p>
+                    <p className="text-xs leading-relaxed text-secondary">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -355,7 +355,7 @@ export default function ScienceClient() {
               }}
             >
               Instruments You Can{" "}
-              <em className="italic" style={{ color: "var(--gold)" }}>Trust</em>
+              <em className="italic" style={{ color: "var(--acid-green)" }}>Trust</em>
             </h2>
             <p className="text-sm leading-relaxed max-w-sm" style={{ color: "rgba(253,252,248,0.75)" }}>
               The same analytical instruments used in pharmaceutical drug development verify every
@@ -366,16 +366,16 @@ export default function ScienceClient() {
       </section>
 
       {/* CTA */}
-      <section className="py-20" style={{ backgroundColor: "var(--warm-stone)" }}>
+      <section className="py-20" style={{ backgroundColor: "var(--dark-panel)" }}>
         <div className="container-nex flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
             <h2
               className="font-bold tracking-tight mb-2"
-              style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: "var(--text-h3)", color: "var(--charcoal)" }}
+              style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: "var(--text-h3)", color: "#FDFCF8" }}
             >
               View the full compound catalog
             </h2>
-            <p className="text-sm" style={{ color: "var(--grey-olive)" }}>
+            <p className="text-sm text-secondary">
               Every compound includes HPLC data, MS confirmation, and third-party COA.
             </p>
           </div>

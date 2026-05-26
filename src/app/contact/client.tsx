@@ -74,10 +74,10 @@ export default function ContactClient() {
   };
 
   return (
-    <div style={{ backgroundColor: "var(--ceramic)" }} className="min-h-screen">
+    <div className="min-h-screen bg-dark">
 
       {/* Hero with image0016.jpg side accent */}
-      <section className="relative overflow-hidden border-b" style={{ borderColor: "var(--border-subtle)" }}>
+      <section className="relative overflow-hidden border-b" style={{ borderColor: "var(--dark-border)" }}>
         <div className="grid md:grid-cols-[60fr_40fr]" style={{ minHeight: "380px" }}>
           {/* Text */}
           <div className="pt-36 pb-16 container-nex md:pr-0">
@@ -89,13 +89,13 @@ export default function ContactClient() {
                   fontFamily: "var(--font-playfair, Georgia, serif)",
                   fontSize: "clamp(2.5rem, 5vw, 4rem)",
                   lineHeight: 1.05,
-                  color: "var(--charcoal)",
+                  color: "#FDFCF8",
                 }}
               >
                 Contact{" "}
-                <em className="italic" style={{ color: "var(--gold)" }}>Nexphoria</em>
+                <em className="italic" style={{ color: "var(--acid-green)" }}>Nexphoria</em>
               </h1>
-              <p className="text-lg max-w-xl leading-relaxed" style={{ color: "var(--grey-olive)" }}>
+              <p className="text-lg max-w-xl leading-relaxed text-secondary">
                 Compound inquiries, custom synthesis requests, bulk orders, and documentation
                 questions. Response within 1–2 business days.
               </p>
@@ -112,7 +112,7 @@ export default function ContactClient() {
             />
             <div
               className="absolute inset-0"
-              style={{ background: "linear-gradient(to left, transparent 50%, var(--ceramic) 100%)" }}
+              style={{ background: "linear-gradient(to left, transparent 50%, var(--dark-bg) 100%)" }}
             />
           </div>
         </div>
@@ -129,41 +129,41 @@ export default function ContactClient() {
               className="space-y-10"
             >
               <div>
-                <h3 className="text-label mb-6" style={{ color: "var(--grey-olive)" }}>Contact Details</h3>
+                <h3 className="text-label mb-6 text-secondary">Contact Details</h3>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <Mail className="w-4 h-4 mt-0.5 flex-shrink-0" strokeWidth={1.5} style={{ color: "var(--grey-olive)" }} />
+                    <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 text-secondary" strokeWidth={1.5} />
                     <div>
-                      <div className="text-label mb-1" style={{ color: "var(--grey-olive)" }}>Email</div>
+                      <div className="text-label mb-1 text-secondary">Email</div>
                       <a
                         href="mailto:research@nexphoria.com"
                         className="text-sm transition-colors hover:text-gold"
-                        style={{ color: "var(--charcoal)" }}
+                        style={{ color: "#FDFCF8" }}
                       >
                         research@nexphoria.com
                       </a>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <Clock className="w-4 h-4 mt-0.5 flex-shrink-0" strokeWidth={1.5} style={{ color: "var(--grey-olive)" }} />
+                    <Clock className="w-4 h-4 mt-0.5 flex-shrink-0 text-secondary" strokeWidth={1.5} />
                     <div>
-                      <div className="text-label mb-1" style={{ color: "var(--grey-olive)" }}>Response Time</div>
-                      <p className="text-sm" style={{ color: "var(--charcoal)" }}>1–2 business days</p>
+                      <div className="text-label mb-1 text-secondary">Response Time</div>
+                      <p className="text-sm" style={{ color: "#FDFCF8" }}>1–2 business days</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" strokeWidth={1.5} style={{ color: "var(--grey-olive)" }} />
+                    <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-secondary" strokeWidth={1.5} />
                     <div>
-                      <div className="text-label mb-1" style={{ color: "var(--grey-olive)" }}>Shipping</div>
-                      <p className="text-sm" style={{ color: "var(--charcoal)" }}>United States only</p>
+                      <div className="text-label mb-1 text-secondary">Shipping</div>
+                      <p className="text-sm" style={{ color: "#FDFCF8" }}>United States only</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="border p-6" style={{ borderColor: "var(--border-subtle)" }}>
-                <div className="text-label mb-3" style={{ color: "var(--grey-olive)" }}>Research Verification</div>
-                <p className="text-sm leading-relaxed" style={{ color: "var(--grey-olive)" }}>
+              <div className="border p-6" style={{ borderColor: "var(--dark-border)" }}>
+                <div className="text-label mb-3 text-secondary">Research Verification</div>
+                <p className="text-sm leading-relaxed text-secondary">
                   All orders require verification of researcher or institutional credentials. Please
                   include your institution or license information when submitting.
                 </p>
@@ -174,9 +174,9 @@ export default function ContactClient() {
                 className="border p-6"
                 style={{ borderColor: "rgba(201,162,75,0.3)", backgroundColor: "rgba(201,162,75,0.04)" }}
               >
-                <div className="w-4 h-px mb-3" style={{ backgroundColor: "var(--gold)" }} />
-                <div className="text-label mb-2" style={{ color: "var(--gold)" }}>Partnership Inquiries</div>
-                <p className="text-sm leading-relaxed" style={{ color: "var(--grey-olive)" }}>
+                <div className="w-4 h-px mb-3" style={{ backgroundColor: "var(--acid-green)" }} />
+                <div className="text-label mb-2" style={{ color: "var(--acid-green)" }}>Partnership Inquiries</div>
+                <p className="text-sm leading-relaxed text-secondary">
                   Interested in white-label, bulk synthesis, or distribution partnerships? Select
                   &quot;White Label / Partnership&quot; in the subject field.
                 </p>
@@ -198,11 +198,11 @@ export default function ContactClient() {
                   <div className="w-8 h-px mx-auto mb-6" style={{ backgroundColor: "var(--acid-green)" }} />
                   <h3
                     className="text-2xl font-medium mb-3"
-                    style={{ fontFamily: "var(--font-playfair, Georgia, serif)", color: "var(--charcoal)" }}
+                    style={{ fontFamily: "var(--font-playfair, Georgia, serif)", color: "#FDFCF8" }}
                   >
                     Inquiry Received
                   </h3>
-                  <p className="text-sm max-w-sm mx-auto" style={{ color: "var(--grey-olive)" }}>
+                  <p className="text-sm max-w-sm mx-auto text-secondary">
                     We&apos;ll review your request and respond within 1–2 business days. Research
                     verification may be required prior to order processing.
                   </p>
@@ -216,8 +216,7 @@ export default function ContactClient() {
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label
-                        className="text-label block mb-2"
-                        style={{ color: "var(--grey-olive)" }}
+                        className="text-label block mb-2 text-secondary"
                       >
                         Full Name *
                       </label>
@@ -232,7 +231,7 @@ export default function ContactClient() {
                       />
                     </div>
                     <div>
-                      <label className="text-label block mb-2" style={{ color: "var(--grey-olive)" }}>
+                      <label className="text-label block mb-2 text-secondary">
                         Email *
                       </label>
                       <input
@@ -249,7 +248,7 @@ export default function ContactClient() {
 
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="text-label block mb-2" style={{ color: "var(--grey-olive)" }}>
+                      <label className="text-label block mb-2 text-secondary">
                         Institution / Organization
                       </label>
                       <input
@@ -262,7 +261,7 @@ export default function ContactClient() {
                       />
                     </div>
                     <div>
-                      <label className="text-label block mb-2" style={{ color: "var(--grey-olive)" }}>
+                      <label className="text-label block mb-2 text-secondary">
                         Subject *
                       </label>
                       <select
@@ -281,7 +280,7 @@ export default function ContactClient() {
                   </div>
 
                   <div>
-                    <label className="text-label block mb-2" style={{ color: "var(--grey-olive)" }}>
+                    <label className="text-label block mb-2 text-secondary">
                       Message *
                     </label>
                     <textarea
@@ -317,8 +316,7 @@ export default function ContactClient() {
                     professional. See our{" "}
                     <a
                       href="/legal/disclaimer"
-                      className="underline"
-                      style={{ color: "var(--grey-olive)" }}
+                      className="underline text-secondary"
                     >
                       disclaimer
                     </a>{" "}

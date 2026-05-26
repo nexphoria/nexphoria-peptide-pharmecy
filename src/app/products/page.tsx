@@ -14,11 +14,11 @@ export default function ProductsPage({
   searchParams?: { cat?: string };
 }) {
   return (
-    <div style={{ backgroundColor: "var(--ceramic)" }} className="min-h-screen">
+    <div className="min-h-screen bg-dark">
       {/* Page Hero */}
       <div
         className="relative pt-36 pb-20 border-b overflow-hidden"
-        style={{ borderColor: "var(--border-subtle)" }}
+        style={{ borderColor: "var(--dark-border)" }}
       >
         {/* DNA pattern */}
         <div
@@ -37,14 +37,14 @@ export default function ProductsPage({
             style={{
               fontFamily: "var(--font-playfair, Georgia, serif)",
               fontSize: "clamp(2.5rem, 5vw, 4rem)",
-              color: "var(--charcoal)",
+              color: "#FDFCF8",
               lineHeight: 1.05,
             }}
           >
             Premium Peptide{" "}
-            <em className="italic" style={{ color: "var(--gold)" }}>Products</em>
+            <em className="italic" style={{ color: "var(--acid-green)" }}>Products</em>
           </h1>
-          <p className="max-w-xl leading-relaxed" style={{ color: "var(--grey-olive)" }}>
+          <p className="max-w-xl leading-relaxed text-secondary">
             cGMP-manufactured research compounds. Full Certificate of Analysis and technical
             documentation for every production lot. Available as lyophilized vials or custom-packaged
             for qualified distributors.
@@ -55,26 +55,29 @@ export default function ProductsPage({
       {/* Product Format Cards */}
       <div
         className="border-b py-10"
-        style={{ backgroundColor: "var(--warm-stone)", borderColor: "var(--border-subtle)" }}
+        style={{ backgroundColor: "var(--dark-panel)", borderColor: "var(--dark-border)" }}
       >
         <div className="container-nex">
           <div className="grid md:grid-cols-2 gap-5">
             {[
               {
-                image: "/images/5-pills-mockup-copy.jpg",
+                image: "/products/vial-hero-1.png",
                 title: "Capsules & Vials",
                 desc: "Lyophilized powder in pharmaceutical-grade sealed vials. Multiple delivery formats for every research need.",
               },
               {
-                image: "/images/bendito_mockup-n-box-copy.jpg",
+                image: "/products/packaging-1.png",
                 title: "Custom Packaging",
                 desc: "White-label solutions with your brand identity. Ready for qualified distributors and institutional partners.",
               },
             ].map((card) => (
               <div
                 key={card.title}
-                className="flex items-stretch border overflow-hidden group cursor-pointer transition-all duration-300 hover:border-[var(--gold)]"
-                style={{ borderColor: "var(--border-subtle)", backgroundColor: "var(--ceramic)" }}
+                className="flex items-stretch border overflow-hidden group cursor-pointer transition-all duration-300 hover:border-acid-green"
+                style={{
+                  borderColor: "var(--dark-border)",
+                  backgroundColor: "var(--dark-card)"
+                }}
               >
                 {/* Image area */}
                 <div className="w-36 flex-shrink-0 relative overflow-hidden">
@@ -88,14 +91,14 @@ export default function ProductsPage({
                 </div>
                 {/* Text */}
                 <div className="p-5 flex flex-col justify-center">
-                  <div className="w-4 h-px mb-3" style={{ backgroundColor: "var(--gold)" }} />
+                  <div className="w-4 h-px mb-3" style={{ backgroundColor: "var(--acid-green)" }} />
                   <h3
-                    className="text-base font-bold mb-1.5"
-                    style={{ fontFamily: "var(--font-playfair, Georgia, serif)", color: "var(--charcoal)" }}
+                    className="text-base font-bold mb-1.5 text-primary"
+                    style={{ fontFamily: "var(--font-playfair, Georgia, serif)" }}
                   >
                     {card.title}
                   </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "var(--grey-olive)" }}>
+                  <p className="text-sm leading-relaxed text-secondary">
                     {card.desc}
                   </p>
                 </div>
