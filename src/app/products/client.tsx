@@ -103,8 +103,8 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                       <div className="flex items-end justify-between mb-5">
                         <div>
                           <div className="text-xs mb-1 text-secondary">Stack price</div>
-                          <div className="text-3xl font-bold text-acid-green"
-                            style={{ fontFamily: "var(--font-display)" }}>
+                          <div className="text-3xl font-bold"
+                            style={{ fontFamily: "var(--font-display)", color: "#010101" }}>
                             ${bundle.totalPrice}
                           </div>
                         </div>
@@ -212,8 +212,8 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                       </div>
                       <div className="flex items-center justify-between mb-5">
                         <div>
-                          <div className="text-2xl font-bold text-acid-green"
-                            style={{ fontFamily: "var(--font-display)" }}>
+                          <div className="text-2xl font-bold"
+                            style={{ fontFamily: "var(--font-display)", color: "#010101" }}>
                             ${bundle.totalPrice}
                           </div>
                           <div className="text-xs text-secondary">Stack total</div>

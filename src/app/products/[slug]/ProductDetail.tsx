@@ -91,8 +91,8 @@ function ProductFAQ({ product }: { product: Product }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="border border-dark-border rounded-lg overflow-hidden"
-                style={{ backgroundColor: "var(--dark-card)" }}
+                className="border border rounded-lg overflow-hidden"
+                style={{ backgroundColor: "#FFFFFF" }}
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
@@ -153,7 +153,7 @@ function ProcessSteps() {
   ];
 
   return (
-    <section className="py-20" style={{ backgroundColor: "var(--dark-panel)" }}>
+    <section className="py-20" style={{ backgroundColor: "#F5F3F0" }}>
       <div className="container-nex">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -217,7 +217,7 @@ function MechanismSection({ product }: { product: Product }) {
               </p>
 
               {/* Molecular specs */}
-              <div className="bg-dark-card border border-dark-border rounded-lg p-6">
+              <div className="border rounded-lg p-6">
                 <h3 className="text-sm font-semibold uppercase tracking-wide text-acid-green mb-4">
                   Molecular Data
                 </h3>
@@ -252,8 +252,8 @@ function MechanismSection({ product }: { product: Product }) {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="border border-dark-border rounded-lg p-6"
-                style={{ backgroundColor: "var(--dark-card)" }}
+                className="border border rounded-lg p-6"
+                style={{ backgroundColor: "#FFFFFF" }}
               >
                 <div className="flex items-start gap-4">
                   <div
@@ -284,8 +284,8 @@ function MechanismSection({ product }: { product: Product }) {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="border border-dark-border-hover rounded-lg p-6"
-              style={{ backgroundColor: "var(--dark-panel)" }}
+              className="border border-hover rounded-lg p-6"
+              style={{ backgroundColor: "#F5F3F0" }}
             >
               <h3 className="text-lg font-semibold text-primary mb-3">
                 Complete Mechanism of Action
@@ -340,7 +340,7 @@ function ResearchPapersSection({ product }: { product: Product }) {
   ];
 
   return (
-    <section className="py-20" style={{ backgroundColor: "var(--dark-panel)" }}>
+    <section className="py-20" style={{ backgroundColor: "#F5F3F0" }}>
       <div className="container-nex">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -365,8 +365,8 @@ function ResearchPapersSection({ product }: { product: Product }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="border border-dark-border rounded-lg p-6 hover:border-dark-border-hover transition-colors"
-              style={{ backgroundColor: "var(--dark-card)" }}
+              className="border border rounded-lg p-6 hover:border-hover transition-colors"
+              style={{ backgroundColor: "#FFFFFF" }}
             >
               <div className="mb-4">
                 <span className="text-xs font-medium text-acid-green uppercase tracking-wide">
@@ -387,7 +387,7 @@ function ResearchPapersSection({ product }: { product: Product }) {
                   <span className="text-secondary">DOI:</span> {paper.doi}
                 </div>
               </div>
-              <div className="mt-4 pt-4 border-t border-dark-border">
+              <div className="mt-4 pt-4 border-t border">
                 <span className="text-xs text-tertiary font-medium">
                   Available via DOI reference above
                 </span>
@@ -428,7 +428,7 @@ function DosageGuideSection({ product }: { product: Product }) {
               </p>
 
               {/* Storage requirements */}
-              <div className="bg-dark-card border border-dark-border rounded-lg p-6">
+              <div className="border rounded-lg p-6">
                 <h3 className="text-sm font-semibold uppercase tracking-wide text-acid-green mb-4">
                   Storage Requirements
                 </h3>
@@ -527,7 +527,7 @@ function DosageGuideSection({ product }: { product: Product }) {
               </div>
 
               {/* Reconstitution details */}
-              <div className="mt-8 p-6 bg-dark-panel border border-dark-border rounded-lg">
+              <div className="mt-8 p-6 bg-dark-panel border border rounded-lg">
                 <h4 className="text-sm font-semibold uppercase tracking-wide text-secondary mb-4">
                   Technical Details
                 </h4>
@@ -547,13 +547,14 @@ export default function ProductDetail({ product, related }: Props) {
   const [selectedFormat, setSelectedFormat] = useState<'vial' | 'pen'>('vial');
 
   return (
-    <div className="bg-dark text-primary min-h-screen">
+    <div className="bg-cream text-primary min-h-screen">
       {/* Back Navigation */}
-      <div className="pt-20 pb-4 border-b border-dark-border">
+      <div className="pt-20 pb-4 border-b" style={{ borderColor: "var(--border-subtle)" }}>
         <div className="container-nex">
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 text-sm text-secondary hover:text-primary transition-colors"
+            className="inline-flex items-center gap-2 text-sm hover:text-near-black transition-colors"
+            style={{ color: "#7F7F7D" }}
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Products
@@ -570,7 +571,7 @@ export default function ProductDetail({ product, related }: Props) {
             <div className="relative order-2 lg:order-1 w-full">
               {/* Format Toggle Tabs - Above Image */}
               <div className="mb-6">
-                <div className="flex gap-2 p-1 bg-dark-card rounded-lg border border-dark-border inline-flex">
+                <div className="flex gap-2 p-1 bg-dark-card rounded-lg border border inline-flex">
                   <button
                     onClick={() => setSelectedFormat('vial')}
                     className={`px-6 py-3 text-xs font-semibold uppercase tracking-wide transition-all rounded ${
@@ -670,7 +671,7 @@ export default function ProductDetail({ product, related }: Props) {
               {/* Product Info */}
               <div>
                 {/* Category Badge */}
-                <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wide border border-dark-border-hover text-secondary rounded-full mb-4">
+                <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wide border border-hover text-secondary rounded-full mb-4">
                   {product.category}
                 </span>
 
@@ -688,7 +689,7 @@ export default function ProductDetail({ product, related }: Props) {
                 </p>
 
                 {/* Research Disclaimer */}
-                <div className="flex items-start gap-3 p-4 border border-dark-border rounded-lg mb-8 w-full" style={{ backgroundColor: "var(--dark-card)" }}>
+                <div className="flex items-start gap-3 p-4 border border rounded-lg mb-8 w-full" style={{ backgroundColor: "#FFFFFF" }}>
                   <Shield className="w-5 h-5 text-acid-green flex-shrink-0 mt-0.5" />
                   <div className="min-w-0 flex-1">
                     <p className="text-sm text-secondary leading-relaxed">
@@ -712,7 +713,7 @@ export default function ProductDetail({ product, related }: Props) {
       </section>
 
       {/* How It Arrives Section */}
-      <section className="py-16 border-t border-dark-border" style={{ backgroundColor: "var(--dark-panel)" }}>
+      <section className="py-16 border-t border" style={{ backgroundColor: "#F5F3F0" }}>
         <div className="container-nex">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -851,7 +852,7 @@ export default function ProductDetail({ product, related }: Props) {
               </div>
 
               {/* Trust indicators */}
-              <div className="mt-8 pt-6 border-t border-dark-border">
+              <div className="mt-8 pt-6 border-t border">
                 <div className="grid grid-cols-3 gap-4 text-center">
                   <div>
                     <div className="text-2xl font-bold text-acid-green" style={{ fontFamily: "var(--font-display)" }}>
@@ -901,7 +902,7 @@ export default function ProductDetail({ product, related }: Props) {
 
       {/* Related Products: "YOU MAY ALSO NEED" */}
       {related.length > 0 && (
-        <section className="py-20" style={{ backgroundColor: "var(--dark-panel)" }}>
+        <section className="py-20" style={{ backgroundColor: "#F5F3F0" }}>
           <div className="container-nex">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -939,7 +940,7 @@ export default function ProductDetail({ product, related }: Props) {
       )}
 
       {/* Research Use Disclaimer Banner */}
-      <section className="py-8 border-t border-dark-border" style={{ backgroundColor: "var(--dark-bg)" }}>
+      <section className="py-8 border-t border" style={{ backgroundColor: "var(--dark-bg)" }}>
         <div className="container-nex">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-xs leading-relaxed text-tertiary">

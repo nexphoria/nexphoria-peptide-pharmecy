@@ -13,26 +13,26 @@ export default function ProductsPage({
   searchParams?: { cat?: string };
 }) {
   return (
-    <div className="min-h-screen bg-dark">
+    <div className="min-h-screen bg-cream">
       {/* Page Hero */}
       <div
         className="pt-36 pb-16 border-b"
-        style={{ backgroundColor: "var(--dark-bg)", borderColor: "var(--dark-border)" }}
+        style={{ backgroundColor: "#F5F3F0", borderColor: "var(--border-subtle)" }}
       >
         <div className="container-nex">
-          <span className="eyebrow mb-5 block">Research Compounds</span>
+          <span className="eyebrow mb-5 block" style={{ color: "#C9A24B" }}>Research Compounds</span>
           <h1
             className="font-bold tracking-tight mb-4"
             style={{
               fontFamily: "var(--font-display)",
               fontSize: "clamp(2.5rem, 5vw, 4rem)",
-              color: "#FDFCF8",
+              color: "#010101",
               lineHeight: 1.05,
             }}
           >
             The Catalog
           </h1>
-          <p className="max-w-xl leading-relaxed text-secondary">
+          <p className="max-w-xl leading-relaxed" style={{ color: "#7F7F7D" }}>
             cGMP-manufactured research compounds. Full Certificate of Analysis and technical
             documentation for every production lot. Available as lyophilized vials ready for research.
           </p>
@@ -40,9 +40,9 @@ export default function ProductsPage({
       </div>
 
       {/* Research disclaimer */}
-      <div className="border-b" style={{ backgroundColor: "#1A1A18", borderColor: "rgba(255,255,255,0.05)" }}>
+      <div className="border-b" style={{ backgroundColor: "#FFFFFF", borderColor: "var(--border-subtle)" }}>
         <div className="container-nex py-3">
-          <p className="text-xs font-mono text-center" style={{ color: "rgba(138,128,117,0.7)" }}>
+          <p className="text-xs font-mono text-center" style={{ color: "#7F7F7D" }}>
             All compounds for qualified research use only. Not for human consumption, diagnostic, or therapeutic use.
           </p>
         </div>

@@ -59,7 +59,7 @@ export default function WholesalePage() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20">
         <div className="absolute inset-0 z-10" style={{
-          background: "linear-gradient(135deg, #0A0A08 0%, #1A1A18 40%, #111110 70%, #0D0D0C 100%)"
+          background: "linear-gradient(135deg, #EAE7E3 0%, #F5F3F0 100%)"
         }} />
 
         <div className="container-nex relative z-20">
@@ -100,7 +100,7 @@ export default function WholesalePage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-24" style={{ backgroundColor: "#111110" }}>
+      <section className="py-24" style={{ backgroundColor: "#F5F3F0" }}>
         <div className="container-nex">
           <motion.div
             initial="hidden"
@@ -155,7 +155,7 @@ export default function WholesalePage() {
       </section>
 
       {/* Qualifications */}
-      <section id="qualifications" className="py-24" style={{ backgroundColor: "#0D0D0C" }}>
+      <section id="qualifications" className="py-24" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="container-nex">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -255,7 +255,7 @@ export default function WholesalePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 text-center" style={{ backgroundColor: "#111110" }}>
+      <section className="py-24 text-center" style={{ backgroundColor: "#F5F3F0" }}>
         <div className="container-nex">
           <motion.div
             initial="hidden"

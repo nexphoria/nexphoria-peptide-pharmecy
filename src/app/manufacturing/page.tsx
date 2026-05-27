@@ -88,7 +88,7 @@ export default function ManufacturingPage() {
       </section>
 
       {/* cGMP commitment — dark pullout */}
-      <section className="py-20" style={{ backgroundColor: "#1A1A18" }}>
+      <section className="py-20" style={{ backgroundColor: "#F5F3F0" }}>
         <div className="container-nex">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
@@ -139,7 +139,7 @@ export default function ManufacturingPage() {
                 <div className="flex items-center gap-4">
                   <div
                     className="text-xs font-mono font-medium px-3 py-1.5"
-                    style={{ backgroundColor: "#1A1A18", color: "var(--acid-green)" }}
+                    style={{ backgroundColor: "#F5F3F0", color: "var(--acid-green)" }}
                   >
                     {step.step}
                   </div>
@@ -191,7 +191,7 @@ export default function ManufacturingPage() {
               >
                 <div
                   className="text-xs font-mono font-medium px-2 py-1 whitespace-nowrap mt-0.5 flex-shrink-0"
-                  style={{ backgroundColor: "#1A1A18", color: "var(--acid-green)" }}
+                  style={{ backgroundColor: "#F5F3F0", color: "var(--acid-green)" }}
                 >
                   {s.code}
                 </div>
@@ -206,7 +206,7 @@ export default function ManufacturingPage() {
       </section>
 
       {/* White label section */}
-      <section className="py-24" style={{ backgroundColor: "#1A1A18" }}>
+      <section className="py-24" style={{ backgroundColor: "#F5F3F0" }}>
         <div className="container-nex">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}

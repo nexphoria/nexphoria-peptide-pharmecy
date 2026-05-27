@@ -51,7 +51,7 @@ export default function RegisterPage() {
     return (
       <div
         className="min-h-screen flex items-center justify-center px-4"
-        style={{ backgroundColor: "#0A0A08", paddingTop: "80px" }}
+        style={{ backgroundColor: "#EAE7E3", paddingTop: "80px" }}
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -89,7 +89,7 @@ export default function RegisterPage() {
   return (
     <div
       className="min-h-screen"
-      style={{ backgroundColor: "#0A0A08", paddingTop: "80px" }}
+      style={{ backgroundColor: "#EAE7E3", paddingTop: "80px" }}
     >
       <div className="container-nex py-12">
         {/* Back link */}

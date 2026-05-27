@@ -155,28 +155,23 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                         >
                           {/* Product Visual */}
                           <div
-                            className="flex-shrink-0"
+                            className="flex-shrink-0 flex items-center justify-center rounded"
                             style={{
                               width: "40px",
                               height: item.format === 'pen' ? "28px" : "60px",
-                              filter: `drop-shadow(0 4px 12px ${item.product.accentColor}30)`
+                              backgroundColor: `${item.product.accentColor}12`,
+                              border: `1px solid ${item.product.accentColor}30`
                             }}
                           >
-                            {item.format === 'pen' ? (
-                              <img
-                                src="/products/pen-hero-1.png"
-                                alt={`${item.product.name} pen`}
-                                className="w-full h-full object-contain"
-                                loading="lazy"
-                              />
-                            ) : (
-                              <img
-                                src="/products/vial-hero-1.png"
-                                alt={`${item.product.name} vial`}
-                                className="w-full h-full object-contain"
-                                loading="lazy"
-                              />
-                            )}
+                            <span style={{
+                              fontSize: item.format === 'pen' ? "0.875rem" : "1.25rem",
+                              fontWeight: "bold",
+                              fontFamily: "var(--font-display)",
+                              color: item.product.accentColor,
+                              opacity: 0.9
+                            }}>
+                              {item.product.name.charAt(0)}
+                            </span>
                           </div>
 
                           {/* Product Info */}
@@ -250,19 +245,24 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                             }}
                           >
                             <div
+                              className="flex items-center justify-center rounded"
                               style={{
                                 width: "32px",
                                 height: "48px",
                                 flexShrink: 0,
-                                filter: `drop-shadow(0 2px 8px ${product.accentColor}20)`
+                                backgroundColor: `${product.accentColor}12`,
+                                border: `1px solid ${product.accentColor}30`
                               }}
                             >
-                              <img
-                                src="/products/vial-hero-1.png"
-                                alt={`${product.name} vial`}
-                                className="w-full h-full object-contain"
-                                loading="lazy"
-                              />
+                              <span style={{
+                                fontSize: "1rem",
+                                fontWeight: "bold",
+                                fontFamily: "var(--font-display)",
+                                color: product.accentColor,
+                                opacity: 0.9
+                              }}>
+                                {product.name.charAt(0)}
+                              </span>
                             </div>
                             <div className="flex-1 min-w-0">
                               <h4 className="text-xs font-medium text-near-black truncate">

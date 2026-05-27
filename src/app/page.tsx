@@ -239,14 +239,14 @@ export default function HomePage() {
                 style={{
                   fontFamily: "var(--font-display)",
                   fontSize: "clamp(3rem, 6vw, 5.25rem)",
-                  color: "#FDFCF8",
+                  color: "#010101",
                 }}
               >
                 The Source.
               </h1>
               <p
                 className="text-base md:text-lg max-w-lg mb-10 leading-relaxed"
-                style={{ color: "rgba(253,252,248,0.8)" }}
+                style={{ color: "#7F7F7D" }}
               >
                 From research-grade compounds to physician-guided therapy. Every batch third-party tested. Every order ships with COA.
               </p>
@@ -260,74 +260,20 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right column — 3 vials curated showcase */}
+            {/* Right column — Real brand product photo */}
             <div
-              className="relative hidden lg:flex items-center justify-center"
-              aria-hidden="true"
+              className="relative hidden lg:block overflow-hidden rounded-2xl"
+              style={{ aspectRatio: "4/5" }}
             >
-              {/* Ambient glow behind vial group */}
-              <div className="absolute inset-0 pointer-events-none" style={{
-                background: "radial-gradient(ellipse 72% 56% at 50% 62%, rgba(198,241,132,0.08) 0%, transparent 68%)",
-              }} />
-
-              {/* Vials — flex aligned at bottom, center raised */}
-              <div className="relative flex items-end justify-center" style={{ height: "400px", width: "360px" }}>
-                {/* BPC-157 — left, −8 deg */}
-                <div
-                  className="animate-float-1"
-                  style={{
-                    rotate: "-8deg",
-                    transformOrigin: "bottom center",
-                    marginRight: "-20px",
-                    marginBottom: "28px",
-                    height: "230px", width: "92px", flexShrink: 0, zIndex: 1,
-                    filter: "drop-shadow(0 12px 32px rgba(74,155,142,0.38))",
-                  }}
-                >
-                  <img
-                    src="/products/vial-hero-1.png"
-                    alt="BPC-157 5mg Vial"
-                    className="w-full h-full object-contain"
-                    loading="eager"
-                  />
-                </div>
-
-                {/* Semaglutide — center, upright, tallest */}
-                <div
-                  className="animate-float-2"
-                  style={{
-                    height: "300px", width: "120px", flexShrink: 0, zIndex: 2,
-                    filter: "drop-shadow(0 16px 44px rgba(239,68,68,0.38))",
-                  }}
-                >
-                  <img
-                    src="/products/vial-hero-1.png"
-                    alt="Semaglutide 5mg Vial"
-                    className="w-full h-full object-contain"
-                    loading="eager"
-                  />
-                </div>
-
-                {/* GHK-Cu — right, +8 deg */}
-                <div
-                  className="animate-float-3"
-                  style={{
-                    rotate: "8deg",
-                    transformOrigin: "bottom center",
-                    marginLeft: "-20px",
-                    marginBottom: "28px",
-                    height: "230px", width: "92px", flexShrink: 0, zIndex: 1,
-                    filter: "drop-shadow(0 12px 32px rgba(139,92,246,0.38))",
-                  }}
-                >
-                  <img
-                    src="/products/vial-hero-1.png"
-                    alt="GHK-Cu 5mg Vial"
-                    className="w-full h-full object-contain"
-                    loading="eager"
-                  />
-                </div>
-              </div>
+              <Image
+                src="/brand/boxes-cascade.jpg"
+                alt="Nexphoria product line"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                priority
+                quality={95}
+              />
             </div>
           </div>
         </div>
@@ -819,14 +765,23 @@ export default function HomePage() {
                                 backgroundColor: inStack ? `${product.accentColor}08` : "#FFFFFF",
                               }}
                             >
-                              {/* Vial thumbnail */}
-                              <div style={{ width: "40px", height: "64px", flexShrink: 0, filter: `drop-shadow(0 4px 12px ${product.accentColor}30)` }}>
-                                <img
-                                  src="/products/vial-hero-1.png"
-                                  alt={`${product.name} vial`}
-                                  className="w-full h-full object-contain"
-                                  loading="lazy"
-                                />
+                              {/* Product initial letter */}
+                              <div style={{
+                                width: "40px", height: "64px", flexShrink: 0,
+                                display: "flex", alignItems: "center", justifyContent: "center",
+                                backgroundColor: `${product.accentColor}12`,
+                                borderRadius: "6px",
+                                border: `1px solid ${product.accentColor}30`
+                              }}>
+                                <span style={{
+                                  fontSize: "1.5rem",
+                                  fontWeight: "bold",
+                                  fontFamily: "var(--font-display)",
+                                  color: product.accentColor,
+                                  opacity: 0.9
+                                }}>
+                                  {product.name.charAt(0)}
+                                </span>
                               </div>
 
                               {/* Info */}
@@ -970,13 +925,22 @@ export default function HomePage() {
                               style={{ overflow: "hidden" }}
                             >
                               <div className="flex items-center gap-2 min-w-0">
-                                <div style={{ width: "28px", height: "44px", flexShrink: 0 }}>
-                                  <img
-                                    src="/products/vial-hero-1.png"
-                                    alt={`${p.name} vial`}
-                                    className="w-full h-full object-contain"
-                                    loading="lazy"
-                                  />
+                                <div style={{
+                                  width: "28px", height: "44px", flexShrink: 0,
+                                  display: "flex", alignItems: "center", justifyContent: "center",
+                                  backgroundColor: `${p.accentColor}12`,
+                                  borderRadius: "4px",
+                                  border: `1px solid ${p.accentColor}30`
+                                }}>
+                                  <span style={{
+                                    fontSize: "0.875rem",
+                                    fontWeight: "bold",
+                                    fontFamily: "var(--font-display)",
+                                    color: p.accentColor,
+                                    opacity: 0.9
+                                  }}>
+                                    {p.name.charAt(0)}
+                                  </span>
                                 </div>
                                 <div className="min-w-0">
                                   <div className="text-xs font-semibold truncate" style={{ color: "#010101" }}>{p.name}</div>
@@ -1068,14 +1032,23 @@ export default function HomePage() {
                             transform: vi === 1 ? "translateY(-12px)" : "none",
                             zIndex: vi === 1 ? 2 : 1,
                             position: "relative",
-                            filter: `drop-shadow(0 6px 16px rgba(0,0,0,0.2))`,
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            backgroundColor: `${p.accentColor}15`,
+                            borderRadius: "6px",
+                            border: `2px solid ${p.accentColor}40`,
+                            boxShadow: `0 6px 16px ${p.accentColor}25`,
                           }}>
-                            <img
-                              src="/products/vial-hero-1.png"
-                              alt={`${p.name} vial`}
-                              className="w-full h-full object-contain"
-                              loading="lazy"
-                            />
+                            <span style={{
+                              fontSize: "2rem",
+                              fontWeight: "bold",
+                              fontFamily: "var(--font-display)",
+                              color: p.accentColor,
+                              opacity: 0.85
+                            }}>
+                              {p.name.charAt(0)}
+                            </span>
                           </div>
                         ))}
                       </div>
@@ -1083,7 +1056,7 @@ export default function HomePage() {
                       {/* Pricing */}
                       <div className="mb-4">
                         <div className="text-4xl font-bold mb-1"
-                          style={{ fontFamily: "var(--font-display)", color: "#C9A24B" }}>
+                          style={{ fontFamily: "var(--font-display)", color: "#010101" }}>
                           ${bundle.monthlyPrice}<span className="text-lg font-normal" style={{ color: "#5A5A58" }}>/mo</span>
                         </div>
                         <div className="text-xs mb-2" style={{ color: "#5A5A58" }}>

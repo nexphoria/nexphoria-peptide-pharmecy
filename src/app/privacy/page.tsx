@@ -11,7 +11,7 @@ export default function PrivacyPage() {
   return (
     <div
       className="min-h-screen"
-      style={{ backgroundColor: "#0A0A08", paddingTop: "80px" }}
+      style={{ backgroundColor: "#EAE7E3", paddingTop: "80px" }}
     >
       <div className="container-nex py-12">
         {/* Back link */}

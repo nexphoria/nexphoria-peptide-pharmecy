@@ -96,7 +96,7 @@ export default function AboutClient() {
       </section>
 
       {/* Mission statement — dark pull quote */}
-      <section className="py-24" style={{ backgroundColor: "#1A1A18" }}>
+      <section className="py-24" style={{ backgroundColor: "#F5F3F0" }}>
         <div className="container-nex">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
@@ -318,7 +318,7 @@ export default function AboutClient() {
               >
                 <div
                   className="text-xs font-mono font-medium px-2 py-1 whitespace-nowrap mt-0.5 flex-shrink-0"
-                  style={{ backgroundColor: "#1A1A18", color: "var(--acid-green)" }}
+                  style={{ backgroundColor: "#F5F3F0", color: "var(--acid-green)" }}
                 >
                   {s.code}
                 </div>
@@ -330,7 +330,7 @@ export default function AboutClient() {
       </section>
 
       {/* CTA */}
-      <section className="py-20" style={{ backgroundColor: "#1A1A18" }}>
+      <section className="py-20" style={{ backgroundColor: "#F5F3F0" }}>
         <div className="container-nex flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
             <h2

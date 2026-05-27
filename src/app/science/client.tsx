@@ -171,7 +171,7 @@ export default function ScienceClient() {
               >
                 <div
                   className="inline-flex items-center justify-center font-mono text-sm font-medium px-3 py-1.5 mb-4"
-                  style={{ backgroundColor: "#1A1A18", color: "var(--acid-green)" }}
+                  style={{ backgroundColor: "#F5F3F0", color: "var(--acid-green)" }}
                 >
                   {method.code}
                 </div>
@@ -215,7 +215,7 @@ export default function ScienceClient() {
       ))}
 
       {/* Peptide classes — dark section */}
-      <section className="py-24 text-ceramic border-b border-white/[0.06]" style={{ backgroundColor: "#1A1A18" }}>
+      <section className="py-24 text-ceramic border-b border-white/[0.06]" style={{ backgroundColor: "#F5F3F0" }}>
         <div className="container-nex">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
@@ -240,7 +240,7 @@ export default function ScienceClient() {
                 key={cls.title}
                 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.1}
                 className="p-8"
-                style={{ backgroundColor: "#1A1A18" }}
+                style={{ backgroundColor: "#F5F3F0" }}
               >
                 <div className="flex flex-wrap gap-2 mb-5">
                   {cls.compounds.map((c) => (
