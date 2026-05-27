@@ -49,10 +49,11 @@ export default function ProductCard({
         <div
           className="product-card h-full overflow-hidden transition-all duration-300"
           style={{
-            borderColor: isHovered ? "var(--dark-border-hover)" : "var(--dark-border)",
-            transform: isHovered ? "scale(1.02)" : "scale(1)",
+            backgroundColor: "#FFFFFF",
+            borderColor: isHovered ? "var(--border-medium)" : "var(--border-subtle)",
+            transform: isHovered ? "scale(1.01)" : "scale(1)",
             boxShadow: isHovered
-              ? "0 8px 32px rgba(0, 0, 0, 0.8), 0 0 0 1px var(--dark-border-hover)"
+              ? "0 4px 24px rgba(0, 0, 0, 0.08), 0 0 0 1px var(--border-medium)"
               : "none"
           }}
         >
@@ -68,14 +69,14 @@ export default function ProductCard({
             className="relative flex items-center justify-center overflow-hidden"
             style={{
               height: "200px",
-              backgroundColor: "var(--dark-bg)",
+              backgroundColor: "#F5F3F0",
             }}
           >
             {/* Accent glow behind product */}
             <div
               className="absolute inset-0 pointer-events-none"
               style={{
-                background: `radial-gradient(ellipse 60% 50% at 50% 55%, ${product.accentColor}15 0%, transparent 70%)`,
+                background: `radial-gradient(ellipse 60% 50% at 50% 55%, ${product.accentColor}08 0%, transparent 70%)`,
               }}
             />
 
@@ -86,7 +87,7 @@ export default function ProductCard({
                 width: "120px",
                 position: "relative",
                 zIndex: 1,
-                filter: `drop-shadow(0 8px 20px ${product.accentColor}25)`,
+                filter: `drop-shadow(0 4px 12px ${product.accentColor}15)`,
                 transform: isHovered ? "scale(1.05)" : "scale(1)",
                 transition: "transform 0.3s ease"
               }}
@@ -111,17 +112,18 @@ export default function ProductCard({
 
             {/* Product Name */}
             <h3
-              className="text-xl font-bold uppercase tracking-tight mb-2 text-primary"
+              className="text-xl font-bold uppercase tracking-tight mb-2"
               style={{
                 fontFamily: "var(--font-display)",
-                lineHeight: "1.2"
+                lineHeight: "1.2",
+                color: "#010101"
               }}
             >
               {product.name}
             </h3>
 
             {/* Tagline */}
-            <p className="text-sm text-secondary mb-4 line-clamp-2 leading-relaxed">
+            <p className="text-sm mb-4 line-clamp-2 leading-relaxed" style={{ color: "#7F7F7D" }}>
               {product.tagline}
             </p>
 
@@ -129,14 +131,14 @@ export default function ProductCard({
             <div className="flex items-center gap-2 mb-4">
               <div className="flex items-center gap-1">
                 <div className="w-2 h-2 rounded-full bg-acid-green"></div>
-                <span className="text-xs font-medium text-secondary">
+                <span className="text-xs font-medium" style={{ color: "#7F7F7D" }}>
                   {product.purity} Purity
                 </span>
               </div>
               {product.penAvailable && (
                 <div className="flex items-center gap-1">
                   <div className="w-2 h-2 rounded-full bg-accent-growth"></div>
-                  <span className="text-xs font-medium text-secondary">
+                  <span className="text-xs font-medium" style={{ color: "#7F7F7D" }}>
                     Pen Available
                   </span>
                 </div>

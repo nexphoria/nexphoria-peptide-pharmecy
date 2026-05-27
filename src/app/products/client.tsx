@@ -38,8 +38,8 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
       <div
         className="border-b sticky top-14 md:top-[calc(56px+36px)] backdrop-blur-md z-20"
         style={{
-          backgroundColor: "rgba(10, 10, 10, 0.95)",
-          borderColor: "var(--dark-border)"
+          backgroundColor: "rgba(234, 231, 227, 0.95)",
+          borderColor: "var(--border-subtle)"
         }}
       >
         <div className="container-nex">
@@ -48,11 +48,11 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`flex-shrink-0 px-4 py-2 text-[10px] font-medium border-b-2 transition-colors whitespace-nowrap uppercase tracking-[0.16em] ${
-                  activeFilter === filter
-                    ? "border-acid-green text-acid-green"
-                    : "border-transparent text-secondary hover:text-primary"
-                }`}
+                className={`flex-shrink-0 px-4 py-2 text-[10px] font-medium border-b-2 transition-colors whitespace-nowrap uppercase tracking-[0.16em]`}
+                style={{
+                  borderBottomColor: activeFilter === filter ? "#C9DD69" : "transparent",
+                  color: activeFilter === filter ? "#C9DD69" : "#7F7F7D"
+                }}
               >
                 {filter}
               </button>
@@ -63,7 +63,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
 
       {/* BUNDLES VIEW */}
       {showBundles && (
-        <div className="py-16 md:py-24 bg-dark-panel">
+        <div className="py-16 md:py-24 bg-cream-panel">
           <div className="container-nex">
             <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0} className="mb-12">
               <span className="eyebrow mb-4 block">Stacks &amp; Bundles</span>
@@ -79,7 +79,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                 return (
                   <motion.div key={bundle.slug}
                     initial="hidden" animate="visible" variants={fadeUp} custom={i * 0.1}
-                    className="border border-dark-border-hover bg-dark-card overflow-hidden rounded-xl">
+                    className="border border-dark-border-hover bg-cream-card overflow-hidden rounded-xl">
                     <div className="p-7">
                       <div className="flex items-start justify-between mb-4">
                         <span className="eyebrow text-acid-green">{bundle.eyebrow}</span>
@@ -130,12 +130,12 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
 
       {/* Products grid */}
       {!showBundles && (
-        <div className="bg-dark min-h-screen">
+        <div className="bg-cream min-h-screen">
           <div className="container-nex pt-14 pb-10">
             {/* Gender context banner */}
             {(showForHim || showForHer) && (
               <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}
-                className="mb-8 p-5 border border-dark-border bg-dark-card rounded-lg">
+                className="mb-8 p-5 border border-dark-border bg-cream-card rounded-lg">
                 <p className="text-sm leading-relaxed text-secondary">
                   {showForHim
                     ? "Compounds particularly studied in the context of recovery, muscle growth, and GH optimization. Includes all research peptides tagged for men's health focus."
@@ -174,7 +174,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
 
       {/* Bundles section at bottom of "All" view */}
       {!showBundles && activeFilter === "All" && (
-        <div id="bundles" className="border-t border-dark-border py-20 md:py-28 bg-dark-panel">
+        <div id="bundles" className="border-t border-dark-border py-20 md:py-28 bg-cream-panel">
           <div className="container-nex">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0} className="mb-12">
               <span className="eyebrow mb-4 block">Stacks &amp; Bundles</span>
@@ -189,7 +189,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                 return (
                   <motion.div key={bundle.slug}
                     initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.1}
-                    className="border border-dark-border-hover bg-dark-card overflow-hidden rounded-xl">
+                    className="border border-dark-border-hover bg-cream-card overflow-hidden rounded-xl">
                     <div className="p-7">
                       <div className="flex items-start justify-between mb-4">
                         <span className="eyebrow text-acid-green">{bundle.eyebrow}</span>
@@ -240,7 +240,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
 
       {/* Custom synthesis CTA */}
       {!showBundles && (
-        <div className="border-t border-dark-border py-20 bg-dark-panel">
+        <div className="border-t border-dark-border py-20 bg-cream-panel">
           <div className="container-nex">
             <div className="max-w-2xl">
               <span className="eyebrow mb-4 block">Custom Synthesis</span>
@@ -261,7 +261,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
       )}
 
       {/* Research Use Disclaimer Banner */}
-      <div className="border-t border-dark-border py-8 bg-dark">
+      <div className="border-t border-dark-border py-8 bg-cream">
         <div className="container-nex">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-xs leading-relaxed text-tertiary">

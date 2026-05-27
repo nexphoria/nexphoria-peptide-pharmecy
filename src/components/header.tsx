@@ -38,10 +38,10 @@ export function Header() {
     <>
       {/* Announcement bar — single quiet trust signal */}
       <div
-        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center bg-dark"
-        style={{ height: "32px" }}
+        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center"
+        style={{ height: "32px", backgroundColor: "#F5F3F0" }}
       >
-        <span className="text-[10px] font-medium uppercase tracking-[0.22em]" style={{ color: "rgba(253,252,248,0.45)" }}>
+        <span className="text-[10px] font-medium uppercase tracking-[0.22em]" style={{ color: "#7F7F7D" }}>
           <span className="inline-block w-1 h-1 rounded-full mr-3 align-middle" style={{backgroundColor:"#C9A24B"}} />
           COA with every order &nbsp;·&nbsp; 99.7%+ purity &nbsp;·&nbsp; cGMP manufacturing
         </span>
@@ -59,7 +59,7 @@ export function Header() {
             {/* Logo + Wordmark */}
             <Link href="/" className="flex items-center gap-2.5 flex-shrink-0">
               <Image
-                src="/logo-green.svg"
+                src="/brand/logo-black.svg"
                 alt="Nexphoria"
                 width={28}
                 height={28}
@@ -68,7 +68,7 @@ export function Header() {
               />
               <span
                 className="text-[13px] uppercase"
-                style={{ color: "rgba(253,252,248,0.85)", fontWeight: 300, letterSpacing: "0.25em" }}
+                style={{ color: "#010101", fontWeight: 200, letterSpacing: "0.28em" }}
               >
                 Nexphoria
               </span>
@@ -80,7 +80,8 @@ export function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-[11px] font-medium uppercase tracking-[0.14em] text-secondary hover:text-primary transition-colors duration-200"
+                  className="text-[11px] font-medium uppercase tracking-[0.14em] hover:text-near-black transition-colors duration-200"
+                  style={{ color: "#7F7F7D" }}
                 >
                   {link.label}
                 </Link>
@@ -91,21 +92,24 @@ export function Header() {
             <div className="hidden md:flex items-center gap-4">
               <Link
                 href="/account/login"
-                className="text-[11px] font-medium uppercase tracking-[0.14em] text-secondary hover:text-primary transition-colors duration-200"
+                className="text-[11px] font-medium uppercase tracking-[0.14em] hover:text-near-black transition-colors duration-200"
+                style={{ color: "#7F7F7D" }}
               >
                 Sign In
               </Link>
               <button
                 onClick={openDrawer}
                 aria-label="Open cart"
-                className="relative p-2 text-secondary hover:text-primary transition-colors"
+                className="relative p-2 hover:text-near-black transition-colors"
+                style={{ color: "#7F7F7D" }}
               >
                 <ShoppingCart className="w-5 h-5" strokeWidth={1.5} />
                 {totalItems > 0 && (
                   <motion.span
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    className="absolute -top-1 -right-1 w-5 h-5 bg-acid-green text-dark text-[10px] font-bold rounded-full flex items-center justify-center"
+                    className="absolute -top-1 -right-1 w-5 h-5 bg-acid-green text-[10px] font-bold rounded-full flex items-center justify-center"
+                    style={{ color: "#010101" }}
                   >
                     {totalItems > 99 ? '99+' : totalItems}
                   </motion.span>
@@ -124,19 +128,21 @@ export function Header() {
             <div className="md:hidden flex items-center gap-3">
               <button
                 onClick={openDrawer}
-                className="relative p-2 text-primary"
+                className="relative p-2"
+                style={{ color: "#010101" }}
                 aria-label="Open cart"
               >
                 <ShoppingCart className="w-5 h-5" strokeWidth={1.5} />
                 {totalItems > 0 && (
-                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-acid-green text-dark text-[10px] font-bold rounded-full flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-acid-green text-[10px] font-bold rounded-full flex items-center justify-center" style={{ color: "#010101" }}>
                     {totalItems > 99 ? '99+' : totalItems}
                   </span>
                 )}
               </button>
               <button
                 onClick={() => setMenuOpen(v => !v)}
-                className="p-2 text-primary"
+                className="p-2"
+                style={{ color: "#010101" }}
                 aria-label="Toggle menu"
               >
                 {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -154,13 +160,13 @@ export function Header() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="fixed inset-0 z-40 flex flex-col bg-dark-panel"
-            style={{ top: "32px" }}
+            className="fixed inset-0 z-40 flex flex-col"
+            style={{ top: "32px", backgroundColor: "#FFFFFF" }}
           >
-            <div className="flex items-center justify-between h-16 px-6 border-b border-dark-border">
+            <div className="flex items-center justify-between h-16 px-6 border-b" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
               <Link href="/" onClick={() => setMenuOpen(false)}>
                 <Image
-                  src="/logo-green.svg"
+                  src="/brand/logo-black.svg"
                   alt="Nexphoria"
                   width={120}
                   height={40}
@@ -169,7 +175,8 @@ export function Header() {
               </Link>
               <button
                 onClick={() => setMenuOpen(false)}
-                className="p-2 text-primary"
+                className="p-2"
+                style={{ color: "#010101" }}
                 aria-label="Close menu"
               >
                 <X className="w-5 h-5" />
@@ -187,8 +194,8 @@ export function Header() {
                   <Link
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className="block py-5 text-2xl font-bold border-b border-dark-border text-primary hover:text-acid-green transition-colors"
-                    style={{ fontFamily: "var(--font-display)" }}
+                    className="block py-5 text-2xl font-bold border-b hover:text-acid-green transition-colors"
+                    style={{ fontFamily: "var(--font-display)", color: "#010101", borderColor: "rgba(0,0,0,0.06)" }}
                   >
                     {link.label}
                   </Link>

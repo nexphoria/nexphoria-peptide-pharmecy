@@ -219,27 +219,11 @@ export default function HomePage() {
   const genderProducts = genderTab === "him" ? forHimProducts : forHerProducts;
 
   return (
-    <div className="bg-dark">
+    <div className="bg-cream">
 
-      {/* ========== HERO ========== */}
-      <section className="relative flex items-center overflow-hidden" style={{ minHeight: "100vh" }}>
-        {/* Editorial hero background image */}
-        <Image
-          src="/brand/editorial-hero.jpg"
-          alt="Nexphoria Research Laboratory"
-          fill
-          className="object-cover object-center"
-          priority
-          sizes="100vw"
-        />
-        {/* Dark overlay */}
-        <div className="absolute inset-0 z-10" style={{
-          background: "rgba(0,0,0,0.65)"
-        }} />
-        {/* Subtle pattern overlay */}
-        <div className="absolute inset-0 pointer-events-none" style={{backgroundImage:"url(/brand/cell-pattern-1.png)",backgroundSize:"400px 400px",backgroundRepeat:"repeat",opacity:0.05,zIndex:1}} />
-
-        <div className="container-nex relative z-20 w-full py-24 md:py-32 pt-36 md:pt-40">
+      {/* ========== HERO — Cream Editorial ========== */}
+      <section className="relative flex items-center overflow-hidden" style={{ minHeight: "90vh", backgroundColor: "#EAE7E3" }}>
+        <div className="container-nex relative z-10 w-full py-24 md:py-32 pt-36 md:pt-40">
           <div className="grid lg:grid-cols-[55fr_45fr] gap-10 xl:gap-16 items-center">
 
             {/* Left column */}
@@ -429,7 +413,7 @@ export default function HomePage() {
       </section>
 
       {/* ========== FOR HIM / FOR HER ========== */}
-      <section className="py-24 md:py-32 bg-dark-panel">
+      <section className="py-24 md:py-32 bg-cream-panel">
         <div className="container-nex">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="mb-12">
@@ -441,7 +425,7 @@ export default function HomePage() {
                 <em className="italic" style={{ color: "#C9A24B" }}>Stacks</em>
               </h2>
               {/* Tab buttons */}
-              <div className="flex gap-1 p-1 bg-dark-card rounded-lg">
+              <div className="flex gap-1 p-1 bg-cream-card rounded-lg">
                 <button
                   onClick={() => setGenderTab("him")}
                   className="px-5 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] transition-all rounded"
@@ -499,7 +483,7 @@ export default function HomePage() {
       </section>
 
       {/* ========== FEATURED PRODUCTS ========== */}
-      <section className="py-24 md:py-32 border-t border-dark-border bg-dark">
+      <section className="py-24 md:py-32 border-t border-dark-border bg-cream">
         <div className="container-nex">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="flex items-end justify-between mb-14 gap-4">
@@ -1204,7 +1188,7 @@ export default function HomePage() {
       </section>
 
       {/* ========== BRAND STORY ========== */}
-      <section className="py-24 md:py-32 border-t border-dark-border bg-dark-panel">
+      <section className="py-24 md:py-32 border-t border-dark-border bg-cream-panel">
         <div className="container-nex">
           <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
             {/* Brand Visual — Dare to Defy */}

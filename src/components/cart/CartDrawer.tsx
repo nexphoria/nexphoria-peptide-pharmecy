@@ -86,28 +86,28 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
               stiffness: 300,
               mass: 0.8
             }}
-            className={`fixed top-0 right-0 bottom-0 z-50 w-full max-w-md bg-dark-panel border-l border-dark-border flex flex-col ${className}`}
-            style={{ backgroundColor: "var(--dark-panel)", borderColor: "var(--dark-border)" }}
+            className={`fixed top-0 right-0 bottom-0 z-50 w-full max-w-md flex flex-col ${className}`}
+            style={{ backgroundColor: "#FFFFFF", borderLeft: "1px solid var(--border-subtle)" }}
           >
             {/* Header */}
             <div
               className="flex items-center justify-between px-6 py-5 border-b"
-              style={{ borderColor: "var(--dark-border)" }}
+              style={{ borderColor: "var(--border-subtle)" }}
             >
               <div>
-                <h2 className="text-lg font-bold text-primary">
+                <h2 className="text-lg font-bold" style={{ color: "#010101" }}>
                   Cart ({totalItems})
                 </h2>
-                <p className="text-sm text-secondary">
+                <p className="text-sm" style={{ color: "#7F7F7D" }}>
                   {totalItems === 0 ? "No items" : `$${totalPrice.toFixed(2)} total`}
                 </p>
               </div>
               <button
                 onClick={closeDrawer}
-                className="p-2 hover:bg-dark-border transition-colors rounded-md"
+                className="p-2 hover:bg-off-white transition-colors rounded-md"
                 aria-label="Close cart"
               >
-                <X className="w-5 h-5 text-secondary" />
+                <X className="w-5 h-5" style={{ color: "#7F7F7D" }} />
               </button>
             </div>
 
@@ -118,14 +118,14 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                 <div className="flex flex-col items-center justify-center px-6 py-12 text-center">
                   <div
                     className="w-16 h-16 rounded-full flex items-center justify-center mb-4"
-                    style={{ backgroundColor: "var(--dark-card)" }}
+                    style={{ backgroundColor: "#F5F3F0" }}
                   >
-                    <ShoppingBag className="w-8 h-8 text-tertiary" />
+                    <ShoppingBag className="w-8 h-8" style={{ color: "#A0A0A0" }} />
                   </div>
-                  <h3 className="text-lg font-semibold text-primary mb-2">
+                  <h3 className="text-lg font-semibold mb-2" style={{ color: "#010101" }}>
                     Your cart is empty
                   </h3>
-                  <p className="text-sm text-secondary mb-6 max-w-xs">
+                  <p className="text-sm mb-6 max-w-xs" style={{ color: "#7F7F7D" }}>
                     Start building your stack with research-grade peptides
                   </p>
                   <button
@@ -149,8 +149,8 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                           transition={{ duration: 0.2 }}
                           className="flex items-start gap-3 p-4 rounded-lg border"
                           style={{
-                            borderColor: "var(--dark-border-hover)",
-                            backgroundColor: "var(--dark-card)"
+                            borderColor: "var(--border-subtle)",
+                            backgroundColor: "#F5F3F0"
                           }}
                         >
                           {/* Product Visual */}
@@ -181,10 +181,10 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
 
                           {/* Product Info */}
                           <div className="flex-1 min-w-0">
-                            <h4 className="text-sm font-semibold text-primary truncate">
+                            <h4 className="text-sm font-semibold text-near-black truncate">
                               {item.product.name}
                             </h4>
-                            <p className="text-xs text-secondary">
+                            <p className="text-xs text-stone">
                               {item.selectedDosage?.size || item.product.size} • {item.format === 'pen' ? 'Pen' : 'Vial'}
                             </p>
                             <div className="flex items-center justify-between mt-2">
@@ -195,29 +195,29 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                                   className="w-7 h-7 flex items-center justify-center border border-dark-border-hover hover:bg-dark-border transition-colors rounded"
                                   disabled={item.quantity <= 1}
                                 >
-                                  <Minus className="w-3 h-3 text-secondary" />
+                                  <Minus className="w-3 h-3 text-stone" />
                                 </button>
-                                <span className="w-8 text-center text-sm font-medium text-primary">
+                                <span className="w-8 text-center text-sm font-medium text-near-black">
                                   {item.quantity}
                                 </span>
                                 <button
                                   onClick={() => updateQuantity(item.product.slug, item.format, item.quantity + 1)}
                                   className="w-7 h-7 flex items-center justify-center border border-dark-border-hover hover:bg-dark-border transition-colors rounded"
                                 >
-                                  <Plus className="w-3 h-3 text-secondary" />
+                                  <Plus className="w-3 h-3 text-stone" />
                                 </button>
                               </div>
 
                               {/* Price */}
                               <div className="text-right">
-                                <div className="text-sm font-bold text-primary">
+                                <div className="text-sm font-bold text-near-black">
                                   ${((item.selectedDosage?.price ||
                                       (item.format === 'pen' && item.product.penAvailable ? item.product.penPrice : item.product.price)) *
                                       item.quantity).toFixed(0)}
                                 </div>
                                 <button
                                   onClick={() => removeItem(item.product.slug, item.format)}
-                                  className="text-xs text-tertiary hover:text-secondary transition-colors"
+                                  className="text-xs text-tertiary hover:text-stone transition-colors"
                                 >
                                   Remove
                                 </button>
@@ -235,7 +235,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                       className="px-6 py-4 border-t"
                       style={{ borderColor: "var(--dark-border)" }}
                     >
-                      <h3 className="text-sm font-semibold text-primary mb-3 uppercase tracking-wide">
+                      <h3 className="text-sm font-semibold text-near-black mb-3 uppercase tracking-wide">
                         Recommended For You
                       </h3>
                       <div className="space-y-3">
@@ -265,10 +265,10 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                               />
                             </div>
                             <div className="flex-1 min-w-0">
-                              <h4 className="text-xs font-medium text-primary truncate">
+                              <h4 className="text-xs font-medium text-near-black truncate">
                                 {product.name}
                               </h4>
-                              <p className="text-xs text-secondary">
+                              <p className="text-xs text-stone">
                                 ${product.price}
                               </p>
                             </div>
@@ -292,10 +292,10 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
               >
                 {/* Total */}
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-sm font-medium text-secondary">
+                  <span className="text-sm font-medium text-stone">
                     Subtotal
                   </span>
-                  <span className="text-xl font-bold text-primary">
+                  <span className="text-xl font-bold text-near-black">
                     ${totalPrice.toFixed(2)}
                   </span>
                 </div>

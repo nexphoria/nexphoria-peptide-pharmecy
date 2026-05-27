@@ -98,13 +98,24 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-dark text-primary">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <CartDrawer />
-        <HydrationMarker />
-        <AgeVerificationModal />
+      <body className="min-h-full flex flex-col bg-cream text-primary relative">
+        {/* Fixed chemical pattern overlay — subtle DNA motif across entire site */}
+        <div
+          className="fixed inset-0 opacity-[0.04] pointer-events-none z-0"
+          style={{
+            backgroundImage: "url(/brand/chemical-pattern.svg)",
+            backgroundSize: "600px",
+            backgroundRepeat: "repeat"
+          }}
+        />
+        <div className="relative z-10 min-h-full flex flex-col">
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <CartDrawer />
+          <HydrationMarker />
+          <AgeVerificationModal />
+        </div>
       </body>
     </html>
   );
