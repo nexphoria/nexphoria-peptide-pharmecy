@@ -93,8 +93,14 @@ export function Header() {
               ))}
             </nav>
 
-            {/* Right: cart + CTA */}
+            {/* Right: sign in + cart + CTA */}
             <div className="hidden md:flex items-center gap-4">
+              <Link
+                href="/account/login"
+                className="text-[11px] font-medium uppercase tracking-[0.14em] text-secondary hover:text-primary transition-colors duration-200"
+              >
+                Sign In
+              </Link>
               <button
                 onClick={openDrawer}
                 aria-label="Open cart"

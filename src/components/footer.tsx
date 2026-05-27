@@ -24,10 +24,10 @@ const footerNav = {
     { label: "Contact Us", href: "/contact" },
   ],
   Legal: [
-    { label: "Privacy Policy", href: "/legal/privacy" },
-    { label: "Terms of Use", href: "/legal/terms" },
-    { label: "Shipping & Returns", href: "/legal/shipping-returns" },
-    { label: "Disclaimer", href: "/legal/disclaimer" },
+    { label: "Terms of Service", href: "/terms" },
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Research Use Policy", href: "/terms#research-use-only" },
+    { label: "Contact Legal", href: "/contact" },
   ],
 };
 

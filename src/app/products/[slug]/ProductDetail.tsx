@@ -958,6 +958,17 @@ export default function ProductDetail({ product, related }: Props) {
           </div>
         </section>
       )}
+
+      {/* Research Use Disclaimer Banner */}
+      <section className="py-8 border-t border-dark-border" style={{ backgroundColor: "var(--dark-bg)" }}>
+        <div className="container-nex">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-xs leading-relaxed text-tertiary">
+              All products are sold strictly for laboratory research use only. Not for human consumption. Buyer assumes full responsibility for compliance with all applicable regulations.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
