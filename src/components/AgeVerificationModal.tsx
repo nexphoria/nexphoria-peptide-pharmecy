@@ -59,7 +59,7 @@ export default function AgeVerificationModal() {
                 border: "1px solid rgba(168, 201, 127, 0.3)",
               }}
             >
-              <Shield className="h-8 w-8" style={{ color: "#A8C97F" }} />
+              <Shield className="h-8 w-8" strokeWidth={1.2} style={{ color: "#C9A24B" }} />
             </div>
           </div>
 

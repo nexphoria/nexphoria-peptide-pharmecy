@@ -42,7 +42,7 @@ export function Header() {
         style={{ height: "32px" }}
       >
         <span className="text-[10px] font-medium uppercase tracking-[0.22em]" style={{ color: "rgba(253,252,248,0.45)" }}>
-          <span className="inline-block w-1 h-1 rounded-full bg-acid-green mr-3 align-middle" />
+          <span className="inline-block w-1 h-1 rounded-full mr-3 align-middle" style={{backgroundColor:"#C9A24B"}} />
           COA with every order &nbsp;·&nbsp; 99.7%+ purity &nbsp;·&nbsp; cGMP manufacturing
         </span>
       </div>
