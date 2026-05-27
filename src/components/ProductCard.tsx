@@ -71,17 +71,6 @@ export default function ProductCard({
               backgroundColor: "var(--dark-bg)",
             }}
           >
-            {/* Subtle pattern background */}
-            <div
-              className="absolute inset-0 pointer-events-none opacity-[0.02]"
-              style={{
-                backgroundImage: "url(/dna-pattern.png)",
-                backgroundSize: "300px auto",
-                backgroundRepeat: "repeat",
-                filter: "invert(1)",
-              }}
-            />
-
             {/* Accent glow behind product */}
             <div
               className="absolute inset-0 pointer-events-none"

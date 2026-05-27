@@ -572,18 +572,6 @@ export default function ProductDetail({ product, related }: Props) {
                 className="relative flex items-center justify-center p-8 lg:p-12 min-h-[500px] lg:min-h-[600px]"
                 style={{ backgroundColor: "var(--dark-bg)", borderRadius: "16px" }}
               >
-                {/* Background Pattern */}
-                <div
-                  className="absolute inset-0 pointer-events-none opacity-[0.02]"
-                  style={{
-                    backgroundImage: "url(/dna-pattern.png)",
-                    backgroundSize: "300px auto",
-                    backgroundRepeat: "repeat",
-                    filter: "invert(1)",
-                    borderRadius: "16px"
-                  }}
-                />
-
                 {/* Accent Glow */}
                 <div
                   className="absolute inset-0 pointer-events-none"

@@ -126,34 +126,25 @@ export default function ScienceClient() {
     <div className="min-h-screen bg-dark">
 
       {/* Hero */}
-      <section className="relative overflow-hidden" style={{ minHeight: "60vh" }}>
-        <Image
-          src="/brand/science-hero.jpg"
-          alt="Nexphoria analytical science — researcher in lab"
-          fill
-          className="object-cover object-center"
-          priority
-          sizes="100vw"
-        />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 70%, transparent 100%)" }} />
-        <div className="relative z-10 flex items-center container-nex py-40">
+      <section
+        className="border-b"
+        style={{ backgroundColor: "var(--dark-bg)", borderColor: "var(--dark-border)" }}
+      >
+        <div className="container-nex py-36 md:py-44">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0} className="max-w-2xl">
             <span className="eyebrow mb-5 block" style={{ color: "var(--acid-green)" }}>Analytical Science</span>
             <h1
-              className="font-bold tracking-tight mb-6 max-w-3xl"
+              className="font-bold tracking-tight mb-6"
               style={{
-                fontFamily: "var(--font-playfair, Georgia, serif)",
+                fontFamily: "var(--font-display)",
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",
-                lineHeight: 1.1,
+                lineHeight: 1.05,
                 color: "#FDFCF8",
               }}
             >
-              How We{" "}
-              <em className="italic" style={{ color: "var(--acid-green)" }}>Verify</em>
-              <br />
-              Every Compound
+              How We Verify Every Compound
             </h1>
-            <p className="text-lg max-w-xl leading-relaxed" style={{ color: "rgba(253,252,248,0.8)" }}>
+            <p className="text-lg max-w-xl leading-relaxed" style={{ color: "rgba(253,252,248,0.7)" }}>
               Every Nexphoria production lot passes a defined battery of analytical tests before
               release. HPLC purity, mass spectrometry identity, moisture analysis, and residual
               solvent testing — documented by independent third-party laboratories.
@@ -167,21 +158,13 @@ export default function ScienceClient() {
         <section
           key={method.id}
           id={method.id}
-          className="relative py-20 border-b overflow-hidden"
+          className="py-20 border-b"
           style={{
             borderColor: "var(--dark-border)",
             backgroundColor: i % 2 === 1 ? "var(--dark-panel)" : undefined,
           }}
         >
-          {/* Molecular pattern background */}
-          <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: "url(/brand/molecular-pattern.png)",
-            backgroundSize: "600px auto",
-            backgroundRepeat: "repeat",
-            filter: "invert(1)",
-            opacity: 0.12
-          }} />
-          <div className="container-nex relative z-10">
+          <div className="container-nex">
             <div className="grid lg:grid-cols-3 gap-12">
               <motion.div
                 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
@@ -232,15 +215,8 @@ export default function ScienceClient() {
       ))}
 
       {/* Peptide classes — dark section */}
-      <section className="relative py-24 text-ceramic border-b border-white/[0.06] overflow-hidden" style={{ backgroundColor: "#1A1A18" }}>
-        {/* Cell pattern background */}
-        <div className="absolute inset-0 pointer-events-none" style={{
-          backgroundImage: "url(/brand/cell-pattern-2.png)",
-          backgroundSize: "500px auto",
-          backgroundRepeat: "repeat",
-          opacity: 0.08
-        }} />
-        <div className="container-nex relative z-10">
+      <section className="py-24 text-ceramic border-b border-white/[0.06]" style={{ backgroundColor: "#1A1A18" }}>
+        <div className="container-nex">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="mb-14"

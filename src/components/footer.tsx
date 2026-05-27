@@ -61,7 +61,9 @@ export function Footer() {
             <div className="flex gap-2.5">
               {/* X / Twitter */}
               <a
-                href="#"
+                href="https://x.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="X / Twitter"
                 className="w-8 h-8 flex items-center justify-center transition-colors"
                 style={{
@@ -83,7 +85,9 @@ export function Footer() {
               </a>
               {/* Instagram */}
               <a
-                href="#"
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="w-8 h-8 flex items-center justify-center transition-colors"
                 style={{

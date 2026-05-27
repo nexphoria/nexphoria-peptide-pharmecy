@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import ProductsClient from "./client";
 
 export const metadata: Metadata = {
@@ -17,23 +16,10 @@ export default function ProductsPage({
     <div className="min-h-screen bg-dark">
       {/* Page Hero */}
       <div
-        className="relative pt-36 pb-20 border-b overflow-hidden"
-        style={{ borderColor: "var(--dark-border)" }}
+        className="pt-36 pb-16 border-b"
+        style={{ backgroundColor: "var(--dark-bg)", borderColor: "var(--dark-border)" }}
       >
-        {/* Editorial hero background */}
-        <Image
-          src="/brand/editorial-hero.jpg"
-          alt="Research Compounds — Nexphoria"
-          fill
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0" style={{
-          background: "linear-gradient(135deg, rgba(10,10,8,0.85) 0%, rgba(26,26,24,0.75) 50%, rgba(10,10,8,0.85) 100%)"
-        }} />
-
-        <div className="container-nex relative z-10">
+        <div className="container-nex">
           <span className="eyebrow mb-5 block">Research Compounds</span>
           <h1
             className="font-bold tracking-tight mb-4"
@@ -50,57 +36,6 @@ export default function ProductsPage({
             cGMP-manufactured research compounds. Full Certificate of Analysis and technical
             documentation for every production lot. Available as lyophilized vials ready for research.
           </p>
-        </div>
-      </div>
-
-      {/* Product Format Cards */}
-      <div
-        className="border-b py-10"
-        style={{ backgroundColor: "var(--dark-panel)", borderColor: "var(--dark-border)" }}
-      >
-        <div className="container-nex">
-          <div className="grid md:grid-cols-2 gap-5">
-            {[
-              {
-                image: "/products/vial-hero-1.png",
-                title: "Capsules & Vials",
-                desc: "Lyophilized powder in pharmaceutical-grade sealed vials. Multiple delivery formats for every research need.",
-              },
-            ].map((card) => (
-              <div
-                key={card.title}
-                className="flex items-stretch border overflow-hidden group cursor-pointer transition-all duration-300 hover:border-acid-green"
-                style={{
-                  borderColor: "var(--dark-border)",
-                  backgroundColor: "var(--dark-card)"
-                }}
-              >
-                {/* Image area */}
-                <div className="w-36 flex-shrink-0 relative overflow-hidden">
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    fill
-                    className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                    sizes="144px"
-                  />
-                </div>
-                {/* Text */}
-                <div className="p-5 flex flex-col justify-center">
-                  <div className="w-4 h-px mb-3" style={{ backgroundColor: "var(--acid-green)" }} />
-                  <h3
-                    className="text-base font-bold mb-1.5 text-primary"
-                    style={{ fontFamily: "var(--font-playfair, Georgia, serif)" }}
-                  >
-                    {card.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-secondary">
-                    {card.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
 

@@ -229,9 +229,9 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                           ))}
                         </div>
                       </div>
-                      <button className="btn-acid w-full justify-center">
-                        Build This Stack <ArrowRight className="w-4 h-4" />
-                      </button>
+                      <Link href="/contact" className="btn-acid w-full justify-center">
+                        Inquire About This Stack <ArrowRight className="w-4 h-4" />
+                      </Link>
                     </div>
                   </motion.div>
                 );
