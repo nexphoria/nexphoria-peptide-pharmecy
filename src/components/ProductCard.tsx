@@ -72,32 +72,34 @@ export default function ProductCard({
               backgroundColor: "#F5F3F0",
             }}
           >
-            {/* Accent glow behind product */}
+            {/* Accent gradient background */}
             <div
-              className="absolute inset-0 pointer-events-none"
+              className="absolute inset-0"
               style={{
-                background: `radial-gradient(ellipse 60% 50% at 50% 55%, ${product.accentColor}08 0%, transparent 70%)`,
+                background: `radial-gradient(ellipse 70% 60% at 50% 50%, ${product.accentColor}08 0%, transparent 70%)`,
               }}
             />
 
-            {/* Product Image */}
+            {/* Product category initial or molecular icon */}
             <div
+              className="relative z-10 flex items-center justify-center"
               style={{
-                height: "160px",
-                width: "120px",
-                position: "relative",
-                zIndex: 1,
-                filter: `drop-shadow(0 4px 12px ${product.accentColor}15)`,
                 transform: isHovered ? "scale(1.05)" : "scale(1)",
                 transition: "transform 0.3s ease"
               }}
             >
-              <img
-                src='/products/vial-hero-1.png'
-                alt={product.name}
-                className='w-full h-full object-contain'
-                loading='lazy'
-              />
+              <span
+                className="font-bold uppercase tracking-tight"
+                style={{
+                  fontSize: "5rem",
+                  fontFamily: "var(--font-display)",
+                  color: `${product.accentColor}`,
+                  opacity: 0.15,
+                  lineHeight: 1,
+                }}
+              >
+                {product.name.charAt(0)}
+              </span>
             </div>
           </div>
 

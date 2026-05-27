@@ -35,7 +35,7 @@ export function Footer() {
   return (
     <footer className="relative text-ceramic" style={{ backgroundColor: "#1A1A18" }}>
       {/* Brand banner — full-width impact image */}
-      <div className="relative w-full overflow-hidden" style={{ height: "clamp(380px, 45vw, 580px)" }}>
+      <div className="relative w-full overflow-hidden" style={{ height: "clamp(400px, 50vw, 600px)" }}>
         <Image
           src="/brand/tm-vb-006.jpg"
           alt="Find Your Focus — Nexphoria"
@@ -43,10 +43,11 @@ export function Footer() {
           className="object-cover object-center"
           sizes="100vw"
           priority
+          quality={95}
         />
-        {/* Overlay only at very bottom — let the image show */}
+        {/* Minimal overlay at very bottom only for footer link contrast */}
         <div className="absolute inset-0" style={{
-          background: "linear-gradient(to bottom, transparent 0%, transparent 60%, rgba(26,26,24,0.55) 100%)"
+          background: "linear-gradient(to bottom, transparent 0%, transparent 85%, rgba(26,26,24,0.05) 100%)"
         }} />
       </div>
 

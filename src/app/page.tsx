@@ -89,18 +89,18 @@ function FAQItem({ item, index }: { item: typeof faqItems[0]; index: number }) {
     <motion.div
       initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={index * 0.05}
       className="border-b last:border-0"
-      style={{ borderColor: "rgba(255,255,255,0.08)" }}
+      style={{ borderColor: "#D8D4CC" }}
     >
       <button
         onClick={() => setOpen((v) => !v)}
         className="w-full flex items-center justify-between py-5 text-left gap-4"
       >
-        <span className="text-sm font-medium leading-snug text-primary">
+        <span className="text-sm font-medium leading-snug" style={{ color: "#010101" }}>
           {item.q}
         </span>
         <ChevronDown
           className="w-4 h-4 flex-shrink-0 transition-transform duration-300"
-          style={{ color: "var(--gold)", transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
+          style={{ color: "#C9A24B", transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
         />
       </button>
       <AnimatePresence initial={false}>
@@ -113,7 +113,7 @@ function FAQItem({ item, index }: { item: typeof faqItems[0]; index: number }) {
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             style={{ overflow: "hidden" }}
           >
-            <p className="pb-5 text-sm leading-relaxed text-secondary">
+            <p className="pb-5 text-sm leading-relaxed" style={{ color: "#5A5A58" }}>
               {item.a}
             </p>
           </motion.div>
@@ -334,7 +334,7 @@ export default function HomePage() {
       </section>
 
       {/* ========== TRUST BAR ========== */}
-      <section style={{ backgroundColor: "#0a0a08", borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+      <section style={{ backgroundColor: "#F5F3F0", borderTop: "1px solid #D8D4CC", borderBottom: "1px solid #D8D4CC" }}>
         <div className="py-5 overflow-hidden">
           <div className="container-nex">
             <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-center">
@@ -346,8 +346,8 @@ export default function HomePage() {
                 "8-Point Purity Protocol"
               ].map((item, i) => (
                 <span key={i} className="flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.16em]"
-                  style={{ color: "rgba(247,244,238,0.6)" }}>
-                  {i > 0 && <span className="hidden sm:inline" style={{ color: "rgba(247,244,238,0.3)" }}>|</span>}
+                  style={{ color: "#5A5A58" }}>
+                  {i > 0 && <span className="hidden sm:inline" style={{ color: "#8A8075" }}>|</span>}
                   {item}
                 </span>
               ))}
@@ -357,12 +357,12 @@ export default function HomePage() {
       </section>
 
       {/* ========== SHOP BY GOAL ========== */}
-      <section className="relative py-24 md:py-28 overflow-hidden" style={{ backgroundColor: "#1A1A18" }}>
+      <section className="relative py-24 md:py-28 overflow-hidden" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="container-nex relative z-10">
           <div className="mb-14">
             <span className="eyebrow mb-4 block">Browse Compounds</span>
-            <h2 className="font-bold tracking-tight max-w-xl text-primary"
-              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.8rem)" }}>
+            <h2 className="font-bold tracking-tight max-w-xl"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.8rem)", color: "#010101" }}>
               Find Your{" "}
               <em className="italic" style={{ color: "#C9A24B" }}>Protocol</em>
             </h2>
@@ -375,7 +375,7 @@ export default function HomePage() {
                 <div key={goal.name}>
                   <Link href={goal.href}
                     className="group block p-7 border overflow-hidden transition-all duration-300 relative"
-                    style={{ borderColor: "rgba(255,255,255,0.08)", backgroundColor: "#111110", borderRadius: "10px" }}
+                    style={{ borderColor: "#D8D4CC", backgroundColor: "#F5F3F0", borderRadius: "10px" }}
                     onMouseEnter={(e) => {
                       const el = e.currentTarget as HTMLElement;
                       el.style.borderColor = `${goal.color}55`;
@@ -383,7 +383,7 @@ export default function HomePage() {
                     }}
                     onMouseLeave={(e) => {
                       const el = e.currentTarget as HTMLElement;
-                      el.style.borderColor = "rgba(255,255,255,0.08)";
+                      el.style.borderColor = "#D8D4CC";
                       el.style.boxShadow = "";
                     }}
                   >
@@ -392,11 +392,11 @@ export default function HomePage() {
                         style={{ backgroundColor: `${goal.color}18`, border: `1px solid ${goal.color}30` }}>
                         <Icon className="w-5 h-5" strokeWidth={1.5} style={{ color: goal.color }} />
                       </div>
-                      <h3 className="text-lg font-bold mb-2 text-primary"
-                        style={{ fontFamily: "var(--font-display)" }}>
+                      <h3 className="text-lg font-bold mb-2"
+                        style={{ fontFamily: "var(--font-display)", color: "#010101" }}>
                         {goal.name}
                       </h3>
-                      <p className="text-xs mb-4 leading-relaxed text-secondary">
+                      <p className="text-xs mb-4 leading-relaxed" style={{ color: "#5A5A58" }}>
                         {goal.sub}
                       </p>
                       <span className="text-[10px] font-semibold uppercase tracking-[0.16em] flex items-center gap-1.5"
@@ -519,13 +519,13 @@ export default function HomePage() {
       </section>
 
       {/* ========== DUAL-TIER MODEL ========== */}
-      <section className="py-24 md:py-32" style={{ backgroundColor: "#0D0D0C" }}>
+      <section className="py-24 md:py-32" style={{ backgroundColor: "#F5F3F0" }}>
         <div className="container-nex">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="mb-14 text-center max-w-2xl mx-auto">
             <span className="eyebrow mb-4 block">Two Pathways</span>
-            <h2 className="font-bold tracking-tight text-primary"
-              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+            <h2 className="font-bold tracking-tight"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)", color: "#010101" }}>
               Research or{" "}
               <em className="italic" style={{ color: "#C9A24B" }}>Clinical</em>
             </h2>
@@ -541,26 +541,27 @@ export default function HomePage() {
               className="group relative p-8 border overflow-hidden transition-all duration-300"
               style={{
                 borderRadius: "16px",
-                borderColor: "rgba(198,241,132,0.2)",
-                backgroundColor: "#111110",
+                borderTop: "3px solid rgba(139, 195, 74, 0.6)",
+                borderColor: "rgba(139, 195, 74, 0.3)",
+                backgroundColor: "#FFFFFF",
               }}
               onMouseEnter={(e) => {
                 const el = e.currentTarget as HTMLElement;
-                el.style.borderColor = "rgba(198,241,132,0.4)";
-                el.style.boxShadow = "0 0 40px rgba(198,241,132,0.12)";
+                el.style.borderColor = "rgba(139, 195, 74, 0.5)";
+                el.style.boxShadow = "0 0 40px rgba(139, 195, 74, 0.12)";
               }}
               onMouseLeave={(e) => {
                 const el = e.currentTarget as HTMLElement;
-                el.style.borderColor = "rgba(198,241,132,0.2)";
+                el.style.borderColor = "rgba(139, 195, 74, 0.3)";
                 el.style.boxShadow = "";
               }}
             >
               <div className="absolute top-6 right-6 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide"
                 style={{
-                  backgroundColor: "rgba(198,241,132,0.15)",
-                  color: "var(--acid-green)",
+                  backgroundColor: "rgba(139, 195, 74, 0.12)",
+                  color: "#6B8E23",
                   borderRadius: "6px",
-                  border: "1px solid rgba(198,241,132,0.25)"
+                  border: "1px solid rgba(139, 195, 74, 0.25)"
                 }}>
                 Research-Grade
               </div>
@@ -570,14 +571,14 @@ export default function HomePage() {
                   style={{ backgroundColor: "rgba(201,162,75,0.12)", border: "1px solid rgba(201,162,75,0.25)" }}>
                   <FlaskConical className="w-7 h-7" strokeWidth={1.5} style={{ color: "#C9A24B" }} />
                 </div>
-                <h3 className="text-2xl font-bold mb-3 text-primary"
-                  style={{ fontFamily: "var(--font-display)" }}>
+                <h3 className="text-2xl font-bold mb-3"
+                  style={{ fontFamily: "var(--font-display)", color: "#010101" }}>
                   Research-Grade Compounds
                 </h3>
               </div>
 
               <div className="space-y-4 mb-8">
-                <p className="text-sm leading-relaxed text-secondary">
+                <p className="text-sm leading-relaxed" style={{ color: "#5A5A58" }}>
                   Lyophilized powder. Third-party tested. For qualified researchers.
                 </p>
                 <ul className="space-y-2.5">
@@ -587,7 +588,7 @@ export default function HomePage() {
                     "cGMP manufacturing",
                     "Full reconstitution protocols",
                   ].map((item) => (
-                    <li key={item} className="flex items-start gap-2.5 text-sm text-secondary">
+                    <li key={item} className="flex items-start gap-2.5 text-sm" style={{ color: "#5A5A58" }}>
                       <Check className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "#C9A24B" }} />
                       <span>{item}</span>
                     </li>
@@ -609,24 +610,25 @@ export default function HomePage() {
               className="group relative p-8 border overflow-hidden transition-all duration-300"
               style={{
                 borderRadius: "16px",
-                borderColor: "rgba(201,162,75,0.2)",
-                backgroundColor: "#111110",
+                borderTop: "3px solid rgba(201,162,75,0.6)",
+                borderColor: "rgba(201,162,75,0.3)",
+                backgroundColor: "#FFFFFF",
               }}
               onMouseEnter={(e) => {
                 const el = e.currentTarget as HTMLElement;
-                el.style.borderColor = "rgba(201,162,75,0.4)";
+                el.style.borderColor = "rgba(201,162,75,0.5)";
                 el.style.boxShadow = "0 0 40px rgba(201,162,75,0.12)";
               }}
               onMouseLeave={(e) => {
                 const el = e.currentTarget as HTMLElement;
-                el.style.borderColor = "rgba(201,162,75,0.2)";
+                el.style.borderColor = "rgba(201,162,75,0.3)";
                 el.style.boxShadow = "";
               }}
             >
               <div className="absolute top-6 right-6 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide"
                 style={{
                   backgroundColor: "rgba(201,162,75,0.15)",
-                  color: "var(--gold)",
+                  color: "#C9A24B",
                   borderRadius: "6px",
                   border: "1px solid rgba(201,162,75,0.25)"
                 }}>
@@ -636,16 +638,16 @@ export default function HomePage() {
               <div className="mb-6">
                 <div className="w-14 h-14 rounded-full flex items-center justify-center mb-5"
                   style={{ backgroundColor: "rgba(201,162,75,0.12)", border: "1px solid rgba(201,162,75,0.25)" }}>
-                  <Syringe className="w-7 h-7" strokeWidth={1.5} style={{ color: "var(--gold)" }} />
+                  <Syringe className="w-7 h-7" strokeWidth={1.5} style={{ color: "#C9A24B" }} />
                 </div>
-                <h3 className="text-2xl font-bold mb-3 text-primary"
-                  style={{ fontFamily: "var(--font-display)" }}>
+                <h3 className="text-2xl font-bold mb-3"
+                  style={{ fontFamily: "var(--font-display)", color: "#010101" }}>
                   Physician-Guided Therapy
                 </h3>
               </div>
 
               <div className="space-y-4 mb-8">
-                <p className="text-sm leading-relaxed text-secondary">
+                <p className="text-sm leading-relaxed" style={{ color: "#5A5A58" }}>
                   Pre-mixed, prescription-grade. Telehealth consultation included. Starting at $149/month.
                 </p>
                 <ul className="space-y-2.5">
@@ -655,8 +657,8 @@ export default function HomePage() {
                     "Monthly telehealth check-ins",
                     "Delivered to your door",
                   ].map((item) => (
-                    <li key={item} className="flex items-start gap-2.5 text-sm text-secondary">
-                      <Check className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "var(--gold)" }} />
+                    <li key={item} className="flex items-start gap-2.5 text-sm" style={{ color: "#5A5A58" }}>
+                      <Check className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "#C9A24B" }} />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -726,17 +728,17 @@ export default function HomePage() {
       </section>
 
       {/* ========== BUILD YOUR STACK ========== */}
-      <section id="stack-builder" className="py-24 md:py-32" style={{ backgroundColor: "#111110" }}>
+      <section id="stack-builder" className="py-24 md:py-32" style={{ backgroundColor: "#F5F3F0" }}>
         <div className="container-nex">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="mb-12">
             <span className="eyebrow mb-4 block">Interactive Configurator</span>
-            <h2 className="font-bold tracking-tight mb-3 text-primary"
-              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+            <h2 className="font-bold tracking-tight mb-3"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)", color: "#010101" }}>
               Build Your{" "}
               <em className="italic" style={{ color: "#C9A24B" }}>Stack</em>
             </h2>
-            <p className="text-sm max-w-lg leading-relaxed text-secondary">
+            <p className="text-sm max-w-lg leading-relaxed" style={{ color: "#5A5A58" }}>
               Select your goals — we&apos;ll surface the right compounds. Add to your stack and review your order summary.
             </p>
           </motion.div>
@@ -758,8 +760,8 @@ export default function HomePage() {
                       className="relative text-left p-5 border transition-all duration-200 group"
                       style={{
                         borderRadius: "10px",
-                        borderColor: active ? gc.color : "rgba(255,255,255,0.10)",
-                        backgroundColor: active ? `${gc.color}14` : "#0D0D0C",
+                        borderColor: active ? gc.color : "#D8D4CC",
+                        backgroundColor: active ? `${gc.color}14` : "#FFFFFF",
                         boxShadow: active ? `0 0 24px ${gc.color}18` : "none",
                       }}
                     >
@@ -774,10 +776,10 @@ export default function HomePage() {
                         <Icon className="w-4 h-4" strokeWidth={1.5} style={{ color: gc.color }} />
                       </div>
                       <div className="text-sm font-semibold mb-1 leading-tight"
-                        style={{ fontFamily: "var(--font-display)", color: active ? "var(--text-primary)" : "rgba(247,244,238,0.8)" }}>
+                        style={{ fontFamily: "var(--font-display)", color: active ? "#010101" : "#3A3A3A" }}>
                         {gc.goal}
                       </div>
-                      <div className="text-[10px] leading-snug text-secondary">{gc.desc}</div>
+                      <div className="text-[10px] leading-snug" style={{ color: "#5A5A58" }}>{gc.desc}</div>
                     </button>
                   );
                 })}
@@ -793,7 +795,7 @@ export default function HomePage() {
                     transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                   >
                     <div className="mb-5">
-                      <span className="text-xs font-semibold uppercase tracking-[0.16em] text-secondary">
+                      <span className="text-xs font-semibold uppercase tracking-[0.16em]" style={{ color: "#5A5A58" }}>
                         Recommended for your goals
                       </span>
                     </div>
@@ -813,8 +815,8 @@ export default function HomePage() {
                               className="flex items-center gap-4 p-4 border"
                               style={{
                                 borderRadius: "10px",
-                                borderColor: inStack ? `${product.accentColor}40` : "rgba(255,255,255,0.07)",
-                                backgroundColor: inStack ? `${product.accentColor}08` : "#0D0D0C",
+                                borderColor: inStack ? `${product.accentColor}40` : "#D8D4CC",
+                                backgroundColor: inStack ? `${product.accentColor}08` : "#FFFFFF",
                               }}
                             >
                               {/* Vial thumbnail */}
@@ -829,8 +831,8 @@ export default function HomePage() {
 
                               {/* Info */}
                               <div className="flex-1 min-w-0">
-                                <div className="text-sm font-semibold mb-0.5 text-primary">{product.name}</div>
-                                <div className="text-xs mb-2 text-secondary">{product.category}</div>
+                                <div className="text-sm font-semibold mb-0.5" style={{ color: "#010101" }}>{product.name}</div>
+                                <div className="text-xs mb-2" style={{ color: "#5A5A58" }}>{product.category}</div>
 
                                 {/* Dosage selector */}
                                 {product.dosages && product.dosages.length > 1 ? (
@@ -840,9 +842,9 @@ export default function HomePage() {
                                     className="text-[10px] font-medium px-2 py-1 border"
                                     style={{
                                       borderRadius: "4px",
-                                      borderColor: "rgba(255,255,255,0.12)",
-                                      backgroundColor: "#1A1A18",
-                                      color: "rgba(247,244,238,0.7)",
+                                      borderColor: "#D8D4CC",
+                                      backgroundColor: "#FFFFFF",
+                                      color: "#3A3A3A",
                                       cursor: inStack ? "pointer" : "default",
                                     }}
                                   >
@@ -851,14 +853,14 @@ export default function HomePage() {
                                     ))}
                                   </select>
                                 ) : (
-                                  <span className="text-[10px] text-secondary">{product.size}</span>
+                                  <span className="text-[10px]" style={{ color: "#5A5A58" }}>{product.size}</span>
                                 )}
                               </div>
 
                               {/* Price + action */}
                               <div className="text-right flex-shrink-0">
                                 <div className="text-base font-bold mb-2"
-                                  style={{ fontFamily: "var(--font-display)", color: "#C9A24B" }}>
+                                  style={{ fontFamily: "var(--font-display)", color: "#010101" }}>
                                   ${currentPrice}
                                 </div>
 
@@ -867,20 +869,20 @@ export default function HomePage() {
                                     {/* Qty controls */}
                                     <div className="flex items-center gap-1">
                                       <button onClick={() => updateQty(product.slug, -1)}
-                                        className="w-6 h-6 flex items-center justify-center border transition-colors text-primary"
-                                        style={{ borderRadius: "4px", borderColor: "rgba(255,255,255,0.15)" }}>
+                                        className="w-6 h-6 flex items-center justify-center border transition-colors"
+                                        style={{ borderRadius: "4px", borderColor: "#D8D4CC", color: "#3A3A3A" }}>
                                         <Minus className="w-3 h-3" />
                                       </button>
-                                      <span className="text-sm font-semibold w-5 text-center text-primary">{item.qty}</span>
+                                      <span className="text-sm font-semibold w-5 text-center" style={{ color: "#010101" }}>{item.qty}</span>
                                       <button onClick={() => updateQty(product.slug, 1)}
-                                        className="w-6 h-6 flex items-center justify-center border transition-colors text-primary"
-                                        style={{ borderRadius: "4px", borderColor: "rgba(255,255,255,0.15)" }}>
+                                        className="w-6 h-6 flex items-center justify-center border transition-colors"
+                                        style={{ borderRadius: "4px", borderColor: "#D8D4CC", color: "#3A3A3A" }}>
                                         <Plus className="w-3 h-3" />
                                       </button>
                                     </div>
                                     <button onClick={() => removeFromStack(product.slug)}
                                       className="text-[10px] font-medium uppercase tracking-wide transition-colors"
-                                      style={{ color: "rgba(138,128,117,0.7)" }}>
+                                      style={{ color: "#8A8075" }}>
                                       Remove
                                     </button>
                                   </div>
@@ -890,14 +892,14 @@ export default function HomePage() {
                                     style={{
                                       borderRadius: "4px",
                                       borderColor: "var(--acid-green)",
-                                      color: "var(--acid-green)",
-                                      backgroundColor: "transparent",
+                                      color: "#000",
+                                      backgroundColor: "var(--acid-green)",
                                     }}
                                     onMouseEnter={(e) => {
-                                      (e.currentTarget as HTMLButtonElement).style.backgroundColor = "rgba(198,241,132,0.12)";
+                                      (e.currentTarget as HTMLButtonElement).style.opacity = "0.9";
                                     }}
                                     onMouseLeave={(e) => {
-                                      (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent";
+                                      (e.currentTarget as HTMLButtonElement).style.opacity = "1";
                                     }}
                                   >
                                     Add to Order
@@ -915,12 +917,12 @@ export default function HomePage() {
 
               {recommendedProducts.length === 0 && (
                 <div className="py-12 text-center border border-dashed"
-                  style={{ borderColor: "rgba(255,255,255,0.08)", borderRadius: "10px" }}>
+                  style={{ borderColor: "#D8D4CC", borderRadius: "10px" }}>
                   <div className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-3"
-                    style={{ backgroundColor: "rgba(255,255,255,0.04)" }}>
-                    <Zap className="w-4 h-4" style={{ color: "rgba(138,128,117,0.5)" }} />
+                    style={{ backgroundColor: "#EAE7E3" }}>
+                    <Zap className="w-4 h-4" style={{ color: "#8A8075" }} />
                   </div>
-                  <p className="text-sm" style={{ color: "rgba(138,128,117,0.55)" }}>
+                  <p className="text-sm" style={{ color: "#5A5A58" }}>
                     Select one or more goals above to see recommended compounds.
                   </p>
                 </div>
@@ -930,13 +932,13 @@ export default function HomePage() {
             {/* ---- Right: Sticky order summary ---- */}
             <div className="lg:sticky lg:top-24">
               <div className="border overflow-hidden"
-                style={{ borderRadius: "12px", borderColor: "rgba(201,162,75,0.2)", backgroundColor: "#0D0D0C" }}>
+                style={{ borderRadius: "12px", borderColor: "#C9A24B", backgroundColor: "#FFFFFF" }}>
                 {/* Header */}
                 <div className="px-6 py-5 border-b"
-                  style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+                  style={{ borderColor: "#D8D4CC" }}>
                   <div>
                     <span className="eyebrow block mb-1" style={{ color: "var(--gold)" }}>Your Stack</span>
-                    <p className="text-[10px] uppercase tracking-wide" style={{ color: "var(--grey-olive)" }}>
+                    <p className="text-[10px] uppercase tracking-wide" style={{ color: "#8A8075" }}>
                       {stackEntries.length === 0 ? "No items yet" : `${stackEntries.length} compound${stackEntries.length !== 1 ? "s" : ""} selected`}
                     </p>
                   </div>
@@ -944,14 +946,14 @@ export default function HomePage() {
 
                 {stackEntries.length === 0 ? (
                   <div className="px-6 py-12 text-center">
-                    <p className="text-sm leading-relaxed" style={{ color: "rgba(138,128,117,0.6)" }}>
+                    <p className="text-sm leading-relaxed" style={{ color: "#5A5A58" }}>
                       Select your goals above to start building your personalized stack.
                     </p>
                   </div>
                 ) : (
                   <>
                     {/* Stack items */}
-                    <div className="px-6 py-4 space-y-4 border-b" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+                    <div className="px-6 py-4 space-y-4 border-b" style={{ borderColor: "#D8D4CC" }}>
                       <AnimatePresence>
                         {stackEntries.map(([slug, item]) => {
                           const p = products.find(x => x.slug === slug);
@@ -977,12 +979,12 @@ export default function HomePage() {
                                   />
                                 </div>
                                 <div className="min-w-0">
-                                  <div className="text-xs font-semibold truncate text-primary">{p.name}</div>
-                                  <div className="text-[10px] text-secondary">{item.dosage} × {item.qty}</div>
+                                  <div className="text-xs font-semibold truncate" style={{ color: "#010101" }}>{p.name}</div>
+                                  <div className="text-[10px]" style={{ color: "#5A5A58" }}>{item.dosage} × {item.qty}</div>
                                 </div>
                               </div>
-                              <div className="text-sm font-bold flex-shrink-0 text-primary"
-                                style={{ fontFamily: "var(--font-display)" }}>
+                              <div className="text-sm font-bold flex-shrink-0"
+                                style={{ fontFamily: "var(--font-display)", color: "#010101" }}>
                                 ${linePrice}
                               </div>
                             </motion.div>
@@ -992,11 +994,11 @@ export default function HomePage() {
                     </div>
 
                     {/* Pricing */}
-                    <div className="px-6 py-5 space-y-3 border-b" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+                    <div className="px-6 py-5 space-y-3 border-b" style={{ borderColor: "#D8D4CC" }}>
                       <div className="flex justify-between items-center">
-                        <span className="text-sm font-semibold text-primary">Total</span>
+                        <span className="text-sm font-semibold" style={{ color: "#010101" }}>Total</span>
                         <span className="text-2xl font-bold"
-                          style={{ fontFamily: "var(--font-display)", color: "#C9A24B" }}>
+                          style={{ fontFamily: "var(--font-display)", color: "#010101" }}>
                           ${stackFinalTotal}
                         </span>
                       </div>
@@ -1011,7 +1013,7 @@ export default function HomePage() {
                       <div className="flex flex-wrap justify-center gap-x-4 gap-y-1">
                         {["99.7% Purity", "COA Included", "Same-Day Shipping"].map(badge => (
                           <span key={badge} className="flex items-center gap-1 text-[9px] font-medium uppercase tracking-wide"
-                            style={{ color: "rgba(138,128,117,0.7)" }}>
+                            style={{ color: "#8A8075" }}>
                             <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: "var(--gold)" }} />
                             {badge}
                           </span>
@@ -1028,13 +1030,13 @@ export default function HomePage() {
       </section>
 
       {/* ========== GOAL-BASED BUNDLES ========== */}
-      <section id="bundles" className="py-24 md:py-32" style={{ backgroundColor: "#1A1A18" }}>
+      <section id="bundles" className="py-24 md:py-32" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="container-nex">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="mb-14">
             <span className="eyebrow mb-4 block">Stacks &amp; Bundles</span>
-            <h2 className="font-bold tracking-tight max-w-xl text-primary"
-              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+            <h2 className="font-bold tracking-tight max-w-xl"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)", color: "#010101" }}>
               Curated for Your{" "}
               <em className="italic" style={{ color: "#C9A24B" }}>Goals</em>
             </h2>
@@ -1048,7 +1050,7 @@ export default function HomePage() {
                 <motion.div key={bundle.slug}
                   initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.1}
                   className="relative border overflow-hidden"
-                  style={{ borderColor: "rgba(201,162,75,0.15)", backgroundColor: "#111110", borderRadius: "16px" }}>
+                  style={{ borderColor: "#D8D4CC", backgroundColor: "#F5F3F0", borderRadius: "16px" }}>
 
                   <div className="grid lg:grid-cols-[1fr_2fr_1fr] gap-8 p-8">
 
@@ -1066,7 +1068,7 @@ export default function HomePage() {
                             transform: vi === 1 ? "translateY(-12px)" : "none",
                             zIndex: vi === 1 ? 2 : 1,
                             position: "relative",
-                            filter: `drop-shadow(0 6px 16px rgba(0,0,0,0.6))`,
+                            filter: `drop-shadow(0 6px 16px rgba(0,0,0,0.2))`,
                           }}>
                             <img
                               src="/products/vial-hero-1.png"
@@ -1082,13 +1084,13 @@ export default function HomePage() {
                       <div className="mb-4">
                         <div className="text-4xl font-bold mb-1"
                           style={{ fontFamily: "var(--font-display)", color: "#C9A24B" }}>
-                          ${bundle.monthlyPrice}<span className="text-lg text-secondary font-normal">/mo</span>
+                          ${bundle.monthlyPrice}<span className="text-lg font-normal" style={{ color: "#5A5A58" }}>/mo</span>
                         </div>
-                        <div className="text-xs text-secondary mb-2">
+                        <div className="text-xs mb-2" style={{ color: "#5A5A58" }}>
                           Monthly auto-ship
                         </div>
                         <div className="px-3 py-1 text-xs font-semibold uppercase tracking-wide"
-                          style={{ backgroundColor: "rgba(198,241,132,0.15)", color: "var(--acid-green)", borderRadius: "4px", border: "1px solid rgba(198,241,132,0.25)" }}>
+                          style={{ backgroundColor: "rgba(139, 195, 74, 0.12)", color: "#6B8E23", borderRadius: "4px", border: "1px solid rgba(139, 195, 74, 0.25)" }}>
                           {bundle.tags[0]}
                         </div>
                       </div>
@@ -1097,26 +1099,26 @@ export default function HomePage() {
                     {/* Center: Educational Content */}
                     <div>
                       <div className="flex items-start justify-between mb-4">
-                        <span className="eyebrow" style={{ color: "var(--gold)" }}>{bundle.eyebrow}</span>
+                        <span className="eyebrow" style={{ color: "#C9A24B" }}>{bundle.eyebrow}</span>
                       </div>
 
-                      <h3 className="text-2xl font-bold tracking-tight mb-3 text-primary"
-                        style={{ fontFamily: "var(--font-display)" }}>
+                      <h3 className="text-2xl font-bold tracking-tight mb-3"
+                        style={{ fontFamily: "var(--font-display)", color: "#010101" }}>
                         {bundle.name}
                       </h3>
 
-                      <p className="text-sm leading-relaxed mb-6 text-secondary">
+                      <p className="text-sm leading-relaxed mb-6" style={{ color: "#5A5A58" }}>
                         {bundle.description}
                       </p>
 
                       {/* Synergy Explanation - Key Educational Feature */}
                       <div className="p-4 border rounded-lg mb-6"
-                        style={{ borderColor: "rgba(255,255,255,0.06)", backgroundColor: "rgba(255,255,255,0.02)" }}>
+                        style={{ borderColor: "#D8D4CC", backgroundColor: "#FFFFFF" }}>
                         <h4 className="text-xs font-semibold uppercase tracking-wide mb-2"
                           style={{ color: "#C9A24B" }}>
                           Why These Work Together
                         </h4>
-                        <p className="text-xs leading-relaxed text-primary">
+                        <p className="text-xs leading-relaxed" style={{ color: "#3A3A3A" }}>
                           {bundle.synergy}
                         </p>
                       </div>
@@ -1124,29 +1126,29 @@ export default function HomePage() {
                       {/* Mechanism + Timeline */}
                       <div className="grid grid-cols-1 gap-4 mb-6">
                         <div>
-                          <h4 className="text-xs font-semibold uppercase tracking-wide mb-2 text-secondary">
+                          <h4 className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: "#5A5A58" }}>
                             Mechanism
                           </h4>
-                          <p className="text-xs leading-relaxed text-secondary">
+                          <p className="text-xs leading-relaxed" style={{ color: "#5A5A58" }}>
                             {bundle.mechanism}
                           </p>
                         </div>
                         <div>
-                          <h4 className="text-xs font-semibold uppercase tracking-wide mb-2 text-secondary">
+                          <h4 className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: "#5A5A58" }}>
                             Expected Timeline
                           </h4>
-                          <p className="text-xs leading-relaxed text-secondary">
+                          <p className="text-xs leading-relaxed" style={{ color: "#5A5A58" }}>
                             {bundle.timeline}
                           </p>
                         </div>
                       </div>
 
                       {/* Product List */}
-                      <div className="space-y-2 mb-6 border-t pt-4" style={{ borderColor: "rgba(255,255,255,0.07)" }}>
+                      <div className="space-y-2 mb-6 border-t pt-4" style={{ borderColor: "#D8D4CC" }}>
                         {bundleProds.map((p) => p && (
                           <div key={p.slug} className="flex items-center justify-between">
-                            <span className="text-sm text-primary">{p.name}</span>
-                            <span className="text-sm text-secondary">${p.price}</span>
+                            <span className="text-sm" style={{ color: "#010101" }}>{p.name}</span>
+                            <span className="text-sm" style={{ color: "#5A5A58" }}>${p.price}</span>
                           </div>
                         ))}
                       </div>
@@ -1158,7 +1160,7 @@ export default function HomePage() {
                       <div className="flex flex-wrap gap-2 justify-center lg:justify-end mb-6">
                         {bundle.tags.map((tag) => (
                           <span key={tag} className="px-3 py-1 text-xs font-medium uppercase tracking-wide"
-                            style={{ backgroundColor: "rgba(255,255,255,0.06)", color: "rgba(247,244,238,0.7)", borderRadius: "4px", border: "1px solid rgba(255,255,255,0.08)" }}>
+                            style={{ backgroundColor: "#EAE7E3", color: "#5A5A58", borderRadius: "4px", border: "1px solid #D8D4CC" }}>
                             {tag}
                           </span>
                         ))}
@@ -1172,7 +1174,7 @@ export default function HomePage() {
                       {/* Trust badges */}
                       <div className="space-y-1">
                         {["99.7% Purity", "COA Included", "6-Month Plan"].map(badge => (
-                          <div key={badge} className="text-xs text-tertiary">
+                          <div key={badge} className="text-xs" style={{ color: "#8A8075" }}>
                             ✓ {badge}
                           </div>
                         ))}
@@ -1241,26 +1243,13 @@ export default function HomePage() {
       </section>
 
       {/* ========== PACKAGING JOURNEY ========== */}
-      <section className="relative py-24 md:py-36 overflow-hidden" style={{ backgroundColor: "#0D0D0C" }}>
-        {/* Boxes cascade hero background */}
-        <div className="absolute inset-0 pointer-events-none">
-          <Image
-            src="/brand/boxes-cascade.jpg"
-            alt="Premium packaging - cold-chain ready"
-            fill
-            className="object-cover object-center"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0" style={{
-            background: "linear-gradient(to bottom, rgba(13,13,12,0.9) 0%, rgba(13,13,12,0.7) 50%, rgba(13,13,12,0.9) 100%)"
-          }} />
-        </div>
+      <section className="relative py-24 md:py-36 overflow-hidden" style={{ backgroundColor: "#F5F3F0" }}>
         <div className="container-nex relative z-20">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="mb-16 max-w-xl">
             <span className="eyebrow mb-4 block">Premium Packaging</span>
-            <h2 className="font-bold tracking-tight text-primary"
-              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+            <h2 className="font-bold tracking-tight"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)", color: "#010101" }}>
               Cold-Chain Ready{" "}
               <em className="italic" style={{ color: "#C9A24B" }}>Delivery</em>
             </h2>
@@ -1270,11 +1259,11 @@ export default function HomePage() {
           <div className="relative mb-20">
             {/* Connector track (background) */}
             <div className="hidden md:block absolute left-[calc(12.5%+24px)] right-[calc(12.5%+24px)] pointer-events-none"
-              style={{ top: "27px", height: "1px", backgroundColor: "rgba(201,162,75,0.12)" }} />
+              style={{ top: "27px", height: "1px", backgroundColor: "rgba(201,162,75,0.2)" }} />
             {/* Animated gold fill */}
             <motion.div
               className="hidden md:block absolute pointer-events-none"
-              style={{ top: "27px", left: "calc(12.5% + 24px)", right: "calc(12.5% + 24px)", height: "1px", backgroundColor: "var(--gold)", transformOrigin: "left", scaleX: 0 }}
+              style={{ top: "27px", left: "calc(12.5% + 24px)", right: "calc(12.5% + 24px)", height: "1px", backgroundColor: "#C9A24B", transformOrigin: "left", scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
@@ -1296,20 +1285,20 @@ export default function HomePage() {
                 >
                   {/* Step circle */}
                   <div className="relative w-14 h-14 rounded-full flex items-center justify-center mb-5 flex-shrink-0"
-                    style={{ backgroundColor: "rgba(201,162,75,0.10)", border: "1px solid rgba(201,162,75,0.28)" }}>
-                    <Icon className="w-6 h-6" strokeWidth={1.4} style={{ color: "var(--gold)" }} />
+                    style={{ backgroundColor: "rgba(201,162,75,0.12)", border: "1px solid rgba(201,162,75,0.3)" }}>
+                    <Icon className="w-6 h-6" strokeWidth={1.4} style={{ color: "#C9A24B" }} />
                     <div className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center"
-                      style={{ backgroundColor: "#0D0D0C", border: "1px solid rgba(201,162,75,0.35)" }}>
-                      <span className="text-[9px] font-mono font-bold" style={{ color: "var(--gold)" }}>
+                      style={{ backgroundColor: "#F5F3F0", border: "1px solid rgba(201,162,75,0.4)" }}>
+                      <span className="text-[9px] font-mono font-bold" style={{ color: "#C9A24B" }}>
                         {String(i + 1).padStart(2, "0")}
                       </span>
                     </div>
                   </div>
-                  <h3 className="text-base font-bold mb-2 text-primary"
-                    style={{ fontFamily: "var(--font-display)" }}>
+                  <h3 className="text-base font-bold mb-2"
+                    style={{ fontFamily: "var(--font-display)", color: "#010101" }}>
                     {label}
                   </h3>
-                  <p className="text-xs leading-relaxed max-w-[200px] text-secondary">{desc}</p>
+                  <p className="text-xs leading-relaxed max-w-[200px]" style={{ color: "#5A5A58" }}>{desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -1345,18 +1334,18 @@ export default function HomePage() {
       </section>
 
       {/* ========== SCIENCE PREVIEW ========== */}
-      <section className="relative py-24 md:py-32 overflow-hidden" style={{ backgroundColor: "#1A1A18" }}>
+      <section className="relative py-24 md:py-32 overflow-hidden" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="container-nex relative">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="mb-10">
             <span className="eyebrow mb-4 block">The Science</span>
-            <h2 className="font-bold tracking-tight max-w-xl text-primary"
-              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+            <h2 className="font-bold tracking-tight max-w-xl"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)", color: "#010101" }}>
               Pharmaceutical-Grade{" "}
               <em className="italic" style={{ color: "#C9A24B" }}>Excellence</em>
             </h2>
           </motion.div>
-          <div className="grid md:grid-cols-3 gap-0 border" style={{ borderColor: "rgba(255,255,255,0.07)" }}>
+          <div className="grid md:grid-cols-3 gap-0 border" style={{ borderColor: "#D8D4CC" }}>
             {[
               { icon: Microscope, code: "HPLC", title: "HPLC Analysis", desc: "Reverse-phase C18 HPLC with UV/DAD detection on every production lot. Purity quantified to ≥99.0% against certified reference standards." },
               { icon: Atom, code: "ESI-MS", title: "Mass Spectrometry", desc: "Electrospray ionization (ESI) confirms molecular identity by exact mass. [M+H]⁺ observed masses matched within 5 ppm tolerance against NIST databases." },
@@ -1365,15 +1354,15 @@ export default function HomePage() {
               <motion.div key={item.code}
                 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.12}
                 className="p-8 border-b md:border-b-0 md:border-r last:border-0"
-                style={{ borderColor: "rgba(255,255,255,0.07)" }}>
+                style={{ borderColor: "#D8D4CC" }}>
                 <div className="w-12 h-12 rounded-full flex items-center justify-center mb-6"
                   style={{ backgroundColor: "rgba(201,162,75,0.15)", border: "1px solid rgba(201,162,75,0.25)" }}>
-                  <item.icon className="w-6 h-6 text-gold" strokeWidth={1.5} />
+                  <item.icon className="w-6 h-6" strokeWidth={1.5} style={{ color: "#C9A24B" }} />
                 </div>
                 <div className="inline-flex items-center px-2.5 py-1 font-mono text-xs font-medium mb-4"
-                  style={{ backgroundColor: "rgba(201,162,75,0.12)", color: "var(--gold)" }}>{item.code}</div>
-                <h3 className="text-base font-semibold mb-3 text-primary">{item.title}</h3>
-                <p className="text-sm leading-relaxed text-secondary">{item.desc}</p>
+                  style={{ backgroundColor: "rgba(201,162,75,0.12)", color: "#C9A24B" }}>{item.code}</div>
+                <h3 className="text-base font-semibold mb-3" style={{ color: "#010101" }}>{item.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: "#5A5A58" }}>{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -1387,24 +1376,24 @@ export default function HomePage() {
       </section>
 
       {/* ========== FAQ ========== */}
-      <section className="py-24 md:py-32" style={{ backgroundColor: "#111110" }}>
+      <section className="py-24 md:py-32" style={{ backgroundColor: "#EAE7E3" }}>
         <div className="container-nex">
           <div className="grid lg:grid-cols-[2fr_3fr] gap-16">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
               <span className="eyebrow mb-5 block">FAQ</span>
-              <h2 className="font-bold tracking-tight mb-6 text-primary"
-                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.8rem)" }}>
+              <h2 className="font-bold tracking-tight mb-6"
+                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.8rem)", color: "#010101" }}>
                 Common{" "}
                 <em className="italic" style={{ color: "#C9A24B" }}>Questions</em>
               </h2>
-              <p className="text-sm leading-relaxed mb-8 text-secondary">
+              <p className="text-sm leading-relaxed mb-8" style={{ color: "#5A5A58" }}>
                 Everything you need to know about ordering, storage, and our quality standards.
               </p>
               <Link href="/contact" className="btn-outline-gold">
                 Ask a Question <ArrowRight className="w-4 h-4" />
               </Link>
             </motion.div>
-            <div className="border-t" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
+            <div className="border-t" style={{ borderColor: "#D8D4CC" }}>
               {faqItems.map((item, i) => (
                 <FAQItem key={item.q} item={item} index={i} />
               ))}
@@ -1414,18 +1403,18 @@ export default function HomePage() {
       </section>
 
       {/* ========== EMAIL CAPTURE ========== */}
-      <section className="py-24" style={{ backgroundColor: "#1A1A18" }}>
+      <section className="py-24" style={{ backgroundColor: "#F5F3F0" }}>
         <div className="container-nex">
           <div className="max-w-xl mx-auto text-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
               className="mb-10">
               <span className="eyebrow mb-5 block">Research Updates</span>
-              <h2 className="font-bold tracking-tight mb-4 text-primary"
-                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 2.75rem)" }}>
+              <h2 className="font-bold tracking-tight mb-4"
+                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 2.75rem)", color: "#010101" }}>
                 Stay Ahead of the{" "}
                 <em className="italic" style={{ color: "#C9A24B" }}>Science</em>
               </h2>
-              <p className="text-sm leading-relaxed text-secondary">
+              <p className="text-sm leading-relaxed" style={{ color: "#5A5A58" }}>
                 New compound announcements, COA publications, and research updates. Join 2,400+ researchers.
               </p>
             </motion.div>
@@ -1454,10 +1443,10 @@ export default function HomePage() {
                   console.error('Waitlist error:', error);
                 }
               }}>
-              <input type="email" name="email" placeholder="your@email.com" className="nex-input-dark flex-1" required />
+              <input type="email" name="email" placeholder="your@email.com" className="nex-input flex-1" required />
               <button type="submit" className="btn-acid whitespace-nowrap">Subscribe</button>
             </motion.form>
-            <p className="mt-5 text-xs" style={{ color: "rgba(138,128,117,0.55)" }}>
+            <p className="mt-5 text-xs" style={{ color: "#8A8075" }}>
               Research use newsletter. Unsubscribe anytime.
             </p>
           </div>
