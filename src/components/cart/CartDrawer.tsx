@@ -320,7 +320,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                         format: item.format,
                         subscriptionMonths: item.subscriptionMonths || 1,
                       }));
-                      const res = await fetch('/api/checkout', {
+                      const res = await fetch(process.env.NEXT_PUBLIC_CHECKOUT_URL || '/api/checkout', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ items: cartItems }),
