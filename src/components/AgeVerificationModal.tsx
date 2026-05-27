@@ -133,18 +133,19 @@ export default function AgeVerificationModal() {
             <button
               onClick={handleEnter}
               disabled={!ageConfirmed || !researchConfirmed}
-              className="flex h-12 items-center justify-center rounded-lg text-sm font-semibold uppercase tracking-wider transition-all"
+              className="flex h-12 items-center justify-center rounded-lg text-sm font-semibold uppercase tracking-wider transition-all duration-200"
               style={{
                 backgroundColor:
-                  ageConfirmed && researchConfirmed ? "#A8C97F" : "#2A2A2A",
+                  ageConfirmed && researchConfirmed ? "#A8C97F" : "transparent",
                 color:
-                  ageConfirmed && researchConfirmed ? "#0A0A08" : "#6B6B6B",
+                  ageConfirmed && researchConfirmed ? "#0A0A08" : "rgba(253,252,248,0.35)",
+                border: ageConfirmed && researchConfirmed ? "none" : "1px solid rgba(253,252,248,0.12)",
                 cursor:
-                  ageConfirmed && researchConfirmed ? "pointer" : "not-allowed",
-                opacity: ageConfirmed && researchConfirmed ? 1 : 0.6,
+                  ageConfirmed && researchConfirmed ? "pointer" : "default",
+                letterSpacing: "0.18em",
               }}
             >
-              Enter Site
+              {ageConfirmed && researchConfirmed ? "Enter Site →" : "Confirm above to continue"}
             </button>
             <button
               onClick={handleDecline}
@@ -157,7 +158,7 @@ export default function AgeVerificationModal() {
                 (e.currentTarget.style.color = "rgba(253, 252, 248, 0.5)")
               }
             >
-              I am not 21 or older
+              Exit Site
             </button>
           </div>
 
