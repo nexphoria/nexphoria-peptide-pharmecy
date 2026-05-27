@@ -30,10 +30,13 @@ export default function ProductCard({
     openDrawer();
   };
 
-  // Determine the "from" price (lowest available price)
-  const fromPrice = product.dosages && product.dosages.length > 0
+  // Determine the "from" price (lowest monthly price with best discount)
+  const basePrice = product.dosages && product.dosages.length > 0
     ? Math.min(...product.dosages.map(d => d.price))
     : product.price;
+
+  // Apply 6-month discount (28% off) for "from" pricing like Enhanced.com
+  const fromMonthlyPrice = Math.round(basePrice * (1 - 0.28));
 
   return (
     <motion.div
@@ -59,7 +62,7 @@ export default function ProductCard({
           {/* Price Badge */}
           <div className="absolute top-4 left-4 z-10">
             <span className="badge-price text-xs font-semibold uppercase tracking-wide">
-              FROM ${fromPrice}
+              FROM ${fromMonthlyPrice}/mo
             </span>
           </div>
 

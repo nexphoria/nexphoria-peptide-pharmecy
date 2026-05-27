@@ -268,7 +268,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                                 {product.name}
                               </h4>
                               <p className="text-xs text-secondary">
-                                From ${product.price}
+                                From ${Math.round(product.price * 0.72)}/mo
                               </p>
                             </div>
                             <button className="text-xs text-acid-green font-medium opacity-0 group-hover:opacity-100 transition-opacity">

@@ -240,18 +240,19 @@ export default function HomePage() {
 
       {/* ========== HERO ========== */}
       <section className="relative flex items-center overflow-hidden" style={{ minHeight: "100vh" }}>
-        {/* Editorial hero background */}
-        <Image
-          src="/brand/editorial-hero.jpg"
-          alt="Research-Grade Peptides - Editorial Hero"
-          fill
-          className="object-cover object-center"
-          priority
-          sizes="100vw"
-        />
-        {/* Dark overlay 50% — lets editorial hero show through */}
+        {/* Premium gradient background */}
         <div className="absolute inset-0 z-10" style={{
-          background: "linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.6) 100%)"
+          background: "linear-gradient(135deg, #0A0A08 0%, #1A1A18 40%, #111110 70%, #0D0D0C 100%)"
+        }} />
+
+        {/* Animated molecular pattern overlay */}
+        <div className="absolute inset-0 z-10 pattern-hero opacity-30" />
+
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 z-10 opacity-[0.02]" style={{
+          backgroundImage: "url(/brand/cell-pattern-1.png)",
+          backgroundSize: "600px auto",
+          backgroundRepeat: "repeat"
         }} />
 
         <div className="container-nex relative z-20 w-full py-24 md:py-32 pt-36 md:pt-40">
@@ -952,7 +953,7 @@ export default function HomePage() {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-5">
+          <div className="space-y-8">
             {bundles.map((bundle, i) => {
               const bundleProds = getBundleProducts(bundle);
               const individualTotal = bundleProds.reduce((sum, p) => sum + (p?.price || 0), 0);
@@ -961,75 +962,136 @@ export default function HomePage() {
                 <motion.div key={bundle.slug}
                   initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.1}
                   className="relative border overflow-hidden"
-                  style={{ borderColor: "rgba(201,162,75,0.2)", backgroundColor: "#111110", borderRadius: "12px" }}>
+                  style={{ borderColor: "rgba(201,162,75,0.15)", backgroundColor: "#111110", borderRadius: "16px" }}>
                   {/* Pattern on bundle card */}
                   <div className="absolute inset-0 pointer-events-none" style={{
                     backgroundImage: "url(/dna-pattern.png)", backgroundSize: "400px auto",
-                    backgroundRepeat: "repeat", opacity: 0.04, filter: "invert(1)",
+                    backgroundRepeat: "repeat", opacity: 0.03, filter: "invert(1)",
                   }} />
-                  {/* Stacked vials header */}
-                  <div className="relative overflow-hidden flex items-end justify-center gap-0 pt-6 pb-2"
-                    style={{ height: "130px", backgroundColor: "#0D0D0C" }}>
-                    <div className="absolute inset-0 pointer-events-none"
-                      style={{ background: "radial-gradient(ellipse 70% 60% at 50% 60%, rgba(201,162,75,0.08) 0%, transparent 70%)" }} />
-                    {previewVials.map((p, vi) => p && (
-                      <div key={p.slug} style={{
-                        height: "100px", width: "50px",
-                        marginLeft: vi > 0 ? "-12px" : "0",
-                        transform: vi === 1 ? "translateY(-8px)" : "none",
-                        zIndex: vi === 1 ? 2 : 1,
-                        position: "relative",
-                        filter: `drop-shadow(0 4px 12px rgba(0,0,0,0.5))`,
-                      }}>
-                        <ProductVial productName={p.name} dosage={p.size} category={p.category} accentColor={p.accentColor} />
-                      </div>
-                    ))}
-                  </div>
 
-                  <div className="relative p-7">
-                    <div className="flex items-start justify-between mb-4">
-                      <span className="eyebrow" style={{ color: "var(--gold)" }}>{bundle.eyebrow}</span>
-                      <span className="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest"
-                        style={{ backgroundColor: "rgba(198,241,132,0.12)", color: "var(--acid-green)", borderRadius: "2px", border: "1px solid rgba(198,241,132,0.25)" }}>
-                        Save ${bundle.savings}
-                      </span>
-                    </div>
-                    <h3 className="text-2xl font-bold tracking-tight mb-3 text-primary"
-                      style={{ fontFamily: "var(--font-display)" }}>
-                      {bundle.name}
-                    </h3>
-                    <p className="text-sm leading-relaxed mb-5 text-secondary">
-                      {bundle.description}
-                    </p>
-                    <div className="space-y-2 mb-6 border-t border-b py-5" style={{ borderColor: "rgba(255,255,255,0.07)" }}>
-                      {bundleProds.map((p) => p && (
-                        <div key={p.slug} className="flex items-center justify-between">
-                          <span className="text-sm text-primary">{p.name}</span>
-                          <span className="text-sm line-through text-secondary">${p.price}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="flex items-end justify-between mb-5">
-                      <div>
-                        <div className="text-xs mb-1 text-secondary">Bundle price</div>
-                        <div className="text-3xl font-bold text-acid-green"
-                          style={{ fontFamily: "var(--font-display)" }}>
-                          ${bundle.totalPrice}
-                        </div>
-                        <div className="text-xs text-secondary">vs ${individualTotal} individually</div>
+                  <div className="grid lg:grid-cols-[1fr_2fr_1fr] gap-8 p-8">
+
+                    {/* Left: Stacked Vials + Monthly Price */}
+                    <div className="text-center">
+                      {/* Stacked vials */}
+                      <div className="relative overflow-hidden flex items-end justify-center gap-0 mb-6"
+                        style={{ height: "140px" }}>
+                        <div className="absolute inset-0 pointer-events-none"
+                          style={{ background: "radial-gradient(ellipse 70% 60% at 50% 60%, rgba(201,162,75,0.08) 0%, transparent 70%)" }} />
+                        {previewVials.map((p, vi) => p && (
+                          <div key={p.slug} style={{
+                            height: "110px", width: "55px",
+                            marginLeft: vi > 0 ? "-16px" : "0",
+                            transform: vi === 1 ? "translateY(-12px)" : "none",
+                            zIndex: vi === 1 ? 2 : 1,
+                            position: "relative",
+                            filter: `drop-shadow(0 6px 16px rgba(0,0,0,0.6))`,
+                          }}>
+                            <ProductVial productName={p.name} dosage={p.size} category={p.category} accentColor={p.accentColor} />
+                          </div>
+                        ))}
                       </div>
-                      <div className="flex flex-wrap gap-1.5 max-w-[180px]">
+
+                      {/* Monthly Pricing - Enhanced.com Style */}
+                      <div className="mb-4">
+                        <div className="text-4xl font-bold text-acid-green mb-1"
+                          style={{ fontFamily: "var(--font-display)" }}>
+                          ${bundle.monthlyPrice}<span className="text-lg text-secondary font-normal">/mo</span>
+                        </div>
+                        <div className="text-xs text-secondary line-through mb-2">
+                          ${Math.round(individualTotal / 3)}/mo individually
+                        </div>
+                        <div className="px-3 py-1 text-xs font-semibold uppercase tracking-wide"
+                          style={{ backgroundColor: "rgba(239,68,68,0.15)", color: "#EF4444", borderRadius: "4px", border: "1px solid rgba(239,68,68,0.25)" }}>
+                          Save ${Math.round(bundle.savings / 6)}/mo
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Center: Educational Content */}
+                    <div>
+                      <div className="flex items-start justify-between mb-4">
+                        <span className="eyebrow" style={{ color: "var(--gold)" }}>{bundle.eyebrow}</span>
+                      </div>
+
+                      <h3 className="text-2xl font-bold tracking-tight mb-3 text-primary"
+                        style={{ fontFamily: "var(--font-display)" }}>
+                        {bundle.name}
+                      </h3>
+
+                      <p className="text-sm leading-relaxed mb-6 text-secondary">
+                        {bundle.description}
+                      </p>
+
+                      {/* Synergy Explanation - Key Educational Feature */}
+                      <div className="p-4 border rounded-lg mb-6"
+                        style={{ borderColor: "rgba(198,241,132,0.2)", backgroundColor: "rgba(198,241,132,0.03)" }}>
+                        <h4 className="text-xs font-semibold uppercase tracking-wide mb-2 text-acid-green">
+                          Why These Work Together
+                        </h4>
+                        <p className="text-xs leading-relaxed text-primary">
+                          {bundle.synergy}
+                        </p>
+                      </div>
+
+                      {/* Mechanism + Timeline */}
+                      <div className="grid grid-cols-1 gap-4 mb-6">
+                        <div>
+                          <h4 className="text-xs font-semibold uppercase tracking-wide mb-2 text-secondary">
+                            Mechanism
+                          </h4>
+                          <p className="text-xs leading-relaxed text-secondary">
+                            {bundle.mechanism}
+                          </p>
+                        </div>
+                        <div>
+                          <h4 className="text-xs font-semibold uppercase tracking-wide mb-2 text-secondary">
+                            Expected Timeline
+                          </h4>
+                          <p className="text-xs leading-relaxed text-secondary">
+                            {bundle.timeline}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Product List */}
+                      <div className="space-y-2 mb-6 border-t pt-4" style={{ borderColor: "rgba(255,255,255,0.07)" }}>
+                        {bundleProds.map((p) => p && (
+                          <div key={p.slug} className="flex items-center justify-between">
+                            <span className="text-sm text-primary">{p.name}</span>
+                            <span className="text-sm text-secondary">${Math.round(p.price * 0.72)}/mo</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Right: Tags + CTA */}
+                    <div className="text-center lg:text-right">
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2 justify-center lg:justify-end mb-6">
                         {bundle.tags.map((tag) => (
-                          <span key={tag} className="px-2 py-0.5 text-[9px] font-medium uppercase tracking-wide"
-                            style={{ backgroundColor: "rgba(255,255,255,0.06)", color: "rgba(247,244,238,0.55)", borderRadius: "2px", border: "1px solid rgba(255,255,255,0.08)" }}>
+                          <span key={tag} className="px-3 py-1 text-xs font-medium uppercase tracking-wide"
+                            style={{ backgroundColor: "rgba(255,255,255,0.06)", color: "rgba(247,244,238,0.7)", borderRadius: "4px", border: "1px solid rgba(255,255,255,0.08)" }}>
                             {tag}
                           </span>
                         ))}
                       </div>
+
+                      {/* CTA */}
+                      <Link href="/products" className="btn-acid w-full lg:w-auto justify-center mb-4">
+                        Build This Stack <ArrowRight className="w-4 h-4" />
+                      </Link>
+
+                      {/* Trust badges */}
+                      <div className="space-y-1">
+                        {["99.7% Purity", "COA Included", "6-Month Plan"].map(badge => (
+                          <div key={badge} className="text-xs text-tertiary">
+                            ✓ {badge}
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                    <Link href="/products" className="btn-acid w-full justify-center">
-                      Build This Stack <ArrowRight className="w-4 h-4" />
-                    </Link>
+
                   </div>
                 </motion.div>
               );
@@ -1052,14 +1114,14 @@ export default function HomePage() {
               style={{ borderRadius: "12px", aspectRatio: "4/3" }}
             >
               <Image
-                src="/brand/find-your-focus.jpg"
-                alt="Find Your Focus — Nexphoria"
+                src="/brand/editorial-hero.jpg"
+                alt="Find Your Focus — Nexphoria Brand Story"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="absolute inset-0" style={{
-                background: "linear-gradient(135deg, rgba(10,10,8,0.2) 0%, transparent 60%)"
+                background: "linear-gradient(135deg, rgba(10,10,8,0.15) 0%, transparent 50%)"
               }} />
             </motion.div>
 
