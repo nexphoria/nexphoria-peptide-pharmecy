@@ -76,7 +76,6 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
             <div className="grid md:grid-cols-2 gap-5">
               {bundles.map((bundle, i) => {
                 const bundleProducts = getBundleProducts(bundle);
-                const individualTotal = bundleProducts.reduce((sum, p) => sum + (p?.price || 0), 0);
                 return (
                   <motion.div key={bundle.slug}
                     initial="hidden" animate="visible" variants={fadeUp} custom={i * 0.1}
@@ -97,18 +96,17 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                         {bundleProducts.map((p) => p && (
                           <div key={p.slug} className="flex items-center justify-between">
                             <span className="text-sm text-primary">{p.name}</span>
-                            <span className="text-sm line-through text-tertiary">${p.price}</span>
+                            <span className="text-sm text-secondary">${p.price}</span>
                           </div>
                         ))}
                       </div>
                       <div className="flex items-end justify-between mb-5">
                         <div>
-                          <div className="text-xs mb-1 text-secondary">Bundle price</div>
+                          <div className="text-xs mb-1 text-secondary">Stack price</div>
                           <div className="text-3xl font-bold text-acid-green"
                             style={{ fontFamily: "var(--font-display)" }}>
                             ${bundle.totalPrice}
                           </div>
-                          <div className="text-xs text-secondary">vs ${individualTotal} individually</div>
                         </div>
                         <div className="flex flex-wrap gap-1.5 max-w-[180px]">
                           {bundle.tags.map((tag) => (
@@ -188,7 +186,6 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
             <div className="grid md:grid-cols-2 gap-5">
               {bundles.map((bundle, i) => {
                 const bundleProducts = getBundleProducts(bundle);
-                const individualTotal = bundleProducts.reduce((sum, p) => sum + (p?.price || 0), 0);
                 return (
                   <motion.div key={bundle.slug}
                     initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.1}
@@ -209,7 +206,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                         {bundleProducts.map((p) => p && (
                           <div key={p.slug} className="flex justify-between text-sm">
                             <span className="text-primary">{p.name}</span>
-                            <span className="line-through text-tertiary">${p.price}</span>
+                            <span className="text-secondary">${p.price}</span>
                           </div>
                         ))}
                       </div>
@@ -219,7 +216,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                             style={{ fontFamily: "var(--font-display)" }}>
                             ${bundle.totalPrice}
                           </div>
-                          <div className="text-xs text-secondary">vs ${individualTotal}</div>
+                          <div className="text-xs text-secondary">Stack total</div>
                         </div>
                         <div className="flex flex-wrap gap-1 max-w-[160px]">
                           {bundle.tags.map((tag) => (

@@ -276,8 +276,8 @@ export default function AboutClient() {
               style={{ aspectRatio: "4/5", borderRadius: "12px", boxShadow: "0 8px 40px rgba(0,0,0,0.12)" }}
             >
               <Image
-                src="/images/stock/lab-dark.jpg"
-                alt="Dare to Defy — Lab dark moody"
+                src="/brand/tm-vb-006.jpg"
+                alt="Dare to Defy — Nexphoria"
                 fill
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 50vw"

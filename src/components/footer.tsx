@@ -34,17 +34,19 @@ const footerNav = {
 export function Footer() {
   return (
     <footer className="relative text-ceramic" style={{ backgroundColor: "#1A1A18" }}>
-      {/* Brand banner */}
-      <div className="relative w-full overflow-hidden" style={{ height: "280px" }}>
+      {/* Brand banner — full-width impact image */}
+      <div className="relative w-full overflow-hidden" style={{ height: "clamp(300px, 42vw, 560px)", minHeight: "clamp(300px, 42vw, 560px)" }}>
         <Image
           src="/brand/tm-vb-006.jpg"
           alt="Find Your Focus — Nexphoria"
           fill
           className="object-cover object-center"
           sizes="100vw"
+          priority
         />
+        {/* Minimal overlay — let the image breathe */}
         <div className="absolute inset-0" style={{
-          background: "linear-gradient(to bottom, rgba(26,26,24,0.25) 0%, rgba(26,26,24,0.7) 100%)"
+          background: "linear-gradient(to bottom, rgba(26,26,24,0.05) 0%, rgba(26,26,24,0.35) 100%)"
         }} />
       </div>
 

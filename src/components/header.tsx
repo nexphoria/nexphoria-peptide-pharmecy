@@ -9,18 +9,20 @@ import { useCart } from "@/lib/cart";
 import CartDrawer from "@/components/cart/CartDrawer";
 
 const navLinks = [
-  { href: "/products", label: "Products" },
+  { href: "/clinical", label: "Clinical" },
+  { href: "/products", label: "Research" },
   { href: "/science", label: "Science" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
 const announcementItems = [
-  "FREE SHIPPING on orders over $200",
-  "COA with every order",
-  "Same-day shipping before 2PM ET",
-  "99.7%+ purity guaranteed",
+  "COA with every order — independent third-party lab",
+  "Same-day dispatch before 2PM ET",
+  "99.7%+ average purity across all compounds",
+  "cGMP-certified manufacturing",
   "Trusted by 2,400+ researchers",
+  "20 research-grade compounds in catalog",
 ];
 
 export function Header() {

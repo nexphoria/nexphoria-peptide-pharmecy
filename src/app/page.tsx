@@ -253,7 +253,7 @@ export default function HomePage() {
               <div className="mb-5">
                 <span className="text-[10px] font-semibold uppercase tracking-[0.22em]"
                   style={{ color: "var(--acid-green)" }}>
-                  Research-Grade Compounds
+                  Research-Grade · Physician-Guided
                 </span>
               </div>
               <h1
@@ -267,11 +267,25 @@ export default function HomePage() {
                 The Source.
               </h1>
               <p
-                className="text-base md:text-lg max-w-lg mb-10 leading-relaxed"
+                className="text-base md:text-lg max-w-lg mb-4 leading-relaxed"
                 style={{ color: "rgba(253,252,248,0.72)" }}
               >
-                Pharmaceutical-grade peptides. Rigorous testing. Transparent documentation.
+                From research-grade compounds to physician-guided therapy. Rigorous testing, transparent documentation, clinical-grade standards.
               </p>
+              <div className="flex flex-wrap gap-3 mb-10">
+                <Link href="/clinical"
+                  className="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] px-4 py-2 border transition-all"
+                  style={{ borderColor: "rgba(201,162,75,0.4)", color: "var(--gold)", borderRadius: "6px", backgroundColor: "rgba(201,162,75,0.06)" }}
+                >
+                  Clinical Tier <ArrowRight className="w-3 h-3" />
+                </Link>
+                <Link href="/products"
+                  className="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] px-4 py-2 border transition-all"
+                  style={{ borderColor: "rgba(168,201,127,0.4)", color: "var(--acid-green)", borderRadius: "6px", backgroundColor: "rgba(168,201,127,0.06)" }}
+                >
+                  Research Catalog <ArrowRight className="w-3 h-3" />
+                </Link>
+              </div>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/products" className="btn-acid">
                   View Catalog <ArrowRight className="w-4 h-4" />
@@ -379,18 +393,18 @@ export default function HomePage() {
         <div className="py-4 overflow-hidden">
           <div className="announcement-track flex items-center gap-0 whitespace-nowrap">
             {[
-              "★★★★★ Trusted by 2,400+ researchers worldwide",
-              "99.7% average purity rating across all compounds",
-              "Ships same day from US facility",
-              "Independent Janoshik COA on every batch",
-              "cGMP-compliant manufacturing",
-              "20 compounds — launching now",
-              "★★★★★ Trusted by 2,400+ researchers worldwide",
-              "99.7% average purity rating across all compounds",
-              "Ships same day from US facility",
-              "Independent Janoshik COA on every batch",
-              "cGMP-compliant manufacturing",
-              "20 compounds — launching now",
+              "Trusted by 2,400+ researchers worldwide",
+              "99.7% average purity across all compounds",
+              "Same-day dispatch from US facility",
+              "Independent third-party COA on every batch",
+              "cGMP-certified manufacturing",
+              "20 research-grade compounds in catalog",
+              "Trusted by 2,400+ researchers worldwide",
+              "99.7% average purity across all compounds",
+              "Same-day dispatch from US facility",
+              "Independent third-party COA on every batch",
+              "cGMP-certified manufacturing",
+              "20 research-grade compounds in catalog",
             ].map((item, i) => (
               <span key={i} className="flex items-center gap-6 px-10 text-[10px] font-medium uppercase tracking-[0.18em]"
                 style={{ color: "rgba(247,244,238,0.5)" }}>
@@ -928,7 +942,6 @@ export default function HomePage() {
           <div className="space-y-8">
             {bundles.map((bundle, i) => {
               const bundleProds = getBundleProducts(bundle);
-              const individualTotal = bundleProds.reduce((sum, p) => sum + (p?.price || 0), 0);
               const previewVials = bundleProds.slice(0, 3);
               return (
                 <motion.div key={bundle.slug}
@@ -964,14 +977,14 @@ export default function HomePage() {
                         ))}
                       </div>
 
-                      {/* Monthly Pricing - Enhanced.com Style */}
+                      {/* Pricing */}
                       <div className="mb-4">
                         <div className="text-4xl font-bold text-acid-green mb-1"
                           style={{ fontFamily: "var(--font-display)" }}>
                           ${bundle.monthlyPrice}<span className="text-lg text-secondary font-normal">/mo</span>
                         </div>
-                        <div className="text-xs text-secondary line-through mb-2">
-                          ${Math.round(individualTotal / 3)}/mo individually
+                        <div className="text-xs text-secondary mb-2">
+                          Monthly auto-ship
                         </div>
                         <div className="px-3 py-1 text-xs font-semibold uppercase tracking-wide"
                           style={{ backgroundColor: "rgba(198,241,132,0.15)", color: "var(--acid-green)", borderRadius: "4px", border: "1px solid rgba(198,241,132,0.25)" }}>
@@ -1031,7 +1044,7 @@ export default function HomePage() {
                         {bundleProds.map((p) => p && (
                           <div key={p.slug} className="flex items-center justify-between">
                             <span className="text-sm text-primary">{p.name}</span>
-                            <span className="text-sm text-secondary">${Math.round(p.price * 0.72)}/mo</span>
+                            <span className="text-sm text-secondary">${p.price}</span>
                           </div>
                         ))}
                       </div>
@@ -1083,13 +1096,13 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="relative overflow-hidden"
-              style={{ borderRadius: "12px", aspectRatio: "4/3" }}
+              style={{ borderRadius: "12px", aspectRatio: "4/5" }}
             >
               <Image
                 src="/brand/tm-vb-006.jpg"
                 alt="Dare to Defy — Nexphoria"
                 fill
-                className="object-cover object-center"
+                className="object-cover object-top"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="absolute inset-0" style={{
@@ -1304,14 +1317,14 @@ export default function HomePage() {
           <div className="max-w-xl mx-auto text-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
               className="mb-10">
-              <span className="eyebrow mb-5 block">Exclusive Offer</span>
+              <span className="eyebrow mb-5 block">Research Updates</span>
               <h2 className="font-bold tracking-tight mb-4 text-primary"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 2.75rem)" }}>
-                Get 10% Off Your{" "}
-                <em className="italic text-acid-green">First Order</em>
+                Stay Ahead of the{" "}
+                <em className="italic text-acid-green">Science</em>
               </h2>
               <p className="text-sm leading-relaxed text-secondary">
-                Join 2,400+ researchers. New compound announcements, COA publications, and research updates.
+                New compound announcements, COA publications, and research updates. Join 2,400+ researchers.
               </p>
             </motion.div>
             <motion.form
@@ -1333,18 +1346,17 @@ export default function HomePage() {
                     },
                     body: JSON.stringify({ email }),
                   });
-                  // Simple success feedback - could enhance this
-                  (form.querySelector('button') as HTMLButtonElement).textContent = 'Added';
+                  (form.querySelector('button') as HTMLButtonElement).textContent = 'Subscribed';
                   (form.querySelector('input') as HTMLInputElement).value = '';
                 } catch (error) {
                   console.error('Waitlist error:', error);
                 }
               }}>
               <input type="email" name="email" placeholder="your@email.com" className="nex-input-dark flex-1" required />
-              <button type="submit" className="btn-acid whitespace-nowrap">Get 10% Off</button>
+              <button type="submit" className="btn-acid whitespace-nowrap">Subscribe</button>
             </motion.form>
             <p className="mt-5 text-xs" style={{ color: "rgba(138,128,117,0.55)" }}>
-              Join 2,400+ researchers. Unsubscribe anytime.
+              Research use newsletter. Unsubscribe anytime.
             </p>
           </div>
         </div>

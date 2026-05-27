@@ -337,7 +337,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                     }
                   }}
                 >
-                  Complete Order <ArrowRight className="w-4 h-4" />
+                  Proceed to Checkout <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             )}
