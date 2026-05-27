@@ -84,8 +84,8 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                     <div className="p-7">
                       <div className="flex items-start justify-between mb-4">
                         <span className="eyebrow text-acid-green">{bundle.eyebrow}</span>
-                        <span className="badge-savings">
-                          Save ${bundle.savings}
+                        <span className="badge-category">
+                          {bundle.tags[0]}
                         </span>
                       </div>
                       <h3 className="text-2xl font-bold tracking-tight mb-3 text-primary"
@@ -196,8 +196,8 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                     <div className="p-7">
                       <div className="flex items-start justify-between mb-4">
                         <span className="eyebrow text-acid-green">{bundle.eyebrow}</span>
-                        <span className="badge-savings">
-                          Save ${bundle.savings}
+                        <span className="badge-category">
+                          {bundle.tags[0]}
                         </span>
                       </div>
                       <h3 className="text-2xl font-bold tracking-tight mb-2 text-primary"

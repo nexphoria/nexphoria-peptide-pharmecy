@@ -5,8 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Plus, Minus, ShoppingBag, ArrowRight } from "lucide-react";
 import { useCart } from "@/lib/cart";
 import { products, getRelatedProducts } from "@/lib/products";
-import ProductVial from "@/components/ProductVial";
-import ProductPen from "@/components/ProductPen";
+// SVG components replaced with img tags for performance
 
 interface CartDrawerProps {
   className?: string;
@@ -164,16 +163,18 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                             }}
                           >
                             {item.format === 'pen' ? (
-                              <ProductPen
-                                productName={item.product.name}
-                                dosage={item.selectedDosage?.size || item.product.size}
+                              <img
+                                src="/products/pen-hero-1.png"
+                                alt={`${item.product.name} pen`}
+                                className="w-full h-full object-contain"
+                                loading="lazy"
                               />
                             ) : (
-                              <ProductVial
-                                productName={item.product.name}
-                                dosage={item.selectedDosage?.size || item.product.size}
-                                category={item.product.category}
-                                accentColor={item.product.accentColor}
+                              <img
+                                src="/products/vial-hero-1.png"
+                                alt={`${item.product.name} vial`}
+                                className="w-full h-full object-contain"
+                                loading="lazy"
                               />
                             )}
                           </div>
@@ -256,11 +257,11 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                                 filter: `drop-shadow(0 2px 8px ${product.accentColor}20)`
                               }}
                             >
-                              <ProductVial
-                                productName={product.name}
-                                dosage={product.size}
-                                category={product.category}
-                                accentColor={product.accentColor}
+                              <img
+                                src="/products/vial-hero-1.png"
+                                alt={`${product.name} vial`}
+                                className="w-full h-full object-contain"
+                                loading="lazy"
                               />
                             </div>
                             <div className="flex-1 min-w-0">
@@ -336,7 +337,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                     }
                   }}
                 >
-                  Checkout <ArrowRight className="w-4 h-4" />
+                  Complete Order <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             )}

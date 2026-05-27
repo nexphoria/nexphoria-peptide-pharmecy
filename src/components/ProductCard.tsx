@@ -30,13 +30,10 @@ export default function ProductCard({
     openDrawer();
   };
 
-  // Determine the "from" price (lowest monthly price with best discount)
+  // Use base price without discounts
   const basePrice = product.dosages && product.dosages.length > 0
     ? Math.min(...product.dosages.map(d => d.price))
     : product.price;
-
-  // Apply 6-month discount (28% off) for "from" pricing like Enhanced.com
-  const fromMonthlyPrice = Math.round(basePrice * (1 - 0.28));
 
   return (
     <motion.div

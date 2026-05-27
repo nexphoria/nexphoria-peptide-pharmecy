@@ -13,15 +13,14 @@ const footerNav = {
   })),
   Company: [
     { label: "About Nexphoria", href: "/about" },
-    { label: "Manufacturing", href: "/manufacturing" },
     { label: "Quality Standards", href: "/science#cgmp" },
     { label: "Science & Testing", href: "/science" },
     { label: "Contact Us", href: "/contact" },
   ],
-  Partners: [
-    { label: "White Label", href: "/contact" },
-    { label: "Partner Login", href: "/contact" },
-    { label: "Support", href: "/contact" },
+  Support: [
+    { label: "Wholesale", href: "/wholesale" },
+    { label: "Customer Support", href: "/contact" },
+    { label: "FAQs", href: "/contact#faq" },
     { label: "Contact Us", href: "/contact" },
   ],
   Legal: [

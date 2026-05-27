@@ -64,10 +64,8 @@ export const useCart = create<CartState>()(
           itemPrice = product.penPrice;
         }
 
-        // Apply subscription discount
-        const discountMap: Record<number, number> = { 1: 0, 3: 14, 6: 28 };
-        const discount = discountMap[subscriptionMonths] || 0;
-        const monthlyPrice = Math.round(itemPrice * (1 - discount / 100));
+        // No subscription discounts - same price for all options
+        const monthlyPrice = itemPrice;
 
         if (existingItemIndex >= 0) {
           // Update existing item

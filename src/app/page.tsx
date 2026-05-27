@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { products, type Product } from "@/lib/products";
 import { bundles, getBundleProducts } from "@/lib/bundles";
-import ProductVial from "@/components/ProductVial";
+// ProductVial SVG replaced with img tags for performance
 import ProductCard from "@/components/ProductCard";
 
 const fadeUp = {
@@ -230,8 +230,7 @@ export default function HomePage() {
     const d = p.dosages?.find(x => x.size === item.dosage);
     return sum + (d ? d.price : p.price) * item.qty;
   }, 0);
-  const bundleDiscount = stackEntries.length >= 2 ? Math.round(stackSubtotal * 0.1) : 0;
-  const stackFinalTotal = stackSubtotal - bundleDiscount;
+  const stackFinalTotal = stackSubtotal;
 
   const genderProducts = genderTab === "him" ? forHimProducts : forHerProducts;
 
@@ -263,7 +262,7 @@ export default function HomePage() {
               <div className="mb-5">
                 <span className="text-[10px] font-semibold uppercase tracking-[0.22em]"
                   style={{ color: "var(--acid-green)" }}>
-                  Pharmaceutical-Grade Research Compounds
+                  Research-Grade Compounds
                 </span>
               </div>
               <h1
@@ -280,7 +279,7 @@ export default function HomePage() {
                 className="text-base md:text-lg max-w-lg mb-10 leading-relaxed"
                 style={{ color: "rgba(253,252,248,0.72)" }}
               >
-                Research-grade compounds. For those who know.
+                Pharmaceutical-grade peptides. Rigorous testing. Transparent documentation.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/products" className="btn-acid">
@@ -324,11 +323,10 @@ export default function HomePage() {
               {/* Vials — flex aligned at bottom, center raised */}
               <div className="relative flex items-end justify-center" style={{ height: "400px", width: "360px" }}>
                 {/* BPC-157 — left, −8 deg */}
-                <motion.div
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", repeatType: "mirror" }}
+                <div
+                  className="animate-float-1"
                   style={{
-                    rotate: -8,
+                    rotate: "-8deg",
                     transformOrigin: "bottom center",
                     marginRight: "-20px",
                     marginBottom: "28px",
@@ -336,27 +334,35 @@ export default function HomePage() {
                     filter: "drop-shadow(0 12px 32px rgba(74,155,142,0.38))",
                   }}
                 >
-                  <ProductVial productName="BPC-157" dosage="5mg" category="Recovery & Healing" accentColor="#4A9B8E" />
-                </motion.div>
+                  <img
+                    src="/products/vial-hero-1.png"
+                    alt="BPC-157 5mg Vial"
+                    className="w-full h-full object-contain"
+                    loading="eager"
+                  />
+                </div>
 
                 {/* Semaglutide — center, upright, tallest */}
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 0.5, repeatType: "mirror" }}
+                <div
+                  className="animate-float-2"
                   style={{
                     height: "300px", width: "120px", flexShrink: 0, zIndex: 2,
                     filter: "drop-shadow(0 16px 44px rgba(239,68,68,0.38))",
                   }}
                 >
-                  <ProductVial productName="Semaglutide" dosage="5mg" category="Weight Management" accentColor="#EF4444" />
-                </motion.div>
+                  <img
+                    src="/products/vial-hero-1.png"
+                    alt="Semaglutide 5mg Vial"
+                    className="w-full h-full object-contain"
+                    loading="eager"
+                  />
+                </div>
 
                 {/* GHK-Cu — right, +8 deg */}
-                <motion.div
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 4.3, repeat: Infinity, ease: "easeInOut", delay: 1, repeatType: "mirror" }}
+                <div
+                  className="animate-float-3"
                   style={{
-                    rotate: 8,
+                    rotate: "8deg",
                     transformOrigin: "bottom center",
                     marginLeft: "-20px",
                     marginBottom: "28px",
@@ -364,8 +370,13 @@ export default function HomePage() {
                     filter: "drop-shadow(0 12px 32px rgba(139,92,246,0.38))",
                   }}
                 >
-                  <ProductVial productName="GHK-Cu" dosage="5mg" category="Anti-Aging" accentColor="#8B5CF6" />
-                </motion.div>
+                  <img
+                    src="/products/vial-hero-1.png"
+                    alt="GHK-Cu 5mg Vial"
+                    className="w-full h-full object-contain"
+                    loading="eager"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -410,22 +421,20 @@ export default function HomePage() {
           opacity: 0.05
         }} />
         <div className="container-nex relative z-10">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
-            className="mb-14">
-            <span className="eyebrow mb-4 block">Shop By Goal</span>
+          <div className="mb-14">
+            <span className="eyebrow mb-4 block">Browse Compounds</span>
             <h2 className="font-bold tracking-tight max-w-xl text-primary"
               style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.8rem)" }}>
               Find Your{" "}
               <em className="italic text-acid-green">Protocol</em>
             </h2>
-          </motion.div>
+          </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {shopByGoal.map((goal, i) => {
               const Icon = goal.icon;
               return (
-                <motion.div key={goal.name}
-                  initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.08}>
+                <div key={goal.name}>
                   <Link href={goal.href}
                     className="group block p-7 border overflow-hidden transition-all duration-300 relative"
                     style={{ borderColor: "rgba(255,255,255,0.08)", backgroundColor: "#111110", borderRadius: "10px" }}
@@ -463,7 +472,7 @@ export default function HomePage() {
                       </span>
                     </div>
                   </Link>
-                </motion.div>
+                </div>
               );
             })}
           </div>
@@ -716,7 +725,12 @@ export default function HomePage() {
                             >
                               {/* Vial thumbnail */}
                               <div style={{ width: "40px", height: "64px", flexShrink: 0, filter: `drop-shadow(0 4px 12px ${product.accentColor}30)` }}>
-                                <ProductVial productName={product.name} dosage={product.size} category={product.category} accentColor={product.accentColor} />
+                                <img
+                                  src="/products/vial-hero-1.png"
+                                  alt={`${product.name} vial`}
+                                  className="w-full h-full object-contain"
+                                  loading="lazy"
+                                />
                               </div>
 
                               {/* Info */}
@@ -865,7 +879,12 @@ export default function HomePage() {
                             >
                               <div className="flex items-center gap-2 min-w-0">
                                 <div style={{ width: "28px", height: "44px", flexShrink: 0 }}>
-                                  <ProductVial productName={p.name} dosage={p.size} category={p.category} accentColor={p.accentColor} />
+                                  <img
+                                    src="/products/vial-hero-1.png"
+                                    alt={`${p.name} vial`}
+                                    className="w-full h-full object-contain"
+                                    loading="lazy"
+                                  />
                                 </div>
                                 <div className="min-w-0">
                                   <div className="text-xs font-semibold truncate text-primary">{p.name}</div>
@@ -884,19 +903,7 @@ export default function HomePage() {
 
                     {/* Pricing */}
                     <div className="px-6 py-5 space-y-3 border-b" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
-                      <div className="flex justify-between text-xs text-secondary">
-                        <span>Subtotal</span>
-                        <span>${stackSubtotal}</span>
-                      </div>
-                      {bundleDiscount > 0 && (
-                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-                          className="flex justify-between text-xs"
-                          style={{ color: "var(--acid-green)" }}>
-                          <span>Bundle discount (10%)</span>
-                          <span>−${bundleDiscount}</span>
-                        </motion.div>
-                      )}
-                      <div className="flex justify-between items-center pt-1">
+                      <div className="flex justify-between items-center">
                         <span className="text-sm font-semibold text-primary">Total</span>
                         <span className="text-2xl font-bold text-acid-green"
                           style={{ fontFamily: "var(--font-display)" }}>
@@ -977,7 +984,12 @@ export default function HomePage() {
                             position: "relative",
                             filter: `drop-shadow(0 6px 16px rgba(0,0,0,0.6))`,
                           }}>
-                            <ProductVial productName={p.name} dosage={p.size} category={p.category} accentColor={p.accentColor} />
+                            <img
+                              src="/products/vial-hero-1.png"
+                              alt={`${p.name} vial`}
+                              className="w-full h-full object-contain"
+                              loading="lazy"
+                            />
                           </div>
                         ))}
                       </div>
@@ -992,8 +1004,8 @@ export default function HomePage() {
                           ${Math.round(individualTotal / 3)}/mo individually
                         </div>
                         <div className="px-3 py-1 text-xs font-semibold uppercase tracking-wide"
-                          style={{ backgroundColor: "rgba(239,68,68,0.15)", color: "#EF4444", borderRadius: "4px", border: "1px solid rgba(239,68,68,0.25)" }}>
-                          Save ${Math.round(bundle.savings / 6)}/mo
+                          style={{ backgroundColor: "rgba(198,241,132,0.15)", color: "var(--acid-green)", borderRadius: "4px", border: "1px solid rgba(198,241,132,0.25)" }}>
+                          {bundle.tags[0]}
                         </div>
                       </div>
                     </div>
@@ -1353,7 +1365,7 @@ export default function HomePage() {
                     body: JSON.stringify({ email }),
                   });
                   // Simple success feedback - could enhance this
-                  (form.querySelector('button') as HTMLButtonElement).textContent = 'Added!';
+                  (form.querySelector('button') as HTMLButtonElement).textContent = 'Added';
                   (form.querySelector('input') as HTMLInputElement).value = '';
                 } catch (error) {
                   console.error('Waitlist error:', error);
