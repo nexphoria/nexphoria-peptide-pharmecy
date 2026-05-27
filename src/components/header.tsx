@@ -117,7 +117,7 @@ export function Header() {
                 className="btn-acid"
                 style={{ height: "38px", fontSize: "0.6rem", letterSpacing: "0.18em", padding: "0 1.25rem" }}
               >
-                Shop Now
+                View Catalog
               </Link>
             </div>
 
@@ -212,7 +212,7 @@ export function Header() {
                 onClick={() => setMenuOpen(false)}
                 className="btn-acid w-full justify-center"
               >
-                Shop Now
+                View Catalog
               </Link>
             </div>
           </motion.div>

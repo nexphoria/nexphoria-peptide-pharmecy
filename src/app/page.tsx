@@ -263,7 +263,7 @@ export default function HomePage() {
               <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0} className="mb-5">
                 <span className="text-[10px] font-semibold uppercase tracking-[0.22em]"
                   style={{ color: "var(--acid-green)" }}>
-                  Pharmaceutical-Grade Research Peptides
+                  Pharmaceutical-Grade Research Compounds
                 </span>
               </motion.div>
               <motion.h1
@@ -277,20 +277,19 @@ export default function HomePage() {
                   color: "#FDFCF8",
                 }}
               >
-                Research-Grade Peptides.{" "}
-                <em className="italic" style={{ color: "var(--acid-green)" }}>Precision-Delivered.</em>
+                The Source.
               </motion.h1>
               <motion.p
                 initial="hidden" animate="visible" variants={fadeUp} custom={3}
                 className="text-base md:text-lg max-w-lg mb-10 leading-relaxed"
                 style={{ color: "rgba(253,252,248,0.72)" }}
               >
-                20 research-grade peptides. 99.7%+ purity. COA with every order.
+                Research-grade compounds. For those who know.
               </motion.p>
               <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={4}
                 className="flex flex-col sm:flex-row gap-3">
                 <Link href="/products" className="btn-acid">
-                  Shop All Peptides <ArrowRight className="w-4 h-4" />
+                  View Catalog <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a href="#stack-builder" className="btn-outline-gold">Build Your Stack</a>
               </motion.div>
@@ -1104,24 +1103,25 @@ export default function HomePage() {
       <section className="py-24 md:py-32 border-t border-dark-border bg-dark-panel">
         <div className="container-nex">
           <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
-            {/* Image */}
+            {/* Abstract Visual */}
             <motion.div
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="relative overflow-hidden"
-              style={{ borderRadius: "12px", aspectRatio: "4/3" }}
+              style={{ borderRadius: "12px", aspectRatio: "4/3", backgroundColor: "#1A1A18" }}
             >
-              <Image
-                src="/brand/editorial-hero.jpg"
-                alt="Find Your Focus — Nexphoria Brand Story"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+              {/* Cell pattern background */}
+              <div className="absolute inset-0 pointer-events-none" style={{
+                backgroundImage: "url(/brand/cell-pattern-1.png)",
+                backgroundSize: "400px auto",
+                backgroundRepeat: "repeat",
+                opacity: 0.08
+              }} />
+              {/* Gradient overlay for depth */}
               <div className="absolute inset-0" style={{
-                background: "linear-gradient(135deg, rgba(10,10,8,0.15) 0%, transparent 50%)"
+                background: "linear-gradient(135deg, rgba(198,241,132,0.03) 0%, rgba(201,162,75,0.02) 50%, transparent 100%)"
               }} />
             </motion.div>
 
@@ -1382,7 +1382,7 @@ export default function HomePage() {
       <div className="md:hidden mobile-sticky-cta">
         <Link href="/products" className="flex items-center justify-center gap-2 text-[11px] font-semibold uppercase tracking-[0.15em]"
           style={{ color: "#000" }}>
-          Shop Now <ArrowRight className="w-3.5 h-3.5" />
+          View Catalog <ArrowRight className="w-3.5 h-3.5" />
         </Link>
       </div>
 

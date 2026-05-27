@@ -20,29 +20,31 @@ export default function ProductsPage({
         className="relative pt-36 pb-20 border-b overflow-hidden"
         style={{ borderColor: "var(--dark-border)" }}
       >
-        {/* DNA pattern */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: "url(/images/dna-pattern.png)",
-            backgroundSize: "500px auto",
-            backgroundRepeat: "repeat",
-            opacity: 0.03,
-          }}
+        {/* Editorial hero background */}
+        <Image
+          src="/brand/editorial-hero.jpg"
+          alt="Research Compounds — Nexphoria"
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
         />
-        <div className="container-nex relative">
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0" style={{
+          background: "linear-gradient(135deg, rgba(10,10,8,0.85) 0%, rgba(26,26,24,0.75) 50%, rgba(10,10,8,0.85) 100%)"
+        }} />
+
+        <div className="container-nex relative z-10">
           <span className="eyebrow mb-5 block">Research Compounds</span>
           <h1
             className="font-bold tracking-tight mb-4"
             style={{
-              fontFamily: "var(--font-playfair, Georgia, serif)",
+              fontFamily: "var(--font-display)",
               fontSize: "clamp(2.5rem, 5vw, 4rem)",
               color: "#FDFCF8",
               lineHeight: 1.05,
             }}
           >
-            Premium Peptide{" "}
-            <em className="italic" style={{ color: "var(--acid-green)" }}>Products</em>
+            The Catalog
           </h1>
           <p className="max-w-xl leading-relaxed text-secondary">
             cGMP-manufactured research compounds. Full Certificate of Analysis and technical

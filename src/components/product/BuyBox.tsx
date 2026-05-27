@@ -13,17 +13,15 @@ interface BuyBoxProps {
   onFormatChange?: (format: 'vial' | 'pen') => void;
 }
 
-type SubscriptionTier = {
-  months: number;
+type PurchaseOption = {
+  type: 'one-time' | 'monthly';
   label: string;
-  discount: number; // percentage off
-  badge?: string;
+  description: string;
 };
 
-const subscriptionTiers: SubscriptionTier[] = [
-  { months: 1, label: "1 Month Supply", discount: 0 },
-  { months: 3, label: "3 Month Supply", discount: 14, badge: "Save 14%" },
-  { months: 6, label: "6 Month Supply", discount: 28, badge: "Best Value" },
+const purchaseOptions: PurchaseOption[] = [
+  { type: 'one-time', label: "One-time purchase", description: "Single order" },
+  { type: 'monthly', label: "Monthly delivery", description: "Auto-ship monthly" },
 ];
 
 export default function BuyBox({
@@ -41,7 +39,7 @@ export default function BuyBox({
   const [selectedDosage, setSelectedDosage] = useState<ProductDosage | undefined>(
     product.dosages?.[0] || undefined
   );
-  const [selectedTier, setSelectedTier] = useState<SubscriptionTier>(subscriptionTiers[2]); // Default to best value
+  const [selectedOption, setSelectedOption] = useState<PurchaseOption>(purchaseOptions[0]); // Default to one-time
   const [quantity, setQuantity] = useState(1);
 
   // Base price based on format/dosage
@@ -53,12 +51,11 @@ export default function BuyBox({
   };
 
   const basePrice = getBasePrice();
-  const discountedPrice = Math.round(basePrice * (1 - selectedTier.discount / 100));
-  const monthlyPrice = discountedPrice;
-  const totalPrice = monthlyPrice * selectedTier.months * quantity;
+  const totalPrice = basePrice * quantity;
 
   const handleAddToCart = () => {
-    addItem(product, selectedFormat, selectedDosage, selectedTier.months);
+    const months = selectedOption.type === 'monthly' ? 12 : 1; // 12 months for monthly, 1 for one-time
+    addItem(product, selectedFormat, selectedDosage, months);
     openDrawer();
   };
 
@@ -164,37 +161,27 @@ export default function BuyBox({
           </div>
         )}
 
-        {/* Subscription Tier Selection ⭐ KEY FEATURE */}
+        {/* Purchase Option Selection */}
         <div
           className="p-6 border-b"
           style={{ borderColor: "var(--dark-border)" }}
         >
-          <div className="flex items-center gap-2 mb-3">
-            <RefreshCw className="w-4 h-4 text-acid-green" />
-            <h3 className="text-sm font-semibold text-primary uppercase tracking-wide">
-              Subscribe & Save
-            </h3>
-          </div>
+          <h3 className="text-sm font-semibold text-primary mb-3 uppercase tracking-wide">
+            Purchase Option
+          </h3>
           <div className="space-y-2">
-            {subscriptionTiers.map((tier) => {
-              const tierPrice = Math.round(basePrice * (1 - tier.discount / 100));
-              const isSelected = selectedTier.months === tier.months;
+            {purchaseOptions.map((option) => {
+              const isSelected = selectedOption.type === option.type;
               return (
                 <button
-                  key={tier.months}
-                  onClick={() => setSelectedTier(tier)}
-                  className={`w-full p-4 rounded-lg border transition-all duration-200 text-left relative ${
+                  key={option.type}
+                  onClick={() => setSelectedOption(option)}
+                  className={`w-full p-4 rounded-lg border transition-all duration-200 text-left ${
                     isSelected
                       ? 'border-acid-green bg-acid-green/10'
                       : 'border-dark-border hover:border-dark-border-hover'
                   }`}
                 >
-                  {/* Best Value badge */}
-                  {tier.badge === "Best Value" && (
-                    <span className="absolute -top-2 right-3 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-acid-green text-dark">
-                      Best Value
-                    </span>
-                  )}
                   <div className="flex items-center justify-between min-w-0 gap-3">
                     <div className="flex items-center gap-3 min-w-0 flex-1">
                       {/* Radio indicator */}
@@ -207,23 +194,16 @@ export default function BuyBox({
                       </div>
                       <div className="min-w-0 flex-1">
                         <div className="text-sm font-medium text-primary truncate">
-                          {tier.label}
+                          {option.label}
                         </div>
-                        {tier.discount > 0 && (
-                          <div className="text-xs text-acid-green font-medium">
-                            Save {tier.discount}%
-                          </div>
-                        )}
+                        <div className="text-xs text-secondary">
+                          {option.description}
+                        </div>
                       </div>
                     </div>
                     <div className="text-right flex-shrink-0">
-                      {tier.discount > 0 && (
-                        <div className="text-xs text-secondary line-through">
-                          ${basePrice}/mo
-                        </div>
-                      )}
                       <div className="text-lg font-bold text-primary whitespace-nowrap">
-                        ${tierPrice}<span className="text-xs text-secondary font-normal">/mo</span>
+                        ${basePrice}
                       </div>
                     </div>
                   </div>
@@ -232,7 +212,7 @@ export default function BuyBox({
             })}
           </div>
           <p className="text-xs text-tertiary mt-3">
-            Auto-ships monthly. Cancel or modify anytime. Free shipping on 3+ month plans.
+            Monthly delivery can be cancelled or modified anytime.
           </p>
         </div>
 
@@ -266,53 +246,34 @@ export default function BuyBox({
           {/* Price Summary */}
           <div className="mb-6 p-4 rounded-lg" style={{ backgroundColor: "var(--dark-panel)" }}>
             <div className="flex items-center justify-between mb-1 min-w-0 gap-2">
-              <span className="text-sm text-secondary flex-shrink-0">Monthly</span>
-              <span className="text-sm text-primary text-right truncate">${monthlyPrice}/mo × {selectedTier.months} months</span>
+              <span className="text-sm text-secondary flex-shrink-0">Unit price</span>
+              <span className="text-sm text-primary">${basePrice}</span>
             </div>
             {quantity > 1 && (
               <div className="flex items-center justify-between mb-1 min-w-0 gap-2">
-                <span className="text-sm text-secondary flex-shrink-0">Qty</span>
+                <span className="text-sm text-secondary flex-shrink-0">Quantity</span>
                 <span className="text-sm text-primary">×{quantity}</span>
-              </div>
-            )}
-            {selectedTier.discount > 0 && (
-              <div className="flex items-center justify-between mb-1 min-w-0 gap-2">
-                <span className="text-sm text-acid-green flex-shrink-0">You save</span>
-                <span className="text-sm text-acid-green font-medium">
-                  -${(basePrice * selectedTier.months * quantity - totalPrice).toFixed(0)}
-                </span>
               </div>
             )}
             <div
               className="flex items-center justify-between pt-3 mt-2 border-t min-w-0 gap-2"
               style={{ borderColor: "var(--dark-border)" }}
             >
-              <span className="text-base font-semibold text-primary flex-shrink-0">Total today</span>
-              <span className="text-2xl font-bold text-acid-green">
-                ${totalPrice.toFixed(0)}
+              <span className="text-base font-semibold text-primary flex-shrink-0">Total</span>
+              <span className="text-2xl font-bold text-primary">
+                ${totalPrice}
               </span>
             </div>
           </div>
 
-          {/* Subscribe Button */}
+          {/* Add to Order Button */}
           <button
             onClick={handleAddToCart}
             className="btn-acid w-full justify-center mb-4 text-sm font-bold uppercase tracking-wide"
             style={{ height: "52px" }}
           >
             <ShoppingCart className="w-4 h-4" />
-            SUBSCRIBE NOW
-          </button>
-
-          {/* One-time purchase option */}
-          <button
-            onClick={() => {
-              addItem(product, selectedFormat, selectedDosage, 1); // 1 month = one-time
-              openDrawer();
-            }}
-            className="w-full py-3 text-center text-sm text-secondary hover:text-primary border border-dark-border hover:border-dark-border-hover rounded-lg transition-colors"
-          >
-            Or buy one-time — ${basePrice}
+            ADD TO ORDER
           </button>
 
           {/* Trust Badges */}
@@ -339,7 +300,7 @@ export default function BuyBox({
             style={{ borderColor: "var(--dark-border)" }}
           >
             <p className="text-xs text-tertiary leading-relaxed">
-              For qualified research use only. Not for human consumption. Cancel subscription anytime.
+              For qualified research use only. Not for human consumption.
             </p>
           </div>
         </div>

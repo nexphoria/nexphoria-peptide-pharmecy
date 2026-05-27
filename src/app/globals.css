@@ -129,6 +129,7 @@
     letter-spacing: var(--tracking-body);
     overflow-x: hidden;
     width: 100%;
+    min-height: 100vh;
     padding-top: 36px; /* Account for announcement bar */
   }
 
@@ -165,21 +166,20 @@
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    max-width: 100%;
+    padding-inline: 1rem;
   }
 
   @media (min-width: 768px) {
     .container-nex {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
+      padding-inline: 2rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container-nex {
-      padding-left: 3rem;
-      padding-right: 3rem;
+      max-width: var(--container-max);
+      padding-inline: 3rem;
     }
   }
 
@@ -505,10 +505,29 @@
     bottom: 0;
     left: 0;
     right: 0;
+    width: 100%;
+    max-width: 100vw;
     z-index: 50;
     padding: 1rem 1.5rem;
     background-color: var(--acid-green);
     border-top: 1px solid var(--dark-border);
+    overflow: hidden;
+  }
+
+  /* ==================== OVERFLOW PREVENTION ==================== */
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  pre, code {
+    overflow-x: auto;
+    word-wrap: break-word;
   }
 
   /* ==================== CART DRAWER ==================== */
