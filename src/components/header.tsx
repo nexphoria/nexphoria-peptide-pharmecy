@@ -67,8 +67,8 @@ export function Header() {
                 priority
               />
               <span
-                className="text-[15px] font-semibold tracking-[0.08em] uppercase"
-                style={{ color: "#FDFCF8", fontFamily: "var(--font-display)", letterSpacing: "0.12em" }}
+                className="text-[13px] uppercase"
+                style={{ color: "rgba(253,252,248,0.85)", fontWeight: 300, letterSpacing: "0.25em" }}
               >
                 Nexphoria
               </span>

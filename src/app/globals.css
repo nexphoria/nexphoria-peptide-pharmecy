@@ -75,8 +75,8 @@ body.hydrated [style*="opacity"] {
   --gradient-hero: linear-gradient(135deg, #0A0A0A 0%, #161616 100%);
 
   /* ==================== TYPOGRAPHY ==================== */
-  --font-display: var(--font-space-grotesk, 'Space Grotesk'), system-ui, -apple-system, sans-serif;
-  --font-body: var(--font-dm-sans, 'DM Sans'), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-inter, 'Inter'), system-ui, -apple-system, sans-serif;
+  --font-body: var(--font-inter, 'Inter'), system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", "Fira Mono", "Courier New", monospace;
 
   /* Type scale */
@@ -176,9 +176,9 @@ body.hydrated [style*="opacity"] {
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    font-weight: 700;
+    font-weight: 300;
     line-height: 1.1;
-    letter-spacing: var(--tracking-display);
+    letter-spacing: 0.04em;
     color: var(--text-primary);
   }
 
@@ -256,14 +256,14 @@ body.hydrated [style*="opacity"] {
     line-height: 1.1;
   }
 
-  /* Eyebrow: uppercase, wide tracking, acid green */
+  /* Eyebrow: uppercase, wide tracking, gold */
   .eyebrow {
     font-family: var(--font-body);
     font-size: 0.75rem;
     letter-spacing: var(--tracking-label);
     text-transform: uppercase;
     font-weight: 600;
-    color: var(--acid-green);
+    color: var(--gold);
   }
 
   .text-label {

@@ -246,7 +246,7 @@ export default function HomePage() {
             <div>
               <div className="mb-5">
                 <span className="text-[10px] font-semibold uppercase tracking-[0.22em]"
-                  style={{ color: "var(--acid-green)" }}>
+                  style={{ color: "#C9A24B" }}>
                   Research-Grade Compounds
                 </span>
               </div>
@@ -380,7 +380,7 @@ export default function HomePage() {
             <h2 className="font-bold tracking-tight max-w-xl text-primary"
               style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.8rem)" }}>
               Find Your{" "}
-              <em className="italic text-acid-green">Protocol</em>
+              <em className="italic" style={{ color: "#C9A24B" }}>Protocol</em>
             </h2>
           </div>
 
@@ -438,7 +438,7 @@ export default function HomePage() {
               <h2 className="font-bold tracking-tight text-primary"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)" }}>
                 Tailored{" "}
-                <em className="italic text-acid-green">Stacks</em>
+                <em className="italic" style={{ color: "#C9A24B" }}>Stacks</em>
               </h2>
               {/* Tab buttons */}
               <div className="flex gap-1 p-1 bg-dark-card rounded-lg">
@@ -507,11 +507,14 @@ export default function HomePage() {
               <span className="eyebrow mb-4 block">Our Catalogue</span>
               <h2 className="font-bold tracking-tight text-primary"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-                Featured <em className="italic text-acid-green">Compounds</em>
+                Featured <em className="italic" style={{ color: "#C9A24B" }}>Compounds</em>
               </h2>
             </div>
             <Link href="/products"
-              className="hidden sm:flex items-center gap-2 text-sm font-medium transition-colors whitespace-nowrap text-secondary hover:text-acid-green">
+              className="hidden sm:flex items-center gap-2 text-sm font-medium transition-colors whitespace-nowrap text-secondary"
+              style={{ color: "rgba(247,244,238,0.8)" }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#C9A24B"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(247,244,238,0.8)"; }}>
               View All 20 Compounds <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
@@ -540,7 +543,7 @@ export default function HomePage() {
             <h2 className="font-bold tracking-tight text-primary"
               style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)" }}>
               Research or{" "}
-              <em className="italic text-acid-green">Clinical</em>
+              <em className="italic" style={{ color: "#C9A24B" }}>Clinical</em>
             </h2>
           </motion.div>
 
@@ -580,8 +583,8 @@ export default function HomePage() {
 
               <div className="mb-6">
                 <div className="w-14 h-14 rounded-full flex items-center justify-center mb-5"
-                  style={{ backgroundColor: "rgba(198,241,132,0.12)", border: "1px solid rgba(198,241,132,0.25)" }}>
-                  <FlaskConical className="w-7 h-7" strokeWidth={1.5} style={{ color: "var(--acid-green)" }} />
+                  style={{ backgroundColor: "rgba(201,162,75,0.12)", border: "1px solid rgba(201,162,75,0.25)" }}>
+                  <FlaskConical className="w-7 h-7" strokeWidth={1.5} style={{ color: "#C9A24B" }} />
                 </div>
                 <h3 className="text-2xl font-bold mb-3 text-primary"
                   style={{ fontFamily: "var(--font-display)" }}>
@@ -601,7 +604,7 @@ export default function HomePage() {
                     "Full reconstitution protocols",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2.5 text-sm text-secondary">
-                      <Check className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "var(--acid-green)" }} />
+                      <Check className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "#C9A24B" }} />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -710,7 +713,7 @@ export default function HomePage() {
         <div className="container-nex relative z-20">
           <div className="max-w-3xl">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-              <span className="eyebrow mb-5 block" style={{ color: "var(--acid-green)" }}>Research Methodology</span>
+              <span className="eyebrow mb-5 block" style={{ color: "#C9A24B" }}>Research Methodology</span>
               <h2 className="font-bold tracking-tight mb-6 text-primary"
                 style={{
                   fontFamily: "var(--font-display)",
@@ -718,7 +721,7 @@ export default function HomePage() {
                   color: "#FDFCF8"
                 }}>
                 The Mechanism{" "}
-                <em className="italic" style={{ color: "var(--acid-green)" }}>Matters</em>
+                <em className="italic" style={{ color: "#C9A24B" }}>Matters</em>
               </h2>
               <div className="space-y-4 mb-8">
                 <p className="text-lg leading-relaxed" style={{ color: "rgba(253,252,248,0.8)" }}>
@@ -747,7 +750,7 @@ export default function HomePage() {
             <h2 className="font-bold tracking-tight mb-3 text-primary"
               style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)" }}>
               Build Your{" "}
-              <em className="italic text-acid-green">Stack</em>
+              <em className="italic" style={{ color: "#C9A24B" }}>Stack</em>
             </h2>
             <p className="text-sm max-w-lg leading-relaxed text-secondary">
               Select your goals — we&apos;ll surface the right compounds. Add to your stack and review your order summary.
@@ -870,8 +873,8 @@ export default function HomePage() {
 
                               {/* Price + action */}
                               <div className="text-right flex-shrink-0">
-                                <div className="text-base font-bold mb-2 text-acid-green"
-                                  style={{ fontFamily: "var(--font-display)" }}>
+                                <div className="text-base font-bold mb-2"
+                                  style={{ fontFamily: "var(--font-display)", color: "#C9A24B" }}>
                                   ${currentPrice}
                                 </div>
 
@@ -1008,8 +1011,8 @@ export default function HomePage() {
                     <div className="px-6 py-5 space-y-3 border-b" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
                       <div className="flex justify-between items-center">
                         <span className="text-sm font-semibold text-primary">Total</span>
-                        <span className="text-2xl font-bold text-acid-green"
-                          style={{ fontFamily: "var(--font-display)" }}>
+                        <span className="text-2xl font-bold"
+                          style={{ fontFamily: "var(--font-display)", color: "#C9A24B" }}>
                           ${stackFinalTotal}
                         </span>
                       </div>
@@ -1049,7 +1052,7 @@ export default function HomePage() {
             <h2 className="font-bold tracking-tight max-w-xl text-primary"
               style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)" }}>
               Curated for Your{" "}
-              <em className="italic text-acid-green">Goals</em>
+              <em className="italic" style={{ color: "#C9A24B" }}>Goals</em>
             </h2>
           </motion.div>
 
@@ -1093,8 +1096,8 @@ export default function HomePage() {
 
                       {/* Pricing */}
                       <div className="mb-4">
-                        <div className="text-4xl font-bold text-acid-green mb-1"
-                          style={{ fontFamily: "var(--font-display)" }}>
+                        <div className="text-4xl font-bold mb-1"
+                          style={{ fontFamily: "var(--font-display)", color: "#C9A24B" }}>
                           ${bundle.monthlyPrice}<span className="text-lg text-secondary font-normal">/mo</span>
                         </div>
                         <div className="text-xs text-secondary mb-2">
@@ -1124,8 +1127,9 @@ export default function HomePage() {
 
                       {/* Synergy Explanation - Key Educational Feature */}
                       <div className="p-4 border rounded-lg mb-6"
-                        style={{ borderColor: "rgba(198,241,132,0.2)", backgroundColor: "rgba(198,241,132,0.03)" }}>
-                        <h4 className="text-xs font-semibold uppercase tracking-wide mb-2 text-acid-green">
+                        style={{ borderColor: "rgba(255,255,255,0.06)", backgroundColor: "rgba(255,255,255,0.02)" }}>
+                        <h4 className="text-xs font-semibold uppercase tracking-wide mb-2"
+                          style={{ color: "#C9A24B" }}>
                           Why These Work Together
                         </h4>
                         <p className="text-xs leading-relaxed text-primary">
@@ -1230,7 +1234,7 @@ export default function HomePage() {
               <h2 className="font-bold tracking-tight mb-6 text-primary"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)" }}>
                 Dare to{" "}
-                <em className="italic text-acid-green">Defy</em>
+                <em className="italic" style={{ color: "#C9A24B" }}>Defy</em>
               </h2>
               <div className="space-y-4 mb-8">
                 <p className="text-sm leading-relaxed text-secondary">
@@ -1274,7 +1278,7 @@ export default function HomePage() {
             <h2 className="font-bold tracking-tight text-primary"
               style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)" }}>
               Cold-Chain Ready{" "}
-              <em className="italic text-acid-green">Delivery</em>
+              <em className="italic" style={{ color: "#C9A24B" }}>Delivery</em>
             </h2>
           </motion.div>
 
@@ -1365,7 +1369,7 @@ export default function HomePage() {
             <h2 className="font-bold tracking-tight max-w-xl text-primary"
               style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)" }}>
               Pharmaceutical-Grade{" "}
-              <em className="italic text-acid-green">Excellence</em>
+              <em className="italic" style={{ color: "#C9A24B" }}>Excellence</em>
             </h2>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-0 border" style={{ borderColor: "rgba(255,255,255,0.07)" }}>
@@ -1407,7 +1411,7 @@ export default function HomePage() {
               <h2 className="font-bold tracking-tight mb-6 text-primary"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.8rem)" }}>
                 Common{" "}
-                <em className="italic text-acid-green">Questions</em>
+                <em className="italic" style={{ color: "#C9A24B" }}>Questions</em>
               </h2>
               <p className="text-sm leading-relaxed mb-8 text-secondary">
                 Everything you need to know about ordering, storage, and our quality standards.
@@ -1435,7 +1439,7 @@ export default function HomePage() {
               <h2 className="font-bold tracking-tight mb-4 text-primary"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 2.75rem)" }}>
                 Stay Ahead of the{" "}
-                <em className="italic text-acid-green">Science</em>
+                <em className="italic" style={{ color: "#C9A24B" }}>Science</em>
               </h2>
               <p className="text-sm leading-relaxed text-secondary">
                 New compound announcements, COA publications, and research updates. Join 2,400+ researchers.

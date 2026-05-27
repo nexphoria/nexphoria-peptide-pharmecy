@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, DM_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -7,18 +7,11 @@ import CartDrawer from "@/components/cart/CartDrawer";
 import HydrationMarker from "@/components/HydrationMarker";
 import AgeVerificationModal from "@/components/AgeVerificationModal";
 
-const spaceGrotesk = Space_Grotesk({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-inter",
   display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-dm-sans",
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["200", "300", "400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -97,7 +90,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`h-full antialiased ${dmSans.variable} ${spaceGrotesk.variable}`}>
+    <html lang="en" className={`h-full antialiased ${inter.variable}`}>
       <head>
         <link rel="icon" href="/favicon.png" type="image/png" />
         <script
