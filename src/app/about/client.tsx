@@ -237,6 +237,7 @@ export default function AboutClient() {
 
       {/* Brand story with 05-copy.jpg accent — "Dare to Defy" */}
       <section className="relative py-28 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" style={{backgroundImage:"url(/brand/cell-pattern-1.png)",backgroundSize:"400px 400px",backgroundRepeat:"repeat",opacity:0.05}} />
         <div className="container-nex">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -276,7 +277,7 @@ export default function AboutClient() {
               style={{ aspectRatio: "4/5", borderRadius: "12px", boxShadow: "0 8px 40px rgba(0,0,0,0.12)" }}
             >
               <Image
-                src="/brand/tm-vb-006.jpg"
+                src="/images/stock/lab-precision.jpg"
                 alt="Dare to Defy — Nexphoria"
                 fill
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-105"

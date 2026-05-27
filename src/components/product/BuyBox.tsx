@@ -21,7 +21,7 @@ type PurchaseOption = {
 
 const purchaseOptions: PurchaseOption[] = [
   { type: 'one-time', label: "One-time purchase", description: "Single order" },
-  { type: 'monthly', label: "Monthly delivery", description: "Auto-ship monthly" },
+  { type: 'monthly', label: "Monthly Auto-Ship", description: "Auto-ship monthly" },
 ];
 
 export default function BuyBox({
@@ -269,12 +269,14 @@ export default function BuyBox({
           {/* Add to Order Button */}
           <button
             onClick={handleAddToCart}
-            className="btn-acid w-full justify-center mb-4 text-sm font-bold uppercase tracking-wide"
+            className="btn-acid w-full justify-center text-sm font-bold uppercase tracking-wide"
             style={{ height: "52px" }}
           >
             <ShoppingCart className="w-4 h-4" />
             ADD TO ORDER
           </button>
+
+          <p className="mt-3 text-xs text-center" style={{color:"rgba(253,252,248,0.4)"}}>For qualified research use only. Not for human consumption.</p>
 
           {/* Trust Badges */}
           <div className="mt-6 space-y-2">

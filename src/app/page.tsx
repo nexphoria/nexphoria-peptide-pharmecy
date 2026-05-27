@@ -66,36 +66,20 @@ function StarRating({ count = 5 }: { count?: number }) {
 
 const faqItems = [
   {
-    q: "What purity level do your peptides have?",
-    a: "All Nexphoria peptides are verified at 99.7%+ purity using reverse-phase HPLC with UV/DAD detection and ESI-MS identity confirmation. Every production lot is tested by an independent, accredited third-party laboratory.",
+    q: "What purity standard do you require?",
+    a: "All compounds are verified at ≥98% HPLC purity with ESI-MS identity confirmation. Certificates of Analysis are available for every production lot.",
   },
   {
-    q: "Do you provide Certificates of Analysis?",
-    a: "Yes — every order ships with a Certificate of Analysis from our third-party testing laboratory. The COA includes the full HPLC chromatogram, mass spectrum, moisture content (Karl Fischer), and residual solvent data.",
+    q: "What does lyophilized mean?",
+    a: "Lyophilization (freeze-drying) removes moisture from the peptide under vacuum, extending shelf life and maintaining molecular integrity. Reconstitution with bacteriostatic water is required before use.",
   },
   {
-    q: "How should I store peptides?",
-    a: "Lyophilized peptides should be stored at −20°C in a desiccated environment, protected from light. Once reconstituted, store at 2–8°C (refrigerator). Avoid repeated freeze-thaw cycles. Refer to each product's individual storage specifications for exact conditions.",
+    q: "Is a prescription required?",
+    a: "Research-grade compounds do not require a prescription. For our Clinical tier — physician-guided compounded peptides — a telehealth consultation and valid prescription are required.",
   },
   {
-    q: "What is bacteriostatic water?",
-    a: "Bacteriostatic water is sterile water containing 0.9% benzyl alcohol as a preservative. It is the preferred reconstitution solvent for most research peptides, as the preservative inhibits bacterial growth and allows multi-draw use from the same vial over 28 days.",
-  },
-  {
-    q: "Do you ship internationally?",
-    a: "We currently ship within the United States only. International shipping is in development and will be announced via our newsletter. Join our email list to be notified when your country becomes available.",
-  },
-  {
-    q: "What forms do peptides come in?",
-    a: "Our peptides are available in lyophilized powder form in pharmaceutical glass vials (flip-top caps), requiring reconstitution with bacteriostatic water. Pre-loaded injection pens are available for select compounds — check individual product pages for pen availability.",
-  },
-  {
-    q: "Are your peptides for human use?",
-    a: "Nexphoria peptides are research compounds intended for in vitro and preclinical research use only. They are not approved for human therapeutic use by the FDA or any other regulatory authority. All orders are for qualified research purposes only.",
-  },
-  {
-    q: "What is your return policy?",
-    a: "Please review our full shipping and returns policy at /legal/shipping-returns. Due to the nature of research compounds, we do not accept returns on opened vials. Damaged or incorrect items are replaced at no charge.",
+    q: "How do I know what I receive is authentic?",
+    a: "Each lot is tested by an independent third-party laboratory (Janoshik Analytical or equivalent). Your COA ships with every order. Results are verifiable by lot number.",
   },
 ];
 
@@ -239,11 +223,21 @@ export default function HomePage() {
 
       {/* ========== HERO ========== */}
       <section className="relative flex items-center overflow-hidden" style={{ minHeight: "100vh" }}>
-        {/* Premium gradient background */}
+        {/* Editorial hero background image */}
+        <Image
+          src="/brand/editorial-hero.jpg"
+          alt="Nexphoria Research Laboratory"
+          fill
+          className="object-cover object-center"
+          priority
+          sizes="100vw"
+        />
+        {/* Dark overlay */}
         <div className="absolute inset-0 z-10" style={{
-          background: "linear-gradient(135deg, #0A0A08 0%, #1A1A18 40%, #111110 70%, #0D0D0C 100%)"
+          background: "rgba(0,0,0,0.65)"
         }} />
-
+        {/* Subtle pattern overlay */}
+        <div className="absolute inset-0 pointer-events-none" style={{backgroundImage:"url(/brand/cell-pattern-1.png)",backgroundSize:"400px 400px",backgroundRepeat:"repeat",opacity:0.05,zIndex:1}} />
 
         <div className="container-nex relative z-20 w-full py-24 md:py-32 pt-36 md:pt-40">
           <div className="grid lg:grid-cols-[55fr_45fr] gap-10 xl:gap-16 items-center">
@@ -253,7 +247,7 @@ export default function HomePage() {
               <div className="mb-5">
                 <span className="text-[10px] font-semibold uppercase tracking-[0.22em]"
                   style={{ color: "var(--acid-green)" }}>
-                  Research-Grade · Physician-Guided
+                  Research-Grade Compounds
                 </span>
               </div>
               <h1
@@ -267,51 +261,18 @@ export default function HomePage() {
                 The Source.
               </h1>
               <p
-                className="text-base md:text-lg max-w-lg mb-4 leading-relaxed"
-                style={{ color: "rgba(253,252,248,0.72)" }}
+                className="text-base md:text-lg max-w-lg mb-10 leading-relaxed"
+                style={{ color: "rgba(253,252,248,0.8)" }}
               >
-                From research-grade compounds to physician-guided therapy. Rigorous testing, transparent documentation, clinical-grade standards.
+                From research-grade compounds to physician-guided therapy. Every batch third-party tested. Every order ships with COA.
               </p>
-              <div className="flex flex-wrap gap-3 mb-10">
-                <Link href="/clinical"
-                  className="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] px-4 py-2 border transition-all"
-                  style={{ borderColor: "rgba(201,162,75,0.4)", color: "var(--gold)", borderRadius: "6px", backgroundColor: "rgba(201,162,75,0.06)" }}
-                >
-                  Clinical Tier <ArrowRight className="w-3 h-3" />
-                </Link>
-                <Link href="/products"
-                  className="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] px-4 py-2 border transition-all"
-                  style={{ borderColor: "rgba(168,201,127,0.4)", color: "var(--acid-green)", borderRadius: "6px", backgroundColor: "rgba(168,201,127,0.06)" }}
-                >
-                  Research Catalog <ArrowRight className="w-3 h-3" />
-                </Link>
-              </div>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/products" className="btn-acid">
-                  View Catalog <ArrowRight className="w-4 h-4" />
+                  Explore Research Catalog <ArrowRight className="w-4 h-4" />
                 </Link>
-                <a href="#stack-builder" className="btn-outline-gold">Build Your Stack</a>
-              </div>
-
-              {/* Stats */}
-              <div
-                className="mt-14 pt-10 grid grid-cols-2 sm:grid-cols-4 gap-6 border-t"
-                style={{ borderColor: "rgba(255,255,255,0.10)", maxWidth: "540px" }}
-              >
-                {[
-                  { target: 20, suffix: "", label: "Compounds" },
-                  { target: 99.7, suffix: "%", label: "Purity" },
-                  { display: "COA", label: "Every Batch" },
-                  { display: "24h", label: "Same-Day Ship" },
-                ].map((stat) => (
-                  <div key={stat.label}>
-                    <div className="text-2xl md:text-3xl font-bold tracking-tight mb-0.5"
-                      style={{ fontFamily: "var(--font-display)", color: "#FDFCF8" }}>
-                      {"target" in stat ? <Counter target={stat.target!} suffix={stat.suffix} /> : stat.display}
-                    </div>
-                    <div className="text-label" style={{ color: "rgba(253,252,248,0.45)" }}>{stat.label}</div>
-                  </div>
-                ))}
+                <Link href="/clinical" className="btn-outline-gold">
+                  Clinical Programs
+                </Link>
               </div>
             </div>
 
@@ -388,30 +349,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ========== SOCIAL PROOF BAR ========== */}
-      <section style={{ backgroundColor: "#0a0a08", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-        <div className="py-4 overflow-hidden">
-          <div className="announcement-track flex items-center gap-0 whitespace-nowrap">
-            {[
-              "Trusted by 2,400+ researchers worldwide",
-              "99.7% average purity across all compounds",
-              "Same-day dispatch from US facility",
-              "Independent third-party COA on every batch",
-              "cGMP-certified manufacturing",
-              "20 research-grade compounds in catalog",
-              "Trusted by 2,400+ researchers worldwide",
-              "99.7% average purity across all compounds",
-              "Same-day dispatch from US facility",
-              "Independent third-party COA on every batch",
-              "cGMP-certified manufacturing",
-              "20 research-grade compounds in catalog",
-            ].map((item, i) => (
-              <span key={i} className="flex items-center gap-6 px-10 text-[10px] font-medium uppercase tracking-[0.18em]"
-                style={{ color: "rgba(247,244,238,0.5)" }}>
-                <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: "var(--gold)" }} />
-                {item}
-              </span>
-            ))}
+      {/* ========== TRUST BAR ========== */}
+      <section style={{ backgroundColor: "#0a0a08", borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+        <div className="py-5 overflow-hidden">
+          <div className="container-nex">
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-center">
+              {[
+                "99.7%+ Avg Purity",
+                "Janoshik COA Every Order",
+                "cGMP Manufacturing",
+                "Same-Day Dispatch",
+                "8-Point Purity Protocol"
+              ].map((item, i) => (
+                <span key={i} className="flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.16em]"
+                  style={{ color: "rgba(247,244,238,0.6)" }}>
+                  {i > 0 && <span className="hidden sm:inline" style={{ color: "rgba(247,244,238,0.3)" }}>|</span>}
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -575,6 +531,159 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ========== DUAL-TIER MODEL ========== */}
+      <section className="py-24 md:py-32" style={{ backgroundColor: "#0D0D0C" }}>
+        <div className="container-nex">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
+            className="mb-14 text-center max-w-2xl mx-auto">
+            <span className="eyebrow mb-4 block">Two Pathways</span>
+            <h2 className="font-bold tracking-tight text-primary"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+              Research or{" "}
+              <em className="italic text-acid-green">Clinical</em>
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* RESEARCH Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="group relative p-8 border overflow-hidden transition-all duration-300"
+              style={{
+                borderRadius: "16px",
+                borderColor: "rgba(198,241,132,0.2)",
+                backgroundColor: "#111110",
+              }}
+              onMouseEnter={(e) => {
+                const el = e.currentTarget as HTMLElement;
+                el.style.borderColor = "rgba(198,241,132,0.4)";
+                el.style.boxShadow = "0 0 40px rgba(198,241,132,0.12)";
+              }}
+              onMouseLeave={(e) => {
+                const el = e.currentTarget as HTMLElement;
+                el.style.borderColor = "rgba(198,241,132,0.2)";
+                el.style.boxShadow = "";
+              }}
+            >
+              <div className="absolute top-6 right-6 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide"
+                style={{
+                  backgroundColor: "rgba(198,241,132,0.15)",
+                  color: "var(--acid-green)",
+                  borderRadius: "6px",
+                  border: "1px solid rgba(198,241,132,0.25)"
+                }}>
+                Research-Grade
+              </div>
+
+              <div className="mb-6">
+                <div className="w-14 h-14 rounded-full flex items-center justify-center mb-5"
+                  style={{ backgroundColor: "rgba(198,241,132,0.12)", border: "1px solid rgba(198,241,132,0.25)" }}>
+                  <FlaskConical className="w-7 h-7" strokeWidth={1.5} style={{ color: "var(--acid-green)" }} />
+                </div>
+                <h3 className="text-2xl font-bold mb-3 text-primary"
+                  style={{ fontFamily: "var(--font-display)" }}>
+                  Research-Grade Compounds
+                </h3>
+              </div>
+
+              <div className="space-y-4 mb-8">
+                <p className="text-sm leading-relaxed text-secondary">
+                  Lyophilized powder. Third-party tested. For qualified researchers.
+                </p>
+                <ul className="space-y-2.5">
+                  {[
+                    "99.7%+ purity verified by HPLC",
+                    "COA with every order",
+                    "cGMP manufacturing",
+                    "Full reconstitution protocols",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-sm text-secondary">
+                      <Check className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "var(--acid-green)" }} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <Link href="/products" className="btn-acid w-full justify-center">
+                View Catalog <ArrowRight className="w-4 h-4" />
+              </Link>
+            </motion.div>
+
+            {/* CLINICAL Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="group relative p-8 border overflow-hidden transition-all duration-300"
+              style={{
+                borderRadius: "16px",
+                borderColor: "rgba(201,162,75,0.2)",
+                backgroundColor: "#111110",
+              }}
+              onMouseEnter={(e) => {
+                const el = e.currentTarget as HTMLElement;
+                el.style.borderColor = "rgba(201,162,75,0.4)";
+                el.style.boxShadow = "0 0 40px rgba(201,162,75,0.12)";
+              }}
+              onMouseLeave={(e) => {
+                const el = e.currentTarget as HTMLElement;
+                el.style.borderColor = "rgba(201,162,75,0.2)";
+                el.style.boxShadow = "";
+              }}
+            >
+              <div className="absolute top-6 right-6 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide"
+                style={{
+                  backgroundColor: "rgba(201,162,75,0.15)",
+                  color: "var(--gold)",
+                  borderRadius: "6px",
+                  border: "1px solid rgba(201,162,75,0.25)"
+                }}>
+                Physician-Guided
+              </div>
+
+              <div className="mb-6">
+                <div className="w-14 h-14 rounded-full flex items-center justify-center mb-5"
+                  style={{ backgroundColor: "rgba(201,162,75,0.12)", border: "1px solid rgba(201,162,75,0.25)" }}>
+                  <Syringe className="w-7 h-7" strokeWidth={1.5} style={{ color: "var(--gold)" }} />
+                </div>
+                <h3 className="text-2xl font-bold mb-3 text-primary"
+                  style={{ fontFamily: "var(--font-display)" }}>
+                  Physician-Guided Therapy
+                </h3>
+              </div>
+
+              <div className="space-y-4 mb-8">
+                <p className="text-sm leading-relaxed text-secondary">
+                  Pre-mixed, prescription-grade. Telehealth consultation included. Starting at $149/month.
+                </p>
+                <ul className="space-y-2.5">
+                  {[
+                    "Licensed physician oversight",
+                    "Ready-to-use formulations",
+                    "Monthly telehealth check-ins",
+                    "Delivered to your door",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-sm text-secondary">
+                      <Check className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "var(--gold)" }} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <Link href="/clinical" className="btn-outline-gold w-full justify-center">
+                Join Waitlist <ArrowRight className="w-4 h-4" />
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* ========== THE SCIENCE ========== */}
       <section className="relative py-24 md:py-32 overflow-hidden">
         {/* Poster triptych background */}
@@ -589,6 +698,14 @@ export default function HomePage() {
         <div className="absolute inset-0 z-10" style={{
           background: "rgba(0,0,0,0.75)"
         }} />
+        {/* Subtle pattern overlay */}
+        <div className="absolute inset-0 z-10 pointer-events-none" style={{
+          backgroundImage: "url(/brand/cell-pattern-1.png)",
+          backgroundSize: "400px 400px",
+          backgroundRepeat: "repeat",
+          backgroundPosition: "center",
+          opacity: 0.05
+        }} />
 
         <div className="container-nex relative z-20">
           <div className="max-w-3xl">
@@ -600,15 +717,12 @@ export default function HomePage() {
                   fontSize: "clamp(2.5rem, 5vw, 4rem)",
                   color: "#FDFCF8"
                 }}>
-                The Science Behind{" "}
-                <em className="italic" style={{ color: "var(--acid-green)" }}>Every Compound</em>
+                The Mechanism{" "}
+                <em className="italic" style={{ color: "var(--acid-green)" }}>Matters</em>
               </h2>
               <div className="space-y-4 mb-8">
                 <p className="text-lg leading-relaxed" style={{ color: "rgba(253,252,248,0.8)" }}>
-                  Each Nexphoria peptide undergoes rigorous analytical testing using pharmaceutical-grade instrumentation. HPLC purity analysis, mass spectrometry identity confirmation, and moisture content determination ensure every batch meets research specifications.
-                </p>
-                <p className="text-base leading-relaxed" style={{ color: "rgba(253,252,248,0.7)" }}>
-                  Manufactured in cGMP-certified facilities with complete batch documentation. Independent third-party COA included with every order.
+                  We document the biochemistry behind every compound we carry. Receptor binding, half-life, metabolic pathway. No marketing claims without published research.
                 </p>
               </div>
               <div className="flex gap-3">
@@ -799,7 +913,7 @@ export default function HomePage() {
                                       (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent";
                                     }}
                                   >
-                                    Add to Stack
+                                    Add to Order
                                   </button>
                                 )}
                               </div>

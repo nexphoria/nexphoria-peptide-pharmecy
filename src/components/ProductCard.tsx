@@ -143,7 +143,7 @@ export default function ProductCard({
               )}
             </div>
 
-            {/* Add to Cart Button */}
+            {/* Add to Order Button */}
             {showAddToCart && (
               <button
                 onClick={handleAddToCart}
