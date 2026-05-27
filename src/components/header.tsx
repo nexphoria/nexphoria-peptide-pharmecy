@@ -18,11 +18,8 @@ const navLinks = [
 
 const announcementItems = [
   "COA with every order — independent third-party lab",
-  "Same-day dispatch before 2PM ET",
-  "99.7%+ average purity across all compounds",
-  "cGMP-certified manufacturing",
-  "Trusted by 2,400+ researchers",
-  "20 research-grade compounds in catalog",
+  "99.7%+ average purity",
+  "cGMP manufacturing",
 ];
 
 export function Header() {
@@ -39,24 +36,15 @@ export function Header() {
 
   return (
     <>
-      {/* Announcement bar */}
+      {/* Announcement bar — single quiet trust signal */}
       <div
-        className="fixed top-0 left-0 right-0 z-50 overflow-hidden bg-dark"
-        style={{ height: "36px", width: "100%" }}
+        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center bg-dark"
+        style={{ height: "32px" }}
       >
-        <div className="flex items-center h-full w-full overflow-hidden">
-          <div className="announcement-track flex items-center gap-0 whitespace-nowrap">
-            {[...announcementItems, ...announcementItems].map((item, i) => (
-              <span
-                key={i}
-                className="flex items-center gap-6 px-8 text-[10px] font-medium uppercase tracking-[0.18em] text-secondary flex-shrink-0"
-              >
-                <span className="w-1 h-1 rounded-full flex-shrink-0 bg-acid-green" />
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
+        <span className="text-[10px] font-medium uppercase tracking-[0.22em]" style={{ color: "rgba(253,252,248,0.45)" }}>
+          <span className="inline-block w-1 h-1 rounded-full bg-acid-green mr-3 align-middle" />
+          COA with every order &nbsp;·&nbsp; 99.7%+ purity &nbsp;·&nbsp; cGMP manufacturing
+        </span>
       </div>
 
       {/* Main header */}
@@ -64,20 +52,26 @@ export function Header() {
         className={`fixed left-0 right-0 z-40 transition-all duration-300 header-sticky ${
           scrolled ? "header-solid backdrop-blur-md" : "header-transparent"
         }`}
-        style={{ top: "36px" }}
+        style={{ top: "32px" }}
       >
         <div className="container-nex">
           <div className="flex items-center justify-between h-16 md:h-20">
-            {/* Logo */}
-            <Link href="/" className="flex items-center flex-shrink-0">
+            {/* Logo + Wordmark */}
+            <Link href="/" className="flex items-center gap-2.5 flex-shrink-0">
               <Image
-                src="/logo-green.svg" // Always use green logo for dark theme
+                src="/logo-green.svg"
                 alt="Nexphoria"
-                width={140}
-                height={44}
-                className="h-7 md:h-8 w-auto"
+                width={28}
+                height={28}
+                className="h-6 md:h-7 w-auto"
                 priority
               />
+              <span
+                className="text-[15px] font-semibold tracking-[0.08em] uppercase"
+                style={{ color: "#FDFCF8", fontFamily: "var(--font-display)", letterSpacing: "0.12em" }}
+              >
+                Nexphoria
+              </span>
             </Link>
 
             {/* Nav — center */}
@@ -161,7 +155,7 @@ export function Header() {
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
             className="fixed inset-0 z-40 flex flex-col bg-dark-panel"
-            style={{ top: "36px" }}
+            style={{ top: "32px" }}
           >
             <div className="flex items-center justify-between h-16 px-6 border-b border-dark-border">
               <Link href="/" onClick={() => setMenuOpen(false)}>

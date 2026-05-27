@@ -63,13 +63,16 @@ export function Footer() {
         {/* Top row — logo + tagline */}
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-10 mb-14 pb-14 border-b border-white/[0.07]">
           <div className="max-w-xs">
-            <Image
-              src="/logo-black.svg"
-              alt="Nexphoria"
-              width={130}
-              height={42}
-              className="h-7 w-auto mb-5 brightness-0 invert opacity-85"
-            />
+            <div className="flex items-center gap-2.5 mb-5">
+              <Image
+                src="/logo-green.svg"
+                alt="Nexphoria"
+                width={24}
+                height={24}
+                className="h-5 w-auto opacity-70"
+              />
+              <span className="text-[13px] font-semibold uppercase tracking-[0.14em]" style={{ color: "rgba(253,252,248,0.7)" }}>Nexphoria</span>
+            </div>
             <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(138,128,117,0.9)" }}>
               Research-grade peptide compounds for qualified professionals. Manufactured under cGMP
               standards. Third-party tested every batch.

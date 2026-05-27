@@ -568,86 +568,65 @@ export default function ProductDetail({ product, related }: Props) {
 
             {/* Left: Large Product Visual */}
             <div className="relative order-2 lg:order-1 w-full">
-              <div
-                className="relative flex items-center justify-center p-8 lg:p-12 min-h-[500px] lg:min-h-[600px]"
-                style={{ backgroundColor: "var(--dark-bg)", borderRadius: "16px" }}
-              >
-                {/* Accent Glow */}
-                <div
-                  className="absolute inset-0 pointer-events-none"
-                  style={{
-                    background: `radial-gradient(ellipse 70% 60% at 50% 50%, ${product.accentColor}15 0%, transparent 70%)`,
-                    borderRadius: "16px"
-                  }}
-                />
-
-                {/* Format Toggle Tabs */}
-                <div className="absolute top-6 left-6 z-10">
-                  <div className="flex gap-1 p-1 bg-dark-card rounded-lg border border-dark-border">
+              {/* Format Toggle Tabs - Above Image */}
+              <div className="mb-6">
+                <div className="flex gap-2 p-1 bg-dark-card rounded-lg border border-dark-border inline-flex">
+                  <button
+                    onClick={() => setSelectedFormat('vial')}
+                    className={`px-6 py-3 text-xs font-semibold uppercase tracking-wide transition-all rounded ${
+                      selectedFormat === 'vial'
+                        ? 'bg-acid-green text-dark'
+                        : 'text-secondary hover:text-primary'
+                    }`}
+                  >
+                    Lyophilized Vial
+                  </button>
+                  {product.penAvailable && (
                     <button
-                      onClick={() => setSelectedFormat('vial')}
-                      className={`px-4 py-2 text-xs font-semibold uppercase tracking-wide transition-all rounded ${
-                        selectedFormat === 'vial'
+                      onClick={() => setSelectedFormat('pen')}
+                      className={`px-6 py-3 text-xs font-semibold uppercase tracking-wide transition-all rounded ${
+                        selectedFormat === 'pen'
                           ? 'bg-acid-green text-dark'
                           : 'text-secondary hover:text-primary'
                       }`}
                     >
-                      Vial
+                      Pre-loaded Pen
                     </button>
-                    <button
-                      onClick={() => setSelectedFormat('pen')}
-                      disabled={!product.penAvailable}
-                      className={`px-4 py-2 text-xs font-semibold uppercase tracking-wide transition-all rounded ${
-                        selectedFormat === 'pen' && product.penAvailable
-                          ? 'bg-acid-green text-dark'
-                          : product.penAvailable
-                            ? 'text-secondary hover:text-primary'
-                            : 'text-tertiary opacity-50 cursor-not-allowed'
-                      }`}
-                    >
-                      Pen
-                    </button>
-                  </div>
+                  )}
                 </div>
+                {selectedFormat === 'pen' && product.penAvailable && (
+                  <p className="text-xs text-tertiary mt-2 ml-1">
+                    (Pen format requires prescription)
+                  </p>
+                )}
+              </div>
 
-                {/* Large Product Image */}
+              {/* Hero Product Image */}
+              <div
+                className="relative overflow-hidden min-h-[500px] lg:min-h-[600px] rounded-2xl"
+              >
+                <Image
+                  src="/brand/boxes-shelf.jpg"
+                  alt={`${product.name} packaging`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
+                {/* Dark overlay for premium feel */}
                 <div
-                  className="relative"
+                  className="absolute inset-0"
                   style={{
-                    height: "450px",
-                    width: "320px",
-                    filter: `drop-shadow(0 24px 80px ${product.accentColor}40)`,
+                    background: 'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%)'
                   }}
-                >
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={selectedFormat}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.9 }}
-                      transition={{ duration: 0.4 }}
-                      className="w-full h-full flex items-center justify-center"
-                    >
-                      {selectedFormat === 'pen' ? (
-                        <div style={{ width: "400px", height: "120px" }}>
-                          <ProductPen
-                            productName={product.name}
-                            dosage={product.size}
-                          />
-                        </div>
-                      ) : (
-                        <div style={{ width: "320px", height: "450px" }}>
-                          <ProductVial
-                            productName={product.name}
-                            dosage={product.size}
-                            category={product.category}
-                            accentColor={product.accentColor}
-                          />
-                        </div>
-                      )}
-                    </motion.div>
-                  </AnimatePresence>
-                </div>
+                />
+                {/* Accent glow */}
+                <div
+                  className="absolute inset-0 pointer-events-none mix-blend-soft-light"
+                  style={{
+                    background: `radial-gradient(ellipse 60% 50% at 50% 60%, ${product.accentColor}25 0%, transparent 70%)`,
+                  }}
+                />
               </div>
 
               {/* Secondary Packaging Images */}

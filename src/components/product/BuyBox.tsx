@@ -83,7 +83,7 @@ export default function BuyBox({
           backgroundColor: "var(--dark-card)"
         }}
       >
-        {/* Format Selection (Vial/Pen) — ALWAYS SHOWN */}
+        {/* Format Selection (Vial/Pen) */}
         <div
           className="p-6 border-b"
           style={{ borderColor: "var(--dark-border)" }}
@@ -91,39 +91,59 @@ export default function BuyBox({
           <h3 className="text-sm font-semibold text-primary mb-3 uppercase tracking-wide">
             Format
           </h3>
-          <div className="grid grid-cols-2 gap-2">
-            {(['vial', 'pen'] as const).map((format) => {
-              const isAvailable = format === 'vial' || product.penAvailable;
-              return (
-                <button
-                  key={format}
-                  onClick={() => isAvailable && setSelectedFormat(format)}
-                  disabled={!isAvailable}
-                  className={`p-3 rounded-lg border transition-all duration-200 text-left min-w-0 ${
-                    !isAvailable
-                      ? 'opacity-40 cursor-not-allowed border-dark-border'
-                      : selectedFormat === format
-                        ? 'border-acid-green bg-acid-green/10'
-                        : 'border-dark-border hover:border-dark-border-hover'
-                  }`}
-                >
-                  <div className="flex items-center justify-between min-w-0">
-                    <div className="min-w-0 flex-1">
-                      <div className="text-sm font-medium text-primary capitalize truncate">
-                        {format}
-                      </div>
-                      <div className="text-xs text-secondary truncate">
-                        {format === 'vial' ? 'Lyophilized' : 'Pre-loaded'}
-                      </div>
-                    </div>
-                    {selectedFormat === format && isAvailable && (
-                      <Check className="w-4 h-4 text-acid-green flex-shrink-0 ml-2" />
-                    )}
+          <div className={`grid ${product.penAvailable ? 'grid-cols-2' : 'grid-cols-1'} gap-2`}>
+            <button
+              onClick={() => setSelectedFormat('vial')}
+              className={`p-3 rounded-lg border transition-all duration-200 text-left min-w-0 ${
+                selectedFormat === 'vial'
+                  ? 'border-acid-green bg-acid-green/10'
+                  : 'border-dark-border hover:border-dark-border-hover'
+              }`}
+            >
+              <div className="flex items-center justify-between min-w-0">
+                <div className="min-w-0 flex-1">
+                  <div className="text-sm font-medium text-primary truncate">
+                    Lyophilized Vial
                   </div>
-                </button>
-              );
-            })}
+                  <div className="text-xs text-secondary truncate">
+                    Standard format
+                  </div>
+                </div>
+                {selectedFormat === 'vial' && (
+                  <Check className="w-4 h-4 text-acid-green flex-shrink-0 ml-2" />
+                )}
+              </div>
+            </button>
+            {product.penAvailable && (
+              <button
+                onClick={() => setSelectedFormat('pen')}
+                className={`p-3 rounded-lg border transition-all duration-200 text-left min-w-0 ${
+                  selectedFormat === 'pen'
+                    ? 'border-acid-green bg-acid-green/10'
+                    : 'border-dark-border hover:border-dark-border-hover'
+                }`}
+              >
+                <div className="flex items-center justify-between min-w-0">
+                  <div className="min-w-0 flex-1">
+                    <div className="text-sm font-medium text-primary truncate">
+                      Pre-loaded Pen
+                    </div>
+                    <div className="text-xs text-secondary truncate">
+                      Requires Rx
+                    </div>
+                  </div>
+                  {selectedFormat === 'pen' && (
+                    <Check className="w-4 h-4 text-acid-green flex-shrink-0 ml-2" />
+                  )}
+                </div>
+              </button>
+            )}
           </div>
+          {selectedFormat === 'pen' && product.penAvailable && (
+            <p className="text-xs text-tertiary mt-3">
+              (Pen format requires prescription)
+            </p>
+          )}
         </div>
 
         {/* Dosage Selection */}
@@ -269,31 +289,38 @@ export default function BuyBox({
           {/* Add to Order Button */}
           <button
             onClick={handleAddToCart}
-            className="btn-acid w-full justify-center text-sm font-bold uppercase tracking-wide"
-            style={{ height: "52px" }}
+            className="w-full flex items-center justify-center gap-2 text-sm font-semibold uppercase tracking-wide transition-all hover:opacity-90"
+            style={{
+              height: "52px",
+              backgroundColor: "#A8C97F",
+              color: "#0A0A08",
+              fontWeight: 600,
+              padding: "1rem 2rem",
+              borderRadius: "0.5rem"
+            }}
           >
             <ShoppingCart className="w-4 h-4" />
-            ADD TO ORDER
+            Add to Order
           </button>
 
-          <p className="mt-3 text-xs text-center" style={{color:"rgba(253,252,248,0.4)"}}>For qualified research use only. Not for human consumption.</p>
+          <p className="mt-3 text-xs text-center text-gray-500">
+            For qualified research use only. Not for human consumption.
+          </p>
 
-          {/* Trust Badges */}
-          <div className="mt-6 space-y-2">
-            {trustBadges.map((badge, index) => {
-              const Icon = badge.icon;
-              return (
-                <div key={index} className="flex items-center gap-3">
-                  <div
-                    className="w-8 h-8 rounded-full flex items-center justify-center"
-                    style={{ backgroundColor: `${badge.color}15` }}
-                  >
-                    <Icon className="w-4 h-4" style={{ color: badge.color }} />
-                  </div>
-                  <span className="text-sm text-secondary">{badge.text}</span>
-                </div>
-              );
-            })}
+          {/* COA Badge Row */}
+          <div className="mt-4 flex items-center justify-center gap-4 text-xs text-secondary">
+            <div className="flex items-center gap-1.5">
+              <span>🧪</span>
+              <span>COA Included</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span>✓</span>
+              <span>Janoshik Tested</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span>📦</span>
+              <span>Discrete Shipping</span>
+            </div>
           </div>
 
           {/* Research Disclaimer */}
