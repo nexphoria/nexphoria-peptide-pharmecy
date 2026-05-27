@@ -58,10 +58,7 @@ export function Header() {
       </div>
 
       {/* Main header */}
-      <motion.header
-        initial={{ opacity: 0, y: -8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+      <header
         className={`fixed left-0 right-0 z-40 transition-all duration-300 header-sticky ${
           scrolled ? "header-solid backdrop-blur-md" : "header-transparent"
         }`}
@@ -145,7 +142,7 @@ export function Header() {
             </div>
           </div>
         </div>
-      </motion.header>
+      </header>
 
       {/* Mobile overlay menu */}
       <AnimatePresence>

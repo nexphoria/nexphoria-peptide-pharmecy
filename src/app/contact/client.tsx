@@ -169,18 +169,6 @@ export default function ContactClient() {
                 </p>
               </div>
 
-              {/* Partner inquiry note */}
-              <div
-                className="border p-6"
-                style={{ borderColor: "rgba(201,162,75,0.3)", backgroundColor: "rgba(201,162,75,0.04)" }}
-              >
-                <div className="w-4 h-px mb-3" style={{ backgroundColor: "var(--acid-green)" }} />
-                <div className="text-label mb-2" style={{ color: "var(--acid-green)" }}>Partnership Inquiries</div>
-                <p className="text-sm leading-relaxed text-secondary">
-                  Interested in white-label, bulk synthesis, or distribution partnerships? Select
-                  &quot;White Label / Partnership&quot; in the subject field.
-                </p>
-              </div>
             </motion.div>
 
             {/* Form */}

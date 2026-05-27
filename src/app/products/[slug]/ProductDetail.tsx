@@ -623,10 +623,7 @@ export default function ProductDetail({ product, related }: Props) {
                 </div>
 
                 {/* Large Product Image */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.3 }}
+                <div
                   className="relative"
                   style={{
                     height: "450px",
@@ -662,15 +659,12 @@ export default function ProductDetail({ product, related }: Props) {
                       )}
                     </motion.div>
                   </AnimatePresence>
-                </motion.div>
+                </div>
               </div>
 
               {/* Secondary Packaging Images */}
               <div className="grid grid-cols-2 gap-4 mt-8">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.7 }}
+                <div
                   className="relative overflow-hidden aspect-[4/3] rounded-lg"
                 >
                   <Image
@@ -684,11 +678,8 @@ export default function ProductDetail({ product, related }: Props) {
                   <div className="absolute bottom-3 left-3">
                     <p className="text-xs font-medium text-white">Premium packaging</p>
                   </div>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
+                </div>
+                <div
                   className="relative overflow-hidden aspect-[4/3] rounded-lg"
                 >
                   <Image
@@ -702,7 +693,7 @@ export default function ProductDetail({ product, related }: Props) {
                   <div className="absolute bottom-3 left-3">
                     <p className="text-xs font-medium text-white">Cold-chain ready</p>
                   </div>
-                </motion.div>
+                </div>
               </div>
             </div>
 
@@ -710,11 +701,7 @@ export default function ProductDetail({ product, related }: Props) {
             <div className="space-y-8 order-1 lg:order-2 w-full min-w-0">
 
               {/* Product Info */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
+              <div>
                 {/* Category Badge */}
                 <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wide border border-dark-border-hover text-secondary rounded-full mb-4">
                   {product.category}
@@ -742,7 +729,7 @@ export default function ProductDetail({ product, related }: Props) {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
 
               {/* BuyBox - Sticky on Desktop */}
               <div className="lg:sticky lg:top-24 w-full">

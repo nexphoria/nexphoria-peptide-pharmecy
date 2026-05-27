@@ -62,7 +62,7 @@ export default function ProductCard({
           {/* Price Badge */}
           <div className="absolute top-4 left-4 z-10">
             <span className="badge-price text-xs font-semibold uppercase tracking-wide">
-              FROM ${fromMonthlyPrice}/mo
+              ${basePrice}
             </span>
           </div>
 
@@ -105,11 +105,11 @@ export default function ProductCard({
                 transition: "transform 0.3s ease"
               }}
             >
-              <ProductVial
-                productName={product.name}
-                dosage={product.size}
-                category={product.category}
-                accentColor={product.accentColor}
+              <img
+                src='/products/vial-hero-1.png'
+                alt={product.name}
+                className='w-full h-full object-contain'
+                loading='lazy'
               />
             </div>
           </div>
@@ -164,7 +164,7 @@ export default function ProductCard({
                 className="btn-acid w-full justify-center group-hover:shadow-lg transition-all duration-300"
               >
                 <Plus className="w-4 h-4" />
-                ADD TO CART
+                ADD TO ORDER
               </button>
             )}
           </div>

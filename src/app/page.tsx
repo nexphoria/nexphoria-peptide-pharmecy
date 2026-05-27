@@ -16,7 +16,7 @@ import ProductVial from "@/components/ProductVial";
 import ProductCard from "@/components/ProductCard";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 1, y: 0 },
   visible: (i = 0) => ({
     opacity: 1,
     y: 0,
@@ -260,16 +260,13 @@ export default function HomePage() {
 
             {/* Left column */}
             <div>
-              <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0} className="mb-5">
+              <div className="mb-5">
                 <span className="text-[10px] font-semibold uppercase tracking-[0.22em]"
                   style={{ color: "var(--acid-green)" }}>
                   Pharmaceutical-Grade Research Compounds
                 </span>
-              </motion.div>
-              <motion.h1
-                initial={{ opacity: 0, filter: "blur(12px)", y: 20 }}
-                animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-                transition={{ duration: 1.0, delay: 0.15, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
+              </div>
+              <h1
                 className="font-bold leading-[1.05] tracking-tight mb-7"
                 style={{
                   fontFamily: "var(--font-display)",
@@ -278,25 +275,22 @@ export default function HomePage() {
                 }}
               >
                 The Source.
-              </motion.h1>
-              <motion.p
-                initial="hidden" animate="visible" variants={fadeUp} custom={3}
+              </h1>
+              <p
                 className="text-base md:text-lg max-w-lg mb-10 leading-relaxed"
                 style={{ color: "rgba(253,252,248,0.72)" }}
               >
                 Research-grade compounds. For those who know.
-              </motion.p>
-              <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={4}
-                className="flex flex-col sm:flex-row gap-3">
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/products" className="btn-acid">
                   View Catalog <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a href="#stack-builder" className="btn-outline-gold">Build Your Stack</a>
-              </motion.div>
+              </div>
 
               {/* Stats */}
-              <motion.div
-                initial="hidden" animate="visible" variants={fadeUp} custom={6}
+              <div
                 className="mt-14 pt-10 grid grid-cols-2 sm:grid-cols-4 gap-6 border-t"
                 style={{ borderColor: "rgba(255,255,255,0.10)", maxWidth: "540px" }}
               >
@@ -314,14 +308,11 @@ export default function HomePage() {
                     <div className="text-label" style={{ color: "rgba(253,252,248,0.45)" }}>{stat.label}</div>
                   </div>
                 ))}
-              </motion.div>
+              </div>
             </div>
 
             {/* Right column — 3 vials curated showcase */}
-            <motion.div
-              initial={{ opacity: 0, scale: 1.04, y: 16 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 1.3, delay: 0.25, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
+            <div
               className="relative hidden lg:flex items-center justify-center"
               aria-hidden="true"
             >
@@ -376,7 +367,7 @@ export default function HomePage() {
                   <ProductVial productName="GHK-Cu" dosage="5mg" category="Anti-Aging" accentColor="#8B5CF6" />
                 </motion.div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

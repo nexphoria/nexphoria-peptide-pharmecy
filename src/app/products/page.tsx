@@ -48,8 +48,7 @@ export default function ProductsPage({
           </h1>
           <p className="max-w-xl leading-relaxed text-secondary">
             cGMP-manufactured research compounds. Full Certificate of Analysis and technical
-            documentation for every production lot. Available as lyophilized vials or custom-packaged
-            for qualified distributors.
+            documentation for every production lot. Available as lyophilized vials ready for research.
           </p>
         </div>
       </div>
@@ -66,11 +65,6 @@ export default function ProductsPage({
                 image: "/products/vial-hero-1.png",
                 title: "Capsules & Vials",
                 desc: "Lyophilized powder in pharmaceutical-grade sealed vials. Multiple delivery formats for every research need.",
-              },
-              {
-                image: "/products/packaging-1.png",
-                title: "Custom Packaging",
-                desc: "White-label solutions with your brand identity. Ready for qualified distributors and institutional partners.",
               },
             ].map((card) => (
               <div
