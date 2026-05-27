@@ -122,16 +122,6 @@ export default function SpecGrid({ product, className = "" }: SpecGridProps) {
                   backgroundColor: "var(--dark-card)"
                 }}
               >
-                {/* Background pattern */}
-                <div
-                  className="absolute inset-0 pointer-events-none opacity-[0.02]"
-                  style={{
-                    backgroundImage: "url(/dna-pattern.png)",
-                    backgroundSize: "200px auto",
-                    backgroundRepeat: "repeat",
-                    filter: "invert(1)",
-                  }}
-                />
 
                 {/* Content */}
                 <div className="relative p-6 text-center">

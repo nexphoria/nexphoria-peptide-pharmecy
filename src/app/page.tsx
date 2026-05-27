@@ -244,15 +244,6 @@ export default function HomePage() {
           background: "linear-gradient(135deg, #0A0A08 0%, #1A1A18 40%, #111110 70%, #0D0D0C 100%)"
         }} />
 
-        {/* Animated molecular pattern overlay */}
-        <div className="absolute inset-0 z-10 pattern-hero opacity-30" />
-
-        {/* Subtle grid pattern */}
-        <div className="absolute inset-0 z-10 opacity-[0.02]" style={{
-          backgroundImage: "url(/brand/cell-pattern-1.png)",
-          backgroundSize: "600px auto",
-          backgroundRepeat: "repeat"
-        }} />
 
         <div className="container-nex relative z-20 w-full py-24 md:py-32 pt-36 md:pt-40">
           <div className="grid lg:grid-cols-[55fr_45fr] gap-10 xl:gap-16 items-center">
@@ -412,14 +403,7 @@ export default function HomePage() {
       </section>
 
       {/* ========== SHOP BY GOAL ========== */}
-      <section className="relative py-24 md:py-28 pattern-bg-dark overflow-hidden" style={{ backgroundColor: "#1A1A18" }}>
-        {/* Cell pattern background */}
-        <div className="absolute inset-0 pointer-events-none" style={{
-          backgroundImage: "url(/brand/cell-pattern-1.png)",
-          backgroundSize: "400px auto",
-          backgroundRepeat: "repeat",
-          opacity: 0.05
-        }} />
+      <section className="relative py-24 md:py-28 overflow-hidden" style={{ backgroundColor: "#1A1A18" }}>
         <div className="container-nex relative z-10">
           <div className="mb-14">
             <span className="eyebrow mb-4 block">Browse Compounds</span>
@@ -449,11 +433,6 @@ export default function HomePage() {
                       el.style.boxShadow = "";
                     }}
                   >
-                    {/* Pattern texture on card */}
-                    <div className="absolute inset-0 pointer-events-none" style={{
-                      backgroundImage: "url(/dna-pattern.png)", backgroundSize: "300px auto",
-                      backgroundRepeat: "repeat", opacity: 0.03, filter: "invert(1)",
-                    }} />
                     <div className="relative z-10">
                       <div className="w-11 h-11 rounded-full flex items-center justify-center mb-5"
                         style={{ backgroundColor: `${goal.color}18`, border: `1px solid ${goal.color}30` }}>
@@ -632,7 +611,7 @@ export default function HomePage() {
       </section>
 
       {/* ========== BUILD YOUR STACK ========== */}
-      <section id="stack-builder" className="py-24 md:py-32 pattern-bg-dark" style={{ backgroundColor: "#111110" }}>
+      <section id="stack-builder" className="py-24 md:py-32" style={{ backgroundColor: "#111110" }}>
         <div className="container-nex">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="mb-12">
@@ -838,13 +817,9 @@ export default function HomePage() {
               <div className="border overflow-hidden"
                 style={{ borderRadius: "12px", borderColor: "rgba(201,162,75,0.2)", backgroundColor: "#0D0D0C" }}>
                 {/* Header */}
-                <div className="px-6 py-5 border-b relative overflow-hidden"
+                <div className="px-6 py-5 border-b"
                   style={{ borderColor: "rgba(255,255,255,0.06)" }}>
-                  <div className="absolute inset-0 pointer-events-none" style={{
-                    backgroundImage: "url(/dna-pattern.png)", backgroundSize: "300px auto",
-                    backgroundRepeat: "repeat", opacity: 0.04, filter: "invert(1)",
-                  }} />
-                  <div className="relative">
+                  <div>
                     <span className="eyebrow block mb-1" style={{ color: "var(--gold)" }}>Your Stack</span>
                     <p className="text-[10px] uppercase tracking-wide" style={{ color: "var(--grey-olive)" }}>
                       {stackEntries.length === 0 ? "No items yet" : `${stackEntries.length} compound${stackEntries.length !== 1 ? "s" : ""} selected`}
@@ -960,11 +935,6 @@ export default function HomePage() {
                   initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.1}
                   className="relative border overflow-hidden"
                   style={{ borderColor: "rgba(201,162,75,0.15)", backgroundColor: "#111110", borderRadius: "16px" }}>
-                  {/* Pattern on bundle card */}
-                  <div className="absolute inset-0 pointer-events-none" style={{
-                    backgroundImage: "url(/dna-pattern.png)", backgroundSize: "400px auto",
-                    backgroundRepeat: "repeat", opacity: 0.03, filter: "invert(1)",
-                  }} />
 
                   <div className="grid lg:grid-cols-[1fr_2fr_1fr] gap-8 p-8">
 
@@ -1106,25 +1076,24 @@ export default function HomePage() {
       <section className="py-24 md:py-32 border-t border-dark-border bg-dark-panel">
         <div className="container-nex">
           <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
-            {/* Abstract Visual */}
+            {/* Brand Visual — Dare to Defy */}
             <motion.div
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="relative overflow-hidden"
-              style={{ borderRadius: "12px", aspectRatio: "4/3", backgroundColor: "#1A1A18" }}
+              style={{ borderRadius: "12px", aspectRatio: "4/3" }}
             >
-              {/* Cell pattern background */}
-              <div className="absolute inset-0 pointer-events-none" style={{
-                backgroundImage: "url(/brand/cell-pattern-1.png)",
-                backgroundSize: "400px auto",
-                backgroundRepeat: "repeat",
-                opacity: 0.08
-              }} />
-              {/* Gradient overlay for depth */}
+              <Image
+                src="/brand/tm-vb-006.jpg"
+                alt="Dare to Defy — Nexphoria"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
               <div className="absolute inset-0" style={{
-                background: "linear-gradient(135deg, rgba(198,241,132,0.03) 0%, rgba(201,162,75,0.02) 50%, transparent 100%)"
+                background: "linear-gradient(135deg, rgba(13,13,12,0.15) 0%, transparent 60%)"
               }} />
             </motion.div>
 
@@ -1157,7 +1126,7 @@ export default function HomePage() {
       </section>
 
       {/* ========== PACKAGING JOURNEY ========== */}
-      <section className="relative py-24 md:py-36 overflow-hidden pattern-bg-dark" style={{ backgroundColor: "#0D0D0C" }}>
+      <section className="relative py-24 md:py-36 overflow-hidden" style={{ backgroundColor: "#0D0D0C" }}>
         {/* Boxes cascade hero background */}
         <div className="absolute inset-0 pointer-events-none">
           <Image
@@ -1261,7 +1230,7 @@ export default function HomePage() {
       </section>
 
       {/* ========== SCIENCE PREVIEW ========== */}
-      <section className="relative py-24 md:py-32 overflow-hidden pattern-bg-dark" style={{ backgroundColor: "#1A1A18" }}>
+      <section className="relative py-24 md:py-32 overflow-hidden" style={{ backgroundColor: "#1A1A18" }}>
         <div className="container-nex relative">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="mb-10">
@@ -1330,7 +1299,7 @@ export default function HomePage() {
       </section>
 
       {/* ========== EMAIL CAPTURE ========== */}
-      <section className="py-24 pattern-bg-dark" style={{ backgroundColor: "#1A1A18" }}>
+      <section className="py-24" style={{ backgroundColor: "#1A1A18" }}>
         <div className="container-nex">
           <div className="max-w-xl mx-auto text-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}

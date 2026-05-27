@@ -61,15 +61,6 @@ export default function ManufacturingPage() {
 
       {/* Hero */}
       <section className="relative pt-36 pb-24 border-b overflow-hidden" style={{ borderColor: "var(--dark-border)" }}>
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: "url(/dna-pattern.png)",
-            backgroundSize: "600px auto",
-            backgroundRepeat: "repeat",
-            opacity: 0.03,
-          }}
-        />
         <div className="container-nex relative">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}>
             <span className="eyebrow mb-5 block">Manufacturing</span>

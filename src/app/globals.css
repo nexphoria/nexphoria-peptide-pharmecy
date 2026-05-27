@@ -51,8 +51,8 @@ body.hydrated [style*="opacity"] {
   --text-tertiary: #6B6B6B;       /* Tertiary muted text */
 
   /* Brand accent */
-  --acid-green: #c6f184;           /* Primary CTA color */
-  --acid-green-dark: #a8d666;     /* Darker variant for hover */
+  --acid-green: #A8C97F;           /* Primary CTA color — refined sage */
+  --acid-green-dark: #8FB36A;     /* Darker variant for hover */
 
   /* Category accent colors (from product data) */
   --accent-recovery: #4A9B8E;      /* Recovery & Healing */

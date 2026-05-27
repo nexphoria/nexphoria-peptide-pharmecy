@@ -34,6 +34,25 @@ const footerNav = {
 export function Footer() {
   return (
     <footer className="relative text-ceramic" style={{ backgroundColor: "#1A1A18" }}>
+      {/* Brand banner */}
+      <div className="relative w-full overflow-hidden" style={{ height: "240px" }}>
+        <Image
+          src="/brand/find-your-focus.jpg"
+          alt="Find Your Focus — Nexphoria"
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0" style={{
+          background: "linear-gradient(to bottom, rgba(26,26,24,0.55) 0%, rgba(26,26,24,0.85) 100%)"
+        }} />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: "rgba(201,162,75,0.7)" }}>
+            Find Your Focus
+          </p>
+        </div>
+      </div>
+
       {/* Gold top accent */}
       <div
         className="h-px w-full"

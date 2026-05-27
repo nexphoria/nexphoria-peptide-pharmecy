@@ -174,15 +174,6 @@ export default function Timeline({ product, className = "" }: TimelineProps) {
         background: "var(--gradient-transform)"
       }}
     >
-      {/* Background pattern */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.08]"
-        style={{
-          backgroundImage: "url(/brand/cell-pattern-1.png)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      />
 
       <div className="container-nex relative">
         {/* Header */}
