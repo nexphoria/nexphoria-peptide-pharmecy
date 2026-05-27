@@ -77,7 +77,7 @@ export default function BuyBox({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.2 }}
-      className={`sticky top-28 z-30 ${className}`}
+      className={`lg:sticky lg:top-28 z-30 ${className}`}
     >
       <div
         className="border rounded-xl overflow-hidden"
@@ -102,7 +102,7 @@ export default function BuyBox({
                   key={format}
                   onClick={() => isAvailable && setSelectedFormat(format)}
                   disabled={!isAvailable}
-                  className={`p-3 rounded-lg border transition-all duration-200 text-left ${
+                  className={`p-3 rounded-lg border transition-all duration-200 text-left min-w-0 ${
                     !isAvailable
                       ? 'opacity-40 cursor-not-allowed border-dark-border'
                       : selectedFormat === format
@@ -110,17 +110,17 @@ export default function BuyBox({
                         : 'border-dark-border hover:border-dark-border-hover'
                   }`}
                 >
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="text-sm font-medium text-primary capitalize">
+                  <div className="flex items-center justify-between min-w-0">
+                    <div className="min-w-0 flex-1">
+                      <div className="text-sm font-medium text-primary capitalize truncate">
                         {format}
                       </div>
-                      <div className="text-xs text-secondary">
+                      <div className="text-xs text-secondary truncate">
                         {format === 'vial' ? 'Lyophilized' : 'Pre-loaded'}
                       </div>
                     </div>
                     {selectedFormat === format && isAvailable && (
-                      <Check className="w-4 h-4 text-acid-green" />
+                      <Check className="w-4 h-4 text-acid-green flex-shrink-0 ml-2" />
                     )}
                   </div>
                 </button>
@@ -143,15 +143,15 @@ export default function BuyBox({
                 <button
                   key={dosage.size}
                   onClick={() => setSelectedDosage(dosage)}
-                  className={`w-full p-3 rounded-lg border transition-all duration-200 text-left ${
+                  className={`w-full p-3 rounded-lg border transition-all duration-200 text-left min-w-0 ${
                     selectedDosage?.size === dosage.size
                       ? 'border-acid-green bg-acid-green/10'
                       : 'border-dark-border hover:border-dark-border-hover'
                   }`}
                 >
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-primary">{dosage.size}</span>
-                    <div className="flex items-center gap-2">
+                  <div className="flex items-center justify-between min-w-0">
+                    <span className="text-sm font-medium text-primary truncate flex-1">{dosage.size}</span>
+                    <div className="flex items-center gap-2 flex-shrink-0">
                       <span className="text-sm font-bold text-primary">${dosage.price}</span>
                       {selectedDosage?.size === dosage.size && (
                         <Check className="w-4 h-4 text-acid-green" />
@@ -195,18 +195,18 @@ export default function BuyBox({
                       Best Value
                     </span>
                   )}
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-between min-w-0 gap-3">
+                    <div className="flex items-center gap-3 min-w-0 flex-1">
                       {/* Radio indicator */}
-                      <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors ${
+                      <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors flex-shrink-0 ${
                         isSelected ? 'border-acid-green' : 'border-dark-border-hover'
                       }`}>
                         {isSelected && (
                           <div className="w-2.5 h-2.5 rounded-full bg-acid-green" />
                         )}
                       </div>
-                      <div>
-                        <div className="text-sm font-medium text-primary">
+                      <div className="min-w-0 flex-1">
+                        <div className="text-sm font-medium text-primary truncate">
                           {tier.label}
                         </div>
                         {tier.discount > 0 && (
@@ -216,13 +216,13 @@ export default function BuyBox({
                         )}
                       </div>
                     </div>
-                    <div className="text-right">
+                    <div className="text-right flex-shrink-0">
                       {tier.discount > 0 && (
                         <div className="text-xs text-secondary line-through">
                           ${basePrice}/mo
                         </div>
                       )}
-                      <div className="text-lg font-bold text-primary">
+                      <div className="text-lg font-bold text-primary whitespace-nowrap">
                         ${tierPrice}<span className="text-xs text-secondary font-normal">/mo</span>
                       </div>
                     </div>
@@ -265,29 +265,29 @@ export default function BuyBox({
 
           {/* Price Summary */}
           <div className="mb-6 p-4 rounded-lg" style={{ backgroundColor: "var(--dark-panel)" }}>
-            <div className="flex items-center justify-between mb-1">
-              <span className="text-sm text-secondary">Monthly</span>
-              <span className="text-sm text-primary">${monthlyPrice}/mo × {selectedTier.months} months</span>
+            <div className="flex items-center justify-between mb-1 min-w-0 gap-2">
+              <span className="text-sm text-secondary flex-shrink-0">Monthly</span>
+              <span className="text-sm text-primary text-right truncate">${monthlyPrice}/mo × {selectedTier.months} months</span>
             </div>
             {quantity > 1 && (
-              <div className="flex items-center justify-between mb-1">
-                <span className="text-sm text-secondary">Qty</span>
+              <div className="flex items-center justify-between mb-1 min-w-0 gap-2">
+                <span className="text-sm text-secondary flex-shrink-0">Qty</span>
                 <span className="text-sm text-primary">×{quantity}</span>
               </div>
             )}
             {selectedTier.discount > 0 && (
-              <div className="flex items-center justify-between mb-1">
-                <span className="text-sm text-acid-green">You save</span>
+              <div className="flex items-center justify-between mb-1 min-w-0 gap-2">
+                <span className="text-sm text-acid-green flex-shrink-0">You save</span>
                 <span className="text-sm text-acid-green font-medium">
                   -${(basePrice * selectedTier.months * quantity - totalPrice).toFixed(0)}
                 </span>
               </div>
             )}
             <div
-              className="flex items-center justify-between pt-3 mt-2 border-t"
+              className="flex items-center justify-between pt-3 mt-2 border-t min-w-0 gap-2"
               style={{ borderColor: "var(--dark-border)" }}
             >
-              <span className="text-base font-semibold text-primary">Total today</span>
+              <span className="text-base font-semibold text-primary flex-shrink-0">Total today</span>
               <span className="text-2xl font-bold text-acid-green">
                 ${totalPrice.toFixed(0)}
               </span>

@@ -564,10 +564,10 @@ export default function ProductDetail({ product, related }: Props) {
       {/* Hero Section (Proper Grid Layout) */}
       <section className="relative">
         <div className="container-nex">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 py-12 lg:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 py-12 lg:py-20">
 
             {/* Left: Large Product Visual */}
-            <div className="relative order-2 lg:order-1">
+            <div className="relative order-2 lg:order-1 w-full">
               <div
                 className="relative flex items-center justify-center p-8 lg:p-12 min-h-[500px] lg:min-h-[600px]"
                 style={{ backgroundColor: "var(--dark-bg)", borderRadius: "16px" }}
@@ -707,7 +707,7 @@ export default function ProductDetail({ product, related }: Props) {
             </div>
 
             {/* Right: Product Info + BuyBox */}
-            <div className="space-y-8 order-1 lg:order-2">
+            <div className="space-y-8 order-1 lg:order-2 w-full min-w-0">
 
               {/* Product Info */}
               <motion.div
@@ -734,16 +734,18 @@ export default function ProductDetail({ product, related }: Props) {
                 </p>
 
                 {/* Research Disclaimer */}
-                <div className="flex items-start gap-3 p-4 border border-dark-border rounded-lg mb-8" style={{ backgroundColor: "var(--dark-card)" }}>
+                <div className="flex items-start gap-3 p-4 border border-dark-border rounded-lg mb-8 w-full" style={{ backgroundColor: "var(--dark-card)" }}>
                   <Shield className="w-5 h-5 text-acid-green flex-shrink-0 mt-0.5" />
-                  <p className="text-sm text-secondary">
-                    <strong className="text-primary">Research Use Only:</strong> This product is intended for qualified research use only. Not for human consumption, diagnostic, or therapeutic use.
-                  </p>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-sm text-secondary leading-relaxed">
+                      <strong className="text-primary">Research Use Only:</strong> This product is intended for qualified research use only. Not for human consumption, diagnostic, or therapeutic use.
+                    </p>
+                  </div>
                 </div>
               </motion.div>
 
               {/* BuyBox - Sticky on Desktop */}
-              <div className="lg:sticky lg:top-24">
+              <div className="lg:sticky lg:top-24 w-full">
                 <BuyBox
                   product={product}
                   selectedFormat={selectedFormat}

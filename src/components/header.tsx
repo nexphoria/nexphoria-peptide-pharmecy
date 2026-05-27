@@ -40,14 +40,14 @@ export function Header() {
       {/* Announcement bar */}
       <div
         className="fixed top-0 left-0 right-0 z-50 overflow-hidden bg-dark"
-        style={{ height: "36px" }}
+        style={{ height: "36px", width: "100%" }}
       >
-        <div className="flex items-center h-full">
+        <div className="flex items-center h-full w-full overflow-hidden">
           <div className="announcement-track flex items-center gap-0 whitespace-nowrap">
             {[...announcementItems, ...announcementItems].map((item, i) => (
               <span
                 key={i}
-                className="flex items-center gap-6 px-8 text-[10px] font-medium uppercase tracking-[0.18em] text-secondary"
+                className="flex items-center gap-6 px-8 text-[10px] font-medium uppercase tracking-[0.18em] text-secondary flex-shrink-0"
               >
                 <span className="w-1 h-1 rounded-full flex-shrink-0 bg-acid-green" />
                 {item}

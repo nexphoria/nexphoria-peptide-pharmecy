@@ -117,6 +117,8 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
   }
 
   body {
@@ -125,6 +127,9 @@
     font-size: var(--text-body);
     line-height: 1.6;
     letter-spacing: var(--tracking-body);
+    overflow-x: hidden;
+    width: 100%;
+    padding-top: 36px; /* Account for announcement bar */
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -159,11 +164,19 @@
     max-width: var(--container-max);
     margin-left: auto;
     margin-right: auto;
-    padding-left: var(--section-x);
-    padding-right: var(--section-x);
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   @media (min-width: 768px) {
+    .container-nex {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
     .container-nex {
       padding-left: 3rem;
       padding-right: 3rem;
@@ -516,6 +529,13 @@
     background-color: var(--dark-panel);
     border-left: 1px solid var(--dark-border);
     z-index: 51;
+  }
+
+  /* Mobile cart drawer full width */
+  @media (max-width: 640px) {
+    .cart-drawer {
+      max-width: 100%;
+    }
   }
 
   /* ==================== COMPONENT-SPECIFIC STYLES ==================== */
