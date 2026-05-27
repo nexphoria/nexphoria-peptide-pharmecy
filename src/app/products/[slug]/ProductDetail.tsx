@@ -388,8 +388,8 @@ function ResearchPapersSection({ product }: { product: Product }) {
                 </div>
               </div>
               <div className="mt-4 pt-4 border-t border-dark-border">
-                <span className="text-xs text-acid-green font-medium cursor-pointer hover:underline">
-                  View Full Study →
+                <span className="text-xs text-tertiary font-medium">
+                  Available via DOI reference above
                 </span>
               </div>
             </motion.div>

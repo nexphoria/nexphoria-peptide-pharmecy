@@ -54,6 +54,14 @@ body.hydrated [style*="opacity"] {
   --acid-green: #A8C97F;           /* Primary CTA color — refined sage */
   --acid-green-dark: #8FB36A;     /* Darker variant for hover */
 
+  /* Legacy brand aliases */
+  --gold: #C9A24B;                 /* Gold accent for decorative elements */
+  --ceramic: #F7F4EE;              /* Off-white ceramic background */
+  --warm-stone: #EAE6DF;          /* Warm stone card background */
+  --grey-olive: #8A8075;           /* Muted olive text */
+  --charcoal: #3A3A3A;             /* Dark text on light backgrounds */
+  --border-subtle: #D8D4CC;        /* Subtle border on light backgrounds */
+
   /* Category accent colors (from product data) */
   --accent-recovery: #4A9B8E;      /* Recovery & Healing */
   --accent-growth: #C9A24B;        /* Growth Hormone */
@@ -122,10 +130,19 @@ body.hydrated [style*="opacity"] {
   --color-dark-panel: #111111;
   --color-dark-card: #0F0F0F;
   --color-dark-border: #1A1A1A;
+  --color-dark-border-hover: #2A2A2A;
   --color-acid-green: #c6f184;
   --color-text-primary: #FFFFFF;
   --color-text-secondary: #A0A0A0;
   --color-text-tertiary: #6B6B6B;
+  --color-gold: #C9A24B;
+  --color-ceramic: #F7F4EE;
+  --color-grey-olive: #8A8075;
+  --color-charcoal: #3A3A3A;
+  --color-accent-recovery: #4A9B8E;
+  --color-accent-growth: #C9A24B;
+  --color-accent-cognitive: #3B82F6;
+  --color-accent-wellness: #22C55E;
 }
 
 /* ==================== BASE STYLES ==================== */
@@ -641,6 +658,108 @@ body.hydrated [style*="opacity"] {
   .bg-accent-cognitive { background-color: var(--accent-cognitive); }
   .bg-accent-weight { background-color: var(--accent-weight); }
   .bg-accent-wellness { background-color: var(--accent-wellness); }
+
+  /* ==================== LEGACY / LIGHT PAGE UTILITIES ==================== */
+
+  /* Gold utilities */
+  .text-gold { color: var(--gold); }
+  .bg-gold { background-color: var(--gold); }
+  .border-gold { border-color: var(--gold); }
+
+  /* Ceramic / light backgrounds */
+  .bg-ceramic { background-color: var(--ceramic); }
+  .text-ceramic { color: var(--ceramic); }
+
+  /* Grey-olive */
+  .text-grey-olive { color: var(--grey-olive); }
+
+  /* Charcoal */
+  .text-charcoal { color: var(--charcoal); }
+
+  /* Section label (used in legal pages) */
+  .section-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* Outline gold button */
+  .btn-outline-gold {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0 2rem;
+    height: 52px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 6px;
+    background: transparent;
+    transition: all var(--duration-base) var(--ease-out);
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .btn-outline-gold:hover {
+    background-color: var(--gold);
+    color: var(--dark-bg);
+  }
+
+  /* Dark button (for use on dark sections) */
+  .btn-dark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0 2rem;
+    height: 52px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 6px;
+    transition: all var(--duration-base) var(--ease-out);
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .btn-dark:hover {
+    background-color: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+
+  /* Standard nex-input (light background variant) */
+  .nex-input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid var(--dark-border-hover);
+    background-color: var(--dark-card);
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    outline: none;
+    border-radius: 6px;
+    transition: border-color var(--duration-base) var(--ease-out);
+    font-family: var(--font-body);
+  }
+
+  .nex-input:focus {
+    border-color: var(--acid-green);
+    box-shadow: 0 0 0 2px rgba(168, 201, 127, 0.12);
+  }
+
+  .nex-input::placeholder {
+    color: var(--text-tertiary);
+  }
 
   /* ==================== ANNOUNCEMENTS & MARQUEE ==================== */
   @keyframes marquee {
