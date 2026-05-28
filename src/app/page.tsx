@@ -97,7 +97,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* PRODUCT GRID — Enhanced-style cards */}
+      {/* PRODUCT GRID — Prescription Label Style */}
       <section className="relative bg-white-card py-24 px-6">
         <div className="max-w-7xl mx-auto">
           {/* Section label */}
@@ -124,61 +124,156 @@ export default function HomePage() {
 
           {/* Product grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredProducts.map((product) => (
+            {featuredProducts.map((product, index) => (
               <div
                 key={product.slug}
-                className="bg-white-card border border-stone/20 rounded-sm p-6 transition-shadow hover:shadow-md"
+                className="relative bg-white border border-gray-200 rounded-sm p-6 transition-shadow hover:shadow-lg"
+                style={{ overflow: "hidden" }}
               >
-                {/* Product image */}
-                <div className="relative w-full h-56 mb-6 rounded-sm overflow-hidden bg-stone/5">
-                  <Image
-                    src="/brand/boxes-cascade.jpg"
-                    alt={product.name}
-                    fill
-                    className="object-cover"
-                    sizes="400px"
-                  />
+                {/* Chemical pattern background texture */}
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    backgroundImage: "url(/brand/chemical-pattern.svg)",
+                    backgroundSize: "400px",
+                    backgroundRepeat: "repeat",
+                    opacity: 0.03,
+                  }}
+                />
+
+                {/* Product code background watermark */}
+                <div
+                  className="absolute top-4 right-4 text-6xl font-mono font-light pointer-events-none"
+                  style={{
+                    opacity: 0.05,
+                    color: "#010101",
+                    letterSpacing: "-0.05em",
+                  }}
+                >
+                  NXP-{String(index + 1).padStart(3, "0")}
+                </div>
+
+                {/* Category label */}
+                <div className="relative mb-4">
+                  <p
+                    className="text-[10px] uppercase tracking-widest font-semibold"
+                    style={{ color: "#B8923A" }}
+                  >
+                    {product.category}
+                  </p>
                 </div>
 
                 {/* Product name */}
                 <h3
-                  className="text-xl mb-2 text-near-black"
+                  className="relative text-2xl mb-4 text-near-black"
                   style={{ fontWeight: 300 }}
                 >
                   {product.name}
                 </h3>
 
-                {/* One-line description */}
-                <p
-                  className="text-sm mb-3 text-stone"
-                  style={{ lineHeight: 1.5 }}
-                >
-                  {product.tagline}
-                </p>
+                {/* Divider */}
+                <div
+                  className="relative w-full h-px mb-4"
+                  style={{ backgroundColor: "#D8D4CC" }}
+                />
 
-                {/* Purity (green) */}
-                <p
-                  className="text-sm font-medium mb-1"
-                  style={{ color: "#C9DD69" }}
-                >
-                  {product.purity}
-                </p>
+                {/* Data fields */}
+                <div className="relative space-y-3 mb-6">
+                  {product.sequence && (
+                    <div>
+                      <p
+                        className="text-[10px] uppercase tracking-widest mb-1"
+                        style={{ color: "#8A8075" }}
+                      >
+                        Sequence
+                      </p>
+                      <p className="text-sm font-mono leading-relaxed text-near-black">
+                        {product.sequence}
+                      </p>
+                    </div>
+                  )}
 
-                {/* Price */}
-                <p
-                  className="text-lg mb-6 text-near-black"
-                  style={{ fontWeight: 400 }}
-                >
-                  ${product.price}
-                </p>
+                  <div>
+                    <p
+                      className="text-[10px] uppercase tracking-widest mb-1"
+                      style={{ color: "#8A8075" }}
+                    >
+                      Formula
+                    </p>
+                    <p className="text-sm font-mono font-medium text-near-black">
+                      {product.formula}
+                    </p>
+                  </div>
 
-                {/* Add to Order button */}
-                <Link
-                  href={`/products/${product.slug}`}
-                  className="btn-primary w-full text-center"
-                >
-                  Add to Order
-                </Link>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <p
+                        className="text-[10px] uppercase tracking-widest mb-1"
+                        style={{ color: "#8A8075" }}
+                      >
+                        MW
+                      </p>
+                      <p className="text-sm font-medium text-near-black">
+                        {product.molecularWeight}
+                      </p>
+                    </div>
+
+                    <div>
+                      <p
+                        className="text-[10px] uppercase tracking-widest mb-1"
+                        style={{ color: "#8A8075" }}
+                      >
+                        Purity
+                      </p>
+                      <p
+                        className="text-sm font-semibold"
+                        style={{ color: "#C9DD69" }}
+                      >
+                        {product.purity}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p
+                      className="text-[10px] uppercase tracking-widest mb-1"
+                      style={{ color: "#8A8075" }}
+                    >
+                      CAS
+                    </p>
+                    <p className="text-sm font-mono font-medium text-near-black">
+                      {product.casNumber}
+                    </p>
+                  </div>
+
+                  <div>
+                    <p
+                      className="text-[10px] uppercase tracking-widest mb-1"
+                      style={{ color: "#8A8075" }}
+                    >
+                      Storage
+                    </p>
+                    <p className="text-sm leading-relaxed text-near-black">
+                      {product.storage}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Price and CTA */}
+                <div className="relative">
+                  <p
+                    className="text-lg font-semibold mb-4 text-near-black"
+                    style={{ letterSpacing: "-0.01em" }}
+                  >
+                    ${product.price}
+                  </p>
+                  <Link
+                    href={`/products/${product.slug}`}
+                    className="btn-primary w-full text-center"
+                  >
+                    Add to Order
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
