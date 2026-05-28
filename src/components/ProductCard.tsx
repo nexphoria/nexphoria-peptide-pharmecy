@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { Product } from "@/lib/products";
+import ProductVial from "@/components/ProductVial";
 
 interface ProductCardProps {
   product: Product;
@@ -31,18 +31,22 @@ export default function ProductCard({
           border: "1px solid rgba(0,0,0,0.06)",
         }}
       >
-        {/* Product Image */}
+        {/* Product Vial */}
         <div
-          className="relative w-full h-40 mb-5 rounded overflow-hidden"
-          style={{ backgroundColor: "#F5F3F0" }}
+          className="relative w-full h-40 mb-5 rounded overflow-hidden flex items-center justify-center p-6"
+          style={{
+            backgroundColor: "#1A1A18",
+            boxShadow: `0 0 40px -10px ${product.accentColor || "#C9A24B"}30`,
+          }}
         >
-          <Image
-            src="/brand/boxes-cascade.jpg"
-            alt={product.name}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
-            sizes="300px"
-          />
+          <div className="w-full h-full">
+            <ProductVial
+              productName={product.name}
+              dosage={product.size}
+              category={product.category}
+              accentColor={product.accentColor}
+            />
+          </div>
           {/* Purity badge */}
           <div
             className="absolute top-3 right-3 px-2 py-1 rounded-sm text-[10px] font-medium"

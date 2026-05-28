@@ -15,6 +15,7 @@ import {
   FileCheck,
 } from "lucide-react";
 import type { LaunchProduct } from "@/lib/products-launch";
+import ProductVial from "@/components/ProductVial";
 
 interface Props {
   product: LaunchProduct;
@@ -68,25 +69,14 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                     backgroundSize: "60px 60px",
                   }}
                 />
-                {/* Placeholder for vial image */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div
-                      className="w-32 h-48 mx-auto rounded-lg flex items-center justify-center"
-                      style={{ backgroundColor: "#A4B08A20", border: "2px solid #A4B08A" }}
-                    >
-                      <div className="text-center">
-                        <div
-                          className="text-6xl font-bold"
-                          style={{ color: "#A4B08A", fontFamily: "var(--font-display)" }}
-                        >
-                          {product.name}
-                        </div>
-                        <div className="text-sm mt-2" style={{ color: "#8A8075" }}>
-                          {product.dosage}
-                        </div>
-                      </div>
-                    </div>
+                {/* Product Vial */}
+                <div className="absolute inset-0 flex items-center justify-center p-12">
+                  <div className="w-full max-w-[280px] h-full max-h-[520px]">
+                    <ProductVial
+                      productName={product.name}
+                      dosage={product.dosage}
+                      category={product.category}
+                    />
                   </div>
                 </div>
               </div>
@@ -487,17 +477,16 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                     className="p-6 rounded-xl border-2 transition-all hover:border-[#A4B08A]"
                     style={{ borderColor: "#D8D4CC", backgroundColor: "#FFFFFF" }}
                   >
-                    {/* Placeholder product visual */}
+                    {/* Product vial thumbnail */}
                     <div
-                      className="aspect-square rounded-lg mb-4 flex items-center justify-center"
+                      className="aspect-square rounded-lg mb-4 flex items-center justify-center p-8"
                       style={{ backgroundColor: "#F7F4EE" }}
                     >
-                      <div
-                        className="text-4xl font-bold"
-                        style={{ color: "#A4B08A", fontFamily: "var(--font-display)" }}
-                      >
-                        {relatedProduct.name}
-                      </div>
+                      <ProductVial
+                        productName={relatedProduct.name}
+                        dosage={relatedProduct.dosage}
+                        category={relatedProduct.category}
+                      />
                     </div>
                     <div className="text-xs mb-2" style={{ color: "#8A8075" }}>
                       {relatedProduct.category}
