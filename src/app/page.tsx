@@ -22,7 +22,7 @@ export default function HomePage() {
           backgroundImage: "url(/brand/chemical-pattern.svg)",
           backgroundSize: "600px",
           backgroundRepeat: "repeat",
-          opacity: 0.03,
+          opacity: 0.015,
         }}
       />
 
@@ -61,14 +61,14 @@ export default function HomePage() {
               <Link
                 href="/products"
                 className="inline-flex items-center px-7 py-3.5 text-sm font-medium rounded-sm transition-all hover:opacity-90"
-                style={{ backgroundColor: "#C9DD69", color: "#010101", letterSpacing: "0.08em" }}
+                style={{ backgroundColor: "#010101", color: "#EAE7E3", letterSpacing: "0.08em" }}
               >
                 EXPLORE COMPOUNDS
               </Link>
               <Link
                 href="/clinical"
                 className="inline-flex items-center px-7 py-3.5 text-sm font-medium rounded-sm border transition-all hover:opacity-70"
-                style={{ borderColor: "#B8923A", color: "#B8923A", letterSpacing: "0.08em" }}
+                style={{ borderColor: "#010101", color: "#010101", letterSpacing: "0.08em" }}
               >
                 CLINICAL PROGRAMS
               </Link>
@@ -131,6 +131,9 @@ export default function HomePage() {
                 className="group block p-6 rounded-lg transition-all hover:shadow-md"
                 style={{ backgroundColor: "#FFFFFF", border: "1px solid rgba(0,0,0,0.05)" }}
               >
+                <div className="relative w-full h-40 mb-4 rounded overflow-hidden">
+                  <Image src="/brand/boxes-cascade.jpg" alt={product.name} fill className="object-cover" sizes="300px" />
+                </div>
                 <p
                   className="text-[10px] uppercase mb-3"
                   style={{ color: "#B8923A", letterSpacing: "0.2em" }}
@@ -146,9 +149,10 @@ export default function HomePage() {
                 <p className="text-sm mb-4" style={{ color: "#7F7F7D" }}>
                   {product.size} · {product.purity}
                 </p>
-                <p style={{ color: "#010101", fontWeight: 400 }}>
+                <p style={{ color: "#B8923A", fontWeight: 400 }}>
                   ${product.price}
                 </p>
+                <p className="mt-3 text-xs uppercase" style={{ color: "#7F7F7D", letterSpacing: "0.15em" }}>Add to Order →</p>
               </Link>
             ))}
           </div>
