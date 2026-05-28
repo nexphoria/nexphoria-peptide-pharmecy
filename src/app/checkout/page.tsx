@@ -24,6 +24,9 @@ export default function CheckoutPage() {
     country: "United States",
   });
 
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -44,10 +47,65 @@ export default function CheckoutPage() {
   if (totalItems >= 5) freeGifts.push("Free shipping");
   if (totalItems >= 7) freeGifts.push("Free cold-pack");
 
+  const handleCheckout = async () => {
+    if (!formData.email) {
+      setError("Please enter your email address");
+      return;
+    }
+
+    setIsProcessing(true);
+    setError(null);
+
+    try {
+      // Transform cart items to worker format
+      const checkoutItems = items.map(item => ({
+        name: item.product.name,
+        price: item.selectedDosage?.price ||
+               (item.format === 'pen' && item.product.penAvailable
+                 ? item.product.penPrice
+                 : item.product.price),
+        quantity: item.quantity,
+        size: item.selectedDosage?.size || item.product.size,
+        format: item.format,
+        subscriptionMonths: item.subscriptionMonths,
+      }));
+
+      // Call the Cloudflare Worker
+      const checkoutUrl = process.env.NEXT_PUBLIC_CHECKOUT_URL || 'https://nexphoria-checkout.chiya-b60.workers.dev';
+
+      const response = await fetch(checkoutUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          items: checkoutItems,
+          customerEmail: formData.email,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to create checkout session');
+      }
+
+      const { url } = await response.json();
+
+      if (!url) {
+        throw new Error('No checkout URL returned');
+      }
+
+      // Redirect to Stripe Checkout
+      window.location.href = url;
+    } catch (err) {
+      console.error('Checkout error:', err);
+      setError('Failed to process checkout. Please try again.');
+      setIsProcessing(false);
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder - would normally process checkout here
-    console.log("Checkout submitted:", formData);
+    handleCheckout();
   };
 
   if (!mounted) {
@@ -350,18 +408,29 @@ export default function CheckoutPage() {
                   <span>✓ Same-Day Ship</span>
                 </div>
 
-                {/* Submit Button - Disabled for now */}
+                {/* Error Message */}
+                {error && (
+                  <div className="mb-4 p-3 rounded text-sm" style={{ backgroundColor: "#fee", color: "#c00" }}>
+                    {error}
+                  </div>
+                )}
+
+                {/* Submit Button */}
                 <button
                   type="button"
-                  disabled
-                  className="w-full py-3 px-6 rounded font-semibold text-sm transition-all opacity-50 cursor-not-allowed"
+                  onClick={handleCheckout}
+                  disabled={isProcessing || !formData.email}
+                  className="w-full py-3 px-6 rounded font-semibold text-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-90"
                   style={{
-                    backgroundColor: "#A4B08A",
+                    backgroundColor: "#c6f184",
                     color: "#000000",
                   }}
                 >
-                  Payment Processing Coming Soon
+                  {isProcessing ? "Processing..." : "Place Order"}
                 </button>
+                <p className="text-xs text-center mt-3" style={{ color: "#8A8075" }}>
+                  Secure payment via Stripe. You'll be redirected to complete your order.
+                </p>
               </div>
             </div>
           </div>
@@ -381,14 +450,15 @@ export default function CheckoutPage() {
           </div>
           <button
             type="button"
-            disabled
-            className="py-3 px-6 rounded font-semibold text-sm transition-all opacity-50 cursor-not-allowed"
+            onClick={handleCheckout}
+            disabled={isProcessing || !formData.email}
+            className="py-3 px-6 rounded font-semibold text-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-90"
             style={{
-              backgroundColor: "#A4B08A",
+              backgroundColor: "#c6f184",
               color: "#000000",
             }}
           >
-            Coming Soon
+            {isProcessing ? "Processing..." : "Place Order"}
           </button>
         </div>
       </div>
