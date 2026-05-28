@@ -7,6 +7,7 @@ import { Plus, ArrowRight, Package, X } from "lucide-react";
 import { products } from "@/lib/products";
 import ProductVial from "@/components/ProductVial";
 import { useCart } from "@/lib/cart";
+import { hasProductPhoto, getProductImagePath } from "@/lib/product-images";
 
 export default function BuildYourStackPage() {
   const router = useRouter();
@@ -153,17 +154,26 @@ export default function BuildYourStackPage() {
                           <div
                             className="relative rounded-lg p-2"
                             style={{
-                              backgroundColor: "#2a2a28",
+                              backgroundColor: hasProductPhoto(item.slug) ? "#F7F4EE" : "#2a2a28",
                               border: `1px solid ${item.accentColor}40`,
                             }}
                           >
-                            <ProductVial
-                              productName={item.name}
-                              dosage={item.size}
-                              category={item.category}
-                              accentColor={item.accentColor}
-                              size="thumbnail"
-                            />
+                            {hasProductPhoto(item.slug) ? (
+                              <img
+                                src={getProductImagePath(item.slug)}
+                                alt={item.name}
+                                className="w-full h-auto object-contain"
+                                style={{ maxHeight: "80px" }}
+                              />
+                            ) : (
+                              <ProductVial
+                                productName={item.name}
+                                dosage={item.size}
+                                category={item.category}
+                                accentColor={item.accentColor}
+                                size="thumbnail"
+                              />
+                            )}
                             <button
                               onClick={() => removeFromStack(index)}
                               className="absolute -top-2 -right-2 w-5 h-5 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
@@ -204,17 +214,26 @@ export default function BuildYourStackPage() {
                     <div
                       className="p-3 flex items-center justify-center"
                       style={{
-                        backgroundColor: `${product.accentColor}08`,
+                        backgroundColor: hasProductPhoto(product.slug) ? "#F7F4EE" : `${product.accentColor}08`,
                         minHeight: "120px",
                       }}
                     >
-                      <ProductVial
-                        productName={product.name}
-                        dosage={product.size}
-                        category={product.category}
-                        accentColor={product.accentColor}
-                        size="thumbnail"
-                      />
+                      {hasProductPhoto(product.slug) ? (
+                        <img
+                          src={getProductImagePath(product.slug)}
+                          alt={product.name}
+                          className="w-full h-auto object-contain"
+                          style={{ maxHeight: "100px" }}
+                        />
+                      ) : (
+                        <ProductVial
+                          productName={product.name}
+                          dosage={product.size}
+                          category={product.category}
+                          accentColor={product.accentColor}
+                          size="thumbnail"
+                        />
+                      )}
                     </div>
                     <div className="p-3">
                       <h4

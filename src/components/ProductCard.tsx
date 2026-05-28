@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Product } from "@/lib/products";
 import ProductVial from "@/components/ProductVial";
+import { hasProductPhoto, getProductImagePath } from "@/lib/product-images";
 
 interface ProductCardProps {
   product: Product;
@@ -31,22 +32,32 @@ export default function ProductCard({
           border: "1px solid rgba(0,0,0,0.06)",
         }}
       >
-        {/* Product Vial */}
+        {/* Product Image */}
         <div
           className="relative w-full h-40 mb-5 rounded overflow-hidden flex items-center justify-center p-6"
           style={{
-            backgroundColor: "#1A1A18",
-            boxShadow: `0 0 40px -10px ${product.accentColor || "#C9A24B"}30`,
+            backgroundColor: hasProductPhoto(product.slug) ? "#F7F4EE" : "#1A1A18",
+            boxShadow: hasProductPhoto(product.slug)
+              ? "none"
+              : `0 0 40px -10px ${product.accentColor || "#C9A24B"}30`,
           }}
         >
-          <div className="w-full h-full">
-            <ProductVial
-              productName={product.name}
-              dosage={product.size}
-              category={product.category}
-              accentColor={product.accentColor}
+          {hasProductPhoto(product.slug) ? (
+            <img
+              src={getProductImagePath(product.slug)}
+              alt={product.name}
+              className="w-full h-full object-contain"
             />
-          </div>
+          ) : (
+            <div className="w-full h-full">
+              <ProductVial
+                productName={product.name}
+                dosage={product.size}
+                category={product.category}
+                accentColor={product.accentColor}
+              />
+            </div>
+          )}
           {/* Purity badge */}
           <div
             className="absolute top-3 right-3 px-2 py-1 rounded-sm text-[10px] font-medium"

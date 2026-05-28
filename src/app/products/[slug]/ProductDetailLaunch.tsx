@@ -17,6 +17,7 @@ import {
 import type { LaunchProduct } from "@/lib/products-launch";
 import ProductVial from "@/components/ProductVial";
 import { useCart } from "@/lib/cart";
+import { hasProductPhoto, getProductImagePath } from "@/lib/product-images";
 
 interface Props {
   product: LaunchProduct;
@@ -95,27 +96,43 @@ export default function ProductDetailLaunch({ product, related }: Props) {
             {/* Left: Product Image */}
             <div>
               <div
-                className="relative aspect-square rounded-2xl overflow-hidden"
-                style={{ backgroundColor: "#F7F4EE" }}
+                className="relative rounded-2xl overflow-hidden"
+                style={{
+                  backgroundColor: "#F7F4EE",
+                  aspectRatio: hasProductPhoto(product.slug) ? "3/4" : "1/1"
+                }}
               >
-                {/* Molecular structure subtle bg pattern */}
-                <div
-                  className="absolute inset-0 opacity-5"
-                  style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-                    backgroundSize: "60px 60px",
-                  }}
-                />
-                {/* Product Vial */}
-                <div className="absolute inset-0 flex items-center justify-center p-12">
-                  <div className="w-full max-w-[280px] h-full max-h-[520px]">
-                    <ProductVial
-                      productName={product.name}
-                      dosage={product.dosage}
-                      category={product.category}
+                {hasProductPhoto(product.slug) ? (
+                  /* Real Product Photo */
+                  <div className="absolute inset-0 flex items-center justify-center p-8">
+                    <img
+                      src={getProductImagePath(product.slug)}
+                      alt={product.name}
+                      className="w-full h-full object-contain"
                     />
                   </div>
-                </div>
+                ) : (
+                  <>
+                    {/* Molecular structure subtle bg pattern */}
+                    <div
+                      className="absolute inset-0 opacity-5"
+                      style={{
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+                        backgroundSize: "60px 60px",
+                      }}
+                    />
+                    {/* Product Vial SVG fallback */}
+                    <div className="absolute inset-0 flex items-center justify-center p-12">
+                      <div className="w-full max-w-[280px] h-full max-h-[520px]">
+                        <ProductVial
+                          productName={product.name}
+                          dosage={product.dosage}
+                          category={product.category}
+                        />
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
 
               {/* COA Section */}
@@ -547,11 +564,20 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                       className="aspect-square rounded-lg mb-4 flex items-center justify-center p-8"
                       style={{ backgroundColor: "#F7F4EE" }}
                     >
-                      <ProductVial
-                        productName={relatedProduct.name}
-                        dosage={relatedProduct.dosage}
-                        category={relatedProduct.category}
-                      />
+                      {hasProductPhoto(relatedProduct.slug) ? (
+                        <img
+                          src={getProductImagePath(relatedProduct.slug)}
+                          alt={relatedProduct.name}
+                          className="w-full h-full object-contain"
+                          style={{ maxHeight: "120px" }}
+                        />
+                      ) : (
+                        <ProductVial
+                          productName={relatedProduct.name}
+                          dosage={relatedProduct.dosage}
+                          category={relatedProduct.category}
+                        />
+                      )}
                     </div>
                     <div className="text-xs mb-2" style={{ color: "#8A8075" }}>
                       {relatedProduct.category}
