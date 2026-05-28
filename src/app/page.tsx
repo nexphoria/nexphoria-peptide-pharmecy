@@ -97,7 +97,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* PRODUCT GRID — Prescription Label Style */}
+      {/* PRODUCT GRID — Simplified Prescription Style */}
       <section className="relative bg-white-card py-24 px-6">
         <div className="max-w-7xl mx-auto">
           {/* Section label */}
@@ -124,7 +124,7 @@ export default function HomePage() {
 
           {/* Product grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredProducts.map((product, index) => (
+            {featuredProducts.map((product) => (
               <div
                 key={product.slug}
                 className="relative bg-white border border-gray-200 rounded-sm p-6 transition-shadow hover:shadow-lg"
@@ -140,18 +140,6 @@ export default function HomePage() {
                     opacity: 0.03,
                   }}
                 />
-
-                {/* Product code background watermark */}
-                <div
-                  className="absolute top-4 right-4 text-6xl font-mono font-light pointer-events-none"
-                  style={{
-                    opacity: 0.05,
-                    color: "#010101",
-                    letterSpacing: "-0.05em",
-                  }}
-                >
-                  NXP-{String(index + 1).padStart(3, "0")}
-                </div>
 
                 {/* Category label */}
                 <div className="relative mb-4">
@@ -177,21 +165,22 @@ export default function HomePage() {
                   style={{ backgroundColor: "#D8D4CC" }}
                 />
 
-                {/* Data fields */}
+                {/* Data fields — SIMPLIFIED to 3 key points */}
                 <div className="relative space-y-3 mb-6">
-                  {product.sequence && (
-                    <div>
-                      <p
-                        className="text-[10px] uppercase tracking-widest mb-1"
-                        style={{ color: "#8A8075" }}
-                      >
-                        Sequence
-                      </p>
-                      <p className="text-sm font-mono leading-relaxed text-near-black">
-                        {product.sequence}
-                      </p>
-                    </div>
-                  )}
+                  <div>
+                    <p
+                      className="text-[10px] uppercase tracking-widest mb-1"
+                      style={{ color: "#8A8075" }}
+                    >
+                      Purity
+                    </p>
+                    <p
+                      className="text-sm font-semibold"
+                      style={{ color: "#C9DD69" }}
+                    >
+                      {product.purity}
+                    </p>
+                  </div>
 
                   <div>
                     <p
@@ -205,56 +194,15 @@ export default function HomePage() {
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <p
-                        className="text-[10px] uppercase tracking-widest mb-1"
-                        style={{ color: "#8A8075" }}
-                      >
-                        MW
-                      </p>
-                      <p className="text-sm font-medium text-near-black">
-                        {product.molecularWeight}
-                      </p>
-                    </div>
-
-                    <div>
-                      <p
-                        className="text-[10px] uppercase tracking-widest mb-1"
-                        style={{ color: "#8A8075" }}
-                      >
-                        Purity
-                      </p>
-                      <p
-                        className="text-sm font-semibold"
-                        style={{ color: "#C9DD69" }}
-                      >
-                        {product.purity}
-                      </p>
-                    </div>
-                  </div>
-
                   <div>
                     <p
                       className="text-[10px] uppercase tracking-widest mb-1"
                       style={{ color: "#8A8075" }}
                     >
-                      CAS
+                      Size
                     </p>
-                    <p className="text-sm font-mono font-medium text-near-black">
-                      {product.casNumber}
-                    </p>
-                  </div>
-
-                  <div>
-                    <p
-                      className="text-[10px] uppercase tracking-widest mb-1"
-                      style={{ color: "#8A8075" }}
-                    >
-                      Storage
-                    </p>
-                    <p className="text-sm leading-relaxed text-near-black">
-                      {product.storage}
+                    <p className="text-sm font-medium text-near-black">
+                      {product.molecularWeight}
                     </p>
                   </div>
                 </div>
@@ -292,13 +240,104 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FULL WIDTH BRAND PHOTO */}
-      <section className="relative w-full h-[70vh]">
+      {/* OUR STANDARDS — BOLD DARK SECTION FOR PERSONALITY */}
+      <section
+        className="relative py-24 px-6"
+        style={{ backgroundColor: "#010101" }}
+      >
+        <div className="max-w-5xl mx-auto text-center">
+          {/* Eyebrow */}
+          <p
+            className="text-xs uppercase tracking-widest mb-6"
+            style={{ color: "#C9DD69" }}
+          >
+            Our Standards
+          </p>
+
+          {/* Big statement */}
+          <h2
+            className="text-4xl md:text-5xl mb-16 max-w-4xl mx-auto"
+            style={{
+              fontWeight: 200,
+              color: "#EAE7E3",
+              lineHeight: 1.2,
+            }}
+          >
+            Manufactured under pharmaceutical standards. Every lot independently
+            verified. No exceptions.
+          </h2>
+
+          {/* Three columns */}
+          <div className="grid md:grid-cols-3 gap-12 text-left">
+            <div>
+              <h3
+                className="text-sm uppercase tracking-wide mb-3"
+                style={{ color: "#C9DD69", fontWeight: 600 }}
+              >
+                cGMP Manufacturing
+              </h3>
+              <p
+                className="text-sm leading-relaxed"
+                style={{ color: "#A0A0A0" }}
+              >
+                Synthesized in certified facilities under current Good
+                Manufacturing Practice.
+              </p>
+            </div>
+
+            <div>
+              <h3
+                className="text-sm uppercase tracking-wide mb-3"
+                style={{ color: "#C9DD69", fontWeight: 600 }}
+              >
+                Independent Verification
+              </h3>
+              <p
+                className="text-sm leading-relaxed"
+                style={{ color: "#A0A0A0" }}
+              >
+                Third-party HPLC and mass spectrometry on every production lot.
+              </p>
+            </div>
+
+            <div>
+              <h3
+                className="text-sm uppercase tracking-wide mb-3"
+                style={{ color: "#C9DD69", fontWeight: 600 }}
+              >
+                Research Use Only
+              </h3>
+              <p
+                className="text-sm leading-relaxed"
+                style={{ color: "#A0A0A0" }}
+              >
+                For qualified researchers. Not for human consumption.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FULL WIDTH BRAND PHOTO — DRAMATIC */}
+      <section className="relative w-full h-[50vh] md:h-[75vh]">
         <Image
           src="/brand/tm-vb-006.jpg"
           alt="Nexphoria Research"
           fill
-          className="object-cover"
+          className="object-cover object-center"
+          sizes="100vw"
+          quality={100}
+          priority
+        />
+      </section>
+
+      {/* BRAND SUITE PHOTO — Smaller, shows packaging */}
+      <section className="relative w-full h-[40vh]">
+        <Image
+          src="/brand/brand-suite.jpg"
+          alt="Nexphoria Product Suite"
+          fill
+          className="object-cover object-center"
           sizes="100vw"
           quality={95}
         />
@@ -411,9 +450,35 @@ export default function HomePage() {
                 height={40}
                 className="brightness-0 invert mb-4"
               />
-              <p className="text-sm text-stone leading-relaxed">
+              <p className="text-sm text-stone leading-relaxed mb-4">
                 Research-grade peptide compounds. Third-party verified.
               </p>
+              {/* Contact */}
+              <a
+                href="mailto:research@nexphoria.com"
+                className="text-sm text-stone hover:text-cream transition-colors"
+              >
+                research@nexphoria.com
+              </a>
+              {/* Social */}
+              <div className="flex gap-4 mt-4">
+                <a
+                  href="https://twitter.com/nexphoria"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-stone hover:text-cream transition-colors text-sm"
+                >
+                  X
+                </a>
+                <a
+                  href="https://instagram.com/nexphoria"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-stone hover:text-cream transition-colors text-sm"
+                >
+                  Instagram
+                </a>
+              </div>
             </div>
 
             {/* Products */}
@@ -505,14 +570,14 @@ export default function HomePage() {
             className="pt-8 border-t text-xs text-stone leading-relaxed"
             style={{ borderColor: "rgba(127,127,125,0.2)" }}
           >
-            <p>
-              All products sold for laboratory research use only. Not for human
-              consumption. These products are not intended to diagnose, treat,
-              cure, or prevent any disease. Buyer assumes full responsibility
-              for compliance with applicable federal, state, and local
-              regulations.
+            <p className="mb-4">
+              <strong>Research Use Only:</strong> All products sold for
+              laboratory research use only. Not for human consumption. These
+              products are not intended to diagnose, treat, cure, or prevent
+              any disease. Buyer assumes full responsibility for compliance with
+              applicable federal, state, and local regulations.
             </p>
-            <p className="mt-4">
+            <p>
               © {new Date().getFullYear()} Nexphoria. All rights reserved.
             </p>
           </div>
