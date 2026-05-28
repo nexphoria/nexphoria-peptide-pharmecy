@@ -2,16 +2,12 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
-import CartDrawer from "@/components/cart/CartDrawer";
-import HydrationMarker from "@/components/HydrationMarker";
-import AgeVerificationModal from "@/components/AgeVerificationModal";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
-  weight: ["200", "300", "400", "500", "600"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -98,24 +94,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-cream text-primary relative">
-        {/* Fixed chemical pattern overlay — subtle DNA motif across entire site */}
-        <div
-          className="fixed inset-0 opacity-[0.04] pointer-events-none z-0"
-          style={{
-            backgroundImage: "url(/brand/chemical-pattern.svg)",
-            backgroundSize: "600px",
-            backgroundRepeat: "repeat"
-          }}
-        />
-        <div className="relative z-10 min-h-full flex flex-col">
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <CartDrawer />
-          <HydrationMarker />
-          <AgeVerificationModal />
-        </div>
+      <body className="min-h-full bg-cream text-near-black">
+        <Header />
+        <main>{children}</main>
       </body>
     </html>
   );
