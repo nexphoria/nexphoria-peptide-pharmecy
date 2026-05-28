@@ -12,7 +12,7 @@ export default function BuildYourStackPage() {
   const router = useRouter();
   const { addItem } = useCart();
   const [stackItems, setStackItems] = useState<typeof products>([]);
-  const [subscriptionCadence, setSubscriptionCadence] = useState<"one-time" | "monthly" | "60-days" | "90-days">("one-time");
+  const [subscriptionCadence, setSubscriptionCadence] = useState<"one-time" | "4-week" | "8-week" | "12-week">("one-time");
 
   const addToStack = (product: typeof products[0]) => {
     setStackItems([...stackItems, product]);
@@ -37,17 +37,17 @@ export default function BuildYourStackPage() {
   const handleCheckout = () => {
     // Add all stack items to cart
     stackItems.forEach(product => {
-      const months = subscriptionCadence === "monthly" ? 3 : subscriptionCadence === "60-days" ? 2 : subscriptionCadence === "90-days" ? 3 : 1;
+      const months = subscriptionCadence === "4-week" ? 1 : subscriptionCadence === "8-week" ? 2 : subscriptionCadence === "12-week" ? 3 : 1;
       addItem(product, "vial", undefined, months);
     });
     router.push("/checkout");
   };
 
   const cadenceOptions = [
-    { value: "one-time", label: "One-Time", discount: 0 },
-    { value: "monthly", label: "Monthly", discount: 15 },
-    { value: "60-days", label: "Every 60 Days", discount: 15 },
-    { value: "90-days", label: "Every 90 Days", discount: 15 },
+    { value: "one-time", label: "One-Time Purchase", discount: 0 },
+    { value: "4-week", label: "4-Week Cycle", discount: 15 },
+    { value: "8-week", label: "8-Week Protocol", discount: 15 },
+    { value: "12-week", label: "12-Week Protocol", discount: 15 },
   ] as const;
 
   return (

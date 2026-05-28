@@ -100,13 +100,13 @@ export default function ProductVial({ productName, dosage, category, accentColor
       {/* NEXPHORIA wordmark */}
       <text
         x="60"
-        y="130"
+        y="128"
         textAnchor="middle"
         fontFamily="system-ui, sans-serif"
-        fontSize="5"
-        fontWeight="600"
-        letterSpacing="1.5"
-        fill="#333"
+        fontSize="6.5"
+        fontWeight="700"
+        letterSpacing="2.5"
+        fill="#222"
       >
         NEXPHORIA
       </text>

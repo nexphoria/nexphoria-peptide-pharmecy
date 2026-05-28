@@ -225,10 +225,10 @@ export default function CheckoutPage() {
                 >
                   <ShoppingBag className="w-12 h-12 mx-auto mb-3" style={{ color: "#A4B08A" }} />
                   <p className="text-sm font-medium mb-1" style={{ color: "#3A3A3A" }}>
-                    Payment processing coming soon
+                    Secure Payment
                   </p>
                   <p className="text-xs" style={{ color: "#8A8075" }}>
-                    Your cart is saved. We'll notify you when checkout is ready.
+                    Card details are processed securely via Stripe. Your information is encrypted end-to-end.
                   </p>
                 </div>
               </div>

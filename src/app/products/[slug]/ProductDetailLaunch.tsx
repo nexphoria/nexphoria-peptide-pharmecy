@@ -27,7 +27,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
   const [selectedQty, setSelectedQty] = useState<1 | 3 | 6>(1);
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const [isSubscription, setIsSubscription] = useState(false);
-  const [subscriptionCadence, setSubscriptionCadence] = useState<30 | 60 | 90>(30);
+  const [subscriptionCadence, setSubscriptionCadence] = useState<4 | 8 | 12>(8);
   const { addItem, openDrawer } = useCart();
 
   const handleAddToOrder = () => {
@@ -283,21 +283,21 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                       className="overflow-hidden"
                     >
                       <label className="text-xs font-semibold mb-2 block" style={{ color: "#8A8075" }}>
-                        DELIVERY FREQUENCY
+                        RESEARCH CYCLE
                       </label>
                       <div className="flex gap-2">
-                        {[30, 60, 90].map((days) => (
+                        {[{weeks: 4, label: "4-Week"}, {weeks: 8, label: "8-Week"}, {weeks: 12, label: "12-Week"}].map(({weeks, label}) => (
                           <button
-                            key={days}
-                            onClick={() => setSubscriptionCadence(days as 30 | 60 | 90)}
+                            key={weeks}
+                            onClick={() => setSubscriptionCadence(weeks as 4 | 8 | 12)}
                             className={`flex-1 px-3 py-2 rounded-lg border transition-all ${
-                              subscriptionCadence === days
+                              subscriptionCadence === weeks
                                 ? "border-[#A4B08A] bg-[#A4B08A10]"
                                 : "border-[#D8D4CC] hover:border-[#A4B08A50]"
                             }`}
                           >
                             <div className="text-xs font-bold" style={{ color: "#3A3A3A" }}>
-                              {days} days
+                              {label}
                             </div>
                           </button>
                         ))}
@@ -311,14 +311,9 @@ export default function ProductDetailLaunch({ product, related }: Props) {
               <div className="mb-8 p-6 rounded-lg" style={{ backgroundColor: "#F7F4EE" }}>
                 <div className="flex items-baseline justify-between mb-2">
                   <span className="text-sm font-semibold" style={{ color: "#8A8075" }}>
-                    TOTAL PRICE
+                    {isSubscription ? "CYCLE PRICE" : "TOTAL PRICE"}
                   </span>
                   <div className="flex items-baseline gap-2">
-                    {isSubscription && (
-                      <div className="text-lg line-through" style={{ color: "#8A8075" }}>
-                        ${finalPrice.toFixed(0)}
-                      </div>
-                    )}
                     <div className="text-3xl font-bold" style={{ color: "#000000" }}>
                       ${subscriptionPrice.toFixed(0)}
                     </div>
@@ -331,7 +326,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                 )}
                 {isSubscription && (
                   <div className="text-xs font-semibold" style={{ color: "#A4B08A" }}>
-                    Subscription saves ${(finalPrice * subscriptionDiscount).toFixed(0)} (15% off) • Delivered every {subscriptionCadence} days
+                    Cycle saves ${(finalPrice * subscriptionDiscount).toFixed(0)} (15% off) per shipment every {subscriptionCadence} weeks
                   </div>
                 )}
               </div>
