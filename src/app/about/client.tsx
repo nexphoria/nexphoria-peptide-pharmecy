@@ -70,7 +70,7 @@ export default function AboutClient() {
         />
         <div className="relative z-10 h-full flex items-center container-nex py-40">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0} className="max-w-2xl">
-            <span className="eyebrow mb-5 block" style={{ color: "var(--acid-green)" }}>Our Mission</span>
+            <span className="eyebrow mb-5 block" style={{ color: "var(--color-acid-green)" }}>Our Mission</span>
             <h1
               className="font-bold tracking-tight mb-6 leading-tight"
               style={{
@@ -84,7 +84,7 @@ export default function AboutClient() {
               <br />
               Purity.
               <br />
-              <em className="italic" style={{ color: "var(--acid-green)" }}>Purpose.</em>
+              <em className="italic" style={{ color: "var(--color-acid-green)" }}>Purpose.</em>
             </h1>
             <p className="text-lg max-w-xl leading-relaxed" style={{ color: "rgba(253,252,248,0.8)" }}>
               Nexphoria was founded on a singular conviction: that research compounds should meet
@@ -109,7 +109,7 @@ export default function AboutClient() {
               We manufacture exclusively in cGMP-certified facilities, subject every batch to
               independent third-party analytical testing, and provide complete documentation with
               each order.{" "}
-              <em className="italic" style={{ color: "var(--acid-green)" }}>No exceptions. No shortcuts.</em>
+              <em className="italic" style={{ color: "var(--color-acid-green)" }}>No exceptions. No shortcuts.</em>
             </p>
           </motion.div>
         </div>
@@ -142,7 +142,7 @@ export default function AboutClient() {
                 }}
               >
                 Research Without{" "}
-                <em className="italic" style={{ color: "var(--acid-green)" }}>Compromise.</em>
+                <em className="italic" style={{ color: "var(--color-acid-green)" }}>Compromise.</em>
               </h2>
               <p className="text-base leading-relaxed mb-8 max-w-md text-secondary">
                 Every Nexphoria compound arrives with full analytical documentation. We believe
@@ -213,7 +213,7 @@ export default function AboutClient() {
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="max-w-3xl"
           >
-            <div className="w-8 h-px mb-8" style={{ backgroundColor: "var(--gold)" }} />
+            <div className="w-8 h-px mb-8" style={{ backgroundColor: "var(--color-gold)" }} />
             <blockquote>
               <p
                 className="text-2xl md:text-3xl leading-relaxed mb-8"
@@ -253,7 +253,7 @@ export default function AboutClient() {
                 }}
               >
                 Dare to{" "}
-                <em className="italic" style={{ color: "var(--acid-green)" }}>Defy</em>
+                <em className="italic" style={{ color: "var(--color-acid-green)" }}>Defy</em>
               </h2>
               <p className="text-base leading-relaxed mb-5 text-secondary">
                 The peptide research industry has too long tolerated inconsistency — compounds sold
@@ -318,7 +318,7 @@ export default function AboutClient() {
               >
                 <div
                   className="text-xs font-mono font-medium px-2 py-1 whitespace-nowrap mt-0.5 flex-shrink-0"
-                  style={{ backgroundColor: "#F5F3F0", color: "var(--acid-green)" }}
+                  style={{ backgroundColor: "#F5F3F0", color: "var(--color-acid-green)" }}
                 >
                   {s.code}
                 </div>
@@ -335,7 +335,7 @@ export default function AboutClient() {
           <div>
             <h2
               className="font-bold tracking-tight mb-2"
-              style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: "var(--text-h3)", color: "#FDFCF8" }}
+              style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: "2rem", color: "#FDFCF8" }}
             >
               Ready to browse our catalog?
             </h2>

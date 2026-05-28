@@ -142,17 +142,17 @@ const faqs = [
 function FAQItem({ item, index }: { item: typeof faqs[0]; index: number }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b last:border-0" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
+    <div className="border-b last:border-0" style={{ borderColor: "#D8D4CC" }}>
       <button
         onClick={() => setOpen((v) => !v)}
         className="w-full flex items-center justify-between py-5 text-left gap-4"
       >
-        <span className="text-sm font-medium leading-snug" style={{ color: "#FDFCF8" }}>
+        <span className="text-sm font-medium leading-snug text-near-black">
           {item.q}
         </span>
         <ChevronDown
           className="w-4 h-4 flex-shrink-0 transition-transform duration-300"
-          style={{ color: "var(--gold)", transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
+          style={{ color: "#B8923A", transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
         />
       </button>
       <AnimatePresence initial={false}>
@@ -165,7 +165,7 @@ function FAQItem({ item, index }: { item: typeof faqs[0]; index: number }) {
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             style={{ overflow: "hidden" }}
           >
-            <p className="pb-5 text-sm leading-relaxed" style={{ color: "rgba(253,252,248,0.65)" }}>
+            <p className="pb-5 text-sm leading-relaxed text-stone">
               {item.a}
             </p>
           </motion.div>
@@ -202,13 +202,13 @@ function WaitlistForm() {
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          className="flex items-center gap-3 px-6 py-4 border"
-          style={{ borderColor: "rgba(168,201,127,0.4)", backgroundColor: "rgba(168,201,127,0.08)", borderRadius: "8px" }}
+          className="flex items-center gap-3 px-6 py-4 border bg-white"
+          style={{ borderColor: "#D8D4CC", borderRadius: "8px" }}
         >
-          <Check className="w-5 h-5 flex-shrink-0" style={{ color: "var(--acid-green)" }} />
+          <Check className="w-5 h-5 flex-shrink-0" style={{ color: "#C9DD69" }} />
           <div>
-            <p className="text-sm font-semibold" style={{ color: "#FDFCF8" }}>You are on the list.</p>
-            <p className="text-xs mt-0.5" style={{ color: "rgba(253,252,248,0.6)" }}>
+            <p className="text-sm font-semibold text-near-black">You are on the list.</p>
+            <p className="text-xs mt-0.5 text-stone">
               We will contact you when clinical launches in your area.
             </p>
           </div>
@@ -221,20 +221,18 @@ function WaitlistForm() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="your@email.com"
             required
-            className="flex-1 px-4 py-3 text-sm border outline-none transition-colors"
+            className="flex-1 px-4 py-3 text-sm border outline-none transition-colors bg-white text-near-black"
             style={{
-              backgroundColor: "rgba(255,255,255,0.05)",
-              borderColor: "rgba(255,255,255,0.15)",
-              color: "#FDFCF8",
+              borderColor: "#D8D4CC",
               borderRadius: "8px",
             }}
-            onFocus={(e) => (e.target.style.borderColor = "rgba(201,162,75,0.5)")}
-            onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.15)")}
+            onFocus={(e) => (e.target.style.borderColor = "#B8923A")}
+            onBlur={(e) => (e.target.style.borderColor = "#D8D4CC")}
           />
           <button
             type="submit"
             disabled={state === "loading"}
-            className="btn-acid whitespace-nowrap"
+            className="btn-primary whitespace-nowrap"
             style={{ opacity: state === "loading" ? 0.7 : 1 }}
           >
             {state === "loading" ? "Submitting..." : "Join Waitlist"}
@@ -252,75 +250,48 @@ function WaitlistForm() {
 
 export default function ClinicalClient() {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#0A0A08" }}>
+    <div className="min-h-screen bg-cream">
 
       {/* ========== HERO ========== */}
       <section
-        className="relative flex items-center overflow-hidden"
-        style={{ minHeight: "100vh", backgroundColor: "#0A0A08" }}
+        className="relative flex items-center overflow-hidden bg-cream"
+        style={{ minHeight: "90vh", paddingTop: "80px" }}
       >
-        {/* Background image with strong overlay */}
-        <div className="absolute inset-0">
-          <Image
-            src="/brand/editorial-hero.jpg"
-            alt="Physician-Guided Peptide Therapy — Nexphoria Clinical"
-            fill
-            className="object-cover object-center"
-            priority
-            sizes="100vw"
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(135deg, rgba(10,10,8,0.92) 0%, rgba(17,17,16,0.82) 45%, rgba(10,10,8,0.70) 100%)",
-            }}
-          />
-        </div>
-
-        {/* Gold horizontal accent line */}
-        <div
-          className="absolute top-0 left-0 right-0 h-px"
-          style={{ background: "linear-gradient(to right, transparent, rgba(201,162,75,0.4) 35%, rgba(201,162,75,0.4) 65%, transparent)" }}
-        />
-
-        <div className="container-nex relative z-10 py-32 pt-40 md:pt-48">
+        <div className="container-nex relative z-10 py-32">
           <div className="max-w-2xl">
             <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}>
               {/* Tier badge */}
               <div className="inline-flex items-center gap-2 px-3 py-1.5 mb-8 border"
                 style={{
-                  borderColor: "rgba(201,162,75,0.35)",
-                  backgroundColor: "rgba(201,162,75,0.08)",
+                  borderColor: "rgba(184,146,58,0.25)",
+                  backgroundColor: "rgba(184,146,58,0.06)",
                   borderRadius: "6px",
                 }}>
-                <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "var(--gold)" }} />
-                <span className="text-[10px] font-semibold uppercase tracking-[0.2em]" style={{ color: "var(--gold)" }}>
+                <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#B8923A" }} />
+                <span className="text-[10px] font-semibold uppercase tracking-[0.2em]" style={{ color: "#B8923A" }}>
                   Clinical Tier — Coming Soon
                 </span>
               </div>
 
               <h1
-                className="font-bold tracking-tight mb-6 leading-tight"
+                className="font-bold tracking-tight mb-6 leading-tight text-near-black"
                 style={{
-                  fontFamily: "var(--font-display)",
+                  fontWeight: 200,
                   fontSize: "clamp(2.8rem, 6vw, 5rem)",
-                  color: "#FDFCF8",
                   lineHeight: 1.05,
+                  letterSpacing: "-0.02em"
                 }}
               >
                 Physician-Guided
                 <br />
-                <span style={{ color: "var(--gold)" }}>Peptide Therapy.</span>
+                <span style={{ color: "#B8923A" }}>Peptide Therapy.</span>
               </h1>
 
-              <p className="text-base md:text-lg mb-4 leading-relaxed max-w-xl"
-                style={{ color: "rgba(253,252,248,0.75)" }}>
+              <p className="text-base md:text-lg mb-4 leading-relaxed max-w-xl text-stone">
                 Compounded. Clinical-grade. Delivered.
               </p>
 
-              <p className="text-sm mb-10 leading-relaxed max-w-lg"
-                style={{ color: "rgba(253,252,248,0.60)" }}>
+              <p className="text-sm mb-10 leading-relaxed max-w-lg text-stone">
                 Telehealth consultation with a licensed prescriber. Compounded at our 503A pharmacy partner.
                 Shipped cold-chain direct to you. Programs starting at $149/month.
               </p>
@@ -328,7 +299,7 @@ export default function ClinicalClient() {
               {/* Waitlist CTA */}
               <WaitlistForm />
 
-              <p className="mt-4 text-xs" style={{ color: "rgba(253,252,248,0.40)" }}>
+              <p className="mt-4 text-xs text-stone opacity-60">
                 No commitment. We will notify you when clinical launches in your area.
               </p>
             </motion.div>
@@ -337,26 +308,26 @@ export default function ClinicalClient() {
       </section>
 
       {/* ========== HOW IT WORKS ========== */}
-      <section className="py-24 md:py-32" style={{ backgroundColor: "#111110" }}>
+      <section className="py-24 md:py-32 border-t" style={{ backgroundColor: "#F7F4EE", borderColor: "#D8D4CC" }}>
         <div className="container-nex">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="mb-16"
           >
             <span className="text-[10px] font-semibold uppercase tracking-[0.22em] mb-4 block"
-              style={{ color: "var(--gold)" }}>
+              style={{ color: "#B8923A" }}>
               The Process
             </span>
             <h2
-              className="font-bold tracking-tight max-w-xl"
+              className="font-bold tracking-tight max-w-xl text-near-black"
               style={{
-                fontFamily: "var(--font-display)",
+                fontWeight: 200,
                 fontSize: "clamp(2rem, 4vw, 3rem)",
-                color: "#FDFCF8",
+                letterSpacing: "-0.01em"
               }}
             >
               From Consultation to{" "}
-              <em className="italic" style={{ color: "var(--gold)" }}>Your Door.</em>
+              <em className="italic" style={{ color: "#B8923A" }}>Your Door.</em>
             </h2>
           </motion.div>
 
@@ -368,17 +339,16 @@ export default function ClinicalClient() {
                 <motion.div
                   key={step.number}
                   initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.1}
-                  className="relative p-7 border"
+                  className="relative p-7 border bg-white"
                   style={{
-                    borderColor: "rgba(201,162,75,0.15)",
-                    backgroundColor: "#1A1A18",
+                    borderColor: "#D8D4CC",
                     borderRadius: "12px",
                   }}
                 >
                   {/* Step number */}
                   <div
                     className="absolute top-5 right-5 text-[10px] font-mono font-bold"
-                    style={{ color: "rgba(201,162,75,0.4)" }}
+                    style={{ color: "rgba(184,146,58,0.4)" }}
                   >
                     {step.number}
                   </div>
@@ -387,32 +357,31 @@ export default function ClinicalClient() {
                   <div
                     className="w-12 h-12 flex items-center justify-center mb-5"
                     style={{
-                      backgroundColor: "rgba(201,162,75,0.08)",
-                      border: "1px solid rgba(201,162,75,0.2)",
+                      backgroundColor: "rgba(184,146,58,0.08)",
+                      border: "1px solid rgba(184,146,58,0.2)",
                       borderRadius: "10px",
                     }}
                   >
-                    <Icon className="w-6 h-6" strokeWidth={1.4} style={{ color: "var(--gold)" }} />
+                    <Icon className="w-6 h-6" strokeWidth={1.4} style={{ color: "#B8923A" }} />
                   </div>
 
                   <h3
-                    className="font-bold mb-3"
+                    className="font-bold mb-3 text-near-black"
                     style={{
-                      fontFamily: "var(--font-display)",
                       fontSize: "1rem",
-                      color: "#FDFCF8",
+                      fontWeight: 600
                     }}
                   >
                     {step.title}
                   </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "rgba(253,252,248,0.62)" }}>
+                  <p className="text-sm leading-relaxed text-stone">
                     {step.description}
                   </p>
 
                   {/* Connector arrow (not on last) */}
                   {i < steps.length - 1 && (
                     <div className="hidden lg:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10">
-                      <ArrowRight className="w-5 h-5" style={{ color: "rgba(201,162,75,0.3)" }} />
+                      <ArrowRight className="w-5 h-5" style={{ color: "rgba(184,146,58,0.3)" }} />
                     </div>
                   )}
                 </motion.div>
@@ -423,27 +392,27 @@ export default function ClinicalClient() {
       </section>
 
       {/* ========== PROGRAMS ========== */}
-      <section className="py-24 md:py-32" style={{ backgroundColor: "#0A0A08" }}>
+      <section className="py-24 md:py-32 bg-cream border-t" style={{ borderColor: "#D8D4CC" }}>
         <div className="container-nex">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="mb-16 text-center"
           >
             <span className="text-[10px] font-semibold uppercase tracking-[0.22em] mb-4 block"
-              style={{ color: "var(--gold)" }}>
+              style={{ color: "#B8923A" }}>
               Programs
             </span>
             <h2
-              className="font-bold tracking-tight mb-4"
+              className="font-bold tracking-tight mb-4 text-near-black"
               style={{
-                fontFamily: "var(--font-display)",
+                fontWeight: 200,
                 fontSize: "clamp(2rem, 4vw, 3rem)",
-                color: "#FDFCF8",
+                letterSpacing: "-0.01em"
               }}
             >
               Physician-Guided Programs
             </h2>
-            <p className="text-sm max-w-lg mx-auto leading-relaxed" style={{ color: "rgba(253,252,248,0.6)" }}>
+            <p className="text-sm max-w-lg mx-auto leading-relaxed text-stone">
               All programs include telehealth consultation, licensed prescriber oversight, and 503A compounded medications.
             </p>
           </motion.div>
@@ -453,12 +422,11 @@ export default function ClinicalClient() {
               <motion.div
                 key={plan.name}
                 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.1}
-                className="relative flex flex-col p-8 border"
+                className="relative flex flex-col p-8 border bg-white"
                 style={{
-                  borderColor: plan.featured ? "rgba(201,162,75,0.4)" : "rgba(255,255,255,0.08)",
-                  backgroundColor: plan.featured ? "#1A1A18" : "#111110",
+                  borderColor: plan.featured ? "rgba(184,146,58,0.4)" : "#D8D4CC",
                   borderRadius: "14px",
-                  boxShadow: plan.featured ? "0 0 40px rgba(201,162,75,0.08)" : "none",
+                  boxShadow: plan.featured ? "0 4px 20px rgba(184,146,58,0.1)" : "none",
                 }}
               >
                 {/* Tag */}
@@ -477,8 +445,8 @@ export default function ClinicalClient() {
                 </div>
 
                 <h3
-                  className="text-xl font-bold mb-1"
-                  style={{ fontFamily: "var(--font-display)", color: "#FDFCF8" }}
+                  className="text-xl font-bold mb-1 text-near-black"
+                  style={{ fontWeight: 600 }}
                 >
                   {plan.name}
                 </h3>
@@ -486,11 +454,11 @@ export default function ClinicalClient() {
                 <div className="flex items-baseline gap-1 mb-6">
                   <span
                     className="text-4xl font-bold"
-                    style={{ fontFamily: "var(--font-display)", color: plan.featured ? "var(--gold)" : "#FDFCF8" }}
+                    style={{ color: plan.featured ? "#B8923A" : "#010101", fontWeight: 200 }}
                   >
                     ${plan.price}
                   </span>
-                  <span className="text-sm" style={{ color: "rgba(253,252,248,0.5)" }}>
+                  <span className="text-sm text-stone">
                     {plan.period}
                   </span>
                 </div>
@@ -503,7 +471,7 @@ export default function ClinicalClient() {
                         className="w-4 h-4 flex-shrink-0 mt-0.5"
                         style={{ color: plan.tagColor }}
                       />
-                      <span className="text-sm leading-relaxed" style={{ color: "rgba(253,252,248,0.72)" }}>
+                      <span className="text-sm leading-relaxed text-stone">
                         {feature}
                       </span>
                     </li>
@@ -513,7 +481,7 @@ export default function ClinicalClient() {
                 {/* CTA */}
                 <a
                   href="#waitlist"
-                  className={plan.featured ? "btn-acid justify-center w-full" : "btn-outline-gold justify-center w-full"}
+                  className={plan.featured ? "btn-primary justify-center w-full" : "btn-outline justify-center w-full"}
                 >
                   {plan.cta} <ArrowRight className="w-4 h-4" />
                 </a>
@@ -521,7 +489,7 @@ export default function ClinicalClient() {
             ))}
           </div>
 
-          <p className="text-center text-xs mt-8" style={{ color: "rgba(253,252,248,0.35)" }}>
+          <p className="text-center text-xs mt-8 text-stone opacity-60">
             All programs are waitlist-only during the launch phase. Final pricing confirmed at consultation.
           </p>
         </div>
@@ -530,17 +498,9 @@ export default function ClinicalClient() {
       {/* ========== WAITLIST SECTION ========== */}
       <section
         id="waitlist"
-        className="relative py-24 md:py-32 overflow-hidden"
-        style={{ backgroundColor: "#1A1A18" }}
+        className="relative py-24 md:py-32 overflow-hidden border-t"
+        style={{ backgroundColor: "#F7F4EE", borderColor: "#D8D4CC" }}
       >
-        {/* Subtle gold glow */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: "radial-gradient(ellipse 60% 40% at 50% 50%, rgba(201,162,75,0.05) 0%, transparent 70%)",
-          }}
-        />
-
         <div className="container-nex relative z-10">
           <div className="max-w-2xl mx-auto text-center">
             <motion.div
@@ -548,28 +508,28 @@ export default function ClinicalClient() {
               className="mb-10"
             >
               <span className="text-[10px] font-semibold uppercase tracking-[0.22em] mb-5 block"
-                style={{ color: "var(--gold)" }}>
+                style={{ color: "#B8923A" }}>
                 Early Access
               </span>
               <h2
-                className="font-bold tracking-tight mb-6"
+                className="font-bold tracking-tight mb-6 text-near-black"
                 style={{
-                  fontFamily: "var(--font-display)",
+                  fontWeight: 200,
                   fontSize: "clamp(2rem, 4vw, 3rem)",
-                  color: "#FDFCF8",
+                  letterSpacing: "-0.01em"
                 }}
               >
                 Join the{" "}
-                <em className="italic" style={{ color: "var(--gold)" }}>Clinical Waitlist.</em>
+                <em className="italic" style={{ color: "#B8923A" }}>Clinical Waitlist.</em>
               </h2>
-              <p className="text-sm leading-relaxed mb-2" style={{ color: "rgba(253,252,248,0.65)" }}>
+              <p className="text-sm leading-relaxed mb-2 text-stone">
                 Nexphoria Clinical is launching in select states. Waitlist members receive priority access,
                 program details, and provider availability before the public launch.
               </p>
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(253,252,248,0.5)" }}>
+              <p className="text-sm leading-relaxed text-stone">
                 Questions? Contact us at{" "}
                 <a href="mailto:research@nexphoria.com" className="underline underline-offset-2"
-                  style={{ color: "var(--gold)" }}>
+                  style={{ color: "#B8923A" }}>
                   research@nexphoria.com
                 </a>
               </p>
@@ -591,8 +551,8 @@ export default function ClinicalClient() {
                 { icon: Package, label: "Cold-Chain Delivery" },
               ].map(({ icon: Icon, label }) => (
                 <div key={label} className="flex items-center gap-2">
-                  <Icon className="w-4 h-4" style={{ color: "rgba(201,162,75,0.7)" }} strokeWidth={1.5} />
-                  <span className="text-xs font-medium uppercase tracking-[0.12em]" style={{ color: "rgba(253,252,248,0.45)" }}>
+                  <Icon className="w-4 h-4" style={{ color: "rgba(184,146,58,0.7)" }} strokeWidth={1.5} />
+                  <span className="text-xs font-medium uppercase tracking-[0.12em] text-stone opacity-75">
                     {label}
                   </span>
                 </div>
@@ -603,33 +563,33 @@ export default function ClinicalClient() {
       </section>
 
       {/* ========== FAQ ========== */}
-      <section className="py-24 md:py-28" style={{ backgroundColor: "#111110" }}>
+      <section className="py-24 md:py-28 bg-cream border-t" style={{ borderColor: "#D8D4CC" }}>
         <div className="container-nex">
           <div className="grid lg:grid-cols-[2fr_3fr] gap-16">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
               <span className="text-[10px] font-semibold uppercase tracking-[0.22em] mb-5 block"
-                style={{ color: "var(--gold)" }}>
+                style={{ color: "#B8923A" }}>
                 FAQ
               </span>
               <h2
-                className="font-bold tracking-tight mb-6"
+                className="font-bold tracking-tight mb-6 text-near-black"
                 style={{
-                  fontFamily: "var(--font-display)",
+                  fontWeight: 200,
                   fontSize: "clamp(2rem, 4vw, 2.8rem)",
-                  color: "#FDFCF8",
+                  letterSpacing: "-0.01em"
                 }}
               >
                 Common{" "}
-                <em className="italic" style={{ color: "var(--gold)" }}>Questions</em>
+                <em className="italic" style={{ color: "#B8923A" }}>Questions</em>
               </h2>
-              <p className="text-sm leading-relaxed mb-8" style={{ color: "rgba(253,252,248,0.6)" }}>
+              <p className="text-sm leading-relaxed mb-8 text-stone">
                 Everything you need to know about Nexphoria Clinical — the process, pharmacy, and program structure.
               </p>
-              <Link href="/contact" className="btn-outline-gold">
+              <Link href="/contact" className="btn-outline">
                 Ask a Question <ArrowRight className="w-4 h-4" />
               </Link>
             </motion.div>
-            <div className="border-t" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
+            <div className="border-t" style={{ borderColor: "#D8D4CC" }}>
               {faqs.map((item, i) => (
                 <FAQItem key={item.q} item={item} index={i} />
               ))}
@@ -639,20 +599,20 @@ export default function ClinicalClient() {
       </section>
 
       {/* ========== BOTTOM CTA ========== */}
-      <section className="py-16 border-t" style={{ backgroundColor: "#0A0A08", borderColor: "rgba(255,255,255,0.06)" }}>
+      <section className="py-16 border-t" style={{ backgroundColor: "#F7F4EE", borderColor: "#D8D4CC" }}>
         <div className="container-nex flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3
-              className="font-bold mb-1"
-              style={{ fontFamily: "var(--font-display)", fontSize: "1.25rem", color: "#FDFCF8" }}
+              className="font-bold mb-1 text-near-black"
+              style={{ fontSize: "1.25rem", fontWeight: 600 }}
             >
               Looking for the research catalog?
             </h3>
-            <p className="text-sm" style={{ color: "rgba(253,252,248,0.55)" }}>
+            <p className="text-sm text-stone">
               Research-grade lyophilized compounds for qualified in vitro use.
             </p>
           </div>
-          <Link href="/products" className="btn-acid whitespace-nowrap">
+          <Link href="/products" className="btn-primary whitespace-nowrap">
             Browse Research Catalog <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

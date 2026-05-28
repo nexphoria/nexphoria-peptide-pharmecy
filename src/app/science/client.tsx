@@ -123,28 +123,28 @@ const coaFields = [
 
 export default function ScienceClient() {
   return (
-    <div className="min-h-screen bg-dark">
+    <div className="min-h-screen bg-cream">
 
       {/* Hero */}
       <section
         className="border-b"
-        style={{ backgroundColor: "var(--dark-bg)", borderColor: "var(--dark-border)" }}
+        style={{ backgroundColor: "#EAE7E3", borderColor: "#D8D4CC", paddingTop: "80px" }}
       >
         <div className="container-nex py-36 md:py-44">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0} className="max-w-2xl">
-            <span className="eyebrow mb-5 block" style={{ color: "var(--acid-green)" }}>Analytical Science</span>
+            <span className="text-[10px] font-semibold uppercase tracking-[0.22em] mb-5 block" style={{ color: "#C9DD69" }}>Analytical Science</span>
             <h1
-              className="font-bold tracking-tight mb-6"
+              className="font-bold tracking-tight mb-6 text-near-black"
               style={{
-                fontFamily: "var(--font-display)",
+                fontWeight: 200,
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",
                 lineHeight: 1.05,
-                color: "#FDFCF8",
+                letterSpacing: "-0.02em"
               }}
             >
               How We Verify Every Compound
             </h1>
-            <p className="text-lg max-w-xl leading-relaxed" style={{ color: "rgba(253,252,248,0.7)" }}>
+            <p className="text-lg max-w-xl leading-relaxed text-stone">
               Every Nexphoria production lot passes a defined battery of analytical tests before
               release. HPLC purity, mass spectrometry identity, moisture analysis, and residual
               solvent testing — documented by independent third-party laboratories.
@@ -160,8 +160,8 @@ export default function ScienceClient() {
           id={method.id}
           className="py-20 border-b"
           style={{
-            borderColor: "var(--dark-border)",
-            backgroundColor: i % 2 === 1 ? "var(--dark-panel)" : undefined,
+            borderColor: "#D8D4CC",
+            backgroundColor: i % 2 === 1 ? "#F7F4EE" : "#EAE7E3",
           }}
         >
           <div className="container-nex">
@@ -170,30 +170,30 @@ export default function ScienceClient() {
                 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
               >
                 <div
-                  className="inline-flex items-center justify-center font-mono text-sm font-medium px-3 py-1.5 mb-4"
-                  style={{ backgroundColor: "#F5F3F0", color: "var(--acid-green)" }}
+                  className="inline-flex items-center justify-center font-mono text-sm font-medium px-3 py-1.5 mb-4 bg-white"
+                  style={{ color: "#C9DD69" }}
                 >
                   {method.code}
                 </div>
                 <h2
-                  className="font-bold tracking-tight mb-2"
-                  style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: "var(--text-h4)", color: "#FDFCF8" }}
+                  className="font-bold tracking-tight mb-2 text-near-black"
+                  style={{ fontSize: "1.75rem", fontWeight: 600 }}
                 >
                   {method.title}
                 </h2>
-                <p className="text-sm mb-8 text-secondary">{method.subtitle}</p>
+                <p className="text-sm mb-8 text-stone">{method.subtitle}</p>
 
-                <div className="border" style={{ borderColor: "var(--dark-border)" }}>
+                <div className="border bg-white" style={{ borderColor: "#D8D4CC" }}>
                   {method.specs.map(({ label, value }) => (
                     <div
                       key={label}
                       className="flex gap-4 p-4 border-b last:border-0"
-                      style={{ borderColor: "var(--dark-border)" }}
+                      style={{ borderColor: "#D8D4CC" }}
                     >
-                      <span className="text-xs uppercase tracking-wider w-24 flex-shrink-0 pt-0.5 font-medium text-secondary">
+                      <span className="text-xs uppercase tracking-wider w-24 flex-shrink-0 pt-0.5 font-medium text-stone">
                         {label}
                       </span>
-                      <span className="text-xs font-mono flex-1" style={{ color: "#FDFCF8" }}>{value}</span>
+                      <span className="text-xs font-mono flex-1 text-near-black">{value}</span>
                     </div>
                   ))}
                 </div>
@@ -204,7 +204,7 @@ export default function ScienceClient() {
                 className="lg:col-span-2"
               >
                 {method.body.map((para, j) => (
-                  <p key={j} className="leading-relaxed mb-5 last:mb-0 text-secondary">
+                  <p key={j} className="leading-relaxed mb-5 last:mb-0 text-stone">
                     {para}
                   </p>
                 ))}
@@ -214,52 +214,51 @@ export default function ScienceClient() {
         </section>
       ))}
 
-      {/* Peptide classes — dark section */}
-      <section className="py-24 text-ceramic border-b border-white/[0.06]" style={{ backgroundColor: "#F5F3F0" }}>
+      {/* Peptide classes */}
+      <section className="py-24 border-b" style={{ backgroundColor: "#F7F4EE", borderColor: "#D8D4CC" }}>
         <div className="container-nex">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="mb-14"
           >
-            <span className="eyebrow mb-4 block">Compound Classes</span>
+            <span className="text-[10px] font-semibold uppercase tracking-[0.22em] mb-4 block" style={{ color: "#C9DD69" }}>Compound Classes</span>
             <h2
-              className="font-bold tracking-tight text-ceramic max-w-2xl"
-              style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)" }}
+              className="font-bold tracking-tight text-near-black max-w-2xl"
+              style={{ fontWeight: 200, fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", letterSpacing: "-0.01em" }}
             >
               Understanding Peptide{" "}
-              <em className="italic" style={{ color: "var(--acid-green)" }}>Research Areas</em>
+              <em className="italic" style={{ color: "#C9DD69" }}>Research Areas</em>
             </h2>
           </motion.div>
 
           <div
             className="grid md:grid-cols-2 gap-px border"
-            style={{ backgroundColor: "rgba(255,255,255,0.06)", borderColor: "rgba(255,255,255,0.06)" }}
+            style={{ backgroundColor: "#D8D4CC", borderColor: "#D8D4CC" }}
           >
             {peptideClasses.map((cls, i) => (
               <motion.div
                 key={cls.title}
                 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.1}
-                className="p-8"
-                style={{ backgroundColor: "#F5F3F0" }}
+                className="p-8 bg-white"
               >
                 <div className="flex flex-wrap gap-2 mb-5">
                   {cls.compounds.map((c) => (
                     <span
                       key={c}
                       className="inline-flex items-center px-2.5 py-1 text-xs font-mono border"
-                      style={{ borderColor: "rgba(201,162,75,0.35)", color: "var(--acid-green)" }}
+                      style={{ borderColor: "#D8D4CC", color: "#C9DD69" }}
                     >
                       {c}
                     </span>
                   ))}
                 </div>
                 <h3
-                  className="text-lg font-bold text-ceramic mb-3"
-                  style={{ fontFamily: "var(--font-playfair, Georgia, serif)" }}
+                  className="text-lg font-bold text-near-black mb-3"
+                  style={{ fontWeight: 600 }}
                 >
                   {cls.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-secondary">{cls.body}</p>
+                <p className="text-sm leading-relaxed text-stone">{cls.body}</p>
               </motion.div>
             ))}
           </div>
@@ -267,18 +266,18 @@ export default function ScienceClient() {
       </section>
 
       {/* COA guide */}
-      <section id="coa" className="py-24 border-b" style={{ borderColor: "var(--dark-border)" }}>
+      <section id="coa" className="py-24 border-b bg-cream" style={{ borderColor: "#D8D4CC" }}>
         <div className="container-nex">
           <div className="grid lg:grid-cols-3 gap-12">
             <div>
-              <span className="eyebrow mb-4 block">Documentation</span>
+              <span className="text-[10px] font-semibold uppercase tracking-[0.22em] mb-4 block" style={{ color: "#C9DD69" }}>Documentation</span>
               <h2
-                className="font-bold tracking-tight mb-4"
-                style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: "var(--text-h3)", color: "#FDFCF8" }}
+                className="font-bold tracking-tight mb-4 text-near-black"
+                style={{ fontSize: "2rem", fontWeight: 600 }}
               >
                 Reading a COA
               </h2>
-              <p className="text-sm leading-relaxed text-secondary">
+              <p className="text-sm leading-relaxed text-stone">
                 A Certificate of Analysis is the primary quality document for research compounds.
                 Understanding each field ensures you can verify the compound meets your research
                 specifications.
@@ -287,14 +286,13 @@ export default function ScienceClient() {
             <div className="lg:col-span-2">
               <div className="grid sm:grid-cols-2 gap-4">
                 {coaFields.map((item) => (
-                  <div key={item.field} className="border p-5" style={{ borderColor: "var(--dark-border)" }}>
+                  <div key={item.field} className="border p-5 bg-white" style={{ borderColor: "#D8D4CC" }}>
                     <div
-                      className="font-mono text-xs font-semibold mb-2"
-                      style={{ color: "#FDFCF8" }}
+                      className="font-mono text-xs font-semibold mb-2 text-near-black"
                     >
                       {item.field}
                     </div>
-                    <p className="text-xs leading-relaxed text-secondary">{item.desc}</p>
+                    <p className="text-xs leading-relaxed text-stone">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -303,59 +301,21 @@ export default function ScienceClient() {
         </div>
       </section>
 
-      {/* Lab equipment banner */}
-      <section className="relative overflow-hidden" style={{ height: "55vh", minHeight: "380px" }}>
-        <Image
-          src="/images/stock/pharma-production.jpg"
-          alt="Laboratory equipment — HPLC and analytical instruments"
-          fill
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-        <div
-          className="absolute inset-0"
-          style={{ background: "linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.3) 60%, transparent 100%)" }}
-        />
-        <div className="relative z-10 h-full flex items-center container-nex">
-          <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
-            className="max-w-lg"
-          >
-            <p className="eyebrow mb-4" style={{ color: "var(--acid-green)" }}>Precision Equipment</p>
-            <h2
-              className="font-bold tracking-tight leading-tight mb-5"
-              style={{
-                fontFamily: "var(--font-playfair, Georgia, serif)",
-                fontSize: "clamp(2rem, 4vw, 3rem)",
-                color: "#FDFCF8",
-              }}
-            >
-              Instruments You Can{" "}
-              <em className="italic" style={{ color: "var(--acid-green)" }}>Trust</em>
-            </h2>
-            <p className="text-sm leading-relaxed max-w-sm" style={{ color: "rgba(253,252,248,0.75)" }}>
-              The same analytical instruments used in pharmaceutical drug development verify every
-              Nexphoria production lot before release.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
       {/* CTA */}
-      <section className="py-20" style={{ backgroundColor: "var(--dark-panel)" }}>
+      <section className="py-20 bg-cream border-t" style={{ borderColor: "#D8D4CC" }}>
         <div className="container-nex flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
             <h2
-              className="font-bold tracking-tight mb-2"
-              style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: "var(--text-h3)", color: "#FDFCF8" }}
+              className="font-bold tracking-tight mb-2 text-near-black"
+              style={{ fontSize: "2rem", fontWeight: 600 }}
             >
               View the full compound catalog
             </h2>
-            <p className="text-sm text-secondary">
+            <p className="text-sm text-stone">
               Every compound includes HPLC data, MS confirmation, and third-party COA.
             </p>
           </div>
-          <Link href="/products" className="btn-acid whitespace-nowrap">
+          <Link href="/products" className="btn-primary whitespace-nowrap">
             Browse Compounds <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
