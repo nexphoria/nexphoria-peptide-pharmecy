@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { products, getProduct, getRelatedProducts } from "@/lib/products";
-import ProductDetail from "./ProductDetail";
+import {
+  launchProducts,
+  getLaunchProduct,
+  getRelatedLaunchProducts,
+} from "@/lib/products-launch";
+import ProductDetailLaunch from "./ProductDetailLaunch";
 
 export function generateStaticParams() {
-  return products.map((p) => ({ slug: p.slug }));
+  return launchProducts.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({
@@ -13,11 +17,11 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const product = getProduct(slug);
+  const product = getLaunchProduct(slug);
   if (!product) return {};
   return {
-    title: `${product.name} ${product.size} — ${product.category}`,
-    description: `${product.tagline} CAS ${product.casNumber}. ${product.purity} purity by HPLC. cGMP-manufactured research compound.`,
+    title: `${product.name} ${product.dosage} — ${product.category} | Nexphoria`,
+    description: `${product.tagline} CAS ${product.casNumber}. ${product.purity} purity by HPLC. Research-grade peptides for qualified laboratories.`,
   };
 }
 
@@ -27,10 +31,10 @@ export default async function ProductPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const product = getProduct(slug);
+  const product = getLaunchProduct(slug);
   if (!product) notFound();
 
-  const related = getRelatedProducts(product.relatedSlugs);
+  const related = getRelatedLaunchProducts(product.relatedSlugs);
 
-  return <ProductDetail product={product} related={related} />;
+  return <ProductDetailLaunch product={product} related={related} />;
 }

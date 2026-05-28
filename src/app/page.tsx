@@ -1,47 +1,46 @@
 import Image from "next/image";
 import Link from "next/link";
-import { products } from "@/lib/products";
+import { launchProducts } from "@/lib/products-launch";
 
 export default function HomePage() {
-  const featuredProducts = products.slice(0, 6);
+  const featuredProducts = launchProducts.slice(0, 6);
 
   return (
     <>
-      {/* Pattern overlay — barely visible */}
+      {/* DNA Pattern overlay — barely visible hexagons */}
       <div
         className="fixed inset-0 pointer-events-none z-0"
         style={{
-          backgroundImage: "url(/brand/chemical-pattern.svg)",
-          backgroundSize: "600px",
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundSize: "60px 60px",
           backgroundRepeat: "repeat",
-          opacity: 0.015,
         }}
       />
 
       {/* HERO — Full viewport, type-driven */}
-      <section className="relative min-h-screen flex items-center justify-center bg-cream px-6 pt-40 pb-32">
+      <section className="relative min-h-screen flex items-center justify-center px-6 pt-40 pb-32" style={{ backgroundColor: "#000000" }}>
         <div className="max-w-4xl mx-auto text-center">
           {/* Headline */}
           <h1
-            className="text-7xl md:text-8xl lg:text-9xl mb-8 text-near-black"
+            className="text-7xl md:text-8xl lg:text-9xl mb-8"
             style={{
               fontWeight: 200,
               letterSpacing: "-0.02em",
               lineHeight: 0.95,
+              color: "#FFFFF3",
             }}
           >
-            Research-Grade
+            Beyond Boundaries.
             <br />
-            Peptides
+            Beyond Limits.
           </h1>
 
           {/* Subhead */}
           <p
-            className="text-lg md:text-xl mb-12 text-stone max-w-2xl mx-auto"
-            style={{ fontWeight: 300, lineHeight: 1.6 }}
+            className="text-lg md:text-xl mb-12 max-w-2xl mx-auto"
+            style={{ fontWeight: 300, lineHeight: 1.6, color: "#A0A0A0" }}
           >
-            cGMP manufacturing. Independent HPLC verification. Certificate of
-            Analysis with every compound.
+            Research-grade peptides. 99%+ purity. Third-party verified.
           </p>
 
           {/* Trust indicators */}
@@ -91,7 +90,11 @@ export default function HomePage() {
           </div>
 
           {/* CTA */}
-          <Link href="/products" className="btn-primary">
+          <Link
+            href="/products"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-bold uppercase tracking-wide text-sm transition-opacity hover:opacity-90"
+            style={{ backgroundColor: "#A4B08A", color: "#000000" }}
+          >
             Browse Compounds
           </Link>
         </div>
@@ -213,11 +216,12 @@ export default function HomePage() {
                     className="text-lg font-semibold mb-4 text-near-black"
                     style={{ letterSpacing: "-0.01em" }}
                   >
-                    ${product.price}
+                    ${product.basePrice}
                   </p>
                   <Link
                     href={`/products/${product.slug}`}
-                    className="btn-primary w-full text-center"
+                    className="block w-full text-center px-6 py-3 rounded-lg font-bold uppercase tracking-wide text-sm transition-opacity hover:opacity-90"
+                    style={{ backgroundColor: "#A4B08A", color: "#000000" }}
                   >
                     Add to Order
                   </Link>

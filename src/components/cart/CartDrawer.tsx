@@ -26,6 +26,20 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
   const totalItems = getTotalItems();
   const totalPrice = getTotalPrice();
 
+  // Free gift thresholds
+  const thresholds = [
+    { amount: 100, label: "Free recon water", icon: "💧" },
+    { amount: 150, label: "Free shipping", icon: "📦" },
+    { amount: 250, label: "Free cold-pack", icon: "❄️" },
+  ];
+
+  // Find next threshold
+  const nextThreshold = thresholds.find(t => totalPrice < t.amount);
+  const currentThreshold = thresholds.filter(t => totalPrice >= t.amount).pop();
+  const progressToNext = nextThreshold
+    ? (totalPrice / nextThreshold.amount) * 100
+    : 100;
+
   // Close on escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -111,6 +125,56 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
               </button>
             </div>
 
+            {/* Free Gift Progress Bar */}
+            {items.length > 0 && (
+              <div className="px-6 py-4 border-b" style={{ borderColor: "var(--border-subtle)" }}>
+                {nextThreshold ? (
+                  <>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs font-semibold" style={{ color: "#3A3A3A" }}>
+                        ${(nextThreshold.amount - totalPrice).toFixed(0)} away from {nextThreshold.label}
+                      </span>
+                      <span className="text-xs" style={{ color: "#8A8075" }}>
+                        ${totalPrice.toFixed(0)} / ${nextThreshold.amount}
+                      </span>
+                    </div>
+                    <div className="relative h-2 rounded-full overflow-hidden" style={{ backgroundColor: "#EAE6DF" }}>
+                      <motion.div
+                        className="absolute top-0 left-0 h-full"
+                        style={{ backgroundColor: "#A4B08A" }}
+                        initial={{ width: 0 }}
+                        animate={{ width: `${progressToNext}%` }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    </div>
+                    <div className="flex items-center gap-2 mt-2">
+                      {thresholds.map((threshold) => (
+                        <div
+                          key={threshold.amount}
+                          className={`flex items-center gap-1 text-xs ${
+                            totalPrice >= threshold.amount ? "opacity-100" : "opacity-40"
+                          }`}
+                          style={{ color: totalPrice >= threshold.amount ? "#A4B08A" : "#8A8075" }}
+                        >
+                          <span>{threshold.icon}</span>
+                          <span className="text-[10px]">{threshold.label.replace("Free ", "")}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <div className="text-center py-2">
+                    <div className="text-sm font-semibold mb-1" style={{ color: "#A4B08A" }}>
+                      🎉 All rewards unlocked!
+                    </div>
+                    <div className="text-xs" style={{ color: "#8A8075" }}>
+                      Free recon water • Free shipping • Free cold-pack
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
             {/* Cart Content */}
             <div className="flex-1 overflow-y-auto">
               {items.length === 0 ? (
@@ -176,9 +240,19 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
 
                           {/* Product Info */}
                           <div className="flex-1 min-w-0">
-                            <h4 className="text-sm font-semibold text-near-black truncate">
-                              {item.product.name}
-                            </h4>
+                            <div className="flex items-center gap-2">
+                              <h4 className="text-sm font-semibold text-near-black truncate">
+                                {item.product.name}
+                              </h4>
+                              {item.subscriptionMonths > 1 && (
+                                <span
+                                  className="text-[10px] px-2 py-0.5 rounded-full font-bold uppercase"
+                                  style={{ backgroundColor: "#A4B08A", color: "#FFFFFF" }}
+                                >
+                                  Subscription
+                                </span>
+                              )}
+                            </div>
                             <p className="text-xs text-stone">
                               {item.selectedDosage?.size || item.product.size} • {item.format === 'pen' ? 'Pen' : 'Vial'}
                             </p>
@@ -222,6 +296,45 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                         </motion.div>
                       ))}
                     </AnimatePresence>
+                  </div>
+
+                  {/* You Might Also Need - Research Supplies */}
+                  <div
+                    className="px-6 py-4 border-t"
+                    style={{ borderColor: "var(--dark-border)" }}
+                  >
+                    <h3 className="text-sm font-semibold text-near-black mb-3 uppercase tracking-wide">
+                      You Might Also Need
+                    </h3>
+                    <div className="space-y-2">
+                      {[
+                        { name: "Bacteriostatic Water", desc: "For reconstitution", price: 12 },
+                        { name: "Insulin Syringe Kit", desc: "31G × 0.5mL, 10-pack", price: 8 },
+                      ].map((item) => (
+                        <div
+                          key={item.name}
+                          className="flex items-center justify-between p-3 rounded-lg border hover:border-[#A4B08A] transition-colors cursor-pointer group"
+                          style={{ borderColor: "var(--dark-border)", backgroundColor: "#F7F4EE" }}
+                        >
+                          <div className="flex-1">
+                            <h4 className="text-xs font-semibold text-near-black">
+                              {item.name}
+                            </h4>
+                            <p className="text-[10px]" style={{ color: "#8A8075" }}>
+                              {item.desc}
+                            </p>
+                          </div>
+                          <div className="flex items-center gap-3">
+                            <span className="text-sm font-bold" style={{ color: "#A4B08A" }}>
+                              ${item.price}
+                            </span>
+                            <button className="text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: "#A4B08A" }}>
+                              Add
+                            </button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
 
                   {/* Recommended Products */}
