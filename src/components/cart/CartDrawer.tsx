@@ -30,9 +30,9 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
 
   // Free gift thresholds
   const thresholds = [
-    { amount: 100, label: "Free recon water", icon: "💧" },
-    { amount: 150, label: "Free shipping", icon: "📦" },
-    { amount: 250, label: "Free cold-pack", icon: "❄️" },
+    { amount: 100, label: "Free recon water" },
+    { amount: 150, label: "Free shipping" },
+    { amount: 250, label: "Free cold-pack" },
   ];
 
   // Find next threshold
@@ -149,7 +149,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                         transition={{ duration: 0.3 }}
                       />
                     </div>
-                    <div className="flex items-center gap-2 mt-2">
+                    <div className="flex items-center gap-3 mt-2">
                       {thresholds.map((threshold) => (
                         <div
                           key={threshold.amount}
@@ -158,7 +158,9 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                           }`}
                           style={{ color: totalPrice >= threshold.amount ? "#A4B08A" : "#8A8075" }}
                         >
-                          <span>{threshold.icon}</span>
+                          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.5 2.5L3.75 7.5L1.5 5.25" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
                           <span className="text-[10px]">{threshold.label.replace("Free ", "")}</span>
                         </div>
                       ))}
@@ -167,7 +169,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                 ) : (
                   <div className="text-center py-2">
                     <div className="text-sm font-semibold mb-1" style={{ color: "#A4B08A" }}>
-                      🎉 All rewards unlocked!
+                      All rewards unlocked
                     </div>
                     <div className="text-xs" style={{ color: "#8A8075" }}>
                       Free recon water • Free shipping • Free cold-pack

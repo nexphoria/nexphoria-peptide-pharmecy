@@ -285,7 +285,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                       <label className="text-xs font-semibold mb-2 block" style={{ color: "#8A8075" }}>
                         RESEARCH CYCLE
                       </label>
-                      <div className="flex gap-2">
+                      <div className="flex gap-2 mb-2">
                         {[{weeks: 4, label: "4-Week"}, {weeks: 8, label: "8-Week"}, {weeks: 12, label: "12-Week"}].map(({weeks, label}) => (
                           <button
                             key={weeks}
@@ -302,6 +302,9 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                           </button>
                         ))}
                       </div>
+                      <p className="text-xs" style={{ color: "#8A8075" }}>
+                        Most researchers follow an 8-week protocol for optimal data collection.
+                      </p>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -334,11 +337,40 @@ export default function ProductDetailLaunch({ product, related }: Props) {
               {/* Add to Order Button */}
               <button
                 onClick={handleAddToOrder}
-                className="w-full py-4 rounded-lg font-bold uppercase tracking-wide text-sm transition-all hover:opacity-90 hover:scale-[1.01] active:scale-[0.99] mb-8"
+                className="w-full py-4 rounded-lg font-bold uppercase tracking-wide text-sm transition-all hover:opacity-90 hover:scale-[1.01] active:scale-[0.99] mb-4"
                 style={{ backgroundColor: "#A4B08A", color: "#000000" }}
               >
                 Add to Order — ${isSubscription ? subscriptionPrice.toFixed(0) : (selectedPricing?.totalPrice || product.basePrice)}
               </button>
+
+              {/* Free Gifts / Unlockables */}
+              {selectedQty >= 3 && (
+                <div className="mb-8 p-4 rounded-lg border" style={{ backgroundColor: "#F7F4EE", borderColor: "#D8D4CC" }}>
+                  <div className="text-xs font-semibold mb-2" style={{ color: "#A4B08A" }}>
+                    INCLUDED WITH YOUR ORDER
+                  </div>
+                  <div className="space-y-1.5">
+                    {selectedQty >= 3 && (
+                      <div className="flex items-center gap-2 text-xs" style={{ color: "#3A3A3A" }}>
+                        <Check className="w-3.5 h-3.5" style={{ color: "#A4B08A" }} />
+                        <span>Bacteriostatic water included</span>
+                      </div>
+                    )}
+                    {selectedQty >= 5 && (
+                      <div className="flex items-center gap-2 text-xs" style={{ color: "#3A3A3A" }}>
+                        <Check className="w-3.5 h-3.5" style={{ color: "#A4B08A" }} />
+                        <span>Free express shipping</span>
+                      </div>
+                    )}
+                    {(selectedPricing?.totalPrice || 0) >= 250 && (
+                      <div className="flex items-center gap-2 text-xs" style={{ color: "#3A3A3A" }}>
+                        <Check className="w-3.5 h-3.5" style={{ color: "#A4B08A" }} />
+                        <span>Cold-chain packaging included</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
 
               {/* Trust Badges Bar */}
               <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-8">

@@ -83,6 +83,46 @@ export default function BuildYourStackPage() {
                 style={{ pointerEvents: "none" }}
               />
 
+              {/* Branded Box SVG - Background */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none">
+                <svg
+                  viewBox="0 0 300 200"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-full max-w-md h-auto"
+                >
+                  {/* Box outline - 3D perspective */}
+                  <path
+                    d="M 50 60 L 250 60 L 270 80 L 270 160 L 250 180 L 50 180 L 30 160 L 30 80 Z"
+                    fill="none"
+                    stroke="#a4b08a"
+                    strokeWidth="2"
+                    strokeDasharray="4,4"
+                  />
+                  {/* NEXPHORIA text */}
+                  <text
+                    x="150"
+                    y="110"
+                    textAnchor="middle"
+                    fontFamily="system-ui, sans-serif"
+                    fontSize="24"
+                    fontWeight="700"
+                    letterSpacing="4"
+                    fill="#a4b08a"
+                  >
+                    NEXPHORIA
+                  </text>
+                  {/* Accent line */}
+                  <line
+                    x1="80"
+                    y1="130"
+                    x2="220"
+                    y2="130"
+                    stroke="#a4b08a"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </div>
+
               {/* Box Content */}
               <div className="relative p-6">
                 <div className="flex items-center gap-2 mb-4">
@@ -275,7 +315,7 @@ export default function BuildYourStackPage() {
                 {freeGifts.length > 0 && (
                   <div className="mb-6 p-4 rounded-lg" style={{ backgroundColor: "#c6f18420" }}>
                     <p className="text-sm font-semibold mb-2" style={{ color: "#3A3A3A" }}>
-                      🎁 Included with your order:
+                      Included with your order:
                     </p>
                     <ul className="text-sm space-y-1" style={{ color: "#8A8075" }}>
                       {freeGifts.map((gift, idx) => (
