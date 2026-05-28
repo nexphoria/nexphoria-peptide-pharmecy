@@ -17,86 +17,107 @@ export default function HomePage() {
         }}
       />
 
-      {/* HERO — Full viewport, type-driven */}
+      {/* HERO — Full viewport with product lineup */}
       <section className="relative min-h-screen flex items-center justify-center px-6 pt-40 pb-32" style={{ backgroundColor: "#000000" }}>
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Headline */}
-          <h1
-            className="text-7xl md:text-8xl lg:text-9xl mb-8"
-            style={{
-              fontWeight: 200,
-              letterSpacing: "-0.02em",
-              lineHeight: 0.95,
-              color: "#FFFFF3",
-            }}
-          >
-            Beyond Boundaries.
-            <br />
-            Beyond Limits.
-          </h1>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left: Text content */}
+            <div>
+              {/* Headline */}
+              <h1
+                className="text-6xl md:text-7xl lg:text-8xl mb-8"
+                style={{
+                  fontWeight: 200,
+                  letterSpacing: "-0.02em",
+                  lineHeight: 0.95,
+                  color: "#FFFFF3",
+                }}
+              >
+                Beyond Boundaries.
+                <br />
+                Beyond Limits.
+              </h1>
 
-          {/* Subhead */}
-          <p
-            className="text-lg md:text-xl mb-12 max-w-2xl mx-auto"
-            style={{ fontWeight: 300, lineHeight: 1.6, color: "#A0A0A0" }}
-          >
-            Research-grade peptides. 99%+ purity. Third-party verified.
-          </p>
+              {/* Subhead */}
+              <p
+                className="text-lg md:text-xl mb-12"
+                style={{ fontWeight: 300, lineHeight: 1.6, color: "#A0A0A0" }}
+              >
+                Research-grade peptides. 99%+ purity. Third-party verified.
+              </p>
 
-          {/* Trust indicators */}
-          <div
-            className="flex flex-wrap items-center justify-center gap-8 mb-12 pb-8"
-            style={{ borderBottom: "1px solid rgba(0,0,0,0.08)" }}
-          >
-            <div className="text-center">
+              {/* Trust indicators */}
               <div
-                className="text-2xl font-light mb-1"
-                style={{ color: "#C9DD69" }}
+                className="flex flex-wrap items-center gap-8 mb-12 pb-8"
+                style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}
               >
-                ≥99%
+                <div className="text-center">
+                  <div
+                    className="text-2xl font-light mb-1"
+                    style={{ color: "#C9DD69" }}
+                  >
+                    ≥99%
+                  </div>
+                  <div
+                    className="text-xs uppercase tracking-wide"
+                    style={{ color: "#7F7F7D" }}
+                  >
+                    Purity
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div
+                    className="text-2xl font-light mb-1"
+                    style={{ color: "#C9DD69" }}
+                  >
+                    cGMP
+                  </div>
+                  <div
+                    className="text-xs uppercase tracking-wide"
+                    style={{ color: "#7F7F7D" }}
+                  >
+                    Certified
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div
+                    className="text-2xl font-light mb-1"
+                    style={{ color: "#C9DD69" }}
+                  >
+                    100%
+                  </div>
+                  <div
+                    className="text-xs uppercase tracking-wide"
+                    style={{ color: "#7F7F7D" }}
+                  >
+                    Third-Party Tested
+                  </div>
+                </div>
               </div>
-              <div
-                className="text-xs uppercase tracking-wide"
-                style={{ color: "#7F7F7D" }}
+
+              {/* CTA */}
+              <Link
+                href="/products"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-bold uppercase tracking-wide text-sm transition-opacity hover:opacity-90"
+                style={{ backgroundColor: "#A4B08A", color: "#000000" }}
               >
-                Purity
-              </div>
+                Browse Compounds
+              </Link>
             </div>
-            <div className="text-center">
-              <div className="text-2xl font-light mb-1 text-near-black">
-                cGMP
-              </div>
-              <div
-                className="text-xs uppercase tracking-wide"
-                style={{ color: "#7F7F7D" }}
-              >
-                Certified
-              </div>
-            </div>
-            <div className="text-center">
-              <div
-                className="text-2xl font-light mb-1"
-                style={{ color: "#C9DD69" }}
-              >
-                100%
-              </div>
-              <div
-                className="text-xs uppercase tracking-wide"
-                style={{ color: "#7F7F7D" }}
-              >
-                Third-Party Tested
-              </div>
+
+            {/* Right: Hero product lineup image */}
+            <div className="relative">
+              <Image
+                src="/brand/hero-lineup.png"
+                alt="Nexphoria product lineup - six pharmaceutical-grade peptide vials"
+                width={800}
+                height={600}
+                className="w-full h-auto"
+                priority
+                unoptimized
+              />
             </div>
           </div>
-
-          {/* CTA */}
-          <Link
-            href="/products"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-bold uppercase tracking-wide text-sm transition-opacity hover:opacity-90"
-            style={{ backgroundColor: "#A4B08A", color: "#000000" }}
-          >
-            Browse Compounds
-          </Link>
         </div>
       </section>
 
@@ -240,6 +261,86 @@ export default function HomePage() {
               View Full Catalog
               <span>→</span>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT ARRIVES AT YOUR DOOR — Packaging Section */}
+      <section className="relative bg-cream py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left: Image */}
+            <div className="relative">
+              <Image
+                src="/brand/packaging-unboxing.png"
+                alt="Nexphoria pharmaceutical-grade packaging with vials"
+                width={700}
+                height={700}
+                className="w-full h-auto rounded-sm"
+                unoptimized
+              />
+            </div>
+
+            {/* Right: Text content */}
+            <div>
+              <div className="flex items-center gap-3 mb-3">
+                <div
+                  className="w-1 h-1 rounded-full"
+                  style={{ backgroundColor: "#C9DD69" }}
+                />
+                <span
+                  className="text-xs uppercase tracking-widest"
+                  style={{ color: "#B8923A" }}
+                >
+                  Delivery
+                </span>
+              </div>
+
+              <h2
+                className="text-4xl md:text-5xl mb-6 text-near-black"
+                style={{ fontWeight: 200 }}
+              >
+                What Arrives at Your Door
+              </h2>
+
+              <p
+                className="text-base text-stone mb-8"
+                style={{ lineHeight: 1.7 }}
+              >
+                Every order ships in pharmaceutical-grade packaging. Cold-chain
+                protected. Batch-tracked. Certificate of Analysis included.
+              </p>
+
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div
+                    className="w-1.5 h-1.5 rounded-full mt-2"
+                    style={{ backgroundColor: "#C9DD69" }}
+                  />
+                  <p className="text-sm text-stone">
+                    Temperature-controlled shipping with ice packs
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div
+                    className="w-1.5 h-1.5 rounded-full mt-2"
+                    style={{ backgroundColor: "#C9DD69" }}
+                  />
+                  <p className="text-sm text-stone">
+                    Batch-specific Certificate of Analysis
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div
+                    className="w-1.5 h-1.5 rounded-full mt-2"
+                    style={{ backgroundColor: "#C9DD69" }}
+                  />
+                  <p className="text-sm text-stone">
+                    Discreet, professional packaging
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
