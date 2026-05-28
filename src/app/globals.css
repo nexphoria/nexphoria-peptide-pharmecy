@@ -1,143 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
-@import "tailwindcss";
+@import 'tailwindcss';
 
-/* ============================================================================
-   NEXPHORIA V1 — EDITORIAL PHARMACEUTICAL
-   Original aesthetic restored: Cream background, near-black text, surgical precision
-   ============================================================================ */
-
-:root {
-  /* BRAND COLORS (LOCKED) */
-  --color-brand-primary: #C9DD69;     /* Green — accents ONLY */
-  --color-cream: #EAE7E3;             /* Site background */
-  --color-near-black: #010101;        /* Primary text, buttons */
-  --color-stone: #7F7F7D;             /* Secondary text */
-  --color-charcoal: #2D2D2D;          /* Dark sections */
-  --color-gold: #B8923A;              /* Section labels */
-  --color-white: #FFFFFF;             /* Card backgrounds */
-
-  /* TYPOGRAPHY */
+@theme {
+  --color-cream: #EAE7E3;
+  --color-near-black: #010101;
+  --color-stone: #7F7F7D;
+  --color-charcoal: #2D2D2D;
+  --color-gold: #B8923A;
+  --color-brand: #C9DD69;
+  --color-white-card: #FFFFFF;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-/* BASE STYLES */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-cream);
+    color: var(--color-near-black);
+  }
 }
 
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  scroll-behavior: smooth;
+@layer components {
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    background-color: var(--color-near-black);
+    color: var(--color-cream);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: opacity 200ms;
+    text-decoration: none;
+  }
+  .btn-primary:hover { opacity: 0.85; }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    background-color: transparent;
+    color: var(--color-near-black);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1px solid var(--color-near-black);
+    border-radius: 2px;
+    transition: opacity 200ms;
+    text-decoration: none;
+  }
+  .btn-outline:hover { opacity: 0.7; }
 }
 
-body {
-  font-family: var(--font-sans);
-  background-color: var(--color-cream);
-  color: var(--color-near-black);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-/* UTILITY CLASSES */
-.bg-cream { background-color: var(--color-cream); }
-.bg-near-black { background-color: var(--color-near-black); }
-.bg-white { background-color: var(--color-white); }
-.bg-charcoal { background-color: var(--color-charcoal); }
-.bg-brand-primary { background-color: var(--color-brand-primary); }
-
-.text-cream { color: var(--color-cream); }
-.text-near-black { color: var(--color-near-black); }
-.text-stone { color: var(--color-stone); }
-.text-charcoal { color: var(--color-charcoal); }
-.text-brand-primary { color: var(--color-brand-primary); }
-.text-gold { color: var(--color-gold); }
-
-.border-stone { border-color: rgba(127, 127, 125, 0.2); }
-
-/* BUTTONS — Near-black with cream text (NO GREEN BUTTONS) */
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.875rem 1.75rem;
-  background-color: var(--color-near-black);
-  color: var(--color-cream);
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 2px;
-  cursor: pointer;
-  transition: opacity 200ms ease;
-}
-
-.btn-primary:hover {
-  opacity: 0.9;
-}
-
-.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.875rem 1.75rem;
-  background-color: transparent;
-  color: var(--color-near-black);
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border: 1px solid var(--color-near-black);
-  border-radius: 2px;
-  cursor: pointer;
-  transition: opacity 200ms ease;
-}
-
-.btn-outline:hover {
-  opacity: 0.7;
-}
-
-/* FORM INPUTS */
-.nex-input {
-  width: 100%;
-  padding: 0.875rem 1rem;
-  background-color: var(--color-white);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  color: var(--color-near-black);
-  font-family: var(--font-sans);
-  font-size: 0.875rem;
-  border-radius: 4px;
-  outline: none;
-  transition: border-color 200ms ease;
-}
-
-.nex-input:focus {
-  border-color: var(--color-brand-primary);
-}
-
-.nex-input::placeholder {
-  color: var(--color-stone);
-  opacity: 0.6;
-}
-
-/* PATTERN OVERLAY — barely visible */
-.pattern-overlay {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image: url(/brand/chemical-pattern.svg);
-  background-size: 600px;
-  background-repeat: repeat;
-  opacity: 0.015;
-  z-index: 0;
-}
-
-/* SELECTION */
 ::selection {
-  background-color: var(--color-brand-primary);
+  background-color: var(--color-brand);
   color: var(--color-near-black);
 }
