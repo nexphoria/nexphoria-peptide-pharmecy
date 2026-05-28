@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Plus, Minus, ShoppingBag, ArrowRight } from "lucide-react";
 import { useCart } from "@/lib/cart";
@@ -12,6 +13,7 @@ interface CartDrawerProps {
 }
 
 export default function CartDrawer({ className = "" }: CartDrawerProps) {
+  const router = useRouter();
   const {
     items,
     isOpen,
@@ -423,31 +425,9 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                 {/* Checkout Button */}
                 <button
                   className="btn-acid w-full justify-center"
-                  onClick={async () => {
-                    try {
-                      const cartItems = items.map(item => ({
-                        productSlug: item.product.slug,
-                        name: item.product.name,
-                        price: item.monthlyPrice || item.selectedDosage?.price || (item.format === 'pen' ? item.product.penPrice : item.product.price),
-                        quantity: item.quantity,
-                        size: item.selectedDosage?.size || item.product.size,
-                        format: item.format,
-                        subscriptionMonths: item.subscriptionMonths || 1,
-                      }));
-                      const res = await fetch(process.env.NEXT_PUBLIC_CHECKOUT_URL || '/api/checkout', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ items: cartItems }),
-                      });
-                      const data = await res.json();
-                      if (data.url) {
-                        window.location.href = data.url;
-                      } else {
-                        console.error('Checkout error:', data.error);
-                      }
-                    } catch (err) {
-                      console.error('Checkout failed:', err);
-                    }
+                  onClick={() => {
+                    closeDrawer();
+                    router.push('/checkout');
                   }}
                 >
                   Proceed to Checkout <ArrowRight className="w-4 h-4" />

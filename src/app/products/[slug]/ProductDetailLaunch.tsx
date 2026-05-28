@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import type { LaunchProduct } from "@/lib/products-launch";
 import ProductVial from "@/components/ProductVial";
+import { useCart } from "@/lib/cart";
 
 interface Props {
   product: LaunchProduct;
@@ -27,6 +28,42 @@ export default function ProductDetailLaunch({ product, related }: Props) {
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const [isSubscription, setIsSubscription] = useState(false);
   const [subscriptionCadence, setSubscriptionCadence] = useState<30 | 60 | 90>(30);
+  const { addItem, openDrawer } = useCart();
+
+  const handleAddToOrder = () => {
+    // Convert LaunchProduct to cart-compatible format
+    const cartProduct = {
+      slug: product.slug,
+      name: product.name,
+      casNumber: product.casNumber,
+      formula: product.formula,
+      molecularWeight: product.molecularWeight,
+      purity: product.purity,
+      category: product.category,
+      price: selectedPricing?.pricePerUnit || product.basePrice,
+      size: product.dosage,
+      storage: product.storage,
+      appearance: "White to off-white lyophilized powder",
+      solubility: "",
+      tagline: product.tagline,
+      description: product.description,
+      mechanism: "",
+      researchSummary: "",
+      dosingProtocol: "",
+      reconstitution: product.reconstitution,
+      relatedSlugs: product.relatedSlugs,
+      features: product.researchApplications,
+      accentColor: "#A4B08A",
+      penAvailable: false,
+      penPrice: 0,
+      forGender: "both" as const,
+    };
+    // Add items based on quantity tier
+    for (let i = 0; i < selectedQty; i++) {
+      addItem(cartProduct, "vial", { size: product.dosage, price: selectedPricing?.pricePerUnit || product.basePrice });
+    }
+    openDrawer();
+  };
 
   const selectedPricing = product.volumePricing.find((p) => p.qty === selectedQty);
 
@@ -301,10 +338,11 @@ export default function ProductDetailLaunch({ product, related }: Props) {
 
               {/* Add to Order Button */}
               <button
-                className="w-full py-4 rounded-lg font-bold uppercase tracking-wide text-sm transition-opacity hover:opacity-90 mb-8"
+                onClick={handleAddToOrder}
+                className="w-full py-4 rounded-lg font-bold uppercase tracking-wide text-sm transition-all hover:opacity-90 hover:scale-[1.01] active:scale-[0.99] mb-8"
                 style={{ backgroundColor: "#A4B08A", color: "#000000" }}
               >
-                Add to Order
+                Add to Order — ${isSubscription ? subscriptionPrice.toFixed(0) : (selectedPricing?.totalPrice || product.basePrice)}
               </button>
 
               {/* Trust Badges Bar */}

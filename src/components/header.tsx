@@ -18,6 +18,7 @@ export function Header() {
 
   const navLinks = [
     { href: "/products", label: "Products" },
+    { href: "/build-your-stack", label: "Build Your Stack" },
     { href: "/clinical", label: "Clinical" },
     { href: "/science", label: "Science" },
     { href: "/about", label: "About" },
