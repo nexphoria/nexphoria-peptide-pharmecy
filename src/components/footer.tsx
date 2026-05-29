@@ -32,6 +32,7 @@ const footerNav = {
   Company: [
     { label: "About", href: "/about" },
     { label: "Science & Testing", href: "/science" },
+    { label: "Compound Index", href: "/compounds" },
     { label: "Research Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
   ],
