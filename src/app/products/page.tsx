@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ProductsClient from "./client";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Peptide Catalog — Research Compounds",
@@ -20,6 +21,7 @@ export default function ProductsPage({
         style={{ backgroundColor: "#F5F3F0", borderColor: "var(--border-subtle)" }}
       >
         <div className="container-nex">
+          <Breadcrumb items={[{label:"Home",href:"/"},{label:"Shop"}]} variant="light" className="mb-6" />
           <span className="eyebrow mb-5 block" style={{ color: "#C9A24B" }}>Research Compounds</span>
           <h1
             className="font-bold tracking-tight mb-4"

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Our Standards — Science & Testing",
@@ -30,6 +31,7 @@ export default function SciencePage() {
       {/* Hero */}
       <section style={{ paddingTop: "160px", paddingBottom: "80px" }} className="px-6 md:px-12">
         <div className="max-w-5xl mx-auto">
+          <Breadcrumb items={[{label:"Home",href:"/"},{label:"Our Standards"}]} variant="light" className="mb-6" />
           <p
             className="text-xs uppercase mb-6"
             style={{ color: "#B8923A", letterSpacing: "0.25em", fontWeight: 500 }}

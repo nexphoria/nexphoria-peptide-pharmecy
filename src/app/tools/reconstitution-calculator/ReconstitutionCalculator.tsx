@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Link from "next/link";
+import Breadcrumb from "@/components/Breadcrumb";
 
 // Common reconstitution presets
 const PRESETS = [
@@ -50,13 +51,15 @@ export default function ReconstitutionCalculatorPage() {
         style={{ backgroundColor: "#010101" }}
       >
         <div className="max-w-3xl mx-auto">
-          <Link
-            href="/tools"
-            className="inline-flex items-center gap-2 text-sm mb-8 hover:opacity-70 transition-opacity"
-            style={{ color: "#C9DD69", letterSpacing: "0.08em" }}
-          >
-            <span aria-hidden>←</span> Research Tools
-          </Link>
+          <Breadcrumb
+            variant="dark"
+            className="mb-8"
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Tools", href: "/tools" },
+              { label: "Reconstitution Calculator" },
+            ]}
+          />
           <p
             className="text-xs uppercase tracking-widest mb-5"
             style={{ color: "#C9DD69" }}

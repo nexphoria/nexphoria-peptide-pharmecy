@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { notFound } from "next/navigation";
 import { products } from "@/lib/products";
 import COADocument from "./COADocument";
@@ -43,5 +44,37 @@ export default async function COAPage({
   const product = products.find((p) => p.slug === slug);
   if (!product) notFound();
 
-  return <COADocument product={product} />;
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://nexphoria.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "COA",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: product.name,
+      },
+    ],
+  };
+
+  return (
+    <>
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <COADocument product={product} />
+    </>
+  );
 }

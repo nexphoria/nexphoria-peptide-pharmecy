@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { products, categories } from "@/lib/products";
+import Breadcrumb from "@/components/Breadcrumb";
 import { articles } from "@/lib/blog";
 import { CATEGORY_META, CompoundEntry } from "@/lib/compounds";
 import CompoundsClient from "./CompoundsClient";
@@ -81,6 +82,14 @@ export default function CompoundsPage() {
           style={{ backgroundColor: "#010101" }}
         >
           <div className="max-w-6xl mx-auto">
+            <Breadcrumb
+              variant="dark"
+              className="mb-6"
+              items={[
+                { label: "Home", href: "/" },
+                { label: "Compounds" },
+              ]}
+            />
             <p className="eyebrow mb-5" style={{ color: "#A4B08A" }}>
               Research Reference
             </p>

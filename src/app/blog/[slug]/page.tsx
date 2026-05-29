@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { articles, getArticleBySlug, type BlogSection } from "@/lib/blog";
+import Breadcrumb from "@/components/Breadcrumb";
+import ShareButtons from "@/components/ShareButtons";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -128,6 +130,58 @@ function RenderSection({ section }: { section: BlogSection }) {
         />
       );
 
+    case "table":
+      return (
+        <div className="overflow-x-auto my-8">
+          <table className="w-full text-sm border-collapse">
+            {section.headers && (
+              <thead>
+                <tr style={{ borderBottom: "2px solid #d4af37" }}>
+                  {section.headers.map((h, i) => (
+                    <th
+                      key={i}
+                      className="py-2 px-3 text-left"
+                      style={{ fontWeight: 600, color: "#010101", whiteSpace: "nowrap" }}
+                    >
+                      {h}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+            )}
+            <tbody>
+              {(section.rows || []).map((row, ri) => (
+                <tr
+                  key={ri}
+                  style={{ borderBottom: "1px solid rgba(0,0,0,0.07)", background: ri % 2 === 0 ? "transparent" : "rgba(0,0,0,0.02)" }}
+                >
+                  {row.map((cell, ci) => (
+                    <td
+                      key={ci}
+                      className="py-2 px-3"
+                      style={{ color: ci === 0 ? "#010101" : "#2a2a2a", fontWeight: ci === 0 ? 500 : 300, lineHeight: 1.6, verticalAlign: "top" }}
+                    >
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+
+    case "disclaimer":
+      return (
+        <div
+          className="my-8 px-5 py-4 rounded-lg text-sm"
+          style={{ background: "rgba(0,0,0,0.04)", borderLeft: "3px solid #d4af37", color: "#555", lineHeight: 1.7 }}
+        >
+          <strong style={{ color: "#010101" }}>Research Use Only Disclaimer: </strong>
+          {section.text}
+        </div>
+      );
+
     default:
       return null;
   }
@@ -215,13 +269,15 @@ export default async function BlogArticlePage({ params }: Props) {
           style={{ backgroundColor: "#010101" }}
         >
           <div className="max-w-3xl mx-auto">
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-2 text-sm mb-8 hover:opacity-70 transition-opacity"
-              style={{ color: "#A4B08A", letterSpacing: "0.06em" }}
-            >
-              <span aria-hidden>←</span> Research Journal
-            </Link>
+            <Breadcrumb
+              variant="dark"
+              className="mb-8"
+              items={[
+                { label: "Home", href: "/" },
+                { label: "Journal", href: "/blog" },
+                { label: article.title },
+              ]}
+            />
 
             <div className="flex flex-wrap items-center gap-4 mb-6">
               <span
@@ -266,6 +322,12 @@ export default async function BlogArticlePage({ params }: Props) {
                 <RenderSection key={i} section={section} />
               ))}
             </article>
+
+            {/* Share buttons */}
+            <ShareButtons
+              url={canonicalUrl}
+              title={article.title}
+            />
 
             {/* Research disclaimer */}
             <div

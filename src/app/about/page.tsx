@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "About Nexphoria — Research-Grade Peptide Compounds",
@@ -32,6 +33,7 @@ export default function AboutPage() {
       {/* Hero */}
       <section style={{ paddingTop: "160px", paddingBottom: "80px" }} className="px-6 md:px-12">
         <div className="max-w-4xl mx-auto">
+          <Breadcrumb items={[{label:"Home",href:"/"},{label:"About"}]} variant="light" className="mb-6" />
           <p
             className="text-xs uppercase mb-6"
             style={{ color: "#B8923A", letterSpacing: "0.25em", fontWeight: 500 }}

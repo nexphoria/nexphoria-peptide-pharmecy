@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -63,6 +64,7 @@ export default function ManufacturingPage() {
       <section className="relative pt-36 pb-24 border-b overflow-hidden" style={{ borderColor: "var(--dark-border)" }}>
         <div className="container-nex relative">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}>
+            <Breadcrumb items={[{label:"Home",href:"/"},{label:"Manufacturing"}]} variant="dark" className="mb-6" />
             <span className="eyebrow mb-5 block">Manufacturing</span>
             <h1
               className="font-bold tracking-tight mb-6 max-w-3xl"

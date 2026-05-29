@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Research Tools | Nexphoria",
@@ -133,6 +134,20 @@ const TOOLS = [
     badge: "Guide",
   },
   {
+    href: "/guides/peptide-glossary",
+    title: "Peptide Glossary",
+    desc: "50+ research terms defined: lyophilization, reconstitution, HPLC, COA, half-life, GHSR-1a, GLP-1R, pharmacokinetics, and more. Alphabetically indexed with cross-references.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+        <path d="M8 7h8"/>
+        <path d="M8 11h8"/>
+        <path d="M8 15h5"/>
+      </svg>
+    ),
+    badge: "Reference",
+  },
+  {
     href: "/tools/unit-converter",
     title: "Unit Converter",
     desc: "Convert mcg/mg/g/IU, mL to insulin syringe units, nmol/L to ng/mL, and dilution factor (C₁V₁=C₂V₂) calculations for any compound.",
@@ -148,6 +163,75 @@ const TOOLS = [
     ),
     badge: "Tool",
   },
+  {
+    href: "/tools/stack-builder",
+    title: "Research Stack Builder",
+    desc: "Select a research goal (recovery, GH axis, metabolic, longevity, cognitive) and get a synergistic compound stack with mechanistic rationale, weekly schedule, and monthly cost estimate.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+        <polyline points="2 17 12 22 22 17"/>
+        <polyline points="2 12 12 17 22 12"/>
+      </svg>
+    ),
+    badge: "Tool",
+  },
+  {
+    href: "/tools/dosing-frequency-planner",
+    title: "Dosing Frequency Planner",
+    desc: "Plan your weekly injection schedule across multiple compounds with auto-distribute, stacking warnings, and exportable protocol summary.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+        <line x1="16" y1="2" x2="16" y2="6"/>
+        <line x1="8" y1="2" x2="8" y2="6"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+        <line x1="8" y1="14" x2="16" y2="14"/>
+        <line x1="8" y1="18" x2="16" y2="18"/>
+      </svg>
+    ),
+    badge: "Tool",
+  },
+  {
+    href: "/tools/purity-checker",
+    title: "Purity Checker & COA Guide",
+    desc: "Look up HPLC purity specs for 28+ research compounds. Learn how to read a Certificate of Analysis, what to verify, and the red flags that signal a fraudulent COA.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M9 11l3 3L22 4"/>
+        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+      </svg>
+    ),
+    badge: "Tool",
+  },
+  {
+    href: "/tools/cost-per-dose-calculator",
+    title: "Cost Per Dose Calculator",
+    desc: "Enter a compound, vial size, dose, and frequency to instantly calculate cost per dose, doses per vial, weekly spend, and monthly research budget.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="12" y1="1" x2="12" y2="23"/>
+        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+      </svg>
+    ),
+    badge: "Tool",
+  },
+  {
+    href: "/tools/igf-1-calculator",
+    title: "IGF-1 Response Estimator",
+    desc: "Estimate IGF-1 % elevation from GHRH analog + GHRP stacking based on published clinical data. Includes synergy multipliers, duration modifiers, and dosing frequency adjustments.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 3v18h18"/>
+        <path d="M7 16l4-8 4 4 4-6"/>
+        <circle cx="7" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="11" cy="8" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="15" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="19" cy="6" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    ),
+    badge: "Tool",
+  },
 ];
 
 export default function ToolsPage() {
@@ -159,6 +243,14 @@ export default function ToolsPage() {
         style={{ backgroundColor: "#010101" }}
       >
         <div className="max-w-4xl mx-auto">
+          <Breadcrumb
+            variant="dark"
+            className="mb-6"
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Research Tools" },
+            ]}
+          />
           <p
             className="text-xs uppercase tracking-widest mb-5"
             style={{ color: "#C9DD69" }}

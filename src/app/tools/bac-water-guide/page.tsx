@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Bacteriostatic Water Guide: What It Is & How to Use It | Nexphoria",
@@ -64,6 +65,15 @@ export default function BacWaterGuidePage() {
         style={{ backgroundColor: "#010101" }}
       >
         <div className="max-w-3xl mx-auto">
+          <Breadcrumb
+            variant="dark"
+            className="mb-6"
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Tools", href: "/tools" },
+              { label: "BAC Water Guide" },
+            ]}
+          />
           <p
             className="text-xs uppercase tracking-widest mb-5"
             style={{ color: "#C9DD69" }}

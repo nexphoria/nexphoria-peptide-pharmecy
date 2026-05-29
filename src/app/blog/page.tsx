@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { articles } from "@/lib/blog";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Research Blog | Nexphoria",
@@ -66,6 +67,14 @@ export default function BlogIndexPage() {
           style={{ backgroundColor: "#010101" }}
         >
           <div className="max-w-5xl mx-auto">
+            <Breadcrumb
+              variant="dark"
+              className="mb-6"
+              items={[
+                { label: "Home", href: "/" },
+                { label: "Research Journal" },
+              ]}
+            />
             <p
               className="eyebrow mb-5"
               style={{ color: "#A4B08A" }}

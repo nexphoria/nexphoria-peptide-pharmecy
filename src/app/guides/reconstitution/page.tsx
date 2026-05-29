@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Peptide Reconstitution Guide: Solvents, Technique & Protocol | Nexphoria",
@@ -119,6 +120,15 @@ export default function ReconstitutionGuidePage() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-[#111] to-[#0a0a0a] pt-24 pb-16 px-6">
         <div className="max-w-3xl mx-auto">
+          <Breadcrumb
+            variant="dark"
+            className="mb-6"
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Guides" },
+              { label: "Reconstitution Guide" },
+            ]}
+          />
           <p className="text-xs tracking-widest uppercase text-[#C9A84C] mb-4 font-medium">
             Research Guides
           </p>

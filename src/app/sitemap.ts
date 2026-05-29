@@ -71,6 +71,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/reviews`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.72,
+    },
+    {
       url: `${baseUrl}/contact`,
       lastModified: new Date(),
       changeFrequency: "yearly",
@@ -113,6 +119,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.72,
     },
     {
+      url: `${baseUrl}/tools/dosing-frequency-planner`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.72,
+    },
+    {
+      url: `${baseUrl}/tools/cost-per-dose-calculator`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.72,
+    },
+    {
+      url: `${baseUrl}/tools/stack-builder`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.78,
+    },
+    {
+      url: `${baseUrl}/tools/purity-checker`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.72,
+    },
+    {
+      url: `${baseUrl}/tools/igf-1-calculator`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.72,
+    },
+    {
       url: `${baseUrl}/guides/storage`,
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -120,6 +156,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/guides/reconstitution`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
+      url: `${baseUrl}/guides/peptide-glossary`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.75,

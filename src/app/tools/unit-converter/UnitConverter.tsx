@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Link from "next/link";
+import Breadcrumb from "@/components/Breadcrumb";
 
 // ─── Tab definitions ────────────────────────────────────────────────────────
 type Tab = "mass" | "syringe" | "concentration" | "dilution";
@@ -843,6 +844,15 @@ export default function UnitConverter() {
         style={{ backgroundColor: "#010101" }}
       >
         <div className="max-w-4xl mx-auto">
+          <Breadcrumb
+            variant="dark"
+            className="mb-8"
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Tools", href: "/tools" },
+              { label: "Unit Converter" },
+            ]}
+          />
           <p className="text-xs uppercase tracking-widest mb-5" style={{ color: "#C9DD69" }}>
             Research Tools
           </p>

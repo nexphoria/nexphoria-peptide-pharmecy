@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata = {
   title: "Research Cycles & Protocols | Nexphoria",
@@ -12,13 +13,15 @@ export default function ProtocolsPage() {
       {/* Header band */}
       <section className="relative px-6 pt-32 pb-16 md:pt-40 md:pb-20" style={{ backgroundColor: "#010101" }}>
         <div className="max-w-4xl mx-auto">
-          <Link
-            href="/products"
-            className="inline-flex items-center gap-2 text-sm mb-8 hover:opacity-70 transition-opacity"
-            style={{ color: "#C9DD69", letterSpacing: "0.08em" }}
-          >
-            <span aria-hidden>←</span> Back to Catalog
-          </Link>
+          <Breadcrumb
+            variant="dark"
+            className="mb-8"
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Products", href: "/products" },
+              { label: "Research Protocols" },
+            ]}
+          />
           <p className="text-xs uppercase tracking-widest mb-6" style={{ color: "#C9DD69" }}>
             Research Cycles
           </p>

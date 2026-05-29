@@ -35,6 +35,7 @@ const footerNav = {
     { label: "Science & Testing", href: "/science" },
     { label: "Compound Index", href: "/compounds" },
     { label: "Research Blog", href: "/blog" },
+    { label: "Reviews", href: "/reviews" },
     { label: "Contact", href: "/contact" },
   ],
   Support: [
@@ -44,6 +45,7 @@ const footerNav = {
     { label: "BAC Water Guide", href: "/tools/bac-water-guide" },
     { label: "Storage Guide", href: "/guides/storage" },
     { label: "Reconstitution Guide", href: "/guides/reconstitution" },
+    { label: "Peptide Glossary", href: "/guides/peptide-glossary" },
     { label: "Track Your Order", href: "/account/orders" },
     { label: "Wholesale", href: "/wholesale" },
   ],

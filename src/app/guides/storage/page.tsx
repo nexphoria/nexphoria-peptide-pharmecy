@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { products } from "@/lib/products";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Peptide Storage Guide: Temperature, Stability & Best Practices | Nexphoria",
@@ -141,6 +142,15 @@ export default function StorageGuidePage() {
         style={{ backgroundColor: "#010101" }}
       >
         <div className="max-w-4xl mx-auto">
+          <Breadcrumb
+            variant="dark"
+            className="mb-6"
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Guides" },
+              { label: "Peptide Storage" },
+            ]}
+          />
           <p className="text-xs uppercase tracking-widest mb-5" style={{ color: "#C9DD69" }}>
             Research Guides
           </p>

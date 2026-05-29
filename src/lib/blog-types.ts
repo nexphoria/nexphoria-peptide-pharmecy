@@ -10,8 +10,10 @@ export interface BlogArticle {
 }
 
 export interface BlogSection {
-  type: "paragraph" | "heading" | "subheading" | "list" | "callout" | "divider";
+  type: "paragraph" | "heading" | "subheading" | "list" | "callout" | "divider" | "table" | "disclaimer";
   text?: string;
   items?: string[];
+  headers?: string[];
+  rows?: string[][];
 }
 

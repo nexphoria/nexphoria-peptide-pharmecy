@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Mail, Phone, Calendar, Send, Loader2 } from "lucide-react";
 import { useState } from "react";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -119,6 +120,14 @@ export default function WholesalePage() {
         }} />
 
         <div className="container-nex relative z-20">
+          <Breadcrumb
+            variant="light"
+            className="mb-6"
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Wholesale" },
+            ]}
+          />
           <motion.div
             initial="hidden"
             animate="visible"

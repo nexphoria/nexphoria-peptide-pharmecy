@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
+import Breadcrumb from "@/components/Breadcrumb";
 
 // ---------------------------------------------------------------------------
 // Types
@@ -125,9 +126,7 @@ export default function OrdersPage() {
       {/* ------------------------------------------------------------------ */}
       <div style={{ backgroundColor: "#010101", paddingTop: "120px", paddingBottom: "56px" }}>
         <div className="max-w-3xl mx-auto px-6">
-          <Link href="/" className="text-xs uppercase tracking-widest mb-6 inline-block" style={{ color: "rgba(255,255,255,0.35)", letterSpacing: "0.12em" }}>
-            ← Nexphoria
-          </Link>
+          <Breadcrumb items={[{label:"Home",href:"/"},{label:"My Orders"}]} variant="dark" className="mb-6" />
           <div className="flex items-start gap-4">
             <div
               className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center mt-1"

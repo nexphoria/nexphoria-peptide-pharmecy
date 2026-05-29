@@ -2,6 +2,7 @@
 
 import { useState, type ReactNode } from "react";
 import Link from "next/link";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const faqs: { category: string; items: { q: string; a: string | ReactNode }[] }[] = [
   {
@@ -196,6 +197,14 @@ export default function FaqPage() {
       {/* Hero */}
       <section style={{ paddingTop: "160px", paddingBottom: "64px" }} className="px-6 md:px-12">
         <div className="max-w-4xl mx-auto">
+          <Breadcrumb
+            variant="light"
+            className="mb-6"
+            items={[
+              { label: "Home", href: "/" },
+              { label: "FAQ" },
+            ]}
+          />
           <p
             className="eyebrow mb-6"
             style={{ color: "#A4B08A" }}

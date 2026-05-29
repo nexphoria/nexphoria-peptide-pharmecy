@@ -28,66 +28,292 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative px-6 pt-28 pb-20 md:pt-36 md:pb-28">
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-            {/* Left: copy */}
+      <section
+        className="relative overflow-hidden"
+        style={{ backgroundColor: "#0F0F0E", minHeight: "92vh" }}
+      >
+        {/* Chemical pattern ghost — 2% opacity gives texture without distraction */}
+        <div
+          className="absolute inset-0 pointer-events-none select-none"
+          style={{
+            backgroundImage: "url(/brand/chemical-pattern.svg)",
+            backgroundSize: "560px 560px",
+            backgroundRepeat: "repeat",
+            opacity: 0.022,
+          }}
+        />
+
+        {/* Desktop layout: asymmetric 2-col */}
+        <div className="hidden md:grid h-full" style={{ gridTemplateColumns: "46% 54%", minHeight: "92vh" }}>
+
+          {/* LEFT — editorial copy */}
+          <div className="relative z-10 flex flex-col justify-between px-14 lg:px-20 py-28 lg:py-32">
+            {/* Eyebrow */}
+            <p
+              className="text-[0.6875rem] font-medium uppercase tracking-[0.2em]"
+              style={{ color: "#A4B08A" }}
+            >
+              Research-Grade Peptides
+            </p>
+
+            {/* Headline block */}
             <div>
-              <p className="eyebrow mb-5">
-                Research-Grade Peptides
-              </p>
               <h1
-                className="text-4xl sm:text-5xl md:text-[3.5rem] lg:text-[4rem] mb-6 leading-[1.05] tracking-tight"
-                style={{ fontWeight: 500 }}
+                className="leading-[0.9] tracking-tight mb-7"
+                style={{
+                  color: "#FAF9F6",
+                  fontWeight: 500,
+                  fontSize: "clamp(3.25rem, 5.5vw, 5.25rem)",
+                }}
               >
-                Precision compounds,
-                <br />
-                independently verified.
+                Precision<br />
+                compounds,<br />
+                <span style={{ color: "#A4B08A" }}>independently<br />verified.</span>
               </h1>
               <p
-                className="text-base md:text-lg mb-10 max-w-md leading-relaxed"
-                style={{ color: "#555" }}
+                className="text-[1rem] leading-relaxed mb-10 max-w-[26rem]"
+                style={{ color: "#6A6A66" }}
               >
                 A curated catalog of research peptides. 99%+ purity,
                 third-party tested, batch-tracked, and shipped cold-chain.
               </p>
-
               <div className="flex flex-wrap gap-4">
                 <Link href="/products" className="btn-primary">
                   Browse Catalog
                 </Link>
-                <Link href="/science" className="btn-outline">
+                <Link
+                  href="/science"
+                  className="btn-outline-gold"
+                  style={{ borderColor: "#3A3A38", color: "#FAF9F6" }}
+                >
                   Our Standards
                 </Link>
               </div>
-
-              {/* Trust line */}
-              <div className="flex items-center gap-6 mt-10 pt-8 border-t border-[#ECEAE4]">
-                {[
-                  { value: "99%+", label: "Purity" },
-                  { value: "cGMP", label: "Manufactured" },
-                  { value: "3rd Party", label: "Tested" },
-                ].map((stat) => (
-                  <div key={stat.label}>
-                    <div className="text-lg font-semibold mb-0.5">{stat.value}</div>
-                    <div className="text-xs text-[#888] uppercase tracking-wide">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
             </div>
 
-            {/* Right: hero lineup image */}
-            <div className="relative flex items-center">
+            {/* Stats — integrated at bottom */}
+            <div
+              className="grid grid-cols-3 gap-8 pt-8 border-t"
+              style={{ borderColor: "#252523" }}
+            >
+              {[
+                { value: "99%+", label: "Purity", sub: "HPLC verified" },
+                { value: "cGMP", label: "Manufactured", sub: "Certified facilities" },
+                { value: "COA", label: "Every Batch", sub: "Always enclosed" },
+              ].map((s) => (
+                <div key={s.label}>
+                  <div
+                    className="text-[1.4rem] font-semibold mb-0.5 tracking-tight"
+                    style={{ color: "#FAF9F6" }}
+                  >
+                    {s.value}
+                  </div>
+                  <div
+                    className="text-[0.625rem] uppercase tracking-widest font-medium"
+                    style={{ color: "#A4B08A" }}
+                  >
+                    {s.label}
+                  </div>
+                  <div className="text-[0.6875rem] mt-0.5" style={{ color: "#4A4A48" }}>
+                    {s.sub}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* RIGHT — full-bleed image collage */}
+          <div className="relative overflow-visible">
+            {/* Main: boxes-cascade full bleed */}
+            <div className="absolute inset-0 overflow-hidden">
               <Image
-                src="/brand/hero-lineup.png"
-                alt="Nexphoria peptide vial lineup"
-                width={900}
-                height={675}
-                className="w-full h-auto"
+                src="/brand/boxes-cascade.jpg"
+                alt="Nexphoria pharmaceutical-grade packaging"
+                fill
+                className="object-cover object-center"
                 priority
                 unoptimized
               />
+              {/* Left-edge blend: dark → transparent */}
+              <div
+                className="absolute inset-y-0 left-0 w-32"
+                style={{
+                  background: "linear-gradient(to right, #0F0F0E 0%, transparent 100%)",
+                }}
+              />
+              {/* Bottom blend */}
+              <div
+                className="absolute bottom-0 left-0 right-0 h-48"
+                style={{
+                  background: "linear-gradient(to top, #0F0F0E 0%, transparent 100%)",
+                }}
+              />
+              {/* Subtle dark top vignette */}
+              <div
+                className="absolute top-0 left-0 right-0 h-24"
+                style={{
+                  background: "linear-gradient(to bottom, rgba(15,15,14,0.5) 0%, transparent 100%)",
+                }}
+              />
             </div>
+
+            {/* Floating: vials lineup — anchored bottom-left, partially over left column */}
+            <div
+              className="absolute z-20 transition-transform duration-700 hover:-translate-y-1"
+              style={{
+                bottom: "5rem",
+                left: "-7%",
+                width: "58%",
+                filter: "drop-shadow(0 40px 80px rgba(0,0,0,0.85))",
+              }}
+            >
+              <Image
+                src="/brand/hero-lineup.png"
+                alt="Nexphoria peptide vials"
+                width={700}
+                height={525}
+                className="w-full h-auto"
+                unoptimized
+              />
+            </div>
+
+            {/* Floating: box detail — top-right accent card */}
+            {/* Outer handles position + rotation; inner handles hover lift */}
+            <div
+              className="absolute z-20"
+              style={{ top: "2.5rem", right: "2rem", width: "9rem", transform: "rotate(1.5deg)" }}
+            >
+              <div
+                className="rounded-xl overflow-hidden transition-transform duration-700 hover:-translate-y-1.5"
+                style={{ boxShadow: "0 24px 64px rgba(0,0,0,0.75), 0 0 0 1px rgba(255,255,255,0.04)" }}
+              >
+                <Image
+                  src="/brand/box-detail.jpg"
+                  alt="Nexphoria box detail"
+                  width={220}
+                  height={260}
+                  className="w-full h-auto object-cover"
+                  unoptimized
+                />
+              </div>
+            </div>
+
+            {/* Floating: packaging mockup — lower-right accent */}
+            <div
+              className="absolute z-20"
+              style={{ bottom: "9rem", right: "1.5rem", width: "7.5rem", transform: "rotate(-1deg)" }}
+            >
+              <div
+                className="rounded-xl overflow-hidden transition-transform duration-700 hover:-translate-y-1.5"
+                style={{ boxShadow: "0 16px 48px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04)" }}
+              >
+                <Image
+                  src="/images/bendito_mockup-ss-cosmetic_box-01-copy.jpg"
+                  alt="Nexphoria cosmetic box mockup"
+                  width={200}
+                  height={220}
+                  className="w-full h-auto object-cover"
+                  unoptimized
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile layout: stacked */}
+        <div className="md:hidden flex flex-col" style={{ minHeight: "92vh" }}>
+          {/* Copy */}
+          <div className="flex flex-col justify-center flex-1 px-6 pt-24 pb-10">
+            <p
+              className="text-[0.6875rem] font-medium uppercase tracking-[0.2em] mb-6"
+              style={{ color: "#A4B08A" }}
+            >
+              Research-Grade Peptides
+            </p>
+            <h1
+              className="leading-[0.92] tracking-tight mb-6"
+              style={{ color: "#FAF9F6", fontWeight: 500, fontSize: "clamp(2.75rem, 11vw, 4rem)" }}
+            >
+              Precision<br />
+              compounds,<br />
+              <span style={{ color: "#A4B08A" }}>independently<br />verified.</span>
+            </h1>
+            <p
+              className="text-[0.9375rem] leading-relaxed mb-8"
+              style={{ color: "#6A6A66" }}
+            >
+              99%+ purity, third-party tested, batch-tracked, shipped cold-chain.
+            </p>
+            <div className="flex flex-col gap-3">
+              <Link href="/products" className="btn-primary text-center">
+                Browse Catalog
+              </Link>
+              <Link
+                href="/science"
+                className="btn-outline-gold text-center"
+                style={{ borderColor: "#3A3A38", color: "#FAF9F6" }}
+              >
+                Our Standards
+              </Link>
+            </div>
+          </div>
+
+          {/* Image: boxes */}
+          <div className="relative px-4 pb-4">
+            <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "4/3" }}>
+              <Image
+                src="/brand/boxes-cascade.jpg"
+                alt="Nexphoria pharmaceutical-grade packaging"
+                fill
+                className="object-cover object-center"
+                unoptimized
+              />
+              {/* Bottom fade */}
+              <div
+                className="absolute bottom-0 left-0 right-0 h-20"
+                style={{
+                  background: "linear-gradient(to top, #0F0F0E 0%, transparent 100%)",
+                }}
+              />
+              {/* Vials overlay floating at bottom */}
+              <div
+                className="absolute bottom-0 left-0 z-10 w-2/3"
+                style={{ filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.9))" }}
+              >
+                <Image
+                  src="/brand/hero-lineup.png"
+                  alt="Nexphoria peptide vials"
+                  width={500}
+                  height={375}
+                  className="w-full h-auto"
+                  unoptimized
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile stats */}
+          <div
+            className="grid grid-cols-3 gap-4 px-6 py-8 border-t mx-4 mb-6"
+            style={{ borderColor: "#252523" }}
+          >
+            {[
+              { value: "99%+", label: "Purity" },
+              { value: "cGMP", label: "Manufactured" },
+              { value: "COA", label: "Every Batch" },
+            ].map((s) => (
+              <div key={s.label} className="text-center">
+                <div className="text-lg font-semibold mb-0.5" style={{ color: "#FAF9F6" }}>
+                  {s.value}
+                </div>
+                <div
+                  className="text-[0.5625rem] uppercase tracking-wider font-medium"
+                  style={{ color: "#A4B08A" }}
+                >
+                  {s.label}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

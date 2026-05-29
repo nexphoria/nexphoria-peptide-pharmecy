@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowLeft, Check, Shield, FileCheck, Download } from "lucide-react";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const COA_AVAILABLE_SLUGS = new Set([
   "bpc-157",
@@ -46,13 +47,15 @@ export default function ProductDetailLaunch({ product, related }: Props) {
       {/* Back Navigation */}
       <div className="pt-20 pb-4">
         <div className="container-nex">
-          <Link
-            href="/products"
-            className="inline-flex items-center gap-2 text-sm text-[#888] hover:text-black transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Products
-          </Link>
+          <Breadcrumb
+            variant="light"
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Products", href: "/products" },
+              { label: product.category, href: `/products?category=${encodeURIComponent(product.category)}` },
+              { label: product.name },
+            ]}
+          />
         </div>
       </div>
 

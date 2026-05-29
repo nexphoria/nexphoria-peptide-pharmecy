@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Mail, Clock, MapPin } from "lucide-react";
 import { CONTACT_URL } from "@/lib/endpoints";
+import Breadcrumb from "@/components/Breadcrumb";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
@@ -83,6 +84,7 @@ export default function ContactClient() {
           {/* Text */}
           <div className="pt-36 pb-16 container-nex md:pr-0">
             <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}>
+              <Breadcrumb items={[{label:"Home",href:"/"},{label:"Contact"}]} variant="dark" className="mb-6" />
               <span className="eyebrow mb-5 block">Get In Touch</span>
               <h1
                 className="font-bold tracking-tight mb-6"
