@@ -5,7 +5,12 @@ export const PHOTO_SLUGS = [
   'ghk-cu',
   'nad-plus',
   'mots-c',
-  'epitalon'
+  'epitalon',
+  'tirzepatide',
+  'retatrutide',
+  'ipamorelin',
+  'pt-141',
+  'aod-9604',
 ] as const;
 
 export function hasProductPhoto(slug: string): boolean {

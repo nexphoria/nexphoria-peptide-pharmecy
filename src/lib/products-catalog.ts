@@ -474,6 +474,8 @@ export const catalogProducts: CatalogProduct[] = [
     tagline: 'Anxiolytic heptapeptide for cognitive research',
     description: 'Selank is a synthetic heptapeptide derived from tuftsin with anxiolytic and nootropic properties. Research demonstrates its modulation of neurotransmitter systems, particularly serotonin and dopamine, with potential applications in anxiety reduction and cognitive enhancement without sedation.',
     casNumber: '129954-34-3',
+    formula: 'C₃₃H₅₇N₁₁O₉',
+    molecularWeight: '751.87 g/mol',
     purity: '≥98% (HPLC)',
     researchApplications: [
       'Anxiolytic mechanism research',
@@ -483,7 +485,9 @@ export const catalogProducts: CatalogProduct[] = [
     ],
     storage: 'Store lyophilized powder at -20°C protected from light. After reconstitution, store at 2-8°C for up to 14 days or -20°C for extended storage.',
     reconstitution: 'Reconstitute with bacteriostatic water. Typical concentration: 10mg in 2mL (5mg/mL). Gently swirl; do not shake vigorously.',
+    faq: createFAQ('Selank', '10mg'),
     relatedSlugs: ['semax', 'epitalon', 'mots-c'],
+    coa: createCOA('Selank'),
     accentColor: '#3B82F6',
   },
   {
@@ -497,6 +501,8 @@ export const catalogProducts: CatalogProduct[] = [
     tagline: 'Nootropic heptapeptide ACTH analog',
     description: 'Semax is a synthetic heptapeptide analog of ACTH(4-10) with pronounced nootropic and neuroprotective effects. Research indicates its influence on brain-derived neurotrophic factor (BDNF) expression, neurotransmitter systems, and cognitive performance under stress conditions.',
     casNumber: '80714-61-0',
+    formula: 'C₃₇H₅₁N₉O₁₀S',
+    molecularWeight: '813.92 g/mol',
     purity: '≥98% (HPLC)',
     researchApplications: [
       'Nootropic and cognitive enhancement studies',
@@ -506,7 +512,9 @@ export const catalogProducts: CatalogProduct[] = [
     ],
     storage: 'Store lyophilized powder at -20°C protected from light. After reconstitution, store at 2-8°C for up to 14 days or -20°C for extended storage.',
     reconstitution: 'Reconstitute with bacteriostatic water. Typical concentration: 10mg in 2mL (5mg/mL). Gently swirl; do not shake vigorously.',
+    faq: createFAQ('Semax', '10mg'),
     relatedSlugs: ['selank', 'epitalon', 'mots-c'],
+    coa: createCOA('Semax'),
     accentColor: '#3B82F6',
   },
   {
@@ -520,6 +528,8 @@ export const catalogProducts: CatalogProduct[] = [
     tagline: 'Melanocortin receptor agonist',
     description: 'PT-141 (Bremelanotide) is a synthetic peptide that activates melanocortin receptors, particularly MC3R and MC4R in the central nervous system. Research indicates its role in modulating sexual arousal and desire through hypothalamic pathways, distinct from vascular mechanisms.',
     casNumber: '189691-06-3',
+    formula: 'C₅₀H₆₈N₁₄O₁₀',
+    molecularWeight: '1025.16 g/mol',
     purity: '≥98% (HPLC)',
     researchApplications: [
       'Melanocortin receptor signaling studies',
@@ -529,7 +539,9 @@ export const catalogProducts: CatalogProduct[] = [
     ],
     storage: 'Store lyophilized powder at -20°C protected from light. After reconstitution, store at 2-8°C for up to 14 days or -20°C for extended storage.',
     reconstitution: 'Reconstitute with bacteriostatic water. Typical concentration: 10mg in 2mL (5mg/mL). Gently swirl; do not shake vigorously.',
+    faq: createFAQ('PT-141', '10mg'),
     relatedSlugs: ['ipamorelin', 'selank', 'semax'],
+    coa: createCOA('PT-141'),
     accentColor: '#EC4899',
   },
   {
@@ -543,6 +555,8 @@ export const catalogProducts: CatalogProduct[] = [
     tagline: 'Growth hormone fragment for lipolysis research',
     description: 'AOD-9604 is a modified fragment of human growth hormone (hGH 176-191) that retains fat-burning properties without affecting blood sugar or IGF-1 levels. Research demonstrates selective lipolytic activity and potential applications in obesity research without the full spectrum of GH effects.',
     casNumber: '221231-10-3',
+    formula: 'C₇₈H₁₂₃N₂₃O₂₃',
+    molecularWeight: '1815.00 g/mol',
     purity: '≥98% (HPLC)',
     researchApplications: [
       'Selective lipolysis and fat oxidation studies',
@@ -552,7 +566,9 @@ export const catalogProducts: CatalogProduct[] = [
     ],
     storage: 'Store lyophilized powder at -20°C protected from light. After reconstitution, store at 2-8°C for up to 14 days or -20°C for extended storage.',
     reconstitution: 'Reconstitute with bacteriostatic water. Typical concentration: 5mg in 2mL (2.5mg/mL). Gently swirl; do not shake vigorously.',
+    faq: createFAQ('AOD-9604', '5mg'),
     relatedSlugs: ['tirzepatide-10mg', 'retatrutide-10mg', 'ipamorelin'],
+    coa: createCOA('AOD-9604'),
     accentColor: '#EF4444',
   },
   {
@@ -566,6 +582,8 @@ export const catalogProducts: CatalogProduct[] = [
     tagline: 'BPC-157 + TB-500 synergistic recovery blend',
     description: 'Strategic combination of BPC-157 and TB-500 creates complementary tissue repair mechanisms through distinct but synergistic pathways. Research indicates enhanced healing outcomes when both peptides are administered concurrently, addressing multiple aspects of injury recovery simultaneously.',
     casNumber: '',
+    formula: 'C₂₇₄H₄₄₈N₇₂O₁₀₀S',
+    molecularWeight: '6382.97 g/mol',
     purity: '≥98% (HPLC)',
     researchApplications: [
       'Comprehensive tissue repair protocols',
@@ -575,7 +593,9 @@ export const catalogProducts: CatalogProduct[] = [
     ],
     storage: 'Store lyophilized powder at -20°C protected from light. After reconstitution, store at 2-8°C for up to 14 days or -20°C for extended storage.',
     reconstitution: 'Reconstitute with bacteriostatic water. Typical concentration: 10mg in 2mL (5mg/mL). Gently swirl; do not shake vigorously.',
+    faq: createFAQ('Wolverine Blend', '10mg'),
     relatedSlugs: ['bpc-157', 'tb-500', 'ghk-cu'],
+    coa: createCOA('Wolverine Blend'),
     accentColor: '#4A9B8E',
   },
 ];
