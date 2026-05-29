@@ -228,3 +228,37 @@ Deploying to Cloudflare Pages...
 ✨ Uploading _redirects
 🌎 Deploying...
 ✨ Deployment complete! Take a peek over at https://a9e1b4fc.nexphoria.pages.dev
+[main 0f2a19d] audit-pass-5: Subscription model & pricing: Audit the subscription/pricing
+ Committer: Chiya Yosopov <chiyayosopov@Chiyas-Mac-mini.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 3 files changed, 290 insertions(+)
+ create mode 100644 audit-logs/pass-5-20260529_024321.md
+ create mode 100644 src/app/compounds/page.tsx
+✅ Pass 5 complete and deployed
+
+--- Pass 5 finished at Fri May 29 02:43:35 EDT 2026 ---
+
+============================================
+PASS 6 / 10 — Fri May 29 02:43:45 EDT 2026
+Topic: Navigation & information architecture: Audit the site navigation, footer links, ...
+============================================
+You're out of extra usage · resets 7:20am (America/New_York)
+
+✅ Build succeeded for pass 6
+Deploying to Cloudflare Pages...
+✨ Success! Uploaded 0 files (781 already uploaded) (0.32 sec)
+
+✨ Uploading _redirects
+🌎 Deploying...
+✨ Deployment complete! Take a peek over at https://9855e551.nexphoria.pages.dev
