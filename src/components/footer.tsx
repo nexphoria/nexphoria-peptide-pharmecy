@@ -35,6 +35,7 @@ const footerNav = {
     { label: "Our Team", href: "/about/team" },
     { label: "Science Advisors", href: "/about/science-advisors" },
     { label: "Science & Testing", href: "/science" },
+    { label: "Research Hub", href: "/resources" },
     { label: "Compound Index", href: "/compounds" },
     { label: "Research Blog", href: "/blog" },
     { label: "Reviews", href: "/reviews" },
@@ -195,10 +196,22 @@ export function Footer() {
                 Nexphoria
               </span>
             </div>
-            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.4)" }}>
+            <p className="text-sm leading-relaxed mb-3" style={{ color: "rgba(255,255,255,0.4)" }}>
               Research-grade peptide compounds for qualified professionals.
               Manufactured under cGMP standards.
             </p>
+            <div className="space-y-1">
+              <p className="text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>
+                Nexphoria Research · Cheyenne, WY
+              </p>
+              <a
+                href="mailto:research@nexphoria.com"
+                className="text-xs transition-colors hover:text-white"
+                style={{ color: "rgba(255,255,255,0.3)" }}
+              >
+                research@nexphoria.com
+              </a>
+            </div>
           </div>
 
           {/* Nav columns */}
@@ -232,14 +245,14 @@ export function Footer() {
         {/* Compliance Disclaimer */}
         <div className="mb-10 p-6 rounded border border-white/[0.15] bg-white/[0.03]">
           <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
-            <strong style={{ color: "rgba(255,255,255,0.7)" }}>FOR RESEARCH USE ONLY:</strong> These products are intended for laboratory research use only. They are not drugs, supplements, or intended for human consumption, clinical use, or veterinary applications. By purchasing, you confirm these materials will be used exclusively for in vitro testing and laboratory experimentation. Nexphoria does not condone or encourage any use outside of licensed research settings.
+            <strong style={{ color: "rgba(255,255,255,0.7)" }}>FOR RESEARCH USE ONLY:</strong> All products are sold for research, laboratory, or analytical purposes only. They are not drugs, supplements, or intended for human consumption, clinical use, or veterinary applications. By purchasing, you confirm these materials will be used exclusively for in vitro testing and laboratory experimentation. Nexphoria does not condone or encourage any use outside of licensed research settings.
           </p>
         </div>
 
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>
-            {new Date().getFullYear()} Nexphoria. All products for research use only. Not for human consumption.
+            2026 Nexphoria. All rights reserved.
           </p>
 
           {/* Payment icons */}

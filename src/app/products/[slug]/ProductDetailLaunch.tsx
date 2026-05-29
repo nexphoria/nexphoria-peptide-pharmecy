@@ -37,6 +37,8 @@ import FrequentlyBoughtTogether from "@/components/product/FrequentlyBoughtToget
 import RelatedArticles from "@/components/product/RelatedArticles";
 import { getRelatedArticleSlugs } from "@/lib/product-articles";
 import { hasProductPhoto, getProductImagePath } from "@/lib/product-images";
+import ResearchVideoEmbed from "@/components/product/ResearchVideoEmbed";
+import { PRODUCT_VIDEOS } from "@/lib/product-videos";
 
 interface Props {
   product: Product;
@@ -373,7 +375,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                 <Spec label="CAS Number" value={product.casNumber} mono />
                 <Spec label="Molecular Weight" value={product.molecularWeight} />
-                <Spec label="Purity (HPLC)" value={product.purity} />
+                <Spec label="Purity (HPLC)" value={coa.purity} />
                 <Spec label="Appearance" value={product.appearance} />
                 <div className="col-span-2">
                   <SpecInner label="Molecular Formula" value={product.formula} mono />
@@ -505,6 +507,36 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                   </div>
                 </Link>
               ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Research Overview Video */}
+      {PRODUCT_VIDEOS[product.slug] && (
+        <section className="py-14" style={{ backgroundColor: "#111111" }}>
+          <div className="container-nex">
+            <div className="max-w-4xl mx-auto">
+              <div className="flex items-center gap-3 mb-6">
+                <div
+                  className="w-px h-6 flex-shrink-0"
+                  style={{ backgroundColor: "#d4af37" }}
+                />
+                <p
+                  className="text-[11px] uppercase tracking-widest font-semibold"
+                  style={{ color: "#d4af37" }}
+                >
+                  Research Overview
+                </p>
+              </div>
+              <h2 className="text-2xl font-medium tracking-tight mb-2 text-white">
+                Video: Research Background
+              </h2>
+              <p className="text-sm mb-8" style={{ color: "#999" }}>
+                Educational content from independent researchers and scientists.
+                For research context only — not medical advice.
+              </p>
+              <ResearchVideoEmbed video={PRODUCT_VIDEOS[product.slug]} />
             </div>
           </div>
         </section>

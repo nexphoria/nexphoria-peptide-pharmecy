@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ShoppingCart, Shield, FlaskConical, Truck, RefreshCw, Info, ChevronDown, ChevronUp } from "lucide-react";
+import { ShoppingCart, Shield, FlaskConical, Truck, RefreshCw } from "lucide-react";
 import { useCart } from "@/lib/cart";
 import { Product, ProductDosage } from "@/lib/products";
 
@@ -15,17 +15,13 @@ interface BuyBoxProps {
 
 type PurchaseMode = 'one-time' | 'subscribe';
 
-// Subscription tiers: months → discount
-const SUBSCRIPTION_OPTIONS = [
-  { months: 3, label: "3-Month Supply", discount: 0.08, note: "Ships monthly — 3 shipments" },
-  { months: 6, label: "6-Month Supply", discount: 0.12, note: "Ships monthly — 6 shipments" },
-] as const;
-
 const VOLUME_OPTIONS = [
-  { qty: 1, label: "Single", discount: 0 },
+  { qty: 1, label: "1 Vial", discount: 0 },
   { qty: 3, label: "Research Kit", discount: 0.05 },
   { qty: 6, label: "Lab Protocol", discount: 0.10 },
 ] as const;
+
+const SUBSCRIBE_DISCOUNT = 0.05;
 
 export default function BuyBox({
   product,
@@ -43,9 +39,7 @@ export default function BuyBox({
     product.dosages?.[0] || undefined
   );
   const [purchaseMode, setPurchaseMode] = useState<PurchaseMode>('one-time');
-  const [selectedSubscription, setSelectedSubscription] = useState<(typeof SUBSCRIPTION_OPTIONS)[number]>(SUBSCRIPTION_OPTIONS[0]);
   const [selectedVolume, setSelectedVolume] = useState<(typeof VOLUME_OPTIONS)[number]>(VOLUME_OPTIONS[0]);
-  const [showSubscriptionInfo, setShowSubscriptionInfo] = useState(false);
 
   const handleDosageChange = (d: ProductDosage | undefined) => {
     setSelectedDosage(d);
@@ -59,10 +53,10 @@ export default function BuyBox({
 
   const basePrice = getBasePrice();
 
-  // One-time pricing uses volume discount
+  // Subscribe: 5% off the unit price. Volume: 5%/10% off.
   const volumeDiscount = purchaseMode === 'one-time' ? selectedVolume.discount : 0;
-  const subscribeDiscount = purchaseMode === 'subscribe' ? selectedSubscription.discount : 0;
-  const effectiveDiscount = volumeDiscount + subscribeDiscount;
+  const subscribeDiscount = purchaseMode === 'subscribe' ? SUBSCRIBE_DISCOUNT : 0;
+  const effectiveDiscount = purchaseMode === 'subscribe' ? subscribeDiscount : volumeDiscount;
 
   const unitPrice = effectiveDiscount > 0
     ? +(basePrice * (1 - effectiveDiscount)).toFixed(2)
@@ -70,20 +64,21 @@ export default function BuyBox({
 
   const qty = purchaseMode === 'one-time' ? selectedVolume.qty : 1;
   const totalPrice = +(unitPrice * qty).toFixed(2);
-  const savingsAmount = purchaseMode === 'subscribe'
-    ? +((basePrice - unitPrice)).toFixed(2)
-    : selectedVolume.discount > 0
-      ? +((basePrice - unitPrice) * qty).toFixed(2)
-      : 0;
+  const savingsAmount = effectiveDiscount > 0
+    ? +((basePrice - unitPrice) * qty).toFixed(2)
+    : 0;
+
+  const monthlyAutoShipPrice = +(basePrice * (1 - SUBSCRIBE_DISCOUNT)).toFixed(2);
+  const monthlyAutoShipSavings = +(basePrice - monthlyAutoShipPrice).toFixed(2);
 
   const handleAddToOrder = () => {
-    const subscriptionMonths = purchaseMode === 'subscribe' ? selectedSubscription.months : 1;
     if (purchaseMode === 'one-time') {
       for (let i = 0; i < selectedVolume.qty; i++) {
         addItem(product, selectedFormat, selectedDosage, 1);
       }
     } else {
-      addItem(product, selectedFormat, selectedDosage, subscriptionMonths);
+      // subscription: passes subscriptionMonths=3 to signal recurring
+      addItem(product, selectedFormat, selectedDosage, 3);
     }
     openDrawer();
   };
@@ -97,12 +92,14 @@ export default function BuyBox({
             ${unitPrice}
           </span>
           <span className="text-sm" style={{ color: "#8A8075" }}>
-            per vial{purchaseMode === 'subscribe' ? ' / month' : qty > 1 ? ` · ${qty} vials` : ''}
+            {purchaseMode === 'subscribe'
+              ? 'per vial / month'
+              : qty > 1 ? `per vial · ${qty} vials` : 'per vial'}
           </span>
         </div>
         {savingsAmount > 0 && (
           <p className="text-sm font-medium mt-1" style={{ color: "#A4B08A" }}>
-            You save ${savingsAmount.toFixed(2)}{purchaseMode === 'subscribe' ? ' per shipment' : ''}
+            Auto-ship savings: ${savingsAmount.toFixed(2)}{purchaseMode === 'subscribe' ? '/month' : ''}
           </p>
         )}
       </div>
@@ -193,7 +190,7 @@ export default function BuyBox({
             }}
             aria-pressed={purchaseMode === 'subscribe'}
           >
-            Subscribe &amp; Save
+            Subscribe
             <span
               className="ml-1.5 text-[10px] font-bold px-1 py-0.5 rounded"
               style={{
@@ -201,7 +198,7 @@ export default function BuyBox({
                 color: purchaseMode === 'subscribe' ? '#010101' : '#4A5E3A',
               }}
             >
-              {Math.round(SUBSCRIPTION_OPTIONS[0].discount * 100)}%+
+              5% off
             </span>
           </button>
         </div>
@@ -219,6 +216,10 @@ export default function BuyBox({
               const optUnitPrice = opt.discount > 0
                 ? +(basePrice * (1 - opt.discount)).toFixed(2)
                 : basePrice;
+              const optTotal = +(optUnitPrice * opt.qty).toFixed(2);
+              const optSavings = opt.discount > 0
+                ? +((basePrice - optUnitPrice) * opt.qty).toFixed(2)
+                : 0;
               return (
                 <button
                   key={opt.qty}
@@ -237,16 +238,16 @@ export default function BuyBox({
                     {opt.label}
                   </div>
                   <div className="text-[11px] mt-0.5" style={{ color: "#8A8075" }}>
-                    {opt.qty} vial{opt.qty > 1 ? 's' : ''}
-                    {opt.discount > 0 && (
-                      <span className="ml-1 font-semibold" style={{ color: "#A4B08A" }}>
-                        −{Math.round(opt.discount * 100)}%
-                      </span>
-                    )}
+                    {opt.qty > 1 ? `${opt.qty} × $${optUnitPrice}` : `$${optUnitPrice}`}
                   </div>
-                  {opt.discount > 0 && (
-                    <div className="text-[10px] mt-0.5" style={{ color: "#888" }}>
-                      ${optUnitPrice}/vial
+                  {optSavings > 0 && (
+                    <div className="text-[10px] mt-0.5 font-semibold" style={{ color: "#A4B08A" }}>
+                      Save ${optSavings}
+                    </div>
+                  )}
+                  {opt.qty > 1 && (
+                    <div className="text-[10px] mt-0.5 font-bold" style={{ color: "#010101" }}>
+                      ${optTotal}
                     </div>
                   )}
                 </button>
@@ -256,117 +257,46 @@ export default function BuyBox({
         </div>
       )}
 
-      {/* SUBSCRIBE: Subscription options */}
+      {/* SUBSCRIBE: Auto-ship details */}
       {purchaseMode === 'subscribe' && (
         <div className="mb-5">
-          <div className="flex items-center justify-between mb-2">
-            <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: "#8A8075" }}>
-              Subscription Length
-            </p>
-            <button
-              onClick={() => setShowSubscriptionInfo(!showSubscriptionInfo)}
-              className="flex items-center gap-1 text-xs transition-opacity hover:opacity-70"
-              style={{ color: "#A4B08A" }}
-              aria-expanded={showSubscriptionInfo}
-            >
-              <Info className="w-3.5 h-3.5" />
-              How it works
-              {showSubscriptionInfo ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
-            </button>
-          </div>
-
-          {/* How it works expandable */}
-          {showSubscriptionInfo && (
-            <div
-              className="mb-3 p-4 rounded-lg border text-xs leading-relaxed space-y-2"
-              style={{ borderColor: "#D4DCC8", backgroundColor: "#F5F9F2", color: "#555" }}
-            >
-              <p className="font-semibold" style={{ color: "#3A3A3A" }}>Subscription details:</p>
-              <ul className="space-y-1.5">
-                <li className="flex items-start gap-2">
-                  <RefreshCw className="w-3 h-3 mt-0.5 flex-shrink-0" style={{ color: "#A4B08A" }} />
-                  <span>One vial ships every 30 days to your address</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Shield className="w-3 h-3 mt-0.5 flex-shrink-0" style={{ color: "#A4B08A" }} />
-                  <span>Cancel or pause anytime — no lock-in period</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <FlaskConical className="w-3 h-3 mt-0.5 flex-shrink-0" style={{ color: "#A4B08A" }} />
-                  <span>Each shipment includes a fresh COA for the current batch</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Truck className="w-3 h-3 mt-0.5 flex-shrink-0" style={{ color: "#A4B08A" }} />
-                  <span>Cold-chain shipped with temperature monitoring on every delivery</span>
-                </li>
-              </ul>
-            </div>
-          )}
-
-          <div className="space-y-2">
-            {SUBSCRIPTION_OPTIONS.map((opt) => {
-              const active = selectedSubscription.months === opt.months;
-              const subUnitPrice = +(basePrice * (1 - opt.discount)).toFixed(2);
-              const totalCost = +(subUnitPrice * opt.months).toFixed(2);
-              const totalSaved = +((basePrice - subUnitPrice) * opt.months).toFixed(2);
-              return (
-                <button
-                  key={opt.months}
-                  onClick={() => setSelectedSubscription(opt)}
-                  className="w-full flex items-center justify-between p-3.5 rounded-lg border transition-all text-left"
-                  style={{
-                    borderColor: active ? '#A4B08A' : '#ECEAE4',
-                    backgroundColor: active ? '#A4B08A12' : 'transparent',
-                  }}
-                  aria-pressed={active}
-                >
-                  <div>
-                    <div
-                      className="text-sm font-semibold mb-0.5"
-                      style={{ color: active ? '#1A1A1A' : '#555' }}
-                    >
-                      {opt.label}
-                    </div>
-                    <div className="text-[11px]" style={{ color: "#8A8075" }}>
-                      {opt.note}
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-sm font-bold" style={{ color: "#010101" }}>
-                      ${subUnitPrice}<span className="text-xs font-normal text-[#888]">/mo</span>
-                    </div>
-                    <div className="text-[10px]" style={{ color: "#A4B08A" }}>
-                      Save ${totalSaved}
-                    </div>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Subscription summary */}
           <div
-            className="mt-3 p-3 rounded-lg text-xs space-y-1"
-            style={{ backgroundColor: "#F5F9F2", border: "1px solid #D4DCC8" }}
+            className="p-4 rounded-lg border space-y-3"
+            style={{ borderColor: "#D4DCC8", backgroundColor: "#F5F9F2" }}
           >
-            <div className="flex justify-between">
-              <span style={{ color: "#666" }}>Per shipment</span>
-              <span className="font-semibold" style={{ color: "#1A1A1A" }}>${unitPrice}</span>
+            <div className="flex items-start gap-2.5">
+              <RefreshCw className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" style={{ color: "#A4B08A" }} />
+              <span className="text-xs" style={{ color: "#555" }}>
+                Auto-ships every 30 days — cancel, skip, or pause anytime
+              </span>
             </div>
-            <div className="flex justify-between">
-              <span style={{ color: "#666" }}>Total cycle cost</span>
-              <span className="font-semibold" style={{ color: "#1A1A1A" }}>
-                ${(unitPrice * selectedSubscription.months).toFixed(2)}
+            <div className="flex items-start gap-2.5">
+              <Shield className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" style={{ color: "#A4B08A" }} />
+              <span className="text-xs" style={{ color: "#555" }}>
+                No lock-in period. Manage your subscription from your account.
+              </span>
+            </div>
+            <div className="flex items-start gap-2.5">
+              <FlaskConical className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" style={{ color: "#A4B08A" }} />
+              <span className="text-xs" style={{ color: "#555" }}>
+                1 vial + current-batch COA + cold-chain packaging, every shipment
               </span>
             </div>
             <div
-              className="flex justify-between pt-1 border-t"
+              className="pt-3 border-t flex items-center justify-between"
               style={{ borderColor: "#C8D9C0" }}
             >
-              <span style={{ color: "#4A5E3A" }}>Total saved vs single</span>
-              <span className="font-bold" style={{ color: "#4A5E3A" }}>
-                ${((basePrice - unitPrice) * selectedSubscription.months).toFixed(2)}
+              <span className="text-xs font-semibold" style={{ color: "#3A3A3A" }}>
+                Auto-ship price
               </span>
+              <div className="text-right">
+                <span className="text-sm font-bold" style={{ color: "#010101" }}>
+                  ${monthlyAutoShipPrice}/month
+                </span>
+                <div className="text-[10px]" style={{ color: "#A4B08A" }}>
+                  Save ${monthlyAutoShipSavings}/month vs single order
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -389,8 +319,7 @@ export default function BuyBox({
         </div>
         {purchaseMode === 'subscribe' && (
           <p className="text-[11px] mt-1" style={{ color: "#8A8075" }}>
-            Then ${unitPrice}/month for {selectedSubscription.months - 1} more shipment{selectedSubscription.months > 2 ? 's' : ''}.
-            Cancel anytime.
+            Then ${monthlyAutoShipPrice}/month. Cancel anytime.
           </p>
         )}
       </div>
@@ -407,7 +336,7 @@ export default function BuyBox({
         aria-label={`Add ${product.name} to order`}
       >
         <ShoppingCart className="w-4 h-4" aria-hidden="true" />
-        {purchaseMode === 'subscribe' ? 'Start Subscription' : 'Add to Order'}
+        {purchaseMode === 'subscribe' ? 'Start Auto-Ship' : 'Add to Order'}
       </button>
 
       {/* Compact trust strip */}

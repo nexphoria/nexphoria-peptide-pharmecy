@@ -16,13 +16,13 @@ interface ProductCardProps {
   compareDisabled?: boolean;
 }
 
-/** Deterministic rating 4.80–4.95 from slug hash */
+/** Deterministic rating 4.70–5.00 from slug hash */
 function getProductRating(slug: string): number {
   let hash = 0;
   for (let i = 0; i < slug.length; i++) {
     hash = (hash * 31 + slug.charCodeAt(i)) & 0x7fffffff;
   }
-  return 4.80 + (hash % 16) / 100;
+  return 4.70 + (hash % 31) / 100;
 }
 
 function StarRating({ rating }: { rating: number }) {
@@ -140,10 +140,11 @@ export default function ProductCard({
           <div className="flex items-center justify-between pt-3 border-t border-[#ECEAE4]">
             <div>
               <span className="text-base font-bold">
-                {product.dosages && product.dosages.length > 1 ? "From " : ""}
                 ${basePrice}
               </span>
-              <span className="text-xs text-[#999] ml-1">{product.size}</span>
+              <span className="text-xs text-[#999] ml-1">
+                {product.dosages && product.dosages.length > 1 ? product.dosages[0].size : product.size}
+              </span>
             </div>
             <button
               onClick={handleAddToOrder}

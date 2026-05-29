@@ -53,9 +53,9 @@ export default function CheckoutPage() {
   const { items, getTotalPrice, getTotalItems } = useCart();
   const [mounted, setMounted] = useState(false);
 
-  const [formData, setFormData] = useState({
-    email: "",
-  });
+  const [formData, setFormData] = useState({ email: "" });
+  const [promoCode, setPromoCode] = useState("");
+  const [promoApplied, setPromoApplied] = useState(false);
 
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -75,11 +75,17 @@ export default function CheckoutPage() {
   const totalItems = getTotalItems();
   const hasSubscription = items.some((item) => item.subscriptionMonths > 1);
 
+  const handlePromoApply = () => {
+    if (promoCode.trim()) setPromoApplied(true);
+  };
+
   // Included supplies by order value (matches CartDrawer thresholds)
   const includedSupplies: string[] = [];
   if (totalPrice >= 100) includedSupplies.push("Bacteriostatic water");
-  if (totalPrice >= 150) includedSupplies.push("Free shipping");
-  if (totalPrice >= 250) includedSupplies.push("Cold-pack");
+  if (totalPrice >= 200) includedSupplies.push("Free shipping");
+  if (totalPrice >= 300) includedSupplies.push("Cold-pack");
+
+  const shipping = totalPrice >= 200 ? 0 : 15;
 
   const handleCheckout = async () => {
     if (!formData.email) {
@@ -315,6 +321,29 @@ export default function CheckoutPage() {
                   </div>
                 )}
 
+                {/* Promo code */}
+                <div className="mb-5">
+                  <div className="flex gap-2">
+                    <input
+                      type="text"
+                      value={promoCode}
+                      onChange={(e) => setPromoCode(e.target.value)}
+                      placeholder="Promo code"
+                      className="nex-input flex-1"
+                      disabled={promoApplied}
+                    />
+                    <button
+                      type="button"
+                      onClick={handlePromoApply}
+                      disabled={promoApplied || !promoCode.trim()}
+                      className="px-4 py-2 text-sm font-medium rounded-lg border transition-colors disabled:opacity-40"
+                      style={{ borderColor: "#ECEAE4", color: "#555" }}
+                    >
+                      {promoApplied ? "Applied" : "Apply"}
+                    </button>
+                  </div>
+                </div>
+
                 {/* Totals */}
                 <div className="space-y-2 mb-6">
                   <div className="flex justify-between text-sm">
@@ -323,8 +352,8 @@ export default function CheckoutPage() {
                   </div>
                   <div className="flex justify-between text-sm">
                     <span style={{ color: "#8A8075" }}>Shipping</span>
-                    <span style={{ color: "#3A3A3A" }}>
-                      {totalPrice >= 150 ? "Free" : "Calculated at payment"}
+                    <span style={{ color: shipping === 0 ? "#A4B08A" : "#3A3A3A" }}>
+                      {shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`}
                     </span>
                   </div>
                   <div
@@ -335,10 +364,10 @@ export default function CheckoutPage() {
                       {hasSubscription ? "Billed today" : "Total"}
                     </span>
                     <span className="text-xl font-bold" style={{ color: "#010101" }}>
-                      ${totalPrice.toFixed(2)}
+                      ${(totalPrice + shipping).toFixed(2)}
                       {hasSubscription && (
                         <span className="block text-[11px] font-normal text-right" style={{ color: "#8A8075" }}>
-                          then monthly per cycle
+                          then monthly per subscription
                         </span>
                       )}
                     </span>
@@ -346,10 +375,24 @@ export default function CheckoutPage() {
                 </div>
 
                 {/* Trust badges */}
-                <div className="flex justify-center gap-4 text-xs mb-4" style={{ color: "#8A8075" }}>
-                  <span>99.7% Purity</span>
-                  <span>COA Included</span>
-                  <span>Same-Day Ship</span>
+                <div className="grid grid-cols-2 gap-2 mb-5">
+                  {[
+                    "256-bit Encryption",
+                    "30-Day Guarantee",
+                    "Cold-Chain Shipped",
+                    "COA Enclosed",
+                  ].map((badge) => (
+                    <div
+                      key={badge}
+                      className="flex items-center gap-1.5 px-2 py-1.5 rounded text-[11px]"
+                      style={{ backgroundColor: "#F5F3F0", color: "#555" }}
+                    >
+                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                        <path d="M8.5 2.5L3.75 7.5L1.5 5.25" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      {badge}
+                    </div>
+                  ))}
                 </div>
 
                 {/* Error Message */}
@@ -385,7 +428,7 @@ export default function CheckoutPage() {
               {hasSubscription ? "Billed today" : "Total"}
             </p>
             <p className="text-xl font-bold" style={{ color: "#010101" }}>
-              ${totalPrice.toFixed(2)}
+              ${(totalPrice + shipping).toFixed(2)}
             </p>
           </div>
           <button

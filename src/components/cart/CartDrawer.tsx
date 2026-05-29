@@ -7,11 +7,15 @@ import { X, Plus, Minus, ShoppingBag, ArrowRight, RefreshCw } from "lucide-react
 import { useCart, getItemUnitPrice, getCadenceLabel } from "@/lib/cart";
 import { products, getRelatedProducts } from "@/lib/products";
 import { getProductImagePath, hasProductPhoto } from "@/lib/product-images";
+import ProductVial from "@/components/ProductVial";
 import Image from "next/image";
 
 function ProductThumb({
   slug,
   name,
+  dosage,
+  category,
+  accentColor,
   size = 48,
 }: {
   slug: string;
@@ -34,14 +38,13 @@ function ProductThumb({
   }
 
   return (
-    <div
-      className="w-full h-full flex items-center justify-center rounded"
-      style={{ backgroundColor: "#F0EDE7" }}
-    >
-      <span className="text-[9px] font-semibold text-[#A4B08A] text-center leading-tight px-1">
-        {name}
-      </span>
-    </div>
+    <ProductVial
+      productName={name}
+      dosage={dosage || ""}
+      category={category || ""}
+      accentColor={accentColor}
+      size="thumbnail"
+    />
   );
 }
 
@@ -68,8 +71,8 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
   // Free gift thresholds
   const thresholds = [
     { amount: 100, label: "Free recon water" },
-    { amount: 150, label: "Free shipping" },
-    { amount: 250, label: "Free cold-pack" },
+    { amount: 200, label: "Free shipping" },
+    { amount: 300, label: "Free cold-pack" },
   ];
 
   // Find next threshold
