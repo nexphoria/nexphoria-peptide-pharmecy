@@ -53,32 +53,20 @@ export default function BuyBox({
 
   const basePrice = getBasePrice();
 
-  const volumeDiscount = purchaseMode === 'one-time' ? selectedVolume.discount : 0;
-  const subscribeDiscount = purchaseMode === 'subscribe' ? SUBSCRIBE_DISCOUNT : 0;
-  const effectiveDiscount = purchaseMode === 'subscribe' ? subscribeDiscount : volumeDiscount;
+  const volumeDiscount = selectedVolume.discount;
+  const effectiveDiscount = volumeDiscount;
 
   const unitPrice = effectiveDiscount > 0
     ? +(basePrice * (1 - effectiveDiscount)).toFixed(2)
     : basePrice;
 
-  const qty = purchaseMode === 'one-time' ? selectedVolume.qty : 1;
+  const qty = selectedVolume.qty;
   const totalPrice = +(unitPrice * qty).toFixed(2);
-  const savingsAmount = effectiveDiscount > 0
-    ? +((basePrice - unitPrice) * qty).toFixed(2)
-    : 0;
-
-  const monthlyAutoShipPrice = +(basePrice * (1 - SUBSCRIBE_DISCOUNT)).toFixed(2);
-  const monthlyAutoShipSavings = +(basePrice - monthlyAutoShipPrice).toFixed(2);
 
   const handleAddToOrder = () => {
-    if (purchaseMode === 'one-time') {
-      // One-time: apply volume discount
-      for (let i = 0; i < selectedVolume.qty; i++) {
-        addItem(product, selectedFormat, selectedDosage, 1, volumeDiscount);
-      }
-    } else {
-      // Subscribe: apply 5% subscription discount
-      addItem(product, selectedFormat, selectedDosage, 3, SUBSCRIBE_DISCOUNT);
+    // Add items with volume discount applied
+    for (let i = 0; i < selectedVolume.qty; i++) {
+      addItem(product, selectedFormat, selectedDosage, 1, volumeDiscount);
     }
     openDrawer();
   };
@@ -88,8 +76,8 @@ export default function BuyBox({
       {/* Price — with thin rules above/below (Niance style) */}
       <div style={{ borderTop: "1px solid #E5E5E5", paddingTop: "1.25rem", marginBottom: "1.25rem" }}>
         <div className="flex items-baseline gap-2">
-          <span className="text-3xl font-light" style={{ color: "#B8A44C", letterSpacing: "-0.02em" }}>
-            ${unitPrice}
+          <span className="text-3xl font-light" style={{ color: "#C4A265", letterSpacing: "-0.02em" }}>
+            ${unitPrice.toFixed(2)}
           </span>
           <span className="text-sm" style={{ color: "#888" }}>
             {purchaseMode === 'subscribe'
@@ -97,11 +85,6 @@ export default function BuyBox({
               : qty > 1 ? `per vial · ${qty} vials` : 'per vial'}
           </span>
         </div>
-        {savingsAmount > 0 && (
-          <p className="text-sm mt-1" style={{ color: "#B8A44C" }}>
-            Saving ${savingsAmount.toFixed(2)}{purchaseMode === 'subscribe' ? '/month' : ''}
-          </p>
-        )}
       </div>
       <div style={{ borderBottom: "1px solid #E5E5E5", marginBottom: "1.5rem" }} />
 
@@ -124,7 +107,7 @@ export default function BuyBox({
                   className="flex-1 py-2.5 px-3 text-sm text-center transition-all duration-300"
                   style={{
                     borderRadius: "8px",
-                    border: active ? "1px solid #B8A44C" : "1px solid #E5E5E5",
+                    border: active ? "1px solid #C4A265" : "1px solid #E5E5E5",
                     backgroundColor: active ? "rgba(184,164,76,0.06)" : "transparent",
                     fontWeight: active ? 500 : 400,
                     color: active ? "#1A1A1A" : "#666",
@@ -159,7 +142,7 @@ export default function BuyBox({
                   className="py-2 px-3 text-sm text-center transition-all duration-300"
                   style={{
                     borderRadius: "8px",
-                    border: active ? "1px solid #B8A44C" : "1px solid #E5E5E5",
+                    border: active ? "1px solid #C4A265" : "1px solid #E5E5E5",
                     backgroundColor: active ? "rgba(184,164,76,0.06)" : "transparent",
                     fontWeight: active ? 500 : 400,
                     color: active ? "#1A1A1A" : "#666",
@@ -174,160 +157,53 @@ export default function BuyBox({
         </div>
       )}
 
-      {/* Purchase Mode Toggle — Niance pill style */}
+
+      {/* Volume options */}
       <div className="mb-5">
-        <div className="flex gap-2">
-          {/* One-Time pill */}
-          <button
-            onClick={() => setPurchaseMode('one-time')}
-            className="flex-1 py-3 px-4 text-sm text-center transition-all duration-300"
-            style={{
-              borderRadius: "999px",
-              border: purchaseMode === 'one-time' ? "1px solid #1A1A1A" : "1px solid #E5E5E5",
-              backgroundColor: purchaseMode === 'one-time' ? "#1A1A1A" : "transparent",
-              color: purchaseMode === 'one-time' ? "#F9F9F9" : "#666",
-              fontWeight: 400,
-              letterSpacing: "0.02em",
-            }}
-            aria-pressed={purchaseMode === 'one-time'}
-          >
-            One-Time
-          </button>
-          {/* Subscribe pill */}
-          <button
-            onClick={() => setPurchaseMode('subscribe')}
-            className="flex-1 py-3 px-4 text-sm text-center transition-all duration-300 relative"
-            style={{
-              borderRadius: "999px",
-              border: purchaseMode === 'subscribe' ? "1px solid #B8A44C" : "1px solid #E5E5E5",
-              backgroundColor: purchaseMode === 'subscribe' ? "rgba(184,164,76,0.08)" : "transparent",
-              color: purchaseMode === 'subscribe' ? "#B8A44C" : "#666",
-              fontWeight: 400,
-              letterSpacing: "0.02em",
-            }}
-            aria-pressed={purchaseMode === 'subscribe'}
-          >
-            Subscribe
-            <span
-              className="ml-1.5 text-[10px] font-medium px-1.5 py-0.5"
-              style={{
-                borderRadius: "999px",
-                backgroundColor: purchaseMode === 'subscribe' ? "#B8A44C" : "#E5E5E5",
-                color: purchaseMode === 'subscribe' ? "#1A1A1A" : "#888",
-              }}
-            >
-              5% off
-            </span>
-          </button>
-        </div>
-        {purchaseMode === 'subscribe' && (
-          <p className="text-[11px] mt-2 text-center" style={{ color: "#B8A44C", letterSpacing: "0.04em" }}>
-            Ships monthly — cancel anytime
-          </p>
-        )}
-      </div>
-
-      {/* ONE-TIME: Volume options */}
-      {purchaseMode === 'one-time' && (
-        <div className="mb-5">
-          <p
-            className="text-[10px] uppercase mb-2.5"
-            style={{ letterSpacing: "0.12em", color: "#888", fontWeight: 500 }}
-          >
-            Quantity
-          </p>
-          <div className="grid grid-cols-3 gap-2">
-            {VOLUME_OPTIONS.map((opt) => {
-              const active = selectedVolume.qty === opt.qty;
-              const optUnitPrice = opt.discount > 0
-                ? +(basePrice * (1 - opt.discount)).toFixed(2)
-                : basePrice;
-              const optTotal = +(optUnitPrice * opt.qty).toFixed(2);
-              const optSavings = opt.discount > 0
-                ? +((basePrice - optUnitPrice) * opt.qty).toFixed(2)
-                : 0;
-              return (
-                <button
-                  key={opt.qty}
-                  onClick={() => setSelectedVolume(opt)}
-                  className="py-2.5 px-2 text-center transition-all duration-300"
-                  style={{
-                    borderRadius: "8px",
-                    border: active ? "1px solid #B8A44C" : "1px solid #E5E5E5",
-                    backgroundColor: active ? "rgba(184,164,76,0.06)" : "transparent",
-                  }}
-                  aria-pressed={active}
+        <p
+          className="text-[10px] uppercase mb-2.5"
+          style={{ letterSpacing: "0.12em", color: "#888", fontWeight: 500 }}
+        >
+          Quantity
+        </p>
+        <div className="grid grid-cols-3 gap-2">
+          {VOLUME_OPTIONS.map((opt) => {
+            const active = selectedVolume.qty === opt.qty;
+            const optUnitPrice = opt.discount > 0
+              ? +(basePrice * (1 - opt.discount)).toFixed(2)
+              : basePrice;
+            const optTotal = +(optUnitPrice * opt.qty).toFixed(2);
+            return (
+              <button
+                key={opt.qty}
+                onClick={() => setSelectedVolume(opt)}
+                className="py-2.5 px-2 text-center transition-all duration-300"
+                style={{
+                  borderRadius: "8px",
+                  border: active ? "1px solid #C4A265" : "1px solid #E5E5E5",
+                  backgroundColor: active ? "rgba(196,162,101,0.06)" : "transparent",
+                }}
+                aria-pressed={active}
+              >
+                <div
+                  className="text-sm"
+                  style={{ color: active ? "#1A1A1A" : "#555", fontWeight: active ? 500 : 400 }}
                 >
-                  <div
-                    className="text-sm"
-                    style={{ color: active ? "#1A1A1A" : "#555", fontWeight: active ? 500 : 400 }}
-                  >
-                    {opt.label}
-                  </div>
-                  <div className="text-[11px] mt-0.5" style={{ color: "#888" }}>
-                    {opt.qty > 1 ? `${opt.qty} × $${optUnitPrice}` : `$${optUnitPrice}`}
-                  </div>
-                  {optSavings > 0 && (
-                    <div className="text-[10px] mt-0.5 font-medium" style={{ color: "#B8A44C" }}>
-                      Save ${optSavings}
-                    </div>
-                  )}
-                  {opt.qty > 1 && (
-                    <div className="text-[10px] mt-0.5 font-medium" style={{ color: "#1A1A1A" }}>
-                      ${optTotal}
-                    </div>
-                  )}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      )}
-
-      {/* SUBSCRIBE: Auto-ship details */}
-      {purchaseMode === 'subscribe' && (
-        <div className="mb-5">
-          <div
-            className="p-4 space-y-3"
-            style={{ border: "1px solid #E5E5E5", borderRadius: "8px", backgroundColor: "#FAFAFA" }}
-          >
-            <div className="flex items-start gap-2.5">
-              <RefreshCw className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" style={{ color: "#B8A44C" }} />
-              <span className="text-xs" style={{ color: "#666" }}>
-                Auto-ships every 30 days — cancel, skip, or pause anytime
-              </span>
-            </div>
-            <div className="flex items-start gap-2.5">
-              <Shield className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" style={{ color: "#B8A44C" }} />
-              <span className="text-xs" style={{ color: "#666" }}>
-                No lock-in period. Manage from your account.
-              </span>
-            </div>
-            <div className="flex items-start gap-2.5">
-              <FlaskConical className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" style={{ color: "#B8A44C" }} />
-              <span className="text-xs" style={{ color: "#666" }}>
-                1 vial + current-batch COA + cold-chain packaging, every shipment
-              </span>
-            </div>
-            <div
-              className="pt-3 flex items-center justify-between"
-              style={{ borderTop: "1px solid #E5E5E5" }}
-            >
-              <span className="text-xs font-medium" style={{ color: "#1A1A1A" }}>
-                Auto-ship price
-              </span>
-              <div className="text-right">
-                <span className="text-sm font-medium" style={{ color: "#B8A44C" }}>
-                  ${monthlyAutoShipPrice}/month
-                </span>
-                <div className="text-[10px]" style={{ color: "#888" }}>
-                  Save ${monthlyAutoShipSavings}/month
+                  {opt.label}
                 </div>
-              </div>
-            </div>
-          </div>
+                <div className="text-[11px] mt-0.5" style={{ color: "#888" }}>
+                  {opt.qty > 1 ? `${opt.qty} × $${optUnitPrice.toFixed(2)}` : `$${optUnitPrice.toFixed(2)}`}
+                </div>
+                {opt.qty > 1 && (
+                  <div className="text-[10px] mt-0.5 font-medium" style={{ color: "#1A1A1A" }}>
+                    ${optTotal.toFixed(2)}
+                  </div>
+                )}
+              </button>
+            );
+          })}
         </div>
-      )}
+      </div>
 
       {/* Total */}
       <div
@@ -336,19 +212,12 @@ export default function BuyBox({
       >
         <div className="flex items-center justify-between">
           <span className="text-sm" style={{ color: "#666" }}>
-            {purchaseMode === 'subscribe'
-              ? 'First shipment today'
-              : qty > 1 ? `${qty} vials — total` : 'Total'}
+            {qty > 1 ? `${qty} vials — total` : 'Total'}
           </span>
           <span className="text-2xl font-light" style={{ color: "#1A1A1A", letterSpacing: "-0.02em" }}>
             ${totalPrice.toFixed(2)}
           </span>
         </div>
-        {purchaseMode === 'subscribe' && (
-          <p className="text-[11px] mt-1" style={{ color: "#888" }}>
-            Then ${monthlyAutoShipPrice}/month. Cancel anytime.
-          </p>
-        )}
       </div>
 
       {/* Add to Order button */}
@@ -373,21 +242,26 @@ export default function BuyBox({
         aria-label={`Add ${product.name} to order`}
       >
         <ShoppingCart className="w-4 h-4" aria-hidden="true" />
-        {purchaseMode === 'subscribe' ? 'Start Auto-Ship' : 'Add to Order'}
+        Add to Order
       </button>
+
+      {/* Quiet subscribe option */}
+      <p className="text-xs text-center mt-3" style={{ color: "#888" }}>
+        Available as recurring research supply →
+      </p>
 
       {/* Compact trust strip */}
       <div className="mt-4 flex items-center justify-center gap-4 text-[11px]" style={{ color: "#888" }}>
         <div className="flex items-center gap-1.5">
-          <FlaskConical className="w-3.5 h-3.5" style={{ color: "#B8A44C" }} aria-hidden="true" />
+          <FlaskConical className="w-3.5 h-3.5" style={{ color: "#C4A265" }} aria-hidden="true" />
           <span>{product.purity}</span>
         </div>
         <div className="flex items-center gap-1.5">
-          <Shield className="w-3.5 h-3.5" style={{ color: "#B8A44C" }} aria-hidden="true" />
+          <Shield className="w-3.5 h-3.5" style={{ color: "#C4A265" }} aria-hidden="true" />
           <span>HPLC Verified</span>
         </div>
         <div className="flex items-center gap-1.5">
-          <Truck className="w-3.5 h-3.5" style={{ color: "#B8A44C" }} aria-hidden="true" />
+          <Truck className="w-3.5 h-3.5" style={{ color: "#C4A265" }} aria-hidden="true" />
           <span>Cold-Chain</span>
         </div>
       </div>

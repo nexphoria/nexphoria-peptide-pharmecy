@@ -30,8 +30,8 @@ const RESEARCH_CATEGORIES = [
     slug: "Recovery & Healing",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M14 4v20M4 14h20" stroke="#C9A96E" strokeWidth="1.8" strokeLinecap="round"/>
-        <circle cx="14" cy="14" r="12" stroke="#C9A96E" strokeWidth="1.4"/>
+        <path d="M14 4v20M4 14h20" stroke="#C4A265" strokeWidth="1.8" strokeLinecap="round"/>
+        <circle cx="14" cy="14" r="12" stroke="#C4A265" strokeWidth="1.4"/>
       </svg>
     ),
   },
@@ -40,7 +40,7 @@ const RESEARCH_CATEGORIES = [
     slug: "Weight Management",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M6 22l4-8 4 4 4-12 4 6" stroke="#C9A96E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M6 22l4-8 4 4 4-12 4 6" stroke="#C4A265" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
   },
@@ -49,10 +49,10 @@ const RESEARCH_CATEGORIES = [
     slug: "Cognitive",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <ellipse cx="14" cy="13" rx="9" ry="8" stroke="#C9A96E" strokeWidth="1.5"/>
-        <path d="M9 10c0-2.761 2.239-5 5-5" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M10 18c-.667 1.333-1 2.5-.667 3.5" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M18 18c.667 1.333 1 2.5.667 3.5" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round"/>
+        <ellipse cx="14" cy="13" rx="9" ry="8" stroke="#C4A265" strokeWidth="1.5"/>
+        <path d="M9 10c0-2.761 2.239-5 5-5" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M10 18c-.667 1.333-1 2.5-.667 3.5" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M18 18c.667 1.333 1 2.5.667 3.5" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round"/>
       </svg>
     ),
   },
@@ -61,8 +61,8 @@ const RESEARCH_CATEGORIES = [
     slug: "Immune Support",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M14 4l7 4v6c0 5-3.5 9-7 10C10.5 23 7 19 7 14V8l7-4z" stroke="#C9A96E" strokeWidth="1.5"/>
-        <path d="M10.5 14l2.5 2.5 5-5" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M14 4l7 4v6c0 5-3.5 9-7 10C10.5 23 7 19 7 14V8l7-4z" stroke="#C4A265" strokeWidth="1.5"/>
+        <path d="M10.5 14l2.5 2.5 5-5" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
   },
@@ -71,8 +71,8 @@ const RESEARCH_CATEGORIES = [
     slug: "Longevity",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <circle cx="14" cy="14" r="10" stroke="#C9A96E" strokeWidth="1.5"/>
-        <path d="M14 8v6l4 2" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="14" cy="14" r="10" stroke="#C4A265" strokeWidth="1.5"/>
+        <path d="M14 8v6l4 2" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
   },
@@ -81,8 +81,8 @@ const RESEARCH_CATEGORIES = [
     slug: "Growth Hormone",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M7 22V12l7-8 7 8v10" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <rect x="11" y="16" width="6" height="6" rx="0.5" stroke="#C9A96E" strokeWidth="1.5"/>
+        <path d="M7 22V12l7-8 7 8v10" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <rect x="11" y="16" width="6" height="6" rx="0.5" stroke="#C4A265" strokeWidth="1.5"/>
       </svg>
     ),
   },
@@ -91,10 +91,10 @@ const RESEARCH_CATEGORIES = [
     slug: "Anti-Aging",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M7 16c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M11 20c0-1.657 1.343-3 3-3s3 1.343 3 3" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M14 5v2" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M6 9l1.5 1.5M20.5 10.5L22 9" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M7 16c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M11 20c0-1.657 1.343-3 3-3s3 1.343 3 3" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M14 5v2" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M6 9l1.5 1.5M20.5 10.5L22 9" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round"/>
       </svg>
     ),
   },
@@ -103,8 +103,8 @@ const RESEARCH_CATEGORIES = [
     slug: "Dermatological",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M8 22c0-5.523 2.686-9.333 6-9.333S20 16.477 20 22" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M12 12c0-2.5 1.5-5.5 2-8 .5 2.5 2 5.5 2 8" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M8 22c0-5.523 2.686-9.333 6-9.333S20 16.477 20 22" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M12 12c0-2.5 1.5-5.5 2-8 .5 2.5 2 5.5 2 8" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
   },
@@ -124,7 +124,7 @@ export default function HomePage() {
       {/* ─── HERO ─── */}
       <section
         className="relative overflow-hidden"
-        style={{ backgroundColor: "#FAF8F5", minHeight: "100vh" }}
+        style={{ backgroundColor: "#FAF6F0", minHeight: "100vh" }}
       >
 
         {/* ── DESKTOP ── */}
@@ -141,7 +141,7 @@ export default function HomePage() {
               top: 0,
               bottom: 0,
               width: "14%",
-              background: "linear-gradient(to right, #FAF8F5 0%, transparent 100%)",
+              background: "linear-gradient(to right, #FAF6F0 0%, transparent 100%)",
               zIndex: 3,
               pointerEvents: "none",
             }}
@@ -216,7 +216,7 @@ export default function HomePage() {
                 fontWeight: 500,
                 textTransform: "uppercase",
                 letterSpacing: "0.18em",
-                color: "#C9A96E",
+                color: "#C4A265",
                 marginBottom: "2rem",
               }}
             >
@@ -255,21 +255,7 @@ export default function HomePage() {
             <div className="hero-cta-animate flex items-center gap-5">
               <Link
                 href="/products"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.625rem",
-                  fontSize: "0.8125rem",
-                  fontWeight: 600,
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  color: "#F9F9F9",
-                  backgroundColor: "#1A1A1A",
-                  textDecoration: "none",
-                  padding: "14px 28px",
-                  borderRadius: "6px",
-                  transition: "background-color 200ms",
-                }}
+                className="btn-primary"
               >
 Discover the Collection
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
@@ -279,13 +265,11 @@ Discover the Collection
               <Link
                 href="/quiz"
                 style={{
-                  fontSize: "0.8125rem",
+                  fontSize: "0.75rem",
                   fontWeight: 500,
-                  letterSpacing: "0.08em",
-                  color: "#C9A96E",
+                  letterSpacing: "0.06em",
+                  color: "#C4A265",
                   textDecoration: "none",
-                  borderBottom: "1px solid #C9A96E",
-                  paddingBottom: "2px",
                   transition: "opacity 150ms",
                 }}
                 className="hover:opacity-60"
@@ -324,7 +308,7 @@ Discover the Collection
                 fontWeight: 500,
                 textTransform: "uppercase",
                 letterSpacing: "0.18em",
-                color: "#C9A96E",
+                color: "#C4A265",
                 marginBottom: "1.5rem",
               }}
             >
@@ -360,20 +344,7 @@ Discover the Collection
 
             <Link
               href="/products"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.5rem",
-                fontSize: "0.8125rem",
-                fontWeight: 600,
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                color: "#F9F9F9",
-                backgroundColor: "#1A1A1A",
-                textDecoration: "none",
-                padding: "14px 24px",
-                borderRadius: "6px",
-              }}
+              className="btn-primary"
             >
 Discover Collection
             </Link>
@@ -413,8 +384,8 @@ Discover Collection
                 sub: "Across all lots, HPLC-verified",
                 icon: (
                   <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                    <circle cx="14" cy="14" r="13" stroke="#C9A96E" strokeWidth="1.5"/>
-                    <path d="M8 14.5l4 4 8-8" stroke="#C9A96E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="14" cy="14" r="13" stroke="#C4A265" strokeWidth="1.5"/>
+                    <path d="M8 14.5l4 4 8-8" stroke="#C4A265" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 ),
               },
@@ -424,9 +395,9 @@ Discover Collection
                 sub: "Temperature-controlled transit",
                 icon: (
                   <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                    <rect x="1.75" y="7" width="24.5" height="15" rx="2" stroke="#C9A96E" strokeWidth="1.5"/>
-                    <path d="M7 7V5a2 2 0 012-2h10a2 2 0 012 2v2" stroke="#C9A96E" strokeWidth="1.5"/>
-                    <path d="M9 14h10M14 11v6" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round"/>
+                    <rect x="1.75" y="7" width="24.5" height="15" rx="2" stroke="#C4A265" strokeWidth="1.5"/>
+                    <path d="M7 7V5a2 2 0 012-2h10a2 2 0 012 2v2" stroke="#C4A265" strokeWidth="1.5"/>
+                    <path d="M9 14h10M14 11v6" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round"/>
                   </svg>
                 ),
               },
@@ -436,8 +407,8 @@ Discover Collection
                 sub: "Batch-specific, always enclosed",
                 icon: (
                   <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                    <rect x="5" y="2" width="18" height="24" rx="2" stroke="#C9A96E" strokeWidth="1.5"/>
-                    <path d="M9 9h10M9 13h10M9 17h6" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round"/>
+                    <rect x="5" y="2" width="18" height="24" rx="2" stroke="#C4A265" strokeWidth="1.5"/>
+                    <path d="M9 9h10M9 13h10M9 17h6" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round"/>
                   </svg>
                 ),
               },
@@ -463,7 +434,7 @@ Discover Collection
 
       {/* ─── SHOP BY RESEARCH CATEGORY ─── */}
       <SectionReveal>
-        <section className="py-20 md:py-28 px-6" style={{ backgroundColor: "#FAF8F5" }}>
+        <section className="py-20 md:py-28 px-6" style={{ backgroundColor: "#FAF6F0" }}>
           <div className="max-w-6xl mx-auto">
             <div className="mb-12">
               <p className="eyebrow mb-4">Shop by Research Category</p>
@@ -549,7 +520,7 @@ Discover Collection
                       <div className="p-5">
                         <p
                           className="text-[10px] uppercase mb-1.5 font-medium"
-                          style={{ letterSpacing: "0.2em", color: "#C9A96E" }}
+                          style={{ letterSpacing: "0.2em", color: "#C4A265" }}
                         >
                           {product.category}
                         </p>
@@ -558,7 +529,7 @@ Discover Collection
                         </h3>
                         <p className="text-xs mb-3 leading-snug" style={{ color: "#888" }}>{product.tagline}</p>
                         <div className="flex items-center justify-between pt-3" style={{ borderTop: "1px solid #E5E5E5" }}>
-                          <span className="text-base font-medium" style={{ color: "#C9A96E" }}>${price}</span>
+                          <span className="text-base font-medium" style={{ color: "#C4A265" }}>${price}</span>
                           <span
                             className="text-[10px] font-medium uppercase opacity-0 group-hover:opacity-100 transition-opacity"
                             style={{ letterSpacing: "0.1em", color: "#888" }}
@@ -620,7 +591,7 @@ Discover Collection
                   className="p-8 rounded-xl border"
                   style={{ borderColor: "#2A2A28", backgroundColor: "#1C1C1A" }}
                 >
-                  <div className="text-xs font-mono mb-5 font-semibold" style={{ color: "#C9A96E" }}>
+                  <div className="text-xs font-mono mb-5 font-semibold" style={{ color: "#C4A265" }}>
                     {block.num}
                   </div>
                   <h3 className="text-lg font-semibold mb-3" style={{ color: "#F5F5F0" }}>
@@ -629,7 +600,7 @@ Discover Collection
                   <p className="text-sm leading-relaxed mb-5" style={{ color: "#888" }}>
                     {block.body}
                   </p>
-                  <p className="text-xs font-medium" style={{ color: "#C9A96E" }}>
+                  <p className="text-xs font-medium" style={{ color: "#C4A265" }}>
                     {block.detail}
                   </p>
                 </div>
@@ -676,7 +647,7 @@ Discover Collection
                     "Batch IDs traceable to HPLC records",
                   ].map((line) => (
                     <div key={line} className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 bg-[#C9A96E]" />
+                      <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 bg-[#C4A265]" />
                       <p className="text-sm text-[#555]">{line}</p>
                     </div>
                   ))}
@@ -714,7 +685,7 @@ Discover Collection
                   className="blog-card block bg-white rounded-lg overflow-hidden card-shadow"
                 >
                   <div className="p-6">
-                    <p className="text-[11px] uppercase tracking-wider text-[#C9A96E] mb-3 font-medium" style={{ letterSpacing: "0.2em" }}>
+                    <p className="text-[11px] uppercase tracking-wider text-[#C4A265] mb-3 font-medium" style={{ letterSpacing: "0.2em" }}>
                       {article.category}
                     </p>
                     <h3 className="text-base font-medium mb-3 leading-snug">

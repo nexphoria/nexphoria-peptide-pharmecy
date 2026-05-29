@@ -124,7 +124,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
         <ChevronDown
           size={15}
           className="flex-shrink-0 transition-transform duration-300"
-          style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)", color: "#B8A44C" }}
+          style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)", color: "#C4A265" }}
         />
       </button>
       <div
@@ -160,7 +160,7 @@ function AccordionSection({ title, children, defaultOpen = false }: { title: str
         <ChevronDown
           size={14}
           className="flex-shrink-0 transition-transform duration-300"
-          style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)", color: "#B8A44C" }}
+          style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)", color: "#C4A265" }}
         />
       </button>
       {open && (
@@ -188,7 +188,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
         selectedFormat={selectedFormat}
         selectedDosage={selectedDosage}
         buyBoxRef={buyBoxRef}
-        accentColor="#B8A44C"
+        accentColor="#C4A265"
       />
 
       {/* Breadcrumb */}
@@ -260,7 +260,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                       backgroundColor: "#FFFFFF",
                     }}
                   >
-                    <Icon className="w-3.5 h-3.5 mb-1.5" style={{ color: "#B8A44C", strokeWidth: 1.5 }} />
+                    <Icon className="w-3.5 h-3.5 mb-1.5" style={{ color: "#C4A265", strokeWidth: 1.5 }} />
                     <span className="text-[11px] font-medium leading-tight" style={{ color: "#1A1A1A" }}>{label}</span>
                     <span className="text-[10px] mt-0.5" style={{ color: "#888" }}>{sub}</span>
                   </div>
@@ -273,7 +273,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
               {/* Brand eyebrow */}
               <p
                 className="text-[10px] uppercase font-medium mb-1"
-                style={{ letterSpacing: "0.15em", color: "#B8A44C" }}
+                style={{ letterSpacing: "0.15em", color: "#C4A265" }}
               >
                 NEXPHORIA
               </p>
@@ -318,7 +318,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                       backgroundColor: "#FFFFFF",
                     }}
                   >
-                    <Icon className="w-3.5 h-3.5 mb-1" style={{ color: "#B8A44C", strokeWidth: 1.5 }} />
+                    <Icon className="w-3.5 h-3.5 mb-1" style={{ color: "#C4A265", strokeWidth: 1.5 }} />
                     <span className="text-[10px] font-medium" style={{ color: "#1A1A1A" }}>{label}</span>
                   </div>
                 ))}
@@ -329,7 +329,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                 className="mt-5 flex items-start gap-3 p-4"
                 style={{ border: "1px solid #E5E5E5", borderRadius: "8px", backgroundColor: "#FAFAFA" }}
               >
-                <Shield className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "#B8A44C", strokeWidth: 1.5 }} />
+                <Shield className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "#C4A265", strokeWidth: 1.5 }} />
                 <div className="text-xs leading-relaxed" style={{ color: "#666", lineHeight: 1.7 }}>
                   <p className="font-medium mb-1" style={{ color: "#1A1A1A", fontSize: "10px", letterSpacing: "0.06em", textTransform: "uppercase" }}>
                     For Research Use Only — Not For Human Consumption
@@ -346,7 +346,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                   className="mt-3 flex items-center gap-3 p-4"
                   style={{ border: "1px solid #E5E5E5", borderRadius: "8px", backgroundColor: "#FAFAFA" }}
                 >
-                  <FileCheck className="w-4 h-4 flex-shrink-0" style={{ color: "#B8A44C", strokeWidth: 1.5 }} />
+                  <FileCheck className="w-4 h-4 flex-shrink-0" style={{ color: "#C4A265", strokeWidth: 1.5 }} />
                   <div className="flex-1 min-w-0">
                     <p className="text-xs font-medium" style={{ color: "#1A1A1A" }}>Certificate of Analysis Available</p>
                     <p className="text-xs mt-0.5" style={{ color: "#888" }}>
@@ -409,7 +409,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                 <ul className="mt-4 space-y-2.5">
                   {product.researchApplications.map((app, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <div className="w-1 h-1 rounded-full flex-shrink-0 mt-2.5" style={{ backgroundColor: "#B8A44C" }} />
+                      <div className="w-1 h-1 rounded-full flex-shrink-0 mt-2.5" style={{ backgroundColor: "#C4A265" }} />
                       <span className="text-sm leading-relaxed" style={{ color: "#555" }}>{app}</span>
                     </li>
                   ))}
@@ -426,7 +426,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                 style={{ border: "1px solid #E5E5E5", borderRadius: "8px", color: "#555", lineHeight: 1.8 }}
               >
                 Research methodology is typically organized around a{" "}
-                <Link href="/protocols" className="font-medium underline underline-offset-2" style={{ color: "#B8A44C" }}>
+                <Link href="/protocols" className="font-medium underline underline-offset-2" style={{ color: "#C4A265" }}>
                   Research Cycle
                 </Link>
                 . A 3-month cycle provides enough material to observe a full response window,
@@ -495,13 +495,13 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                     className="flex items-center gap-3 px-5 py-3"
                     style={{ borderBottom: "1px solid #E5E5E5", backgroundColor: "#FAFAFA" }}
                   >
-                    <FileCheck className="w-4 h-4" style={{ color: "#B8A44C", strokeWidth: 1.5 }} />
+                    <FileCheck className="w-4 h-4" style={{ color: "#C4A265", strokeWidth: 1.5 }} />
                     <p className="text-[10px] uppercase font-medium tracking-widest" style={{ color: "#1A1A1A" }}>
                       Current Batch — Certificate of Analysis
                     </p>
                     <span
                       className="ml-auto text-[10px] font-medium px-2 py-0.5"
-                      style={{ borderRadius: "999px", backgroundColor: "rgba(184,164,76,0.12)", color: "#B8A44C" }}
+                      style={{ borderRadius: "999px", backgroundColor: "rgba(184,164,76,0.12)", color: "#C4A265" }}
                     >
                       Verified
                     </span>
@@ -524,12 +524,12 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                     ))}
                   </div>
                   <div className="px-5 pb-4 flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5" style={{ color: "#B8A44C" }} />
+                    <Check className="w-3.5 h-3.5" style={{ color: "#C4A265" }} />
                     <p className="text-xs" style={{ color: "#666" }}>
                       This lot meets specification. COA issued by independent accredited laboratory.
                       {COA_AVAILABLE_SLUGS.has(product.slug) && (
                         <>{" "}
-                          <a href={`/coa/${product.slug}`} className="underline font-medium ml-1" style={{ color: "#B8A44C" }}>
+                          <a href={`/coa/${product.slug}`} className="underline font-medium ml-1" style={{ color: "#C4A265" }}>
                             Download full report
                           </a>
                         </>
@@ -549,7 +549,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                         className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
                         style={{ backgroundColor: "rgba(184,164,76,0.12)" }}
                       >
-                        <Check className="w-2.5 h-2.5" style={{ color: "#B8A44C" }} />
+                        <Check className="w-2.5 h-2.5" style={{ color: "#C4A265" }} />
                       </div>
                       <span className="text-sm" style={{ color: "#555", lineHeight: 1.7 }}>{feature}</span>
                     </div>
@@ -577,7 +577,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
           <div className="container-nex">
             <p
               className="text-[10px] uppercase font-medium mb-3"
-              style={{ letterSpacing: "0.15em", color: "#B8A44C" }}
+              style={{ letterSpacing: "0.15em", color: "#C4A265" }}
             >
               Complete Your Protocol
             </p>
@@ -614,11 +614,11 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                           className="max-w-full max-h-full object-contain"
                         />
                       ) : (
-                        <span className="text-sm font-light" style={{ color: "#B8A44C" }}>{rp.name}</span>
+                        <span className="text-sm font-light" style={{ color: "#C4A265" }}>{rp.name}</span>
                       )}
                     </div>
                     <div className="p-5">
-                      <p className="text-[10px] uppercase mb-1" style={{ letterSpacing: "0.12em", color: "#B8A44C", fontWeight: 500 }}>
+                      <p className="text-[10px] uppercase mb-1" style={{ letterSpacing: "0.12em", color: "#C4A265", fontWeight: 500 }}>
                         {rp.category}
                       </p>
                       <h3 className="text-base font-normal mb-1 group-hover:opacity-70 transition-opacity" style={{ color: "#1A1A1A" }}>
@@ -627,7 +627,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                       <p className="text-xs mb-3" style={{ color: "#888" }}>{rp.size}</p>
                       <div
                         className="text-base font-medium pt-3"
-                        style={{ borderTop: "1px solid #E5E5E5", color: "#B8A44C" }}
+                        style={{ borderTop: "1px solid #E5E5E5", color: "#C4A265" }}
                       >
                         ${rp.price}
                       </div>
@@ -646,8 +646,8 @@ export default function ProductDetailLaunch({ product, related }: Props) {
           <div className="container-nex">
             <div className="max-w-4xl mx-auto">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-px h-5 flex-shrink-0" style={{ backgroundColor: "#B8A44C" }} />
-                <p className="text-[10px] uppercase tracking-widest font-medium" style={{ color: "#B8A44C" }}>
+                <div className="w-px h-5 flex-shrink-0" style={{ backgroundColor: "#C4A265" }} />
+                <p className="text-[10px] uppercase tracking-widest font-medium" style={{ color: "#C4A265" }}>
                   Research Overview
                 </p>
               </div>

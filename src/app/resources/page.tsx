@@ -50,6 +50,7 @@ const TOOLS = [
   { href: "/tools/research-log", label: "Research Log", desc: "LocalStorage research journal with CSV export" },
   { href: "/tools/vial-inventory-tracker", label: "Vial Inventory Tracker", desc: "Track vial counts, expiry dates, reconstituted status" },
   { href: "/tools/biomarker-reference", label: "Biomarker Reference", desc: "32 lab markers with compound interactions and ranges" },
+  { href: "/tools/peptide-timer", label: "Peptide Injection Timer", desc: "Live countdown to next dose, multi-compound status tracking" },
 ];
 
 // Deduplicated tools
