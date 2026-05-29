@@ -95,6 +95,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.72,
     },
     {
+      url: `${baseUrl}/tools/half-life-calculator`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.72,
+    },
+    {
       url: `${baseUrl}/account/orders`,
       lastModified: new Date(),
       changeFrequency: "yearly",
@@ -112,6 +118,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
+    // COA pages for top 6 products
+    ...(["bpc-157", "semaglutide", "tirzepatide", "tb-500", "ghk-cu", "nad-plus"].map((slug) => ({
+      url: `${baseUrl}/coa/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "yearly" as const,
+      priority: 0.5,
+    }))),
     {
       url: `${baseUrl}/legal/disclaimer`,
       lastModified: new Date(),

@@ -3,7 +3,16 @@
 import { useState, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowLeft, Check, Shield, FileCheck } from "lucide-react";
+import { ArrowLeft, Check, Shield, FileCheck, Download } from "lucide-react";
+
+const COA_AVAILABLE_SLUGS = new Set([
+  "bpc-157",
+  "semaglutide",
+  "tirzepatide",
+  "tb-500",
+  "ghk-cu",
+  "nad-plus",
+]);
 import type { Product, ProductDosage } from "@/lib/products";
 import BuyBox from "@/components/product/BuyBox";
 import StickyAddToOrderBar from "@/components/product/StickyAddToOrderBar";
@@ -104,6 +113,28 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                   </p>
                 </div>
               </div>
+
+              {/* Sample COA Download */}
+              {COA_AVAILABLE_SLUGS.has(product.slug) && (
+                <div className="mt-4 flex items-center gap-3 p-4 rounded-lg border border-[#D4DCC8] bg-[#F2F5ED]">
+                  <FileCheck className="w-5 h-5 flex-shrink-0 text-[#6B8C5F]" />
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs font-semibold text-[#3d5c35] mb-0.5">Certificate of Analysis Available</p>
+                    <p className="text-xs text-[#666] leading-relaxed">
+                      HPLC purity report, MS confirmation, batch documentation — sample COA for this compound.
+                    </p>
+                  </div>
+                  <a
+                    href={`/coa/${product.slug}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-shrink-0 inline-flex items-center gap-1.5 bg-[#3d5c35] hover:bg-[#2d4828] text-white text-xs font-semibold px-3 py-2 rounded transition-colors"
+                  >
+                    <Download className="w-3.5 h-3.5" />
+                    View COA
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </div>
