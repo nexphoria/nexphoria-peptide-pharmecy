@@ -1,0 +1,8 @@
+# Nexphoria Code Owners
+# Global owners
+* @chiya-lab
+
+# App-specific
+/apps/web/ @chiya-lab
+/packages/ui/ @chiya-lab
+/packages/config/ @chiya-lab
