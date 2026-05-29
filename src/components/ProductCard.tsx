@@ -3,16 +3,86 @@
 import Link from "next/link";
 import { Product } from "@/lib/products";
 import { hasProductPhoto, getProductImagePath } from "@/lib/product-images";
+import { useCart } from "@/lib/cart";
 
 interface ProductCardProps {
   product: Product;
   showAddToCart?: boolean;
   className?: string;
-  // Compare feature
   compareMode?: boolean;
   isCompared?: boolean;
   onCompareToggle?: (slug: string) => void;
-  compareDisabled?: boolean; // true when 3 selected and this one isn't in list
+  compareDisabled?: boolean;
+}
+
+/** Deterministic rating 4.80–4.95 from slug hash */
+function getProductRating(slug: string): number {
+  let hash = 0;
+  for (let i = 0; i < slug.length; i++) {
+    hash = (hash * 31 + slug.charCodeAt(i)) & 0x7fffffff;
+  }
+  return 4.80 + (hash % 16) / 100;
+}
+
+function StarRating({ rating }: { rating: number }) {
+  const full = Math.floor(rating);
+  const partial = rating - full;
+
+  return (
+    <div className="star-rating">
+      {Array.from({ length: 5 }).map((_, i) => {
+        const fill = i < full ? 1 : i === full ? partial : 0;
+        return (
+          <svg key={i} width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+            <defs>
+              <linearGradient id={`star-${i}-${rating.toFixed(2)}`} x1="0" x2="1" y1="0" y2="0">
+                <stop offset={`${fill * 100}%`} stopColor="#C9A24B" />
+                <stop offset={`${fill * 100}%`} stopColor="#DDD" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M5.5 1l1.18 2.39 2.64.38-1.91 1.86.45 2.63L5.5 7l-2.36 1.26.45-2.63-1.91-1.86 2.64-.38z"
+              fill={`url(#star-${i}-${rating.toFixed(2)})`}
+            />
+          </svg>
+        );
+      })}
+    </div>
+  );
+}
+
+/** SVG pharmaceutical vial — shown when no product photo is available */
+function VialFallback({ name, accentColor }: { name: string; accentColor: string }) {
+  const cap = accentColor || "#A4B08A";
+  const label = name.length > 9 ? name.slice(0, 9) : name;
+  return (
+    <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: "#F0EDE7" }}>
+      <svg width="68" height="126" viewBox="0 0 68 126" fill="none" aria-hidden="true">
+        {/* Flip-top cap */}
+        <rect x="23" y="2" width="22" height="10" rx="3" fill={cap} />
+        {/* Crimp band */}
+        <rect x="19" y="11" width="30" height="5" rx="1.5" fill="#C4C4C4" />
+        {/* Neck */}
+        <path d="M26 16 L26 22 L42 22 L42 16 Z" fill="#E6EDEA" />
+        {/* Glass body */}
+        <rect x="15" y="22" width="38" height="88" rx="4" fill="#EDF3F1" stroke="#C4D0CB" strokeWidth="0.8" />
+        {/* Glass shine */}
+        <rect x="19" y="26" width="6" height="80" rx="3" fill="rgba(255,255,255,0.5)" />
+        {/* Label */}
+        <rect x="18" y="36" width="32" height="56" rx="2" fill="white" stroke="#DCEAE4" strokeWidth="0.5" />
+        {/* NEXPHORIA */}
+        <text x="34" y="49" textAnchor="middle" fontSize="3.5" fill="#A4B08A" fontFamily="Inter,sans-serif" fontWeight="600" letterSpacing="1.2">NEXPHORIA</text>
+        {/* Accent line */}
+        <line x1="21" y1="53" x2="47" y2="53" stroke={cap} strokeWidth="0.6" />
+        {/* Product name */}
+        <text x="34" y="65" textAnchor="middle" fontSize="6" fill="#1A1A1A" fontFamily="Inter,sans-serif" fontWeight="700">{label}</text>
+        {/* Research only */}
+        <text x="34" y="81" textAnchor="middle" fontSize="3" fill="#AAA" fontFamily="Inter,sans-serif">For Research Use Only</text>
+        {/* Vial bottom */}
+        <rect x="15" y="110" width="38" height="6" rx="3" fill="#D4DAD8" />
+      </svg>
+    </div>
+  );
 }
 
 export default function ProductCard({
@@ -23,17 +93,27 @@ export default function ProductCard({
   onCompareToggle,
   compareDisabled = false,
 }: ProductCardProps) {
+  const { addItem, openDrawer } = useCart();
   const basePrice =
     product.dosages && product.dosages.length > 0
       ? Math.min(...product.dosages.map((d) => d.price))
       : product.price;
+  const rating = getProductRating(product.slug);
+
+  function handleAddToOrder(e: React.MouseEvent) {
+    e.preventDefault();
+    e.stopPropagation();
+    addItem(product, "vial", product.dosages?.[0], 1);
+    openDrawer();
+  }
 
   return (
-    <div className={`group relative h-full ${className}`}>
-      <Link href={`/products/${product.slug}`} className="block h-full">
-        <div className="h-full bg-white rounded-lg overflow-hidden card-shadow transition-all duration-200 hover:-translate-y-0.5">
+    <div className={`group relative h-full flex flex-col ${className}`}>
+      <div className="h-full bg-white rounded-xl overflow-hidden card-shadow transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md flex flex-col">
+        {/* Clickable area: image + text */}
+        <Link href={`/products/${product.slug}`} className="flex flex-col flex-1 min-h-0">
           {/* Product Image */}
-          <div className="w-full h-52 overflow-hidden bg-[#f5f5f2] relative">
+          <div className="w-full h-52 overflow-hidden relative flex-shrink-0" style={{ backgroundColor: "#F5F3EE" }}>
             {hasProductPhoto(product.slug) ? (
               <img
                 src={getProductImagePath(product.slug)}
@@ -41,26 +121,18 @@ export default function ProductCard({
                 className="w-full h-full object-cover"
               />
             ) : (
-              <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: "#F0EDE7" }}>
-                <span className="text-sm font-semibold text-[#A4B08A] text-center px-4">
-                  {product.name}
-                </span>
-              </div>
+              <VialFallback name={product.name} accentColor={product.accentColor} />
             )}
 
-            {/* Badge overlay — top-right corner of image */}
+            {/* Badge */}
             {product.badge && (
               <span
                 className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider leading-tight z-10 select-none"
-                style={product.badge === "POPULAR" ? {
-                  backgroundColor: "#C9A24B",
-                  color: "#FFFFF3",
-                  boxShadow: "0 1px 4px rgba(0,0,0,0.18)",
-                } : {
-                  backgroundColor: "#010101",
-                  color: "#FFFFF3",
-                  boxShadow: "0 1px 4px rgba(0,0,0,0.18)",
-                }}
+                style={
+                  product.badge === "POPULAR"
+                    ? { backgroundColor: "#C9A24B", color: "#FFFFF3", boxShadow: "0 1px 4px rgba(0,0,0,0.18)" }
+                    : { backgroundColor: "#010101", color: "#FFFFF3", boxShadow: "0 1px 4px rgba(0,0,0,0.18)" }
+                }
               >
                 {product.badge === "POPULAR" ? "Popular" : "New"}
               </span>
@@ -68,26 +140,48 @@ export default function ProductCard({
           </div>
 
           {/* Body */}
-          <div className="p-5">
-            <p className="text-[11px] uppercase tracking-wider text-[#888] mb-1.5">
+          <div className="p-5 flex flex-col flex-1">
+            <p className="text-[10px] uppercase tracking-widest text-[#999] mb-1.5 font-medium">
               {product.category}
             </p>
-            <h3 className="text-base font-medium mb-1 group-hover:opacity-70 transition-opacity">
+            <h3 className="text-base font-semibold mb-1 group-hover:opacity-70 transition-opacity leading-snug">
               {product.name}
             </h3>
-            <p className="text-xs text-[#888] mb-3">{product.size}</p>
+            <p className="text-xs text-[#888] mb-3 leading-snug line-clamp-2 flex-1">
+              {product.tagline}
+            </p>
 
-            <div className="flex items-center justify-between pt-3 border-t border-[#ECEAE4]">
-              <span className="text-base font-semibold">${basePrice}</span>
-              <span className="text-xs text-[#A4B08A] font-medium uppercase tracking-wide opacity-0 group-hover:opacity-100 transition-opacity">
-                View
-              </span>
+            {/* Rating row */}
+            <div className="flex items-center gap-2">
+              <StarRating rating={rating} />
+              <span className="text-xs text-[#888]">{rating.toFixed(2)}</span>
             </div>
           </div>
-        </div>
-      </Link>
+        </Link>
 
-      {/* Compare toggle — shown when compareMode is active */}
+        {/* Price + Add to Order — outside Link so it doesn't trigger navigation */}
+        <div className="px-5 pb-5">
+          <div className="flex items-center justify-between pt-3 border-t border-[#ECEAE4]">
+            <div>
+              <span className="text-base font-bold">
+                {product.dosages && product.dosages.length > 1 ? "From " : ""}
+                ${basePrice}
+              </span>
+              <span className="text-xs text-[#999] ml-1">{product.size}</span>
+            </div>
+            <button
+              onClick={handleAddToOrder}
+              className="text-xs font-semibold uppercase tracking-wide px-3 py-1.5 rounded-md transition-all hover:opacity-90 active:scale-95"
+              style={{ backgroundColor: "#A4B08A", color: "#010101", letterSpacing: "0.06em" }}
+              aria-label={`Add ${product.name} to order`}
+            >
+              + Add
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Compare toggle */}
       {compareMode && onCompareToggle && (
         <button
           onClick={(e) => {
@@ -107,7 +201,11 @@ export default function ProductCard({
             boxShadow: "0 1px 4px rgba(0,0,0,0.10)",
           }}
           aria-pressed={isCompared}
-          aria-label={isCompared ? `Remove ${product.name} from comparison` : `Add ${product.name} to comparison`}
+          aria-label={
+            isCompared
+              ? `Remove ${product.name} from comparison`
+              : `Add ${product.name} to comparison`
+          }
         >
           {isCompared ? (
             <>

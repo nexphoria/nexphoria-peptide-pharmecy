@@ -32,6 +32,8 @@ const footerNav = {
   Products: footerProducts,
   Company: [
     { label: "About", href: "/about" },
+    { label: "Our Team", href: "/about/team" },
+    { label: "Science Advisors", href: "/about/science-advisors" },
     { label: "Science & Testing", href: "/science" },
     { label: "Compound Index", href: "/compounds" },
     { label: "Research Blog", href: "/blog" },
@@ -41,12 +43,16 @@ const footerNav = {
   Support: [
     { label: "Customer Support", href: "/contact" },
     { label: "FAQs", href: "/faq" },
+    { label: "Shipping & Cold-Chain", href: "/shipping" },
     { label: "Research Tools", href: "/tools" },
     { label: "BAC Water Guide", href: "/tools/bac-water-guide" },
     { label: "Storage Guide", href: "/guides/storage" },
     { label: "Reconstitution Guide", href: "/guides/reconstitution" },
+    { label: "Dosing Protocols Guide", href: "/guides/dosing-protocols" },
+    { label: "Biomarker Reference", href: "/tools/biomarker-reference" },
     { label: "Peptide Glossary", href: "/guides/peptide-glossary" },
     { label: "Track Your Order", href: "/account/orders" },
+    { label: "Order Status", href: "/account/lookup" },
     { label: "Wholesale", href: "/wholesale" },
   ],
   Legal: [
@@ -231,10 +237,67 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="flex flex-col md:flex-row justify-between items-start gap-4">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>
             {new Date().getFullYear()} Nexphoria. All products for research use only. Not for human consumption.
           </p>
+
+          {/* Payment icons */}
+          <div className="flex items-center gap-3" aria-label="Accepted payment methods">
+            {/* AllayPay */}
+            <div
+              className="flex items-center gap-1 px-2 py-1 rounded"
+              style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.10)" }}
+              title="AllayPay"
+            >
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <circle cx="7" cy="7" r="6" stroke="#A4B08A" strokeWidth="1.2" />
+                <path d="M5 7h4M7 5v4" stroke="#A4B08A" strokeWidth="1.2" strokeLinecap="round" />
+              </svg>
+              <span className="text-[9px] font-semibold uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.45)" }}>AllayPay</span>
+            </div>
+
+            {/* Stripe */}
+            <div
+              className="flex items-center gap-1 px-2 py-1 rounded"
+              style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.10)" }}
+              title="Stripe"
+            >
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <rect x="1" y="3" width="12" height="8" rx="1.5" stroke="rgba(255,255,255,0.4)" strokeWidth="1" />
+                <rect x="1" y="5.5" width="12" height="2" fill="rgba(255,255,255,0.15)" />
+              </svg>
+              <span className="text-[9px] font-semibold uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.45)" }}>Stripe</span>
+            </div>
+
+            {/* Bitcoin */}
+            <div
+              className="flex items-center gap-1 px-2 py-1 rounded"
+              style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.10)" }}
+              title="Bitcoin"
+            >
+              <svg width="12" height="14" viewBox="0 0 12 14" fill="none" aria-hidden="true">
+                <path d="M2 2h5.5c1.4 0 2.5 1 2.5 2.25S8.9 6.5 7.5 6.5H2V2zM2 6.5h6c1.4 0 2.5 1 2.5 2.25S9.4 11 8 11H2V6.5z" stroke="rgba(255,255,255,0.4)" strokeWidth="1" strokeLinejoin="round" />
+                <line x1="4" y1="1" x2="4" y2="13" stroke="rgba(255,255,255,0.4)" strokeWidth="1" strokeLinecap="round" />
+                <line x1="7" y1="1" x2="7" y2="13" stroke="rgba(255,255,255,0.4)" strokeWidth="1" strokeLinecap="round" />
+              </svg>
+              <span className="text-[9px] font-semibold uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.45)" }}>BTC</span>
+            </div>
+
+            {/* Ethereum */}
+            <div
+              className="flex items-center gap-1 px-2 py-1 rounded"
+              style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.10)" }}
+              title="Ethereum"
+            >
+              <svg width="10" height="14" viewBox="0 0 10 14" fill="none" aria-hidden="true">
+                <path d="M5 1L1 7.5L5 9.5L9 7.5L5 1z" stroke="rgba(255,255,255,0.4)" strokeWidth="1" strokeLinejoin="round" />
+                <path d="M5 10.5L1 8L5 13L9 8L5 10.5z" stroke="rgba(255,255,255,0.4)" strokeWidth="1" strokeLinejoin="round" />
+              </svg>
+              <span className="text-[9px] font-semibold uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.45)" }}>ETH</span>
+            </div>
+          </div>
+
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.25)" }}>
             Not evaluated by the FDA. Not for diagnostic or therapeutic use.
           </p>

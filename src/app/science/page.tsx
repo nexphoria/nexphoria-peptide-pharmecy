@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
@@ -184,6 +185,38 @@ export default function SciencePage() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SAB Banner */}
+      <section className="py-16 px-6 md:px-12" style={{ backgroundColor: "#FFFFFF" }}>
+        <div className="max-w-5xl mx-auto">
+          <div
+            className="flex flex-col md:flex-row items-center justify-between gap-8 p-10 rounded-2xl"
+            style={{ backgroundColor: "#F7F4F0", border: "1px solid rgba(184,146,58,0.25)" }}
+          >
+            <div>
+              <p
+                className="text-xs uppercase mb-3"
+                style={{ color: "#B8923A", letterSpacing: "0.2em", fontWeight: 500 }}
+              >
+                Scientific Advisory Board
+              </p>
+              <h2
+                className="text-2xl mb-2"
+                style={{ fontWeight: 200, color: "#010101" }}
+              >
+                Independent researchers who challenge our standards
+              </h2>
+              <p className="text-sm" style={{ color: "#7F7F7D" }}>
+                Four domain specialists — peptide pharmacology, metabolic biology, longevity research,
+                and immunology — advise on compound specifications and quality benchmarks.
+              </p>
+            </div>
+            <Link href="/about/science-advisors" className="btn-primary whitespace-nowrap">
+              Meet the SAB →
+            </Link>
           </div>
         </div>
       </section>

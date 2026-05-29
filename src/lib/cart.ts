@@ -10,8 +10,9 @@ export interface CartItem {
     price: number;
   };
   format: 'vial' | 'pen';
-  subscriptionMonths: number; // 1, 3, or 6
-  monthlyPrice: number; // price billed per month (subscriptions bill monthly)
+  subscriptionMonths: number; // 1 = one-time, 3 or 6 = subscription
+  monthlyPrice: number; // per-shipment price after discount
+  subscriptionDiscount: number; // fractional discount applied (0, 0.08, or 0.12)
 }
 
 interface CartState {
@@ -72,16 +73,23 @@ export const useCart = create<CartState>()(
           dosageInfo = product.dosages[0];
         }
 
-        // Monthly billing amount. Subscriptions bill this amount each month;
-        // one-time purchases charge it once. No subscription discount applied.
-        const monthlyPrice = resolveUnitPrice(product, format, dosageInfo);
+        const basePrice = resolveUnitPrice(product, format, dosageInfo);
+
+        // Subscription discount: 3-month = 8%, 6-month = 12%
+        const subscriptionDiscount =
+          subscriptionMonths >= 6 ? 0.12 :
+          subscriptionMonths >= 3 ? 0.08 : 0;
+
+        const monthlyPrice = subscriptionDiscount > 0
+          ? +(basePrice * (1 - subscriptionDiscount)).toFixed(2)
+          : basePrice;
 
         if (existingItemIndex >= 0) {
           // Update existing item
           set(state => ({
             items: state.items.map((item, index) =>
               index === existingItemIndex
-                ? { ...item, quantity: item.quantity + 1, subscriptionMonths, monthlyPrice }
+                ? { ...item, quantity: item.quantity + 1, subscriptionMonths, monthlyPrice, subscriptionDiscount }
                 : item
             )
           }));
@@ -94,7 +102,8 @@ export const useCart = create<CartState>()(
               selectedDosage: dosageInfo,
               format,
               subscriptionMonths,
-              monthlyPrice
+              monthlyPrice,
+              subscriptionDiscount,
             }]
           }));
         }

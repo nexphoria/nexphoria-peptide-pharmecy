@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Plus, Minus, ShoppingBag, ArrowRight } from "lucide-react";
+import { X, Plus, Minus, ShoppingBag, ArrowRight, RefreshCw } from "lucide-react";
 import { useCart, getItemUnitPrice, getCadenceLabel } from "@/lib/cart";
 import { products, getRelatedProducts } from "@/lib/products";
 import { getProductImagePath, hasProductPhoto } from "@/lib/product-images";
@@ -455,11 +455,24 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                   </span>
                 </div>
 
+                {/* Estimated delivery */}
+                <div className="flex items-center justify-between mb-3 text-xs">
+                  <span style={{ color: "#8A8075" }}>Estimated delivery</span>
+                  <span className="font-medium" style={{ color: "#3A3A3A" }}>
+                    {(() => {
+                      const d = new Date();
+                      d.setDate(d.getDate() + 3);
+                      return d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
+                    })()}
+                    {" "}— cold-chain
+                  </span>
+                </div>
+
                 {/* Trust badges */}
                 <div className="flex justify-center gap-4 mb-4 text-xs text-tertiary">
-                  <span>99.7% Purity</span>
+                  <span>99%+ Purity</span>
                   <span>COA Included</span>
-                  <span>Same-Day Ship</span>
+                  <span>Cold Shipped</span>
                 </div>
 
                 {/* Checkout Button */}

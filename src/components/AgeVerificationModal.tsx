@@ -10,16 +10,24 @@ export default function AgeVerificationModal() {
   const [researchConfirmed, setResearchConfirmed] = useState(false);
 
   useEffect(() => {
-    // Check if user has already verified
-    const verified = localStorage.getItem("age_verified");
-    if (!verified) {
+    try {
+      const verified = localStorage.getItem("age_verified");
+      if (!verified) {
+        setShowModal(true);
+      }
+    } catch {
+      // localStorage unavailable (e.g. private browsing with strict settings) — show modal
       setShowModal(true);
     }
   }, []);
 
   const handleEnter = () => {
     if (ageConfirmed && researchConfirmed) {
-      localStorage.setItem("age_verified", "true");
+      try {
+        localStorage.setItem("age_verified", "true");
+      } catch {
+        // ignore — modal closes regardless
+      }
       setShowModal(false);
     }
   };

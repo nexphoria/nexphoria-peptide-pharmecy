@@ -80,6 +80,37 @@ export default async function ProductPage({
   // Determine the active price (first dosage price or base price)
   const activePrice = product.dosages?.[0]?.price ?? product.price;
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://nexphoria.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Products",
+        item: "https://nexphoria.com/products",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: product.category,
+        item: `https://nexphoria.com/products?category=${encodeURIComponent(product.category)}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: product.name,
+        item: `https://nexphoria.com/products/${product.slug}`,
+      },
+    ],
+  };
+
   const jsonLd = {
     "@context": "https://schema.org/",
     "@type": "Product",
@@ -141,6 +172,11 @@ export default async function ProductPage({
         id={`product-jsonld-${slug}`}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Script
+        id={`product-breadcrumb-${slug}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <ProductDetailLaunch product={product} related={related} />
     </>

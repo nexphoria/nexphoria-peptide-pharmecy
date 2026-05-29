@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { articles } from "@/lib/blog";
 import Breadcrumb from "@/components/Breadcrumb";
+import { categoryToSlug } from "./category/[category]/page";
 
 export const metadata: Metadata = {
   title: "Research Blog | Nexphoria",
@@ -45,6 +46,17 @@ const categoryColors: Record<string, string> = {
   "Compound Profiles": "#A4B08A",
 };
 
+// Derive unique categories with counts for the filter bar
+function getCategoryStats(articleList: typeof articles) {
+  const counts: Record<string, number> = {};
+  for (const a of articleList) {
+    counts[a.category] = (counts[a.category] ?? 0) + 1;
+  }
+  return Object.entries(counts)
+    .sort((a, b) => b[1] - a[1])
+    .map(([name, count]) => ({ name, count, slug: categoryToSlug(name) }));
+}
+
 export default function BlogIndexPage() {
   const sorted = [...articles].sort(
     (a, b) =>
@@ -52,6 +64,7 @@ export default function BlogIndexPage() {
   );
 
   const [featured, ...rest] = sorted;
+  const categoryStats = getCategoryStats(articles);
 
   return (
     <>
@@ -103,6 +116,42 @@ export default function BlogIndexPage() {
           </div>
         </section>
 
+        {/* Category filter nav */}
+        <section
+          className="px-6 py-5"
+          style={{ backgroundColor: "#0e0e0e", borderBottom: "1px solid rgba(255,255,255,0.07)" }}
+        >
+          <div className="max-w-5xl mx-auto">
+            <div className="flex flex-wrap gap-2 items-center">
+              <span
+                className="text-xs px-4 py-2 rounded-full"
+                style={{
+                  backgroundColor: "#A4B08A",
+                  border: "1px solid #A4B08A",
+                  color: "#010101",
+                  fontWeight: 600,
+                }}
+              >
+                All ({articles.length})
+              </span>
+              {categoryStats.map((c) => (
+                <Link
+                  key={c.slug}
+                  href={`/blog/category/${c.slug}`}
+                  className="text-xs px-4 py-2 rounded-full transition-colors hover:border-white/40 hover:text-white"
+                  style={{
+                    backgroundColor: "transparent",
+                    border: "1px solid rgba(255,255,255,0.2)",
+                    color: "#A0A0A0",
+                  }}
+                >
+                  {c.name} ({c.count})
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Featured article */}
         <section className="px-6 py-20 md:py-28" style={{ backgroundColor: "#EAE7E3" }}>
           <div className="max-w-5xl mx-auto">
@@ -112,62 +161,67 @@ export default function BlogIndexPage() {
             >
               Featured Article
             </p>
-            <Link href={`/blog/${featured.slug}`} className="group block">
-              <div
-                className="rounded-lg overflow-hidden"
-                style={{
-                  border: "1px solid rgba(0,0,0,0.06)",
-                  borderTop: `3px solid ${categoryColors[featured.category] || "#C9DD69"}`,
-                  backgroundColor: "#FFFFF3",
-                  transition: "transform 0.2s, box-shadow 0.2s",
-                }}
-              >
-                <div className="p-8 md:p-12">
-                  <div className="flex flex-wrap items-center gap-4 mb-6">
-                    <span
-                      className="text-xs uppercase tracking-widest px-3 py-1 rounded-full"
-                      style={{
-                        backgroundColor:
-                          categoryColors[featured.category] || "#C9DD69",
-                        color: "#010101",
-                      }}
-                    >
-                      {featured.category}
-                    </span>
-                    <span className="text-xs" style={{ color: "#A0A0A0" }}>
-                      {formatDate(featured.publishedAt)}
-                    </span>
-                    <span className="text-xs" style={{ color: "#A0A0A0" }}>
-                      {featured.readMinutes} min read
-                    </span>
-                  </div>
-                  <h2
-                    className="text-2xl md:text-3xl mb-4 group-hover:opacity-80 transition-opacity"
+            <div
+              className="rounded-lg overflow-hidden group"
+              style={{
+                border: "1px solid rgba(0,0,0,0.06)",
+                borderTop: `3px solid ${categoryColors[featured.category] || "#C9DD69"}`,
+                backgroundColor: "#FFFFF3",
+              }}
+            >
+              <div className="p-8 md:p-12">
+                <div className="flex flex-wrap items-center gap-4 mb-6">
+                  <Link
+                    href={`/blog/category/${categoryToSlug(featured.category)}`}
+                    className="text-xs uppercase tracking-widest px-3 py-1 rounded-full hover:opacity-80 transition-opacity"
                     style={{
-                      fontWeight: 500,
+                      backgroundColor:
+                        categoryColors[featured.category] || "#C9DD69",
                       color: "#010101",
-                      letterSpacing: "-0.01em",
-                      lineHeight: 1.2,
                     }}
                   >
-                    {featured.title}
-                  </h2>
-                  <p
-                    className="text-base mb-6 max-w-2xl"
-                    style={{ color: "#555", lineHeight: 1.7, fontWeight: 300 }}
-                  >
-                    {featured.description}
-                  </p>
-                  <span
-                    className="text-sm inline-flex items-center gap-2"
-                    style={{ color: "#B8923A", fontWeight: 500 }}
-                  >
-                    Read article
-                    <span aria-hidden>→</span>
+                    {featured.category}
+                  </Link>
+                  <span className="text-xs" style={{ color: "#A0A0A0" }}>
+                    {formatDate(featured.publishedAt)}
+                  </span>
+                  <span className="text-xs" style={{ color: "#A0A0A0" }}>
+                    {featured.readMinutes} min read
                   </span>
                 </div>
+                <h2
+                  className="text-2xl md:text-3xl mb-4"
+                  style={{
+                    fontWeight: 500,
+                    color: "#010101",
+                    letterSpacing: "-0.01em",
+                    lineHeight: 1.2,
+                  }}
+                >
+                  <Link
+                    href={`/blog/${featured.slug}`}
+                    className="hover:opacity-80 transition-opacity"
+                    style={{ color: "inherit" }}
+                  >
+                    {featured.title}
+                  </Link>
+                </h2>
+                <p
+                  className="text-base mb-6 max-w-2xl"
+                  style={{ color: "#555", lineHeight: 1.7, fontWeight: 300 }}
+                >
+                  {featured.description}
+                </p>
+                <Link
+                  href={`/blog/${featured.slug}`}
+                  className="text-sm inline-flex items-center gap-2"
+                  style={{ color: "#B8923A", fontWeight: 500 }}
+                >
+                  Read article
+                  <span aria-hidden>→</span>
+                </Link>
               </div>
-            </Link>
+            </div>
           </div>
         </section>
 
@@ -184,10 +238,9 @@ export default function BlogIndexPage() {
                 </p>
                 <div className="grid md:grid-cols-2 gap-6">
                   {rest.map((article) => (
-                    <Link
+                    <div
                       key={article.slug}
-                      href={`/blog/${article.slug}`}
-                      className="group block"
+                      className="group"
                     >
                       <div
                         className="rounded-lg h-full"
@@ -197,13 +250,13 @@ export default function BlogIndexPage() {
                             categoryColors[article.category] || "#C9DD69"
                           }`,
                           backgroundColor: "#fff",
-                          transition: "transform 0.2s, box-shadow 0.2s",
                         }}
                       >
                         <div className="p-7">
                           <div className="flex flex-wrap items-center gap-3 mb-4">
-                            <span
-                              className="text-xs uppercase tracking-widest px-2 py-0.5 rounded-full"
+                            <Link
+                              href={`/blog/category/${categoryToSlug(article.category)}`}
+                              className="text-xs uppercase tracking-widest px-2 py-0.5 rounded-full hover:opacity-80 transition-opacity"
                               style={{
                                 backgroundColor:
                                   categoryColors[article.category] || "#C9DD69",
@@ -211,7 +264,7 @@ export default function BlogIndexPage() {
                               }}
                             >
                               {article.category}
-                            </span>
+                            </Link>
                             <span
                               className="text-xs"
                               style={{ color: "#A0A0A0" }}
@@ -220,7 +273,7 @@ export default function BlogIndexPage() {
                             </span>
                           </div>
                           <h3
-                            className="text-lg mb-3 group-hover:opacity-80 transition-opacity"
+                            className="text-lg mb-3"
                             style={{
                               fontWeight: 500,
                               color: "#010101",
@@ -228,7 +281,13 @@ export default function BlogIndexPage() {
                               letterSpacing: "-0.01em",
                             }}
                           >
-                            {article.title}
+                            <Link
+                              href={`/blog/${article.slug}`}
+                              className="hover:opacity-80 transition-opacity"
+                              style={{ color: "inherit" }}
+                            >
+                              {article.title}
+                            </Link>
                           </h3>
                           <p
                             className="text-sm mb-5"
@@ -247,16 +306,17 @@ export default function BlogIndexPage() {
                             >
                               {formatDate(article.publishedAt)}
                             </span>
-                            <span
+                            <Link
+                              href={`/blog/${article.slug}`}
                               className="text-xs inline-flex items-center gap-1"
                               style={{ color: "#B8923A", fontWeight: 500 }}
                             >
                               Read <span aria-hidden>→</span>
-                            </span>
+                            </Link>
                           </div>
                         </div>
                       </div>
-                    </Link>
+                    </div>
                   ))}
                 </div>
               </>

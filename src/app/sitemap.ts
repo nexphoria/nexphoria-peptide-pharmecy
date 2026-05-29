@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { products } from "@/lib/products";
 import { articles } from "@/lib/blog";
+import { categoryToSlug } from "./blog/category/[category]/page";
 
 export const dynamic = "force-static";
 
@@ -71,10 +72,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/about/team`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${baseUrl}/about/science-advisors`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
       url: `${baseUrl}/reviews`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.72,
+    },
+    {
+      url: `${baseUrl}/shipping`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.70,
+    },
+    {
+      url: `${baseUrl}/quiz`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.80,
     },
     {
       url: `${baseUrl}/contact`,
@@ -149,6 +174,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.72,
     },
     {
+      url: `${baseUrl}/tools/protocol-template-generator`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.72,
+    },
+    {
+      url: `${baseUrl}/tools/body-weight-dose-calculator`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.72,
+    },
+    {
+      url: `${baseUrl}/tools/peptide-stability-checker`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.72,
+    },
+    {
+      url: `${baseUrl}/tools/peptide-interaction-checker`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
+      url: `${baseUrl}/tools/research-log`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.72,
+    },
+    {
       url: `${baseUrl}/guides/storage`,
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -161,10 +216,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.75,
     },
     {
+      url: `${baseUrl}/guides/dosing-protocols`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
       url: `${baseUrl}/guides/peptide-glossary`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.75,
+    },
+    {
+      url: `${baseUrl}/tools/vial-inventory-tracker`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.72,
+    },
+    {
+      url: `${baseUrl}/tools/biomarker-reference`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.72,
     },
     {
       url: `${baseUrl}/account/orders`,
@@ -183,6 +256,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(a.publishedAt),
       changeFrequency: "monthly" as const,
       priority: 0.7,
+    })),
+    // Blog category pages
+    ...Array.from(new Set(articles.map((a) => categoryToSlug(a.category)))).map((slug) => ({
+      url: `${baseUrl}/blog/category/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.65,
     })),
     // COA pages for top 6 products
     ...(["bpc-157", "semaglutide", "tirzepatide", "tb-500", "ghk-cu", "nad-plus"].map((slug) => ({

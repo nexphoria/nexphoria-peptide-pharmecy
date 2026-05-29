@@ -4,6 +4,167 @@ import { useState, type ReactNode } from "react";
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
 
+// Plain-text FAQ data for JSON-LD structured data (FAQPage schema)
+// Note: answers with ReactNode links are represented as plain text here
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What are research peptides?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Research peptides are short chains of amino acids synthesized in a laboratory setting for use in scientific research. They are not intended for human consumption, therapeutic use, or diagnostic purposes. Researchers study them to understand biological mechanisms, receptor interactions, and cellular signaling pathways.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Who are your compounds intended for?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Our compounds are sold exclusively for qualified research use only — academic institutions, licensed researchers, biotech firms, and similar professional contexts. By purchasing from Nexphoria, you confirm that you are a qualified researcher and that all compounds will be used strictly for laboratory research.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Are your compounds FDA-approved?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. Research peptides are not FDA-approved drugs and are not sold for human use. They are not intended to diagnose, treat, cure, or prevent any disease or condition. Nexphoria products are research reagents only.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is a Certificate of Analysis (COA)?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A Certificate of Analysis is a document issued by an independent analytical laboratory confirming the identity, purity, and quality of a compound. Every Nexphoria lot is independently tested and ships with its COA. The COA includes HPLC purity data, compound identity confirmation (usually via mass spectrometry), lot number, testing date, and the name of the testing laboratory. You should always request and review the COA before using any research compound.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What purity standards do you require?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We require a minimum of ≥98% HPLC purity across our catalog, with many compounds certified at ≥99%+. Each product page lists the exact purity specification for that compound. Many vendors accept 95% or below; we do not. Compound-level purity data is documented on every Certificate of Analysis.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Who tests your compounds?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We never self-test. Every production lot is sent to an independent third-party analytical laboratory. Testing includes HPLC for purity, mass spectrometry for identity confirmation, and endotoxin testing where applicable. Lab names and lot numbers are documented on every COA.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is lyophilization and why does it matter?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Lyophilization (freeze-drying) removes water content from peptides under vacuum conditions, converting them to a stable powder form. Lyophilized peptides are significantly more stable than liquid solutions — they can be stored at −20°C for 24+ months without degradation. This is why our compounds ship as lyophilized powder and require reconstitution before research use.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do I verify a COA is authentic?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Legitimate COAs include the testing lab's name and contact information, a lot number that traces to your order, a testing date, and the analyst's signature or accreditation number. You can often contact the testing lab directly to verify the report. If a vendor cannot provide a COA with a named, verifiable laboratory, do not use their compounds.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What countries do you ship to?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We currently ship within the United States. International shipping is available to select countries where research peptides are legal for import. It is the buyer's responsibility to verify that receipt of research compounds is lawful in their jurisdiction. Contact us for international shipping inquiries.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do you ship temperature-sensitive compounds?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We ship all compounds in insulated packaging with cold packs. Temperature-sensitive SKUs are packed with gel packs rated for 48–72 hours of transit. We recommend refrigerating your compounds immediately upon receipt. Lyophilized peptides at room temperature for short transit windows (under 72 hours) typically do not degrade, but cold storage is always preferred.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What are your shipping timeframes?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Standard orders typically ship within 1–2 business days. Delivery is 2–5 business days depending on your location. Expedited shipping options are available at checkout. Custom synthesis orders have separate lead times — typically 2–3 weeks from order confirmation.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I track my order?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Once your order ships, you will receive a tracking number by email. You can also visit your account orders page at nexphoria.com/account/orders and enter your email and order ID to look up your order status.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How should I store lyophilized peptides?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Lyophilized (freeze-dried) peptides should be stored at −20°C in a desiccated environment, protected from light. Under these conditions, most peptides remain stable for 24 months. Avoid repeated freeze-thaw cycles after reconstitution. Store reconstituted solutions at 4°C for short-term (1–2 weeks) or at −80°C for longer storage.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do I reconstitute a lyophilized peptide?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Reconstitution requires bacteriostatic water or sterile water, depending on the compound and intended research use. The standard approach: (1) Allow the vial to reach room temperature before opening. (2) Add diluent slowly down the side of the vial — do not inject directly onto the peptide cake. (3) Gently swirl; do not shake vigorously. (4) Allow 5–10 minutes for complete dissolution. Specific reconstitution guidance is listed on each product page.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I order bacteriostatic or sterile water from you?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. We carry Sterile Water (3mL and 10mL vials) in our catalog, suitable for research reconstitution. These are pharmaceutical-grade, endotoxin-tested, and sealed under aseptic conditions.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is your return policy?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Due to the nature of research compounds and cold-chain logistics, we accept returns only for items that arrive damaged, with a compromised seal, or if the wrong product was shipped. Returns must be initiated within 7 days of delivery. We do not accept returns on opened vials. Contact our support team with your order number and a photo of the issue.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What if my shipment arrives warm or damaged?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Contact us within 48 hours of delivery with a photo of the packaging and the product. If the cold chain was compromised during shipping, we will work with you on a replacement or refund. We stand behind our logistics; if we made an error, we make it right.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you offer wholesale or bulk pricing?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Wholesale accounts are available for institutions, research labs, and qualified businesses ordering regularly. Pricing tiers are available for bulk quantities. Visit our wholesale page at nexphoria.com/wholesale or contact us directly to discuss your needs.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can you synthesize custom peptide sequences?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. We accept custom synthesis inquiries for defined peptide sequences not currently in our catalog. Lead times are typically 2–3 weeks depending on complexity and quantity. Contact us at nexphoria.com/contact to submit a custom synthesis inquiry.",
+      },
+    },
+  ],
+};
+
 const faqs: { category: string; items: { q: string; a: string | ReactNode }[] }[] = [
   {
     category: "What Are Research Peptides?",
@@ -31,7 +192,7 @@ const faqs: { category: string; items: { q: string; a: string | ReactNode }[] }[
     items: [
       {
         q: "What purity standards do you require?",
-        a: "We require ≥99% HPLC purity for all compounds in our catalog. Many vendors accept 95% or below; we do not. The additional 4% matters significantly when compound integrity is critical to your research outcomes.",
+        a: "We require a minimum of ≥98% HPLC purity across our catalog, with many compounds certified at ≥99%+. Each product page lists the exact purity specification for that compound. Many vendors accept 95% or below; we do not. Compound-level purity data is documented on every Certificate of Analysis.",
       },
       {
         q: "Who tests your compounds?",
@@ -194,6 +355,11 @@ export default function FaqPage() {
 
   return (
     <div style={{ backgroundColor: "#EAE7E3", minHeight: "100vh" }}>
+      {/* FAQPage JSON-LD structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Hero */}
       <section style={{ paddingTop: "160px", paddingBottom: "64px" }} className="px-6 md:px-12">
         <div className="max-w-4xl mx-auto">

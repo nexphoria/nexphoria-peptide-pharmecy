@@ -1,7 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { products } from "@/lib/products";
+import { articles } from "@/lib/blog";
 import { hasProductPhoto, getProductImagePath } from "@/lib/product-images";
+import HomepageContinueResearch from "@/components/HomepageContinueResearch";
+import HeroParallaxImage from "@/components/HeroParallaxImage";
+import SectionReveal from "@/components/SectionReveal";
 
 const FEATURED_SLUGS = [
   "bpc-157",
@@ -20,6 +24,96 @@ function priceFor(slug: string): number {
     : p.price;
 }
 
+const RESEARCH_CATEGORIES = [
+  {
+    label: "Recovery & Healing",
+    slug: "Recovery & Healing",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <path d="M14 4v20M4 14h20" stroke="#A4B08A" strokeWidth="1.8" strokeLinecap="round"/>
+        <circle cx="14" cy="14" r="12" stroke="#A4B08A" strokeWidth="1.4"/>
+      </svg>
+    ),
+  },
+  {
+    label: "Weight Management",
+    slug: "Weight Management",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <path d="M6 22l4-8 4 4 4-12 4 6" stroke="#A4B08A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+  },
+  {
+    label: "Cognitive",
+    slug: "Cognitive",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <ellipse cx="14" cy="13" rx="9" ry="8" stroke="#A4B08A" strokeWidth="1.5"/>
+        <path d="M9 10c0-2.761 2.239-5 5-5" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M10 18c-.667 1.333-1 2.5-.667 3.5" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M18 18c.667 1.333 1 2.5.667 3.5" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    label: "Immune Support",
+    slug: "Immune Support",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <path d="M14 4l7 4v6c0 5-3.5 9-7 10C10.5 23 7 19 7 14V8l7-4z" stroke="#A4B08A" strokeWidth="1.5"/>
+        <path d="M10.5 14l2.5 2.5 5-5" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+  },
+  {
+    label: "Longevity",
+    slug: "Longevity",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <circle cx="14" cy="14" r="10" stroke="#A4B08A" strokeWidth="1.5"/>
+        <path d="M14 8v6l4 2" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+  },
+  {
+    label: "Growth Hormone",
+    slug: "Growth Hormone",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <path d="M7 22V12l7-8 7 8v10" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <rect x="11" y="16" width="6" height="6" rx="0.5" stroke="#A4B08A" strokeWidth="1.5"/>
+      </svg>
+    ),
+  },
+  {
+    label: "Anti-Aging",
+    slug: "Anti-Aging",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <path d="M7 16c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M11 20c0-1.657 1.343-3 3-3s3 1.343 3 3" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M14 5v2" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M6 9l1.5 1.5M20.5 10.5L22 9" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    label: "Dermatological",
+    slug: "Dermatological",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <path d="M8 22c0-5.523 2.686-9.333 6-9.333S20 16.477 20 22" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M12 12c0-2.5 1.5-5.5 2-8 .5 2.5 2 5.5 2 8" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+  },
+];
+
+const recentArticles = [...articles]
+  .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+  .slice(0, 3);
+
 export default function HomePage() {
   const featuredProducts = FEATURED_SLUGS.map((slug) =>
     products.find((p) => p.slug === slug)
@@ -27,298 +121,287 @@ export default function HomePage() {
 
   return (
     <>
-      {/* HERO */}
+      {/* ─── HERO ─── */}
       <section
         className="relative overflow-hidden"
-        style={{ backgroundColor: "#0F0F0E", minHeight: "92vh" }}
+        style={{ backgroundColor: "#FFFFF3", minHeight: "100vh" }}
       >
-        {/* Chemical pattern ghost — 2% opacity gives texture without distraction */}
-        <div
-          className="absolute inset-0 pointer-events-none select-none"
-          style={{
-            backgroundImage: "url(/brand/chemical-pattern.svg)",
-            backgroundSize: "560px 560px",
-            backgroundRepeat: "repeat",
-            opacity: 0.022,
-          }}
-        />
 
-        {/* Desktop layout: asymmetric 2-col */}
-        <div className="hidden md:grid h-full" style={{ gridTemplateColumns: "46% 54%", minHeight: "92vh" }}>
+        {/* ── DESKTOP ── */}
+        <div className="hidden md:block" style={{ minHeight: "100vh", position: "relative" }}>
 
-          {/* LEFT — editorial copy */}
-          <div className="relative z-10 flex flex-col justify-between px-14 lg:px-20 py-28 lg:py-32">
-            {/* Eyebrow */}
-            <p
-              className="text-[0.6875rem] font-medium uppercase tracking-[0.2em]"
-              style={{ color: "#A4B08A" }}
-            >
-              Research-Grade Peptides
-            </p>
+          {/* Main packaging shot — parallax, right side */}
+          <HeroParallaxImage />
 
-            {/* Headline block */}
-            <div>
-              <h1
-                className="leading-[0.9] tracking-tight mb-7"
-                style={{
-                  color: "#FAF9F6",
-                  fontWeight: 500,
-                  fontSize: "clamp(3.25rem, 5.5vw, 5.25rem)",
-                }}
-              >
-                Precision<br />
-                compounds,<br />
-                <span style={{ color: "#A4B08A" }}>independently<br />verified.</span>
-              </h1>
-              <p
-                className="text-[1rem] leading-relaxed mb-10 max-w-[26rem]"
-                style={{ color: "#6A6A66" }}
-              >
-                A curated catalog of research peptides. 99%+ purity,
-                third-party tested, batch-tracked, and shipped cold-chain.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Link href="/products" className="btn-primary">
-                  Browse Catalog
-                </Link>
-                <Link
-                  href="/science"
-                  className="btn-outline-gold"
-                  style={{ borderColor: "#3A3A38", color: "#FAF9F6" }}
-                >
-                  Our Standards
-                </Link>
-              </div>
-            </div>
+          {/* Left-edge cream fade */}
+          <div
+            style={{
+              position: "absolute",
+              left: "28%",
+              top: 0,
+              bottom: 0,
+              width: "14%",
+              background: "linear-gradient(to right, #FFFFF3 0%, transparent 100%)",
+              zIndex: 3,
+              pointerEvents: "none",
+            }}
+          />
 
-            {/* Stats — integrated at bottom */}
-            <div
-              className="grid grid-cols-3 gap-8 pt-8 border-t"
-              style={{ borderColor: "#252523" }}
-            >
-              {[
-                { value: "99%+", label: "Purity", sub: "HPLC verified" },
-                { value: "cGMP", label: "Manufactured", sub: "Certified facilities" },
-                { value: "COA", label: "Every Batch", sub: "Always enclosed" },
-              ].map((s) => (
-                <div key={s.label}>
-                  <div
-                    className="text-[1.4rem] font-semibold mb-0.5 tracking-tight"
-                    style={{ color: "#FAF9F6" }}
-                  >
-                    {s.value}
-                  </div>
-                  <div
-                    className="text-[0.625rem] uppercase tracking-widest font-medium"
-                    style={{ color: "#A4B08A" }}
-                  >
-                    {s.label}
-                  </div>
-                  <div className="text-[0.6875rem] mt-0.5" style={{ color: "#4A4A48" }}>
-                    {s.sub}
-                  </div>
-                </div>
-              ))}
-            </div>
+          {/* Vials lineup — peeks from bottom edge */}
+          <div
+            style={{
+              position: "absolute",
+              bottom: "-3%",
+              right: "1%",
+              width: "26vw",
+              maxWidth: "340px",
+              zIndex: 4,
+              opacity: 0.65,
+              filter: "drop-shadow(0 16px 40px rgba(0,0,0,0.14))",
+            }}
+          >
+            <Image
+              src="/brand/hero-lineup.png"
+              alt="Nexphoria vials"
+              width={600}
+              height={450}
+              className="w-full h-auto"
+              unoptimized
+            />
           </div>
 
-          {/* RIGHT — full-bleed image collage */}
-          <div className="relative overflow-visible">
-            {/* Main: boxes-cascade full bleed */}
-            <div className="absolute inset-0 overflow-hidden">
-              <Image
-                src="/brand/boxes-cascade.jpg"
-                alt="Nexphoria pharmaceutical-grade packaging"
-                fill
-                className="object-cover object-center"
-                priority
-                unoptimized
-              />
-              {/* Left-edge blend: dark → transparent */}
-              <div
-                className="absolute inset-y-0 left-0 w-32"
-                style={{
-                  background: "linear-gradient(to right, #0F0F0E 0%, transparent 100%)",
-                }}
-              />
-              {/* Bottom blend */}
-              <div
-                className="absolute bottom-0 left-0 right-0 h-48"
-                style={{
-                  background: "linear-gradient(to top, #0F0F0E 0%, transparent 100%)",
-                }}
-              />
-              {/* Subtle dark top vignette */}
-              <div
-                className="absolute top-0 left-0 right-0 h-24"
-                style={{
-                  background: "linear-gradient(to bottom, rgba(15,15,14,0.5) 0%, transparent 100%)",
-                }}
-              />
-            </div>
-
-            {/* Floating: vials lineup — anchored bottom-left, partially over left column */}
+          {/* Box detail — accent card */}
+          <div
+            style={{
+              position: "absolute",
+              bottom: "14%",
+              left: "32%",
+              width: "110px",
+              zIndex: 5,
+              transform: "rotate(-2.5deg)",
+            }}
+          >
             <div
-              className="absolute z-20 transition-transform duration-700 hover:-translate-y-1"
+              className="hero-detail-hover rounded-xl overflow-hidden"
               style={{
-                bottom: "5rem",
-                left: "-7%",
-                width: "58%",
-                filter: "drop-shadow(0 40px 80px rgba(0,0,0,0.85))",
+                boxShadow: "0 18px 48px rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.04)",
               }}
             >
               <Image
-                src="/brand/hero-lineup.png"
-                alt="Nexphoria peptide vials"
-                width={700}
-                height={525}
-                className="w-full h-auto"
+                src="/brand/box-detail.jpg"
+                alt="Nexphoria box detail"
+                width={200}
+                height={240}
+                className="w-full h-auto object-cover"
                 unoptimized
               />
             </div>
-
-            {/* Floating: box detail — top-right accent card */}
-            {/* Outer handles position + rotation; inner handles hover lift */}
-            <div
-              className="absolute z-20"
-              style={{ top: "2.5rem", right: "2rem", width: "9rem", transform: "rotate(1.5deg)" }}
-            >
-              <div
-                className="rounded-xl overflow-hidden transition-transform duration-700 hover:-translate-y-1.5"
-                style={{ boxShadow: "0 24px 64px rgba(0,0,0,0.75), 0 0 0 1px rgba(255,255,255,0.04)" }}
-              >
-                <Image
-                  src="/brand/box-detail.jpg"
-                  alt="Nexphoria box detail"
-                  width={220}
-                  height={260}
-                  className="w-full h-auto object-cover"
-                  unoptimized
-                />
-              </div>
-            </div>
-
-            {/* Floating: packaging mockup — lower-right accent */}
-            <div
-              className="absolute z-20"
-              style={{ bottom: "9rem", right: "1.5rem", width: "7.5rem", transform: "rotate(-1deg)" }}
-            >
-              <div
-                className="rounded-xl overflow-hidden transition-transform duration-700 hover:-translate-y-1.5"
-                style={{ boxShadow: "0 16px 48px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04)" }}
-              >
-                <Image
-                  src="/images/bendito_mockup-ss-cosmetic_box-01-copy.jpg"
-                  alt="Nexphoria cosmetic box mockup"
-                  width={200}
-                  height={220}
-                  className="w-full h-auto object-cover"
-                  unoptimized
-                />
-              </div>
-            </div>
           </div>
-        </div>
 
-        {/* Mobile layout: stacked */}
-        <div className="md:hidden flex flex-col" style={{ minHeight: "92vh" }}>
-          {/* Copy */}
-          <div className="flex flex-col justify-center flex-1 px-6 pt-24 pb-10">
+          {/* Text block — left side, vertically centered */}
+          <div
+            style={{
+              position: "absolute",
+              left: "6%",
+              top: "50%",
+              transform: "translateY(-50%)",
+              zIndex: 10,
+              maxWidth: "440px",
+            }}
+          >
             <p
-              className="text-[0.6875rem] font-medium uppercase tracking-[0.2em] mb-6"
-              style={{ color: "#A4B08A" }}
+              className="hero-eyebrow-animate"
+              style={{
+                fontSize: "0.6875rem",
+                fontWeight: 500,
+                textTransform: "uppercase",
+                letterSpacing: "0.18em",
+                color: "#A4B08A",
+                marginBottom: "2rem",
+              }}
             >
               Research-Grade Peptides
             </p>
+
             <h1
-              className="leading-[0.92] tracking-tight mb-6"
-              style={{ color: "#FAF9F6", fontWeight: 500, fontSize: "clamp(2.75rem, 11vw, 4rem)" }}
+              className="hero-text-animate"
+              style={{
+                fontSize: "clamp(3.75rem, 6.25vw, 7.25rem)",
+                lineHeight: 0.91,
+                letterSpacing: "-0.035em",
+                color: "#1A1A1A",
+                marginBottom: "2rem",
+              }}
             >
-              Precision<br />
-              compounds,<br />
-              <span style={{ color: "#A4B08A" }}>independently<br />verified.</span>
+              <span style={{ fontWeight: 300 }}>Precision,</span>
+              <br />
+              <span style={{ fontWeight: 700, color: "#1A1A1A" }}>delivered.</span>
             </h1>
+
             <p
-              className="text-[0.9375rem] leading-relaxed mb-8"
-              style={{ color: "#6A6A66" }}
+              className="hero-sub-animate"
+              style={{
+                fontSize: "0.9375rem",
+                color: "#777",
+                lineHeight: 1.75,
+                maxWidth: "320px",
+                marginBottom: "2.75rem",
+              }}
             >
-              99%+ purity, third-party tested, batch-tracked, shipped cold-chain.
+              Pharmaceutical-grade compounds. 99%+ purity.
+              Cold-chain shipped with Certificate of Analysis.
             </p>
-            <div className="flex flex-col gap-3">
-              <Link href="/products" className="btn-primary text-center">
-                Browse Catalog
+
+            <div className="hero-cta-animate flex items-center gap-5">
+              <Link
+                href="/products"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.625rem",
+                  fontSize: "0.8125rem",
+                  fontWeight: 600,
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  color: "#FFFFF3",
+                  backgroundColor: "#1A1A1A",
+                  textDecoration: "none",
+                  padding: "14px 28px",
+                  borderRadius: "6px",
+                  transition: "background-color 200ms",
+                }}
+              >
+                Explore the Catalog
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
+                  <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </Link>
               <Link
-                href="/science"
-                className="btn-outline-gold text-center"
-                style={{ borderColor: "#3A3A38", color: "#FAF9F6" }}
+                href="/quiz"
+                style={{
+                  fontSize: "0.8125rem",
+                  fontWeight: 500,
+                  letterSpacing: "0.08em",
+                  color: "#d4af37",
+                  textDecoration: "none",
+                  borderBottom: "1px solid #d4af37",
+                  paddingBottom: "2px",
+                  transition: "color 150ms, border-color 150ms",
+                }}
               >
-                Our Standards
+                Find Your Protocol →
               </Link>
             </div>
           </div>
 
-          {/* Image: boxes */}
-          <div className="relative px-4 pb-4">
-            <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "4/3" }}>
-              <Image
-                src="/brand/boxes-cascade.jpg"
-                alt="Nexphoria pharmaceutical-grade packaging"
-                fill
-                className="object-cover object-center"
-                unoptimized
-              />
-              {/* Bottom fade */}
-              <div
-                className="absolute bottom-0 left-0 right-0 h-20"
-                style={{
-                  background: "linear-gradient(to top, #0F0F0E 0%, transparent 100%)",
-                }}
-              />
-              {/* Vials overlay floating at bottom */}
-              <div
-                className="absolute bottom-0 left-0 z-10 w-2/3"
-                style={{ filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.9))" }}
-              >
-                <Image
-                  src="/brand/hero-lineup.png"
-                  alt="Nexphoria peptide vials"
-                  width={500}
-                  height={375}
-                  className="w-full h-auto"
-                  unoptimized
-                />
-              </div>
-            </div>
+          {/* Bottom gradient — seamless transition to social proof */}
+          <div className="hero-bottom-fade" />
+
+          {/* Fine editorial rule */}
+          <div
+            style={{
+              position: "absolute",
+              bottom: 0,
+              left: "6%",
+              right: "6%",
+              height: "1px",
+              backgroundColor: "#E8E5DF",
+              zIndex: 10,
+            }}
+          />
+        </div>
+
+        {/* ── MOBILE ── */}
+        <div
+          className="md:hidden flex flex-col"
+          style={{ minHeight: "100vh", paddingTop: "88px" }}
+        >
+          <div className="px-6 pt-8 pb-6">
+            <p
+              style={{
+                fontSize: "0.6875rem",
+                fontWeight: 500,
+                textTransform: "uppercase",
+                letterSpacing: "0.18em",
+                color: "#A4B08A",
+                marginBottom: "1.5rem",
+              }}
+            >
+              Research-Grade Peptides
+            </p>
+
+            <h1
+              style={{
+                fontSize: "clamp(2.75rem, 11.5vw, 3.75rem)",
+                lineHeight: 0.92,
+                letterSpacing: "-0.03em",
+                color: "#1A1A1A",
+                marginBottom: "1.5rem",
+              }}
+            >
+              <span style={{ fontWeight: 300 }}>Precision,</span>
+              <br />
+              <span style={{ fontWeight: 700 }}>delivered.</span>
+            </h1>
+
+            <p
+              style={{
+                fontSize: "0.9375rem",
+                color: "#777",
+                lineHeight: 1.7,
+                marginBottom: "2.25rem",
+                maxWidth: "300px",
+              }}
+            >
+              Research-grade compounds. 99%+ purity.
+              Cold-chain shipped with COA.
+            </p>
+
+            <Link
+              href="/products"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.5rem",
+                fontSize: "0.8125rem",
+                fontWeight: 600,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                color: "#FFFFF3",
+                backgroundColor: "#1A1A1A",
+                textDecoration: "none",
+                padding: "14px 24px",
+                borderRadius: "6px",
+              }}
+            >
+              Explore the Catalog
+            </Link>
           </div>
 
-          {/* Mobile stats */}
-          <div
-            className="grid grid-cols-3 gap-4 px-6 py-8 border-t mx-4 mb-6"
-            style={{ borderColor: "#252523" }}
-          >
-            {[
-              { value: "99%+", label: "Purity" },
-              { value: "cGMP", label: "Manufactured" },
-              { value: "COA", label: "Every Batch" },
-            ].map((s) => (
-              <div key={s.label} className="text-center">
-                <div className="text-lg font-semibold mb-0.5" style={{ color: "#FAF9F6" }}>
-                  {s.value}
-                </div>
-                <div
-                  className="text-[0.5625rem] uppercase tracking-wider font-medium"
-                  style={{ color: "#A4B08A" }}
-                >
-                  {s.label}
-                </div>
-              </div>
-            ))}
+          <div className="px-4 pb-8 flex-1 flex flex-col justify-end">
+            <div
+              style={{
+                borderRadius: "20px",
+                overflow: "hidden",
+                boxShadow: "0 24px 56px rgba(0,0,0,0.10)",
+                backgroundColor: "#F5F3EE",
+              }}
+            >
+              <Image
+                src="/brand/packaging-unboxing.png"
+                alt="Nexphoria premium peptide presentation"
+                width={800}
+                height={800}
+                className="w-full h-auto"
+                priority
+                unoptimized
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* SOCIAL PROOF STRIP */}
+      {/* ─── SOCIAL PROOF STRIP ─── */}
       <section className="py-10 px-6 border-t border-b border-[#ECEAE4]" style={{ backgroundColor: "#FAFAF8" }}>
         <div className="max-w-5xl mx-auto">
           <p className="text-center text-xs uppercase tracking-widest text-[#999] mb-8 font-medium">
@@ -377,226 +460,314 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section className="py-20 md:py-28 px-6" style={{ backgroundColor: "#F7F5F0" }}>
-        <div className="max-w-6xl mx-auto">
-          <p className="eyebrow mb-4">How It Works</p>
-          <h2 className="text-3xl md:text-4xl font-medium mb-14 tracking-tight">
-            From catalog to bench in three steps.
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                n: "01",
-                title: "Choose compounds",
-                body: "Browse a fully specified catalog. Every product page details sequence, purity, storage, and reconstitution.",
-              },
-              {
-                n: "02",
-                title: "Select your cycle",
-                body: "Order once, or subscribe to a 3- or 6-month research cycle billed monthly for continuity.",
-              },
-              {
-                n: "03",
-                title: "Delivered cold-chain",
-                body: "Shipped temperature-controlled with batch-specific Certificate of Analysis enclosed.",
-              },
-            ].map((step) => (
-              <div
-                key={step.n}
-                className="bg-white rounded-lg p-8 card-shadow"
-              >
-                <div className="text-xs font-mono mb-5 text-[#A4B08A] font-semibold">
-                  {step.n}
-                </div>
-                <h3 className="text-lg font-medium mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-[#555]">
-                  {step.body}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FEATURED PRODUCTS */}
-      <section className="py-20 md:py-28 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-end justify-between mb-12">
-            <div>
-              <p className="eyebrow mb-4">Catalog</p>
+      {/* ─── SHOP BY RESEARCH CATEGORY ─── */}
+      <SectionReveal>
+        <section className="py-20 md:py-28 px-6" style={{ backgroundColor: "#FFFFF3" }}>
+          <div className="max-w-6xl mx-auto">
+            <div className="mb-12">
+              <p className="eyebrow mb-4">Shop by Research Category</p>
               <h2 className="text-3xl md:text-4xl font-medium tracking-tight">
-                Featured Compounds
+                Find your compound.
               </h2>
             </div>
-            <Link
-              href="/products"
-              className="hidden md:inline-flex items-center gap-2 text-sm font-medium hover:opacity-60 transition-opacity"
-            >
-              View All <span aria-hidden>&#8594;</span>
-            </Link>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+              {RESEARCH_CATEGORIES.map((cat, i) => {
+                const count = products.filter((p) =>
+                  p.category === cat.slug ||
+                  (cat.slug === "Immune Support" && (p.category === "Immune" || p.category === "Immune Support")) ||
+                  (cat.slug === "Longevity" && (p.category === "Longevity" || p.category === "Wellness"))
+                ).length;
+                return (
+                  <Link
+                    key={cat.slug}
+                    href={`/products?category=${encodeURIComponent(cat.label)}`}
+                    className="category-card block rounded-xl border border-[#ECEAE4] bg-white p-5"
+                    style={{ animationDelay: `${i * 0.05}s` }}
+                  >
+                    <div className="mb-3">{cat.icon}</div>
+                    <h3 className="text-sm font-semibold mb-1 leading-snug">{cat.label}</h3>
+                    <p className="text-xs text-[#888]">
+                      {count > 0 ? `${count} compound${count !== 1 ? "s" : ""}` : "Browse"}
+                    </p>
+                  </Link>
+                );
+              })}
+            </div>
           </div>
+        </section>
+      </SectionReveal>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredProducts.map((product) => {
-              const price = priceFor(product.slug);
-              return (
-                <Link
-                  key={product.slug}
-                  href={`/products/${product.slug}`}
-                  className="group block"
-                >
-                  <div className="bg-white rounded-lg overflow-hidden card-shadow transition-all duration-200 hover:-translate-y-0.5">
-                    {/* Image container */}
-                    <div className="w-full h-56 overflow-hidden bg-[#f5f5f2]">
-                      {hasProductPhoto(product.slug) ? (
-                        <img
-                          src={getProductImagePath(product.slug)}
-                          alt={product.name}
-                          className="w-full h-full object-cover"
-                        />
-                      ) : (
-                        <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: "#F0EDE7" }}>
-                          <span className="text-sm font-semibold text-[#A4B08A] text-center px-4">
-                            {product.name}
+      {/* ─── FEATURED PRODUCTS ─── */}
+      <SectionReveal>
+        <section className="py-20 md:py-28 px-6" style={{ backgroundColor: "#F7F5F0" }}>
+          <div className="max-w-7xl mx-auto">
+            <div className="flex items-end justify-between mb-12">
+              <div>
+                <p className="eyebrow mb-4">Bestsellers</p>
+                <h2 className="text-3xl md:text-4xl font-medium tracking-tight">
+                  Most researched compounds.
+                </h2>
+              </div>
+              <Link
+                href="/products"
+                className="hidden md:inline-flex items-center gap-2 text-sm font-medium hover:opacity-60 transition-opacity"
+              >
+                View All <span aria-hidden>&#8594;</span>
+              </Link>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {featuredProducts.map((product) => {
+                const price = priceFor(product.slug);
+                return (
+                  <Link
+                    key={product.slug}
+                    href={`/products/${product.slug}`}
+                    className="group block"
+                  >
+                    <div className="bg-white rounded-lg overflow-hidden card-shadow transition-all duration-200 hover:-translate-y-0.5">
+                      <div className="w-full h-56 overflow-hidden bg-[#f5f5f2] relative">
+                        {hasProductPhoto(product.slug) ? (
+                          <img
+                            src={getProductImagePath(product.slug)}
+                            alt={product.name}
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: "#F0EDE7" }}>
+                            <span className="text-sm font-semibold text-[#A4B08A] text-center px-4">
+                              {product.name}
+                            </span>
+                          </div>
+                        )}
+                        {product.badge && (
+                          <span
+                            className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider"
+                            style={product.badge === "POPULAR"
+                              ? { backgroundColor: "#C9A24B", color: "#FFFFF3" }
+                              : { backgroundColor: "#010101", color: "#FFFFF3" }
+                            }
+                          >
+                            {product.badge === "POPULAR" ? "Popular" : "New"}
+                          </span>
+                        )}
+                      </div>
+                      <div className="p-5">
+                        <p className="text-[11px] uppercase tracking-wider text-[#888] mb-1.5">
+                          {product.category}
+                        </p>
+                        <h3 className="text-base font-medium mb-1 group-hover:opacity-70 transition-opacity">
+                          {product.name}
+                        </h3>
+                        <p className="text-xs text-[#999] mb-3 leading-snug">{product.tagline}</p>
+                        <div className="flex items-center justify-between pt-3 border-t border-[#ECEAE4]">
+                          <span className="text-base font-semibold">From ${price}</span>
+                          <span className="text-xs text-[#A4B08A] font-medium uppercase tracking-wide opacity-0 group-hover:opacity-100 transition-opacity">
+                            View
                           </span>
                         </div>
-                      )}
-                    </div>
-
-                    {/* Body */}
-                    <div className="p-5">
-                      <p className="text-[11px] uppercase tracking-wider text-[#888] mb-1.5">
-                        {product.category}
-                      </p>
-                      <h3 className="text-base font-medium mb-1 group-hover:opacity-70 transition-opacity">
-                        {product.name}
-                      </h3>
-                      <p className="text-xs text-[#888] mb-3">{product.size}</p>
-                      <div className="flex items-center justify-between pt-3 border-t border-[#ECEAE4]">
-                        <span className="text-base font-semibold">${price}</span>
-                        <span className="text-xs text-[#A4B08A] font-medium uppercase tracking-wide opacity-0 group-hover:opacity-100 transition-opacity">
-                          View
-                        </span>
                       </div>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+
+            <div className="text-center mt-10 md:hidden">
+              <Link href="/products" className="btn-outline">
+                View All Products
+              </Link>
+            </div>
+          </div>
+        </section>
+      </SectionReveal>
+
+      {/* ─── THE NEXPHORIA STANDARD ─── */}
+      <SectionReveal>
+        <section className="py-20 md:py-28 px-6" style={{ backgroundColor: "#1A1A18" }}>
+          <div className="max-w-6xl mx-auto">
+            <div className="mb-14 text-center">
+              <p className="eyebrow mb-4" style={{ color: "#A4B08A" }}>The Nexphoria Standard</p>
+              <h2 className="text-3xl md:text-4xl font-medium tracking-tight" style={{ color: "#F5F5F0" }}>
+                Manufactured under pharmaceutical standards.
+                <br className="hidden md:block" /> Every lot independently verified.
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  num: "01",
+                  title: "Purity Testing",
+                  body: "Every production lot undergoes HPLC analysis and ESI-MS identity confirmation by accredited third-party laboratories. Purity threshold: 98.0% minimum for catalog compounds, 99.0%+ for COA certification. Raw chromatographic data retained on file.",
+                  detail: "Janoshik Analytical / Freedom Diagnostics",
+                },
+                {
+                  num: "02",
+                  title: "Cold-Chain Logistics",
+                  body: "Lyophilized compounds are packed in temperature-controlled, light-shielding containers for 48-hour cold-chain transit. Each shipment includes gel packs rated to maintain sub-8°C for the full delivery window, regardless of ambient temperature.",
+                  detail: "Temperature-controlled 48-hour delivery",
+                },
+                {
+                  num: "03",
+                  title: "Batch Tracking",
+                  body: "Every vial carries a unique lot identifier traceable back to synthesis, purification, and QC records. Certificate of Analysis is issued per batch — not per compound class. Order documentation includes the full COA for your specific lot.",
+                  detail: "Lot-specific COA enclosed with every order",
+                },
+              ].map((block) => (
+                <div
+                  key={block.num}
+                  className="p-8 rounded-xl border"
+                  style={{ borderColor: "#2A2A28", backgroundColor: "#1C1C1A" }}
+                >
+                  <div className="text-xs font-mono mb-5 font-semibold" style={{ color: "#A4B08A" }}>
+                    {block.num}
+                  </div>
+                  <h3 className="text-lg font-semibold mb-3" style={{ color: "#F5F5F0" }}>
+                    {block.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed mb-5" style={{ color: "#888" }}>
+                    {block.body}
+                  </p>
+                  <p className="text-xs font-medium" style={{ color: "#A4B08A" }}>
+                    {block.detail}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </SectionReveal>
+
+      {/* ─── PACKAGING ─── */}
+      <SectionReveal>
+        <section className="py-20 md:py-28 px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+              <div className="relative">
+                <div className="rounded-lg overflow-hidden">
+                  <Image
+                    src="/brand/packaging-unboxing.png"
+                    alt="Nexphoria pharmaceutical-grade packaging"
+                    width={700}
+                    height={700}
+                    className="w-full h-auto"
+                    unoptimized
+                  />
+                </div>
+              </div>
+
+              <div>
+                <p className="eyebrow mb-4">What Arrives</p>
+                <h2 className="text-3xl md:text-4xl font-medium mb-6 tracking-tight">
+                  Considered down to the seal.
+                </h2>
+                <p className="text-base leading-relaxed text-[#555] mb-8">
+                  Each order arrives in rigid, light-shielding packaging built to
+                  protect lyophilized material in transit. Vials are nested in
+                  cold-chain insulation, sealed, and labeled with batch identifiers.
+                </p>
+
+                <div className="space-y-3">
+                  {[
+                    "Temperature-controlled cold-chain shipping",
+                    "Lot-specific Certificate of Analysis enclosed",
+                    "Discreet, rigid, light-shielding packaging",
+                    "Batch IDs traceable to HPLC records",
+                  ].map((line) => (
+                    <div key={line} className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 bg-[#A4B08A]" />
+                      <p className="text-sm text-[#555]">{line}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </SectionReveal>
+
+      {/* ─── LATEST FROM THE JOURNAL ─── */}
+      <SectionReveal>
+        <section className="py-20 md:py-28 px-6" style={{ backgroundColor: "#F7F5F0" }}>
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-end justify-between mb-12">
+              <div>
+                <p className="eyebrow mb-4">Research Journal</p>
+                <h2 className="text-3xl md:text-4xl font-medium tracking-tight">
+                  Latest from the Journal.
+                </h2>
+              </div>
+              <Link
+                href="/blog"
+                className="hidden md:inline-flex items-center gap-2 text-sm font-medium hover:opacity-60 transition-opacity"
+              >
+                View All <span aria-hidden>&#8594;</span>
+              </Link>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {recentArticles.map((article) => (
+                <Link
+                  key={article.slug}
+                  href={`/blog/${article.slug}`}
+                  className="blog-card block bg-white rounded-lg overflow-hidden card-shadow"
+                >
+                  <div className="p-6">
+                    <p className="text-[11px] uppercase tracking-wider text-[#A4B08A] mb-3 font-medium">
+                      {article.category}
+                    </p>
+                    <h3 className="text-base font-medium mb-3 leading-snug">
+                      {article.title}
+                    </h3>
+                    <p className="text-xs text-[#888] leading-relaxed mb-4 line-clamp-2">
+                      {article.description}
+                    </p>
+                    <div className="flex items-center gap-3 pt-4 border-t border-[#ECEAE4]">
+                      <span className="text-xs text-[#888]">
+                        {new Date(article.publishedAt).toLocaleDateString("en-US", {
+                          month: "short",
+                          day: "numeric",
+                          year: "numeric",
+                        })}
+                      </span>
+                      <span className="text-xs text-[#CCC]">·</span>
+                      <span className="text-xs text-[#888]">{article.readMinutes} min read</span>
                     </div>
                   </div>
                 </Link>
-              );
-            })}
-          </div>
+              ))}
+            </div>
 
-          <div className="text-center mt-10 md:hidden">
-            <Link href="/products" className="btn-outline">
-              View All Products
+            <div className="text-center mt-8 md:hidden">
+              <Link href="/blog" className="btn-outline">
+                View All Articles
+              </Link>
+            </div>
+          </div>
+        </section>
+      </SectionReveal>
+
+      {/* ─── CONTINUE YOUR RESEARCH ─── */}
+      <HomepageContinueResearch />
+
+      {/* ─── CLOSING CTA ─── */}
+      <SectionReveal>
+        <section className="py-20 md:py-28 px-6 text-center">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-medium mb-4 tracking-tight">
+              Ready to begin?
+            </h2>
+            <p className="text-base text-[#555] mb-8 leading-relaxed">
+              Browse our full catalog of research-grade peptide compounds.
+              Every product ships with a Certificate of Analysis.
+            </p>
+            <Link href="/products" className="btn-primary">
+              Browse Full Catalog
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* PACKAGING */}
-      <section className="py-20 md:py-28 px-6" style={{ backgroundColor: "#F7F5F0" }}>
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-            <div className="relative">
-              <div className="rounded-lg overflow-hidden">
-                <Image
-                  src="/brand/packaging-unboxing.png"
-                  alt="Nexphoria pharmaceutical-grade packaging"
-                  width={700}
-                  height={700}
-                  className="w-full h-auto"
-                  unoptimized
-                />
-              </div>
-            </div>
-
-            <div>
-              <p className="eyebrow mb-4">What Arrives</p>
-              <h2 className="text-3xl md:text-4xl font-medium mb-6 tracking-tight">
-                Considered down to the seal.
-              </h2>
-              <p className="text-base leading-relaxed text-[#555] mb-8">
-                Each order arrives in rigid, light-shielding packaging built to
-                protect lyophilized material in transit. Vials are nested in
-                cold-chain insulation, sealed, and labeled with batch identifiers.
-              </p>
-
-              <div className="space-y-3">
-                {[
-                  "Temperature-controlled cold-chain shipping",
-                  "Lot-specific Certificate of Analysis enclosed",
-                  "Discreet, rigid, light-shielding packaging",
-                  "Batch IDs traceable to HPLC records",
-                ].map((line) => (
-                  <div key={line} className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 bg-[#A4B08A]" />
-                    <p className="text-sm text-[#555]">{line}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* STANDARDS */}
-      <section className="py-20 md:py-28 px-6" style={{ backgroundColor: "#1A1A18" }}>
-        <div className="max-w-5xl mx-auto text-center">
-          <p className="eyebrow mb-5" style={{ color: "#A4B08A" }}>Our Standards</p>
-          <h2
-            className="text-3xl md:text-4xl mb-14 max-w-3xl mx-auto font-medium tracking-tight"
-            style={{ color: "#F5F5F0", lineHeight: 1.2 }}
-          >
-            Manufactured under pharmaceutical standards. Every lot independently verified.
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-10 md:gap-12 text-left">
-            {[
-              {
-                title: "cGMP Manufacturing",
-                body: "Synthesized in certified facilities under current Good Manufacturing Practice.",
-              },
-              {
-                title: "Independent Verification",
-                body: "Third-party HPLC and mass spectrometry on every production lot.",
-              },
-              {
-                title: "Research Use Only",
-                body: "Supplied for qualified research applications. Not for human consumption.",
-              },
-            ].map((col) => (
-              <div key={col.title}>
-                <h3 className="text-sm font-semibold uppercase tracking-wide mb-3" style={{ color: "#A4B08A" }}>
-                  {col.title}
-                </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "#999" }}>
-                  {col.body}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CLOSING CTA */}
-      <section className="py-20 md:py-28 px-6 text-center">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-medium mb-4 tracking-tight">
-            Ready to begin?
-          </h2>
-          <p className="text-base text-[#555] mb-8 leading-relaxed">
-            Browse our full catalog of research-grade peptide compounds.
-            Every product ships with a Certificate of Analysis.
-          </p>
-          <Link href="/products" className="btn-primary">
-            Browse Full Catalog
-          </Link>
-        </div>
-      </section>
+        </section>
+      </SectionReveal>
     </>
   );
 }

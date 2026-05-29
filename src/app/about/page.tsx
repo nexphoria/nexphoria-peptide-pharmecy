@@ -90,6 +90,28 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Team CTA */}
+      <section className="py-24 px-6 md:px-12" style={{ backgroundColor: "#FFFFFF" }}>
+        <div className="max-w-5xl mx-auto space-y-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 p-10 rounded-2xl" style={{ backgroundColor: "#010101" }}>
+            <div>
+              <p className="text-xs uppercase mb-3" style={{ color: "#B8923A", letterSpacing: "0.2em" }}>Our Team</p>
+              <h2 className="text-2xl mb-2" style={{ fontWeight: 200, color: "#FFFFFF" }}>The scientists behind the purity</h2>
+              <p className="text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>Biochemists, analytical chemists, and cold-chain specialists with 50+ combined years in research.</p>
+            </div>
+            <Link href="/about/team" className="btn-primary whitespace-nowrap">Meet the Team →</Link>
+          </div>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 p-10 rounded-2xl" style={{ backgroundColor: "#F7F4F0", border: "1px solid rgba(184,146,58,0.2)" }}>
+            <div>
+              <p className="text-xs uppercase mb-3" style={{ color: "#B8923A", letterSpacing: "0.2em" }}>Scientific Advisory Board</p>
+              <h2 className="text-2xl mb-2" style={{ fontWeight: 200, color: "#010101" }}>Independent researchers who hold our standards</h2>
+              <p className="text-sm" style={{ color: "#7F7F7D" }}>Four domain specialists in GH axis, metabolic, longevity, and immunology research advise on compound specs and quality benchmarks.</p>
+            </div>
+            <Link href="/about/science-advisors" className="btn-outline whitespace-nowrap">Meet the SAB →</Link>
+          </div>
+        </div>
+      </section>
+
       {/* Contact */}
       <section className="py-24 px-6 md:px-12" style={{ backgroundColor: "#EAE7E3" }}>
         <div className="max-w-3xl mx-auto text-center">

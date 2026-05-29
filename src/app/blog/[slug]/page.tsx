@@ -4,6 +4,7 @@ import Link from "next/link";
 import { articles, getArticleBySlug, type BlogSection } from "@/lib/blog";
 import Breadcrumb from "@/components/Breadcrumb";
 import ShareButtons from "@/components/ShareButtons";
+import { categoryToSlug } from "../category/[category]/page";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -280,12 +281,13 @@ export default async function BlogArticlePage({ params }: Props) {
             />
 
             <div className="flex flex-wrap items-center gap-4 mb-6">
-              <span
-                className="text-xs uppercase tracking-widest px-3 py-1 rounded-full"
+              <Link
+                href={`/blog/category/${categoryToSlug(article.category)}`}
+                className="text-xs uppercase tracking-widest px-3 py-1 rounded-full hover:opacity-80 transition-opacity"
                 style={{ backgroundColor: "#A4B08A", color: "#010101" }}
               >
                 {article.category}
-              </span>
+              </Link>
               <span className="text-xs" style={{ color: "#666" }}>
                 {formatDate(article.publishedAt)}
               </span>
@@ -377,22 +379,22 @@ export default async function BlogArticlePage({ params }: Props) {
                 related.length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-2"
               }`}>
                 {related.map((rel) => (
-                  <Link
+                  <div
                     key={rel.slug}
-                    href={`/blog/${rel.slug}`}
-                    className="group block rounded-lg p-6"
+                    className="group rounded-lg p-6"
                     style={{
                       backgroundColor: "#FFFFF3",
                       border: "1px solid rgba(0,0,0,0.06)",
                     }}
                   >
                     <div className="flex items-center gap-2 mb-3">
-                      <p
-                        className="text-xs uppercase tracking-widest"
+                      <Link
+                        href={`/blog/category/${categoryToSlug(rel.category)}`}
+                        className="text-xs uppercase tracking-widest hover:opacity-70 transition-opacity"
                         style={{ color: "#A4B08A" }}
                       >
                         {rel.category}
-                      </p>
+                      </Link>
                       {rel.category === article.category && (
                         <span
                           className="text-xs px-1.5 py-0.5 rounded-full"
@@ -403,14 +405,20 @@ export default async function BlogArticlePage({ params }: Props) {
                       )}
                     </div>
                     <h3
-                      className="text-base mb-2 group-hover:opacity-70 transition-opacity"
+                      className="text-base mb-2"
                       style={{
                         fontWeight: 400,
                         color: "#010101",
                         lineHeight: 1.3,
                       }}
                     >
-                      {rel.title}
+                      <Link
+                        href={`/blog/${rel.slug}`}
+                        className="hover:opacity-70 transition-opacity"
+                        style={{ color: "inherit" }}
+                      >
+                        {rel.title}
+                      </Link>
                     </h3>
                     <p
                       className="text-xs mb-3 line-clamp-2"
@@ -418,13 +426,14 @@ export default async function BlogArticlePage({ params }: Props) {
                     >
                       {rel.description}
                     </p>
-                    <span
+                    <Link
+                      href={`/blog/${rel.slug}`}
                       className="text-xs inline-flex items-center gap-1"
                       style={{ color: "#A4B08A" }}
                     >
                       {rel.readMinutes} min read <span aria-hidden>→</span>
-                    </span>
-                  </Link>
+                    </Link>
+                  </div>
                 ))}
               </div>
             </div>

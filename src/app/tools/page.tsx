@@ -17,6 +17,18 @@ export const metadata: Metadata = {
 
 const TOOLS = [
   {
+    href: "/quiz",
+    title: "Protocol Finder Quiz",
+    desc: "Answer 5 questions about your research focus, experience, and budget — get 3 personalized compound recommendations matched to your study design.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/>
+      </svg>
+    ),
+    badge: "Quiz",
+  },
+  {
     href: "/tools/reconstitution-calculator",
     title: "Reconstitution Calculator",
     desc: "Calculate BAC water volume, dose volume (mL + syringe units), and doses per vial for any lyophilized peptide.",
@@ -148,6 +160,21 @@ const TOOLS = [
     badge: "Reference",
   },
   {
+    href: "/guides/dosing-protocols",
+    title: "Dosing Protocol Design Guide",
+    desc: "Comprehensive written guide to protocol design: loading vs maintenance phases, GH axis timing, injection site rotation, 3-month vs 6-month cycles, washout period calculation, stacking principles, and record-keeping standards.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+        <line x1="16" y1="13" x2="8" y2="13"/>
+        <line x1="16" y1="17" x2="8" y2="17"/>
+        <polyline points="10 9 9 9 8 9"/>
+      </svg>
+    ),
+    badge: "Guide",
+  },
+  {
     href: "/tools/unit-converter",
     title: "Unit Converter",
     desc: "Convert mcg/mg/g/IU, mL to insulin syringe units, nmol/L to ng/mL, and dilution factor (C₁V₁=C₂V₂) calculations for any compound.",
@@ -217,6 +244,37 @@ const TOOLS = [
     badge: "Tool",
   },
   {
+    href: "/tools/peptide-stability-checker",
+    title: "Peptide Stability Checker",
+    desc: "Select a compound and storage condition to get compound-specific shelf life estimates, degradation risk level, key risk factors, and storage container recommendations for 34 research peptides.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        <path d="M9 12l2 2 4-4"/>
+      </svg>
+    ),
+    badge: "Tool",
+  },
+  {
+    href: "/tools/body-weight-dose-calculator",
+    title: "Body Weight Dose Calculator",
+    desc: "Convert mg/kg or mcg/kg rodent study dosing to absolute doses for any subject weight. Flip mode calculates mg/kg from an absolute dose. Pre-loaded with published dosing data for 30+ research compounds.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 6h18"/>
+        <path d="M7 12h10"/>
+        <path d="M10 18h4"/>
+        <circle cx="3" cy="6" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="21" cy="6" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="7" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="17" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="10" cy="18" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="14" cy="18" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    ),
+    badge: "Tool",
+  },
+  {
     href: "/tools/igf-1-calculator",
     title: "IGF-1 Response Estimator",
     desc: "Estimate IGF-1 % elevation from GHRH analog + GHRP stacking based on published clinical data. Includes synergy multipliers, duration modifiers, and dosing frequency adjustments.",
@@ -231,6 +289,74 @@ const TOOLS = [
       </svg>
     ),
     badge: "Tool",
+  },
+  {
+    href: "/tools/protocol-template-generator",
+    title: "Protocol Template Generator",
+    desc: "Select compounds, doses, routes, and cycle length — generate a printable research protocol document with reconstitution notes, storage table, weekly schedule grid, and biomarker tracking fields.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+        <line x1="16" y1="13" x2="8" y2="13"/>
+        <line x1="16" y1="17" x2="8" y2="17"/>
+        <line x1="10" y1="9" x2="8" y2="9"/>
+      </svg>
+    ),
+    badge: "Tool",
+  },
+  {
+    href: "/tools/peptide-interaction-checker",
+    title: "Peptide Interaction Checker",
+    desc: "Select 2–5 compounds to analyze receptor overlap risks, mechanism synergies, timing conflicts, and compatibility. 30-compound database with published interaction data and a compatibility matrix grid.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="8" cy="8" r="3"/>
+        <circle cx="16" cy="16" r="3"/>
+        <path d="M10.5 10.5 13.5 13.5"/>
+        <path d="M16 8a3 3 0 0 1-3 3H8"/>
+        <path d="M8 16a3 3 0 0 0 3-3v-5"/>
+      </svg>
+    ),
+    badge: "Tool",
+  },
+  {
+    href: "/tools/research-log",
+    title: "Research Log",
+    desc: "Daily research journal: log compounds, doses, routes, and observations. Stored in your browser (localStorage). Filter by compound, tag, or outcome. Export as CSV or print.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+      </svg>
+    ),
+    badge: "Tool",
+  },
+  {
+    href: "/tools/vial-inventory-tracker",
+    title: "Vial Inventory Tracker",
+    desc: "Track compound vials: lot numbers, quantities, reconstitution dates, and stability timelines. Low-stock alerts, days-until-expiry display, quick quantity adjusters, and CSV export. Stored in your browser.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M9 3H15M9 3V6.5L6 14C5.5 16 6.5 19.5 12 20C17.5 20 18.5 16 18 14L15 6.5V3M9 3H15M9 12H15"/>
+      </svg>
+    ),
+    badge: "Tool",
+  },
+  {
+    href: "/tools/biomarker-reference",
+    title: "Biomarker Reference",
+    desc: "30+ lab biomarkers with normal ranges, compound interactions, and testing frequency guidance. Track IGF-1, HbA1c, lipids, thyroid, liver enzymes, and more.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+        <circle cx="8" cy="9" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="15" r="1.5" fill="currentColor" stroke="none"/>
+        <path d="M6 9h12"/>
+        <path d="M6 15h12"/>
+      </svg>
+    ),
+    badge: "Reference",
   },
 ];
 

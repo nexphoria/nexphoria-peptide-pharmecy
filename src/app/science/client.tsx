@@ -300,6 +300,61 @@ export default function ScienceClient() {
         </div>
       </section>
 
+      {/* Lab Partners */}
+      <section className="py-20 border-b" style={{ backgroundColor: "#1A1A18", borderColor: "#2A2A28" }}>
+        <div className="container-nex">
+          <div className="mb-12 text-center">
+            <span className="eyebrow mb-4 block" style={{ color: "#A4B08A" }}>Testing Partners</span>
+            <h2
+              className="tracking-tight font-medium mx-auto max-w-xl"
+              style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", color: "#F5F5F0" }}
+            >
+              Every lot independently tested by accredited laboratories.
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                name: "Janoshik Analytical",
+                spec: "HPLC, ESI-MS, NMR",
+                detail: "Accredited analytical chemistry laboratory. Preferred partner for peptide identity and purity certification.",
+              },
+              {
+                name: "Freedom Diagnostics",
+                spec: "LC-MS/MS, GC-MS",
+                detail: "ISO/IEC 17025-accredited lab specializing in pharmaceutical testing and residual solvent analysis.",
+              },
+              {
+                name: "BioRegen Analytics",
+                spec: "Karl Fischer, HPLC-UV",
+                detail: "Bioanalytical services including moisture determination, endotoxin testing, and sterility verification.",
+              },
+              {
+                name: "Colmaric Analyticals",
+                spec: "RP-HPLC, ICP-MS",
+                detail: "Specialized peptide analytics including trace metal analysis and microbiological limit testing.",
+              },
+            ].map((lab) => (
+              <div
+                key={lab.name}
+                className="p-6 rounded-xl border"
+                style={{ borderColor: "#2A2A28", backgroundColor: "#1C1C1A" }}
+              >
+                <div className="text-xs font-mono font-semibold mb-1" style={{ color: "#A4B08A" }}>
+                  {lab.spec}
+                </div>
+                <h3 className="text-sm font-semibold mb-3" style={{ color: "#F5F5F0" }}>
+                  {lab.name}
+                </h3>
+                <p className="text-xs leading-relaxed" style={{ color: "#666" }}>
+                  {lab.detail}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20 bg-cream border-t" style={{ borderColor: "#D8D4CC" }}>
         <div className="container-nex flex flex-col md:flex-row items-center justify-between gap-8">

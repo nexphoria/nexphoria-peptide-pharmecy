@@ -1,0 +1,199 @@
+/**
+ * Product → Related Articles Mapping
+ * Maps each product slug to up to 3 related blog article slugs.
+ * Used by the RelatedArticles component on product detail pages.
+ */
+
+export const PRODUCT_ARTICLES: Record<string, string[]> = {
+  // Repair / Recovery
+  "bpc-157": [
+    "bpc-157-researchers-complete-guide",
+    "bpc-157-tb-500-recovery-stack-deep-dive",
+    "wolverine-blend-bpc157-tb500-ghk-cu-triple-combination-guide",
+  ],
+  "tb-500": [
+    "tb-500-thymosin-beta-4-researchers-complete-guide",
+    "bpc-157-tb-500-recovery-stack-deep-dive",
+    "follistatin-344-igf1-independent-muscle-research",
+  ],
+  "ghk-cu": [
+    "ghk-cu-copper-peptide-research-review",
+    "bpc-157-tb-500-recovery-stack-deep-dive",
+    "wolverine-blend-bpc157-tb500-ghk-cu-triple-combination-guide",
+  ],
+
+  // GH Axis
+  "ipamorelin": [
+    "ipamorelin-vs-ghrp2-vs-ghrp6-growth-hormone-secretagogue-comparison",
+    "sermorelin-ghrh-analog-anti-aging-research",
+    "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
+  ],
+  "cjc-1295": [
+    "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
+    "ipamorelin-vs-ghrp2-vs-ghrp6-growth-hormone-secretagogue-comparison",
+    "sermorelin-ghrh-analog-anti-aging-research",
+  ],
+  "cjc-1295-no-dac": [
+    "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
+    "ipamorelin-vs-ghrp2-vs-ghrp6-growth-hormone-secretagogue-comparison",
+    "sermorelin-ghrh-analog-anti-aging-research",
+  ],
+  "cjc-1295-ipamorelin": [
+    "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
+    "ipamorelin-vs-ghrp2-vs-ghrp6-growth-hormone-secretagogue-comparison",
+    "sermorelin-ghrh-analog-anti-aging-research",
+  ],
+  "sermorelin": [
+    "sermorelin-ghrh-analog-anti-aging-research",
+    "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
+    "ipamorelin-vs-ghrp2-vs-ghrp6-growth-hormone-secretagogue-comparison",
+  ],
+  "mk-677": [
+    "mk-677-ibutamoren-oral-gh-secretagogue-guide",
+    "ipamorelin-vs-ghrp2-vs-ghrp6-growth-hormone-secretagogue-comparison",
+    "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
+  ],
+  "tesamorelin": [
+    "tesamorelin-ghrh-analog-visceral-fat-research",
+    "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
+    "sermorelin-ghrh-analog-anti-aging-research",
+  ],
+
+  // GLP-1 / Metabolic
+  "semaglutide": [
+    "semaglutide-vs-tirzepatide-research-comparison",
+    "glp1-receptor-agonists-complete-research-landscape",
+    "retatrutide-triple-agonist-research-guide",
+  ],
+  "tirzepatide": [
+    "semaglutide-vs-tirzepatide-research-comparison",
+    "glp1-receptor-agonists-complete-research-landscape",
+    "retatrutide-triple-agonist-research-guide",
+  ],
+  "retatrutide": [
+    "retatrutide-triple-agonist-research-guide",
+    "semaglutide-vs-tirzepatide-research-comparison",
+    "glp1-receptor-agonists-complete-research-landscape",
+  ],
+  "aod-9604": [
+    "aod-9604-lipolytic-fragment-research-guide",
+    "hgh-fragment-176-191-vs-aod-9604-difference",
+    "glp1-receptor-agonists-complete-research-landscape",
+  ],
+  "mots-c": [
+    "mots-c-mitochondria-derived-peptide-metabolic-research",
+    "nad-plus-cellular-energy-sirtuins-longevity-research",
+    "ss-31-elamipretide-mitochondria-targeted-peptide-research",
+  ],
+
+  // Longevity
+  "nad-plus": [
+    "nad-plus-cellular-energy-sirtuins-longevity-research",
+    "mots-c-mitochondria-derived-peptide-metabolic-research",
+    "epithalon-telomere-peptide-research-guide",
+  ],
+  "epitalon": [
+    "epithalon-telomere-peptide-research-guide",
+    "nad-plus-cellular-energy-sirtuins-longevity-research",
+    "sermorelin-ghrh-analog-anti-aging-research",
+  ],
+  "ss-31": [
+    "ss-31-elamipretide-mitochondria-targeted-peptide-research",
+    "mots-c-mitochondria-derived-peptide-metabolic-research",
+    "nad-plus-cellular-energy-sirtuins-longevity-research",
+  ],
+
+  // Nootropics / Neuro
+  "selank": [
+    "selank-semax-nootropic-peptide-research-overview",
+    "dsip-delta-sleep-inducing-peptide-sleep-research-review",
+    "oxytocin-research-neuropeptide-guide",
+  ],
+  "semax": [
+    "selank-semax-nootropic-peptide-research-overview",
+    "cerebrolysin-neurotrophic-peptide-research-review",
+    "oxytocin-research-neuropeptide-guide",
+  ],
+  "dsip": [
+    "dsip-delta-sleep-inducing-peptide-sleep-research-review",
+    "selank-semax-nootropic-peptide-research-overview",
+    "oxytocin-research-neuropeptide-guide",
+  ],
+  "oxytocin": [
+    "oxytocin-research-neuropeptide-guide",
+    "selank-semax-nootropic-peptide-research-overview",
+    "kisspeptin-lh-surge-reproductive-neuroendocrinology-research",
+  ],
+
+  // Melanocortin
+  "pt-141": [
+    "pt-141-bremelanotide-melanocortin-research-review",
+    "melanotan-ii-melanocortin-research-review",
+    "oxytocin-research-neuropeptide-guide",
+  ],
+  "melanotan-ii": [
+    "melanotan-ii-melanocortin-research-review",
+    "pt-141-bremelanotide-melanocortin-research-review",
+    "kpv-immunomodulatory-tripeptide-research-guide",
+  ],
+  "kpv": [
+    "kpv-immunomodulatory-tripeptide-research-guide",
+    "thymosin-alpha-1-immune-peptide-research-guide",
+    "ll-37-human-host-defense-peptide-research-guide",
+  ],
+
+  // Immunology
+  "thymosin-alpha-1": [
+    "thymosin-alpha-1-immune-peptide-research-guide",
+    "ll-37-human-host-defense-peptide-research-guide",
+    "kpv-immunomodulatory-tripeptide-research-guide",
+  ],
+  "ll-37": [
+    "ll-37-human-host-defense-peptide-research-guide",
+    "thymosin-alpha-1-immune-peptide-research-guide",
+    "kpv-immunomodulatory-tripeptide-research-guide",
+  ],
+
+  // Reproductive / Hormonal
+  "kisspeptin": [
+    "kisspeptin-lh-surge-reproductive-neuroendocrinology-research",
+    "oxytocin-research-neuropeptide-guide",
+  ],
+
+  // Cosmetic
+  "snap-8": [
+    "snap-8-anti-wrinkle-peptide-research-guide",
+    "ghk-cu-copper-peptide-research-review",
+  ],
+
+  // Blends
+  "wolverine-blend": [
+    "wolverine-blend-bpc157-tb500-ghk-cu-triple-combination-guide",
+    "bpc-157-tb-500-recovery-stack-deep-dive",
+    "ghk-cu-copper-peptide-research-review",
+  ],
+  "glow-blend": [
+    "ghk-cu-copper-peptide-research-review",
+    "snap-8-anti-wrinkle-peptide-research-guide",
+  ],
+  "klw-blend": [
+    "kisspeptin-lh-surge-reproductive-neuroendocrinology-research",
+    "ll-37-human-host-defense-peptide-research-guide",
+    "kpv-immunomodulatory-tripeptide-research-guide",
+  ],
+};
+
+/**
+ * Returns up to `max` related article slugs for a given product slug.
+ * Falls back to the primer + COA articles if no mapping exists.
+ */
+export function getRelatedArticleSlugs(productSlug: string, max = 3): string[] {
+  const slugs = PRODUCT_ARTICLES[productSlug];
+  if (slugs && slugs.length > 0) return slugs.slice(0, max);
+  // Default fallback for unmapped products
+  return [
+    "what-are-peptides-researchers-primer",
+    "understanding-coas-how-to-read-certificate-of-analysis",
+    "cold-chain-shipping-why-it-matters-for-peptide-integrity",
+  ].slice(0, max);
+}
