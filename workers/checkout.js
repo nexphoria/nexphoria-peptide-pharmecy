@@ -92,7 +92,12 @@ async function handleCheckout(request, env) {
   const stripeClient = new stripe.default(env.STRIPE_SECRET_KEY);
 
   const origin = request.headers.get('origin') || 'https://nexphoria.pages.dev';
-  const hasSubscription = items.some((item) => (item.subscriptionMonths || 1) > 1);
+  const subscriptionItems = items.filter((item) => (item.subscriptionMonths || 1) > 1);
+  const oneTimeItems = items.filter((item) => (item.subscriptionMonths || 1) <= 1);
+  const hasSubscription = subscriptionItems.length > 0;
+
+  const formatLabel = (item) =>
+    item.format === 'pen' ? 'Pre-loaded Pen' : 'Lyophilized Vial';
 
   const cycleLabel = (months) =>
     months === 6 ? '6-Month Research Cycle' : months === 3 ? '3-Month Research Cycle' : '';
@@ -100,18 +105,39 @@ async function handleCheckout(request, env) {
   let session;
 
   if (hasSubscription) {
-    const lineItems = items.map((item) => ({
-      price_data: {
-        currency: 'usd',
-        product_data: {
-          name: `${item.name}${item.size ? ` (${item.size})` : ''} — ${cycleLabel(item.subscriptionMonths)}`,
-          description: `Research-grade peptide compound — ${item.format === 'pen' ? 'Pre-loaded Pen' : 'Lyophilized Vial'} | Billed monthly`,
+    // Stripe subscription mode: subscription items get recurring pricing,
+    // one-time items in the same cart are added as non-recurring line items.
+    const lineItems = [];
+
+    for (const item of subscriptionItems) {
+      lineItems.push({
+        price_data: {
+          currency: 'usd',
+          product_data: {
+            name: `${item.name}${item.size ? ` (${item.size})` : ''} — ${cycleLabel(item.subscriptionMonths)}`,
+            description: `Research-grade peptide compound — ${formatLabel(item)} | Billed monthly`,
+          },
+          unit_amount: Math.round(item.price * 100),
+          recurring: { interval: 'month', interval_count: 1 },
         },
-        unit_amount: Math.round(item.price * 100),
-        recurring: { interval: 'month', interval_count: 1 },
-      },
-      quantity: item.quantity,
-    }));
+        quantity: item.quantity,
+      });
+    }
+
+    // One-time items added without recurring (charged once at checkout).
+    for (const item of oneTimeItems) {
+      lineItems.push({
+        price_data: {
+          currency: 'usd',
+          product_data: {
+            name: `${item.name}${item.size ? ` (${item.size})` : ''}`,
+            description: `Research-grade peptide compound — ${formatLabel(item)}`,
+          },
+          unit_amount: Math.round(item.price * 100),
+        },
+        quantity: item.quantity,
+      });
+    }
 
     session = await stripeClient.checkout.sessions.create({
       mode: 'subscription',
@@ -122,12 +148,12 @@ async function handleCheckout(request, env) {
       cancel_url: `${origin}/checkout/cancel`,
     });
   } else {
-    const lineItems = items.map((item) => ({
+    const lineItems = oneTimeItems.map((item) => ({
       price_data: {
         currency: 'usd',
         product_data: {
           name: `${item.name}${item.size ? ` (${item.size})` : ''}`,
-          description: `Research-grade peptide compound — ${item.format === 'pen' ? 'Pre-loaded Pen' : 'Lyophilized Vial'}`,
+          description: `Research-grade peptide compound — ${formatLabel(item)}`,
         },
         unit_amount: Math.round(item.price * 100),
       },

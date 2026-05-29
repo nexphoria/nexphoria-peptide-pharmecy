@@ -199,7 +199,7 @@
   }
 
   .text-secondary {
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-secondary);
   }
 }
 

@@ -24,13 +24,13 @@ export default function CheckoutCancel() {
         </motion.div>
 
         <h1
-          className="text-3xl md:text-4xl font-bold text-primary mb-4"
-          style={{ fontFamily: "var(--font-display)" }}
+          className="text-3xl md:text-4xl font-bold mb-4"
+          style={{ fontFamily: "var(--font-display)", color: "#000000" }}
         >
           Order Cancelled
         </h1>
 
-        <p className="text-secondary text-lg mb-8 leading-relaxed">
+        <p className="text-lg mb-8 leading-relaxed" style={{ color: "#555555" }}>
           Your checkout was cancelled. No charges were made.
           Your cart items are still saved if you&apos;d like to complete your order.
         </p>

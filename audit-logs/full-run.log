@@ -29,3 +29,83 @@ Deploying to Cloudflare Pages...
 ✨ Uploading _redirects
 🌎 Deploying...
 ✨ Deployment complete! Take a peek over at https://75109bd5.nexphoria.pages.dev
+[main a0041fb] audit-pass-1: Product images: Audit all product image paths. Ensure every
+ Committer: Chiya Yosopov <chiyayosopov@Chiyas-Mac-mini.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 80 files changed, 6579 insertions(+), 1681 deletions(-)
+ create mode 100644 .wrangler/state/v3/kv/miniflare-KVNamespaceObject/0e9abd93f795fc7d86db797c690cbf1993b01187d9ec5341e7b6da31574a1ad4.sqlite
+ create mode 100644 .wrangler/state/v3/kv/miniflare-KVNamespaceObject/0e9abd93f795fc7d86db797c690cbf1993b01187d9ec5341e7b6da31574a1ad4.sqlite-shm
+ create mode 100644 .wrangler/state/v3/kv/miniflare-KVNamespaceObject/0e9abd93f795fc7d86db797c690cbf1993b01187d9ec5341e7b6da31574a1ad4.sqlite-wal
+ create mode 100644 audit-logs/full-run.log
+ create mode 100644 audit-logs/pass-1-20260529_022022.md
+ create mode 100644 public/_redirects
+ create mode 100644 public/og/products/bpc-157.png
+ create mode 100644 public/og/products/cjc-1295-ipamorelin.png
+ create mode 100644 public/og/products/ghk-cu.png
+ create mode 100644 public/og/products/mk-677.png
+ create mode 100644 public/og/products/nad-plus.png
+ create mode 100644 public/og/products/pt-141.png
+ create mode 100644 public/og/products/retatrutide.png
+ create mode 100644 public/og/products/semaglutide.png
+ create mode 100644 public/og/products/tb-500.png
+ create mode 100644 public/og/products/tirzepatide.png
+ create mode 100644 public/robots.txt
+ create mode 100755 scripts/deep-audit-loop.sh
+ create mode 100644 src/app/account/orders/page.tsx
+ create mode 100644 src/app/blog/[slug]/page.tsx
+ create mode 100644 src/app/blog/page.tsx
+ create mode 100644 src/app/faq/page.tsx
+ create mode 100644 src/app/not-found.tsx
+ create mode 100644 src/app/products/wolverine/page.tsx
+ create mode 100644 src/components/ComparePanel.tsx
+ create mode 100644 src/components/product/CompleteYourProtocol.tsx
+ create mode 100644 src/components/product/RecentlyViewedBar.tsx
+ create mode 100644 src/components/product/StickyAddToOrderBar.tsx
+ create mode 100644 src/hooks/useRecentlyViewed.ts
+ create mode 100644 src/lib/blog.ts
+ create mode 100644 src/lib/protocol-pairings.ts
+✅ Pass 1 complete and deployed
+
+--- Pass 1 finished at Fri May 29 02:23:50 EDT 2026 ---
+
+============================================
+PASS 2 / 10 — Fri May 29 02:24:00 EDT 2026
+Topic: Checkout flow: Audit the entire checkout experience from cart to payment. Check ...
+============================================
+## Pass 2 Complete — Checkout Flow Audit
+
+**Build: PASSES** (72/72 pages)
+
+### Summary of 10 fixes across 6 files:
+
+| # | Severity | Issue | File |
+|---|----------|-------|------|
+| 1 | **CRITICAL** | `.text-secondary` was white text on light bg — invisible | `globals.css` |
+| 2 | **CRITICAL** | `var(--dark-panel)` broken — no background on success box | `success/page.tsx` |
+| 3 | **CRITICAL** | Mixed cart items all charged as subscriptions in Stripe | `workers/checkout.js` |
+| 4 | High | `border-border` class didn't exist in theme | `success/page.tsx` |
+| 5 | High | Shipping form collected but never sent anywhere | `checkout/page.tsx` |
+| 6 | High | Free gift thresholds inconsistent ($ vs item count) | `checkout/page.tsx` |
+| 7 | Medium | "Add to Order" on supplies had no click handler | `CartDrawer.tsx` |
+| 8 | Medium | Price display truncated cents (`.toFixed(0)`) | `CartDrawer.tsx`, `checkout/page.tsx` |
+| 9 | Low | `text-primary`/`text-acid-green` unreliable utility classes | `success/page.tsx`, `cancel/page.tsx` |
+| 10 | Low | Place Order button used inline styles, not design system | `checkout/page.tsx` |
+
+✅ Build succeeded for pass 2
+Deploying to Cloudflare Pages...
+✨ Success! Uploaded 602 files (179 already uploaded) (9.58 sec)
+
+✨ Uploading _redirects
+🌎 Deploying...
+✨ Deployment complete! Take a peek over at https://d7641032.nexphoria.pages.dev

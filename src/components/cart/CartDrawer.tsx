@@ -325,7 +325,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                               {/* Price */}
                               <div className="text-right">
                                 <div className="text-sm font-bold text-near-black">
-                                  ${(unitPrice * item.quantity).toFixed(0)}
+                                  ${(unitPrice * item.quantity).toFixed(2)}
                                   {item.subscriptionMonths > 1 && (
                                     <span className="text-[10px] font-normal text-stone">/mo</span>
                                   )}
@@ -360,7 +360,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                       ].map((supply) => (
                         <div
                           key={supply.name}
-                          className="flex items-center justify-between p-3 rounded-lg border hover:border-[#A4B08A] transition-colors group"
+                          className="flex items-center justify-between p-3 rounded-lg border"
                           style={{ borderColor: "#D8D4CC", backgroundColor: "#F7F4EE" }}
                         >
                           <div className="flex-1 min-w-0">
@@ -371,16 +371,14 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                               {supply.desc}
                             </p>
                           </div>
-                          <div className="flex items-center gap-3">
-                            <span className="text-sm font-bold" style={{ color: "#A4B08A" }}>
-                              ${supply.price}
-                            </span>
-                            <span className="text-xs font-medium" style={{ color: "#A4B08A" }}>
-                              Add to Order
-                            </span>
-                          </div>
+                          <span className="text-sm font-bold flex-shrink-0" style={{ color: "#A4B08A" }}>
+                            ${supply.price}
+                          </span>
                         </div>
                       ))}
+                      <p className="text-[10px] mt-1" style={{ color: "#8A8075" }}>
+                        Available at checkout. Free reconstitution water on orders over $100.
+                      </p>
                     </div>
                   </div>
 

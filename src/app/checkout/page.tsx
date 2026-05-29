@@ -55,13 +55,6 @@ export default function CheckoutPage() {
 
   const [formData, setFormData] = useState({
     email: "",
-    firstName: "",
-    lastName: "",
-    address: "",
-    city: "",
-    state: "",
-    zipCode: "",
-    country: "United States",
   });
 
   const [isProcessing, setIsProcessing] = useState(false);
@@ -82,11 +75,11 @@ export default function CheckoutPage() {
   const totalItems = getTotalItems();
   const hasSubscription = items.some((item) => item.subscriptionMonths > 1);
 
-  // Included supplies by order size
+  // Included supplies by order value (matches CartDrawer thresholds)
   const includedSupplies: string[] = [];
-  if (totalItems >= 3) includedSupplies.push("Bacteriostatic water");
-  if (totalItems >= 5) includedSupplies.push("Free shipping");
-  if (totalItems >= 7) includedSupplies.push("Cold-pack");
+  if (totalPrice >= 100) includedSupplies.push("Bacteriostatic water");
+  if (totalPrice >= 150) includedSupplies.push("Free shipping");
+  if (totalPrice >= 250) includedSupplies.push("Cold-pack");
 
   const handleCheckout = async () => {
     if (!formData.email) {
@@ -198,105 +191,20 @@ export default function CheckoutPage() {
                 </div>
               </div>
 
-              {/* Shipping Address */}
+              {/* Shipping Note */}
               <div>
                 <h2 className="text-lg font-semibold mb-4" style={{ color: "#010101" }}>
-                  Shipping Address
+                  Shipping
                 </h2>
-                <div className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium mb-2" style={{ color: "#3A3A3A" }}>
-                        First Name
-                      </label>
-                      <input
-                        type="text"
-                        value={formData.firstName}
-                        onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                        className="nex-input w-full"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium mb-2" style={{ color: "#3A3A3A" }}>
-                        Last Name
-                      </label>
-                      <input
-                        type="text"
-                        value={formData.lastName}
-                        onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                        className="nex-input w-full"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium mb-2" style={{ color: "#3A3A3A" }}>
-                      Address
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.address}
-                      onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                      className="nex-input w-full"
-                      placeholder="Street address"
-                    />
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium mb-2" style={{ color: "#3A3A3A" }}>
-                        City
-                      </label>
-                      <input
-                        type="text"
-                        value={formData.city}
-                        onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                        className="nex-input w-full"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium mb-2" style={{ color: "#3A3A3A" }}>
-                        State
-                      </label>
-                      <input
-                        type="text"
-                        value={formData.state}
-                        onChange={(e) => setFormData({ ...formData, state: e.target.value })}
-                        className="nex-input w-full"
-                        placeholder="CA"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium mb-2" style={{ color: "#3A3A3A" }}>
-                        ZIP Code
-                      </label>
-                      <input
-                        type="text"
-                        value={formData.zipCode}
-                        onChange={(e) => setFormData({ ...formData, zipCode: e.target.value })}
-                        className="nex-input w-full"
-                        placeholder="90210"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium mb-2" style={{ color: "#3A3A3A" }}>
-                        Country
-                      </label>
-                      <input
-                        type="text"
-                        value={formData.country}
-                        onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                        className="nex-input w-full"
-                        disabled
-                        style={{ backgroundColor: "#f5f3f0", cursor: "not-allowed" }}
-                      />
-                    </div>
-                  </div>
-                  <p className="text-xs" style={{ color: "#8A8075" }}>
-                    Shipping details are confirmed securely on the next step.
+                <div
+                  className="p-4 rounded-lg border"
+                  style={{ backgroundColor: "#F7F5F0", borderColor: "#ECEAE4" }}
+                >
+                  <p className="text-sm" style={{ color: "#3A3A3A" }}>
+                    Shipping address is collected securely on the Stripe payment page.
+                  </p>
+                  <p className="text-xs mt-2" style={{ color: "#8A8075" }}>
+                    US shipping only. Cold-chain logistics with same-day dispatch.
                   </p>
                 </div>
               </div>
@@ -381,7 +289,7 @@ export default function CheckoutPage() {
                           </p>
                         </div>
                         <div className="text-sm font-bold text-right" style={{ color: "#010101" }}>
-                          ${(unitPrice * item.quantity).toFixed(0)}
+                          ${(unitPrice * item.quantity).toFixed(2)}
                           {item.subscriptionMonths > 1 && (
                             <span className="block text-[10px] font-normal" style={{ color: "#8A8075" }}>
                               per month
@@ -416,7 +324,7 @@ export default function CheckoutPage() {
                   <div className="flex justify-between text-sm">
                     <span style={{ color: "#8A8075" }}>Shipping</span>
                     <span style={{ color: "#3A3A3A" }}>
-                      {totalItems >= 5 ? "Free" : "Calculated at payment"}
+                      {totalPrice >= 150 ? "Free" : "Calculated at payment"}
                     </span>
                   </div>
                   <div
@@ -456,8 +364,7 @@ export default function CheckoutPage() {
                   type="button"
                   onClick={handleCheckout}
                   disabled={isProcessing || !formData.email}
-                  className="w-full py-3 px-6 rounded font-semibold text-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-90"
-                  style={{ backgroundColor: "#A4B08A", color: "#000000" }}
+                  className="btn-acid w-full justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isProcessing ? "Processing..." : "Place Order"}
                 </button>
@@ -485,8 +392,7 @@ export default function CheckoutPage() {
             type="button"
             onClick={handleCheckout}
             disabled={isProcessing || !formData.email}
-            className="py-3 px-6 rounded font-semibold text-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-90 flex-shrink-0"
-            style={{ backgroundColor: "#A4B08A", color: "#000000" }}
+            className="btn-acid flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isProcessing ? "Processing..." : "Place Order"}
           </button>
