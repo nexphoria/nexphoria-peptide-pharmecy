@@ -39,6 +39,7 @@ const footerNav = {
   Support: [
     { label: "Customer Support", href: "/contact" },
     { label: "FAQs", href: "/faq" },
+    { label: "Research Tools", href: "/tools" },
     { label: "Track Your Order", href: "/account/orders" },
     { label: "Wholesale", href: "/wholesale" },
   ],

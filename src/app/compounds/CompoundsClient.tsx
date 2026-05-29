@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { CATEGORY_META, CompoundEntry } from "./page";
+import { CATEGORY_META, CompoundEntry } from "@/lib/compounds";
 
 interface Props {
   grouped: Record<string, CompoundEntry[]>;

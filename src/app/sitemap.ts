@@ -83,6 +83,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.65,
     },
     {
+      url: `${baseUrl}/tools`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.70,
+    },
+    {
+      url: `${baseUrl}/tools/reconstitution-calculator`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.72,
+    },
+    {
       url: `${baseUrl}/account/orders`,
       lastModified: new Date(),
       changeFrequency: "yearly",
