@@ -275,6 +275,19 @@ const TOOLS = [
     badge: "Tool",
   },
   {
+    href: "/tools/allometric-scaling-calculator",
+    title: "Allometric Scaling Calculator",
+    desc: "Convert rodent study doses to human equivalent doses (HED) using FDA 2005 Km-based allometric scaling. Cross-species comparison table for mouse, rat, rabbit, monkey, dog, and more.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+        <path d="M2 17l10 5 10-5"/>
+        <path d="M2 12l10 5 10-5"/>
+      </svg>
+    ),
+    badge: "Tool",
+  },
+  {
     href: "/tools/igf-1-calculator",
     title: "IGF-1 Response Estimator",
     desc: "Estimate IGF-1 % elevation from GHRH analog + GHRP stacking based on published clinical data. Includes synergy multipliers, duration modifiers, and dosing frequency adjustments.",
@@ -357,6 +370,37 @@ const TOOLS = [
       </svg>
     ),
     badge: "Reference",
+  },
+  {
+    href: "/tools/peptide-cycle-planner",
+    title: "Peptide Cycle Planner",
+    desc: "Calendar-based planner for 3-month and 6-month research cycles. Assign compounds to specific weeks, set washout periods, visualize the full timeline, and print your protocol.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+        <line x1="16" y1="2" x2="16" y2="6"/>
+        <line x1="8" y1="2" x2="8" y2="6"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+        <line x1="8" y1="14" x2="8.01" y2="14"/>
+        <line x1="12" y1="14" x2="12.01" y2="14"/>
+        <line x1="16" y1="14" x2="16.01" y2="14"/>
+        <line x1="8" y1="18" x2="8.01" y2="18"/>
+        <line x1="12" y1="18" x2="12.01" y2="18"/>
+      </svg>
+    ),
+    badge: "Tool",
+  },
+  {
+    href: "/tools/peptide-timer",
+    title: "Peptide Injection Timer",
+    desc: "Track injection timing for multiple compounds simultaneously. Live countdown to next dose, dosing-window status (On Track / Due Soon / Overdue), and per-compound interval progress. Persists locally.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <polyline points="12 6 12 12 16 14"/>
+      </svg>
+    ),
+    badge: "Tool",
   },
 ];
 

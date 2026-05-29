@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Menu, X, ShoppingBag, ChevronDown } from "lucide-react";
 import { useCart } from "@/lib/cart";
+import { SearchTrigger } from "@/components/SearchModal";
 
 const SHOP_CATEGORIES = [
   {
@@ -96,10 +97,10 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#FFFFF3]/95 backdrop-blur-md shadow-sm"
+          ? "backdrop-blur-md shadow-sm"
           : "bg-transparent"
       }`}
-      style={{ height: "72px" }}
+      style={{ height: "72px", backgroundColor: scrolled ? "rgba(250,248,245,0.95)" : "transparent" }}
     >
       <div
         className="max-w-7xl mx-auto px-6 md:px-10 h-full flex items-center justify-between"
@@ -126,10 +127,10 @@ export function Header() {
           <div className="relative">
             <button
               onClick={() => toggleDropdown("shop")}
-              className={`flex items-center gap-1 px-3 py-2 text-[13px] rounded-md transition-colors ${
-                activeDropdown === "shop" ? "text-black bg-[#F0EDE7]" : "text-black/70 hover:text-black hover:bg-[#F0EDE7]"
+              className={`flex items-center gap-1 px-3 py-2 text-[11px] rounded-md transition-colors uppercase ${
+                activeDropdown === "shop" ? "text-black" : "text-black/60 hover:text-black"
               }`}
-              style={{ letterSpacing: "0.03em" }}
+              style={{ letterSpacing: "0.12em", fontWeight: 500 }}
             >
               Shop
               <ChevronDown
@@ -144,7 +145,7 @@ export function Header() {
                 <div className="grid grid-cols-4 gap-6 mb-4">
                   {SHOP_CATEGORIES.map((group) => (
                     <div key={group.group}>
-                      <p className="text-[10px] uppercase tracking-widest font-semibold text-[#A4B08A] mb-3">
+                      <p className="text-[10px] uppercase tracking-widest font-medium mb-3" style={{ color: "#C9A96E", letterSpacing: "0.2em" }}>
                         {group.group}
                       </p>
                       <ul className="space-y-1">
@@ -164,11 +165,12 @@ export function Header() {
                     </div>
                   ))}
                 </div>
-                <div className="border-t border-[#ECEAE4] pt-4 flex items-center justify-between">
+                <div className="pt-4 flex items-center justify-between" style={{ borderTop: "1px solid #E5E5E5" }}>
                   <Link
                     href="/products"
                     onClick={() => setActiveDropdown(null)}
-                    className="text-sm font-semibold text-[#A4B08A] hover:underline"
+                    className="text-sm font-medium hover:underline"
+                    style={{ color: "#C9A96E" }}
                   >
                     View All Compounds ({20})
                   </Link>
@@ -188,10 +190,10 @@ export function Header() {
           <div className="relative">
             <button
               onClick={() => toggleDropdown("research")}
-              className={`flex items-center gap-1 px-3 py-2 text-[13px] rounded-md transition-colors ${
-                activeDropdown === "research" ? "text-black bg-[#F0EDE7]" : "text-black/70 hover:text-black hover:bg-[#F0EDE7]"
+              className={`flex items-center gap-1 px-3 py-2 text-[11px] rounded-md transition-colors uppercase ${
+                activeDropdown === "research" ? "text-black" : "text-black/60 hover:text-black"
               }`}
-              style={{ letterSpacing: "0.03em" }}
+              style={{ letterSpacing: "0.12em", fontWeight: 500 }}
             >
               Research
               <ChevronDown
@@ -205,7 +207,7 @@ export function Header() {
               <div className="mega-menu mega-menu-sm" style={{ left: "0", transform: "none", minWidth: "480px" }}>
                 <div className="grid grid-cols-2 gap-6">
                   <div>
-                    <p className="text-[10px] uppercase tracking-widest font-semibold text-[#A4B08A] mb-3">
+                    <p className="text-[10px] uppercase tracking-widest font-medium mb-3" style={{ color: "#C9A96E", letterSpacing: "0.2em" }}>
                       Calculators
                     </p>
                     <ul className="space-y-1">
@@ -223,7 +225,7 @@ export function Header() {
                     </ul>
                   </div>
                   <div>
-                    <p className="text-[10px] uppercase tracking-widest font-semibold text-[#A4B08A] mb-3">
+                    <p className="text-[10px] uppercase tracking-widest font-medium mb-3" style={{ color: "#C9A96E", letterSpacing: "0.2em" }}>
                       Resources
                     </p>
                     <ul className="space-y-1">
@@ -247,6 +249,7 @@ export function Header() {
 
           {/* Simple links */}
           {[
+            { href: "/resources", label: "Resources" },
             { href: "/science", label: "Science" },
             { href: "/about", label: "About" },
             { href: "/contact", label: "Contact" },
@@ -254,16 +257,17 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="px-3 py-2 text-[13px] text-black/70 hover:text-black hover:bg-[#F0EDE7] rounded-md transition-colors"
-              style={{ letterSpacing: "0.03em" }}
+              className="px-3 py-2 text-[11px] uppercase text-black/60 hover:text-black rounded-md transition-colors"
+              style={{ letterSpacing: "0.12em", fontWeight: 500 }}
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        {/* Right: Cart + CTA */}
-        <div className="hidden md:flex items-center gap-4">
+        {/* Right: Search + Cart + CTA */}
+        <div className="hidden md:flex items-center gap-3">
+          <SearchTrigger />
           <button
             onClick={openDrawer}
             className="relative p-2 hover:opacity-70 transition-opacity"
@@ -273,14 +277,18 @@ export function Header() {
             {totalItems > 0 && (
               <span
                 className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full text-[10px] font-bold flex items-center justify-center text-white"
-                style={{ backgroundColor: "#A4B08A" }}
+                style={{ backgroundColor: "#C9A96E" }}
               >
                 {totalItems}
               </span>
             )}
           </button>
-          <Link href="/products" className="btn-primary" style={{ padding: "10px 20px", fontSize: "12px" }}>
-            Shop Now
+          <Link
+            href="/products"
+            className="text-xs font-medium hover:opacity-60 transition-opacity"
+            style={{ letterSpacing: "0.12em", color: "#1A1A1A" }}
+          >
+            Explore
           </Link>
         </div>
 
@@ -295,7 +303,7 @@ export function Header() {
             {totalItems > 0 && (
               <span
                 className="absolute top-1 right-1 w-4 h-4 rounded-full text-[10px] font-bold flex items-center justify-center text-white"
-                style={{ backgroundColor: "#A4B08A" }}
+                style={{ backgroundColor: "#C9A96E" }}
               >
                 {totalItems}
               </span>
@@ -321,14 +329,15 @@ export function Header() {
             left: 0,
             right: 0,
             maxHeight: "calc(100vh - 72px)",
-            backgroundColor: "#FFFFF3",
-            borderColor: "#ECEAE4",
+            backgroundColor: "#FAF8F5",
+            borderColor: "#E5E5E5",
           }}
         >
           <nav className="flex flex-col px-6 py-4">
             {/* Shop accordion */}
             <button
-              className="flex items-center justify-between py-3 text-sm font-medium text-black/80 border-b border-[#ECEAE4]"
+              className="flex items-center justify-between py-3 text-[11px] uppercase font-medium text-black/70 border-b border-[#E5E5E5]"
+              style={{ letterSpacing: "0.12em" }}
               onClick={() => setMobileSection(mobileSection === "shop" ? null : "shop")}
             >
               Shop
@@ -354,7 +363,8 @@ export function Header() {
                 )}
                 <Link
                   href="/products"
-                  className="col-span-2 py-2 text-sm font-semibold text-[#A4B08A] mt-2"
+                  className="col-span-2 py-2 text-sm font-medium mt-2"
+                  style={{ color: "#C9A96E" }}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   View All &#8594;
@@ -364,7 +374,8 @@ export function Header() {
 
             {/* Research accordion */}
             <button
-              className="flex items-center justify-between py-3 text-sm font-medium text-black/80 border-b border-[#ECEAE4]"
+              className="flex items-center justify-between py-3 text-[11px] uppercase font-medium text-black/70 border-b border-[#E5E5E5]"
+              style={{ letterSpacing: "0.12em" }}
               onClick={() => setMobileSection(mobileSection === "research" ? null : "research")}
             >
               Research
@@ -391,6 +402,7 @@ export function Header() {
 
             {/* Simple links */}
             {[
+              { href: "/resources", label: "Resources" },
               { href: "/science", label: "Science" },
               { href: "/about", label: "About" },
               { href: "/contact", label: "Contact" },
@@ -398,7 +410,8 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-black/70 hover:text-black transition-colors py-3 block border-b border-[#ECEAE4]"
+                className="text-[11px] uppercase text-black/60 hover:text-black transition-colors py-3 block border-b border-[#E5E5E5]"
+                style={{ letterSpacing: "0.12em", fontWeight: 500 }}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.label}
@@ -407,10 +420,10 @@ export function Header() {
 
             <Link
               href="/products"
-              className="btn-primary text-center mt-5"
+              className="btn-outline text-center mt-5"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Shop Now
+              Explore Collection
             </Link>
           </nav>
         </div>

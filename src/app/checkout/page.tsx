@@ -132,7 +132,9 @@ export default function CheckoutPage() {
       // Redirect to Stripe-hosted checkout.
       window.location.href = url;
     } catch (err) {
-      console.error("Checkout error:", err);
+      if (process.env.NODE_ENV === 'development') {
+        console.error("Checkout error:", err);
+      }
       setError("We could not start checkout. Please try again.");
       setIsProcessing(false);
     }

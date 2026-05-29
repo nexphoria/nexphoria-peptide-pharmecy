@@ -1,17 +1,26 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import CartDrawer from "@/components/cart/CartDrawer";
 import AgeVerificationModal from "@/components/AgeVerificationModal";
 import LiveChatWidget from "@/components/LiveChatWidget";
+import SearchModal from "@/components/SearchModal";
+import BackToTop from "@/components/BackToTop";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
   weight: ["100", "200", "300", "400", "500", "600", "700"],
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: "--font-cormorant",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -93,7 +102,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`h-full antialiased ${inter.variable}`}>
+    <html lang="en" className={`h-full antialiased ${inter.variable} ${cormorant.variable}`}>
       <head>
         <link rel="icon" href="/favicon.png" type="image/png" />
         <script
@@ -101,13 +110,15 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
-      <body className="min-h-full" style={{ backgroundColor: "#FFFFF3" }}>
+      <body className="min-h-full" style={{ backgroundColor: "#FAF8F5" }}>
         <Header />
         <main>{children}</main>
         <Footer />
         <CartDrawer />
         <AgeVerificationModal />
         <LiveChatWidget />
+        <SearchModal />
+        <BackToTop />
       </body>
     </html>
   );

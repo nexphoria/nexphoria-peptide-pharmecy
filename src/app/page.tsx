@@ -30,8 +30,8 @@ const RESEARCH_CATEGORIES = [
     slug: "Recovery & Healing",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M14 4v20M4 14h20" stroke="#A4B08A" strokeWidth="1.8" strokeLinecap="round"/>
-        <circle cx="14" cy="14" r="12" stroke="#A4B08A" strokeWidth="1.4"/>
+        <path d="M14 4v20M4 14h20" stroke="#C9A96E" strokeWidth="1.8" strokeLinecap="round"/>
+        <circle cx="14" cy="14" r="12" stroke="#C9A96E" strokeWidth="1.4"/>
       </svg>
     ),
   },
@@ -40,7 +40,7 @@ const RESEARCH_CATEGORIES = [
     slug: "Weight Management",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M6 22l4-8 4 4 4-12 4 6" stroke="#A4B08A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M6 22l4-8 4 4 4-12 4 6" stroke="#C9A96E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
   },
@@ -49,10 +49,10 @@ const RESEARCH_CATEGORIES = [
     slug: "Cognitive",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <ellipse cx="14" cy="13" rx="9" ry="8" stroke="#A4B08A" strokeWidth="1.5"/>
-        <path d="M9 10c0-2.761 2.239-5 5-5" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M10 18c-.667 1.333-1 2.5-.667 3.5" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M18 18c.667 1.333 1 2.5.667 3.5" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round"/>
+        <ellipse cx="14" cy="13" rx="9" ry="8" stroke="#C9A96E" strokeWidth="1.5"/>
+        <path d="M9 10c0-2.761 2.239-5 5-5" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M10 18c-.667 1.333-1 2.5-.667 3.5" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M18 18c.667 1.333 1 2.5.667 3.5" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round"/>
       </svg>
     ),
   },
@@ -61,8 +61,8 @@ const RESEARCH_CATEGORIES = [
     slug: "Immune Support",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M14 4l7 4v6c0 5-3.5 9-7 10C10.5 23 7 19 7 14V8l7-4z" stroke="#A4B08A" strokeWidth="1.5"/>
-        <path d="M10.5 14l2.5 2.5 5-5" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M14 4l7 4v6c0 5-3.5 9-7 10C10.5 23 7 19 7 14V8l7-4z" stroke="#C9A96E" strokeWidth="1.5"/>
+        <path d="M10.5 14l2.5 2.5 5-5" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
   },
@@ -71,8 +71,8 @@ const RESEARCH_CATEGORIES = [
     slug: "Longevity",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <circle cx="14" cy="14" r="10" stroke="#A4B08A" strokeWidth="1.5"/>
-        <path d="M14 8v6l4 2" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="14" cy="14" r="10" stroke="#C9A96E" strokeWidth="1.5"/>
+        <path d="M14 8v6l4 2" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
   },
@@ -81,8 +81,8 @@ const RESEARCH_CATEGORIES = [
     slug: "Growth Hormone",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M7 22V12l7-8 7 8v10" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <rect x="11" y="16" width="6" height="6" rx="0.5" stroke="#A4B08A" strokeWidth="1.5"/>
+        <path d="M7 22V12l7-8 7 8v10" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <rect x="11" y="16" width="6" height="6" rx="0.5" stroke="#C9A96E" strokeWidth="1.5"/>
       </svg>
     ),
   },
@@ -91,10 +91,10 @@ const RESEARCH_CATEGORIES = [
     slug: "Anti-Aging",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M7 16c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M11 20c0-1.657 1.343-3 3-3s3 1.343 3 3" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M14 5v2" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M6 9l1.5 1.5M20.5 10.5L22 9" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M7 16c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M11 20c0-1.657 1.343-3 3-3s3 1.343 3 3" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M14 5v2" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M6 9l1.5 1.5M20.5 10.5L22 9" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round"/>
       </svg>
     ),
   },
@@ -103,8 +103,8 @@ const RESEARCH_CATEGORIES = [
     slug: "Dermatological",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M8 22c0-5.523 2.686-9.333 6-9.333S20 16.477 20 22" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M12 12c0-2.5 1.5-5.5 2-8 .5 2.5 2 5.5 2 8" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M8 22c0-5.523 2.686-9.333 6-9.333S20 16.477 20 22" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M12 12c0-2.5 1.5-5.5 2-8 .5 2.5 2 5.5 2 8" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
   },
@@ -124,7 +124,7 @@ export default function HomePage() {
       {/* ─── HERO ─── */}
       <section
         className="relative overflow-hidden"
-        style={{ backgroundColor: "#FFFFF3", minHeight: "100vh" }}
+        style={{ backgroundColor: "#FAF8F5", minHeight: "100vh" }}
       >
 
         {/* ── DESKTOP ── */}
@@ -141,7 +141,7 @@ export default function HomePage() {
               top: 0,
               bottom: 0,
               width: "14%",
-              background: "linear-gradient(to right, #FFFFF3 0%, transparent 100%)",
+              background: "linear-gradient(to right, #FAF8F5 0%, transparent 100%)",
               zIndex: 3,
               pointerEvents: "none",
             }}
@@ -216,7 +216,7 @@ export default function HomePage() {
                 fontWeight: 500,
                 textTransform: "uppercase",
                 letterSpacing: "0.18em",
-                color: "#A4B08A",
+                color: "#C9A96E",
                 marginBottom: "2rem",
               }}
             >
@@ -263,7 +263,7 @@ export default function HomePage() {
                   fontWeight: 600,
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
-                  color: "#FFFFF3",
+                  color: "#F9F9F9",
                   backgroundColor: "#1A1A1A",
                   textDecoration: "none",
                   padding: "14px 28px",
@@ -271,7 +271,7 @@ export default function HomePage() {
                   transition: "background-color 200ms",
                 }}
               >
-                Explore the Catalog
+Discover the Collection
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
                   <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -282,12 +282,13 @@ export default function HomePage() {
                   fontSize: "0.8125rem",
                   fontWeight: 500,
                   letterSpacing: "0.08em",
-                  color: "#d4af37",
+                  color: "#C9A96E",
                   textDecoration: "none",
-                  borderBottom: "1px solid #d4af37",
+                  borderBottom: "1px solid #C9A96E",
                   paddingBottom: "2px",
-                  transition: "color 150ms, border-color 150ms",
+                  transition: "opacity 150ms",
                 }}
+                className="hover:opacity-60"
               >
                 Find Your Protocol →
               </Link>
@@ -323,7 +324,7 @@ export default function HomePage() {
                 fontWeight: 500,
                 textTransform: "uppercase",
                 letterSpacing: "0.18em",
-                color: "#A4B08A",
+                color: "#C9A96E",
                 marginBottom: "1.5rem",
               }}
             >
@@ -367,14 +368,14 @@ export default function HomePage() {
                 fontWeight: 600,
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
-                color: "#FFFFF3",
+                color: "#F9F9F9",
                 backgroundColor: "#1A1A1A",
                 textDecoration: "none",
                 padding: "14px 24px",
                 borderRadius: "6px",
               }}
             >
-              Explore the Catalog
+Discover Collection
             </Link>
           </div>
 
@@ -401,12 +402,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── SOCIAL PROOF STRIP ─── */}
-      <section className="py-10 px-6 border-t border-b border-[#ECEAE4]" style={{ backgroundColor: "#FAFAF8" }}>
+      {/* ─── SOCIAL PROOF STRIP — subtle ─── */}
+      <section className="py-8 px-6" style={{ borderTop: "1px solid #E5E5E5", borderBottom: "1px solid #E5E5E5" }}>
         <div className="max-w-5xl mx-auto">
-          <p className="text-center text-xs uppercase tracking-widest text-[#999] mb-8 font-medium">
-            Researchers Trust Nexphoria
-          </p>
           <div className="grid grid-cols-3 gap-4 md:gap-8">
             {[
               {
@@ -415,8 +413,8 @@ export default function HomePage() {
                 sub: "Across all lots, HPLC-verified",
                 icon: (
                   <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                    <circle cx="14" cy="14" r="13" stroke="#A4B08A" strokeWidth="1.5"/>
-                    <path d="M8 14.5l4 4 8-8" stroke="#A4B08A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="14" cy="14" r="13" stroke="#C9A96E" strokeWidth="1.5"/>
+                    <path d="M8 14.5l4 4 8-8" stroke="#C9A96E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 ),
               },
@@ -426,9 +424,9 @@ export default function HomePage() {
                 sub: "Temperature-controlled transit",
                 icon: (
                   <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                    <rect x="1.75" y="7" width="24.5" height="15" rx="2" stroke="#A4B08A" strokeWidth="1.5"/>
-                    <path d="M7 7V5a2 2 0 012-2h10a2 2 0 012 2v2" stroke="#A4B08A" strokeWidth="1.5"/>
-                    <path d="M9 14h10M14 11v6" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round"/>
+                    <rect x="1.75" y="7" width="24.5" height="15" rx="2" stroke="#C9A96E" strokeWidth="1.5"/>
+                    <path d="M7 7V5a2 2 0 012-2h10a2 2 0 012 2v2" stroke="#C9A96E" strokeWidth="1.5"/>
+                    <path d="M9 14h10M14 11v6" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round"/>
                   </svg>
                 ),
               },
@@ -438,22 +436,25 @@ export default function HomePage() {
                 sub: "Batch-specific, always enclosed",
                 icon: (
                   <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                    <rect x="5" y="2" width="18" height="24" rx="2" stroke="#A4B08A" strokeWidth="1.5"/>
-                    <path d="M9 9h10M9 13h10M9 17h6" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round"/>
+                    <rect x="5" y="2" width="18" height="24" rx="2" stroke="#C9A96E" strokeWidth="1.5"/>
+                    <path d="M9 9h10M9 13h10M9 17h6" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round"/>
                   </svg>
                 ),
               },
             ].map((item) => (
               <div
                 key={item.label}
-                className="flex flex-col items-center text-center px-4 py-6 md:py-8"
+                className="flex flex-col items-center text-center px-4 py-5"
               >
-                <div className="mb-4">{item.icon}</div>
-                <div className="text-2xl md:text-3xl font-semibold tracking-tight mb-1">
+                <div className="mb-3">{item.icon}</div>
+                <div
+                  className="text-xl md:text-2xl tracking-tight mb-0.5"
+                  style={{ fontWeight: 300, color: "#1A1A1A", letterSpacing: "-0.02em" }}
+                >
                   {item.stat}
                 </div>
-                <div className="text-sm font-medium mb-1">{item.label}</div>
-                <div className="text-xs text-[#888] leading-relaxed hidden md:block">{item.sub}</div>
+                <div className="text-xs font-medium mb-1" style={{ color: "#666" }}>{item.label}</div>
+                <div className="text-[11px] leading-relaxed hidden md:block" style={{ color: "#888" }}>{item.sub}</div>
               </div>
             ))}
           </div>
@@ -462,7 +463,7 @@ export default function HomePage() {
 
       {/* ─── SHOP BY RESEARCH CATEGORY ─── */}
       <SectionReveal>
-        <section className="py-20 md:py-28 px-6" style={{ backgroundColor: "#FFFFF3" }}>
+        <section className="py-20 md:py-28 px-6" style={{ backgroundColor: "#FAF8F5" }}>
           <div className="max-w-6xl mx-auto">
             <div className="mb-12">
               <p className="eyebrow mb-4">Shop by Research Category</p>
@@ -481,8 +482,8 @@ export default function HomePage() {
                   <Link
                     key={cat.slug}
                     href={`/products?category=${encodeURIComponent(cat.label)}`}
-                    className="category-card block rounded-xl border border-[#ECEAE4] bg-white p-5"
-                    style={{ animationDelay: `${i * 0.05}s` }}
+                    className="category-card block bg-white p-5"
+                    style={{ animationDelay: `${i * 0.05}s`, border: "1px solid #E5E5E5", borderRadius: "8px" }}
                   >
                     <div className="mb-3">{cat.icon}</div>
                     <h3 className="text-sm font-semibold mb-1 leading-snug">{cat.label}</h3>
@@ -499,7 +500,7 @@ export default function HomePage() {
 
       {/* ─── FEATURED PRODUCTS ─── */}
       <SectionReveal>
-        <section className="py-20 md:py-28 px-6" style={{ backgroundColor: "#F7F5F0" }}>
+        <section className="py-20 md:py-28 px-6" style={{ backgroundColor: "#F7F7F7" }}>
           <div className="max-w-7xl mx-auto">
             <div className="flex items-end justify-between mb-12">
               <div>
@@ -525,8 +526,11 @@ export default function HomePage() {
                     href={`/products/${product.slug}`}
                     className="group block"
                   >
-                    <div className="bg-white rounded-lg overflow-hidden card-shadow transition-all duration-200 hover:-translate-y-0.5">
-                      <div className="w-full h-56 overflow-hidden bg-[#f5f5f2] relative">
+                    <div
+                      className="overflow-hidden transition-all duration-300"
+                      style={{ backgroundColor: "#FFFFFF", border: "1px solid #E5E5E5", borderRadius: "8px" }}
+                    >
+                      <div className="w-full h-56 overflow-hidden relative" style={{ backgroundColor: "#F7F7F7" }}>
                         {hasProductPhoto(product.slug) ? (
                           <img
                             src={getProductImagePath(product.slug)}
@@ -535,35 +539,31 @@ export default function HomePage() {
                           />
                         ) : (
                           <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: "#F0EDE7" }}>
-                            <span className="text-sm font-semibold text-[#A4B08A] text-center px-4">
+                            <span className="text-sm font-semibold text-[#B8A44C] text-center px-4">
                               {product.name}
                             </span>
                           </div>
                         )}
-                        {product.badge && (
-                          <span
-                            className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider"
-                            style={product.badge === "POPULAR"
-                              ? { backgroundColor: "#C9A24B", color: "#FFFFF3" }
-                              : { backgroundColor: "#010101", color: "#FFFFF3" }
-                            }
-                          >
-                            {product.badge === "POPULAR" ? "Popular" : "New"}
-                          </span>
-                        )}
+                        {/* Badges removed — luxury doesn't label itself */}
                       </div>
                       <div className="p-5">
-                        <p className="text-[11px] uppercase tracking-wider text-[#888] mb-1.5">
+                        <p
+                          className="text-[10px] uppercase mb-1.5 font-medium"
+                          style={{ letterSpacing: "0.2em", color: "#C9A96E" }}
+                        >
                           {product.category}
                         </p>
-                        <h3 className="text-base font-medium mb-1 group-hover:opacity-70 transition-opacity">
+                        <h3 className="text-base font-normal mb-1 group-hover:opacity-70 transition-opacity" style={{ color: "#1A1A1A", fontWeight: 400 }}>
                           {product.name}
                         </h3>
-                        <p className="text-xs text-[#999] mb-3 leading-snug">{product.tagline}</p>
-                        <div className="flex items-center justify-between pt-3 border-t border-[#ECEAE4]">
-                          <span className="text-base font-semibold">From ${price}</span>
-                          <span className="text-xs text-[#A4B08A] font-medium uppercase tracking-wide opacity-0 group-hover:opacity-100 transition-opacity">
-                            View
+                        <p className="text-xs mb-3 leading-snug" style={{ color: "#888" }}>{product.tagline}</p>
+                        <div className="flex items-center justify-between pt-3" style={{ borderTop: "1px solid #E5E5E5" }}>
+                          <span className="text-base font-medium" style={{ color: "#C9A96E" }}>${price}</span>
+                          <span
+                            className="text-[10px] font-medium uppercase opacity-0 group-hover:opacity-100 transition-opacity"
+                            style={{ letterSpacing: "0.1em", color: "#888" }}
+                          >
+                            View →
                           </span>
                         </div>
                       </div>
@@ -587,7 +587,7 @@ export default function HomePage() {
         <section className="py-20 md:py-28 px-6" style={{ backgroundColor: "#1A1A18" }}>
           <div className="max-w-6xl mx-auto">
             <div className="mb-14 text-center">
-              <p className="eyebrow mb-4" style={{ color: "#A4B08A" }}>The Nexphoria Standard</p>
+              <p className="eyebrow mb-4">The Nexphoria Standard</p>
               <h2 className="text-3xl md:text-4xl font-medium tracking-tight" style={{ color: "#F5F5F0" }}>
                 Manufactured under pharmaceutical standards.
                 <br className="hidden md:block" /> Every lot independently verified.
@@ -620,7 +620,7 @@ export default function HomePage() {
                   className="p-8 rounded-xl border"
                   style={{ borderColor: "#2A2A28", backgroundColor: "#1C1C1A" }}
                 >
-                  <div className="text-xs font-mono mb-5 font-semibold" style={{ color: "#A4B08A" }}>
+                  <div className="text-xs font-mono mb-5 font-semibold" style={{ color: "#C9A96E" }}>
                     {block.num}
                   </div>
                   <h3 className="text-lg font-semibold mb-3" style={{ color: "#F5F5F0" }}>
@@ -629,7 +629,7 @@ export default function HomePage() {
                   <p className="text-sm leading-relaxed mb-5" style={{ color: "#888" }}>
                     {block.body}
                   </p>
-                  <p className="text-xs font-medium" style={{ color: "#A4B08A" }}>
+                  <p className="text-xs font-medium" style={{ color: "#C9A96E" }}>
                     {block.detail}
                   </p>
                 </div>
@@ -676,7 +676,7 @@ export default function HomePage() {
                     "Batch IDs traceable to HPLC records",
                   ].map((line) => (
                     <div key={line} className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 bg-[#A4B08A]" />
+                      <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 bg-[#C9A96E]" />
                       <p className="text-sm text-[#555]">{line}</p>
                     </div>
                   ))}
@@ -689,7 +689,7 @@ export default function HomePage() {
 
       {/* ─── LATEST FROM THE JOURNAL ─── */}
       <SectionReveal>
-        <section className="py-20 md:py-28 px-6" style={{ backgroundColor: "#F7F5F0" }}>
+        <section className="py-20 md:py-28 px-6" style={{ backgroundColor: "#F7F7F7" }}>
           <div className="max-w-6xl mx-auto">
             <div className="flex items-end justify-between mb-12">
               <div>
@@ -714,7 +714,7 @@ export default function HomePage() {
                   className="blog-card block bg-white rounded-lg overflow-hidden card-shadow"
                 >
                   <div className="p-6">
-                    <p className="text-[11px] uppercase tracking-wider text-[#A4B08A] mb-3 font-medium">
+                    <p className="text-[11px] uppercase tracking-wider text-[#C9A96E] mb-3 font-medium" style={{ letterSpacing: "0.2em" }}>
                       {article.category}
                     </p>
                     <h3 className="text-base font-medium mb-3 leading-snug">
@@ -723,7 +723,7 @@ export default function HomePage() {
                     <p className="text-xs text-[#888] leading-relaxed mb-4 line-clamp-2">
                       {article.description}
                     </p>
-                    <div className="flex items-center gap-3 pt-4 border-t border-[#ECEAE4]">
+                    <div className="flex items-center gap-3 pt-4 border-t border-[#E5E5E5]">
                       <span className="text-xs text-[#888]">
                         {new Date(article.publishedAt).toLocaleDateString("en-US", {
                           month: "short",
@@ -763,7 +763,7 @@ export default function HomePage() {
               Every product ships with a Certificate of Analysis.
             </p>
             <Link href="/products" className="btn-primary">
-              Browse Full Catalog
+View Collection
             </Link>
           </div>
         </section>

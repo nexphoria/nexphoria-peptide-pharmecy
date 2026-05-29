@@ -70,7 +70,9 @@ export default function ContactClient() {
         setStatus("error");
       }
     } catch (error) {
-      console.error('Contact form error:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Contact form error:', error);
+      }
       setStatus("error");
     }
   };

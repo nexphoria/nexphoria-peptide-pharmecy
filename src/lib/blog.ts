@@ -38,12 +38,19 @@ import { article as a34 } from './articles/follistatin-344-igf1-independent-musc
 import { article as a35 } from './articles/hgh-fragment-176-191-vs-aod-9604-difference';
 import { article as a36 } from './articles/ghrp-2-pralmorelin-growth-hormone-releasing-peptide-research-guide';
 import { article as a37 } from './articles/ghrp-6-original-ghrelin-mimetic-research-guide';
+import { article as a38 } from './articles/adamax-dsip-selank-nad-nootropic-stack-protocol-deep-dive';
+import { article as a39 } from './articles/adipotide-ftpp-experimental-adipose-targeted-research-peptide';
+import { article as a40 } from './articles/peptide-administration-routes-sc-ip-iv-intranasal-guide';
+import { article as a41 } from './articles/ghk-cu-vs-ghk-copper-complex-chemistry-research-guide';
+import { article as a42 } from './articles/peptide-stability-lyophilization-matters';
+import { article as a43 } from './articles/cjc-1295-ipamorelin-gh-axis-stack-deep-dive';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
   a11, a12, a13, a14, a15, a16, a17, a18, a19, a20,
   a21, a22, a23, a24, a25, a26, a27, a28, a29, a30,
-  a31, a32, a33, a34, a35, a36, a37,
+  a31, a32, a33, a34, a35, a36, a37, a38, a39,
+  a40, a41, a42, a43,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

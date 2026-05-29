@@ -38,7 +38,9 @@ export function EmailCapture({ variant = "dark" }: EmailCaptureProps) {
         }
       }
     } catch (error) {
-      console.error('Waitlist error:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Waitlist error:', error);
+      }
       setStatus("error");
     }
   };

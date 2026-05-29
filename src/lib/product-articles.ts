@@ -17,31 +17,31 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "follistatin-344-igf1-independent-muscle-research",
   ],
   "ghk-cu": [
+    "ghk-cu-vs-ghk-copper-complex-chemistry-research-guide",
     "ghk-cu-copper-peptide-research-review",
-    "bpc-157-tb-500-recovery-stack-deep-dive",
     "wolverine-blend-bpc157-tb500-ghk-cu-triple-combination-guide",
   ],
 
   // GH Axis
   "ipamorelin": [
+    "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
     "ipamorelin-vs-ghrp2-vs-ghrp6-growth-hormone-secretagogue-comparison",
-    "ghrp-6-original-ghrelin-mimetic-research-guide",
     "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
   ],
   "cjc-1295": [
+    "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
     "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
-    "ipamorelin-vs-ghrp2-vs-ghrp6-growth-hormone-secretagogue-comparison",
     "sermorelin-ghrh-analog-anti-aging-research",
   ],
   "cjc-1295-no-dac": [
+    "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
     "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
-    "ipamorelin-vs-ghrp2-vs-ghrp6-growth-hormone-secretagogue-comparison",
     "sermorelin-ghrh-analog-anti-aging-research",
   ],
   "cjc-1295-ipamorelin": [
+    "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
     "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
     "ipamorelin-vs-ghrp2-vs-ghrp6-growth-hormone-secretagogue-comparison",
-    "sermorelin-ghrh-analog-anti-aging-research",
   ],
   "sermorelin": [
     "sermorelin-ghrh-analog-anti-aging-research",

@@ -98,7 +98,9 @@ function EmailCapture() {
       });
       if (!res.ok) {
         // Worker returned an error — still show success to user (local save succeeded)
-        console.warn("Subscribe worker error:", res.status);
+        if (process.env.NODE_ENV === 'development') {
+          console.warn("Subscribe worker error:", res.status);
+        }
       }
       setStatus("success");
       setEmail("");
@@ -113,8 +115,8 @@ function EmailCapture() {
   return (
     <div className="w-full">
       <h4
-        className="text-[11px] uppercase tracking-widest mb-2 font-medium"
-        style={{ color: "#A4B08A" }}
+        className="text-[10px] uppercase mb-2 font-medium"
+        style={{ letterSpacing: "0.14em", color: "#B8A44C" }}
       >
         Research Updates
       </h4>
@@ -122,7 +124,7 @@ function EmailCapture() {
         New compounds, batch releases, and protocol research — delivered to your inbox.
       </p>
       {status === "success" ? (
-        <p className="text-sm font-medium" style={{ color: "#A4B08A" }}>
+        <p className="text-sm font-medium" style={{ color: "#B8A44C" }}>
           You&apos;re on the list. We&apos;ll be in touch.
         </p>
       ) : (
@@ -144,7 +146,7 @@ function EmailCapture() {
             disabled={status === "loading"}
             className="px-5 py-2.5 text-sm font-medium rounded transition-all duration-200 whitespace-nowrap shrink-0"
             style={{
-              backgroundColor: status === "loading" ? "rgba(164,176,138,0.5)" : "#A4B08A",
+              backgroundColor: status === "loading" ? "rgba(184,164,76,0.5)" : "#B8A44C",
               color: "#1A1A18",
               cursor: status === "loading" ? "not-allowed" : "pointer",
             }}
@@ -184,12 +186,12 @@ export function Footer() {
                 className="h-6 w-6"
               >
                 <g>
-                  <circle fill="#A4B08A" cx="129.698" cy="380.792" r="71.864" />
+                  <circle fill="#B8A44C" cx="129.698" cy="380.792" r="71.864" />
                   <path
-                    fill="#A4B08A"
+                    fill="#B8A44C"
                     d="M519.834,328.405c-17.864-16.774-41.141-22.533-62.628-18.55c-18.724,3.471-38.055-0.118-53.17-11.702l-6.86-5.257c-15.349-11.763-23.999-29.746-25.629-49.016c-1.685-19.927-11.623-39.039-29.014-51.808c-16.815-12.346-37.204-16.273-56.18-12.583c-18.19,3.537-37.03,0.099-51.739-11.173l-7.496-5.744c-15.472-11.857-24.203-29.973-25.892-49.393c-1.792-20.603-12.408-40.363-31.14-53.138c-29.987-20.451-71.799-14.725-95.228,12.998c-26.524,31.385-21.393,78.205,10.727,103.18c17.127,13.317,38.364,17.629,58.085,13.695c18.6-3.71,37.886,0.889,52.94,12.426l6.216,4.764c15.349,11.763,23.999,29.746,25.629,49.016c1.685,19.927,11.623,39.039,29.014,51.809c16.815,12.346,37.204,16.273,56.18,12.583c18.19-3.537,37.03-0.099,51.739,11.173l7.704,5.904c14.677,11.248,24.521,28.127,25.467,46.594c1.094,21.348,11.653,41.983,30.521,55.197c34.727,24.32,83.49,13.65,104.428-24.632C548.956,386.504,543.301,350.44,519.834,328.405z"
                   />
-                  <circle fill="#A4B08A" cx="470.305" cy="119.208" r="71.864" />
+                  <circle fill="#B8A44C" cx="470.305" cy="119.208" r="71.864" />
                 </g>
               </svg>
               <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.6)" }}>
@@ -219,8 +221,8 @@ export function Footer() {
             {Object.entries(footerNav).map(([section, links]) => (
               <div key={section}>
                 <h4
-                  className="text-[11px] uppercase tracking-widest mb-4 font-medium"
-                  style={{ color: "#A4B08A" }}
+                  className="text-[10px] uppercase mb-4 font-medium"
+                  style={{ letterSpacing: "0.14em", color: "#B8A44C" }}
                 >
                   {section}
                 </h4>
@@ -298,8 +300,8 @@ export function Footer() {
               title="AllayPay"
             >
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <circle cx="7" cy="7" r="6" stroke="#A4B08A" strokeWidth="1.2" />
-                <path d="M5 7h4M7 5v4" stroke="#A4B08A" strokeWidth="1.2" strokeLinecap="round" />
+                <circle cx="7" cy="7" r="6" stroke="#B8A44C" strokeWidth="1.2" />
+                <path d="M5 7h4M7 5v4" stroke="#B8A44C" strokeWidth="1.2" strokeLinecap="round" />
               </svg>
               <span className="text-[9px] font-semibold uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.45)" }}>AllayPay</span>
             </div>

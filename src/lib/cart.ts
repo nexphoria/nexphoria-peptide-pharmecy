@@ -10,9 +10,9 @@ export interface CartItem {
     price: number;
   };
   format: 'vial' | 'pen';
-  subscriptionMonths: number; // 1 = one-time, 3 or 6 = subscription
+  subscriptionMonths: number; // 1 = one-time, 3+ = subscription
   monthlyPrice: number; // per-shipment price after discount
-  subscriptionDiscount: number; // fractional discount applied (0, 0.08, or 0.12)
+  discount: number; // fractional discount applied (0, 0.05, or 0.10)
 }
 
 interface CartState {
@@ -20,7 +20,7 @@ interface CartState {
   isOpen: boolean;
 
   // Actions
-  addItem: (product: Product, format?: 'vial' | 'pen', selectedDosage?: { size: string; price: number }, subscriptionMonths?: number) => void;
+  addItem: (product: Product, format?: 'vial' | 'pen', selectedDosage?: { size: string; price: number }, subscriptionMonths?: number, discount?: number) => void;
   removeItem: (productSlug: string, format: 'vial' | 'pen') => void;
   updateQuantity: (productSlug: string, format: 'vial' | 'pen', quantity: number) => void;
   clearCart: () => void;
@@ -62,7 +62,7 @@ export const useCart = create<CartState>()(
       items: [],
       isOpen: false,
 
-      addItem: (product, format = 'vial', selectedDosage, subscriptionMonths = 1) => {
+      addItem: (product, format = 'vial', selectedDosage, subscriptionMonths = 1, discount = 0) => {
         const existingItemIndex = get().items.findIndex(
           item => item.product.slug === product.slug && item.format === format
         );
@@ -75,13 +75,9 @@ export const useCart = create<CartState>()(
 
         const basePrice = resolveUnitPrice(product, format, dosageInfo);
 
-        // Subscription discount: 3-month = 8%, 6-month = 12%
-        const subscriptionDiscount =
-          subscriptionMonths >= 6 ? 0.12 :
-          subscriptionMonths >= 3 ? 0.08 : 0;
-
-        const monthlyPrice = subscriptionDiscount > 0
-          ? +(basePrice * (1 - subscriptionDiscount)).toFixed(2)
+        // Apply the discount passed from BuyBox (volume or subscription)
+        const monthlyPrice = discount > 0
+          ? +(basePrice * (1 - discount)).toFixed(2)
           : basePrice;
 
         if (existingItemIndex >= 0) {
@@ -89,7 +85,7 @@ export const useCart = create<CartState>()(
           set(state => ({
             items: state.items.map((item, index) =>
               index === existingItemIndex
-                ? { ...item, quantity: item.quantity + 1, subscriptionMonths, monthlyPrice, subscriptionDiscount }
+                ? { ...item, quantity: item.quantity + 1, subscriptionMonths, monthlyPrice, discount }
                 : item
             )
           }));
@@ -103,7 +99,7 @@ export const useCart = create<CartState>()(
               format,
               subscriptionMonths,
               monthlyPrice,
-              subscriptionDiscount,
+              discount,
             }]
           }));
         }

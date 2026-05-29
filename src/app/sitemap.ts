@@ -48,6 +48,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${baseUrl}/resources`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/build-your-stack`,
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -240,6 +246,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.72,
     },
     {
+      url: `${baseUrl}/tools/peptide-cycle-planner`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.72,
+    },
+    {
       url: `${baseUrl}/account/orders`,
       lastModified: new Date(),
       changeFrequency: "yearly",
@@ -271,6 +283,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly" as const,
       priority: 0.5,
     }))),
+    {
+      url: `${baseUrl}/tools/allometric-scaling-calculator`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.72,
+    },
+    {
+      url: `${baseUrl}/tools/peptide-timer`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.72,
+    },
     {
       url: `${baseUrl}/legal/disclaimer`,
       lastModified: new Date(),
