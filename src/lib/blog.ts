@@ -26,11 +26,14 @@ import { article as a22 } from './articles/mots-c-mitochondria-derived-peptide-m
 import { article as a23 } from './articles/ss-31-elamipretide-mitochondria-targeted-peptide-research';
 import { article as a24 } from './articles/dsip-delta-sleep-inducing-peptide-sleep-research-review';
 import { article as a25 } from './articles/sermorelin-ghrh-analog-anti-aging-research';
+import { article as a26 } from './articles/cerebrolysin-neurotrophic-peptide-research-review';
+import { article as a27 } from './articles/hexarelin-forgotten-ghrp-cardiac-effects';
+import { article as a28 } from './articles/tesamorelin-ghrh-analog-visceral-fat-research';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
   a11, a12, a13, a14, a15, a16, a17, a18, a19, a20,
-  a21, a22, a23, a24, a25,
+  a21, a22, a23, a24, a25, a26, a27, a28,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
