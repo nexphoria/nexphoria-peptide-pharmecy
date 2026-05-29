@@ -43,6 +43,7 @@ const footerNav = {
     { label: "Research Tools", href: "/tools" },
     { label: "BAC Water Guide", href: "/tools/bac-water-guide" },
     { label: "Storage Guide", href: "/guides/storage" },
+    { label: "Reconstitution Guide", href: "/guides/reconstitution" },
     { label: "Track Your Order", href: "/account/orders" },
     { label: "Wholesale", href: "/wholesale" },
   ],
