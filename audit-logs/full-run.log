@@ -362,3 +362,37 @@ Deploying to Cloudflare Pages...
 ✨ Uploading _redirects
 🌎 Deploying...
 ✨ Deployment complete! Take a peek over at https://00a40b0c.nexphoria.pages.dev
+[main e4224ae] audit-pass-9: Trust elements & social proof: Audit trust signals across th
+ Committer: Chiya Yosopov <chiyayosopov@Chiyas-Mac-mini.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 3 files changed, 78 insertions(+)
+ create mode 100644 audit-logs/pass-9-20260529_024453.md
+ create mode 100644 src/lib/compounds.ts
+✅ Pass 9 complete and deployed
+
+--- Pass 9 finished at Fri May 29 02:45:08 EDT 2026 ---
+
+============================================
+PASS 10 / 10 — Fri May 29 02:45:18 EDT 2026
+Topic: Final polish & cross-page consistency: Do a final comprehensive pass. Check all ...
+============================================
+You're out of extra usage · resets 7:20am (America/New_York)
+
+✅ Build succeeded for pass 10
+Deploying to Cloudflare Pages...
+✨ Success! Uploaded 0 files (781 already uploaded) (0.32 sec)
+
+✨ Uploading _redirects
+🌎 Deploying...
+✨ Deployment complete! Take a peek over at https://ae795653.nexphoria.pages.dev
