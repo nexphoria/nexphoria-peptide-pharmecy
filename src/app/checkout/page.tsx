@@ -6,6 +6,75 @@ import { motion } from "framer-motion";
 import { ArrowLeft, ShoppingBag } from "lucide-react";
 import { useCart } from "@/lib/cart";
 import Link from "next/link";
+import Image from "next/image";
+
+// Helper: resolve product slug to image path
+function resolveProductImage(slug: string): string {
+  const directMap: Record<string, string> = {
+    'bpc-157': '/products/bpc-157.png',
+    'tb-500': '/products/tb-500.png',
+    'ipamorelin': '/products/ipamorelin.png',
+    'cjc-1295': '/products/ipamorelin.png',
+    'cjc-1295-ipamorelin': '/products/ipamorelin.png',
+    'sermorelin': '/products/ipamorelin.png',
+    'mk-677': '/products/ipamorelin.png',
+    'semaglutide': '/products/tirzepatide.png',
+    'tirzepatide': '/products/tirzepatide.png',
+    'retatrutide': '/products/retatrutide.png',
+    'aod-9604': '/products/aod-9604.png',
+    'ghk-cu': '/products/ghk-cu.png',
+    'epitalon': '/products/epitalon.png',
+    'selank': '/products/epitalon.png',
+    'semax': '/products/epitalon.png',
+    'nad-plus': '/products/nad-plus.png',
+    'pt-141': '/products/pt-141.png',
+    'melanotan-ii': '/products/pt-141.png',
+    'thymosin-alpha-1': '/products/bpc-157.png',
+    'll-37': '/products/bpc-157.png',
+    'mots-c': '/products/mots-c.png',
+  };
+  return directMap[slug] || `/products/${slug}.png`;
+}
+
+function ProductThumb({
+  slug,
+  name,
+  accentColor,
+}: {
+  slug: string;
+  name: string;
+  accentColor: string;
+}) {
+  const [imgError, setImgError] = useState(false);
+  const src = resolveProductImage(slug);
+
+  if (imgError) {
+    return (
+      <span
+        style={{
+          fontSize: "1.25rem",
+          fontWeight: "bold",
+          fontFamily: "var(--font-display)",
+          color: accentColor,
+          opacity: 0.9,
+        }}
+      >
+        {name.charAt(0)}
+      </span>
+    );
+  }
+
+  return (
+    <Image
+      src={src}
+      alt={name}
+      width={48}
+      height={48}
+      style={{ objectFit: "contain", width: "100%", height: "100%" }}
+      onError={() => setImgError(true)}
+    />
+  );
+}
 
 export default function CheckoutPage() {
   const router = useRouter();
@@ -316,25 +385,15 @@ export default function CheckoutPage() {
                       style={{ borderColor: "#EAE6DF" }}
                     >
                       <div
-                        className="flex-shrink-0 flex items-center justify-center rounded"
+                        className="flex-shrink-0 flex items-center justify-center rounded overflow-hidden"
                         style={{
-                          width: "40px",
-                          height: item.format === "pen" ? "28px" : "60px",
+                          width: "48px",
+                          height: "48px",
                           backgroundColor: `${item.product.accentColor}12`,
                           border: `1px solid ${item.product.accentColor}30`,
                         }}
                       >
-                        <span
-                          style={{
-                            fontSize: item.format === "pen" ? "0.875rem" : "1.25rem",
-                            fontWeight: "bold",
-                            fontFamily: "var(--font-display)",
-                            color: item.product.accentColor,
-                            opacity: 0.9,
-                          }}
-                        >
-                          {item.product.name.charAt(0)}
-                        </span>
+                        <ProductThumb slug={item.product.slug} name={item.product.name} accentColor={item.product.accentColor} />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h4 className="text-sm font-semibold truncate" style={{ color: "#010101" }}>

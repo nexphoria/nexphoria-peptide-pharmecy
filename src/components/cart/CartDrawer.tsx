@@ -1,12 +1,84 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Plus, Minus, ShoppingBag, ArrowRight } from "lucide-react";
 import { useCart } from "@/lib/cart";
 import { products, getRelatedProducts } from "@/lib/products";
+import Image from "next/image";
 // SVG components replaced with img tags for performance
+
+// Helper: resolve product slug to image path
+function resolveProductImage(slug: string): string {
+  // Direct slug mapping
+  const directMap: Record<string, string> = {
+    'bpc-157': '/products/bpc-157.png',
+    'tb-500': '/products/tb-500.png',
+    'ipamorelin': '/products/ipamorelin.png',
+    'cjc-1295': '/products/ipamorelin.png',
+    'cjc-1295-ipamorelin': '/products/ipamorelin.png',
+    'sermorelin': '/products/ipamorelin.png',
+    'mk-677': '/products/ipamorelin.png',
+    'semaglutide': '/products/tirzepatide.png',
+    'tirzepatide': '/products/tirzepatide.png',
+    'retatrutide': '/products/retatrutide.png',
+    'aod-9604': '/products/aod-9604.png',
+    'ghk-cu': '/products/ghk-cu.png',
+    'epitalon': '/products/epitalon.png',
+    'selank': '/products/epitalon.png',
+    'semax': '/products/epitalon.png',
+    'nad-plus': '/products/nad-plus.png',
+    'pt-141': '/products/pt-141.png',
+    'melanotan-ii': '/products/pt-141.png',
+    'thymosin-alpha-1': '/products/bpc-157.png',
+    'll-37': '/products/bpc-157.png',
+    'mots-c': '/products/mots-c.png',
+  };
+  return directMap[slug] || `/products/${slug}.png`;
+}
+
+function ProductThumb({
+  slug,
+  name,
+  accentColor,
+  size = 44,
+}: {
+  slug: string;
+  name: string;
+  accentColor: string;
+  size?: number;
+}) {
+  const [imgError, setImgError] = useState(false);
+  const src = resolveProductImage(slug);
+
+  if (imgError) {
+    return (
+      <span
+        style={{
+          fontSize: size > 36 ? "1.25rem" : "1rem",
+          fontWeight: "bold",
+          fontFamily: "var(--font-display)",
+          color: accentColor,
+          opacity: 0.9,
+        }}
+      >
+        {name.charAt(0)}
+      </span>
+    );
+  }
+
+  return (
+    <Image
+      src={src}
+      alt={name}
+      width={size}
+      height={size}
+      style={{ objectFit: "contain", width: "100%", height: "100%" }}
+      onError={() => setImgError(true)}
+    />
+  );
+}
 
 interface CartDrawerProps {
   className?: string;
@@ -221,25 +293,17 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                             backgroundColor: "#F5F3F0"
                           }}
                         >
-                          {/* Product Visual */}
+                          {/* Product Thumbnail */}
                           <div
-                            className="flex-shrink-0 flex items-center justify-center rounded"
+                            className="flex-shrink-0 flex items-center justify-center rounded overflow-hidden"
                             style={{
-                              width: "40px",
-                              height: item.format === 'pen' ? "28px" : "60px",
+                              width: "48px",
+                              height: "48px",
                               backgroundColor: `${item.product.accentColor}12`,
                               border: `1px solid ${item.product.accentColor}30`
                             }}
                           >
-                            <span style={{
-                              fontSize: item.format === 'pen' ? "0.875rem" : "1.25rem",
-                              fontWeight: "bold",
-                              fontFamily: "var(--font-display)",
-                              color: item.product.accentColor,
-                              opacity: 0.9
-                            }}>
-                              {item.product.name.charAt(0)}
-                            </span>
+                            <ProductThumb slug={item.product.slug} name={item.product.name} accentColor={item.product.accentColor} />
                           </div>
 
                           {/* Product Info */}
@@ -358,28 +422,19 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                             style={{ borderColor: "var(--dark-border)" }}
                             onClick={() => {
                               addItem(product);
-                              // Optional: Show a toast or brief visual feedback
                             }}
                           >
                             <div
-                              className="flex items-center justify-center rounded"
+                              className="flex items-center justify-center rounded overflow-hidden"
                               style={{
-                                width: "32px",
-                                height: "48px",
+                                width: "40px",
+                                height: "40px",
                                 flexShrink: 0,
                                 backgroundColor: `${product.accentColor}12`,
                                 border: `1px solid ${product.accentColor}30`
                               }}
                             >
-                              <span style={{
-                                fontSize: "1rem",
-                                fontWeight: "bold",
-                                fontFamily: "var(--font-display)",
-                                color: product.accentColor,
-                                opacity: 0.9
-                              }}>
-                                {product.name.charAt(0)}
-                              </span>
+                              <ProductThumb slug={product.slug} name={product.name} accentColor={product.accentColor} size={32} />
                             </div>
                             <div className="flex-1 min-w-0">
                               <h4 className="text-xs font-medium text-near-black truncate">
