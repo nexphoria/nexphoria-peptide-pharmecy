@@ -2,10 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { products } from "@/lib/products";
 import { hasProductPhoto, getProductImagePath } from "@/lib/product-images";
-import ProductVial from "@/components/ProductVial";
 
-// Featured selection — pull real catalog entries that have photography for a
-// clean, premium grid. Falls back to ProductVial within the card if needed.
 const FEATURED_SLUGS = [
   "bpc-157",
   "tirzepatide",
@@ -30,94 +27,62 @@ export default function HomePage() {
 
   return (
     <>
-      {/* HERO — product lineup */}
-      <section
-        className="relative flex items-center justify-center px-6 pt-32 pb-24 md:pt-40 md:pb-32"
-        style={{ backgroundColor: "#010101" }}
-      >
-        <div className="max-w-6xl mx-auto w-full">
-          <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-center">
+      {/* HERO */}
+      <section className="relative px-6 pt-28 pb-20 md:pt-36 md:pb-28">
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             {/* Left: copy */}
             <div>
-              <p
-                className="text-xs uppercase tracking-widest mb-6"
-                style={{ color: "#C9DD69" }}
-              >
+              <p className="eyebrow mb-5">
                 Research-Grade Peptides
               </p>
               <h1
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-7"
-                style={{
-                  fontWeight: 200,
-                  letterSpacing: "-0.02em",
-                  lineHeight: 0.98,
-                  color: "#FFFFF3",
-                }}
+                className="text-4xl sm:text-5xl md:text-[3.5rem] lg:text-[4rem] mb-6 leading-[1.05] tracking-tight"
+                style={{ fontWeight: 500 }}
               >
                 Precision compounds,
                 <br />
                 independently verified.
               </h1>
               <p
-                className="text-lg mb-10 max-w-md"
-                style={{ fontWeight: 300, lineHeight: 1.6, color: "#A0A0A0" }}
+                className="text-base md:text-lg mb-10 max-w-md leading-relaxed"
+                style={{ color: "#555" }}
               >
-                A curated catalog of research peptides. ≥99% purity,
-                third-party tested, batch-tracked, and shipped cold-chain with a
-                Certificate of Analysis.
+                A curated catalog of research peptides. 99%+ purity,
+                third-party tested, batch-tracked, and shipped cold-chain.
               </p>
 
-              <div
-                className="flex flex-wrap items-center gap-6 mb-10 pb-8"
-                style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}
-              >
-                {[
-                  { value: "≥99%", label: "Purity" },
-                  { value: "cGMP", label: "Certified" },
-                  { value: "100%", label: "Third-Party Tested" },
-                ].map((stat) => (
-                  <div key={stat.label}>
-                    <div
-                      className="text-2xl font-light mb-1"
-                      style={{ color: "#C9DD69" }}
-                    >
-                      {stat.value}
-                    </div>
-                    <div
-                      className="text-xs uppercase tracking-wide"
-                      style={{ color: "#7F7F7D" }}
-                    >
-                      {stat.label}
-                    </div>
-                  </div>
-                ))}
+              <div className="flex flex-wrap gap-4">
+                <Link href="/products" className="btn-primary">
+                  Browse Catalog
+                </Link>
+                <Link href="/science" className="btn-outline">
+                  Our Standards
+                </Link>
               </div>
 
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/products"
-                  className="w-full sm:w-auto inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold uppercase tracking-wide text-sm transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: "#A4B08A", color: "#000000" }}
-                >
-                  Browse Compounds
-                </Link>
-                <Link
-                  href="/protocols"
-                  className="w-full sm:w-auto inline-flex items-center gap-2 px-8 py-4 rounded-lg font-medium uppercase tracking-wide text-sm transition-opacity hover:opacity-80"
-                  style={{ color: "#C9DD69", border: "1px solid rgba(201,221,105,0.4)" }}
-                >
-                  Research Cycles
-                </Link>
+              {/* Trust line */}
+              <div className="flex items-center gap-6 mt-10 pt-8 border-t border-[#ECEAE4]">
+                {[
+                  { value: "99%+", label: "Purity" },
+                  { value: "cGMP", label: "Manufactured" },
+                  { value: "3rd Party", label: "Tested" },
+                ].map((stat) => (
+                  <div key={stat.label}>
+                    <div className="text-lg font-semibold mb-0.5">{stat.value}</div>
+                    <div className="text-xs text-[#888] uppercase tracking-wide">{stat.label}</div>
+                  </div>
+                ))}
               </div>
             </div>
 
             {/* Right: hero lineup image */}
-            <div className="relative">
+            <div className="relative flex items-center">
               <Image
                 src="/brand/hero-lineup.png"
-                alt="Nexphoria research peptide vial lineup"
-                width={800}
-                height={600}
+                alt="Nexphoria peptide vial lineup"
+                width={900}
+                height={675}
                 className="w-full h-auto"
                 priority
                 unoptimized
@@ -127,89 +92,127 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* HOW IT WORKS — 3 steps */}
-      <section className="relative bg-cream py-20 md:py-24 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-1 h-1 rounded-full" style={{ backgroundColor: "#C9DD69" }} />
-            <span className="text-xs uppercase tracking-widest" style={{ color: "#B8923A" }}>
-              How It Works
-            </span>
+      {/* SOCIAL PROOF STRIP */}
+      <section className="py-10 px-6 border-t border-b border-[#ECEAE4]" style={{ backgroundColor: "#FAFAF8" }}>
+        <div className="max-w-5xl mx-auto">
+          <p className="text-center text-xs uppercase tracking-widest text-[#999] mb-8 font-medium">
+            Researchers Trust Nexphoria
+          </p>
+          <div className="grid grid-cols-3 gap-4 md:gap-8">
+            {[
+              {
+                stat: "99.2%",
+                label: "Average Purity",
+                sub: "Across all lots, HPLC-verified",
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                    <circle cx="14" cy="14" r="13" stroke="#A4B08A" strokeWidth="1.5"/>
+                    <path d="M8 14.5l4 4 8-8" stroke="#A4B08A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                ),
+              },
+              {
+                stat: "48-Hour",
+                label: "Cold-Chain Shipping",
+                sub: "Temperature-controlled transit",
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                    <rect x="1.75" y="7" width="24.5" height="15" rx="2" stroke="#A4B08A" strokeWidth="1.5"/>
+                    <path d="M7 7V5a2 2 0 012-2h10a2 2 0 012 2v2" stroke="#A4B08A" strokeWidth="1.5"/>
+                    <path d="M9 14h10M14 11v6" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round"/>
+                  </svg>
+                ),
+              },
+              {
+                stat: "COA",
+                label: "With Every Order",
+                sub: "Batch-specific, always enclosed",
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                    <rect x="5" y="2" width="18" height="24" rx="2" stroke="#A4B08A" strokeWidth="1.5"/>
+                    <path d="M9 9h10M9 13h10M9 17h6" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round"/>
+                  </svg>
+                ),
+              },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="flex flex-col items-center text-center px-4 py-6 md:py-8"
+              >
+                <div className="mb-4">{item.icon}</div>
+                <div className="text-2xl md:text-3xl font-semibold tracking-tight mb-1">
+                  {item.stat}
+                </div>
+                <div className="text-sm font-medium mb-1">{item.label}</div>
+                <div className="text-xs text-[#888] leading-relaxed hidden md:block">{item.sub}</div>
+              </div>
+            ))}
           </div>
-          <h2
-            className="text-3xl md:text-4xl mb-12 text-near-black max-w-2xl"
-            style={{ fontWeight: 200 }}
-          >
-            Three steps from catalog to bench.
+        </div>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <section className="py-20 md:py-28 px-6" style={{ backgroundColor: "#F7F5F0" }}>
+        <div className="max-w-6xl mx-auto">
+          <p className="eyebrow mb-4">How It Works</p>
+          <h2 className="text-3xl md:text-4xl font-medium mb-14 tracking-tight">
+            From catalog to bench in three steps.
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 n: "01",
-                title: "Choose your compounds",
-                body: "Select from a fully specified catalog — sequence, purity, storage, and reconstitution detailed on every page.",
+                title: "Choose compounds",
+                body: "Browse a fully specified catalog. Every product page details sequence, purity, storage, and reconstitution.",
               },
               {
                 n: "02",
-                title: "Select your research cycle",
-                body: "Order once, or set a 3-Month or 6-Month Research Cycle billed monthly for continuity across a study window.",
+                title: "Select your cycle",
+                body: "Order once, or subscribe to a 3- or 6-month research cycle billed monthly for continuity.",
               },
               {
                 n: "03",
-                title: "Delivered to your door",
-                body: "Cold-chain shipped, batch-tracked, and accompanied by a lot-specific Certificate of Analysis.",
+                title: "Delivered cold-chain",
+                body: "Shipped temperature-controlled with batch-specific Certificate of Analysis enclosed.",
               },
             ].map((step) => (
               <div
                 key={step.n}
-                className="rounded-sm p-8 bg-white-card"
-                style={{ border: "1px solid rgba(0,0,0,0.06)", borderTop: "2px solid #C9DD69" }}
+                className="bg-white rounded-lg p-8 card-shadow"
               >
-                <div
-                  className="text-sm font-mono mb-5"
-                  style={{ color: "#B8923A", letterSpacing: "0.1em" }}
-                >
+                <div className="text-xs font-mono mb-5 text-[#A4B08A] font-semibold">
                   {step.n}
                 </div>
-                <h3 className="text-xl mb-3 text-near-black" style={{ fontWeight: 400 }}>
+                <h3 className="text-lg font-medium mb-3">
                   {step.title}
                 </h3>
-                <p className="text-sm text-stone" style={{ lineHeight: 1.7 }}>
+                <p className="text-sm leading-relaxed text-[#555]">
                   {step.body}
                 </p>
               </div>
             ))}
           </div>
-
-          <div className="mt-10">
-            <Link
-              href="/protocols"
-              className="inline-flex items-center gap-2 text-sm text-near-black hover:opacity-60 transition-opacity"
-              style={{ letterSpacing: "0.08em" }}
-            >
-              Understand the research-cycle model
-              <span aria-hidden>→</span>
-            </Link>
-          </div>
         </div>
       </section>
 
       {/* FEATURED PRODUCTS */}
-      <section className="relative bg-white-card py-20 md:py-24 px-6">
+      <section className="py-20 md:py-28 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-1 h-1 rounded-full" style={{ backgroundColor: "#C9DD69" }} />
-            <span className="text-xs uppercase tracking-widest" style={{ color: "#B8923A" }}>
-              Catalog
-            </span>
+          <div className="flex items-end justify-between mb-12">
+            <div>
+              <p className="eyebrow mb-4">Catalog</p>
+              <h2 className="text-3xl md:text-4xl font-medium tracking-tight">
+                Featured Compounds
+              </h2>
+            </div>
+            <Link
+              href="/products"
+              className="hidden md:inline-flex items-center gap-2 text-sm font-medium hover:opacity-60 transition-opacity"
+            >
+              View All <span aria-hidden>&#8594;</span>
+            </Link>
           </div>
-          <h2
-            className="text-3xl md:text-4xl mb-12 text-near-black"
-            style={{ fontWeight: 200 }}
-          >
-            Featured Compounds
-          </h2>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredProducts.map((product) => {
@@ -218,73 +221,41 @@ export default function HomePage() {
                 <Link
                   key={product.slug}
                   href={`/products/${product.slug}`}
-                  className="group block rounded-sm overflow-hidden transition-shadow hover:shadow-lg"
-                  style={{ border: "1px solid rgba(0,0,0,0.08)", backgroundColor: "#FFFFFF" }}
+                  className="group block"
                 >
-                  {/* Image */}
-                  <div
-                    className="relative w-full h-48 flex items-center justify-center p-6"
-                    style={{
-                      backgroundColor: hasProductPhoto(product.slug) ? "#F7F4EE" : "#1A1A18",
-                    }}
-                  >
-                    {hasProductPhoto(product.slug) ? (
-                      <img
-                        src={getProductImagePath(product.slug)}
-                        alt={product.name}
-                        className="w-full h-full object-contain"
-                      />
-                    ) : (
-                      <div className="h-full">
-                        <ProductVial
-                          productName={product.name}
-                          dosage={product.size}
-                          category={product.category}
-                          accentColor={product.accentColor}
+                  <div className="bg-white rounded-lg overflow-hidden card-shadow transition-all duration-200 hover:-translate-y-0.5">
+                    {/* Image container */}
+                    <div className="w-full h-56 overflow-hidden bg-[#f5f5f2]">
+                      {hasProductPhoto(product.slug) ? (
+                        <img
+                          src={getProductImagePath(product.slug)}
+                          alt={product.name}
+                          className="w-full h-full object-cover"
                         />
-                      </div>
-                    )}
-                    <div
-                      className="absolute top-3 right-3 px-2 py-1 rounded-sm text-[10px] font-medium"
-                      style={{ backgroundColor: "rgba(201,221,105,0.15)", color: "#7a9c1a" }}
-                    >
-                      {product.purity}
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: "#F0EDE7" }}>
+                          <span className="text-sm font-semibold text-[#A4B08A] text-center px-4">
+                            {product.name}
+                          </span>
+                        </div>
+                      )}
                     </div>
-                  </div>
 
-                  {/* Body */}
-                  <div className="p-6">
-                    <p
-                      className="text-[10px] uppercase tracking-widest font-semibold mb-2"
-                      style={{ color: "#B8923A" }}
-                    >
-                      {product.category}
-                    </p>
-                    <h3
-                      className="text-xl mb-2 text-near-black group-hover:opacity-70 transition-opacity"
-                      style={{ fontWeight: 400 }}
-                    >
-                      {product.name}
-                    </h3>
-                    <p
-                      className="text-sm mb-5 line-clamp-2"
-                      style={{ color: "#7F7F7D", lineHeight: 1.6 }}
-                    >
-                      {product.tagline}
-                    </p>
-                    <div
-                      className="flex items-center justify-between pt-4"
-                      style={{ borderTop: "1px solid rgba(0,0,0,0.05)" }}
-                    >
-                      <span className="text-lg text-near-black" style={{ fontWeight: 400 }}>
-                        ${price}
-                      </span>
-                      <span
-                        className="text-xs uppercase"
-                        style={{ color: "#7F7F7D", letterSpacing: "0.1em" }}
-                      >
-                        Add to Order →
-                      </span>
+                    {/* Body */}
+                    <div className="p-5">
+                      <p className="text-[11px] uppercase tracking-wider text-[#888] mb-1.5">
+                        {product.category}
+                      </p>
+                      <h3 className="text-base font-medium mb-1 group-hover:opacity-70 transition-opacity">
+                        {product.name}
+                      </h3>
+                      <p className="text-xs text-[#888] mb-3">{product.size}</p>
+                      <div className="flex items-center justify-between pt-3 border-t border-[#ECEAE4]">
+                        <span className="text-base font-semibold">${price}</span>
+                        <span className="text-xs text-[#A4B08A] font-medium uppercase tracking-wide opacity-0 group-hover:opacity-100 transition-opacity">
+                          View
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </Link>
@@ -292,67 +263,52 @@ export default function HomePage() {
             })}
           </div>
 
-          <div className="text-center mt-12">
-            <Link
-              href="/products"
-              className="inline-flex items-center gap-2 text-sm text-near-black hover:opacity-60 transition-opacity"
-              style={{ letterSpacing: "0.1em" }}
-            >
-              View Full Catalog
-              <span aria-hidden>→</span>
+          <div className="text-center mt-10 md:hidden">
+            <Link href="/products" className="btn-outline">
+              View All Products
             </Link>
           </div>
         </div>
       </section>
 
-      {/* WHAT ARRIVES — packaging */}
-      <section className="relative bg-cream py-20 md:py-24 px-6">
+      {/* PACKAGING */}
+      <section className="py-20 md:py-28 px-6" style={{ backgroundColor: "#F7F5F0" }}>
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             <div className="relative">
-              <Image
-                src="/brand/packaging-unboxing.png"
-                alt="Nexphoria pharmaceutical-grade packaging with research vials"
-                width={700}
-                height={700}
-                className="w-full h-auto rounded-sm"
-                unoptimized
-              />
+              <div className="rounded-lg overflow-hidden">
+                <Image
+                  src="/brand/packaging-unboxing.png"
+                  alt="Nexphoria pharmaceutical-grade packaging"
+                  width={700}
+                  height={700}
+                  className="w-full h-auto"
+                  unoptimized
+                />
+              </div>
             </div>
 
             <div>
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-1 h-1 rounded-full" style={{ backgroundColor: "#C9DD69" }} />
-                <span className="text-xs uppercase tracking-widest" style={{ color: "#B8923A" }}>
-                  What Arrives
-                </span>
-              </div>
-              <h2
-                className="text-3xl md:text-4xl mb-6 text-near-black"
-                style={{ fontWeight: 200 }}
-              >
+              <p className="eyebrow mb-4">What Arrives</p>
+              <h2 className="text-3xl md:text-4xl font-medium mb-6 tracking-tight">
                 Considered down to the seal.
               </h2>
-              <p className="text-base text-stone mb-8" style={{ lineHeight: 1.7 }}>
+              <p className="text-base leading-relaxed text-[#555] mb-8">
                 Each order arrives in rigid, light-shielding packaging built to
                 protect lyophilized material in transit. Vials are nested in
-                cold-chain insulation, sealed, and labeled with batch identifiers
-                that trace back to the analytical record for that lot.
+                cold-chain insulation, sealed, and labeled with batch identifiers.
               </p>
 
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {[
-                  "Temperature-controlled shipping with insulated cold packs",
+                  "Temperature-controlled cold-chain shipping",
                   "Lot-specific Certificate of Analysis enclosed",
                   "Discreet, rigid, light-shielding packaging",
-                  "Batch identifiers traceable to HPLC and MS records",
+                  "Batch IDs traceable to HPLC records",
                 ].map((line) => (
                   <div key={line} className="flex items-start gap-3">
-                    <div
-                      className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0"
-                      style={{ backgroundColor: "#C9DD69" }}
-                    />
-                    <p className="text-sm text-stone">{line}</p>
+                    <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 bg-[#A4B08A]" />
+                    <p className="text-sm text-[#555]">{line}</p>
                   </div>
                 ))}
               </div>
@@ -361,18 +317,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* OUR STANDARDS — dark statement */}
-      <section className="relative py-20 md:py-24 px-6" style={{ backgroundColor: "#010101" }}>
+      {/* STANDARDS */}
+      <section className="py-20 md:py-28 px-6" style={{ backgroundColor: "#1A1A18" }}>
         <div className="max-w-5xl mx-auto text-center">
-          <p className="text-xs uppercase tracking-widest mb-6" style={{ color: "#C9DD69" }}>
-            Our Standards
-          </p>
+          <p className="eyebrow mb-5" style={{ color: "#A4B08A" }}>Our Standards</p>
           <h2
-            className="text-3xl md:text-4xl mb-14 max-w-4xl mx-auto"
-            style={{ fontWeight: 200, color: "#EAE7E3", lineHeight: 1.25 }}
+            className="text-3xl md:text-4xl mb-14 max-w-3xl mx-auto font-medium tracking-tight"
+            style={{ color: "#F5F5F0", lineHeight: 1.2 }}
           >
-            Manufactured under pharmaceutical standards. Every lot independently
-            verified. No exceptions.
+            Manufactured under pharmaceutical standards. Every lot independently verified.
           </h2>
 
           <div className="grid md:grid-cols-3 gap-10 md:gap-12 text-left">
@@ -391,13 +344,10 @@ export default function HomePage() {
               },
             ].map((col) => (
               <div key={col.title}>
-                <h3
-                  className="text-sm uppercase tracking-wide mb-3"
-                  style={{ color: "#C9DD69", fontWeight: 600 }}
-                >
+                <h3 className="text-sm font-semibold uppercase tracking-wide mb-3" style={{ color: "#A4B08A" }}>
                   {col.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "#A0A0A0" }}>
+                <p className="text-sm leading-relaxed" style={{ color: "#999" }}>
                   {col.body}
                 </p>
               </div>
@@ -406,73 +356,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* LIFESTYLE LAB — split image + science statement */}
-      <section className="relative bg-near-black">
-        <div className="grid md:grid-cols-2">
-          <div className="relative h-[360px] md:h-[500px]">
-            <Image
-              src="/brand/lifestyle-lab.png"
-              alt="Nexphoria laboratory environment"
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 768px) 100vw, 50vw"
-              quality={90}
-            />
-          </div>
-          <div
-            className="flex flex-col justify-center px-8 md:px-16 py-16"
-            style={{ backgroundColor: "#0A0A0A" }}
-          >
-            <p className="text-xs uppercase tracking-widest mb-6" style={{ color: "#C9DD69" }}>
-              Science
-            </p>
-            <h3
-              className="text-2xl md:text-3xl mb-6"
-              style={{ fontWeight: 200, color: "#EAE7E3", lineHeight: 1.25 }}
-            >
-              Every compound begins and ends with data.
-            </h3>
-            <p className="text-sm leading-relaxed mb-8" style={{ color: "#A0A0A0" }}>
-              From raw material qualification to final COA release, our process is
-              designed to eliminate variability. No shortcuts. No exceptions.
-            </p>
-            <Link
-              href="/science"
-              className="inline-flex items-center gap-2 text-sm hover:opacity-70 transition-opacity"
-              style={{ color: "#C9DD69", letterSpacing: "0.1em" }}
-            >
-              View Testing Standards <span aria-hidden>→</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* CLOSING CTA */}
-      <section className="relative w-full">
-        <div className="relative h-[45vh] md:h-[60vh]">
-          <Image
-            src="/brand/poster-triptych.jpg"
-            alt="Nexphoria research compound series"
-            fill
-            className="object-cover object-top"
-            sizes="100vw"
-            quality={90}
-          />
-          <div
-            className="absolute inset-0 flex flex-col items-center justify-end pb-16 px-6"
-            style={{ background: "linear-gradient(to bottom, transparent 45%, rgba(0,0,0,0.78) 100%)" }}
-          >
-            <p className="text-xs uppercase tracking-widest mb-4" style={{ color: "#C9DD69" }}>
-              Research-Grade Compounds
-            </p>
-            <Link
-              href="/products"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold uppercase tracking-wide text-sm transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "#A4B08A", color: "#000000" }}
-            >
-              Browse Full Catalog
-            </Link>
-          </div>
+      <section className="py-20 md:py-28 px-6 text-center">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-medium mb-4 tracking-tight">
+            Ready to begin?
+          </h2>
+          <p className="text-base text-[#555] mb-8 leading-relaxed">
+            Browse our full catalog of research-grade peptide compounds.
+            Every product ships with a Certificate of Analysis.
+          </p>
+          <Link href="/products" className="btn-primary">
+            Browse Full Catalog
+          </Link>
         </div>
       </section>
     </>

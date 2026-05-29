@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Mail, Phone, Calendar } from "lucide-react";
+import { ArrowRight, CheckCircle2, Mail, Phone, Calendar, Send, Loader2 } from "lucide-react";
+import { useState } from "react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -53,7 +54,62 @@ const qualifications = [
   "GMP-certified manufacturing facility"
 ];
 
+const volumeOptions = [
+  "Under $5,000 / month",
+  "$5,000 – $15,000 / month",
+  "$15,000 – $50,000 / month",
+  "$50,000+ / month",
+];
+
+const WORKER_URL = "https://nexphoria-checkout.chiya-b60.workers.dev";
+
+type FormStatus = "idle" | "submitting" | "success" | "error";
+
 export default function WholesalePage() {
+  const [form, setForm] = useState({
+    name: "",
+    institution: "",
+    email: "",
+    monthlyVolume: "",
+    compounds: "",
+    message: "",
+  });
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.name || !form.email || !form.institution) {
+      setErrorMsg("Please fill in all required fields.");
+      return;
+    }
+    setStatus("submitting");
+    setErrorMsg("");
+    try {
+      const res = await fetch(`${WORKER_URL}/wholesale`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) {
+        setStatus("success");
+      } else {
+        const data = await res.json();
+        setStatus("error");
+        setErrorMsg(data?.error === "invalid_email" ? "Please enter a valid email." : "Submission failed. Please try again.");
+      }
+    } catch {
+      setStatus("error");
+      setErrorMsg("Network error. Please try again.");
+    }
+  };
+
   return (
     <div className="bg-dark text-primary min-h-screen">
       {/* Hero Section */}
@@ -82,7 +138,7 @@ export default function WholesalePage() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="mailto:wholesale@nexphoria.com"
+                href="#inquiry-form"
                 className="btn-acid"
               >
                 <Mail className="w-4 h-4" />
@@ -191,7 +247,7 @@ export default function WholesalePage() {
               </ul>
 
               <a
-                href="mailto:wholesale@nexphoria.com"
+                href="#inquiry-form"
                 className="btn-acid"
               >
                 Apply for Partnership
@@ -213,7 +269,7 @@ export default function WholesalePage() {
             >
               <h3 className="text-xl font-bold mb-6 text-primary"
                 style={{ fontFamily: "var(--font-display)" }}>
-                Get Started
+                Contact Channels
               </h3>
 
               <div className="space-y-6">
@@ -254,8 +310,203 @@ export default function WholesalePage() {
         </div>
       </section>
 
+      {/* Wholesale Inquiry Form */}
+      <section id="inquiry-form" className="py-24" style={{ backgroundColor: "#F5F3F0" }}>
+        <div className="container-nex">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="max-w-2xl mx-auto"
+          >
+            <div className="text-center mb-12">
+              <span className="eyebrow mb-4 block">Wholesale Inquiry</span>
+              <h2 className="text-4xl font-bold tracking-tight mb-4 text-primary"
+                style={{ fontFamily: "var(--font-display)" }}>
+                Start Your Application
+              </h2>
+              <p className="text-secondary">
+                Tell us about your organization and research needs. We respond within 24 hours.
+              </p>
+            </div>
+
+            {status === "success" ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="p-10 border rounded-xl text-center"
+                style={{ borderColor: "rgba(163,230,53,0.3)", backgroundColor: "rgba(163,230,53,0.06)" }}
+              >
+                <CheckCircle2 className="w-12 h-12 text-acid-green mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-primary mb-2"
+                  style={{ fontFamily: "var(--font-display)" }}>
+                  Application Received
+                </h3>
+                <p className="text-secondary mb-6">
+                  Thank you, {form.name}. Our wholesale team will review your inquiry and respond within 24 hours.
+                </p>
+                <Link href="/products" className="btn-acid">
+                  Browse Products <ArrowRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
+            ) : (
+              <motion.form
+                onSubmit={handleSubmit}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                custom={0.1}
+                className="p-8 border rounded-xl space-y-6"
+                style={{
+                  borderColor: "var(--dark-border)",
+                  backgroundColor: "var(--dark-card)"
+                }}
+              >
+                <div className="grid sm:grid-cols-2 gap-6">
+                  {/* Name */}
+                  <div>
+                    <label className="block text-sm font-semibold text-primary mb-2">
+                      Full Name <span className="text-acid-green">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={form.name}
+                      onChange={handleChange}
+                      placeholder="Dr. Jane Smith"
+                      required
+                      className="w-full px-4 py-3 rounded-lg bg-white border text-primary placeholder-gray-400 text-sm focus:outline-none focus:ring-2 transition"
+                      style={{
+                        borderColor: "var(--dark-border)",
+                        // @ts-ignore
+                        "--tw-ring-color": "rgba(163,230,53,0.5)"
+                      }}
+                    />
+                  </div>
+
+                  {/* Institution */}
+                  <div>
+                    <label className="block text-sm font-semibold text-primary mb-2">
+                      Institution / Company <span className="text-acid-green">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="institution"
+                      value={form.institution}
+                      onChange={handleChange}
+                      placeholder="Acme Research Labs"
+                      required
+                      className="w-full px-4 py-3 rounded-lg bg-white border text-primary placeholder-gray-400 text-sm focus:outline-none focus:ring-2 transition"
+                      style={{ borderColor: "var(--dark-border)" }}
+                    />
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div>
+                  <label className="block text-sm font-semibold text-primary mb-2">
+                    Email Address <span className="text-acid-green">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    placeholder="you@institution.edu"
+                    required
+                    className="w-full px-4 py-3 rounded-lg bg-white border text-primary placeholder-gray-400 text-sm focus:outline-none focus:ring-2 transition"
+                    style={{ borderColor: "var(--dark-border)" }}
+                  />
+                </div>
+
+                {/* Monthly Volume */}
+                <div>
+                  <label className="block text-sm font-semibold text-primary mb-2">
+                    Estimated Monthly Volume
+                  </label>
+                  <select
+                    name="monthlyVolume"
+                    value={form.monthlyVolume}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-lg bg-white border text-primary text-sm focus:outline-none focus:ring-2 transition appearance-none cursor-pointer"
+                    style={{ borderColor: "var(--dark-border)" }}
+                  >
+                    <option value="">Select a range...</option>
+                    {volumeOptions.map((opt) => (
+                      <option key={opt} value={opt}>{opt}</option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Compounds */}
+                <div>
+                  <label className="block text-sm font-semibold text-primary mb-2">
+                    Compounds of Interest
+                  </label>
+                  <input
+                    type="text"
+                    name="compounds"
+                    value={form.compounds}
+                    onChange={handleChange}
+                    placeholder="e.g. BPC-157, Semaglutide, TB-500, MK-677"
+                    className="w-full px-4 py-3 rounded-lg bg-white border text-primary placeholder-gray-400 text-sm focus:outline-none focus:ring-2 transition"
+                    style={{ borderColor: "var(--dark-border)" }}
+                  />
+                </div>
+
+                {/* Message */}
+                <div>
+                  <label className="block text-sm font-semibold text-primary mb-2">
+                    Additional Notes
+                  </label>
+                  <textarea
+                    name="message"
+                    value={form.message}
+                    onChange={handleChange}
+                    rows={4}
+                    placeholder="Tell us about your research program, required quantities, white-label needs, or any specific questions..."
+                    className="w-full px-4 py-3 rounded-lg bg-white border text-primary placeholder-gray-400 text-sm focus:outline-none focus:ring-2 transition resize-none"
+                    style={{ borderColor: "var(--dark-border)" }}
+                  />
+                </div>
+
+                {/* Error */}
+                {errorMsg && (
+                  <p className="text-sm text-red-500">{errorMsg}</p>
+                )}
+
+                {/* Submit */}
+                <button
+                  type="submit"
+                  disabled={status === "submitting"}
+                  className="btn-acid w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  {status === "submitting" ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      Submitting...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" />
+                      Submit Wholesale Inquiry
+                    </>
+                  )}
+                </button>
+
+                <p className="text-xs text-center" style={{ color: "var(--text-tertiary, #999)" }}>
+                  We respond within 24 hours to qualified inquiries. No spam, ever.
+                </p>
+              </motion.form>
+            )}
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="py-24 text-center" style={{ backgroundColor: "#F5F3F0" }}>
+      <section className="py-24 text-center" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="container-nex">
           <motion.div
             initial="hidden"
@@ -270,13 +521,13 @@ export default function WholesalePage() {
             </h2>
             <p className="text-secondary mb-8 leading-relaxed">
               Join our network of qualified distributors and research partners.
-              Contact us to discuss your specific requirements.
+              Fill out the form above or email us directly to discuss your requirements.
             </p>
             <a
               href="mailto:wholesale@nexphoria.com"
               className="btn-acid"
             >
-              Start Wholesale Application
+              wholesale@nexphoria.com
               <ArrowRight className="w-4 h-4" />
             </a>
           </motion.div>

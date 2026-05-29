@@ -132,7 +132,7 @@ export default function ScienceClient() {
       >
         <div className="container-nex py-36 md:py-44">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0} className="max-w-2xl">
-            <span className="text-[10px] font-semibold uppercase tracking-[0.22em] mb-5 block" style={{ color: "#C9DD69" }}>Analytical Science</span>
+            <span className="text-[10px] font-semibold uppercase tracking-[0.22em] mb-5 block" style={{ color: "#A4B08A" }}>Analytical Science</span>
             <h1
               className="font-bold tracking-tight mb-6 text-near-black"
               style={{
@@ -171,7 +171,7 @@ export default function ScienceClient() {
               >
                 <div
                   className="inline-flex items-center justify-center font-mono text-sm font-medium px-3 py-1.5 mb-4 bg-white"
-                  style={{ color: "#C9DD69" }}
+                  style={{ color: "#A4B08A" }}
                 >
                   {method.code}
                 </div>
@@ -221,13 +221,13 @@ export default function ScienceClient() {
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="mb-14"
           >
-            <span className="text-[10px] font-semibold uppercase tracking-[0.22em] mb-4 block" style={{ color: "#C9DD69" }}>Compound Classes</span>
+            <span className="text-[10px] font-semibold uppercase tracking-[0.22em] mb-4 block" style={{ color: "#A4B08A" }}>Compound Classes</span>
             <h2
               className="font-bold tracking-tight text-near-black max-w-2xl"
               style={{ fontWeight: 200, fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", letterSpacing: "-0.01em" }}
             >
               Understanding Peptide{" "}
-              <em className="italic" style={{ color: "#C9DD69" }}>Research Areas</em>
+              <em className="italic" style={{ color: "#A4B08A" }}>Research Areas</em>
             </h2>
           </motion.div>
 
@@ -246,7 +246,7 @@ export default function ScienceClient() {
                     <span
                       key={c}
                       className="inline-flex items-center px-2.5 py-1 text-xs font-mono border"
-                      style={{ borderColor: "#D8D4CC", color: "#C9DD69" }}
+                      style={{ borderColor: "#D8D4CC", color: "#A4B08A" }}
                     >
                       {c}
                     </span>
@@ -270,7 +270,7 @@ export default function ScienceClient() {
         <div className="container-nex">
           <div className="grid lg:grid-cols-3 gap-12">
             <div>
-              <span className="text-[10px] font-semibold uppercase tracking-[0.22em] mb-4 block" style={{ color: "#C9DD69" }}>Documentation</span>
+              <span className="text-[10px] font-semibold uppercase tracking-[0.22em] mb-4 block" style={{ color: "#A4B08A" }}>Documentation</span>
               <h2
                 className="font-bold tracking-tight mb-4 text-near-black"
                 style={{ fontSize: "2rem", fontWeight: 600 }}

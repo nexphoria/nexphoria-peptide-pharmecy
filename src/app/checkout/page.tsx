@@ -395,7 +395,7 @@ export default function CheckoutPage() {
 
                 {/* Included supplies */}
                 {includedSupplies.length > 0 && (
-                  <div className="mb-6 p-3 rounded" style={{ backgroundColor: "#c6f18420" }}>
+                  <div className="mb-6 p-3 rounded" style={{ backgroundColor: "#A4B08A20" }}>
                     <p className="text-xs font-semibold mb-1" style={{ color: "#3A3A3A" }}>
                       Included with your order
                     </p>
@@ -457,7 +457,7 @@ export default function CheckoutPage() {
                   onClick={handleCheckout}
                   disabled={isProcessing || !formData.email}
                   className="w-full py-3 px-6 rounded font-semibold text-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-90"
-                  style={{ backgroundColor: "#c6f184", color: "#000000" }}
+                  style={{ backgroundColor: "#A4B08A", color: "#000000" }}
                 >
                   {isProcessing ? "Processing..." : "Place Order"}
                 </button>
@@ -486,7 +486,7 @@ export default function CheckoutPage() {
             onClick={handleCheckout}
             disabled={isProcessing || !formData.email}
             className="py-3 px-6 rounded font-semibold text-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-90 flex-shrink-0"
-            style={{ backgroundColor: "#c6f184", color: "#000000" }}
+            style={{ backgroundColor: "#A4B08A", color: "#000000" }}
           >
             {isProcessing ? "Processing..." : "Place Order"}
           </button>

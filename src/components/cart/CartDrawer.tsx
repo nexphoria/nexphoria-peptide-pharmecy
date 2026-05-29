@@ -7,23 +7,18 @@ import { X, Plus, Minus, ShoppingBag, ArrowRight } from "lucide-react";
 import { useCart, getItemUnitPrice, getCadenceLabel } from "@/lib/cart";
 import { products, getRelatedProducts } from "@/lib/products";
 import { getProductImagePath, hasProductPhoto } from "@/lib/product-images";
-import ProductVial from "@/components/ProductVial";
 import Image from "next/image";
 
-// 48px product thumbnail: real photo when available, else the SVG vial.
 function ProductThumb({
   slug,
   name,
-  dosage,
-  category,
-  accentColor,
   size = 48,
 }: {
   slug: string;
   name: string;
-  dosage: string;
-  category: string;
-  accentColor: string;
+  dosage?: string;
+  category?: string;
+  accentColor?: string;
   size?: number;
 }) {
   if (hasProductPhoto(slug)) {
@@ -33,20 +28,19 @@ function ProductThumb({
         alt={name}
         width={size}
         height={size}
-        style={{ objectFit: "contain", width: "100%", height: "100%" }}
+        style={{ objectFit: "cover", width: "100%", height: "100%", borderRadius: "4px" }}
       />
     );
   }
 
   return (
-    <div style={{ width: "100%", height: "100%" }}>
-      <ProductVial
-        productName={name}
-        dosage={dosage}
-        category={category}
-        accentColor={accentColor}
-        size="thumbnail"
-      />
+    <div
+      className="w-full h-full flex items-center justify-center rounded"
+      style={{ backgroundColor: "#F0EDE7" }}
+    >
+      <span className="text-[9px] font-semibold text-[#A4B08A] text-center leading-tight px-1">
+        {name}
+      </span>
     </div>
   );
 }
@@ -145,12 +139,12 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
               mass: 0.8
             }}
             className={`fixed top-0 right-0 bottom-0 z-50 w-full max-w-md flex flex-col ${className}`}
-            style={{ backgroundColor: "#FFFFFF", borderLeft: "1px solid var(--border-subtle)" }}
+            style={{ backgroundColor: "#FFFFF3", borderLeft: "1px solid #ECEAE4" }}
           >
             {/* Header */}
             <div
               className="flex items-center justify-between px-6 py-5 border-b"
-              style={{ borderColor: "var(--border-subtle)" }}
+              style={{ borderColor: "#ECEAE4" }}
             >
               <div>
                 <h2 className="text-lg font-bold" style={{ color: "#010101" }}>
@@ -162,7 +156,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
               </div>
               <button
                 onClick={closeDrawer}
-                className="p-2 hover:bg-off-white transition-colors rounded-md"
+                className="p-2 hover:bg-[#F5F3F0] transition-colors rounded-md"
                 aria-label="Close cart"
               >
                 <X className="w-5 h-5" style={{ color: "#7F7F7D" }} />
@@ -171,7 +165,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
 
             {/* Free Gift Progress Bar */}
             {items.length > 0 && (
-              <div className="px-6 py-4 border-b" style={{ borderColor: "var(--border-subtle)" }}>
+              <div className="px-6 py-4 border-b" style={{ borderColor: "#ECEAE4" }}>
                 {nextThreshold ? (
                   <>
                     <div className="flex items-center justify-between mb-2">
@@ -263,7 +257,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                           transition={{ duration: 0.2 }}
                           className="flex items-start gap-3 p-4 rounded-lg border"
                           style={{
-                            borderColor: "var(--border-subtle)",
+                            borderColor: "#D8D4CC",
                             backgroundColor: "#F5F3F0"
                           }}
                         >
@@ -308,7 +302,8 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                               <div className="flex items-center gap-1">
                                 <button
                                   onClick={() => updateQuantity(item.product.slug, item.format, item.quantity - 1)}
-                                  className="w-7 h-7 flex items-center justify-center border border-dark-border-hover hover:bg-dark-border transition-colors rounded"
+                                  className="w-7 h-7 flex items-center justify-center border transition-colors rounded"
+                                  style={{ borderColor: "#D8D4CC" }}
                                   disabled={item.quantity <= 1}
                                   aria-label="Decrease quantity"
                                 >
@@ -319,7 +314,8 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                                 </span>
                                 <button
                                   onClick={() => updateQuantity(item.product.slug, item.format, item.quantity + 1)}
-                                  className="w-7 h-7 flex items-center justify-center border border-dark-border-hover hover:bg-dark-border transition-colors rounded"
+                                  className="w-7 h-7 flex items-center justify-center border transition-colors rounded"
+                                  style={{ borderColor: "#D8D4CC" }}
                                   aria-label="Increase quantity"
                                 >
                                   <Plus className="w-3 h-3 text-stone" />
@@ -352,7 +348,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                   {/* You Might Also Need - Research Supplies */}
                   <div
                     className="px-6 py-4 border-t"
-                    style={{ borderColor: "var(--border-subtle)" }}
+                    style={{ borderColor: "#ECEAE4" }}
                   >
                     <h3 className="text-sm font-semibold text-near-black mb-3 uppercase tracking-wide">
                       You Might Also Need
@@ -365,7 +361,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                         <div
                           key={supply.name}
                           className="flex items-center justify-between p-3 rounded-lg border hover:border-[#A4B08A] transition-colors group"
-                          style={{ borderColor: "var(--border-subtle)", backgroundColor: "#F7F4EE" }}
+                          style={{ borderColor: "#D8D4CC", backgroundColor: "#F7F4EE" }}
                         >
                           <div className="flex-1 min-w-0">
                             <h4 className="text-xs font-semibold text-near-black">
@@ -392,7 +388,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                   {recommendedProducts.length > 0 && (
                     <div
                       className="px-6 py-4 border-t"
-                      style={{ borderColor: "var(--border-subtle)" }}
+                      style={{ borderColor: "#ECEAE4" }}
                     >
                       <h3 className="text-sm font-semibold text-near-black mb-3 uppercase tracking-wide">
                         Recommended For You
@@ -402,8 +398,8 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                           <button
                             key={product.slug}
                             type="button"
-                            className="w-full flex items-center gap-3 p-3 rounded-lg border hover:border-dark-border-hover transition-colors group text-left"
-                            style={{ borderColor: "var(--border-subtle)" }}
+                            className="w-full flex items-center gap-3 p-3 rounded-lg border hover:border-[#A4B08A] transition-colors group text-left"
+                            style={{ borderColor: "#ECEAE4" }}
                             onClick={() => addItem(product)}
                           >
                             <div
@@ -449,7 +445,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
             {items.length > 0 && (
               <div
                 className="px-6 py-5 border-t"
-                style={{ borderColor: "var(--border-subtle)" }}
+                style={{ borderColor: "#ECEAE4" }}
               >
                 {/* Total */}
                 <div className="flex items-center justify-between mb-4">

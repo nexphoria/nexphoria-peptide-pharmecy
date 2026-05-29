@@ -75,10 +75,10 @@ export default function ContactClient() {
   };
 
   return (
-    <div className="min-h-screen bg-dark">
+    <div className="min-h-screen" style={{ backgroundColor: "#0F0F0E" }}>
 
       {/* Hero with image0016.jpg side accent */}
-      <section className="relative overflow-hidden border-b" style={{ borderColor: "var(--dark-border)" }}>
+      <section className="relative overflow-hidden border-b" style={{ borderColor: "#2A2A28" }}>
         <div className="grid md:grid-cols-[60fr_40fr]" style={{ minHeight: "380px" }}>
           {/* Text */}
           <div className="pt-36 pb-16 container-nex md:pr-0">
@@ -87,14 +87,14 @@ export default function ContactClient() {
               <h1
                 className="font-bold tracking-tight mb-6"
                 style={{
-                  fontFamily: "var(--font-playfair, Georgia, serif)",
+                  fontFamily: "Georgia, serif",
                   fontSize: "clamp(2.5rem, 5vw, 4rem)",
                   lineHeight: 1.05,
                   color: "#FDFCF8",
                 }}
               >
                 Contact{" "}
-                <em className="italic" style={{ color: "var(--acid-green)" }}>Nexphoria</em>
+                <em className="italic" style={{ color: "#A4B08A" }}>Nexphoria</em>
               </h1>
               <p className="text-lg max-w-xl leading-relaxed text-secondary">
                 Compound inquiries, custom synthesis requests, bulk orders, and documentation
@@ -113,7 +113,7 @@ export default function ContactClient() {
             />
             <div
               className="absolute inset-0"
-              style={{ background: "linear-gradient(to left, transparent 50%, var(--dark-bg) 100%)" }}
+              style={{ background: "linear-gradient(to left, transparent 50%, #0F0F0E 100%)" }}
             />
           </div>
         </div>
@@ -162,7 +162,7 @@ export default function ContactClient() {
                 </div>
               </div>
 
-              <div className="border p-6" style={{ borderColor: "var(--dark-border)" }}>
+              <div className="border p-6" style={{ borderColor: "#2A2A28" }}>
                 <div className="text-label mb-3 text-secondary">Research Verification</div>
                 <p className="text-sm leading-relaxed text-secondary">
                   All orders require verification of researcher or institutional credentials. Please
@@ -184,10 +184,10 @@ export default function ContactClient() {
                     backgroundColor: "rgba(198,241,132,0.05)",
                   }}
                 >
-                  <div className="w-8 h-px mx-auto mb-6" style={{ backgroundColor: "var(--acid-green)" }} />
+                  <div className="w-8 h-px mx-auto mb-6" style={{ backgroundColor: "#A4B08A" }} />
                   <h3
                     className="text-2xl font-medium mb-3"
-                    style={{ fontFamily: "var(--font-playfair, Georgia, serif)", color: "#FDFCF8" }}
+                    style={{ fontFamily: "Georgia, serif", color: "#FDFCF8" }}
                   >
                     Inquiry Received
                   </h3>
@@ -215,7 +215,7 @@ export default function ContactClient() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="nex-input"
+                        className="nex-input" style={{ backgroundColor: "#1C1C1A", borderColor: "#2A2A28", color: "#FDFCF8" }}
                         placeholder="Dr. Jane Smith"
                       />
                     </div>
@@ -229,7 +229,7 @@ export default function ContactClient() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="nex-input"
+                        className="nex-input" style={{ backgroundColor: "#1C1C1A", borderColor: "#2A2A28", color: "#FDFCF8" }}
                         placeholder="researcher@university.edu"
                       />
                     </div>
@@ -245,7 +245,7 @@ export default function ContactClient() {
                         name="institution"
                         value={formData.institution}
                         onChange={handleChange}
-                        className="nex-input"
+                        className="nex-input" style={{ backgroundColor: "#1C1C1A", borderColor: "#2A2A28", color: "#FDFCF8" }}
                         placeholder="University / Lab / Company"
                       />
                     </div>

@@ -1,12 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import { useState } from "react";
 import { products } from "@/lib/products";
 
 const activeProducts = products.filter((p) => !p.comingSoon);
 
-// Limit footer products to 8 most popular + "View All" link
 const popularProductSlugs = [
   "bpc-157",
   "tirzepatide",
@@ -26,125 +25,163 @@ const footerProducts = popularProductSlugs
     href: `/products/${p.slug}`,
   }));
 
-footerProducts.push({ label: "View All →", href: "/products" });
+footerProducts.push({ label: "View All", href: "/products" });
 
 const footerNav = {
   Products: footerProducts,
   Company: [
-    { label: "About Nexphoria", href: "/about" },
-    { label: "Quality Standards", href: "/science#cgmp" },
+    { label: "About", href: "/about" },
     { label: "Science & Testing", href: "/science" },
-    { label: "Contact Us", href: "/contact" },
+    { label: "Research Blog", href: "/blog" },
+    { label: "Contact", href: "/contact" },
   ],
   Support: [
-    { label: "Wholesale", href: "/wholesale" },
     { label: "Customer Support", href: "/contact" },
-    { label: "FAQs", href: "/contact#faq" },
-    { label: "Contact Us", href: "/contact" },
+    { label: "FAQs", href: "/faq" },
+    { label: "Track Your Order", href: "/account/orders" },
+    { label: "Wholesale", href: "/wholesale" },
   ],
   Legal: [
     { label: "Terms of Service", href: "/terms" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Research Use Policy", href: "/terms#research-use-only" },
-    { label: "Contact Legal", href: "/contact" },
   ],
 };
 
+function EmailCapture() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!email || !email.includes("@")) {
+      setErrorMsg("Please enter a valid email.");
+      setStatus("error");
+      return;
+    }
+    setStatus("loading");
+    setErrorMsg("");
+    try {
+      // Persist locally as offline-first fallback
+      try {
+        const existing = JSON.parse(localStorage.getItem("nex_subscribers") || "[]") as string[];
+        if (!existing.includes(email)) {
+          existing.push(email);
+          localStorage.setItem("nex_subscribers", JSON.stringify(existing));
+        }
+      } catch {
+        // localStorage may be unavailable in some contexts
+      }
+      // Fire-and-forget to Cloudflare Worker (nexphoria-checkout worker)
+      const res = await fetch("https://nexphoria-checkout.chiya-b60.workers.dev/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, source: "nexphoria-footer" }),
+        signal: AbortSignal.timeout(5000),
+      });
+      if (!res.ok) {
+        // Worker returned an error — still show success to user (local save succeeded)
+        console.warn("Subscribe worker error:", res.status);
+      }
+      setStatus("success");
+      setEmail("");
+    } catch {
+      setStatus("error");
+      setErrorMsg("Something went wrong. Please try again.");
+    }
+  }
+
+  return (
+    <div className="w-full">
+      <h4
+        className="text-[11px] uppercase tracking-widest mb-2 font-medium"
+        style={{ color: "#A4B08A" }}
+      >
+        Research Updates
+      </h4>
+      <p className="text-sm mb-4 leading-relaxed" style={{ color: "rgba(255,255,255,0.4)" }}>
+        New compounds, batch releases, and protocol research — delivered to your inbox.
+      </p>
+      {status === "success" ? (
+        <p className="text-sm font-medium" style={{ color: "#A4B08A" }}>
+          You&apos;re on the list. We&apos;ll be in touch.
+        </p>
+      ) : (
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              if (status !== "idle") { setStatus("idle"); setErrorMsg(""); }
+            }}
+            placeholder="your@email.com"
+            aria-label="Email address for research updates"
+            className="flex-1 px-4 py-2.5 text-sm rounded bg-white/[0.06] border border-white/[0.12] text-white placeholder:text-white/30 focus:outline-none focus:border-white/30 transition-colors min-w-0"
+            disabled={status === "loading"}
+          />
+          <button
+            type="submit"
+            disabled={status === "loading"}
+            className="px-5 py-2.5 text-sm font-medium rounded transition-all duration-200 whitespace-nowrap shrink-0"
+            style={{
+              backgroundColor: status === "loading" ? "rgba(164,176,138,0.5)" : "#A4B08A",
+              color: "#1A1A18",
+              cursor: status === "loading" ? "not-allowed" : "pointer",
+            }}
+          >
+            {status === "loading" ? "Subscribing..." : "Subscribe"}
+          </button>
+        </form>
+      )}
+      {status === "error" && errorMsg && (
+        <p className="text-xs mt-2" style={{ color: "rgba(255,100,100,0.8)" }}>
+          {errorMsg}
+        </p>
+      )}
+    </div>
+  );
+}
+
 export function Footer() {
   return (
-    <footer className="relative text-ceramic" style={{ backgroundColor: "#1A1A18" }}>
-      {/* Brand banner — full-width impact image */}
-      <div className="relative w-full overflow-hidden" style={{ height: "clamp(450px, 55vw, 650px)" }}>
-        <Image
-          src="/brand/tm-vb-006.jpg"
-          alt="Find Your Focus — Nexphoria"
-          fill
-          className="object-cover object-center"
-          sizes="100vw"
-          priority={true}
-          quality={100}
-        />
-      </div>
-
-      {/* Gold top accent */}
-      <div
-        className="h-px w-full"
-        style={{
-          background:
-            "linear-gradient(to right, transparent 0%, rgba(201,162,75,0.45) 25%, rgba(201,162,75,0.45) 75%, transparent 100%)",
-        }}
-      />
-
+    <footer style={{ backgroundColor: "#1A1A18" }}>
       <div className="container-nex pt-16 pb-10">
-        {/* Top row — logo + tagline */}
-        <div className="flex flex-col md:flex-row md:items-start justify-between gap-10 mb-14 pb-14 border-b border-white/[0.07]">
+
+        {/* Email capture row — full width, above the nav grid */}
+        <div className="mb-12 pb-12 border-b border-white/[0.08]">
+          <div className="max-w-md">
+            <EmailCapture />
+          </div>
+        </div>
+
+        {/* Top row: brand + nav columns */}
+        <div className="flex flex-col md:flex-row md:items-start justify-between gap-10 mb-14 pb-14 border-b border-white/[0.08]">
           <div className="max-w-xs">
-            <div className="flex items-center gap-2.5 mb-5">
-              <Image
-                src="/logo-green.svg"
-                alt="Nexphoria"
-                width={24}
-                height={24}
-                className="h-5 w-auto opacity-70"
-              />
-              <span className="text-[13px] font-semibold uppercase tracking-[0.14em]" style={{ color: "rgba(253,252,248,0.7)" }}>Nexphoria</span>
+            <div className="flex items-center gap-2 mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 600 500"
+                className="h-6 w-6"
+              >
+                <g>
+                  <circle fill="#A4B08A" cx="129.698" cy="380.792" r="71.864" />
+                  <path
+                    fill="#A4B08A"
+                    d="M519.834,328.405c-17.864-16.774-41.141-22.533-62.628-18.55c-18.724,3.471-38.055-0.118-53.17-11.702l-6.86-5.257c-15.349-11.763-23.999-29.746-25.629-49.016c-1.685-19.927-11.623-39.039-29.014-51.808c-16.815-12.346-37.204-16.273-56.18-12.583c-18.19,3.537-37.03,0.099-51.739-11.173l-7.496-5.744c-15.472-11.857-24.203-29.973-25.892-49.393c-1.792-20.603-12.408-40.363-31.14-53.138c-29.987-20.451-71.799-14.725-95.228,12.998c-26.524,31.385-21.393,78.205,10.727,103.18c17.127,13.317,38.364,17.629,58.085,13.695c18.6-3.71,37.886,0.889,52.94,12.426l6.216,4.764c15.349,11.763,23.999,29.746,25.629,49.016c1.685,19.927,11.623,39.039,29.014,51.809c16.815,12.346,37.204,16.273,56.18,12.583c18.19-3.537,37.03-0.099,51.739,11.173l7.704,5.904c14.677,11.248,24.521,28.127,25.467,46.594c1.094,21.348,11.653,41.983,30.521,55.197c34.727,24.32,83.49,13.65,104.428-24.632C548.956,386.504,543.301,350.44,519.834,328.405z"
+                  />
+                  <circle fill="#A4B08A" cx="470.305" cy="119.208" r="71.864" />
+                </g>
+              </svg>
+              <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.6)" }}>
+                Nexphoria
+              </span>
             </div>
-            <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(138,128,117,0.9)" }}>
-              Research-grade peptide compounds for qualified professionals. Manufactured under cGMP
-              standards. Third-party tested every batch.
+            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.4)" }}>
+              Research-grade peptide compounds for qualified professionals.
+              Manufactured under cGMP standards.
             </p>
-            <div className="flex gap-2.5">
-              {/* X / Twitter */}
-              <a
-                href="https://x.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="X / Twitter"
-                className="w-8 h-8 flex items-center justify-center transition-colors"
-                style={{
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  color: "rgba(138,128,117,0.9)",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.color = "var(--gold)";
-                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(201,162,75,0.4)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.color = "rgba(138,128,117,0.9)";
-                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.1)";
-                }}
-              >
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                </svg>
-              </a>
-              {/* Instagram */}
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="w-8 h-8 flex items-center justify-center transition-colors"
-                style={{
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  color: "rgba(138,128,117,0.9)",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.color = "var(--gold)";
-                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(201,162,75,0.4)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.color = "rgba(138,128,117,0.9)";
-                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.1)";
-                }}
-              >
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="2" y="2" width="20" height="20" rx="5" />
-                  <circle cx="12" cy="12" r="4" />
-                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-                </svg>
-              </a>
-            </div>
           </div>
 
           {/* Nav columns */}
@@ -152,8 +189,8 @@ export function Footer() {
             {Object.entries(footerNav).map(([section, links]) => (
               <div key={section}>
                 <h4
-                  className="text-label mb-5"
-                  style={{ color: "var(--gold)", letterSpacing: "0.2em", fontSize: "0.65rem" }}
+                  className="text-[11px] uppercase tracking-widest mb-4 font-medium"
+                  style={{ color: "#A4B08A" }}
                 >
                   {section}
                 </h4>
@@ -162,12 +199,8 @@ export function Footer() {
                     <li key={link.label}>
                       <Link
                         href={link.href}
-                        className="text-sm transition-colors duration-200"
-                        style={{ color: "rgba(138,128,117,0.85)" }}
-                        onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
-                        onMouseLeave={(e) =>
-                          (e.currentTarget.style.color = "rgba(138,128,117,0.85)")
-                        }
+                        className="text-sm transition-colors duration-200 hover:text-white"
+                        style={{ color: "rgba(255,255,255,0.4)" }}
                       >
                         {link.label}
                       </Link>
@@ -179,16 +212,19 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Compliance Disclaimer */}
+        <div className="mb-10 p-6 rounded border border-white/[0.15] bg-white/[0.03]">
+          <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
+            <strong style={{ color: "rgba(255,255,255,0.7)" }}>FOR RESEARCH USE ONLY:</strong> These products are intended for laboratory research use only. They are not drugs, supplements, or intended for human consumption, clinical use, or veterinary applications. By purchasing, you confirm these materials will be used exclusively for in vitro testing and laboratory experimentation. Nexphoria does not condone or encourage any use outside of licensed research settings.
+          </p>
+        </div>
+
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row justify-between items-start gap-4">
-          <p className="text-xs" style={{ color: "rgba(138,128,117,0.55)" }}>
-            © {new Date().getFullYear()} Nexphoria. All products for research use only.{" "}
-            <span style={{ color: "rgba(201,162,75,0.5)" }}>·</span> Not for human consumption.
+          <p className="text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>
+            {new Date().getFullYear()} Nexphoria. All products for research use only. Not for human consumption.
           </p>
-          <p
-            className="text-xs text-right max-w-sm"
-            style={{ fontFamily: "var(--font-mono, monospace)", color: "rgba(138,128,117,0.45)" }}
-          >
+          <p className="text-xs" style={{ color: "rgba(255,255,255,0.25)" }}>
             Not evaluated by the FDA. Not for diagnostic or therapeutic use.
           </p>
         </div>

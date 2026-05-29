@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import CartDrawer from "@/components/cart/CartDrawer";
+import AgeVerificationModal from "@/components/AgeVerificationModal";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -96,11 +97,12 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
-      <body className="min-h-full bg-cream text-near-black">
+      <body className="min-h-full" style={{ backgroundColor: "#FFFFF3" }}>
         <Header />
         <main>{children}</main>
         <Footer />
         <CartDrawer />
+        <AgeVerificationModal />
       </body>
     </html>
   );

@@ -31,6 +31,8 @@ export type Product = {
   penPrice: number;
   forGender: "both" | "men-focus" | "women-focus";
   comingSoon?: boolean;
+  badge?: "NEW" | "POPULAR";
+  researchApplications: string[];
 };
 
 export const products: Product[] = [
@@ -68,6 +70,13 @@ export const products: Product[] = [
     penAvailable: true,
     penPrice: 139,
     forGender: "men-focus",
+    badge: "POPULAR",
+    researchApplications: [
+      "Tissue repair pathways in preclinical connective tissue models",
+      "VEGF expression and angiogenic signaling in vascular research",
+      "Gastrointestinal cytoprotection in epithelial cell studies",
+      "Musculoskeletal repair models examining tendon and ligament healing",
+    ],
   },
   {
     slug: "tb-500",
@@ -104,6 +113,12 @@ export const products: Product[] = [
     penAvailable: true,
     penPrice: 145,
     forGender: "men-focus",
+    researchApplications: [
+      "Actin regulation and G-actin sequestration in cytoskeletal studies",
+      "Cellular migration and proliferation in wound healing models",
+      "Anti-inflammatory pathways through cytokine modulation research",
+      "Angiogenesis and neovascularization in vascular biology",
+    ],
   },
   {
     slug: "ipamorelin",
@@ -139,6 +154,12 @@ export const products: Product[] = [
     penAvailable: true,
     penPrice: 119,
     forGender: "men-focus",
+    researchApplications: [
+      "GHS-R1a receptor pharmacology and selective GH secretion studies",
+      "Pulsatile GH release without HPA axis dysregulation",
+      "Somatotropic axis research in combination with GHRH analogs",
+      "Growth hormone secretagogue mechanisms in pituitary models",
+    ],
   },
   {
     slug: "cjc-1295",
@@ -175,6 +196,12 @@ export const products: Product[] = [
     penAvailable: true,
     penPrice: 129,
     forGender: "men-focus",
+    researchApplications: [
+      "GHRH receptor activation and cAMP signaling pathways",
+      "Extended half-life pharmacokinetics through albumin binding",
+      "Sustained GH/IGF-1 axis modulation in metabolic research",
+      "Long-acting somatotropic stimulation models",
+    ],
   },
   {
     slug: "cjc-1295-ipamorelin",
@@ -210,6 +237,13 @@ export const products: Product[] = [
     penAvailable: true,
     penPrice: 159,
     forGender: "men-focus",
+    badge: "POPULAR",
+    researchApplications: [
+      "Dual somatotropic axis stimulation through complementary receptor pathways",
+      "Synergistic GH secretion research combining GHRH and GHS-R1a agonism",
+      "Body composition and metabolic parameter studies",
+      "IGF-1 elevation dynamics in extended-release protocols",
+    ],
   },
   {
     slug: "sermorelin",
@@ -246,6 +280,12 @@ export const products: Product[] = [
     penAvailable: true,
     penPrice: 129,
     forGender: "men-focus",
+    researchApplications: [
+      "GHRH receptor pharmacology and pulsatile GH secretion",
+      "Bioactive GHRH fragment research and receptor binding studies",
+      "Short half-life GH pulse dynamics in controlled protocols",
+      "Diagnostic tools for GH secretory capacity assessment",
+    ],
   },
   {
     slug: "mk-677",
@@ -277,6 +317,13 @@ export const products: Product[] = [
     penAvailable: false,
     penPrice: 0,
     forGender: "men-focus",
+    badge: "POPULAR",
+    researchApplications: [
+      "Oral GH secretagogue pharmacology and bioavailability studies",
+      "Long-acting ghrelin mimetic with extended half-life research",
+      "IGF-1 elevation and body composition modeling",
+      "Sleep architecture and REM sleep duration research",
+    ],
   },
   {
     slug: "semaglutide",
@@ -309,6 +356,13 @@ export const products: Product[] = [
     penAvailable: true,
     penPrice: 129,
     forGender: "women-focus",
+    badge: "POPULAR",
+    researchApplications: [
+      "GLP-1 receptor agonism and incretin signaling pathways",
+      "Appetite regulation through CNS GLP-1R activation research",
+      "Glucose-dependent insulin secretion in metabolic models",
+      "Gastric emptying and satiety signal modulation studies",
+    ],
   },
   {
     slug: "tirzepatide",
@@ -346,6 +400,12 @@ export const products: Product[] = [
     penAvailable: true,
     penPrice: 179,
     forGender: "women-focus",
+    researchApplications: [
+      "Dual GIP/GLP-1 receptor co-activation and incretin synergy",
+      "Superior glycemic control mechanisms compared to selective agonists",
+      "Adipose tissue metabolism through direct GIPR signaling",
+      "Body weight reduction pathways in metabolic research models",
+    ],
   },
   {
     slug: "retatrutide",
@@ -382,6 +442,13 @@ export const products: Product[] = [
     penAvailable: true,
     penPrice: 189,
     forGender: "women-focus",
+    badge: "NEW",
+    researchApplications: [
+      "Triple GIP/GLP-1/glucagon receptor agonism and metabolic synergy",
+      "Energy expenditure enhancement through glucagon receptor engagement",
+      "Hepatic fat mobilization and adipose lipolysis pathways",
+      "Next-generation incretin-based therapy mechanisms",
+    ],
   },
   {
     slug: "aod-9604",
@@ -418,6 +485,12 @@ export const products: Product[] = [
     penAvailable: true,
     penPrice: 119,
     forGender: "both",
+    researchApplications: [
+      "HGH fragment 177-191 lipolytic activity without IGF-1 stimulation",
+      "Beta-3 adrenergic receptor activation in adipose tissue models",
+      "Lipogenesis inhibition and triglyceride hydrolysis research",
+      "Cartilage repair pathways in musculoskeletal studies",
+    ],
   },
   {
     slug: "ghk-cu",
@@ -454,6 +527,12 @@ export const products: Product[] = [
     penAvailable: true,
     penPrice: 119,
     forGender: "women-focus",
+    researchApplications: [
+      "Extracellular matrix remodeling and TGF-β signaling pathways",
+      "Collagen synthesis upregulation and MMP-1 inhibition studies",
+      "Antioxidant signaling through copper delivery to SOD enzymes",
+      "Skin biology and dermal fibroblast gene expression research",
+    ],
   },
   {
     slug: "epitalon",
@@ -490,6 +569,12 @@ export const products: Product[] = [
     penAvailable: true,
     penPrice: 124,
     forGender: "women-focus",
+    researchApplications: [
+      "Telomerase activation and telomere length maintenance in cellular studies",
+      "Circadian rhythm regulation and pineal gland function research",
+      "Neuroendocrine axis modulation in aging models",
+      "Longevity pathways and cell senescence mechanisms",
+    ],
   },
   {
     slug: "selank",
@@ -525,6 +610,12 @@ export const products: Product[] = [
     penAvailable: true,
     penPrice: 109,
     forGender: "both",
+    researchApplications: [
+      "GABAergic transmission modulation without benzodiazepine dependence",
+      "BDNF upregulation in hippocampal and cortical neurotrophin studies",
+      "Anxiolytic mechanisms through GABA-A receptor sensitization",
+      "Enkephalinase inhibition and endogenous opioid modulation research",
+    ],
   },
   {
     slug: "semax",
@@ -561,6 +652,12 @@ export const products: Product[] = [
     penAvailable: true,
     penPrice: 109,
     forGender: "both",
+    researchApplications: [
+      "BDNF upregulation and neurotrophin signaling in CNS models",
+      "Neuroprotection through BDNF-TrkB pathway activation",
+      "Cognitive enhancement and synaptic plasticity research",
+      "ACTH 4-10 fragment pharmacology and stress response modulation",
+    ],
   },
   {
     slug: "nad-plus",
@@ -597,6 +694,12 @@ export const products: Product[] = [
     penAvailable: true,
     penPrice: 169,
     forGender: "both",
+    researchApplications: [
+      "Sirtuin activation and NAD+-dependent deacylation pathways",
+      "Mitochondrial function and oxidative phosphorylation research",
+      "Metabolic regulation through SIRT1/SIRT3 signaling studies",
+      "DNA repair pathways via PARP1/2 and poly-ADP-ribosylation",
+    ],
   },
   {
     slug: "pt-141",
@@ -632,6 +735,12 @@ export const products: Product[] = [
     penAvailable: true,
     penPrice: 139,
     forGender: "both",
+    researchApplications: [
+      "MC3R/MC4R melanocortin receptor pharmacology in CNS research",
+      "Central nervous system pathways in motivation and reward circuits",
+      "Hypothalamic-limbic axis signaling independent of peripheral mechanisms",
+      "Autonomic and appetite-regulatory MC4R research models",
+    ],
   },
   {
     slug: "melanotan-ii",
@@ -667,6 +776,12 @@ export const products: Product[] = [
     penAvailable: true,
     penPrice: 129,
     forGender: "both",
+    researchApplications: [
+      "Melanocortin receptor pharmacology (MC1R/MC3R/MC4R/MC5R)",
+      "Melanogenesis and eumelanin synthesis through cAMP/PKA pathways",
+      "CNS MC4R signaling in energy homeostasis and appetite research",
+      "Autonomic nervous system modulation in preclinical models",
+    ],
   },
   {
     slug: "thymosin-alpha-1",
@@ -699,6 +814,12 @@ export const products: Product[] = [
     penAvailable: false,
     penPrice: 0,
     forGender: "both",
+    researchApplications: [
+      "T-cell differentiation and activation through MHC class I enhancement",
+      "Th1 cytokine production (IL-2, IFN-γ) in immune balance studies",
+      "Natural killer cell and dendritic cell activation research",
+      "Toll-like receptor signaling and NF-κB pathway modulation",
+    ],
   },
   {
     slug: "ll-37",
@@ -731,6 +852,12 @@ export const products: Product[] = [
     penAvailable: false,
     penPrice: 0,
     forGender: "both",
+    researchApplications: [
+      "Antimicrobial peptide mechanisms and bacterial membrane disruption",
+      "Innate immunity and wound healing through FPR2 receptor signaling",
+      "LPS neutralization and TLR4 pathway modulation research",
+      "Angiogenesis and keratinocyte migration in tissue repair models",
+    ],
   },
   // --- NEW PRODUCTS ---
   {
@@ -768,6 +895,13 @@ export const products: Product[] = [
     penAvailable: true,
     penPrice: 159,
     forGender: "both",
+    badge: "NEW",
+    researchApplications: [
+      "Mitochondrial-derived signaling and nuclear translocation under stress",
+      "Metabolic homeostasis through AMPK activation pathways",
+      "Exercise mimetic effects in skeletal muscle adaptation studies",
+      "Insulin sensitivity modulation independent of insulin receptor",
+    ],
   },
   {
     slug: "ss-31",
@@ -804,6 +938,13 @@ export const products: Product[] = [
     penAvailable: true,
     penPrice: 249,
     forGender: "both",
+    badge: "NEW",
+    researchApplications: [
+      "Cardiolipin stabilization and mitochondrial cristae architecture",
+      "Electron transport chain organization and ROS reduction research",
+      "ATP synthesis efficiency in energy metabolism models",
+      "Cytochrome c stabilization and anti-apoptotic pathways",
+    ],
   },
   {
     slug: "tesamorelin",
@@ -840,6 +981,12 @@ export const products: Product[] = [
     penAvailable: true,
     penPrice: 149,
     forGender: "both",
+    researchApplications: [
+      "GHRH analog with improved DPP-4 resistance for visceral fat research",
+      "Pulsatile GH secretion and IGF-1 modulation in body composition studies",
+      "Visceral adipose tissue reduction mechanisms in metabolic models",
+      "NAFLD and hepatic fat content research applications",
+    ],
   },
   {
     slug: "cjc-1295-no-dac",
@@ -876,6 +1023,12 @@ export const products: Product[] = [
     penAvailable: false,
     penPrice: 0,
     forGender: "men-focus",
+    researchApplications: [
+      "Short-acting GHRH analog for controlled pulsatile GH studies",
+      "DPP-4 resistant GHRH(1-29) without albumin binding",
+      "Synergistic GH secretion protocols with GHS compounds",
+      "Discrete GH pulse modeling in somatotropic axis research",
+    ],
   },
   {
     slug: "dsip",
@@ -911,6 +1064,12 @@ export const products: Product[] = [
     penAvailable: false,
     penPrice: 0,
     forGender: "both",
+    researchApplications: [
+      "Sleep architecture modulation and delta-wave EEG research",
+      "Neuroendocrine regulation through hypothalamic-pituitary axis effects",
+      "Stress adaptation and cortisol normalization in preclinical models",
+      "GH and LH pulsatile release dynamics in circadian research",
+    ],
   },
   {
     slug: "kisspeptin",
@@ -946,6 +1105,12 @@ export const products: Product[] = [
     penAvailable: false,
     penPrice: 0,
     forGender: "both",
+    researchApplications: [
+      "GPR54 receptor activation and GnRH pulse generation research",
+      "Reproductive axis regulation through hypothalamic kisspeptin neurons",
+      "Gonadotropin (LH/FSH) pulsatile secretion mechanisms",
+      "Sex steroid feedback integration in reproductive physiology",
+    ],
   },
   {
     slug: "oxytocin",
@@ -981,6 +1146,12 @@ export const products: Product[] = [
     penAvailable: false,
     penPrice: 0,
     forGender: "both",
+    researchApplications: [
+      "Social cognition and trust pathways in CNS research models",
+      "OXTR receptor signaling in social neuroscience studies",
+      "Fear extinction and amygdala reactivity modulation",
+      "HPA axis stress response and autonomic nervous system research",
+    ],
   },
   {
     slug: "kpv",
@@ -1016,6 +1187,12 @@ export const products: Product[] = [
     penAvailable: false,
     penPrice: 0,
     forGender: "both",
+    researchApplications: [
+      "Alpha-MSH fragment anti-inflammatory mechanisms via MC1R/MC3R",
+      "NF-κB suppression and cytokine modulation in inflammatory models",
+      "Intestinal epithelial barrier function and permeability research",
+      "IBD and colitis research in preclinical gastrointestinal studies",
+    ],
   },
   {
     slug: "wolverine-blend",
@@ -1051,6 +1228,12 @@ export const products: Product[] = [
     penAvailable: true,
     penPrice: 199,
     forGender: "both",
+    researchApplications: [
+      "Dual-phase tissue repair: angiogenesis (BPC-157) + remodeling (TB-500)",
+      "Combined VEGF upregulation and actin sequestration mechanisms",
+      "Synergistic tendon, ligament, and muscle repair in injury models",
+      "Accelerated wound healing through complementary pathways",
+    ],
   },
   {
     slug: "glow-blend",
@@ -1085,6 +1268,12 @@ export const products: Product[] = [
     penAvailable: false,
     penPrice: 0,
     forGender: "women-focus",
+    researchApplications: [
+      "Multi-target longevity protocol: ECM restoration, telomere support, NAD+ metabolism",
+      "Collagen synthesis (GHK-Cu) + telomerase activation (Epitalon) + sirtuin substrate (NAD+)",
+      "Skin biology, cellular aging, and mitochondrial function research",
+      "Comprehensive anti-aging mechanisms in preclinical models",
+    ],
   },
   {
     slug: "klw-blend",
@@ -1119,6 +1308,12 @@ export const products: Product[] = [
     penAvailable: false,
     penPrice: 0,
     forGender: "both",
+    researchApplications: [
+      "Triple immune modulation: inflammation (KPV) + innate defense (LL-37) + adaptive immunity (Tα1)",
+      "Gut barrier function and mucosal immunity in GI research",
+      "Antimicrobial peptide activity combined with T-cell activation",
+      "Comprehensive immune cascade from innate to adaptive pathways",
+    ],
   },
   {
     slug: "snap-8",
@@ -1154,6 +1349,13 @@ export const products: Product[] = [
     penAvailable: false,
     penPrice: 0,
     forGender: "women-focus",
+    badge: "NEW",
+    researchApplications: [
+      "SNARE complex inhibition and neuromuscular junction research",
+      "Acetylcholine vesicle fusion modulation in dermatological studies",
+      "Expression line formation and dynamic wrinkle research models",
+      "Topical neurotransmitter inhibition without SNAP-25 cleavage",
+    ],
   },
   {
     slug: "sterile-water-3ml",
@@ -1182,6 +1384,12 @@ export const products: Product[] = [
     penAvailable: false,
     penPrice: 0,
     forGender: "both",
+    researchApplications: [
+      "USP-grade solvent for lyophilized peptide reconstitution protocols",
+      "Pharmaceutical standard diluent for research compound preparation",
+      "Sterile aqueous vehicle for injection-based research applications",
+      "Peptide solubility and stability studies in laboratory settings",
+    ],
   },
   {
     slug: "sterile-water-10ml",
@@ -1210,6 +1418,12 @@ export const products: Product[] = [
     penAvailable: false,
     penPrice: 0,
     forGender: "both",
+    researchApplications: [
+      "Large-volume USP-grade solvent for multi-vial protocol reconstitution",
+      "Cost-effective pharmaceutical diluent for extended research runs",
+      "Sterile aqueous vehicle for high-volume laboratory applications",
+      "Multi-peptide protocol preparation in research settings",
+    ],
   },
 ];
 

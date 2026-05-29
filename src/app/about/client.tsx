@@ -52,7 +52,7 @@ const standards = [
 
 export default function AboutClient() {
   return (
-    <div className="min-h-screen bg-dark">
+    <div className="min-h-screen" style={{ backgroundColor: "#0F0F0E" }}>
 
       {/* Hero — scientist-2.jpg or lab-dark.jpg */}
       <section className="relative overflow-hidden" style={{ minHeight: "70vh" }}>
@@ -70,11 +70,11 @@ export default function AboutClient() {
         />
         <div className="relative z-10 h-full flex items-center container-nex py-40">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0} className="max-w-2xl">
-            <span className="eyebrow mb-5 block" style={{ color: "var(--color-acid-green)" }}>Our Mission</span>
+            <span className="eyebrow mb-5 block" style={{ color: "#A4B08A" }}>Our Mission</span>
             <h1
               className="font-bold tracking-tight mb-6 leading-tight"
               style={{
-                fontFamily: "var(--font-playfair, Georgia, serif)",
+                fontFamily: "Georgia, serif",
                 fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
                 lineHeight: 1.1,
                 color: "#FDFCF8",
@@ -84,7 +84,7 @@ export default function AboutClient() {
               <br />
               Purity.
               <br />
-              <em className="italic" style={{ color: "var(--color-acid-green)" }}>Purpose.</em>
+              <em className="italic" style={{ color: "#A4B08A" }}>Purpose.</em>
             </h1>
             <p className="text-lg max-w-xl leading-relaxed" style={{ color: "rgba(253,252,248,0.8)" }}>
               Nexphoria was founded on a singular conviction: that research compounds should meet
@@ -96,7 +96,7 @@ export default function AboutClient() {
       </section>
 
       {/* Mission statement — dark pull quote */}
-      <section className="py-24" style={{ backgroundColor: "#F5F3F0" }}>
+      <section className="py-24" style={{ backgroundColor: "#1A1A18" }}>
         <div className="container-nex">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
@@ -104,12 +104,12 @@ export default function AboutClient() {
           >
             <p
               className="text-2xl md:text-3xl leading-relaxed"
-              style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontWeight: 400, color: "#FDFCF8" }}
+              style={{ fontFamily: "Georgia, serif", fontWeight: 400, color: "#FDFCF8" }}
             >
               We manufacture exclusively in cGMP-certified facilities, subject every batch to
               independent third-party analytical testing, and provide complete documentation with
               each order.{" "}
-              <em className="italic" style={{ color: "var(--color-acid-green)" }}>No exceptions. No shortcuts.</em>
+              <em className="italic" style={{ color: "#A4B08A" }}>No exceptions. No shortcuts.</em>
             </p>
           </motion.div>
         </div>
@@ -129,20 +129,20 @@ export default function AboutClient() {
           </div>
           <div
             className="flex flex-col justify-center px-10 py-20 md:px-16 xl:px-24"
-            style={{ backgroundColor: "var(--dark-panel)" }}
+            style={{ backgroundColor: "#161614" }}
           >
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
               <span className="eyebrow mb-6 block">For Qualified Researchers</span>
               <h2
                 className="font-bold tracking-tight mb-7 leading-tight"
                 style={{
-                  fontFamily: "var(--font-playfair, Georgia, serif)",
+                  fontFamily: "Georgia, serif",
                   fontSize: "clamp(2rem, 3.5vw, 3rem)",
                   color: "#FDFCF8",
                 }}
               >
                 Research Without{" "}
-                <em className="italic" style={{ color: "var(--color-acid-green)" }}>Compromise.</em>
+                <em className="italic" style={{ color: "#A4B08A" }}>Compromise.</em>
               </h2>
               <p className="text-base leading-relaxed mb-8 max-w-md text-secondary">
                 Every Nexphoria compound arrives with full analytical documentation. We believe
@@ -157,7 +157,7 @@ export default function AboutClient() {
       </section>
 
       {/* Principles */}
-      <section className="py-28 border-b" id="standards" style={{ borderColor: "var(--dark-border)" }}>
+      <section className="py-28 border-b" id="standards" style={{ borderColor: "#2A2A28" }}>
         <div className="container-nex">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
@@ -167,7 +167,7 @@ export default function AboutClient() {
             <h2
               className="font-bold tracking-tight max-w-2xl"
               style={{
-                fontFamily: "var(--font-playfair, Georgia, serif)",
+                fontFamily: "Georgia, serif",
                 fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
                 color: "#FDFCF8",
               }}
@@ -178,22 +178,22 @@ export default function AboutClient() {
 
           <div
             className="grid md:grid-cols-2 gap-px border"
-            style={{ backgroundColor: "var(--dark-border)", borderColor: "var(--dark-border)" }}
+            style={{ backgroundColor: "#2A2A28", borderColor: "#2A2A28" }}
           >
             {principles.map((v, i) => (
               <motion.div
                 key={v.title}
                 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.1}
                 className="p-8"
-                style={{ backgroundColor: "var(--dark-card)" }}
+                style={{ backgroundColor: "#1C1C1A" }}
               >
                 <div className="w-10 h-10 mb-6 flex items-center justify-center border"
-                  style={{ borderColor: "var(--dark-border)" }}>
+                  style={{ borderColor: "#2A2A28" }}>
                   <v.icon className="w-5 h-5 text-secondary" strokeWidth={1.5} />
                 </div>
                 <h3
                   className="text-lg font-bold mb-3"
-                  style={{ fontFamily: "var(--font-playfair, Georgia, serif)", color: "#FDFCF8" }}
+                  style={{ fontFamily: "Georgia, serif", color: "#FDFCF8" }}
                 >
                   {v.title}
                 </h3>
@@ -207,18 +207,18 @@ export default function AboutClient() {
       </section>
 
       {/* Founder quote */}
-      <section className="py-24 border-b" style={{ backgroundColor: "var(--dark-panel)", borderColor: "var(--dark-border)" }}>
+      <section className="py-24 border-b" style={{ backgroundColor: "#161614", borderColor: "#2A2A28" }}>
         <div className="container-nex">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="max-w-3xl"
           >
-            <div className="w-8 h-px mb-8" style={{ backgroundColor: "var(--color-gold)" }} />
+            <div className="w-8 h-px mb-8" style={{ backgroundColor: "#A4B08A" }} />
             <blockquote>
               <p
                 className="text-2xl md:text-3xl leading-relaxed mb-8"
                 style={{
-                  fontFamily: "var(--font-playfair, Georgia, serif)",
+                  fontFamily: "Georgia, serif",
                   fontWeight: 400,
                   color: "#FDFCF8",
                 }}
@@ -247,13 +247,13 @@ export default function AboutClient() {
               <h2
                 className="font-bold tracking-tight mb-7 leading-tight"
                 style={{
-                  fontFamily: "var(--font-playfair, Georgia, serif)",
+                  fontFamily: "Georgia, serif",
                   fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
                   color: "#FDFCF8",
                 }}
               >
                 Dare to{" "}
-                <em className="italic" style={{ color: "var(--color-acid-green)" }}>Defy</em>
+                <em className="italic" style={{ color: "#A4B08A" }}>Defy</em>
               </h2>
               <p className="text-base leading-relaxed mb-5 text-secondary">
                 The peptide research industry has too long tolerated inconsistency — compounds sold
@@ -289,7 +289,7 @@ export default function AboutClient() {
       </section>
 
       {/* Quality standards grid */}
-      <section className="py-24 border-t" style={{ borderColor: "var(--dark-border)" }}>
+      <section className="py-24 border-t" style={{ borderColor: "#2A2A28" }}>
         <div className="container-nex">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
@@ -299,7 +299,7 @@ export default function AboutClient() {
             <h2
               className="font-bold tracking-tight"
               style={{
-                fontFamily: "var(--font-playfair, Georgia, serif)",
+                fontFamily: "Georgia, serif",
                 fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
                 color: "#FDFCF8",
               }}
@@ -314,11 +314,11 @@ export default function AboutClient() {
                 key={s.code}
                 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.07}
                 className="flex items-start gap-4 p-6 border"
-                style={{ borderColor: "var(--dark-border)", backgroundColor: "var(--dark-card)" }}
+                style={{ borderColor: "#2A2A28", backgroundColor: "#1C1C1A" }}
               >
                 <div
                   className="text-xs font-mono font-medium px-2 py-1 whitespace-nowrap mt-0.5 flex-shrink-0"
-                  style={{ backgroundColor: "#F5F3F0", color: "var(--color-acid-green)" }}
+                  style={{ backgroundColor: "#F5F3F0", color: "#A4B08A" }}
                 >
                   {s.code}
                 </div>
@@ -330,20 +330,20 @@ export default function AboutClient() {
       </section>
 
       {/* CTA */}
-      <section className="py-20" style={{ backgroundColor: "#F5F3F0" }}>
+      <section className="py-20" style={{ backgroundColor: "#1A1A18" }}>
         <div className="container-nex flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
             <h2
               className="font-bold tracking-tight mb-2"
-              style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: "2rem", color: "#FDFCF8" }}
+              style={{ fontFamily: "Georgia, serif", fontSize: "2rem", color: "#FDFCF8" }}
             >
               Ready to browse our catalog?
             </h2>
-            <p className="text-sm text-secondary">
+            <p className="text-sm" style={{ color: "rgba(255,255,255,0.55)" }}>
               Every compound ships with full COA and technical documentation.
             </p>
           </div>
-          <Link href="/products" className="btn-acid whitespace-nowrap">
+          <Link href="/products" className="btn-primary whitespace-nowrap">
             Browse Compounds <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

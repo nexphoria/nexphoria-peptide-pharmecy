@@ -2,18 +2,26 @@
 
 import Link from "next/link";
 import { Product } from "@/lib/products";
-import ProductVial from "@/components/ProductVial";
 import { hasProductPhoto, getProductImagePath } from "@/lib/product-images";
 
 interface ProductCardProps {
   product: Product;
   showAddToCart?: boolean;
   className?: string;
+  // Compare feature
+  compareMode?: boolean;
+  isCompared?: boolean;
+  onCompareToggle?: (slug: string) => void;
+  compareDisabled?: boolean; // true when 3 selected and this one isn't in list
 }
 
 export default function ProductCard({
   product,
   className = "",
+  compareMode = false,
+  isCompared = false,
+  onCompareToggle,
+  compareDisabled = false,
 }: ProductCardProps) {
   const basePrice =
     product.dosages && product.dosages.length > 0
@@ -21,94 +29,104 @@ export default function ProductCard({
       : product.price;
 
   return (
-    <Link
-      href={`/products/${product.slug}`}
-      className={`group block h-full ${className}`}
-    >
-      <div
-        className="h-full rounded-lg p-6 transition-all duration-200 hover:shadow-md"
-        style={{
-          backgroundColor: "#FFFFFF",
-          border: "1px solid rgba(0,0,0,0.06)",
-        }}
-      >
-        {/* Product Image */}
-        <div
-          className="relative w-full h-40 mb-5 rounded overflow-hidden flex items-center justify-center p-6"
-          style={{
-            backgroundColor: hasProductPhoto(product.slug) ? "#F7F4EE" : "#1A1A18",
-            boxShadow: hasProductPhoto(product.slug)
-              ? "none"
-              : `0 0 40px -10px ${product.accentColor || "#C9A24B"}30`,
-          }}
-        >
-          {hasProductPhoto(product.slug) ? (
-            <img
-              src={getProductImagePath(product.slug)}
-              alt={product.name}
-              className="w-full h-full object-contain"
-            />
-          ) : (
-            <div className="w-full h-full">
-              <ProductVial
-                productName={product.name}
-                dosage={product.size}
-                category={product.category}
-                accentColor={product.accentColor}
+    <div className={`group relative h-full ${className}`}>
+      <Link href={`/products/${product.slug}`} className="block h-full">
+        <div className="h-full bg-white rounded-lg overflow-hidden card-shadow transition-all duration-200 hover:-translate-y-0.5">
+          {/* Product Image */}
+          <div className="w-full h-52 overflow-hidden bg-[#f5f5f2] relative">
+            {hasProductPhoto(product.slug) ? (
+              <img
+                src={getProductImagePath(product.slug)}
+                alt={product.name}
+                className="w-full h-full object-cover"
               />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: "#F0EDE7" }}>
+                <span className="text-sm font-semibold text-[#A4B08A] text-center px-4">
+                  {product.name}
+                </span>
+              </div>
+            )}
+
+            {/* Badge overlay — top-right corner of image */}
+            {product.badge && (
+              <span
+                className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider leading-tight z-10 select-none"
+                style={product.badge === "POPULAR" ? {
+                  backgroundColor: "#C9A24B",
+                  color: "#FFFFF3",
+                  boxShadow: "0 1px 4px rgba(0,0,0,0.18)",
+                } : {
+                  backgroundColor: "#010101",
+                  color: "#FFFFF3",
+                  boxShadow: "0 1px 4px rgba(0,0,0,0.18)",
+                }}
+              >
+                {product.badge === "POPULAR" ? "Popular" : "New"}
+              </span>
+            )}
+          </div>
+
+          {/* Body */}
+          <div className="p-5">
+            <p className="text-[11px] uppercase tracking-wider text-[#888] mb-1.5">
+              {product.category}
+            </p>
+            <h3 className="text-base font-medium mb-1 group-hover:opacity-70 transition-opacity">
+              {product.name}
+            </h3>
+            <p className="text-xs text-[#888] mb-3">{product.size}</p>
+
+            <div className="flex items-center justify-between pt-3 border-t border-[#ECEAE4]">
+              <span className="text-base font-semibold">${basePrice}</span>
+              <span className="text-xs text-[#A4B08A] font-medium uppercase tracking-wide opacity-0 group-hover:opacity-100 transition-opacity">
+                View
+              </span>
             </div>
-          )}
-          {/* Purity badge */}
-          <div
-            className="absolute top-3 right-3 px-2 py-1 rounded-sm text-[10px] font-medium"
-            style={{ backgroundColor: "rgba(201,221,105,0.15)", color: "#7a9c1a" }}
-          >
-            {product.purity}
           </div>
         </div>
+      </Link>
 
-        {/* Category */}
-        <p
-          className="text-[10px] uppercase mb-2"
-          style={{ color: "#B8923A", letterSpacing: "0.2em", fontWeight: 500 }}
+      {/* Compare toggle — shown when compareMode is active */}
+      {compareMode && onCompareToggle && (
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            onCompareToggle(product.slug);
+          }}
+          disabled={compareDisabled}
+          className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all z-10"
+          style={{
+            backgroundColor: isCompared ? "#010101" : "rgba(255,255,251,0.92)",
+            color: isCompared ? "#FFFFF3" : "#555",
+            border: isCompared ? "none" : "1px solid #ECEAE4",
+            opacity: compareDisabled ? 0.4 : 1,
+            cursor: compareDisabled ? "not-allowed" : "pointer",
+            backdropFilter: "blur(4px)",
+            boxShadow: "0 1px 4px rgba(0,0,0,0.10)",
+          }}
+          aria-pressed={isCompared}
+          aria-label={isCompared ? `Remove ${product.name} from comparison` : `Add ${product.name} to comparison`}
         >
-          {product.category}
-        </p>
-
-        {/* Name */}
-        <h3
-          className="text-lg mb-1 group-hover:opacity-70 transition-opacity"
-          style={{ fontWeight: 400, color: "#010101" }}
-        >
-          {product.name}
-        </h3>
-
-        {/* Size */}
-        <p className="text-xs mb-3" style={{ color: "#7F7F7D" }}>
-          {product.size}
-        </p>
-
-        {/* Tagline */}
-        <p
-          className="text-sm mb-4 line-clamp-2"
-          style={{ color: "#7F7F7D", lineHeight: 1.6 }}
-        >
-          {product.tagline}
-        </p>
-
-        {/* Price + CTA */}
-        <div className="flex items-center justify-between mt-auto pt-4" style={{ borderTop: "1px solid rgba(0,0,0,0.05)" }}>
-          <span className="text-lg" style={{ fontWeight: 400, color: "#010101" }}>
-            ${basePrice}
-          </span>
-          <span
-            className="text-xs uppercase"
-            style={{ color: "#7F7F7D", letterSpacing: "0.1em" }}
-          >
-            Add to Order →
-          </span>
-        </div>
-      </div>
-    </Link>
+          {isCompared ? (
+            <>
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                <polyline points="1,5 4,8 9,2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              Added
+            </>
+          ) : (
+            <>
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                <line x1="5" y1="1" x2="5" y2="9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                <line x1="1" y1="5" x2="9" y2="5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+              Compare
+            </>
+          )}
+        </button>
+      )}
+    </div>
   );
 }

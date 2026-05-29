@@ -3,6 +3,10 @@ main = "workers/checkout.js"
 compatibility_date = "2024-01-01"
 compatibility_flags = ["nodejs_compat"]
 
+[[kv_namespaces]]
+binding = "SUBSCRIBERS"
+id = "67bb9d9a4fa440fe94b1adcfb977c16c"
+
 # Secrets are managed in the Cloudflare dashboard (or via `wrangler secret put`),
 # NOT here — listing them as plaintext [vars] would overwrite the live secret on
 # every deploy. Required / optional secrets:

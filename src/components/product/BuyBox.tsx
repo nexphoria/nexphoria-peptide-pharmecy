@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { Plus, Minus, Check, ShoppingCart, Shield, FlaskConical, Truck } from "lucide-react";
+import { ShoppingCart, Shield, FlaskConical, Truck } from "lucide-react";
 import { useCart } from "@/lib/cart";
 import { Product, ProductDosage } from "@/lib/products";
 
@@ -11,46 +10,29 @@ interface BuyBoxProps {
   className?: string;
   selectedFormat?: 'vial' | 'pen';
   onFormatChange?: (format: 'vial' | 'pen') => void;
+  onDosageChange?: (dosage: ProductDosage | undefined) => void;
 }
 
-type PurchaseOption = {
-  months: 1 | 3 | 6;
-  label: string;
-  description: string;
-};
+type VolumeOption = { qty: number; label: string; discount: number };
 
-const purchaseOptions: PurchaseOption[] = [
-  {
-    months: 1,
-    label: "One-Time Purchase",
-    description: "A single shipment. No recurring billing.",
-  },
-  {
-    months: 3,
-    label: "3-Month Research Cycle",
-    description:
-      "Billed monthly across a standard cycle — enough material to observe a full response window.",
-  },
-  {
-    months: 6,
-    label: "6-Month Research Cycle",
-    description:
-      "Billed monthly across two cycles — for extended longevity and recovery protocols.",
-  },
+const VOLUME_OPTIONS: VolumeOption[] = [
+  { qty: 1, label: "Buy 1", discount: 0 },
+  { qty: 3, label: "Research Kit", discount: 0.05 },
+  { qty: 6, label: "Lab Protocol", discount: 0.1 },
 ];
 
-// Volume discount applied at display time: 5% off at qty 3, 10% off at qty 6+.
-function volumeDiscount(quantity: number): number {
-  if (quantity >= 6) return 0.1;
-  if (quantity >= 3) return 0.05;
-  return 0;
-}
+const CYCLE_OPTIONS = [
+  { months: 1 as const, label: "One-Time" },
+  { months: 3 as const, label: "3-Month Cycle" },
+  { months: 6 as const, label: "6-Month Cycle" },
+];
 
 export default function BuyBox({
   product,
   className = "",
   selectedFormat: externalFormat,
   onFormatChange,
+  onDosageChange,
 }: BuyBoxProps) {
   const { addItem, openDrawer } = useCart();
   const [internalFormat, setInternalFormat] = useState<'vial' | 'pen'>('vial');
@@ -60,8 +42,13 @@ export default function BuyBox({
   const [selectedDosage, setSelectedDosage] = useState<ProductDosage | undefined>(
     product.dosages?.[0] || undefined
   );
-  const [selectedOption, setSelectedOption] = useState<PurchaseOption>(purchaseOptions[0]);
-  const [quantity, setQuantity] = useState(1);
+  const [selectedVolume, setSelectedVolume] = useState(VOLUME_OPTIONS[0]);
+  const [selectedCycle, setSelectedCycle] = useState(CYCLE_OPTIONS[0]);
+
+  const handleDosageChange = (d: ProductDosage | undefined) => {
+    setSelectedDosage(d);
+    onDosageChange?.(d);
+  };
 
   const getBasePrice = () => {
     if (selectedFormat === 'pen' && product.penAvailable) {
@@ -71,281 +58,187 @@ export default function BuyBox({
   };
 
   const basePrice = getBasePrice();
-  const discount = volumeDiscount(quantity);
-  const unitPrice = discount > 0 ? +(basePrice * (1 - discount)).toFixed(2) : basePrice;
-  const totalPrice = +(unitPrice * quantity).toFixed(2);
+  const unitPrice = selectedVolume.discount > 0
+    ? +(basePrice * (1 - selectedVolume.discount)).toFixed(2)
+    : basePrice;
+  const totalPrice = +(unitPrice * selectedVolume.qty).toFixed(2);
 
   const handleAddToCart = () => {
-    // Cart increments quantity by 1 per call; add the chosen quantity.
-    for (let i = 0; i < quantity; i++) {
-      addItem(product, selectedFormat, selectedDosage, selectedOption.months);
+    for (let i = 0; i < selectedVolume.qty; i++) {
+      addItem(product, selectedFormat, selectedDosage, selectedCycle.months);
     }
     openDrawer();
   };
 
-  const handleQuantityChange = (delta: number) => {
-    setQuantity(Math.max(1, quantity + delta));
-  };
-
-  const trustBadges = [
-    { icon: FlaskConical, text: `${product.purity} Purity` },
-    { icon: Shield, text: "HPLC Tested" },
-    { icon: Truck, text: "Cold Shipped" },
-  ];
-
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.2 }}
-      className={`lg:sticky lg:top-28 z-30 ${className}`}
-    >
-      <div
-        className="border rounded-xl overflow-hidden"
-        style={{
-          borderColor: "var(--dark-border-hover)",
-          backgroundColor: "var(--dark-card)",
-        }}
-      >
-        {/* Format Selection (Vial/Pen) */}
-        <div className="p-6 border-b" style={{ borderColor: "var(--dark-border)" }}>
-          <h3 className="text-sm font-semibold text-primary mb-3 uppercase tracking-wide">
-            Format
-          </h3>
-          <div className={`grid ${product.penAvailable ? 'grid-cols-2' : 'grid-cols-1'} gap-2`}>
-            <button
-              onClick={() => setSelectedFormat('vial')}
-              className={`p-3 rounded-lg border transition-all duration-200 text-left min-w-0 ${
-                selectedFormat === 'vial'
-                  ? 'border-acid-green bg-acid-green/10'
-                  : 'border-dark-border hover:border-dark-border-hover'
-              }`}
-            >
-              <div className="flex items-center justify-between min-w-0">
-                <div className="min-w-0 flex-1">
-                  <div className="text-sm font-medium text-primary truncate">
-                    Lyophilized Vial
-                  </div>
-                  <div className="text-xs text-secondary truncate">Standard format</div>
-                </div>
-                {selectedFormat === 'vial' && (
-                  <Check className="w-4 h-4 text-acid-green flex-shrink-0 ml-2" />
-                )}
-              </div>
-            </button>
-            {product.penAvailable && (
+    <div className={className}>
+      {/* Price */}
+      <div className="mb-5">
+        <div className="flex items-baseline gap-2">
+          <span className="text-3xl font-semibold">${basePrice}</span>
+          <span className="text-sm text-[#888]">per vial</span>
+        </div>
+        {selectedVolume.discount > 0 && (
+          <p className="text-sm text-[#A4B08A] font-medium mt-1">
+            Save {Math.round(selectedVolume.discount * 100)}% &mdash; ${unitPrice}/vial
+          </p>
+        )}
+      </div>
+
+      {/* Volume Pricing Pills */}
+      <div className="mb-5">
+        <p className="text-xs font-semibold uppercase tracking-wide text-[#888] mb-2">Volume</p>
+        <div className="flex gap-2">
+          {VOLUME_OPTIONS.map((opt) => {
+            const active = selectedVolume.qty === opt.qty;
+            return (
               <button
-                onClick={() => setSelectedFormat('pen')}
-                className={`p-3 rounded-lg border transition-all duration-200 text-left min-w-0 ${
-                  selectedFormat === 'pen'
-                    ? 'border-acid-green bg-acid-green/10'
-                    : 'border-dark-border hover:border-dark-border-hover'
-                }`}
+                key={opt.qty}
+                onClick={() => setSelectedVolume(opt)}
+                className="flex-1 py-2.5 px-3 rounded-lg border text-center transition-all duration-150"
+                style={{
+                  borderColor: active ? '#A4B08A' : '#ECEAE4',
+                  backgroundColor: active ? '#A4B08A' : 'transparent',
+                  color: active ? '#000' : '#555',
+                }}
               >
-                <div className="flex items-center justify-between min-w-0">
-                  <div className="min-w-0 flex-1">
-                    <div className="text-sm font-medium text-primary truncate">
-                      Pre-loaded Pen
-                    </div>
-                    <div className="text-xs text-secondary truncate">Requires Rx</div>
-                  </div>
-                  {selectedFormat === 'pen' && (
-                    <Check className="w-4 h-4 text-acid-green flex-shrink-0 ml-2" />
-                  )}
+                <div className="text-sm font-semibold">{opt.label}</div>
+                <div className="text-[11px] mt-0.5" style={{ opacity: 0.7 }}>
+                  {opt.qty} vial{opt.qty > 1 ? 's' : ''}
+                  {opt.discount > 0 && ` · ${Math.round(opt.discount * 100)}% off`}
                 </div>
               </button>
-            )}
-          </div>
-          {selectedFormat === 'pen' && product.penAvailable && (
-            <p className="text-xs text-tertiary mt-3">(Pen format requires prescription)</p>
-          )}
+            );
+          })}
         </div>
+      </div>
 
-        {/* Dosage Selection */}
-        {selectedFormat === 'vial' && product.dosages && product.dosages.length > 1 && (
-          <div className="p-6 border-b" style={{ borderColor: "var(--dark-border)" }}>
-            <h3 className="text-sm font-semibold text-primary mb-3 uppercase tracking-wide">
-              Dosage
-            </h3>
-            <div className="space-y-2">
-              {product.dosages.map((dosage) => (
-                <button
-                  key={dosage.size}
-                  onClick={() => setSelectedDosage(dosage)}
-                  className={`w-full p-3 rounded-lg border transition-all duration-200 text-left min-w-0 ${
-                    selectedDosage?.size === dosage.size
-                      ? 'border-acid-green bg-acid-green/10'
-                      : 'border-dark-border hover:border-dark-border-hover'
-                  }`}
-                >
-                  <div className="flex items-center justify-between min-w-0">
-                    <span className="text-sm font-medium text-primary truncate flex-1">
-                      {dosage.size}
-                    </span>
-                    <div className="flex items-center gap-2 flex-shrink-0">
-                      <span className="text-sm font-bold text-primary">${dosage.price}</span>
-                      {selectedDosage?.size === dosage.size && (
-                        <Check className="w-4 h-4 text-acid-green" />
-                      )}
-                    </div>
-                  </div>
-                </button>
-              ))}
-            </div>
-          </div>
+      {/* Subscription Cycle Toggle */}
+      <div className="mb-5">
+        <p className="text-xs font-semibold uppercase tracking-wide text-[#888] mb-2">Subscription</p>
+        <div className="flex gap-2">
+          {CYCLE_OPTIONS.map((opt) => {
+            const active = selectedCycle.months === opt.months;
+            return (
+              <button
+                key={opt.months}
+                onClick={() => setSelectedCycle(opt)}
+                className="flex-1 py-2 px-2 rounded-lg border text-center text-sm transition-all duration-150"
+                style={{
+                  borderColor: active ? '#A4B08A' : '#ECEAE4',
+                  backgroundColor: active ? '#A4B08A0D' : 'transparent',
+                  color: active ? '#000' : '#888',
+                  fontWeight: active ? 600 : 400,
+                }}
+              >
+                {opt.label}
+              </button>
+            );
+          })}
+        </div>
+        {selectedCycle.months > 1 && (
+          <p className="text-xs text-[#888] mt-2">
+            Billed ${totalPrice.toFixed(0)}/mo for {selectedCycle.months} months. Cancel anytime.
+          </p>
         )}
+      </div>
 
-        {/* Purchase Cadence Selection */}
-        <div className="p-6 border-b" style={{ borderColor: "var(--dark-border)" }}>
-          <h3 className="text-sm font-semibold text-primary mb-3 uppercase tracking-wide">
-            Purchase Cadence
-          </h3>
-          <div className="space-y-2">
-            {purchaseOptions.map((option) => {
-              const isSelected = selectedOption.months === option.months;
+      {/* Format (only show if pen available) */}
+      {product.penAvailable && (
+        <div className="mb-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-[#888] mb-2">Format</p>
+          <div className="grid grid-cols-2 gap-2">
+            <button
+              onClick={() => setSelectedFormat('vial')}
+              className="py-2 px-3 rounded-lg border text-sm text-center transition-all"
+              style={{
+                borderColor: selectedFormat === 'vial' ? '#A4B08A' : '#ECEAE4',
+                backgroundColor: selectedFormat === 'vial' ? '#A4B08A0D' : 'transparent',
+                fontWeight: selectedFormat === 'vial' ? 600 : 400,
+              }}
+            >
+              Vial
+            </button>
+            <button
+              onClick={() => setSelectedFormat('pen')}
+              className="py-2 px-3 rounded-lg border text-sm text-center transition-all"
+              style={{
+                borderColor: selectedFormat === 'pen' ? '#A4B08A' : '#ECEAE4',
+                backgroundColor: selectedFormat === 'pen' ? '#A4B08A0D' : 'transparent',
+                fontWeight: selectedFormat === 'pen' ? 600 : 400,
+              }}
+            >
+              Pen (Rx)
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Dosage Selection */}
+      {selectedFormat === 'vial' && product.dosages && product.dosages.length > 1 && (
+        <div className="mb-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-[#888] mb-2">Dosage</p>
+          <div className="flex gap-2">
+            {product.dosages.map((dosage) => {
+              const active = selectedDosage?.size === dosage.size;
               return (
                 <button
-                  key={option.months}
-                  onClick={() => setSelectedOption(option)}
-                  className={`w-full p-4 rounded-lg border transition-all duration-200 text-left ${
-                    isSelected
-                      ? 'border-acid-green bg-acid-green/10'
-                      : 'border-dark-border hover:border-dark-border-hover'
-                  }`}
+                  key={dosage.size}
+                  onClick={() => handleDosageChange(dosage)}
+                  className="flex-1 py-2 px-3 rounded-lg border text-sm text-center transition-all"
+                  style={{
+                    borderColor: active ? '#A4B08A' : '#ECEAE4',
+                    backgroundColor: active ? '#A4B08A0D' : 'transparent',
+                    fontWeight: active ? 600 : 400,
+                  }}
                 >
-                  <div className="flex items-start gap-3 min-w-0">
-                    <div
-                      className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors flex-shrink-0 mt-0.5 ${
-                        isSelected ? 'border-acid-green' : 'border-dark-border-hover'
-                      }`}
-                    >
-                      {isSelected && <div className="w-2.5 h-2.5 rounded-full bg-acid-green" />}
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <div className="text-sm font-semibold text-primary">{option.label}</div>
-                      <div className="text-xs text-secondary mt-0.5 leading-relaxed">
-                        {option.description}
-                      </div>
-                    </div>
-                  </div>
+                  {dosage.size} &middot; ${dosage.price}
                 </button>
               );
             })}
           </div>
-          {selectedOption.months !== 1 && (
-            <p className="text-xs text-tertiary mt-3 leading-relaxed">
-              Billed monthly for {selectedOption.months} months. Cancel or modify anytime before
-              the next shipment.
-            </p>
-          )}
         </div>
+      )}
 
-        {/* Quantity & Price Summary */}
-        <div className="p-6">
-          {/* Quantity Selector */}
-          <div className="mb-3">
-            <label className="text-sm font-semibold text-primary mb-3 block uppercase tracking-wide">
-              Quantity
-            </label>
-            <div className="flex items-center gap-3">
-              <button
-                onClick={() => handleQuantityChange(-1)}
-                disabled={quantity <= 1}
-                aria-label="Decrease quantity"
-                className="w-10 h-10 flex items-center justify-center border border-dark-border hover:border-dark-border-hover disabled:opacity-50 disabled:cursor-not-allowed rounded-lg transition-colors"
-              >
-                <Minus className="w-4 h-4 text-secondary" />
-              </button>
-              <span className="text-lg font-bold text-primary min-w-[2rem] text-center">
-                {quantity}
-              </span>
-              <button
-                onClick={() => handleQuantityChange(1)}
-                aria-label="Increase quantity"
-                className="w-10 h-10 flex items-center justify-center border border-dark-border hover:border-dark-border-hover rounded-lg transition-colors"
-              >
-                <Plus className="w-4 h-4 text-secondary" />
-              </button>
-            </div>
-          </div>
-
-          {/* Volume pricing note */}
-          <p className="text-xs text-tertiary mb-5 leading-relaxed">
-            Volume pricing: 5% off at 3 vials, 10% off at 6 or more.
-            {discount > 0 && (
-              <span className="text-acid-green font-semibold">
-                {" "}
-                {Math.round(discount * 100)}% applied.
-              </span>
-            )}
-          </p>
-
-          {/* Price Summary */}
-          <div className="mb-6 p-4 rounded-lg" style={{ backgroundColor: "var(--dark-panel)" }}>
-            <div className="flex items-center justify-between mb-1 min-w-0 gap-2">
-              <span className="text-sm text-secondary flex-shrink-0">Unit price</span>
-              <span className="text-sm text-primary">${unitPrice}</span>
-            </div>
-            {quantity > 1 && (
-              <div className="flex items-center justify-between mb-1 min-w-0 gap-2">
-                <span className="text-sm text-secondary flex-shrink-0">Quantity</span>
-                <span className="text-sm text-primary">×{quantity}</span>
-              </div>
-            )}
-            {selectedOption.months !== 1 && (
-              <div className="flex items-center justify-between mb-1 min-w-0 gap-2">
-                <span className="text-sm text-secondary flex-shrink-0">Billing</span>
-                <span className="text-sm text-primary">
-                  {selectedOption.months} monthly payments
-                </span>
-              </div>
-            )}
-            <div
-              className="flex items-center justify-between pt-3 mt-2 border-t min-w-0 gap-2"
-              style={{ borderColor: "var(--dark-border)" }}
-            >
-              <span className="text-base font-semibold text-primary flex-shrink-0">
-                {selectedOption.months === 1 ? 'Total' : 'Per month'}
-              </span>
-              <span className="text-2xl font-bold text-primary">${totalPrice.toFixed(2)}</span>
-            </div>
-          </div>
-
-          {/* Add to Order Button */}
-          <button
-            onClick={handleAddToCart}
-            className="w-full flex items-center justify-center gap-2 text-sm font-semibold uppercase tracking-wide transition-all hover:opacity-90"
-            style={{
-              height: "52px",
-              backgroundColor: "#A8C97F",
-              color: "#0A0A08",
-              fontWeight: 600,
-              padding: "1rem 2rem",
-              borderRadius: "0.5rem",
-            }}
-          >
-            <ShoppingCart className="w-4 h-4" />
-            Add to Order
-          </button>
-
-          {/* Trust Badge Row */}
-          <div className="mt-4 flex items-center justify-center gap-4 text-xs text-secondary flex-wrap">
-            {trustBadges.map((badge) => (
-              <div key={badge.text} className="flex items-center gap-1.5">
-                <badge.icon className="w-3.5 h-3.5 text-acid-green" />
-                <span>{badge.text}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* Research Disclaimer */}
-          <div className="mt-6 pt-4 border-t" style={{ borderColor: "var(--dark-border)" }}>
-            <p className="text-xs text-tertiary leading-relaxed">
-              For qualified research use only. Not for human consumption.
-            </p>
-          </div>
+      {/* Total & Add to Order */}
+      <div className="p-4 rounded-lg mb-4" style={{ backgroundColor: "#F7F5F0" }}>
+        <div className="flex items-center justify-between">
+          <span className="text-sm text-[#555]">
+            {selectedCycle.months === 1 ? 'Total' : 'Monthly total'}
+          </span>
+          <span className="text-2xl font-semibold">${totalPrice.toFixed(2)}</span>
         </div>
       </div>
-    </motion.div>
+
+      <button
+        onClick={handleAddToCart}
+        className="w-full flex items-center justify-center gap-2 font-semibold uppercase tracking-wide transition-all rounded-lg hover:opacity-90"
+        style={{
+          height: "52px",
+          fontSize: "14px",
+          backgroundColor: "#A4B08A",
+          color: "#000",
+        }}
+      >
+        <ShoppingCart className="w-4 h-4" />
+        Add to Order
+      </button>
+
+      {/* Trust Badges */}
+      <div className="mt-4 flex items-center justify-center gap-4 text-xs text-[#888]">
+        <div className="flex items-center gap-1.5">
+          <FlaskConical className="w-3.5 h-3.5 text-[#A4B08A]" />
+          <span>{product.purity}</span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <Shield className="w-3.5 h-3.5 text-[#A4B08A]" />
+          <span>HPLC Tested</span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <Truck className="w-3.5 h-3.5 text-[#A4B08A]" />
+          <span>Cold Shipped</span>
+        </div>
+      </div>
+    </div>
   );
 }

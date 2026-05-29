@@ -52,11 +52,32 @@ async function handleWaitlist(request, env) {
 
   if (!email || !EMAIL_RE.test(email)) return json({ error: 'invalid_email' }, 400);
 
-  await forwardWebhook(env.WAITLIST_WEBHOOK_URL, {
+  const entry = {
     email,
     source: source || 'web',
-    timestamp: new Date().toISOString(),
-  });
+    subscribedAt: new Date().toISOString(),
+  };
+
+  // Store in Cloudflare KV (key = email, value = JSON entry)
+  if (env.SUBSCRIBERS) {
+    try {
+      // Avoid duplicate entries
+      const existing = await env.SUBSCRIBERS.get(email);
+      if (!existing) {
+        await env.SUBSCRIBERS.put(email, JSON.stringify(entry));
+        // Also append to an index list for easy bulk export
+        const indexKey = 'index:emails';
+        const index = JSON.parse((await env.SUBSCRIBERS.get(indexKey)) || '[]');
+        index.push({ email, subscribedAt: entry.subscribedAt });
+        await env.SUBSCRIBERS.put(indexKey, JSON.stringify(index));
+      }
+    } catch {
+      // KV failure must not fail the response
+    }
+  }
+
+  // Forward to n8n webhook if configured
+  await forwardWebhook(env.WAITLIST_WEBHOOK_URL, entry);
   return json({ success: true }, 201);
 }
 
@@ -127,6 +148,42 @@ async function handleCheckout(request, env) {
   return json({ url: session.url, sessionId: session.id });
 }
 
+async function handleWholesale(request, env) {
+  const body = await request.json();
+  const { name, institution, email, monthlyVolume, compounds, message } = body || {};
+
+  if (!name || !email) return json({ error: 'missing_fields' }, 400);
+  if (!EMAIL_RE.test(email)) return json({ error: 'invalid_email' }, 400);
+
+  const entry = {
+    name: String(name).trim(),
+    institution: String(institution || '').trim(),
+    email: String(email).trim().toLowerCase(),
+    monthlyVolume: String(monthlyVolume || '').trim(),
+    compounds: String(compounds || '').trim(),
+    message: String(message || '').trim(),
+    submittedAt: new Date().toISOString(),
+  };
+
+  // Store in KV if available
+  if (env.SUBSCRIBERS) {
+    try {
+      const key = `wholesale:${entry.email}:${Date.now()}`;
+      await env.SUBSCRIBERS.put(key, JSON.stringify(entry), { expirationTtl: 60 * 60 * 24 * 365 });
+      // Append to wholesale index
+      const indexKey = 'index:wholesale';
+      const index = JSON.parse((await env.SUBSCRIBERS.get(indexKey)) || '[]');
+      index.push({ email: entry.email, name: entry.name, submittedAt: entry.submittedAt });
+      await env.SUBSCRIBERS.put(indexKey, JSON.stringify(index));
+    } catch {
+      // KV failure must not fail the response
+    }
+  }
+
+  await forwardWebhook(env.WHOLESALE_WEBHOOK_URL, entry);
+  return json({ success: true }, 201);
+}
+
 export default {
   async fetch(request, env) {
     if (request.method === 'OPTIONS') {
@@ -142,6 +199,7 @@ export default {
     try {
       if (path.endsWith('/contact')) return await handleContact(request, env);
       if (path.endsWith('/waitlist')) return await handleWaitlist(request, env);
+      if (path.endsWith('/wholesale')) return await handleWholesale(request, env);
       // Default (root or /checkout): Stripe checkout session.
       return await handleCheckout(request, env);
     } catch (err) {

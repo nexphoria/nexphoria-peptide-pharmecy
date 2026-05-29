@@ -1,521 +1,709 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { useRouter } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
-import { Plus, ArrowRight, Package, X, Search, Filter } from "lucide-react";
-import { products, categories } from "@/lib/products";
-import ProductVial from "@/components/ProductVial";
-import { useCart } from "@/lib/cart";
+import { products } from "@/lib/products";
 import { hasProductPhoto, getProductImagePath } from "@/lib/product-images";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
-// Filter out accessories and "coming soon" products from stack builder
-const stackableProducts = products.filter(
-  (p) => p.category !== "Accessories" && !p.comingSoon
-);
+type CycleOption = "3-month" | "6-month" | "one-time";
+
+type SelectedProduct = {
+  slug: string;
+  quantity: number;
+  price: number;
+};
+
+const categories = [
+  "All",
+  "Recovery & Healing",
+  "Longevity",
+  "Growth Hormone",
+  "Weight Management",
+  "Cognitive",
+];
+
+const cycleOptions: {
+  id: CycleOption;
+  name: string;
+  savings: string;
+  description: string;
+  eyebrow: string;
+  discount: number;
+}[] = [
+  {
+    id: "3-month",
+    name: "3-Month Research Cycle",
+    savings: "15% savings",
+    description: "Ships every 4 weeks (3 shipments)",
+    eyebrow: "Recommended for first-time researchers",
+    discount: 0.15,
+  },
+  {
+    id: "6-month",
+    name: "6-Month Research Cycle",
+    savings: "20% savings",
+    description: "Ships every 4 weeks (6 shipments)",
+    eyebrow: "For established research protocols",
+    discount: 0.2,
+  },
+  {
+    id: "one-time",
+    name: "One-Time Purchase",
+    savings: "No commitment",
+    description: "Full price",
+    eyebrow: "",
+    discount: 0,
+  },
+];
+
+const timeline = [
+  {
+    week: "Week 1-2",
+    title: "Initial Phase",
+    description:
+      "Establishing baseline measurements and beginning compound integration",
+  },
+  {
+    week: "Week 3-4",
+    title: "Observation Window",
+    description:
+      "Primary data collection period. Most researchers note measurable changes",
+  },
+  {
+    week: "Week 5-8",
+    title: "Extended Protocol",
+    description:
+      "Continued observation with compound accumulation at steady-state levels",
+  },
+  {
+    week: "Week 9-12",
+    title: "Cycle Completion",
+    description:
+      "Full protocol complete. Comprehensive data set for analysis",
+  },
+];
 
 export default function BuildYourStackPage() {
-  const router = useRouter();
-  const { addItem } = useCart();
-  const [stackItems, setStackItems] = useState<typeof products>([]);
-  const [subscriptionCadence, setSubscriptionCadence] = useState<"one-time" | "3-month" | "6-month">("one-time");
-  const [activeCategory, setActiveCategory] = useState("All");
-  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedProducts, setSelectedProducts] = useState<
+    Map<string, SelectedProduct>
+  >(new Map());
+  const [selectedCycle, setSelectedCycle] = useState<CycleOption | null>(null);
 
-  const addToStack = (product: typeof products[0]) => {
-    setStackItems([...stackItems, product]);
-  };
-
-  const removeFromStack = (index: number) => {
-    setStackItems(stackItems.filter((_, i) => i !== index));
-  };
-
-  const totalPrice = stackItems.reduce((sum, item) => sum + item.price, 0);
-
-  // 10% off 3-month cycle, 15% off 6-month cycle
-  const subscriptionDiscount = subscriptionCadence === "6-month" ? 0.15 : subscriptionCadence === "3-month" ? 0.10 : 0;
-  const discountedPrice = totalPrice * (1 - subscriptionDiscount);
-
-  // Free gifts
-  const freeGifts = [];
-  if (stackItems.length >= 3) freeGifts.push("Free bacteriostatic water");
-  if (stackItems.length >= 5) freeGifts.push("Free shipping");
-  if (stackItems.length >= 7) freeGifts.push("Free cold-pack");
-
-  const handleCheckout = () => {
-    stackItems.forEach(product => {
-      const months = subscriptionCadence === "3-month" ? 3 : subscriptionCadence === "6-month" ? 6 : 1;
-      addItem(product, "vial", undefined, months);
-    });
-    router.push("/checkout");
-  };
-
-  const cadenceOptions = [
-    { value: "one-time", label: "One-Time Purchase", discount: 0, desc: "Ships once" },
-    { value: "3-month", label: "3-Month Research Cycle", discount: 10, desc: "Monthly billing x 3" },
-    { value: "6-month", label: "6-Month Research Cycle", discount: 15, desc: "Monthly billing x 6" },
-  ] as const;
-
-  // Category filter options — exclude Accessories from the builder
-  const builderCategories = ["All", ...categories.filter(c => c !== "All" && c !== "Accessories")];
-
-  // Filtered product list
   const filteredProducts = useMemo(() => {
-    return stackableProducts.filter((p) => {
-      const matchesCategory = activeCategory === "All" || p.category === activeCategory;
-      const matchesSearch = searchQuery === "" ||
-        p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        p.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        p.tagline.toLowerCase().includes(searchQuery.toLowerCase());
-      return matchesCategory && matchesSearch;
-    });
-  }, [activeCategory, searchQuery]);
+    if (selectedCategory === "All") return products.filter(p => !p.comingSoon);
+    return products.filter(
+      (p) => p.category === selectedCategory && !p.comingSoon
+    );
+  }, [selectedCategory]);
 
-  // Check if a product is already in the stack
-  const stackSlugs = stackItems.map((i) => i.slug);
+  const addProduct = (slug: string) => {
+    const product = products.find((p) => p.slug === slug);
+    if (!product) return;
+
+    const newMap = new Map(selectedProducts);
+    const existing = newMap.get(slug);
+
+    if (existing) {
+      newMap.set(slug, {
+        ...existing,
+        quantity: existing.quantity + 1,
+      });
+    } else {
+      newMap.set(slug, {
+        slug,
+        quantity: 1,
+        price: product.price,
+      });
+    }
+
+    setSelectedProducts(newMap);
+  };
+
+  const removeProduct = (slug: string) => {
+    const newMap = new Map(selectedProducts);
+    const existing = newMap.get(slug);
+
+    if (existing && existing.quantity > 1) {
+      newMap.set(slug, {
+        ...existing,
+        quantity: existing.quantity - 1,
+      });
+    } else {
+      newMap.delete(slug);
+    }
+
+    setSelectedProducts(newMap);
+  };
+
+  const subtotal = useMemo(() => {
+    let total = 0;
+    selectedProducts.forEach((item) => {
+      total += item.price * item.quantity;
+    });
+    return total;
+  }, [selectedProducts]);
+
+  const cycleDiscount = useMemo(() => {
+    if (!selectedCycle) return 0;
+    const option = cycleOptions.find((o) => o.id === selectedCycle);
+    return option ? option.discount : 0;
+  }, [selectedCycle]);
+
+  const discountedSubtotal = subtotal * (1 - cycleDiscount);
+
+  const shipments = useMemo(() => {
+    if (selectedCycle === "3-month") return 3;
+    if (selectedCycle === "6-month") return 6;
+    return 1;
+  }, [selectedCycle]);
+
+  const totalCyclePrice = discountedSubtotal * shipments;
+
+  const selectedCount = selectedProducts.size;
+  const totalItems = useMemo(() => {
+    let count = 0;
+    selectedProducts.forEach((item) => {
+      count += item.quantity;
+    });
+    return count;
+  }, [selectedProducts]);
+
+  const benefits = useMemo(() => {
+    return [
+      {
+        text: "Bacteriostatic water included",
+        earned: totalItems >= 3,
+      },
+      {
+        text: "Express shipping included",
+        earned: totalItems >= 5,
+      },
+      {
+        text: "Cold-chain packaging included",
+        earned: subtotal >= 300,
+      },
+    ];
+  }, [totalItems, subtotal]);
+
+  const currentStep = useMemo(() => {
+    if (selectedProducts.size === 0) return 1;
+    if (!selectedCycle) return 2;
+    return 3;
+  }, [selectedProducts, selectedCycle]);
 
   return (
-    <div className="min-h-screen pb-24 lg:pb-0" style={{ backgroundColor: "#fffff3", paddingTop: "80px" }}>
-      <div className="container-nex py-12 md:py-16">
-        <div className="text-center mb-12">
-          <h1
-            className="text-3xl md:text-5xl font-bold mb-4"
-            style={{ color: "#010101", fontFamily: "var(--font-display)" }}
-          >
-            Build Your Stack
-          </h1>
-          <p className="text-base md:text-lg max-w-2xl mx-auto" style={{ color: "#8A8075" }}>
-            Select your peptides and create a custom research protocol. Save up to 15% with a research cycle.
-          </p>
-        </div>
+    <div className="min-h-screen" style={{ backgroundColor: "#FFFFF3", paddingTop: "72px" }}>
+      {/* Step Progress */}
+      <div
+        className="border-b"
+        style={{ borderColor: "#E8E5E0", backgroundColor: "#fff" }}
+      >
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-8">
+          <div className="flex items-center justify-between max-w-3xl mx-auto">
+            {[1, 2, 3].map((step, idx) => {
+              const labels = ["Choose", "Cycle", "What to Expect"];
+              const isActive = step === currentStep;
+              const isComplete = step < currentStep;
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-          {/* Left - Stack Box Visualization + Product Grid */}
-          <div className="lg:col-span-7 space-y-8">
-            {/* The Box - Visual Stack Builder */}
-            <div
-              className="relative rounded-lg border-2 overflow-hidden"
-              style={{
-                backgroundColor: "#1a1a18",
-                borderColor: "#a4b08a",
-                minHeight: "260px",
-              }}
-            >
-              {/* DNA Pattern Overlay */}
-              <div
-                className="absolute inset-0 opacity-10 pattern-bg-dark"
-                style={{ pointerEvents: "none" }}
-              />
-
-              {/* Branded Box SVG - Background */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none">
-                <svg
-                  viewBox="0 0 300 200"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-full max-w-md h-auto"
-                >
-                  <path
-                    d="M 50 60 L 250 60 L 270 80 L 270 160 L 250 180 L 50 180 L 30 160 L 30 80 Z"
-                    fill="none"
-                    stroke="#a4b08a"
-                    strokeWidth="2"
-                    strokeDasharray="4,4"
-                  />
-                  <text
-                    x="150"
-                    y="110"
-                    textAnchor="middle"
-                    fontFamily="system-ui, sans-serif"
-                    fontSize="24"
-                    fontWeight="700"
-                    letterSpacing="4"
-                    fill="#a4b08a"
-                  >
-                    NEXPHORIA
-                  </text>
-                  <line x1="80" y1="130" x2="220" y2="130" stroke="#a4b08a" strokeWidth="2" />
-                </svg>
-              </div>
-
-              {/* Box Content */}
-              <div className="relative p-6">
-                <div className="flex items-center gap-2 mb-4">
-                  <Package className="w-5 h-5" style={{ color: "#a4b08a" }} />
-                  <h2 className="text-lg font-bold" style={{ color: "#fffff3" }}>
-                    Your Stack ({stackItems.length} {stackItems.length === 1 ? "item" : "items"})
-                  </h2>
-                </div>
-
-                {stackItems.length === 0 ? (
-                  <div className="text-center py-10">
-                    <p className="text-sm" style={{ color: "#8A8075" }}>
-                      Your stack is empty. Add compounds below to get started.
-                    </p>
-                  </div>
-                ) : (
-                  <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-3">
-                    <AnimatePresence>
-                      {stackItems.map((item, index) => (
-                        <motion.div
-                          key={`${item.slug}-${index}`}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          exit={{ opacity: 0, scale: 0.8 }}
-                          transition={{ duration: 0.2 }}
-                          className="relative group"
-                        >
-                          <div
-                            className="relative rounded-lg p-2"
-                            style={{
-                              backgroundColor: hasProductPhoto(item.slug) ? "#F7F4EE" : "#2a2a28",
-                              border: `1px solid ${item.accentColor}40`,
-                            }}
-                          >
-                            {hasProductPhoto(item.slug) ? (
-                              <img
-                                src={getProductImagePath(item.slug)}
-                                alt={item.name}
-                                className="w-full h-auto object-contain"
-                                style={{ maxHeight: "80px" }}
-                              />
-                            ) : (
-                              <ProductVial
-                                productName={item.name}
-                                dosage={item.size}
-                                category={item.category}
-                                accentColor={item.accentColor}
-                                size="thumbnail"
-                              />
-                            )}
-                            <button
-                              onClick={() => removeFromStack(index)}
-                              className="absolute -top-2 -right-2 w-5 h-5 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
-                              style={{ backgroundColor: "#EF4444" }}
-                            >
-                              <X className="w-3 h-3 text-white" />
-                            </button>
-                          </div>
-                          <p
-                            className="text-[9px] text-center mt-1 truncate"
-                            style={{ color: "#8A8075" }}
-                          >
-                            {item.name}
-                          </p>
-                        </motion.div>
-                      ))}
-                    </AnimatePresence>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Search + Category Filter Row */}
-            <div className="space-y-3">
-              {/* Search */}
-              <div className="relative">
-                <Search
-                  className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4"
-                  style={{ color: "#8A8075" }}
-                />
-                <input
-                  type="text"
-                  placeholder="Search compounds..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2.5 rounded-lg border text-sm outline-none focus:ring-2 focus:ring-opacity-50"
-                  style={{
-                    backgroundColor: "#ffffff",
-                    borderColor: "#D8D4CC",
-                    color: "#010101",
-                  }}
-                />
-                {searchQuery && (
-                  <button
-                    onClick={() => setSearchQuery("")}
-                    className="absolute right-3 top-1/2 -translate-y-1/2"
-                  >
-                    <X className="w-4 h-4" style={{ color: "#8A8075" }} />
-                  </button>
-                )}
-              </div>
-
-              {/* Category Filter Pills */}
-              <div className="flex flex-wrap gap-2">
-                {builderCategories.map((cat) => {
-                  const count = cat === "All"
-                    ? stackableProducts.length
-                    : stackableProducts.filter((p) => p.category === cat).length;
-                  return (
-                    <button
-                      key={cat}
-                      onClick={() => setActiveCategory(cat)}
-                      className="px-3 py-1.5 rounded-full text-xs font-semibold transition-all"
-                      style={{
-                        backgroundColor: activeCategory === cat ? "#a4b08a" : "#EAE6DF",
-                        color: activeCategory === cat ? "#000000" : "#8A8075",
-                      }}
+              return (
+                <div key={step} className="flex items-center flex-1">
+                  <div className="flex items-center gap-3">
+                    <div
+                      className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold transition-colors ${
+                        isComplete
+                          ? "bg-[#A4B08A] text-white"
+                          : isActive
+                          ? "bg-[#A4B08A] text-white"
+                          : "bg-[#E8E5E0] text-[#8A8075]"
+                      }`}
                     >
-                      {cat} ({count})
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Product Grid */}
-            <div>
-              {filteredProducts.length === 0 ? (
-                <div className="text-center py-12">
-                  <p className="text-sm" style={{ color: "#8A8075" }}>
-                    No compounds found. Try a different search or category.
-                  </p>
-                </div>
-              ) : (
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                  {filteredProducts.map((product) => {
-                    const alreadyInStack = stackSlugs.includes(product.slug);
-                    return (
-                      <div
-                        key={product.slug}
-                        className="rounded-lg border overflow-hidden transition-all group"
-                        style={{
-                          backgroundColor: "#ffffff",
-                          borderColor: alreadyInStack ? "#a4b08a" : "#D8D4CC",
-                          boxShadow: alreadyInStack ? "0 0 0 2px #a4b08a40" : "none",
-                        }}
-                      >
-                        <div
-                          className="p-3 flex items-center justify-center"
-                          style={{
-                            backgroundColor: hasProductPhoto(product.slug) ? "#F7F4EE" : `${product.accentColor}08`,
-                            minHeight: "110px",
-                          }}
+                      {isComplete ? (
+                        <svg
+                          width="14"
+                          height="11"
+                          viewBox="0 0 14 11"
+                          fill="none"
                         >
-                          {hasProductPhoto(product.slug) ? (
-                            <img
-                              src={getProductImagePath(product.slug)}
-                              alt={product.name}
-                              className="w-full h-auto object-contain"
-                              style={{ maxHeight: "90px" }}
-                            />
-                          ) : (
-                            <ProductVial
-                              productName={product.name}
-                              dosage={product.size}
-                              category={product.category}
-                              accentColor={product.accentColor}
-                              size="thumbnail"
-                            />
-                          )}
-                        </div>
-                        <div className="p-3">
-                          <p
-                            className="text-[10px] uppercase tracking-wider mb-0.5"
-                            style={{ color: product.accentColor }}
-                          >
-                            {product.category}
-                          </p>
-                          <h4
-                            className="text-xs font-semibold mb-1 truncate"
-                            style={{ color: "#010101" }}
-                          >
-                            {product.name}
-                          </h4>
-                          <p className="text-xs mb-2" style={{ color: "#8A8075" }}>
-                            {product.size} &middot; ${product.price}
-                          </p>
-                          <button
-                            onClick={() => addToStack(product)}
-                            className="w-full py-1.5 px-3 rounded text-xs font-semibold flex items-center justify-center gap-1 transition-all hover:opacity-80"
-                            style={{
-                              backgroundColor: alreadyInStack ? "#E8EDE2" : "#a4b08a",
-                              color: "#000000",
-                            }}
-                          >
-                            <Plus className="w-3 h-3" />
-                            {alreadyInStack ? "Add Again" : "Add"}
-                          </button>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Right - Order Summary */}
-          <div className="lg:col-span-5">
-            <div className="lg:sticky lg:top-24">
-              <div
-                className="rounded-lg border p-6"
-                style={{
-                  backgroundColor: "#ffffff",
-                  borderColor: "#D8D4CC",
-                }}
-              >
-                <h2 className="text-xl font-bold mb-6" style={{ color: "#010101" }}>
-                  Order Summary
-                </h2>
-
-                {/* Subscription Cadence Selector */}
-                <div className="mb-6">
-                  <label className="block text-sm font-semibold mb-3" style={{ color: "#3A3A3A" }}>
-                    Delivery Frequency
-                  </label>
-                  <div className="grid grid-cols-1 gap-2">
-                    {cadenceOptions.map((option) => (
-                      <button
-                        key={option.value}
-                        onClick={() => setSubscriptionCadence(option.value)}
-                        className="relative p-3 rounded-lg border-2 text-left transition-all"
-                        style={{
-                          borderColor: subscriptionCadence === option.value ? "#a4b08a" : "#D8D4CC",
-                          backgroundColor: subscriptionCadence === option.value ? "#a4b08a15" : "#ffffff",
-                        }}
-                      >
-                        <div className="flex items-center justify-between">
-                          <div>
-                            <div className="text-sm font-semibold" style={{ color: "#010101" }}>
-                              {option.label}
-                            </div>
-                            <div className="text-xs" style={{ color: "#8A8075" }}>
-                              {option.desc}
-                            </div>
-                          </div>
-                          {option.discount > 0 && (
-                            <div className="text-xs font-bold ml-3 flex-shrink-0" style={{ color: "#a4b08a" }}>
-                              Save {option.discount}%
-                            </div>
-                          )}
-                        </div>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Stack Item Summary */}
-                {stackItems.length > 0 && (
-                  <div className="mb-4 max-h-48 overflow-y-auto space-y-2 pr-1">
-                    {stackItems.map((item, index) => (
-                      <div key={`${item.slug}-${index}`} className="flex items-center justify-between text-xs">
-                        <div className="flex items-center gap-2">
-                          <button
-                            onClick={() => removeFromStack(index)}
-                            className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 hover:opacity-80"
-                            style={{ backgroundColor: "#EAE6DF" }}
-                          >
-                            <X className="w-2.5 h-2.5" style={{ color: "#8A8075" }} />
-                          </button>
-                          <span style={{ color: "#3A3A3A" }} className="truncate max-w-[140px]">
-                            {item.name} <span style={{ color: "#8A8075" }}>({item.size})</span>
-                          </span>
-                        </div>
-                        <span style={{ color: "#3A3A3A" }} className="flex-shrink-0">${item.price}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {/* Price Breakdown */}
-                <div className="space-y-3 mb-6 pb-6 border-b" style={{ borderColor: "#EAE6DF" }}>
-                  <div className="flex justify-between text-sm">
-                    <span style={{ color: "#8A8075" }}>Subtotal ({stackItems.length} items)</span>
-                    <span style={{ color: "#3A3A3A" }}>${totalPrice.toFixed(2)}</span>
-                  </div>
-                  {subscriptionDiscount > 0 && (
-                    <div className="flex justify-between text-sm">
-                      <span style={{ color: "#a4b08a" }}>
-                        Cycle discount ({subscriptionCadence === "6-month" ? "15" : "10"}%)
-                      </span>
-                      <span style={{ color: "#a4b08a" }}>
-                        -${(totalPrice * subscriptionDiscount).toFixed(2)}
-                      </span>
+                          <path
+                            d="M1 5.5L5 9.5L13 1.5"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      ) : (
+                        step
+                      )}
                     </div>
+                    <span
+                      className={`text-sm font-medium ${
+                        isActive || isComplete
+                          ? "text-black"
+                          : "text-[#8A8075]"
+                      }`}
+                    >
+                      {labels[idx]}
+                    </span>
+                  </div>
+                  {idx < 2 && (
+                    <div
+                      className="flex-1 h-px mx-4"
+                      style={{
+                        backgroundColor:
+                          step < currentStep ? "#A4B08A" : "#E8E5E0",
+                      }}
+                    />
                   )}
-                  <div className="flex justify-between pt-3 border-t" style={{ borderColor: "#EAE6DF" }}>
-                    <span className="font-bold" style={{ color: "#010101" }}>
-                      Total
-                    </span>
-                    <span className="text-2xl font-bold" style={{ color: "#010101" }}>
-                      ${discountedPrice.toFixed(2)}
-                    </span>
-                  </div>
                 </div>
-
-                {/* Free Gifts */}
-                {freeGifts.length > 0 && (
-                  <div className="mb-6 p-4 rounded-lg" style={{ backgroundColor: "#c6f18420" }}>
-                    <p className="text-sm font-semibold mb-2" style={{ color: "#3A3A3A" }}>
-                      Included with your order:
-                    </p>
-                    <ul className="text-sm space-y-1" style={{ color: "#8A8075" }}>
-                      {freeGifts.map((gift, idx) => (
-                        <li key={idx}>+ {gift}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {/* Next Threshold Progress */}
-                {stackItems.length > 0 && stackItems.length < 7 && (
-                  <div className="mb-6 p-3 rounded" style={{ backgroundColor: "#EAE6DF" }}>
-                    <p className="text-xs font-semibold" style={{ color: "#3A3A3A" }}>
-                      {stackItems.length < 3 && `Add ${3 - stackItems.length} more for free bacteriostatic water`}
-                      {stackItems.length >= 3 && stackItems.length < 5 && `Add ${5 - stackItems.length} more for free shipping`}
-                      {stackItems.length >= 5 && stackItems.length < 7 && `Add ${7 - stackItems.length} more for free cold-pack`}
-                    </p>
-                  </div>
-                )}
-
-                {/* Checkout Button */}
-                <button
-                  onClick={handleCheckout}
-                  disabled={stackItems.length === 0}
-                  className="w-full py-3 px-6 rounded-lg font-semibold text-sm flex items-center justify-center gap-2 transition-all disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-90"
-                  style={{
-                    backgroundColor: "#a4b08a",
-                    color: "#000000",
-                  }}
-                >
-                  Add to Order & Checkout
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-
-                {/* Trust Badges */}
-                <div className="flex justify-center gap-4 text-xs mt-4" style={{ color: "#8A8075" }}>
-                  <span>99.7% Purity</span>
-                  <span>COA Included</span>
-                  <span>Same-Day Ship</span>
-                </div>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
       </div>
 
-      {/* Mobile Sticky Summary */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 p-4 border-t mobile-sticky-cta">
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-xs" style={{ color: "#8A8075" }}>
-              {stackItems.length} items &middot; Total
-            </p>
-            <p className="text-xl font-bold" style={{ color: "#010101" }}>
-              ${discountedPrice.toFixed(2)}
-            </p>
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-16">
+        <div className="flex flex-col lg:flex-row gap-12">
+          {/* Main Content */}
+          <div className="flex-1">
+            {/* Step 1: Choose Compounds */}
+            <section className="mb-20">
+              <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
+                Choose Your Compounds
+              </h1>
+              <p className="text-lg text-gray-600 mb-10">
+                Select the research peptides for your protocol. Start with one
+                or build a comprehensive stack.
+              </p>
+
+              {/* Category Filters */}
+              <div className="flex flex-wrap gap-3 mb-10">
+                {categories.map((cat) => (
+                  <button
+                    key={cat}
+                    onClick={() => setSelectedCategory(cat)}
+                    className={`px-5 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                      selectedCategory === cat
+                        ? "bg-[#A4B08A] text-white border border-[#A4B08A]"
+                        : "bg-white text-gray-700 border border-[#E8E5E0] hover:border-[#A4B08A]"
+                    }`}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
+
+              {/* Product Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {filteredProducts.map((product) => {
+                  const selected = selectedProducts.get(product.slug);
+                  const quantity = selected?.quantity || 0;
+
+                  return (
+                    <motion.div
+                      key={product.slug}
+                      layout
+                      className={`bg-white rounded-lg p-6 transition-all ${
+                        quantity > 0
+                          ? "border-2 border-[#A4B08A] bg-[#A4B08A]/5"
+                          : "border border-[#E8E5E0] hover:border-[#A4B08A]"
+                      }`}
+                      style={{
+                        boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
+                      }}
+                    >
+                      <div className="flex gap-4">
+                        {/* Product Image */}
+                        <div
+                          className="w-20 h-20 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden"
+                          style={{ backgroundColor: "#F7F4EE" }}
+                        >
+                          {hasProductPhoto(product.slug) ? (
+                            <Image
+                              src={getProductImagePath(product.slug)}
+                              alt={product.name}
+                              width={64}
+                              height={64}
+                              className="object-contain"
+                            />
+                          ) : (
+                            <span className="text-sm font-medium text-[#8A8075]">{product.name}</span>
+                          )}
+                        </div>
+
+                        {/* Product Info */}
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-lg font-bold text-black mb-1">
+                            {product.name}
+                          </h3>
+                          <p className="text-sm text-gray-600 mb-2">
+                            {product.size}
+                          </p>
+                          <p className="text-xl font-bold text-black">
+                            ${product.price}
+                          </p>
+                        </div>
+
+                        {/* Add/Remove Buttons */}
+                        <div className="flex flex-col items-end justify-between">
+                          {quantity === 0 ? (
+                            <button
+                              onClick={() => addProduct(product.slug)}
+                              className="w-10 h-10 rounded-full bg-[#A4B08A] text-white flex items-center justify-center hover:bg-[#8A9570] transition-colors"
+                              aria-label="Add product"
+                            >
+                              <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                fill="none"
+                              >
+                                <path
+                                  d="M8 3V13M3 8H13"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                />
+                              </svg>
+                            </button>
+                          ) : (
+                            <div className="flex flex-col items-center gap-2">
+                              <button
+                                onClick={() => addProduct(product.slug)}
+                                className="w-8 h-8 rounded-full bg-[#A4B08A] text-white flex items-center justify-center hover:bg-[#8A9570] transition-colors"
+                                aria-label="Add more"
+                              >
+                                <svg
+                                  width="12"
+                                  height="12"
+                                  viewBox="0 0 16 16"
+                                  fill="none"
+                                >
+                                  <path
+                                    d="M8 3V13M3 8H13"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                  />
+                                </svg>
+                              </button>
+                              <span className="text-lg font-bold text-[#A4B08A]">
+                                {quantity}
+                              </span>
+                              <button
+                                onClick={() => removeProduct(product.slug)}
+                                className="w-8 h-8 rounded-full border-2 border-[#A4B08A] text-[#A4B08A] flex items-center justify-center hover:bg-[#A4B08A] hover:text-white transition-colors"
+                                aria-label="Remove one"
+                              >
+                                <svg
+                                  width="12"
+                                  height="2"
+                                  viewBox="0 0 12 2"
+                                  fill="none"
+                                >
+                                  <path
+                                    d="M1 1H11"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </section>
+
+            {/* Step 2: Select Cycle */}
+            <AnimatePresence>
+              {selectedProducts.size > 0 && (
+                <motion.section
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mb-20"
+                >
+                  <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+                    Select Your Cycle
+                  </h2>
+                  <p className="text-lg text-gray-600 mb-10">
+                    Choose a research duration that aligns with your protocol
+                    objectives.
+                  </p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {cycleOptions.map((option) => (
+                      <button
+                        key={option.id}
+                        onClick={() => setSelectedCycle(option.id)}
+                        className={`bg-white rounded-lg p-6 text-left transition-all ${
+                          selectedCycle === option.id
+                            ? "border-2 border-[#A4B08A] bg-[#A4B08A]/5"
+                            : "border border-[#E8E5E0] hover:border-[#A4B08A]"
+                        }`}
+                        style={{
+                          boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
+                        }}
+                      >
+                        <h3 className="text-xl font-bold text-black mb-2">
+                          {option.name}
+                        </h3>
+                        <p className="text-lg font-semibold text-[#A4B08A] mb-3">
+                          {option.savings}
+                        </p>
+                        <p className="text-sm text-gray-600 mb-2">
+                          {option.description}
+                        </p>
+                        {option.eyebrow && (
+                          <p className="text-xs text-gray-500 italic">
+                            {option.eyebrow}
+                          </p>
+                        )}
+                        {selectedCycle === option.id && (
+                          <div className="mt-4 pt-4 border-t border-[#E8E5E0]">
+                            <p className="text-sm text-gray-600">
+                              Per shipment:
+                            </p>
+                            <p className="text-2xl font-bold text-black">
+                              ${discountedSubtotal.toFixed(0)}
+                            </p>
+                          </div>
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                </motion.section>
+              )}
+            </AnimatePresence>
+
+            {/* Step 3: What to Expect */}
+            <AnimatePresence>
+              {selectedCycle && (
+                <motion.section
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mb-20"
+                >
+                  <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+                    What to Expect
+                  </h2>
+                  <p className="text-lg text-gray-600 mb-10">
+                    A typical research protocol timeline with key observation
+                    windows.
+                  </p>
+
+                  <div className="relative">
+                    {/* Timeline Line */}
+                    <div
+                      className="absolute left-4 top-0 bottom-0 w-px"
+                      style={{ backgroundColor: "#E8E5E0" }}
+                    />
+
+                    {/* Timeline Items */}
+                    <div className="space-y-8">
+                      {timeline.map((item, idx) => (
+                        <div key={idx} className="relative pl-12">
+                          {/* Dot */}
+                          <div
+                            className="absolute left-0 w-8 h-8 rounded-full flex items-center justify-center"
+                            style={{ backgroundColor: "#A4B08A" }}
+                          >
+                            <div className="w-3 h-3 rounded-full bg-white" />
+                          </div>
+
+                          {/* Content */}
+                          <div>
+                            <p className="text-sm font-semibold text-[#A4B08A] mb-1">
+                              {item.week}
+                            </p>
+                            <h3 className="text-xl font-bold text-black mb-2">
+                              {item.title}
+                            </h3>
+                            <p className="text-gray-600">{item.description}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </motion.section>
+              )}
+            </AnimatePresence>
           </div>
-          <button
-            onClick={handleCheckout}
-            disabled={stackItems.length === 0}
-            className="py-3 px-6 rounded-lg font-semibold text-sm transition-all disabled:opacity-40 disabled:cursor-not-allowed"
-            style={{
-              backgroundColor: "#a4b08a",
-              color: "#000000",
-            }}
-          >
-            Checkout
-          </button>
+
+          {/* Order Summary Sidebar */}
+          <div className="w-full lg:w-96 flex-shrink-0">
+            <div className="lg:sticky lg:top-24">
+              <div
+                className="bg-white rounded-lg p-6 border border-[#E8E5E0]"
+                style={{
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
+                }}
+              >
+                <h3 className="text-2xl font-bold text-black mb-6">
+                  Your Protocol
+                </h3>
+
+                {selectedProducts.size === 0 ? (
+                  <p className="text-gray-500 text-sm">
+                    No compounds selected yet. Choose from the grid above to
+                    build your stack.
+                  </p>
+                ) : (
+                  <>
+                    {/* Selected Products */}
+                    <div className="space-y-4 mb-6">
+                      {Array.from(selectedProducts.values()).map((item) => {
+                        const product = products.find(
+                          (p) => p.slug === item.slug
+                        );
+                        if (!product) return null;
+
+                        return (
+                          <div
+                            key={item.slug}
+                            className="flex items-start justify-between"
+                          >
+                            <div className="flex-1">
+                              <p className="font-medium text-black">
+                                {product.name}
+                              </p>
+                              <p className="text-sm text-gray-600">
+                                Qty: {item.quantity} × ${item.price}
+                              </p>
+                            </div>
+                            <p className="font-bold text-black">
+                              ${(item.price * item.quantity).toFixed(0)}
+                            </p>
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    {/* Selected Cycle */}
+                    {selectedCycle && (
+                      <div className="mb-6 pb-6 border-b border-[#E8E5E0]">
+                        <p className="text-sm text-gray-600 mb-1">
+                          Selected Cycle:
+                        </p>
+                        <p className="font-semibold text-black">
+                          {
+                            cycleOptions.find((o) => o.id === selectedCycle)
+                              ?.name
+                          }
+                        </p>
+                      </div>
+                    )}
+
+                    {/* Benefits */}
+                    <div className="mb-6 pb-6 border-b border-[#E8E5E0]">
+                      <p className="text-sm font-semibold text-black mb-3">
+                        Benefits Earned:
+                      </p>
+                      <div className="space-y-2">
+                        {benefits.map((benefit, idx) => (
+                          <div key={idx} className="flex items-start gap-2">
+                            <div
+                              className={`w-5 h-5 rounded flex items-center justify-center flex-shrink-0 ${
+                                benefit.earned
+                                  ? "bg-[#A4B08A]"
+                                  : "bg-gray-200"
+                              }`}
+                            >
+                              {benefit.earned && (
+                                <svg
+                                  width="12"
+                                  height="10"
+                                  viewBox="0 0 14 11"
+                                  fill="none"
+                                >
+                                  <path
+                                    d="M1 5.5L5 9.5L13 1.5"
+                                    stroke="white"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                  />
+                                </svg>
+                              )}
+                            </div>
+                            <p
+                              className={`text-sm ${
+                                benefit.earned
+                                  ? "text-black font-medium"
+                                  : "text-gray-400"
+                              }`}
+                            >
+                              {benefit.text}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Pricing */}
+                    <div className="space-y-3 mb-6">
+                      <div className="flex justify-between text-gray-700">
+                        <span>Subtotal per shipment:</span>
+                        <span className="font-semibold">
+                          ${subtotal.toFixed(0)}
+                        </span>
+                      </div>
+                      {cycleDiscount > 0 && (
+                        <div className="flex justify-between text-[#A4B08A]">
+                          <span>Cycle discount ({cycleDiscount * 100}%):</span>
+                          <span className="font-semibold">
+                            -${(subtotal * cycleDiscount).toFixed(0)}
+                          </span>
+                        </div>
+                      )}
+                      <div className="flex justify-between text-gray-700">
+                        <span>Discounted per shipment:</span>
+                        <span className="font-semibold">
+                          ${discountedSubtotal.toFixed(0)}
+                        </span>
+                      </div>
+                      <div className="pt-3 border-t border-[#E8E5E0]">
+                        <div className="flex justify-between">
+                          <span className="font-bold text-black">
+                            Total for full cycle:
+                          </span>
+                          <span className="font-bold text-black text-xl">
+                            ${totalCyclePrice.toFixed(0)}
+                          </span>
+                        </div>
+                        {shipments > 1 && (
+                          <p className="text-xs text-gray-500 mt-1">
+                            {shipments} shipments × ${discountedSubtotal.toFixed(0)}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* CTA */}
+                    <button
+                      disabled={!selectedCycle}
+                      className={`w-full py-4 rounded-lg font-semibold text-lg transition-colors ${
+                        selectedCycle
+                          ? "bg-[#A4B08A] text-black hover:bg-[#8A9570]"
+                          : "bg-gray-200 text-gray-400 cursor-not-allowed"
+                      }`}
+                    >
+                      Proceed to Checkout
+                    </button>
+                    <p className="text-xs text-gray-500 text-center mt-3">
+                      Modify or cancel anytime
+                    </p>
+                  </>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
