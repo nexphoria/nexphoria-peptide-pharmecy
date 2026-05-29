@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Product } from "@/lib/products";
 import { hasProductPhoto, getProductImagePath } from "@/lib/product-images";
 import { useCart } from "@/lib/cart";
+import ProductVial from "@/components/ProductVial";
 
 interface ProductCardProps {
   product: Product;
@@ -51,39 +52,6 @@ function StarRating({ rating }: { rating: number }) {
   );
 }
 
-/** SVG pharmaceutical vial — shown when no product photo is available */
-function VialFallback({ name, accentColor }: { name: string; accentColor: string }) {
-  const cap = accentColor || "#A4B08A";
-  const label = name.length > 9 ? name.slice(0, 9) : name;
-  return (
-    <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: "#F0EDE7" }}>
-      <svg width="68" height="126" viewBox="0 0 68 126" fill="none" aria-hidden="true">
-        {/* Flip-top cap */}
-        <rect x="23" y="2" width="22" height="10" rx="3" fill={cap} />
-        {/* Crimp band */}
-        <rect x="19" y="11" width="30" height="5" rx="1.5" fill="#C4C4C4" />
-        {/* Neck */}
-        <path d="M26 16 L26 22 L42 22 L42 16 Z" fill="#E6EDEA" />
-        {/* Glass body */}
-        <rect x="15" y="22" width="38" height="88" rx="4" fill="#EDF3F1" stroke="#C4D0CB" strokeWidth="0.8" />
-        {/* Glass shine */}
-        <rect x="19" y="26" width="6" height="80" rx="3" fill="rgba(255,255,255,0.5)" />
-        {/* Label */}
-        <rect x="18" y="36" width="32" height="56" rx="2" fill="white" stroke="#DCEAE4" strokeWidth="0.5" />
-        {/* NEXPHORIA */}
-        <text x="34" y="49" textAnchor="middle" fontSize="3.5" fill="#A4B08A" fontFamily="Inter,sans-serif" fontWeight="600" letterSpacing="1.2">NEXPHORIA</text>
-        {/* Accent line */}
-        <line x1="21" y1="53" x2="47" y2="53" stroke={cap} strokeWidth="0.6" />
-        {/* Product name */}
-        <text x="34" y="65" textAnchor="middle" fontSize="6" fill="#1A1A1A" fontFamily="Inter,sans-serif" fontWeight="700">{label}</text>
-        {/* Research only */}
-        <text x="34" y="81" textAnchor="middle" fontSize="3" fill="#AAA" fontFamily="Inter,sans-serif">For Research Use Only</text>
-        {/* Vial bottom */}
-        <rect x="15" y="110" width="38" height="6" rx="3" fill="#D4DAD8" />
-      </svg>
-    </div>
-  );
-}
 
 export default function ProductCard({
   product,
@@ -121,7 +89,15 @@ export default function ProductCard({
                 className="w-full h-full object-cover"
               />
             ) : (
-              <VialFallback name={product.name} accentColor={product.accentColor} />
+              <div className="w-full h-full flex items-center justify-center p-4" style={{ backgroundColor: "#1A1A18" }}>
+                <ProductVial
+                  productName={product.name}
+                  dosage={product.dosages?.[0]?.size || product.size || "5mg"}
+                  category={product.category}
+                  accentColor={product.accentColor}
+                  size="thumbnail"
+                />
+              </div>
             )}
 
             {/* Badge */}

@@ -174,6 +174,38 @@ async function handleCheckout(request, env) {
   return json({ url: session.url, sessionId: session.id });
 }
 
+async function handleSupport(request, env) {
+  const body = await request.json();
+  const { name, email, question, online, submittedAt } = body || {};
+
+  if (!name || !email || !question) return json({ error: 'missing_fields' }, 400);
+  if (!EMAIL_RE.test(email)) return json({ error: 'invalid_email' }, 400);
+
+  const entry = {
+    name: String(name).trim(),
+    email: String(email).trim().toLowerCase(),
+    question: String(question).trim(),
+    online: Boolean(online),
+    submittedAt: submittedAt || new Date().toISOString(),
+  };
+
+  if (env.SUBSCRIBERS) {
+    try {
+      const key = `support:${entry.email}:${Date.now()}`;
+      await env.SUBSCRIBERS.put(key, JSON.stringify(entry), { expirationTtl: 60 * 60 * 24 * 365 });
+      const indexKey = 'index:support';
+      const index = JSON.parse((await env.SUBSCRIBERS.get(indexKey)) || '[]');
+      index.push({ email: entry.email, name: entry.name, submittedAt: entry.submittedAt });
+      await env.SUBSCRIBERS.put(indexKey, JSON.stringify(index));
+    } catch {
+      // KV failure must not fail the response
+    }
+  }
+
+  await forwardWebhook(env.SUPPORT_WEBHOOK_URL, entry);
+  return json({ success: true }, 201);
+}
+
 async function handleWholesale(request, env) {
   const body = await request.json();
   const { name, institution, email, monthlyVolume, compounds, message } = body || {};
@@ -226,6 +258,7 @@ export default {
       if (path.endsWith('/contact')) return await handleContact(request, env);
       if (path.endsWith('/waitlist')) return await handleWaitlist(request, env);
       if (path.endsWith('/wholesale')) return await handleWholesale(request, env);
+      if (path.endsWith('/support')) return await handleSupport(request, env);
       // Default (root or /checkout): Stripe checkout session.
       return await handleCheckout(request, env);
     } catch (err) {

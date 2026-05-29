@@ -44,7 +44,7 @@ interface Props {
 }
 
 // Deterministic COA data from slug hash
-function getProductCOA(slug: string) {
+function getProductCOA(slug: string, productPurity?: string) {
   let hash = 0;
   for (let i = 0; i < slug.length; i++) {
     hash = (hash * 31 + slug.charCodeAt(i)) & 0x7fffffff;
@@ -58,8 +58,22 @@ function getProductCOA(slug: string) {
   const lotDay = String(dayNum).padStart(2, "0");
   const lotNum = Math.abs((hash * 7) % 9000) + 1000;
   const reportNum = Math.abs((hash * 13) % 900000) + 100000;
-  const purityHundredths = 9880 + (hash % 80);
-  const purity = (purityHundredths / 100).toFixed(2);
+
+  // Derive COA purity from the product's stated purity spec (e.g. "≥98.5%")
+  // COA result is deterministically above the stated minimum by 0.01–0.49%
+  let purity: string;
+  if (productPurity) {
+    const minVal = parseFloat(productPurity.replace(/[^0-9.]/g, ""));
+    if (!isNaN(minVal)) {
+      const offset = (hash % 49) / 100; // 0.00–0.48, deterministic
+      purity = (minVal + offset).toFixed(2);
+    } else {
+      purity = ((9880 + (hash % 80)) / 100).toFixed(2);
+    }
+  } else {
+    purity = ((9880 + (hash % 80)) / 100).toFixed(2);
+  }
+
   return {
     lot: `LOT-${year}${lotMonth}${lotDay}-${lotNum}`,
     lab,
@@ -135,7 +149,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
   );
   const buyBoxRef = useRef<HTMLDivElement>(null);
   const hasPhoto = hasProductPhoto(product.slug);
-  const coa = getProductCOA(product.slug);
+  const coa = getProductCOA(product.slug, product.purity);
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#FFFFF3" }}>

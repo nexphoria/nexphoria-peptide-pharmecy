@@ -25,7 +25,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   // GH Axis
   "ipamorelin": [
     "ipamorelin-vs-ghrp2-vs-ghrp6-growth-hormone-secretagogue-comparison",
-    "sermorelin-ghrh-analog-anti-aging-research",
+    "ghrp-6-original-ghrelin-mimetic-research-guide",
     "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
   ],
   "cjc-1295": [

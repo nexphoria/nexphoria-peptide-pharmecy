@@ -10,13 +10,22 @@ export default function AgeVerificationModal() {
   const [researchConfirmed, setResearchConfirmed] = useState(false);
 
   useEffect(() => {
+    const EXPIRY_MS = 86400000; // 24 hours
+    let verified = false;
     try {
-      const verified = localStorage.getItem("age_verified");
-      if (!verified) {
-        setShowModal(true);
+      const ts = localStorage.getItem("age_verified");
+      if (ts && Date.now() - parseInt(ts, 10) < EXPIRY_MS) {
+        verified = true;
       }
     } catch {
-      // localStorage unavailable (e.g. private browsing with strict settings) — show modal
+      // localStorage unavailable — try sessionStorage
+      try {
+        verified = sessionStorage.getItem("age_verified_session") === "true";
+      } catch {
+        // both unavailable — show modal
+      }
+    }
+    if (!verified) {
       setShowModal(true);
     }
   }, []);
@@ -24,9 +33,14 @@ export default function AgeVerificationModal() {
   const handleEnter = () => {
     if (ageConfirmed && researchConfirmed) {
       try {
-        localStorage.setItem("age_verified", "true");
+        localStorage.setItem("age_verified", Date.now().toString());
       } catch {
-        // ignore — modal closes regardless
+        // localStorage unavailable — fall back to sessionStorage
+        try {
+          sessionStorage.setItem("age_verified_session", "true");
+        } catch {
+          // ignore — modal closes regardless
+        }
       }
       setShowModal(false);
     }

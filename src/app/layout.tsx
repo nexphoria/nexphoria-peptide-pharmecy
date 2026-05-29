@@ -5,6 +5,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import CartDrawer from "@/components/cart/CartDrawer";
 import AgeVerificationModal from "@/components/AgeVerificationModal";
+import LiveChatWidget from "@/components/LiveChatWidget";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -106,6 +107,7 @@ export default function RootLayout({
         <Footer />
         <CartDrawer />
         <AgeVerificationModal />
+        <LiveChatWidget />
       </body>
     </html>
   );

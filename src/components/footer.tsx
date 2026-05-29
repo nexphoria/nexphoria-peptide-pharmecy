@@ -58,7 +58,7 @@ const footerNav = {
   Legal: [
     { label: "Terms of Service", href: "/terms" },
     { label: "Privacy Policy", href: "/privacy" },
-    { label: "Research Use Policy", href: "/terms#research-use-only" },
+    { label: "Research Use Policy", href: "/legal/disclaimer" },
   ],
 };
 
@@ -244,6 +244,40 @@ export function Footer() {
 
           {/* Payment icons */}
           <div className="flex items-center gap-3" aria-label="Accepted payment methods">
+            {/* Visa */}
+            <div
+              className="flex items-center px-2 py-1 rounded"
+              style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.10)" }}
+              title="Visa"
+            >
+              <svg width="28" height="10" viewBox="0 0 28 10" fill="none" aria-hidden="true">
+                <text x="0" y="9" fontFamily="system-ui,sans-serif" fontSize="9" fontWeight="800" fontStyle="italic" fill="rgba(255,255,255,0.45)" letterSpacing="-0.5">VISA</text>
+              </svg>
+            </div>
+
+            {/* Mastercard */}
+            <div
+              className="flex items-center px-2 py-1 rounded"
+              style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.10)" }}
+              title="Mastercard"
+            >
+              <svg width="20" height="12" viewBox="0 0 20 12" fill="none" aria-hidden="true">
+                <circle cx="7" cy="6" r="5.5" fill="rgba(255,255,255,0.22)" stroke="rgba(255,255,255,0.18)" strokeWidth="0.5" />
+                <circle cx="13" cy="6" r="5.5" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.18)" strokeWidth="0.5" />
+              </svg>
+            </div>
+
+            {/* Amex */}
+            <div
+              className="flex items-center px-2 py-1 rounded"
+              style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.10)" }}
+              title="American Express"
+            >
+              <svg width="26" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true">
+                <text x="0" y="9" fontFamily="system-ui,sans-serif" fontSize="7.5" fontWeight="700" fill="rgba(255,255,255,0.45)" letterSpacing="0.3">AMEX</text>
+              </svg>
+            </div>
+
             {/* AllayPay */}
             <div
               className="flex items-center gap-1 px-2 py-1 rounded"
