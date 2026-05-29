@@ -270,10 +270,10 @@ export default function BuildYourStackPage() {
           <div className="flex-1">
             {/* Step 1: Choose Compounds */}
             <section className="mb-20">
-              <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
+              <h1 className="text-4xl md:text-5xl font-medium text-black mb-4 tracking-tight">
                 Choose Your Compounds
               </h1>
-              <p className="text-lg text-gray-600 mb-10">
+              <p className="text-lg text-[#555] mb-10">
                 Select the research peptides for your protocol. Start with one
                 or build a comprehensive stack.
               </p>
@@ -287,7 +287,7 @@ export default function BuildYourStackPage() {
                     className={`px-5 py-2.5 rounded-lg text-sm font-medium transition-all ${
                       selectedCategory === cat
                         ? "bg-[#A4B08A] text-white border border-[#A4B08A]"
-                        : "bg-white text-gray-700 border border-[#E8E5E0] hover:border-[#A4B08A]"
+                        : "bg-white text-[#555] border border-[#E8E5E0] hover:border-[#A4B08A]"
                     }`}
                   >
                     {cat}
@@ -335,13 +335,13 @@ export default function BuildYourStackPage() {
 
                         {/* Product Info */}
                         <div className="flex-1 min-w-0">
-                          <h3 className="text-lg font-bold text-black mb-1">
+                          <h3 className="text-lg font-medium text-black mb-1">
                             {product.name}
                           </h3>
-                          <p className="text-sm text-gray-600 mb-2">
+                          <p className="text-sm text-[#555] mb-2">
                             {product.size}
                           </p>
-                          <p className="text-xl font-bold text-black">
+                          <p className="text-xl font-medium text-black">
                             ${product.price}
                           </p>
                         </div>
@@ -429,10 +429,10 @@ export default function BuildYourStackPage() {
                   animate={{ opacity: 1, y: 0 }}
                   className="mb-20"
                 >
-                  <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+                  <h2 className="text-3xl md:text-4xl font-medium text-black mb-4 tracking-tight">
                     Select Your Cycle
                   </h2>
-                  <p className="text-lg text-gray-600 mb-10">
+                  <p className="text-lg text-[#555] mb-10">
                     Choose a research duration that aligns with your protocol
                     objectives.
                   </p>
@@ -451,26 +451,26 @@ export default function BuildYourStackPage() {
                           boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
                         }}
                       >
-                        <h3 className="text-xl font-bold text-black mb-2">
+                        <h3 className="text-xl font-medium text-black mb-2">
                           {option.name}
                         </h3>
                         <p className="text-lg font-semibold text-[#A4B08A] mb-3">
                           {option.savings}
                         </p>
-                        <p className="text-sm text-gray-600 mb-2">
+                        <p className="text-sm text-[#555] mb-2">
                           {option.description}
                         </p>
                         {option.eyebrow && (
-                          <p className="text-xs text-gray-500 italic">
+                          <p className="text-xs text-[#888] italic">
                             {option.eyebrow}
                           </p>
                         )}
                         {selectedCycle === option.id && (
                           <div className="mt-4 pt-4 border-t border-[#E8E5E0]">
-                            <p className="text-sm text-gray-600">
+                            <p className="text-sm text-[#555]">
                               Per shipment:
                             </p>
-                            <p className="text-2xl font-bold text-black">
+                            <p className="text-2xl font-medium text-black">
                               ${discountedSubtotal.toFixed(0)}
                             </p>
                           </div>
@@ -490,10 +490,10 @@ export default function BuildYourStackPage() {
                   animate={{ opacity: 1, y: 0 }}
                   className="mb-20"
                 >
-                  <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+                  <h2 className="text-3xl md:text-4xl font-medium text-black mb-4 tracking-tight">
                     What to Expect
                   </h2>
-                  <p className="text-lg text-gray-600 mb-10">
+                  <p className="text-lg text-[#555] mb-10">
                     A typical research protocol timeline with key observation
                     windows.
                   </p>
@@ -522,10 +522,10 @@ export default function BuildYourStackPage() {
                             <p className="text-sm font-semibold text-[#A4B08A] mb-1">
                               {item.week}
                             </p>
-                            <h3 className="text-xl font-bold text-black mb-2">
+                            <h3 className="text-xl font-medium text-black mb-2">
                               {item.title}
                             </h3>
-                            <p className="text-gray-600">{item.description}</p>
+                            <p className="text-[#555]">{item.description}</p>
                           </div>
                         </div>
                       ))}
@@ -545,12 +545,12 @@ export default function BuildYourStackPage() {
                   boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
                 }}
               >
-                <h3 className="text-2xl font-bold text-black mb-6">
+                <h3 className="text-2xl font-medium text-black mb-6">
                   Your Protocol
                 </h3>
 
                 {selectedProducts.size === 0 ? (
-                  <p className="text-gray-500 text-sm">
+                  <p className="text-[#888] text-sm">
                     No compounds selected yet. Choose from the grid above to
                     build your stack.
                   </p>
@@ -573,7 +573,7 @@ export default function BuildYourStackPage() {
                               <p className="font-medium text-black">
                                 {product.name}
                               </p>
-                              <p className="text-sm text-gray-600">
+                              <p className="text-sm text-[#555]">
                                 Qty: {item.quantity} × ${item.price}
                               </p>
                             </div>
@@ -588,7 +588,7 @@ export default function BuildYourStackPage() {
                     {/* Selected Cycle */}
                     {selectedCycle && (
                       <div className="mb-6 pb-6 border-b border-[#E8E5E0]">
-                        <p className="text-sm text-gray-600 mb-1">
+                        <p className="text-sm text-[#555] mb-1">
                           Selected Cycle:
                         </p>
                         <p className="font-semibold text-black">
@@ -612,7 +612,7 @@ export default function BuildYourStackPage() {
                               className={`w-5 h-5 rounded flex items-center justify-center flex-shrink-0 ${
                                 benefit.earned
                                   ? "bg-[#A4B08A]"
-                                  : "bg-gray-200"
+                                  : "bg-[#E8E5E0]"
                               }`}
                             >
                               {benefit.earned && (
@@ -636,7 +636,7 @@ export default function BuildYourStackPage() {
                               className={`text-sm ${
                                 benefit.earned
                                   ? "text-black font-medium"
-                                  : "text-gray-400"
+                                  : "text-[#AAA]"
                               }`}
                             >
                               {benefit.text}
@@ -648,7 +648,7 @@ export default function BuildYourStackPage() {
 
                     {/* Pricing */}
                     <div className="space-y-3 mb-6">
-                      <div className="flex justify-between text-gray-700">
+                      <div className="flex justify-between text-[#555]">
                         <span>Subtotal per shipment:</span>
                         <span className="font-semibold">
                           ${subtotal.toFixed(0)}
@@ -662,7 +662,7 @@ export default function BuildYourStackPage() {
                           </span>
                         </div>
                       )}
-                      <div className="flex justify-between text-gray-700">
+                      <div className="flex justify-between text-[#555]">
                         <span>Discounted per shipment:</span>
                         <span className="font-semibold">
                           ${discountedSubtotal.toFixed(0)}
@@ -678,7 +678,7 @@ export default function BuildYourStackPage() {
                           </span>
                         </div>
                         {shipments > 1 && (
-                          <p className="text-xs text-gray-500 mt-1">
+                          <p className="text-xs text-[#888] mt-1">
                             {shipments} shipments × ${discountedSubtotal.toFixed(0)}
                           </p>
                         )}
@@ -691,12 +691,12 @@ export default function BuildYourStackPage() {
                       className={`w-full py-4 rounded-lg font-semibold text-lg transition-colors ${
                         selectedCycle
                           ? "bg-[#A4B08A] text-black hover:bg-[#8A9570]"
-                          : "bg-gray-200 text-gray-400 cursor-not-allowed"
+                          : "bg-[#E8E5E0] text-[#AAA] cursor-not-allowed"
                       }`}
                     >
                       Proceed to Checkout
                     </button>
-                    <p className="text-xs text-gray-500 text-center mt-3">
+                    <p className="text-xs text-[#888] text-center mt-3">
                       Modify or cancel anytime
                     </p>
                   </>

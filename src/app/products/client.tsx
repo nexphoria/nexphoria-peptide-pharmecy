@@ -90,16 +90,16 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
         {compareMode && (
           <div
             className="flex items-center gap-3 rounded-xl px-5 py-3.5 mb-6 text-sm"
-            style={{ backgroundColor: "#FFF8E8", border: "1px solid #F0D896" }}
+            style={{ backgroundColor: "#F4F7EE", border: "1px solid #C8D4B4" }}
           >
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0, color: "#C9A24B" }}>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0, color: "#8A9A70" }}>
               <rect x="1" y="1" width="6" height="14" rx="1" stroke="currentColor" strokeWidth="1.5" />
               <rect x="9" y="1" width="6" height="14" rx="1" stroke="currentColor" strokeWidth="1.5" />
             </svg>
-            <p style={{ color: "#7A5F1A" }}>
+            <p style={{ color: "#4A5A3A" }}>
               <strong>Compare mode on.</strong> Select up to 3 compounds to compare side-by-side.
               {compareSlugs.length > 0 && (
-                <> <span style={{ color: "#C9A24B" }}>{compareSlugs.length} selected.</span></>
+                <> <span style={{ color: "#8A9A70" }}>{compareSlugs.length} selected.</span></>
               )}
             </p>
           </div>
@@ -135,7 +135,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                 fontFamily: "var(--font-body)",
               }}
               onFocus={(e) => {
-                e.currentTarget.style.borderColor = "#C9A24B";
+                e.currentTarget.style.borderColor = "#A4B08A";
                 e.currentTarget.style.boxShadow = "0 0 0 3px rgba(201,162,75,0.12)";
               }}
               onBlur={(e) => {
@@ -243,7 +243,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
               <button
                 onClick={() => { setSearchQuery(""); setActiveFilter("All"); }}
                 className="underline transition-colors"
-                style={{ color: "#C9A24B" }}
+                style={{ color: "#A4B08A" }}
               >
                 browse all compounds
               </button>.
@@ -319,7 +319,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
             disabled={compareSlugs.length < 2}
             className="px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all"
             style={{
-              backgroundColor: compareSlugs.length >= 2 ? "#C9A24B" : "#333",
+              backgroundColor: compareSlugs.length >= 2 ? "#A4B08A" : "#333",
               color: compareSlugs.length >= 2 ? "#010101" : "#666",
               cursor: compareSlugs.length < 2 ? "not-allowed" : "pointer",
             }}

@@ -132,11 +132,10 @@ export default function ScienceClient() {
       >
         <div className="container-nex py-36 md:py-44">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0} className="max-w-2xl">
-            <span className="text-[10px] font-semibold uppercase tracking-[0.22em] mb-5 block" style={{ color: "#A4B08A" }}>Analytical Science</span>
+            <span className="eyebrow mb-5 block" style={{ color: "#A4B08A" }}>Analytical Science</span>
             <h1
-              className="font-bold tracking-tight mb-6 text-near-black"
+              className="font-medium tracking-tight mb-6 text-near-black"
               style={{
-                fontWeight: 200,
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",
                 lineHeight: 1.05,
                 letterSpacing: "-0.02em"
@@ -176,8 +175,8 @@ export default function ScienceClient() {
                   {method.code}
                 </div>
                 <h2
-                  className="font-bold tracking-tight mb-2 text-near-black"
-                  style={{ fontSize: "1.75rem", fontWeight: 600 }}
+                  className="tracking-tight mb-2 text-near-black"
+                  style={{ fontSize: "1.75rem", fontWeight: 500 }}
                 >
                   {method.title}
                 </h2>
@@ -221,10 +220,10 @@ export default function ScienceClient() {
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="mb-14"
           >
-            <span className="text-[10px] font-semibold uppercase tracking-[0.22em] mb-4 block" style={{ color: "#A4B08A" }}>Compound Classes</span>
+            <span className="eyebrow mb-4 block" style={{ color: "#A4B08A" }}>Compound Classes</span>
             <h2
-              className="font-bold tracking-tight text-near-black max-w-2xl"
-              style={{ fontWeight: 200, fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", letterSpacing: "-0.01em" }}
+              className="font-medium tracking-tight text-near-black max-w-2xl"
+              style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", letterSpacing: "-0.01em" }}
             >
               Understanding Peptide{" "}
               <em className="italic" style={{ color: "#A4B08A" }}>Research Areas</em>
@@ -253,8 +252,8 @@ export default function ScienceClient() {
                   ))}
                 </div>
                 <h3
-                  className="text-lg font-bold text-near-black mb-3"
-                  style={{ fontWeight: 600 }}
+                  className="text-lg text-near-black mb-3"
+                  style={{ fontWeight: 500 }}
                 >
                   {cls.title}
                 </h3>
@@ -270,10 +269,10 @@ export default function ScienceClient() {
         <div className="container-nex">
           <div className="grid lg:grid-cols-3 gap-12">
             <div>
-              <span className="text-[10px] font-semibold uppercase tracking-[0.22em] mb-4 block" style={{ color: "#A4B08A" }}>Documentation</span>
+              <span className="eyebrow mb-4 block" style={{ color: "#A4B08A" }}>Documentation</span>
               <h2
-                className="font-bold tracking-tight mb-4 text-near-black"
-                style={{ fontSize: "2rem", fontWeight: 600 }}
+                className="tracking-tight mb-4 text-near-black"
+                style={{ fontSize: "2rem", fontWeight: 500 }}
               >
                 Reading a COA
               </h2>
@@ -306,8 +305,8 @@ export default function ScienceClient() {
         <div className="container-nex flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
             <h2
-              className="font-bold tracking-tight mb-2 text-near-black"
-              style={{ fontSize: "2rem", fontWeight: 600 }}
+              className="tracking-tight mb-2 text-near-black"
+              style={{ fontSize: "2rem", fontWeight: 500 }}
             >
               View the full compound catalog
             </h2>

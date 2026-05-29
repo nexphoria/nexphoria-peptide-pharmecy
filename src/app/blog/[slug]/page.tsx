@@ -62,7 +62,7 @@ function RenderSection({ section }: { section: BlogSection }) {
         <h2
           className="text-xl md:text-2xl mt-10 mb-4"
           style={{
-            fontWeight: 400,
+            fontWeight: 500,
             color: "#010101",
             letterSpacing: "-0.01em",
             lineHeight: 1.25,
@@ -93,7 +93,7 @@ function RenderSection({ section }: { section: BlogSection }) {
             >
               <span
                 className="absolute -left-4 top-2.5 w-1.5 h-1.5 rounded-full flex-shrink-0"
-                style={{ backgroundColor: "#C9DD69" }}
+                style={{ backgroundColor: "#A4B08A" }}
               />
               {item}
             </li>
@@ -104,10 +104,10 @@ function RenderSection({ section }: { section: BlogSection }) {
     case "callout":
       return (
         <div
-          className="rounded-sm px-6 py-5 my-8"
+          className="rounded-lg px-6 py-5 my-8"
           style={{
             backgroundColor: "#F5F3EE",
-            borderLeft: "3px solid #C9DD69",
+            borderLeft: "3px solid #A4B08A",
           }}
         >
           <p
@@ -190,10 +190,14 @@ export default function BlogArticlePage({ params }: Props) {
     },
   };
 
-  // Related articles (same category or just next/prev)
-  const related = articles
-    .filter((a) => a.slug !== article.slug)
-    .slice(0, 2);
+  // Related articles: same category first, then fill with others — up to 3
+  const sameCategory = articles.filter(
+    (a) => a.slug !== article.slug && a.category === article.category
+  );
+  const otherCategory = articles.filter(
+    (a) => a.slug !== article.slug && a.category !== article.category
+  );
+  const related = [...sameCategory, ...otherCategory].slice(0, 3);
 
   return (
     <>
@@ -212,7 +216,7 @@ export default function BlogArticlePage({ params }: Props) {
             <Link
               href="/blog"
               className="inline-flex items-center gap-2 text-sm mb-8 hover:opacity-70 transition-opacity"
-              style={{ color: "#C9DD69", letterSpacing: "0.06em" }}
+              style={{ color: "#A4B08A", letterSpacing: "0.06em" }}
             >
               <span aria-hidden>←</span> Research Journal
             </Link>
@@ -220,7 +224,7 @@ export default function BlogArticlePage({ params }: Props) {
             <div className="flex flex-wrap items-center gap-4 mb-6">
               <span
                 className="text-xs uppercase tracking-widest px-3 py-1 rounded-full"
-                style={{ backgroundColor: "#C9DD69", color: "#010101" }}
+                style={{ backgroundColor: "#A4B08A", color: "#010101" }}
               >
                 {article.category}
               </span>
@@ -235,7 +239,7 @@ export default function BlogArticlePage({ params }: Props) {
             <h1
               className="text-3xl md:text-5xl mb-6"
               style={{
-                fontWeight: 200,
+                fontWeight: 500,
                 color: "#FFFFF3",
                 lineHeight: 1.1,
                 letterSpacing: "-0.02em",
@@ -253,7 +257,7 @@ export default function BlogArticlePage({ params }: Props) {
         </section>
 
         {/* Article body */}
-        <section className="px-6 py-14 md:py-16">
+        <section className="px-6 py-20 md:py-28">
           <div className="max-w-3xl mx-auto">
             <article>
               {article.body.map((section, i) => (
@@ -263,13 +267,13 @@ export default function BlogArticlePage({ params }: Props) {
 
             {/* Research disclaimer */}
             <div
-              className="mt-12 rounded-sm px-6 py-5"
+              className="mt-12 rounded-lg px-6 py-5"
               style={{
                 backgroundColor: "#F0EDE8",
                 border: "1px solid rgba(0,0,0,0.06)",
               }}
             >
-              <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#B8923A" }}>
+              <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#A4B08A" }}>
                 Research Use Only
               </p>
               <p className="text-xs" style={{ color: "#777", lineHeight: 1.7 }}>
@@ -286,33 +290,54 @@ export default function BlogArticlePage({ params }: Props) {
         {/* Related articles */}
         {related.length > 0 && (
           <section
-            className="px-6 py-14 md:py-16"
+            className="px-6 py-20 md:py-28"
             style={{ backgroundColor: "#EAE7E3" }}
           >
             <div className="max-w-3xl mx-auto">
+              <div className="flex items-baseline justify-between mb-7">
               <p
-                className="text-xs uppercase tracking-widest mb-7"
-                style={{ color: "#B8923A" }}
+                className="text-xs uppercase tracking-widest"
+                style={{ color: "#A4B08A" }}
               >
-                More from the Journal
+                Related Articles
               </p>
-              <div className="grid sm:grid-cols-2 gap-5">
+              <Link
+                href="/blog"
+                className="text-xs hover:opacity-70 transition-opacity"
+                style={{ color: "#A4B08A" }}
+              >
+                All articles →
+              </Link>
+            </div>
+              <div className={`grid gap-5 ${
+                related.length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-2"
+              }`}>
                 {related.map((rel) => (
                   <Link
                     key={rel.slug}
                     href={`/blog/${rel.slug}`}
-                    className="group block rounded-sm p-6"
+                    className="group block rounded-lg p-6"
                     style={{
                       backgroundColor: "#FFFFF3",
                       border: "1px solid rgba(0,0,0,0.06)",
                     }}
                   >
-                    <p
-                      className="text-xs uppercase tracking-widest mb-3"
-                      style={{ color: "#B8923A" }}
-                    >
-                      {rel.category}
-                    </p>
+                    <div className="flex items-center gap-2 mb-3">
+                      <p
+                        className="text-xs uppercase tracking-widest"
+                        style={{ color: "#A4B08A" }}
+                      >
+                        {rel.category}
+                      </p>
+                      {rel.category === article.category && (
+                        <span
+                          className="text-xs px-1.5 py-0.5 rounded-full"
+                          style={{ backgroundColor: "#A4B08A", color: "#010101", fontSize: "0.6rem", letterSpacing: "0.05em" }}
+                        >
+                          RELATED
+                        </span>
+                      )}
+                    </div>
                     <h3
                       className="text-base mb-2 group-hover:opacity-70 transition-opacity"
                       style={{
@@ -323,9 +348,15 @@ export default function BlogArticlePage({ params }: Props) {
                     >
                       {rel.title}
                     </h3>
+                    <p
+                      className="text-xs mb-3 line-clamp-2"
+                      style={{ color: "#777", lineHeight: 1.6 }}
+                    >
+                      {rel.description}
+                    </p>
                     <span
                       className="text-xs inline-flex items-center gap-1"
-                      style={{ color: "#B8923A" }}
+                      style={{ color: "#A4B08A" }}
                     >
                       {rel.readMinutes} min read <span aria-hidden>→</span>
                     </span>
@@ -337,30 +368,27 @@ export default function BlogArticlePage({ params }: Props) {
         )}
 
         {/* CTA */}
-        <section className="px-6 py-14 md:py-16">
+        <section className="px-6 py-20 md:py-28">
           <div className="max-w-3xl mx-auto text-center">
             <p
               className="text-xs uppercase tracking-widest mb-4"
-              style={{ color: "#B8923A" }}
+              style={{ color: "#A4B08A" }}
             >
               Research Catalog
             </p>
             <h2
-              className="text-3xl mb-5"
+              className="text-3xl md:text-4xl mb-5 font-medium tracking-tight"
               style={{
-                fontWeight: 200,
                 color: "#010101",
-                letterSpacing: "-0.02em",
               }}
             >
               Browse the compounds.
             </h2>
             <Link
               href="/products"
-              className="inline-flex items-center gap-3 px-6 py-3 text-sm font-medium rounded-sm transition-opacity hover:opacity-85"
-              style={{ backgroundColor: "#010101", color: "#FFFFF3" }}
+              className="btn-primary"
             >
-              View catalog <span aria-hidden>→</span>
+              View Catalog
             </Link>
           </div>
         </section>

@@ -163,7 +163,7 @@ function FaqItem({ q, a }: { q: string; a: string | ReactNode }) {
         <span
           className="shrink-0 mt-0.5 text-lg transition-transform duration-200"
           style={{
-            color: "#B8923A",
+            color: "#A4B08A",
             transform: open ? "rotate(45deg)" : "rotate(0deg)",
             display: "inline-block",
           }}
@@ -197,14 +197,14 @@ export default function FaqPage() {
       <section style={{ paddingTop: "160px", paddingBottom: "64px" }} className="px-6 md:px-12">
         <div className="max-w-4xl mx-auto">
           <p
-            className="text-xs uppercase mb-6"
-            style={{ color: "#B8923A", letterSpacing: "0.25em", fontWeight: 500 }}
+            className="eyebrow mb-6"
+            style={{ color: "#A4B08A" }}
           >
             Support
           </p>
           <h1
-            className="text-5xl md:text-6xl mb-6"
-            style={{ fontWeight: 200, color: "#010101", letterSpacing: "-0.01em", lineHeight: 1.1 }}
+            className="text-4xl md:text-5xl mb-6 font-medium tracking-tight"
+            style={{ color: "#010101", lineHeight: 1.1 }}
           >
             Frequently Asked<br />Questions
           </h1>
@@ -266,7 +266,7 @@ export default function FaqPage() {
               <h2
                 className="text-xs uppercase mb-6 pb-3 border-b"
                 style={{
-                  color: "#B8923A",
+                  color: "#A4B08A",
                   letterSpacing: "0.2em",
                   fontWeight: 600,
                   borderColor: "rgba(0,0,0,0.1)",
@@ -296,13 +296,13 @@ export default function FaqPage() {
           >
             <p
               className="text-xs uppercase mb-4"
-              style={{ color: "#B8923A", letterSpacing: "0.2em" }}
+              style={{ color: "#A4B08A", letterSpacing: "0.2em" }}
             >
               Still Have Questions?
             </p>
             <h3
-              className="text-2xl mb-3"
-              style={{ fontWeight: 300, color: "#010101" }}
+              className="text-2xl mb-3 font-medium"
+              style={{ color: "#010101" }}
             >
               Our research team is here to help.
             </h3>

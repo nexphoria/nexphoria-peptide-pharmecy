@@ -38,10 +38,10 @@ function formatDate(iso: string) {
 }
 
 const categoryColors: Record<string, string> = {
-  "Research Fundamentals": "#C9DD69",
-  "Quality & Testing": "#B8923A",
-  "Handling & Storage": "#7AA2C8",
-  "Compound Profiles": "#C8A97A",
+  "Research Fundamentals": "#A4B08A",
+  "Quality & Testing": "#A4B08A",
+  "Handling & Storage": "#A4B08A",
+  "Compound Profiles": "#A4B08A",
 };
 
 export default function BlogIndexPage() {
@@ -67,15 +67,15 @@ export default function BlogIndexPage() {
         >
           <div className="max-w-5xl mx-auto">
             <p
-              className="text-xs uppercase tracking-widest mb-5"
-              style={{ color: "#C9DD69" }}
+              className="eyebrow mb-5"
+              style={{ color: "#A4B08A" }}
             >
               Nexphoria Research
             </p>
             <h1
-              className="text-4xl md:text-6xl mb-6"
+              className="text-4xl md:text-5xl mb-6"
               style={{
-                fontWeight: 200,
+                fontWeight: 500,
                 color: "#FFFFF3",
                 lineHeight: 1.05,
                 letterSpacing: "-0.02em",
@@ -95,17 +95,17 @@ export default function BlogIndexPage() {
         </section>
 
         {/* Featured article */}
-        <section className="px-6 py-14 md:py-16" style={{ backgroundColor: "#EAE7E3" }}>
+        <section className="px-6 py-20 md:py-28" style={{ backgroundColor: "#EAE7E3" }}>
           <div className="max-w-5xl mx-auto">
             <p
               className="text-xs uppercase tracking-widest mb-6"
-              style={{ color: "#B8923A" }}
+              style={{ color: "#A4B08A" }}
             >
               Featured Article
             </p>
             <Link href={`/blog/${featured.slug}`} className="group block">
               <div
-                className="rounded-sm overflow-hidden"
+                className="rounded-lg overflow-hidden"
                 style={{
                   border: "1px solid rgba(0,0,0,0.06)",
                   borderTop: `3px solid ${categoryColors[featured.category] || "#C9DD69"}`,
@@ -135,7 +135,7 @@ export default function BlogIndexPage() {
                   <h2
                     className="text-2xl md:text-3xl mb-4 group-hover:opacity-80 transition-opacity"
                     style={{
-                      fontWeight: 300,
+                      fontWeight: 500,
                       color: "#010101",
                       letterSpacing: "-0.01em",
                       lineHeight: 1.2,
@@ -163,13 +163,13 @@ export default function BlogIndexPage() {
         </section>
 
         {/* Article grid */}
-        <section className="px-6 py-14 md:py-16">
+        <section className="px-6 py-20 md:py-28">
           <div className="max-w-5xl mx-auto">
             {rest.length > 0 && (
               <>
                 <p
                   className="text-xs uppercase tracking-widest mb-8"
-                  style={{ color: "#B8923A" }}
+                  style={{ color: "#A4B08A" }}
                 >
                   More Articles
                 </p>
@@ -181,7 +181,7 @@ export default function BlogIndexPage() {
                       className="group block"
                     >
                       <div
-                        className="rounded-sm h-full"
+                        className="rounded-lg h-full"
                         style={{
                           border: "1px solid rgba(0,0,0,0.06)",
                           borderTop: `2px solid ${
@@ -213,7 +213,7 @@ export default function BlogIndexPage() {
                           <h3
                             className="text-lg mb-3 group-hover:opacity-80 transition-opacity"
                             style={{
-                              fontWeight: 400,
+                              fontWeight: 500,
                               color: "#010101",
                               lineHeight: 1.3,
                               letterSpacing: "-0.01em",
@@ -257,22 +257,20 @@ export default function BlogIndexPage() {
 
         {/* Bottom CTA */}
         <section
-          className="px-6 py-14 md:py-16"
+          className="px-6 py-20 md:py-28"
           style={{ backgroundColor: "#EAE7E3" }}
         >
           <div className="max-w-3xl mx-auto text-center">
             <p
               className="text-xs uppercase tracking-widest mb-4"
-              style={{ color: "#B8923A" }}
+              style={{ color: "#A4B08A" }}
             >
               Research Catalog
             </p>
             <h2
-              className="text-3xl md:text-4xl mb-5"
+              className="text-3xl md:text-4xl mb-5 font-medium tracking-tight"
               style={{
-                fontWeight: 200,
                 color: "#010101",
-                letterSpacing: "-0.02em",
               }}
             >
               Ready to source?
@@ -287,11 +285,9 @@ export default function BlogIndexPage() {
             </p>
             <Link
               href="/products"
-              className="inline-flex items-center gap-3 px-7 py-3.5 text-sm font-medium rounded-sm transition-opacity hover:opacity-85"
-              style={{ backgroundColor: "#010101", color: "#FFFFF3" }}
+              className="btn-primary"
             >
-              Browse the catalog
-              <span aria-hidden>→</span>
+              Browse the Catalog
             </Link>
           </div>
         </section>
