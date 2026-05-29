@@ -4,7 +4,7 @@ import Link from "next/link";
 import { articles, getArticleBySlug, type BlogSection } from "@/lib/blog";
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -12,7 +12,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const article = getArticleBySlug(params.slug);
+  const { slug } = await params;
+  const article = getArticleBySlug(slug);
   if (!article) return { title: "Not Found" };
 
   return {
@@ -132,8 +133,9 @@ function RenderSection({ section }: { section: BlogSection }) {
   }
 }
 
-export default function BlogArticlePage({ params }: Props) {
-  const article = getArticleBySlug(params.slug);
+export default async function BlogArticlePage({ params }: Props) {
+  const { slug } = await params;
+  const article = getArticleBySlug(slug);
   if (!article) notFound();
 
   const canonicalUrl = `https://nexphoria.com/blog/${article.slug}`;
