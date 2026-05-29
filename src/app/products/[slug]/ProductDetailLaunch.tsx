@@ -14,7 +14,7 @@ import {
   Award,
   FileCheck,
 } from "lucide-react";
-import type { LaunchProduct } from "@/lib/products-launch";
+import type { CatalogProduct as LaunchProduct } from "@/lib/products-catalog";
 import ProductVial from "@/components/ProductVial";
 import { useCart } from "@/lib/cart";
 import { hasProductPhoto, getProductImagePath } from "@/lib/product-images";
@@ -37,8 +37,8 @@ export default function ProductDetailLaunch({ product, related }: Props) {
       slug: product.slug,
       name: product.name,
       casNumber: product.casNumber,
-      formula: product.formula,
-      molecularWeight: product.molecularWeight,
+      formula: product.formula || "",
+      molecularWeight: product.molecularWeight || "",
       purity: product.purity,
       category: product.category,
       price: selectedPricing?.pricePerUnit || product.basePrice,
@@ -158,7 +158,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                       Batch Number
                     </div>
                     <div className="font-mono font-semibold" style={{ color: "#3A3A3A" }}>
-                      {product.coa.batchNumber}
+                      {product.coa?.batchNumber}
                     </div>
                   </div>
                   <div>
@@ -166,7 +166,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                       Report Number
                     </div>
                     <div className="font-mono font-semibold" style={{ color: "#3A3A3A" }}>
-                      {product.coa.reportNumber}
+                      {product.coa?.reportNumber}
                     </div>
                   </div>
                   <div>
@@ -174,7 +174,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                       Purity (HPLC)
                     </div>
                     <div className="font-semibold" style={{ color: "#A4B08A" }}>
-                      {product.coa.purityPercent}
+                      {product.coa?.purityPercent}
                     </div>
                   </div>
                   <div>
@@ -182,7 +182,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                       Date Tested
                     </div>
                     <div className="font-semibold" style={{ color: "#3A3A3A" }}>
-                      {new Date(product.coa.dateTested).toLocaleDateString("en-US", {
+                      {new Date(product.coa?.dateTested || "").toLocaleDateString("en-US", {
                         year: "numeric",
                         month: "short",
                         day: "numeric",
@@ -522,7 +522,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
               onToggle={() => setOpenAccordion(openAccordion === "faq" ? null : "faq")}
             >
               <div className="space-y-6">
-                {product.faq.map((item, index) => (
+                {product.faq?.map((item, index) => (
                   <div key={index}>
                     <div className="font-semibold mb-2" style={{ color: "#A4B08A" }}>
                       {item.question}
