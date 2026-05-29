@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { products } from "@/lib/products";
 
 const activeProducts = products.filter((p) => !p.comingSoon);
@@ -40,6 +41,8 @@ const footerNav = {
     { label: "Customer Support", href: "/contact" },
     { label: "FAQs", href: "/faq" },
     { label: "Research Tools", href: "/tools" },
+    { label: "BAC Water Guide", href: "/tools/bac-water-guide" },
+    { label: "Storage Guide", href: "/guides/storage" },
     { label: "Track Your Order", href: "/account/orders" },
     { label: "Wholesale", href: "/wholesale" },
   ],
@@ -51,6 +54,7 @@ const footerNav = {
 };
 
 function EmailCapture() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -88,6 +92,8 @@ function EmailCapture() {
       }
       setStatus("success");
       setEmail("");
+      // Redirect to confirmation page
+      router.push("/subscribe/confirmed");
     } catch {
       setStatus("error");
       setErrorMsg("Something went wrong. Please try again.");

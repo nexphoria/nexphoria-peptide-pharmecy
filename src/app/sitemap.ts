@@ -101,6 +101,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.72,
     },
     {
+      url: `${baseUrl}/tools/bac-water-guide`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.72,
+    },
+    {
+      url: `${baseUrl}/tools/unit-converter`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.72,
+    },
+    {
+      url: `${baseUrl}/guides/storage`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.72,
+    },
+    {
       url: `${baseUrl}/account/orders`,
       lastModified: new Date(),
       changeFrequency: "yearly",

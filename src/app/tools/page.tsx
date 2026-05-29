@@ -89,6 +89,52 @@ const TOOLS = [
     ),
     badge: "Articles",
   },
+  {
+    href: "/tools/bac-water-guide",
+    title: "Bacteriostatic Water Guide",
+    desc: "What BAC water is, why 0.9% benzyl alcohol matters, how to mix peptide vials, storage after opening, multi-use technique, and common mistakes.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M9 2v6l-2 2v8a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-8l-2-2V2"/>
+        <line x1="9" y1="2" x2="15" y2="2"/>
+        <path d="M12 11v6"/>
+        <path d="M9 14h6"/>
+      </svg>
+    ),
+    badge: "Guide",
+  },
+  {
+    href: "/guides/storage",
+    title: "Peptide Storage Guide",
+    desc: "Complete storage reference for all catalog compounds: lyophilized vs reconstituted stability, temperature classes, freeze-thaw limits, light sensitivity, and aliquoting protocol.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2"/>
+        <path d="M8 21h8"/>
+        <path d="M12 17v4"/>
+        <path d="M7 8h2"/>
+        <path d="M7 12h10"/>
+        <path d="M13 8h4"/>
+      </svg>
+    ),
+    badge: "Guide",
+  },
+  {
+    href: "/tools/unit-converter",
+    title: "Unit Converter",
+    desc: "Convert mcg/mg/g/IU, mL to insulin syringe units, nmol/L to ng/mL, and dilution factor (C₁V₁=C₂V₂) calculations for any compound.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M8 3H5a2 2 0 0 0-2 2v3"/>
+        <path d="M21 8V5a2 2 0 0 0-2-2h-3"/>
+        <path d="M3 16v3a2 2 0 0 0 2 2h3"/>
+        <path d="M16 21h3a2 2 0 0 0 2-2v-3"/>
+        <path d="M9 12h6"/>
+        <path d="M12 9v6"/>
+      </svg>
+    ),
+    badge: "Tool",
+  },
 ];
 
 export default function ToolsPage() {
