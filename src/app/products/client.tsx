@@ -252,7 +252,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
         )}
 
         {/* Custom Synthesis CTA */}
-        <div className="mt-20 p-10 rounded-lg text-center bg-white card-shadow">
+        <div className="mt-20 p-6 md:p-10 rounded-lg text-center bg-white card-shadow">
           <p className="eyebrow mb-3">Custom Synthesis</p>
           <h3 className="text-2xl font-medium mb-3">
             Need a specific compound?
@@ -270,12 +270,12 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
       {/* Floating compare tray — shown when ≥1 selected */}
       {compareMode && compareSlugs.length > 0 && (
         <div
-          className="fixed bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-4 px-5 py-3.5 rounded-2xl shadow-2xl"
+          className="fixed bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3 sm:gap-4 px-4 sm:px-5 py-3.5 rounded-2xl shadow-2xl"
           style={{
             backgroundColor: "#010101",
             color: "#FFFFF3",
-            minWidth: "300px",
-            maxWidth: "calc(100vw - 48px)",
+            width: "calc(100vw - 32px)",
+            maxWidth: "420px",
           }}
         >
           {/* Mini product icons */}

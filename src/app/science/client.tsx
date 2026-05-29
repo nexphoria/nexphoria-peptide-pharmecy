@@ -130,7 +130,7 @@ export default function ScienceClient() {
         className="border-b"
         style={{ backgroundColor: "#EAE7E3", borderColor: "#D8D4CC", paddingTop: "80px" }}
       >
-        <div className="container-nex py-36 md:py-44">
+        <div className="container-nex py-20 md:py-44">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0} className="max-w-2xl">
             <span className="eyebrow mb-5 block" style={{ color: "#A4B08A" }}>Analytical Science</span>
             <h1
@@ -189,7 +189,7 @@ export default function ScienceClient() {
                       className="flex gap-4 p-4 border-b last:border-0"
                       style={{ borderColor: "#D8D4CC" }}
                     >
-                      <span className="text-xs uppercase tracking-wider w-24 flex-shrink-0 pt-0.5 font-medium text-stone">
+                      <span className="text-xs uppercase tracking-wider w-20 sm:w-24 flex-shrink-0 pt-0.5 font-medium text-stone">
                         {label}
                       </span>
                       <span className="text-xs font-mono flex-1 text-near-black">{value}</span>

@@ -302,7 +302,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                               <div className="flex items-center gap-1">
                                 <button
                                   onClick={() => updateQuantity(item.product.slug, item.format, item.quantity - 1)}
-                                  className="w-7 h-7 flex items-center justify-center border transition-colors rounded"
+                                  className="w-9 h-9 flex items-center justify-center border transition-colors rounded"
                                   style={{ borderColor: "#D8D4CC" }}
                                   disabled={item.quantity <= 1}
                                   aria-label="Decrease quantity"

@@ -68,7 +68,7 @@ export default function AboutClient() {
           className="absolute inset-0"
           style={{ background: "linear-gradient(to right, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.15) 100%)" }}
         />
-        <div className="relative z-10 h-full flex items-center container-nex py-40">
+        <div className="relative z-10 h-full flex items-center container-nex py-24 md:py-40">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0} className="max-w-2xl">
             <span className="eyebrow mb-5 block" style={{ color: "#A4B08A" }}>Our Mission</span>
             <h1
@@ -128,7 +128,7 @@ export default function AboutClient() {
             />
           </div>
           <div
-            className="flex flex-col justify-center px-10 py-20 md:px-16 xl:px-24"
+            className="flex flex-col justify-center px-6 py-16 md:px-16 md:py-20 xl:px-24"
             style={{ backgroundColor: "#161614" }}
           >
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>

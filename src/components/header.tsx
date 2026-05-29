@@ -95,16 +95,16 @@ export function Header() {
         </div>
 
         {/* Mobile: Cart + Menu */}
-        <div className="flex md:hidden items-center gap-3">
+        <div className="flex md:hidden items-center gap-1">
           <button
             onClick={openDrawer}
-            className="relative p-2"
+            className="relative flex items-center justify-center w-11 h-11"
             aria-label="Open cart"
           >
             <ShoppingBag className="w-5 h-5" />
             {totalItems > 0 && (
               <span
-                className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full text-[10px] font-bold flex items-center justify-center text-white"
+                className="absolute top-1 right-1 w-4 h-4 rounded-full text-[10px] font-bold flex items-center justify-center text-white"
                 style={{ backgroundColor: "#A4B08A" }}
               >
                 {totalItems}
@@ -113,7 +113,7 @@ export function Header() {
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2"
+            className="flex items-center justify-center w-11 h-11"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -134,12 +134,12 @@ export function Header() {
             borderColor: "#ECEAE4",
           }}
         >
-          <nav className="flex flex-col px-6 py-6 space-y-4">
+          <nav className="flex flex-col px-6 py-4 space-y-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-black/70 hover:text-black transition-colors"
+                className="text-sm text-black/70 hover:text-black transition-colors py-3 block"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.label}

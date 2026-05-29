@@ -88,14 +88,14 @@ export default function BuyBox({
       {/* Volume Pricing Pills */}
       <div className="mb-5">
         <p className="text-xs font-semibold uppercase tracking-wide text-[#888] mb-2">Volume</p>
-        <div className="flex gap-2">
+        <div className="grid grid-cols-3 gap-2">
           {VOLUME_OPTIONS.map((opt) => {
             const active = selectedVolume.qty === opt.qty;
             return (
               <button
                 key={opt.qty}
                 onClick={() => setSelectedVolume(opt)}
-                className="flex-1 py-2.5 px-3 rounded-lg border text-center transition-all duration-150"
+                className="py-2.5 px-2 sm:px-3 rounded-lg border text-center transition-all duration-150"
                 style={{
                   borderColor: active ? '#A4B08A' : '#ECEAE4',
                   backgroundColor: active ? '#A4B08A' : 'transparent',

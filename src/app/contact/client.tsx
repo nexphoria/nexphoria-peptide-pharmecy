@@ -259,6 +259,7 @@ export default function ContactClient() {
                         onChange={handleChange}
                         required
                         className="nex-input appearance-none"
+                        style={{ backgroundColor: "#1C1C1A", borderColor: "#2A2A28", color: "#FDFCF8" }}
                       >
                         <option value="">Select subject...</option>
                         {inquiryTypes.map((t) => (
@@ -279,6 +280,7 @@ export default function ContactClient() {
                       required
                       rows={7}
                       className="nex-input resize-none"
+                      style={{ backgroundColor: "#1C1C1A", borderColor: "#2A2A28", color: "#FDFCF8" }}
                       placeholder="Describe your compound needs, quantities, specifications, or questions..."
                     />
                   </div>
