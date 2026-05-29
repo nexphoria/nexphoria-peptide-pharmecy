@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { WAITLIST_URL } from "@/lib/endpoints";
 
 interface EmailCaptureProps {
   variant?: "dark" | "light";
@@ -17,7 +18,7 @@ export function EmailCapture({ variant = "dark" }: EmailCaptureProps) {
     setStatus("loading");
 
     try {
-      const response = await fetch('/api/waitlist', {
+      const response = await fetch(WAITLIST_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

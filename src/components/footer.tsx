@@ -6,11 +6,30 @@ import { products } from "@/lib/products";
 
 const activeProducts = products.filter((p) => !p.comingSoon);
 
-const footerNav = {
-  Products: activeProducts.map((p) => ({
+// Limit footer products to 8 most popular + "View All" link
+const popularProductSlugs = [
+  "bpc-157",
+  "tirzepatide",
+  "ghk-cu",
+  "ipamorelin",
+  "retatrutide",
+  "nad-plus",
+  "sermorelin",
+  "tb-500",
+];
+
+const footerProducts = popularProductSlugs
+  .map((slug) => activeProducts.find((p) => p.slug === slug))
+  .filter((p): p is NonNullable<typeof p> => Boolean(p))
+  .map((p) => ({
     label: p.name,
     href: `/products/${p.slug}`,
-  })),
+  }));
+
+footerProducts.push({ label: "View All →", href: "/products" });
+
+const footerNav = {
+  Products: footerProducts,
   Company: [
     { label: "About Nexphoria", href: "/about" },
     { label: "Quality Standards", href: "/science#cgmp" },

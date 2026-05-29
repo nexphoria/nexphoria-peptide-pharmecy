@@ -2,77 +2,49 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
-import { ArrowLeft, ShoppingBag } from "lucide-react";
-import { useCart } from "@/lib/cart";
+import { ArrowLeft, ShieldCheck } from "lucide-react";
+import { useCart, getItemUnitPrice, getCadenceLabel } from "@/lib/cart";
+import { CHECKOUT_URL } from "@/lib/endpoints";
+import { getProductImagePath, hasProductPhoto } from "@/lib/product-images";
+import ProductVial from "@/components/ProductVial";
 import Link from "next/link";
 import Image from "next/image";
 
-// Helper: resolve product slug to image path
-function resolveProductImage(slug: string): string {
-  const directMap: Record<string, string> = {
-    'bpc-157': '/products/bpc-157.png',
-    'tb-500': '/products/tb-500.png',
-    'ipamorelin': '/products/ipamorelin.png',
-    'cjc-1295': '/products/ipamorelin.png',
-    'cjc-1295-ipamorelin': '/products/ipamorelin.png',
-    'sermorelin': '/products/ipamorelin.png',
-    'mk-677': '/products/ipamorelin.png',
-    'semaglutide': '/products/tirzepatide.png',
-    'tirzepatide': '/products/tirzepatide.png',
-    'retatrutide': '/products/retatrutide.png',
-    'aod-9604': '/products/aod-9604.png',
-    'ghk-cu': '/products/ghk-cu.png',
-    'epitalon': '/products/epitalon.png',
-    'selank': '/products/epitalon.png',
-    'semax': '/products/epitalon.png',
-    'nad-plus': '/products/nad-plus.png',
-    'pt-141': '/products/pt-141.png',
-    'melanotan-ii': '/products/pt-141.png',
-    'thymosin-alpha-1': '/products/bpc-157.png',
-    'll-37': '/products/bpc-157.png',
-    'mots-c': '/products/mots-c.png',
-  };
-  return directMap[slug] || `/products/${slug}.png`;
-}
-
+// 48px product thumbnail: real photo when available, else the SVG vial.
 function ProductThumb({
   slug,
   name,
+  dosage,
+  category,
   accentColor,
 }: {
   slug: string;
   name: string;
+  dosage: string;
+  category: string;
   accentColor: string;
 }) {
-  const [imgError, setImgError] = useState(false);
-  const src = resolveProductImage(slug);
-
-  if (imgError) {
+  if (hasProductPhoto(slug)) {
     return (
-      <span
-        style={{
-          fontSize: "1.25rem",
-          fontWeight: "bold",
-          fontFamily: "var(--font-display)",
-          color: accentColor,
-          opacity: 0.9,
-        }}
-      >
-        {name.charAt(0)}
-      </span>
+      <Image
+        src={getProductImagePath(slug)}
+        alt={name}
+        width={48}
+        height={48}
+        style={{ objectFit: "contain", width: "100%", height: "100%" }}
+      />
     );
   }
-
   return (
-    <Image
-      src={src}
-      alt={name}
-      width={48}
-      height={48}
-      style={{ objectFit: "contain", width: "100%", height: "100%" }}
-      onError={() => setImgError(true)}
-    />
+    <div style={{ width: "100%", height: "100%" }}>
+      <ProductVial
+        productName={name}
+        dosage={dosage}
+        category={category}
+        accentColor={accentColor}
+        size="thumbnail"
+      />
+    </div>
   );
 }
 
@@ -81,7 +53,6 @@ export default function CheckoutPage() {
   const { items, getTotalPrice, getTotalItems } = useCart();
   const [mounted, setMounted] = useState(false);
 
-  // Form state
   const [formData, setFormData] = useState({
     email: "",
     firstName: "",
@@ -109,16 +80,17 @@ export default function CheckoutPage() {
 
   const totalPrice = getTotalPrice();
   const totalItems = getTotalItems();
+  const hasSubscription = items.some((item) => item.subscriptionMonths > 1);
 
-  // Free gift thresholds
-  const freeGifts = [];
-  if (totalItems >= 3) freeGifts.push("Free bacteriostatic water");
-  if (totalItems >= 5) freeGifts.push("Free shipping");
-  if (totalItems >= 7) freeGifts.push("Free cold-pack");
+  // Included supplies by order size
+  const includedSupplies: string[] = [];
+  if (totalItems >= 3) includedSupplies.push("Bacteriostatic water");
+  if (totalItems >= 5) includedSupplies.push("Free shipping");
+  if (totalItems >= 7) includedSupplies.push("Cold-pack");
 
   const handleCheckout = async () => {
     if (!formData.email) {
-      setError("Please enter your email address");
+      setError("Please enter your email address.");
       return;
     }
 
@@ -126,27 +98,22 @@ export default function CheckoutPage() {
     setError(null);
 
     try {
-      // Transform cart items to worker format
-      const checkoutItems = items.map(item => ({
+      // Worker / API expects: name, size, price (monthly unit), quantity, format, subscriptionMonths
+      const checkoutItems = items.map((item) => ({
+        productSlug: item.product.slug,
         name: item.product.name,
-        price: item.selectedDosage?.price ||
-               (item.format === 'pen' && item.product.penAvailable
-                 ? item.product.penPrice
-                 : item.product.price),
+        price: getItemUnitPrice(item),
         quantity: item.quantity,
         size: item.selectedDosage?.size || item.product.size,
         format: item.format,
         subscriptionMonths: item.subscriptionMonths,
       }));
 
-      // Call the Cloudflare Worker
-      const checkoutUrl = process.env.NEXT_PUBLIC_CHECKOUT_URL || 'https://nexphoria-checkout.chiya-b60.workers.dev';
-
-      const response = await fetch(checkoutUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+      // This site is a static export — checkout is handled by the Cloudflare
+      // Worker (see src/lib/endpoints.ts).
+      const response = await fetch(CHECKOUT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           items: checkoutItems,
           customerEmail: formData.email,
@@ -154,20 +121,20 @@ export default function CheckoutPage() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to create checkout session');
+        throw new Error("Failed to create checkout session");
       }
 
       const { url } = await response.json();
 
       if (!url) {
-        throw new Error('No checkout URL returned');
+        throw new Error("No checkout URL returned");
       }
 
-      // Redirect to Stripe Checkout
+      // Redirect to Stripe-hosted checkout.
       window.location.href = url;
     } catch (err) {
-      console.error('Checkout error:', err);
-      setError('Failed to process checkout. Please try again.');
+      console.error("Checkout error:", err);
+      setError("We could not start checkout. Please try again.");
       setIsProcessing(false);
     }
   };
@@ -177,17 +144,13 @@ export default function CheckoutPage() {
     handleCheckout();
   };
 
-  if (!mounted) {
-    return null; // Prevent hydration mismatch
-  }
-
-  if (items.length === 0) {
-    return null; // Will redirect
+  if (!mounted || items.length === 0) {
+    return null;
   }
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#fffff3", paddingTop: "80px" }}>
-      <div className="container-nex py-12 md:py-16">
+      <div className="container-nex py-12 md:py-16 pb-32 lg:pb-16">
         {/* Back button */}
         <Link
           href="/products"
@@ -229,6 +192,9 @@ export default function CheckoutPage() {
                     className="nex-input w-full"
                     placeholder="your.email@example.com"
                   />
+                  <p className="text-xs mt-2" style={{ color: "#8A8075" }}>
+                    Order confirmation and COA references are sent here.
+                  </p>
                 </div>
               </div>
 
@@ -245,7 +211,6 @@ export default function CheckoutPage() {
                       </label>
                       <input
                         type="text"
-                        required
                         value={formData.firstName}
                         onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                         className="nex-input w-full"
@@ -257,7 +222,6 @@ export default function CheckoutPage() {
                       </label>
                       <input
                         type="text"
-                        required
                         value={formData.lastName}
                         onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                         className="nex-input w-full"
@@ -271,7 +235,6 @@ export default function CheckoutPage() {
                     </label>
                     <input
                       type="text"
-                      required
                       value={formData.address}
                       onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                       className="nex-input w-full"
@@ -286,7 +249,6 @@ export default function CheckoutPage() {
                       </label>
                       <input
                         type="text"
-                        required
                         value={formData.city}
                         onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                         className="nex-input w-full"
@@ -298,7 +260,6 @@ export default function CheckoutPage() {
                       </label>
                       <input
                         type="text"
-                        required
                         value={formData.state}
                         onChange={(e) => setFormData({ ...formData, state: e.target.value })}
                         className="nex-input w-full"
@@ -314,7 +275,6 @@ export default function CheckoutPage() {
                       </label>
                       <input
                         type="text"
-                        required
                         value={formData.zipCode}
                         onChange={(e) => setFormData({ ...formData, zipCode: e.target.value })}
                         className="nex-input w-full"
@@ -335,28 +295,31 @@ export default function CheckoutPage() {
                       />
                     </div>
                   </div>
+                  <p className="text-xs" style={{ color: "#8A8075" }}>
+                    Shipping details are confirmed securely on the next step.
+                  </p>
                 </div>
               </div>
 
               {/* Payment Method */}
               <div>
                 <h2 className="text-lg font-semibold mb-4" style={{ color: "#010101" }}>
-                  Payment Method
+                  Payment
                 </h2>
                 <div
-                  className="p-6 rounded-lg border text-center"
-                  style={{
-                    backgroundColor: "#EAE6DF",
-                    borderColor: "#D8D4CC",
-                  }}
+                  className="p-6 rounded-lg border flex items-start gap-4"
+                  style={{ backgroundColor: "#EAE6DF", borderColor: "#D8D4CC" }}
                 >
-                  <ShoppingBag className="w-12 h-12 mx-auto mb-3" style={{ color: "#A4B08A" }} />
-                  <p className="text-sm font-medium mb-1" style={{ color: "#3A3A3A" }}>
-                    Secure Payment
-                  </p>
-                  <p className="text-xs" style={{ color: "#8A8075" }}>
-                    Card details are processed securely via Stripe. Your information is encrypted end-to-end.
-                  </p>
+                  <ShieldCheck className="w-8 h-8 flex-shrink-0" style={{ color: "#A4B08A" }} />
+                  <div>
+                    <p className="text-sm font-medium mb-1" style={{ color: "#3A3A3A" }}>
+                      Secure payment via Stripe
+                    </p>
+                    <p className="text-xs" style={{ color: "#8A8075" }}>
+                      Card details are processed by Stripe and encrypted end-to-end. You will be
+                      redirected to complete payment.
+                    </p>
+                  </div>
                 </div>
               </div>
             </form>
@@ -367,10 +330,7 @@ export default function CheckoutPage() {
             <div className="lg:sticky lg:top-24">
               <div
                 className="p-6 rounded-lg border"
-                style={{
-                  backgroundColor: "#FFFFFF",
-                  borderColor: "#D8D4CC",
-                }}
+                style={{ backgroundColor: "#FFFFFF", borderColor: "#D8D4CC" }}
               >
                 <h2 className="text-lg font-semibold mb-4" style={{ color: "#010101" }}>
                   Order Summary
@@ -378,61 +338,70 @@ export default function CheckoutPage() {
 
                 {/* Items */}
                 <div className="space-y-3 mb-6">
-                  {items.map((item) => (
-                    <div
-                      key={`${item.product.slug}-${item.format}`}
-                      className="flex items-start gap-3 pb-3 border-b"
-                      style={{ borderColor: "#EAE6DF" }}
-                    >
+                  {items.map((item) => {
+                    const dosageLabel = item.selectedDosage?.size || item.product.size;
+                    const cadenceLabel = getCadenceLabel(item.subscriptionMonths);
+                    const unitPrice = getItemUnitPrice(item);
+                    return (
                       <div
-                        className="flex-shrink-0 flex items-center justify-center rounded overflow-hidden"
-                        style={{
-                          width: "48px",
-                          height: "48px",
-                          backgroundColor: `${item.product.accentColor}12`,
-                          border: `1px solid ${item.product.accentColor}30`,
-                        }}
+                        key={`${item.product.slug}-${item.format}`}
+                        className="flex items-start gap-3 pb-3 border-b"
+                        style={{ borderColor: "#EAE6DF" }}
                       >
-                        <ProductThumb slug={item.product.slug} name={item.product.name} accentColor={item.product.accentColor} />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h4 className="text-sm font-semibold truncate" style={{ color: "#010101" }}>
-                          {item.product.name}
-                        </h4>
-                        <p className="text-xs" style={{ color: "#8A8075" }}>
-                          {item.selectedDosage?.size || item.product.size} • {item.format === "pen" ? "Pen" : "Vial"} • Qty: {item.quantity}
-                        </p>
-                        {item.subscriptionMonths > 1 && (
-                          <span
-                            className="text-[10px] px-2 py-0.5 rounded-full font-bold uppercase inline-block mt-1"
-                            style={{ backgroundColor: "#A4B08A", color: "#FFFFFF" }}
+                        <div
+                          className="flex-shrink-0 flex items-center justify-center rounded overflow-hidden"
+                          style={{
+                            width: "48px",
+                            height: "48px",
+                            backgroundColor: `${item.product.accentColor}12`,
+                            border: `1px solid ${item.product.accentColor}30`,
+                          }}
+                        >
+                          <ProductThumb
+                            slug={item.product.slug}
+                            name={item.product.name}
+                            dosage={dosageLabel}
+                            category={item.product.category}
+                            accentColor={item.product.accentColor}
+                          />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h4 className="text-sm font-semibold truncate" style={{ color: "#010101" }}>
+                            {item.product.name}
+                          </h4>
+                          <p className="text-xs" style={{ color: "#8A8075" }}>
+                            {dosageLabel} • {item.format === "pen" ? "Pen" : "Vial"} • Qty {item.quantity}
+                          </p>
+                          <p
+                            className="text-[11px] mt-0.5"
+                            style={{ color: item.subscriptionMonths > 1 ? "#A4B08A" : "#8A8075" }}
                           >
-                            Subscription
-                          </span>
-                        )}
+                            {cadenceLabel}
+                            {item.subscriptionMonths > 1 ? " · billed monthly" : ""}
+                          </p>
+                        </div>
+                        <div className="text-sm font-bold text-right" style={{ color: "#010101" }}>
+                          ${(unitPrice * item.quantity).toFixed(0)}
+                          {item.subscriptionMonths > 1 && (
+                            <span className="block text-[10px] font-normal" style={{ color: "#8A8075" }}>
+                              per month
+                            </span>
+                          )}
+                        </div>
                       </div>
-                      <div className="text-sm font-bold" style={{ color: "#010101" }}>
-                        $
-                        {(
-                          (item.selectedDosage?.price ||
-                            (item.format === "pen" && item.product.penAvailable
-                              ? item.product.penPrice
-                              : item.product.price)) * item.quantity
-                        ).toFixed(0)}
-                      </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
 
-                {/* Free Gifts */}
-                {freeGifts.length > 0 && (
+                {/* Included supplies */}
+                {includedSupplies.length > 0 && (
                   <div className="mb-6 p-3 rounded" style={{ backgroundColor: "#c6f18420" }}>
                     <p className="text-xs font-semibold mb-1" style={{ color: "#3A3A3A" }}>
-                      🎁 Included with your order:
+                      Included with your order
                     </p>
                     <ul className="text-xs space-y-0.5" style={{ color: "#8A8075" }}>
-                      {freeGifts.map((gift, idx) => (
-                        <li key={idx}>• {gift}</li>
+                      {includedSupplies.map((gift, idx) => (
+                        <li key={idx}>{gift}</li>
                       ))}
                     </ul>
                   </div>
@@ -447,24 +416,32 @@ export default function CheckoutPage() {
                   <div className="flex justify-between text-sm">
                     <span style={{ color: "#8A8075" }}>Shipping</span>
                     <span style={{ color: "#3A3A3A" }}>
-                      {totalItems >= 5 ? "FREE" : "Calculated at payment"}
+                      {totalItems >= 5 ? "Free" : "Calculated at payment"}
                     </span>
                   </div>
-                  <div className="pt-2 border-t flex justify-between" style={{ borderColor: "#D8D4CC" }}>
+                  <div
+                    className="pt-2 border-t flex justify-between items-end"
+                    style={{ borderColor: "#D8D4CC" }}
+                  >
                     <span className="font-semibold" style={{ color: "#010101" }}>
-                      Total
+                      {hasSubscription ? "Billed today" : "Total"}
                     </span>
                     <span className="text-xl font-bold" style={{ color: "#010101" }}>
                       ${totalPrice.toFixed(2)}
+                      {hasSubscription && (
+                        <span className="block text-[11px] font-normal text-right" style={{ color: "#8A8075" }}>
+                          then monthly per cycle
+                        </span>
+                      )}
                     </span>
                   </div>
                 </div>
 
-                {/* Trust Badges */}
+                {/* Trust badges */}
                 <div className="flex justify-center gap-4 text-xs mb-4" style={{ color: "#8A8075" }}>
-                  <span>✓ 99.7% Purity</span>
-                  <span>✓ COA Included</span>
-                  <span>✓ Same-Day Ship</span>
+                  <span>99.7% Purity</span>
+                  <span>COA Included</span>
+                  <span>Same-Day Ship</span>
                 </div>
 
                 {/* Error Message */}
@@ -480,15 +457,12 @@ export default function CheckoutPage() {
                   onClick={handleCheckout}
                   disabled={isProcessing || !formData.email}
                   className="w-full py-3 px-6 rounded font-semibold text-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-90"
-                  style={{
-                    backgroundColor: "#c6f184",
-                    color: "#000000",
-                  }}
+                  style={{ backgroundColor: "#c6f184", color: "#000000" }}
                 >
                   {isProcessing ? "Processing..." : "Place Order"}
                 </button>
                 <p className="text-xs text-center mt-3" style={{ color: "#8A8075" }}>
-                  Secure payment via Stripe. You'll be redirected to complete your order.
+                  Secure payment via Stripe. You will be redirected to complete your order.
                 </p>
               </div>
             </div>
@@ -498,10 +472,10 @@ export default function CheckoutPage() {
 
       {/* Mobile Sticky Summary */}
       <div className="lg:hidden fixed bottom-0 left-0 right-0 p-4 border-t mobile-sticky-cta">
-        <div className="flex items-center justify-between mb-3">
-          <div>
+        <div className="flex items-center justify-between gap-4">
+          <div className="min-w-0">
             <p className="text-xs" style={{ color: "#8A8075" }}>
-              Total
+              {hasSubscription ? "Billed today" : "Total"}
             </p>
             <p className="text-xl font-bold" style={{ color: "#010101" }}>
               ${totalPrice.toFixed(2)}
@@ -511,11 +485,8 @@ export default function CheckoutPage() {
             type="button"
             onClick={handleCheckout}
             disabled={isProcessing || !formData.email}
-            className="py-3 px-6 rounded font-semibold text-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-90"
-            style={{
-              backgroundColor: "#c6f184",
-              color: "#000000",
-            }}
+            className="py-3 px-6 rounded font-semibold text-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-90 flex-shrink-0"
+            style={{ backgroundColor: "#c6f184", color: "#000000" }}
           >
             {isProcessing ? "Processing..." : "Place Order"}
           </button>

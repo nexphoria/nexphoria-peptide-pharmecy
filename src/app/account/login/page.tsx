@@ -20,10 +20,9 @@ export default function LoginPage() {
     return (
       <div className="min-h-screen flex items-center justify-center px-6" style={{ backgroundColor: "#EAE7E3", paddingTop: "100px" }}>
         <div className="max-w-md text-center">
-          <div className="text-4xl mb-4">✓</div>
           <h1 className="text-2xl mb-4" style={{ fontWeight: 300, color: "#010101" }}>Signed In</h1>
           <p className="text-sm mb-8" style={{ color: "#7F7F7D" }}>
-            Authentication successful. Full account features coming soon.
+            Authentication successful. Order history and saved protocols are managed through your confirmation emails.
           </p>
           <Link href="/products" className="btn-primary">
             Browse Compounds

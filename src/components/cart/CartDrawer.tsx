@@ -1,82 +1,53 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Plus, Minus, ShoppingBag, ArrowRight } from "lucide-react";
-import { useCart } from "@/lib/cart";
+import { useCart, getItemUnitPrice, getCadenceLabel } from "@/lib/cart";
 import { products, getRelatedProducts } from "@/lib/products";
+import { getProductImagePath, hasProductPhoto } from "@/lib/product-images";
+import ProductVial from "@/components/ProductVial";
 import Image from "next/image";
-// SVG components replaced with img tags for performance
 
-// Helper: resolve product slug to image path
-function resolveProductImage(slug: string): string {
-  // Direct slug mapping
-  const directMap: Record<string, string> = {
-    'bpc-157': '/products/bpc-157.png',
-    'tb-500': '/products/tb-500.png',
-    'ipamorelin': '/products/ipamorelin.png',
-    'cjc-1295': '/products/ipamorelin.png',
-    'cjc-1295-ipamorelin': '/products/ipamorelin.png',
-    'sermorelin': '/products/ipamorelin.png',
-    'mk-677': '/products/ipamorelin.png',
-    'semaglutide': '/products/tirzepatide.png',
-    'tirzepatide': '/products/tirzepatide.png',
-    'retatrutide': '/products/retatrutide.png',
-    'aod-9604': '/products/aod-9604.png',
-    'ghk-cu': '/products/ghk-cu.png',
-    'epitalon': '/products/epitalon.png',
-    'selank': '/products/epitalon.png',
-    'semax': '/products/epitalon.png',
-    'nad-plus': '/products/nad-plus.png',
-    'pt-141': '/products/pt-141.png',
-    'melanotan-ii': '/products/pt-141.png',
-    'thymosin-alpha-1': '/products/bpc-157.png',
-    'll-37': '/products/bpc-157.png',
-    'mots-c': '/products/mots-c.png',
-  };
-  return directMap[slug] || `/products/${slug}.png`;
-}
-
+// 48px product thumbnail: real photo when available, else the SVG vial.
 function ProductThumb({
   slug,
   name,
+  dosage,
+  category,
   accentColor,
-  size = 44,
+  size = 48,
 }: {
   slug: string;
   name: string;
+  dosage: string;
+  category: string;
   accentColor: string;
   size?: number;
 }) {
-  const [imgError, setImgError] = useState(false);
-  const src = resolveProductImage(slug);
-
-  if (imgError) {
+  if (hasProductPhoto(slug)) {
     return (
-      <span
-        style={{
-          fontSize: size > 36 ? "1.25rem" : "1rem",
-          fontWeight: "bold",
-          fontFamily: "var(--font-display)",
-          color: accentColor,
-          opacity: 0.9,
-        }}
-      >
-        {name.charAt(0)}
-      </span>
+      <Image
+        src={getProductImagePath(slug)}
+        alt={name}
+        width={size}
+        height={size}
+        style={{ objectFit: "contain", width: "100%", height: "100%" }}
+      />
     );
   }
 
   return (
-    <Image
-      src={src}
-      alt={name}
-      width={size}
-      height={size}
-      style={{ objectFit: "contain", width: "100%", height: "100%" }}
-      onError={() => setImgError(true)}
-    />
+    <div style={{ width: "100%", height: "100%" }}>
+      <ProductVial
+        productName={name}
+        dosage={dosage}
+        category={category}
+        accentColor={accentColor}
+        size="thumbnail"
+      />
+    </div>
   );
 }
 
@@ -109,7 +80,6 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
 
   // Find next threshold
   const nextThreshold = thresholds.find(t => totalPrice < t.amount);
-  const currentThreshold = thresholds.filter(t => totalPrice >= t.amount).pop();
   const progressToNext = nextThreshold
     ? (totalPrice / nextThreshold.amount) * 100
     : 100;
@@ -139,11 +109,11 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
   const recommendedProducts = items.length > 0
     ? getRelatedProducts(
         items.reduce((acc, item) => {
-          const related = item.product.relatedSlugs.slice(0, 2); // Limit to prevent too many
+          const related = item.product.relatedSlugs.slice(0, 2);
           return [...acc, ...related];
-        }, [] as string[]).slice(0, 3) // Max 3 recommendations
+        }, [] as string[]).slice(0, 3)
       ).filter(p => !items.some(item => item.product.slug === p.slug))
-    : products.slice(0, 3); // Default recommendations if cart empty
+    : products.slice(0, 3);
 
   return (
     <>
@@ -244,7 +214,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                       All rewards unlocked
                     </div>
                     <div className="text-xs" style={{ color: "#8A8075" }}>
-                      Free recon water • Free shipping • Free cold-pack
+                      Free recon water, free shipping, free cold-pack
                     </div>
                   </div>
                 )}
@@ -280,7 +250,11 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                   {/* Cart Items */}
                   <div className="px-6 py-4 space-y-4">
                     <AnimatePresence mode="popLayout">
-                      {items.map((item) => (
+                      {items.map((item) => {
+                        const dosageLabel = item.selectedDosage?.size || item.product.size;
+                        const cadenceLabel = getCadenceLabel(item.subscriptionMonths);
+                        const unitPrice = getItemUnitPrice(item);
+                        return (
                         <motion.div
                           key={`${item.product.slug}-${item.format}`}
                           initial={{ opacity: 0, height: 0 }}
@@ -303,26 +277,31 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                               border: `1px solid ${item.product.accentColor}30`
                             }}
                           >
-                            <ProductThumb slug={item.product.slug} name={item.product.name} accentColor={item.product.accentColor} />
+                            <ProductThumb
+                              slug={item.product.slug}
+                              name={item.product.name}
+                              dosage={dosageLabel}
+                              category={item.product.category}
+                              accentColor={item.product.accentColor}
+                            />
                           </div>
 
                           {/* Product Info */}
                           <div className="flex-1 min-w-0">
-                            <div className="flex items-center gap-2">
+                            <div className="flex items-start gap-2">
                               <h4 className="text-sm font-semibold text-near-black truncate">
                                 {item.product.name}
                               </h4>
-                              {item.subscriptionMonths > 1 && (
-                                <span
-                                  className="text-[10px] px-2 py-0.5 rounded-full font-bold uppercase"
-                                  style={{ backgroundColor: "#A4B08A", color: "#FFFFFF" }}
-                                >
-                                  Subscription
-                                </span>
-                              )}
                             </div>
                             <p className="text-xs text-stone">
-                              {item.selectedDosage?.size || item.product.size} • {item.format === 'pen' ? 'Pen' : 'Vial'}
+                              {dosageLabel} • {item.format === 'pen' ? 'Pen' : 'Vial'}
+                            </p>
+                            <p
+                              className="text-[11px] mt-0.5"
+                              style={{ color: item.subscriptionMonths > 1 ? "#A4B08A" : "#8A8075" }}
+                            >
+                              {cadenceLabel}
+                              {item.subscriptionMonths > 1 ? " · billed monthly" : ""}
                             </p>
                             <div className="flex items-center justify-between mt-2">
                               {/* Quantity Controls */}
@@ -331,6 +310,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                                   onClick={() => updateQuantity(item.product.slug, item.format, item.quantity - 1)}
                                   className="w-7 h-7 flex items-center justify-center border border-dark-border-hover hover:bg-dark-border transition-colors rounded"
                                   disabled={item.quantity <= 1}
+                                  aria-label="Decrease quantity"
                                 >
                                   <Minus className="w-3 h-3 text-stone" />
                                 </button>
@@ -340,6 +320,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                                 <button
                                   onClick={() => updateQuantity(item.product.slug, item.format, item.quantity + 1)}
                                   className="w-7 h-7 flex items-center justify-center border border-dark-border-hover hover:bg-dark-border transition-colors rounded"
+                                  aria-label="Increase quantity"
                                 >
                                   <Plus className="w-3 h-3 text-stone" />
                                 </button>
@@ -348,9 +329,10 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                               {/* Price */}
                               <div className="text-right">
                                 <div className="text-sm font-bold text-near-black">
-                                  ${((item.selectedDosage?.price ||
-                                      (item.format === 'pen' && item.product.penAvailable ? item.product.penPrice : item.product.price)) *
-                                      item.quantity).toFixed(0)}
+                                  ${(unitPrice * item.quantity).toFixed(0)}
+                                  {item.subscriptionMonths > 1 && (
+                                    <span className="text-[10px] font-normal text-stone">/mo</span>
+                                  )}
                                 </div>
                                 <button
                                   onClick={() => removeItem(item.product.slug, item.format)}
@@ -362,14 +344,15 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                             </div>
                           </div>
                         </motion.div>
-                      ))}
+                        );
+                      })}
                     </AnimatePresence>
                   </div>
 
                   {/* You Might Also Need - Research Supplies */}
                   <div
                     className="px-6 py-4 border-t"
-                    style={{ borderColor: "var(--dark-border)" }}
+                    style={{ borderColor: "var(--border-subtle)" }}
                   >
                     <h3 className="text-sm font-semibold text-near-black mb-3 uppercase tracking-wide">
                       You Might Also Need
@@ -378,27 +361,27 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                       {[
                         { name: "Bacteriostatic Water", desc: "For reconstitution", price: 12 },
                         { name: "Insulin Syringe Kit", desc: "31G × 0.5mL, 10-pack", price: 8 },
-                      ].map((item) => (
+                      ].map((supply) => (
                         <div
-                          key={item.name}
-                          className="flex items-center justify-between p-3 rounded-lg border hover:border-[#A4B08A] transition-colors cursor-pointer group"
-                          style={{ borderColor: "var(--dark-border)", backgroundColor: "#F7F4EE" }}
+                          key={supply.name}
+                          className="flex items-center justify-between p-3 rounded-lg border hover:border-[#A4B08A] transition-colors group"
+                          style={{ borderColor: "var(--border-subtle)", backgroundColor: "#F7F4EE" }}
                         >
-                          <div className="flex-1">
+                          <div className="flex-1 min-w-0">
                             <h4 className="text-xs font-semibold text-near-black">
-                              {item.name}
+                              {supply.name}
                             </h4>
                             <p className="text-[10px]" style={{ color: "#8A8075" }}>
-                              {item.desc}
+                              {supply.desc}
                             </p>
                           </div>
                           <div className="flex items-center gap-3">
                             <span className="text-sm font-bold" style={{ color: "#A4B08A" }}>
-                              ${item.price}
+                              ${supply.price}
                             </span>
-                            <button className="text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: "#A4B08A" }}>
-                              Add
-                            </button>
+                            <span className="text-xs font-medium" style={{ color: "#A4B08A" }}>
+                              Add to Order
+                            </span>
                           </div>
                         </div>
                       ))}
@@ -409,20 +392,19 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                   {recommendedProducts.length > 0 && (
                     <div
                       className="px-6 py-4 border-t"
-                      style={{ borderColor: "var(--dark-border)" }}
+                      style={{ borderColor: "var(--border-subtle)" }}
                     >
                       <h3 className="text-sm font-semibold text-near-black mb-3 uppercase tracking-wide">
                         Recommended For You
                       </h3>
                       <div className="space-y-3">
                         {recommendedProducts.map((product) => (
-                          <div
+                          <button
                             key={product.slug}
-                            className="flex items-center gap-3 p-3 rounded-lg border hover:border-dark-border-hover transition-colors cursor-pointer group"
-                            style={{ borderColor: "var(--dark-border)" }}
-                            onClick={() => {
-                              addItem(product);
-                            }}
+                            type="button"
+                            className="w-full flex items-center gap-3 p-3 rounded-lg border hover:border-dark-border-hover transition-colors group text-left"
+                            style={{ borderColor: "var(--border-subtle)" }}
+                            onClick={() => addItem(product)}
                           >
                             <div
                               className="flex items-center justify-center rounded overflow-hidden"
@@ -434,7 +416,14 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                                 border: `1px solid ${product.accentColor}30`
                               }}
                             >
-                              <ProductThumb slug={product.slug} name={product.name} accentColor={product.accentColor} size={32} />
+                              <ProductThumb
+                                slug={product.slug}
+                                name={product.name}
+                                dosage={product.size}
+                                category={product.category}
+                                accentColor={product.accentColor}
+                                size={40}
+                              />
                             </div>
                             <div className="flex-1 min-w-0">
                               <h4 className="text-xs font-medium text-near-black truncate">
@@ -444,10 +433,10 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                                 ${product.price}
                               </p>
                             </div>
-                            <button className="text-xs text-acid-green font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                              Add
-                            </button>
-                          </div>
+                            <span className="text-xs font-medium" style={{ color: "#A4B08A" }}>
+                              Add to Order
+                            </span>
+                          </button>
                         ))}
                       </div>
                     </div>
@@ -460,7 +449,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
             {items.length > 0 && (
               <div
                 className="px-6 py-5 border-t"
-                style={{ borderColor: "var(--dark-border)" }}
+                style={{ borderColor: "var(--border-subtle)" }}
               >
                 {/* Total */}
                 <div className="flex items-center justify-between mb-4">
@@ -474,9 +463,9 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
 
                 {/* Trust badges */}
                 <div className="flex justify-center gap-4 mb-4 text-xs text-tertiary">
-                  <span>✓ 99.7% Purity</span>
-                  <span>✓ COA Included</span>
-                  <span>✓ Same-Day Ship</span>
+                  <span>99.7% Purity</span>
+                  <span>COA Included</span>
+                  <span>Same-Day Ship</span>
                 </div>
 
                 {/* Checkout Button */}

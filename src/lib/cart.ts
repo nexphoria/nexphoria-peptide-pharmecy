@@ -11,7 +11,7 @@ export interface CartItem {
   };
   format: 'vial' | 'pen';
   subscriptionMonths: number; // 1, 3, or 6
-  monthlyPrice: number; // price per month after discount
+  monthlyPrice: number; // price billed per month (subscriptions bill monthly)
 }
 
 interface CartState {
@@ -34,6 +34,27 @@ interface CartState {
   getItemCount: (productSlug: string, format: 'vial' | 'pen') => number;
 }
 
+// Resolve the effective unit price for a product given format + dosage.
+function resolveUnitPrice(
+  product: Product,
+  format: 'vial' | 'pen',
+  selectedDosage?: { size: string; price: number },
+): number {
+  // Pen format overrides to the pen price when available.
+  if (format === 'pen' && product.penAvailable) {
+    return product.penPrice;
+  }
+  // Otherwise prefer the explicitly selected dosage, then the smallest
+  // available dosage, then the base product price.
+  if (selectedDosage) {
+    return selectedDosage.price;
+  }
+  if (product.dosages && product.dosages.length > 0) {
+    return product.dosages[0].price;
+  }
+  return product.price;
+}
+
 export const useCart = create<CartState>()(
   persist(
     (set, get) => ({
@@ -45,27 +66,15 @@ export const useCart = create<CartState>()(
           item => item.product.slug === product.slug && item.format === format
         );
 
-        // Determine the price to use
-        let itemPrice = product.price;
+        // If no dosage selected but product has dosages, use the smallest one.
         let dosageInfo = selectedDosage;
-
-        // If no dosage selected but product has dosages, use the first (smallest) one
         if (!dosageInfo && product.dosages && product.dosages.length > 0) {
           dosageInfo = product.dosages[0];
         }
 
-        // Use dosage price if available
-        if (dosageInfo) {
-          itemPrice = dosageInfo.price;
-        }
-
-        // If pen format selected, use pen price
-        if (format === 'pen' && product.penAvailable) {
-          itemPrice = product.penPrice;
-        }
-
-        // No subscription discounts - same price for all options
-        const monthlyPrice = itemPrice;
+        // Monthly billing amount. Subscriptions bill this amount each month;
+        // one-time purchases charge it once. No subscription discount applied.
+        const monthlyPrice = resolveUnitPrice(product, format, dosageInfo);
 
         if (existingItemIndex >= 0) {
           // Update existing item
@@ -131,8 +140,10 @@ export const useCart = create<CartState>()(
       },
 
       getTotalPrice: () => {
+        // Subscriptions bill monthly, so the cart total reflects the amount
+        // charged this month: monthlyPrice * quantity per line, summed.
         return get().items.reduce((total, item) => {
-          return total + (item.monthlyPrice * item.quantity * item.subscriptionMonths);
+          return total + (item.monthlyPrice * item.quantity);
         }, 0);
       },
 
@@ -151,6 +162,18 @@ export const useCart = create<CartState>()(
     }
   )
 );
+
+// Returns the per-unit price for a cart item (one month / one-time).
+export function getItemUnitPrice(item: CartItem): number {
+  return item.monthlyPrice;
+}
+
+// Human-readable cadence label for a subscription length.
+export function getCadenceLabel(subscriptionMonths: number): string {
+  if (subscriptionMonths >= 6) return '6-Month Research Cycle';
+  if (subscriptionMonths >= 3) return '3-Month Research Cycle';
+  return 'One-time';
+}
 
 // Helper functions for formatting
 export function formatPrice(price: number): string {

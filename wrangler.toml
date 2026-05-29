@@ -1,6 +1,11 @@
 name = "nexphoria-checkout"
 main = "workers/checkout.js"
 compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
 
-[vars]
-STRIPE_SECRET_KEY = ""
+# Secrets are managed in the Cloudflare dashboard (or via `wrangler secret put`),
+# NOT here — listing them as plaintext [vars] would overwrite the live secret on
+# every deploy. Required / optional secrets:
+#   STRIPE_SECRET_KEY     (required for checkout)
+#   CONTACT_WEBHOOK_URL   (optional — contact form forwarding)
+#   WAITLIST_WEBHOOK_URL  (optional — waitlist forwarding)

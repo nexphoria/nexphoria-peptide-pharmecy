@@ -1,5 +1,7 @@
 "use client";
 
+import { useMemo } from "react";
+
 export const categoryAccentColors: Record<string, string> = {
   "Recovery & Healing": "#4A9B8E",
   "Tissue Repair": "#4A9B8E",
@@ -8,6 +10,7 @@ export const categoryAccentColors: Record<string, string> = {
   "Cognitive": "#3B82F6",
   "Weight Management": "#EF4444",
   "Wellness": "#22C55E",
+  "Accessories": "#64748B",
 };
 
 interface Props {
@@ -18,8 +21,17 @@ interface Props {
   size?: "default" | "thumbnail";
 }
 
+let _vialCounter = 0;
+
 export default function ProductVial({ productName, dosage, category, accentColor, size = "default" }: Props) {
   const capColor = accentColor ?? categoryAccentColors[category] ?? "#A4B08A";
+  // Generate stable unique IDs per render instance to avoid SVG gradient ID collisions
+  const uid = useMemo(() => {
+    _vialCounter += 1;
+    return `v${_vialCounter}-${Math.random().toString(36).slice(2, 7)}`;
+  }, []);
+  const glassTintId = `glass-tint-${uid}`;
+  const aluminumId = `aluminum-${uid}`;
 
   return (
     <svg
@@ -31,14 +43,14 @@ export default function ProductVial({ productName, dosage, category, accentColor
     >
       <defs>
         {/* Simple glass with subtle blue-grey tint */}
-        <linearGradient id="glass-tint" x1="0" y1="0" x2="1" y2="0">
+        <linearGradient id={glassTintId} x1="0" y1="0" x2="1" y2="0">
           <stop offset="0%" stopColor="#b8d0d8" stopOpacity="0.08" />
           <stop offset="50%" stopColor="#d8e8f0" stopOpacity="0.04" />
           <stop offset="100%" stopColor="#b0c8d0" stopOpacity="0.08" />
         </linearGradient>
 
         {/* Aluminum crimp gradient */}
-        <linearGradient id="aluminum" x1="0" y1="0" x2="1" y2="0">
+        <linearGradient id={aluminumId} x1="0" y1="0" x2="1" y2="0">
           <stop offset="0%" stopColor="#a0a0a0" />
           <stop offset="50%" stopColor="#d8d8d8" />
           <stop offset="100%" stopColor="#a8a8a8" />
@@ -67,7 +79,7 @@ export default function ProductVial({ productName, dosage, category, accentColor
         width="50"
         height="210"
         rx="2"
-        fill="url(#glass-tint)"
+        fill={`url(#${glassTintId})`}
       />
 
       {/* Subtle vertical highlight on glass */}
@@ -188,7 +200,7 @@ export default function ProductVial({ productName, dosage, category, accentColor
         width="36"
         height="17"
         rx="1"
-        fill="url(#glass-tint)"
+        fill={`url(#${glassTintId})`}
       />
 
       {/* Rubber stopper */}
@@ -208,7 +220,7 @@ export default function ProductVial({ productName, dosage, category, accentColor
         width="50"
         height="15"
         rx="2"
-        fill="url(#aluminum)"
+        fill={`url(#${aluminumId})`}
       />
       {/* Crimp texture lines */}
       <line x1="35" y1="28" x2="85" y2="28" stroke="rgba(80, 80, 80, 0.3)" strokeWidth="0.5" />

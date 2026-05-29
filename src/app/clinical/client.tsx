@@ -14,6 +14,7 @@ import {
   Shield,
   ChevronDown,
 } from "lucide-react";
+import { WAITLIST_URL } from "@/lib/endpoints";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -184,7 +185,7 @@ function WaitlistForm() {
     if (!email) return;
     setState("loading");
     try {
-      await fetch("/api/waitlist", {
+      await fetch(WAITLIST_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, source: "clinical" }),
@@ -269,7 +270,7 @@ export default function ClinicalClient() {
                 }}>
                 <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#B8923A" }} />
                 <span className="text-[10px] font-semibold uppercase tracking-[0.2em]" style={{ color: "#B8923A" }}>
-                  Clinical Tier — Coming Soon
+                  Clinical Tier — By Application
                 </span>
               </div>
 

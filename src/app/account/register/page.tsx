@@ -22,7 +22,6 @@ export default function RegisterPage() {
     return (
       <div className="min-h-screen flex items-center justify-center px-6" style={{ backgroundColor: "#EAE7E3", paddingTop: "100px" }}>
         <div className="max-w-md text-center">
-          <div className="text-4xl mb-4">✓</div>
           <h1 className="text-2xl mb-4" style={{ fontWeight: 300, color: "#010101" }}>Account Created</h1>
           <p className="text-sm mb-8" style={{ color: "#7F7F7D" }}>
             Welcome to Nexphoria. Your research account is ready.

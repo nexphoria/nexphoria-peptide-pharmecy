@@ -29,7 +29,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
           >
             All ({products.length})
           </button>
-          {categories.map((cat) => {
+          {categories.filter((cat) => cat !== "All").map((cat) => {
             const count = products.filter((p) => p.category === cat).length;
             return (
               <button

@@ -1,19 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, ArrowRight, Package, X } from "lucide-react";
-import { products } from "@/lib/products";
+import { Plus, ArrowRight, Package, X, Search, Filter } from "lucide-react";
+import { products, categories } from "@/lib/products";
 import ProductVial from "@/components/ProductVial";
 import { useCart } from "@/lib/cart";
 import { hasProductPhoto, getProductImagePath } from "@/lib/product-images";
+
+// Filter out accessories and "coming soon" products from stack builder
+const stackableProducts = products.filter(
+  (p) => p.category !== "Accessories" && !p.comingSoon
+);
 
 export default function BuildYourStackPage() {
   const router = useRouter();
   const { addItem } = useCart();
   const [stackItems, setStackItems] = useState<typeof products>([]);
-  const [subscriptionCadence, setSubscriptionCadence] = useState<"one-time" | "4-week" | "8-week" | "12-week">("one-time");
+  const [subscriptionCadence, setSubscriptionCadence] = useState<"one-time" | "3-month" | "6-month">("one-time");
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const addToStack = (product: typeof products[0]) => {
     setStackItems([...stackItems, product]);
@@ -25,8 +32,8 @@ export default function BuildYourStackPage() {
 
   const totalPrice = stackItems.reduce((sum, item) => sum + item.price, 0);
 
-  // 15% off with subscription
-  const subscriptionDiscount = subscriptionCadence !== "one-time" ? 0.15 : 0;
+  // 10% off 3-month cycle, 15% off 6-month cycle
+  const subscriptionDiscount = subscriptionCadence === "6-month" ? 0.15 : subscriptionCadence === "3-month" ? 0.10 : 0;
   const discountedPrice = totalPrice * (1 - subscriptionDiscount);
 
   // Free gifts
@@ -36,23 +43,39 @@ export default function BuildYourStackPage() {
   if (stackItems.length >= 7) freeGifts.push("Free cold-pack");
 
   const handleCheckout = () => {
-    // Add all stack items to cart
     stackItems.forEach(product => {
-      const months = subscriptionCadence === "4-week" ? 1 : subscriptionCadence === "8-week" ? 2 : subscriptionCadence === "12-week" ? 3 : 1;
+      const months = subscriptionCadence === "3-month" ? 3 : subscriptionCadence === "6-month" ? 6 : 1;
       addItem(product, "vial", undefined, months);
     });
     router.push("/checkout");
   };
 
   const cadenceOptions = [
-    { value: "one-time", label: "One-Time Purchase", discount: 0 },
-    { value: "4-week", label: "4-Week Cycle", discount: 15 },
-    { value: "8-week", label: "8-Week Protocol", discount: 15 },
-    { value: "12-week", label: "12-Week Protocol", discount: 15 },
+    { value: "one-time", label: "One-Time Purchase", discount: 0, desc: "Ships once" },
+    { value: "3-month", label: "3-Month Research Cycle", discount: 10, desc: "Monthly billing x 3" },
+    { value: "6-month", label: "6-Month Research Cycle", discount: 15, desc: "Monthly billing x 6" },
   ] as const;
 
+  // Category filter options — exclude Accessories from the builder
+  const builderCategories = ["All", ...categories.filter(c => c !== "All" && c !== "Accessories")];
+
+  // Filtered product list
+  const filteredProducts = useMemo(() => {
+    return stackableProducts.filter((p) => {
+      const matchesCategory = activeCategory === "All" || p.category === activeCategory;
+      const matchesSearch = searchQuery === "" ||
+        p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        p.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        p.tagline.toLowerCase().includes(searchQuery.toLowerCase());
+      return matchesCategory && matchesSearch;
+    });
+  }, [activeCategory, searchQuery]);
+
+  // Check if a product is already in the stack
+  const stackSlugs = stackItems.map((i) => i.slug);
+
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#fffff3", paddingTop: "80px" }}>
+    <div className="min-h-screen pb-24 lg:pb-0" style={{ backgroundColor: "#fffff3", paddingTop: "80px" }}>
       <div className="container-nex py-12 md:py-16">
         <div className="text-center mb-12">
           <h1
@@ -62,7 +85,7 @@ export default function BuildYourStackPage() {
             Build Your Stack
           </h1>
           <p className="text-base md:text-lg max-w-2xl mx-auto" style={{ color: "#8A8075" }}>
-            Select your peptides and create a custom research protocol. Save 15% with subscription.
+            Select your peptides and create a custom research protocol. Save up to 15% with a research cycle.
           </p>
         </div>
 
@@ -75,7 +98,7 @@ export default function BuildYourStackPage() {
               style={{
                 backgroundColor: "#1a1a18",
                 borderColor: "#a4b08a",
-                minHeight: "280px",
+                minHeight: "260px",
               }}
             >
               {/* DNA Pattern Overlay */}
@@ -91,7 +114,6 @@ export default function BuildYourStackPage() {
                   xmlns="http://www.w3.org/2000/svg"
                   className="w-full max-w-md h-auto"
                 >
-                  {/* Box outline - 3D perspective */}
                   <path
                     d="M 50 60 L 250 60 L 270 80 L 270 160 L 250 180 L 50 180 L 30 160 L 30 80 Z"
                     fill="none"
@@ -99,7 +121,6 @@ export default function BuildYourStackPage() {
                     strokeWidth="2"
                     strokeDasharray="4,4"
                   />
-                  {/* NEXPHORIA text */}
                   <text
                     x="150"
                     y="110"
@@ -112,15 +133,7 @@ export default function BuildYourStackPage() {
                   >
                     NEXPHORIA
                   </text>
-                  {/* Accent line */}
-                  <line
-                    x1="80"
-                    y1="130"
-                    x2="220"
-                    y2="130"
-                    stroke="#a4b08a"
-                    strokeWidth="2"
-                  />
+                  <line x1="80" y1="130" x2="220" y2="130" stroke="#a4b08a" strokeWidth="2" />
                 </svg>
               </div>
 
@@ -134,9 +147,9 @@ export default function BuildYourStackPage() {
                 </div>
 
                 {stackItems.length === 0 ? (
-                  <div className="text-center py-12">
+                  <div className="text-center py-10">
                     <p className="text-sm" style={{ color: "#8A8075" }}>
-                      Your stack box is empty. Add products below to get started.
+                      Your stack is empty. Add compounds below to get started.
                     </p>
                   </div>
                 ) : (
@@ -196,70 +209,138 @@ export default function BuildYourStackPage() {
               </div>
             </div>
 
-            {/* Product Grid */}
-            <div>
-              <h3 className="text-xl font-bold mb-4" style={{ color: "#010101" }}>
-                Add Products
-              </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                {products.map((product) => (
-                  <div
-                    key={product.slug}
-                    className="rounded-lg border overflow-hidden hover:border-opacity-60 transition-all group"
-                    style={{
-                      backgroundColor: "#ffffff",
-                      borderColor: "#D8D4CC",
-                    }}
+            {/* Search + Category Filter Row */}
+            <div className="space-y-3">
+              {/* Search */}
+              <div className="relative">
+                <Search
+                  className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4"
+                  style={{ color: "#8A8075" }}
+                />
+                <input
+                  type="text"
+                  placeholder="Search compounds..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-9 pr-4 py-2.5 rounded-lg border text-sm outline-none focus:ring-2 focus:ring-opacity-50"
+                  style={{
+                    backgroundColor: "#ffffff",
+                    borderColor: "#D8D4CC",
+                    color: "#010101",
+                  }}
+                />
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery("")}
+                    className="absolute right-3 top-1/2 -translate-y-1/2"
                   >
-                    <div
-                      className="p-3 flex items-center justify-center"
+                    <X className="w-4 h-4" style={{ color: "#8A8075" }} />
+                  </button>
+                )}
+              </div>
+
+              {/* Category Filter Pills */}
+              <div className="flex flex-wrap gap-2">
+                {builderCategories.map((cat) => {
+                  const count = cat === "All"
+                    ? stackableProducts.length
+                    : stackableProducts.filter((p) => p.category === cat).length;
+                  return (
+                    <button
+                      key={cat}
+                      onClick={() => setActiveCategory(cat)}
+                      className="px-3 py-1.5 rounded-full text-xs font-semibold transition-all"
                       style={{
-                        backgroundColor: hasProductPhoto(product.slug) ? "#F7F4EE" : `${product.accentColor}08`,
-                        minHeight: "120px",
+                        backgroundColor: activeCategory === cat ? "#a4b08a" : "#EAE6DF",
+                        color: activeCategory === cat ? "#000000" : "#8A8075",
                       }}
                     >
-                      {hasProductPhoto(product.slug) ? (
-                        <img
-                          src={getProductImagePath(product.slug)}
-                          alt={product.name}
-                          className="w-full h-auto object-contain"
-                          style={{ maxHeight: "100px" }}
-                        />
-                      ) : (
-                        <ProductVial
-                          productName={product.name}
-                          dosage={product.size}
-                          category={product.category}
-                          accentColor={product.accentColor}
-                          size="thumbnail"
-                        />
-                      )}
-                    </div>
-                    <div className="p-3">
-                      <h4
-                        className="text-xs font-semibold mb-1 truncate"
-                        style={{ color: "#010101" }}
-                      >
-                        {product.name}
-                      </h4>
-                      <p className="text-xs mb-2" style={{ color: "#8A8075" }}>
-                        ${product.price}
-                      </p>
-                      <button
-                        onClick={() => addToStack(product)}
-                        className="w-full py-1.5 px-3 rounded text-xs font-semibold flex items-center justify-center gap-1 transition-all hover:opacity-80"
+                      {cat} ({count})
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Product Grid */}
+            <div>
+              {filteredProducts.length === 0 ? (
+                <div className="text-center py-12">
+                  <p className="text-sm" style={{ color: "#8A8075" }}>
+                    No compounds found. Try a different search or category.
+                  </p>
+                </div>
+              ) : (
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                  {filteredProducts.map((product) => {
+                    const alreadyInStack = stackSlugs.includes(product.slug);
+                    return (
+                      <div
+                        key={product.slug}
+                        className="rounded-lg border overflow-hidden transition-all group"
                         style={{
-                          backgroundColor: "#a4b08a",
-                          color: "#000000",
+                          backgroundColor: "#ffffff",
+                          borderColor: alreadyInStack ? "#a4b08a" : "#D8D4CC",
+                          boxShadow: alreadyInStack ? "0 0 0 2px #a4b08a40" : "none",
                         }}
                       >
-                        <Plus className="w-3 h-3" />
-                        Add
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
+                        <div
+                          className="p-3 flex items-center justify-center"
+                          style={{
+                            backgroundColor: hasProductPhoto(product.slug) ? "#F7F4EE" : `${product.accentColor}08`,
+                            minHeight: "110px",
+                          }}
+                        >
+                          {hasProductPhoto(product.slug) ? (
+                            <img
+                              src={getProductImagePath(product.slug)}
+                              alt={product.name}
+                              className="w-full h-auto object-contain"
+                              style={{ maxHeight: "90px" }}
+                            />
+                          ) : (
+                            <ProductVial
+                              productName={product.name}
+                              dosage={product.size}
+                              category={product.category}
+                              accentColor={product.accentColor}
+                              size="thumbnail"
+                            />
+                          )}
+                        </div>
+                        <div className="p-3">
+                          <p
+                            className="text-[10px] uppercase tracking-wider mb-0.5"
+                            style={{ color: product.accentColor }}
+                          >
+                            {product.category}
+                          </p>
+                          <h4
+                            className="text-xs font-semibold mb-1 truncate"
+                            style={{ color: "#010101" }}
+                          >
+                            {product.name}
+                          </h4>
+                          <p className="text-xs mb-2" style={{ color: "#8A8075" }}>
+                            {product.size} &middot; ${product.price}
+                          </p>
+                          <button
+                            onClick={() => addToStack(product)}
+                            className="w-full py-1.5 px-3 rounded text-xs font-semibold flex items-center justify-center gap-1 transition-all hover:opacity-80"
+                            style={{
+                              backgroundColor: alreadyInStack ? "#E8EDE2" : "#a4b08a",
+                              color: "#000000",
+                            }}
+                          >
+                            <Plus className="w-3 h-3" />
+                            {alreadyInStack ? "Add Again" : "Add"}
+                          </button>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
             </div>
           </div>
 
@@ -282,7 +363,7 @@ export default function BuildYourStackPage() {
                   <label className="block text-sm font-semibold mb-3" style={{ color: "#3A3A3A" }}>
                     Delivery Frequency
                   </label>
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-1 gap-2">
                     {cadenceOptions.map((option) => (
                       <button
                         key={option.value}
@@ -293,18 +374,48 @@ export default function BuildYourStackPage() {
                           backgroundColor: subscriptionCadence === option.value ? "#a4b08a15" : "#ffffff",
                         }}
                       >
-                        <div className="text-sm font-semibold" style={{ color: "#010101" }}>
-                          {option.label}
-                        </div>
-                        {option.discount > 0 && (
-                          <div className="text-xs font-bold" style={{ color: "#a4b08a" }}>
-                            Save {option.discount}%
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <div className="text-sm font-semibold" style={{ color: "#010101" }}>
+                              {option.label}
+                            </div>
+                            <div className="text-xs" style={{ color: "#8A8075" }}>
+                              {option.desc}
+                            </div>
                           </div>
-                        )}
+                          {option.discount > 0 && (
+                            <div className="text-xs font-bold ml-3 flex-shrink-0" style={{ color: "#a4b08a" }}>
+                              Save {option.discount}%
+                            </div>
+                          )}
+                        </div>
                       </button>
                     ))}
                   </div>
                 </div>
+
+                {/* Stack Item Summary */}
+                {stackItems.length > 0 && (
+                  <div className="mb-4 max-h-48 overflow-y-auto space-y-2 pr-1">
+                    {stackItems.map((item, index) => (
+                      <div key={`${item.slug}-${index}`} className="flex items-center justify-between text-xs">
+                        <div className="flex items-center gap-2">
+                          <button
+                            onClick={() => removeFromStack(index)}
+                            className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 hover:opacity-80"
+                            style={{ backgroundColor: "#EAE6DF" }}
+                          >
+                            <X className="w-2.5 h-2.5" style={{ color: "#8A8075" }} />
+                          </button>
+                          <span style={{ color: "#3A3A3A" }} className="truncate max-w-[140px]">
+                            {item.name} <span style={{ color: "#8A8075" }}>({item.size})</span>
+                          </span>
+                        </div>
+                        <span style={{ color: "#3A3A3A" }} className="flex-shrink-0">${item.price}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
 
                 {/* Price Breakdown */}
                 <div className="space-y-3 mb-6 pb-6 border-b" style={{ borderColor: "#EAE6DF" }}>
@@ -314,7 +425,9 @@ export default function BuildYourStackPage() {
                   </div>
                   {subscriptionDiscount > 0 && (
                     <div className="flex justify-between text-sm">
-                      <span style={{ color: "#a4b08a" }}>Subscription discount (15%)</span>
+                      <span style={{ color: "#a4b08a" }}>
+                        Cycle discount ({subscriptionCadence === "6-month" ? "15" : "10"}%)
+                      </span>
                       <span style={{ color: "#a4b08a" }}>
                         -${(totalPrice * subscriptionDiscount).toFixed(2)}
                       </span>
@@ -338,7 +451,7 @@ export default function BuildYourStackPage() {
                     </p>
                     <ul className="text-sm space-y-1" style={{ color: "#8A8075" }}>
                       {freeGifts.map((gift, idx) => (
-                        <li key={idx}>• {gift}</li>
+                        <li key={idx}>+ {gift}</li>
                       ))}
                     </ul>
                   </div>
@@ -371,9 +484,9 @@ export default function BuildYourStackPage() {
 
                 {/* Trust Badges */}
                 <div className="flex justify-center gap-4 text-xs mt-4" style={{ color: "#8A8075" }}>
-                  <span>✓ 99.7% Purity</span>
-                  <span>✓ COA Included</span>
-                  <span>✓ Same-Day Ship</span>
+                  <span>99.7% Purity</span>
+                  <span>COA Included</span>
+                  <span>Same-Day Ship</span>
                 </div>
               </div>
             </div>
@@ -386,7 +499,7 @@ export default function BuildYourStackPage() {
         <div className="flex items-center justify-between">
           <div>
             <p className="text-xs" style={{ color: "#8A8075" }}>
-              {stackItems.length} items • Total
+              {stackItems.length} items &middot; Total
             </p>
             <p className="text-xl font-bold" style={{ color: "#010101" }}>
               ${discountedPrice.toFixed(2)}

@@ -2,76 +2,22 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
-import {
-  ArrowLeft,
-  Check,
-  ChevronDown,
-  ShoppingBag,
-  Shield,
-  Truck,
-  Clock,
-  Award,
-  FileCheck,
-} from "lucide-react";
-import type { CatalogProduct as LaunchProduct } from "@/lib/products-catalog";
+import { motion } from "framer-motion";
+import { ArrowLeft, Check, Shield, FileCheck } from "lucide-react";
+import type { Product } from "@/lib/products";
 import ProductVial from "@/components/ProductVial";
-import { useCart } from "@/lib/cart";
+import BuyBox from "@/components/product/BuyBox";
 import { hasProductPhoto, getProductImagePath } from "@/lib/product-images";
 
 interface Props {
-  product: LaunchProduct;
-  related: LaunchProduct[];
+  product: Product;
+  related: Product[];
 }
 
 export default function ProductDetailLaunch({ product, related }: Props) {
-  const [selectedQty, setSelectedQty] = useState<1 | 3 | 6>(1);
-  const [openAccordion, setOpenAccordion] = useState<string | null>(null);
-  const [isSubscription, setIsSubscription] = useState(false);
-  const [subscriptionCadence, setSubscriptionCadence] = useState<4 | 8 | 12>(8);
-  const { addItem, openDrawer } = useCart();
-
-  const handleAddToOrder = () => {
-    // Convert LaunchProduct to cart-compatible format
-    const cartProduct = {
-      slug: product.slug,
-      name: product.name,
-      casNumber: product.casNumber,
-      formula: product.formula || "",
-      molecularWeight: product.molecularWeight || "",
-      purity: product.purity,
-      category: product.category,
-      price: selectedPricing?.pricePerUnit || product.basePrice,
-      size: product.dosage,
-      storage: product.storage,
-      appearance: "White to off-white lyophilized powder",
-      solubility: "",
-      tagline: product.tagline,
-      description: product.description,
-      mechanism: "",
-      researchSummary: "",
-      dosingProtocol: "",
-      reconstitution: product.reconstitution,
-      relatedSlugs: product.relatedSlugs,
-      features: product.researchApplications,
-      accentColor: "#A4B08A",
-      penAvailable: false,
-      penPrice: 0,
-      forGender: "both" as const,
-    };
-    // Add items based on quantity tier
-    for (let i = 0; i < selectedQty; i++) {
-      addItem(cartProduct, "vial", { size: product.dosage, price: selectedPricing?.pricePerUnit || product.basePrice });
-    }
-    openDrawer();
-  };
-
-  const selectedPricing = product.volumePricing.find((p) => p.qty === selectedQty);
-
-  // Calculate subscription discount (15% off)
-  const subscriptionDiscount = 0.15;
-  const finalPrice = selectedPricing?.totalPrice || 0;
-  const subscriptionPrice = isSubscription ? finalPrice * (1 - subscriptionDiscount) : finalPrice;
+  const [selectedFormat, setSelectedFormat] = useState<"vial" | "pen">("vial");
+  const hasPhoto = hasProductPhoto(product.slug);
+  const accent = product.accentColor || "#A4B08A";
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#FFFFFF" }}>
@@ -80,7 +26,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
         <div className="container-nex">
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 text-sm hover:text-near-black transition-colors"
+            className="inline-flex items-center gap-2 text-sm transition-colors hover:text-near-black"
             style={{ color: "#8A8075" }}
           >
             <ArrowLeft className="w-4 h-4" />
@@ -93,49 +39,46 @@ export default function ProductDetailLaunch({ product, related }: Props) {
       <section className="py-12 lg:py-20">
         <div className="container-nex">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-            {/* Left: Product Image */}
+            {/* Left: Product Visual */}
             <div>
               <div
                 className="relative rounded-2xl overflow-hidden"
                 style={{
-                  backgroundColor: "#F7F4EE",
-                  aspectRatio: hasProductPhoto(product.slug) ? "3/4" : "1/1"
+                  backgroundColor: "#0F0F0E",
+                  aspectRatio: "4 / 5",
                 }}
               >
-                {hasProductPhoto(product.slug) ? (
-                  /* Real Product Photo */
+                {/* Subtle accent glow */}
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background: `radial-gradient(circle at 50% 45%, ${accent}22, transparent 65%)`,
+                  }}
+                />
+                {hasPhoto ? (
                   <div className="absolute inset-0 flex items-center justify-center p-8">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={getProductImagePath(product.slug)}
-                      alt={product.name}
+                      alt={`${product.name} ${product.size}`}
                       className="w-full h-full object-contain"
                     />
                   </div>
                 ) : (
-                  <>
-                    {/* Molecular structure subtle bg pattern */}
-                    <div
-                      className="absolute inset-0 opacity-5"
-                      style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-                        backgroundSize: "60px 60px",
-                      }}
-                    />
-                    {/* Product Vial SVG fallback */}
-                    <div className="absolute inset-0 flex items-center justify-center p-12">
-                      <div className="w-full max-w-[280px] h-full max-h-[520px]">
-                        <ProductVial
-                          productName={product.name}
-                          dosage={product.dosage}
-                          category={product.category}
-                        />
-                      </div>
+                  <div className="absolute inset-0 flex items-center justify-center p-12">
+                    <div className="h-full max-h-[480px]">
+                      <ProductVial
+                        productName={product.name}
+                        dosage={product.size}
+                        category={product.category}
+                        accentColor={accent}
+                      />
                     </div>
-                  </>
+                  </div>
                 )}
               </div>
 
-              {/* COA Section */}
+              {/* Specification Panel */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -144,50 +87,29 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                 style={{ backgroundColor: "#F7F4EE", borderColor: "#D8D4CC" }}
               >
                 <div className="flex items-center gap-2 mb-4">
-                  <FileCheck className="w-5 h-5" style={{ color: "#A4B08A" }} />
+                  <FileCheck className="w-5 h-5" style={{ color: accent }} />
                   <h3
                     className="text-sm font-bold uppercase tracking-wide"
                     style={{ color: "#3A3A3A" }}
                   >
-                    Certificate of Analysis
+                    Specifications
                   </h3>
                 </div>
                 <div className="grid grid-cols-2 gap-4 text-sm">
-                  <div>
-                    <div className="text-xs mb-1" style={{ color: "#8A8075" }}>
-                      Batch Number
-                    </div>
-                    <div className="font-mono font-semibold" style={{ color: "#3A3A3A" }}>
-                      {product.coa?.batchNumber}
-                    </div>
+                  <Spec label="CAS Number" value={product.casNumber} mono />
+                  <Spec label="Molecular Weight" value={product.molecularWeight} />
+                  <div className="col-span-2">
+                    <SpecInner label="Molecular Formula" value={product.formula} mono />
                   </div>
-                  <div>
-                    <div className="text-xs mb-1" style={{ color: "#8A8075" }}>
-                      Report Number
+                  <Spec label="Purity (HPLC)" value={product.purity} accent={accent} />
+                  <Spec label="Appearance" value={product.appearance} />
+                  {product.sequence && (
+                    <div className="col-span-2">
+                      <SpecInner label="Sequence" value={product.sequence} mono />
                     </div>
-                    <div className="font-mono font-semibold" style={{ color: "#3A3A3A" }}>
-                      {product.coa?.reportNumber}
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-xs mb-1" style={{ color: "#8A8075" }}>
-                      Purity (HPLC)
-                    </div>
-                    <div className="font-semibold" style={{ color: "#A4B08A" }}>
-                      {product.coa?.purityPercent}
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-xs mb-1" style={{ color: "#8A8075" }}>
-                      Date Tested
-                    </div>
-                    <div className="font-semibold" style={{ color: "#3A3A3A" }}>
-                      {new Date(product.coa?.dateTested || "").toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                      })}
-                    </div>
+                  )}
+                  <div className="col-span-2">
+                    <SpecInner label="Solubility" value={product.solubility} />
                   </div>
                 </div>
               </motion.div>
@@ -195,228 +117,40 @@ export default function ProductDetailLaunch({ product, related }: Props) {
 
             {/* Right: Product Info + Buy Box */}
             <div>
-              {/* Category Badge */}
               <span
                 className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wide rounded-full mb-4"
-                style={{ backgroundColor: "#A4B08A20", color: "#A4B08A" }}
+                style={{ backgroundColor: `${accent}20`, color: accent }}
               >
                 {product.category}
               </span>
 
-              {/* Product Name */}
               <h1
-                className="text-4xl lg:text-5xl font-bold mb-4"
+                className="text-4xl lg:text-5xl font-bold mb-3"
                 style={{ color: "#000000", fontFamily: "var(--font-display)" }}
               >
                 {product.name}
               </h1>
 
-              {/* Dosage */}
               <div className="text-xl mb-4" style={{ color: "#8A8075" }}>
-                {product.dosage}
+                {product.size}
               </div>
 
-              {/* Tagline */}
               <p className="text-lg mb-8 leading-relaxed" style={{ color: "#3A3A3A" }}>
                 {product.tagline}
               </p>
 
-              {/* Dosage Selector (Pill Buttons) */}
-              <div className="mb-6">
-                <label className="text-sm font-semibold mb-3 block" style={{ color: "#3A3A3A" }}>
-                  SELECT QUANTITY
-                </label>
-                <div className="flex flex-wrap gap-3">
-                  {product.volumePricing.map((pricing) => (
-                    <button
-                      key={pricing.qty}
-                      onClick={() => setSelectedQty(pricing.qty)}
-                      className={`flex-1 min-w-[140px] px-4 py-4 rounded-lg border-2 transition-all ${
-                        selectedQty === pricing.qty
-                          ? "border-[#A4B08A] bg-[#A4B08A10]"
-                          : "border-[#D8D4CC] hover:border-[#A4B08A50]"
-                      }`}
-                    >
-                      <div className="text-sm font-bold mb-1" style={{ color: "#3A3A3A" }}>
-                        {pricing.label}
-                      </div>
-                      <div className="text-lg font-bold" style={{ color: "#A4B08A" }}>
-                        ${pricing.pricePerUnit}
-                        {pricing.qty > 1 && <span className="text-sm">/each</span>}
-                      </div>
-                      {pricing.qty > 1 && (
-                        <div className="text-xs mt-1" style={{ color: "#8A8075" }}>
-                          Total: ${pricing.totalPrice}
-                        </div>
-                      )}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Subscription Toggle */}
-              <div className="mb-6">
-                <label className="text-sm font-semibold mb-3 block" style={{ color: "#3A3A3A" }}>
-                  PURCHASE TYPE
-                </label>
-                <div className="grid grid-cols-2 gap-3 mb-4">
-                  <button
-                    onClick={() => setIsSubscription(false)}
-                    className={`px-4 py-3 rounded-lg border-2 transition-all ${
-                      !isSubscription
-                        ? "border-[#A4B08A] bg-[#A4B08A10]"
-                        : "border-[#D8D4CC] hover:border-[#A4B08A50]"
-                    }`}
-                  >
-                    <div className="text-sm font-bold" style={{ color: "#3A3A3A" }}>
-                      One-time
-                    </div>
-                  </button>
-                  <button
-                    onClick={() => setIsSubscription(true)}
-                    className={`px-4 py-3 rounded-lg border-2 transition-all ${
-                      isSubscription
-                        ? "border-[#A4B08A] bg-[#A4B08A10]"
-                        : "border-[#D8D4CC] hover:border-[#A4B08A50]"
-                    }`}
-                  >
-                    <div className="text-sm font-bold mb-1" style={{ color: "#3A3A3A" }}>
-                      Subscribe
-                    </div>
-                    <div className="text-xs" style={{ color: "#A4B08A" }}>
-                      Save 15%
-                    </div>
-                  </button>
-                </div>
-
-                {/* Cadence Selector (only show when subscription is selected) */}
-                <AnimatePresence>
-                  {isSubscription && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                      className="overflow-hidden"
-                    >
-                      <label className="text-xs font-semibold mb-2 block" style={{ color: "#8A8075" }}>
-                        RESEARCH CYCLE
-                      </label>
-                      <div className="flex gap-2 mb-2">
-                        {[{weeks: 4, label: "4-Week"}, {weeks: 8, label: "8-Week"}, {weeks: 12, label: "12-Week"}].map(({weeks, label}) => (
-                          <button
-                            key={weeks}
-                            onClick={() => setSubscriptionCadence(weeks as 4 | 8 | 12)}
-                            className={`flex-1 px-3 py-2 rounded-lg border transition-all ${
-                              subscriptionCadence === weeks
-                                ? "border-[#A4B08A] bg-[#A4B08A10]"
-                                : "border-[#D8D4CC] hover:border-[#A4B08A50]"
-                            }`}
-                          >
-                            <div className="text-xs font-bold" style={{ color: "#3A3A3A" }}>
-                              {label}
-                            </div>
-                          </button>
-                        ))}
-                      </div>
-                      <p className="text-xs" style={{ color: "#8A8075" }}>
-                        Most researchers follow an 8-week protocol for optimal data collection.
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-
-              {/* Price Display */}
-              <div className="mb-8 p-6 rounded-lg" style={{ backgroundColor: "#F7F4EE" }}>
-                <div className="flex items-baseline justify-between mb-2">
-                  <span className="text-sm font-semibold" style={{ color: "#8A8075" }}>
-                    {isSubscription ? "CYCLE PRICE" : "TOTAL PRICE"}
-                  </span>
-                  <div className="flex items-baseline gap-2">
-                    <div className="text-3xl font-bold" style={{ color: "#000000" }}>
-                      ${subscriptionPrice.toFixed(0)}
-                    </div>
-                  </div>
-                </div>
-                {selectedQty > 1 && (
-                  <div className="text-xs mb-1" style={{ color: "#8A8075" }}>
-                    {selectedQty} vials × ${selectedPricing?.pricePerUnit} each
-                  </div>
-                )}
-                {isSubscription && (
-                  <div className="text-xs font-semibold" style={{ color: "#A4B08A" }}>
-                    Cycle saves ${(finalPrice * subscriptionDiscount).toFixed(0)} (15% off) per shipment every {subscriptionCadence} weeks
-                  </div>
-                )}
-              </div>
-
-              {/* Add to Order Button */}
-              <button
-                onClick={handleAddToOrder}
-                className="w-full py-4 rounded-lg font-bold uppercase tracking-wide text-sm transition-all hover:opacity-90 hover:scale-[1.01] active:scale-[0.99] mb-4"
-                style={{ backgroundColor: "#A4B08A", color: "#000000" }}
-              >
-                Add to Order — ${isSubscription ? subscriptionPrice.toFixed(0) : (selectedPricing?.totalPrice || product.basePrice)}
-              </button>
-
-              {/* Free Gifts / Unlockables */}
-              {selectedQty >= 3 && (
-                <div className="mb-8 p-4 rounded-lg border" style={{ backgroundColor: "#F7F4EE", borderColor: "#D8D4CC" }}>
-                  <div className="text-xs font-semibold mb-2" style={{ color: "#A4B08A" }}>
-                    INCLUDED WITH YOUR ORDER
-                  </div>
-                  <div className="space-y-1.5">
-                    {selectedQty >= 3 && (
-                      <div className="flex items-center gap-2 text-xs" style={{ color: "#3A3A3A" }}>
-                        <Check className="w-3.5 h-3.5" style={{ color: "#A4B08A" }} />
-                        <span>Bacteriostatic water included</span>
-                      </div>
-                    )}
-                    {selectedQty >= 5 && (
-                      <div className="flex items-center gap-2 text-xs" style={{ color: "#3A3A3A" }}>
-                        <Check className="w-3.5 h-3.5" style={{ color: "#A4B08A" }} />
-                        <span>Free express shipping</span>
-                      </div>
-                    )}
-                    {(selectedPricing?.totalPrice || 0) >= 250 && (
-                      <div className="flex items-center gap-2 text-xs" style={{ color: "#3A3A3A" }}>
-                        <Check className="w-3.5 h-3.5" style={{ color: "#A4B08A" }} />
-                        <span>Cold-chain packaging included</span>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              )}
-
-              {/* Trust Badges Bar */}
-              <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-                {[
-                  { icon: Shield, label: "Money Back" },
-                  { icon: Truck, label: "Free Ship $150+" },
-                  { icon: Clock, label: "2-Day Ship" },
-                  { icon: Award, label: "3rd Party Tested" },
-                  { icon: FileCheck, label: "Batch Tracked" },
-                ].map((badge, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-2 p-3 rounded-lg border"
-                    style={{ borderColor: "#D8D4CC" }}
-                  >
-                    <badge.icon className="w-4 h-4 flex-shrink-0" style={{ color: "#A4B08A" }} />
-                    <span className="text-xs font-medium" style={{ color: "#3A3A3A" }}>
-                      {badge.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              <BuyBox
+                product={product}
+                selectedFormat={selectedFormat}
+                onFormatChange={setSelectedFormat}
+              />
 
               {/* Research Disclaimer */}
               <div
-                className="flex items-start gap-3 p-4 rounded-lg border"
+                className="mt-6 flex items-start gap-3 p-4 rounded-lg border"
                 style={{ backgroundColor: "#FFFFF3", borderColor: "#D8D4CC" }}
               >
-                <Shield className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: "#A4B08A" }} />
+                <Shield className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: accent }} />
                 <p className="text-xs leading-relaxed" style={{ color: "#3A3A3A" }}>
                   <strong>Research Use Only:</strong> This product is intended for qualified
                   research use only. Not for human consumption, diagnostic, or therapeutic use.
@@ -427,118 +161,102 @@ export default function ProductDetailLaunch({ product, related }: Props) {
         </div>
       </section>
 
-      {/* Expandable Accordion Section */}
+      {/* Overview, Mechanism, Research */}
       <section className="py-16" style={{ backgroundColor: "#F7F4EE" }}>
         <div className="container-nex">
-          <div className="max-w-4xl mx-auto">
-            {/* About This Peptide */}
-            <AccordionItem
-              title="About This Peptide"
-              isOpen={openAccordion === "about"}
-              onToggle={() => setOpenAccordion(openAccordion === "about" ? null : "about")}
-            >
-              <div className="space-y-4 text-sm leading-relaxed" style={{ color: "#3A3A3A" }}>
-                <p>{product.description}</p>
-                <div className="grid grid-cols-2 gap-4 p-4 rounded-lg" style={{ backgroundColor: "#FFFFFF" }}>
-                  <div>
-                    <div className="text-xs mb-1" style={{ color: "#8A8075" }}>
-                      CAS Number
+          <div className="max-w-4xl mx-auto space-y-12">
+            <Prose title="Overview">{product.description}</Prose>
+            <Prose title="Mechanism of Action">{product.mechanism}</Prose>
+            <Prose title="Research Summary">{product.researchSummary}</Prose>
+
+            {/* Recommended Protocol */}
+            <div>
+              <h2
+                className="text-2xl lg:text-3xl font-bold mb-4"
+                style={{ color: "#000000", fontFamily: "var(--font-display)" }}
+              >
+                Recommended Protocol
+              </h2>
+              <p className="text-sm leading-relaxed mb-4" style={{ color: "#3A3A3A" }}>
+                {product.dosingProtocol}
+              </p>
+              <div
+                className="p-5 rounded-lg border text-sm leading-relaxed"
+                style={{ backgroundColor: "#FFFFFF", borderColor: "#D8D4CC", color: "#3A3A3A" }}
+              >
+                Research methodology is typically organized around a{" "}
+                <Link
+                  href="/protocols"
+                  className="font-semibold underline underline-offset-2"
+                  style={{ color: accent }}
+                >
+                  Research Cycle
+                </Link>
+                . A 3-Month cycle provides enough material to observe a full response window,
+                while a 6-Month cycle supports extended longevity and recovery study designs that
+                run across two cycles. Cadence and dosing should follow the relevant institutional
+                protocol. This compound is supplied for laboratory research use only and is not
+                approved for human therapeutic use.
+              </div>
+            </div>
+
+            {/* Storage & Reconstitution */}
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div
+                className="p-5 rounded-lg border"
+                style={{ backgroundColor: "#FFFFFF", borderColor: "#D8D4CC" }}
+              >
+                <h3 className="font-semibold mb-2" style={{ color: accent }}>
+                  Storage &amp; Handling
+                </h3>
+                <p className="text-sm leading-relaxed" style={{ color: "#3A3A3A" }}>
+                  {product.storage}
+                </p>
+              </div>
+              <div
+                className="p-5 rounded-lg border"
+                style={{ backgroundColor: "#FFFFFF", borderColor: "#D8D4CC" }}
+              >
+                <h3 className="font-semibold mb-2" style={{ color: accent }}>
+                  Reconstitution
+                </h3>
+                <p className="text-sm leading-relaxed" style={{ color: "#3A3A3A" }}>
+                  {product.reconstitution}
+                </p>
+              </div>
+            </div>
+
+            {/* Key Features */}
+            {product.features.length > 0 && (
+              <div>
+                <h2
+                  className="text-2xl lg:text-3xl font-bold mb-6"
+                  style={{ color: "#000000", fontFamily: "var(--font-display)" }}
+                >
+                  Key Characteristics
+                </h2>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {product.features.map((feature) => (
+                    <div key={feature} className="flex items-start gap-3">
+                      <div
+                        className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                        style={{ backgroundColor: `${accent}20` }}
+                      >
+                        <Check className="w-3 h-3" style={{ color: accent }} />
+                      </div>
+                      <span className="text-sm" style={{ color: "#3A3A3A" }}>
+                        {feature}
+                      </span>
                     </div>
-                    <div className="font-mono font-semibold">{product.casNumber}</div>
-                  </div>
-                  <div>
-                    <div className="text-xs mb-1" style={{ color: "#8A8075" }}>
-                      Molecular Weight
-                    </div>
-                    <div className="font-semibold">{product.molecularWeight}</div>
-                  </div>
-                  <div className="col-span-2">
-                    <div className="text-xs mb-1" style={{ color: "#8A8075" }}>
-                      Molecular Formula
-                    </div>
-                    <div className="font-mono font-semibold">{product.formula}</div>
-                  </div>
-                  <div>
-                    <div className="text-xs mb-1" style={{ color: "#8A8075" }}>
-                      Purity
-                    </div>
-                    <div className="font-semibold" style={{ color: "#A4B08A" }}>
-                      {product.purity}
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
-            </AccordionItem>
-
-            {/* Research Applications */}
-            <AccordionItem
-              title="Research Applications"
-              isOpen={openAccordion === "research"}
-              onToggle={() => setOpenAccordion(openAccordion === "research" ? null : "research")}
-            >
-              <div className="space-y-3">
-                {product.researchApplications.map((app, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <div
-                      className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-                      style={{ backgroundColor: "#A4B08A20" }}
-                    >
-                      <Check className="w-3 h-3" style={{ color: "#A4B08A" }} />
-                    </div>
-                    <p className="text-sm leading-relaxed" style={{ color: "#3A3A3A" }}>
-                      {app}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </AccordionItem>
-
-            {/* Storage */}
-            <AccordionItem
-              title="Storage & Reconstitution"
-              isOpen={openAccordion === "storage"}
-              onToggle={() => setOpenAccordion(openAccordion === "storage" ? null : "storage")}
-            >
-              <div className="space-y-4 text-sm leading-relaxed" style={{ color: "#3A3A3A" }}>
-                <div>
-                  <div className="font-semibold mb-2" style={{ color: "#A4B08A" }}>
-                    Storage Requirements
-                  </div>
-                  <p>{product.storage}</p>
-                </div>
-                <div>
-                  <div className="font-semibold mb-2" style={{ color: "#A4B08A" }}>
-                    Reconstitution Protocol
-                  </div>
-                  <p>{product.reconstitution}</p>
-                </div>
-              </div>
-            </AccordionItem>
-
-            {/* FAQ */}
-            <AccordionItem
-              title="Frequently Asked Questions"
-              isOpen={openAccordion === "faq"}
-              onToggle={() => setOpenAccordion(openAccordion === "faq" ? null : "faq")}
-            >
-              <div className="space-y-6">
-                {product.faq?.map((item, index) => (
-                  <div key={index}>
-                    <div className="font-semibold mb-2" style={{ color: "#A4B08A" }}>
-                      {item.question}
-                    </div>
-                    <p className="text-sm leading-relaxed" style={{ color: "#3A3A3A" }}>
-                      {item.answer}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </AccordionItem>
+            )}
           </div>
         </div>
       </section>
 
-      {/* Frequently Researched Together */}
+      {/* Related Products */}
       {related.length > 0 && (
         <section className="py-16">
           <div className="container-nex">
@@ -549,54 +267,59 @@ export default function ProductDetailLaunch({ product, related }: Props) {
               Frequently Researched Together
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {related.map((relatedProduct) => (
-                <Link
-                  key={relatedProduct.slug}
-                  href={`/products/${relatedProduct.slug}`}
-                  className="block group"
-                >
-                  <div
-                    className="p-6 rounded-xl border-2 transition-all hover:border-[#A4B08A]"
-                    style={{ borderColor: "#D8D4CC", backgroundColor: "#FFFFFF" }}
+              {related.map((rp) => {
+                const rpAccent = rp.accentColor || "#A4B08A";
+                return (
+                  <Link
+                    key={rp.slug}
+                    href={`/products/${rp.slug}`}
+                    className="block group"
                   >
-                    {/* Product vial thumbnail */}
                     <div
-                      className="aspect-square rounded-lg mb-4 flex items-center justify-center p-8"
-                      style={{ backgroundColor: "#F7F4EE" }}
+                      className="p-6 rounded-xl border-2 transition-all hover:border-[#A4B08A]"
+                      style={{ borderColor: "#D8D4CC", backgroundColor: "#FFFFFF" }}
                     >
-                      {hasProductPhoto(relatedProduct.slug) ? (
-                        <img
-                          src={getProductImagePath(relatedProduct.slug)}
-                          alt={relatedProduct.name}
-                          className="w-full h-full object-contain"
-                          style={{ maxHeight: "120px" }}
-                        />
-                      ) : (
-                        <ProductVial
-                          productName={relatedProduct.name}
-                          dosage={relatedProduct.dosage}
-                          category={relatedProduct.category}
-                        />
-                      )}
+                      <div
+                        className="aspect-square rounded-lg mb-4 flex items-center justify-center p-6 overflow-hidden"
+                        style={{ backgroundColor: "#0F0F0E" }}
+                      >
+                        {hasProductPhoto(rp.slug) ? (
+                          /* eslint-disable-next-line @next/next/no-img-element */
+                          <img
+                            src={getProductImagePath(rp.slug)}
+                            alt={rp.name}
+                            className="w-full h-full object-contain"
+                          />
+                        ) : (
+                          <div className="h-full">
+                            <ProductVial
+                              productName={rp.name}
+                              dosage={rp.size}
+                              category={rp.category}
+                              accentColor={rpAccent}
+                            />
+                          </div>
+                        )}
+                      </div>
+                      <div className="text-xs mb-2" style={{ color: "#8A8075" }}>
+                        {rp.category}
+                      </div>
+                      <h3
+                        className="text-lg font-bold mb-2"
+                        style={{ color: "#000000", fontFamily: "var(--font-display)" }}
+                      >
+                        {rp.name}
+                      </h3>
+                      <p className="text-xs mb-4 leading-relaxed" style={{ color: "#8A8075" }}>
+                        {rp.size} • {rp.purity}
+                      </p>
+                      <div className="text-xl font-bold" style={{ color: rpAccent }}>
+                        ${rp.price}
+                      </div>
                     </div>
-                    <div className="text-xs mb-2" style={{ color: "#8A8075" }}>
-                      {relatedProduct.category}
-                    </div>
-                    <h3
-                      className="text-lg font-bold mb-2"
-                      style={{ color: "#000000", fontFamily: "var(--font-display)" }}
-                    >
-                      {relatedProduct.name}
-                    </h3>
-                    <p className="text-xs mb-4 leading-relaxed" style={{ color: "#8A8075" }}>
-                      {relatedProduct.dosage} • {relatedProduct.purity}
-                    </p>
-                    <div className="text-xl font-bold" style={{ color: "#A4B08A" }}>
-                      ${relatedProduct.basePrice}
-                    </div>
-                  </div>
-                </Link>
-              ))}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -616,41 +339,62 @@ export default function ProductDetailLaunch({ product, related }: Props) {
   );
 }
 
-// Accordion Item Component
-interface AccordionItemProps {
-  title: string;
-  isOpen: boolean;
-  onToggle: () => void;
-  children: React.ReactNode;
+function Spec({
+  label,
+  value,
+  mono,
+  accent,
+}: {
+  label: string;
+  value: string;
+  mono?: boolean;
+  accent?: string;
+}) {
+  return (
+    <div>
+      <SpecInner label={label} value={value} mono={mono} accent={accent} />
+    </div>
+  );
 }
 
-function AccordionItem({ title, isOpen, onToggle, children }: AccordionItemProps) {
+function SpecInner({
+  label,
+  value,
+  mono,
+  accent,
+}: {
+  label: string;
+  value: string;
+  mono?: boolean;
+  accent?: string;
+}) {
   return (
-    <div className="border-b" style={{ borderColor: "#D8D4CC" }}>
-      <button
-        onClick={onToggle}
-        className="w-full py-6 flex items-center justify-between text-left hover:opacity-70 transition-opacity"
+    <>
+      <div className="text-xs mb-1" style={{ color: "#8A8075" }}>
+        {label}
+      </div>
+      <div
+        className={`font-semibold break-words ${mono ? "font-mono text-[13px]" : ""}`}
+        style={{ color: accent || "#3A3A3A" }}
       >
-        <h3 className="text-lg font-bold" style={{ color: "#000000" }}>
-          {title}
-        </h3>
-        <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
-          <ChevronDown className="w-5 h-5" style={{ color: "#8A8075" }} />
-        </motion.div>
-      </button>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden"
-          >
-            <div className="pb-6">{children}</div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+        {value}
+      </div>
+    </>
+  );
+}
+
+function Prose({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <h2
+        className="text-2xl lg:text-3xl font-bold mb-4"
+        style={{ color: "#000000", fontFamily: "var(--font-display)" }}
+      >
+        {title}
+      </h2>
+      <p className="text-sm leading-relaxed" style={{ color: "#3A3A3A" }}>
+        {children}
+      </p>
     </div>
   );
 }

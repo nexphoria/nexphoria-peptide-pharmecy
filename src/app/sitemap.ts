@@ -1,9 +1,17 @@
 import { MetadataRoute } from "next";
+import { products } from "@/lib/products";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://nexphoria.com";
+
+  const productUrls: MetadataRoute.Sitemap = products.map((p) => ({
+    url: `${baseUrl}/products/${p.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.85,
+  }));
 
   return [
     {
@@ -23,6 +31,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
+    },
+    ...productUrls,
+    {
+      url: `${baseUrl}/protocols`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/build-your-stack`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/science`,
