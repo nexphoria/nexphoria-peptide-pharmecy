@@ -5,18 +5,18 @@ import Breadcrumb from "@/components/Breadcrumb";
 export const metadata: Metadata = {
   title: "Research Hub | Nexphoria — Tools, Guides, Articles & More",
   description:
-    "Your central research hub: 16 interactive tools, 4 comprehensive guides, 39+ journal articles across 9 categories, compound index, COA library, and more. Everything a peptide researcher needs in one place.",
+    "Your central research hub: 16 interactive tools, 7 comprehensive guides, 39+ journal articles across 9 categories, compound index, COA library, and more. Everything a peptide researcher needs in one place.",
   openGraph: {
     title: "Research Hub — Nexphoria",
     description:
-      "16 tools, 4 guides, 39 articles, compound index, COA library — everything for peptide research in one place.",
+      "16 tools, 7 guides, 39 articles, compound index, COA library — everything for peptide research in one place.",
     url: "https://nexphoria.com/resources",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Research Hub — Nexphoria",
-    description: "16 tools, 4 guides, 39 articles — your complete peptide research resource center.",
+    description: "16 tools, 7 guides, 39 articles — your complete peptide research resource center.",
     images: ["/og-image.jpg"],
   },
 };
@@ -89,6 +89,16 @@ const GUIDES = [
     href: "/guides/coa-verification",
     label: "COA Verification Guide",
     desc: "6-step guide to authenticating certificates of analysis",
+  },
+  {
+    href: "/guides/peptide-sourcing",
+    label: "Peptide Sourcing Guide",
+    desc: "Evaluate suppliers: ISO 17025, HPLC + MS + LAL endotoxin, quality tiers, red flags",
+  },
+  {
+    href: "/guides/safety-handling",
+    label: "Safety & Handling Guide",
+    desc: "PPE, aseptic technique, sharps handling, spill response, and waste disposal",
   },
 ];
 
@@ -164,7 +174,7 @@ export default function ResourcesPage() {
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
             {[
               { num: "19+", label: "Interactive Tools" },
-              { num: "4", label: "Written Guides" },
+              { num: "7", label: "Written Guides" },
               { num: "39+", label: "Journal Articles" },
               { num: "32+", label: "Compound Profiles" },
               { num: "9", label: "Research Categories" },

@@ -264,6 +264,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.76,
     },
     {
+      url: `${baseUrl}/guides/peptide-sourcing`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.78,
+    },
+    {
+      url: `${baseUrl}/guides/safety-handling`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.74,
+    },
+    {
+      url: `${baseUrl}/guides`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.80,
+    },
+    {
       url: `${baseUrl}/tools/vial-inventory-tracker`,
       lastModified: new Date(),
       changeFrequency: "monthly",
