@@ -142,7 +142,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
               stiffness: 300,
               mass: 0.8
             }}
-            className={`fixed top-0 right-0 bottom-0 z-50 w-full max-w-md flex flex-col ${className}`}
+            className={`fixed top-0 right-0 bottom-0 z-50 w-full max-w-md flex flex-col overflow-hidden ${className}`}
             style={{ backgroundColor: "#F9F9F9", borderLeft: "1px solid #ECEAE4" }}
           >
             {/* Header */}
@@ -160,7 +160,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
               </div>
               <button
                 onClick={closeDrawer}
-                className="p-2 hover:bg-[#F5F3F0] transition-colors rounded-md"
+                className="flex items-center justify-center min-w-[44px] min-h-[44px] hover:bg-[#F5F3F0] transition-colors rounded-md -mr-1"
                 aria-label="Close cart"
               >
                 <X className="w-5 h-5" style={{ color: "#7F7F7D" }} />
@@ -172,11 +172,11 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
               <div className="px-6 py-4 border-b" style={{ borderColor: "#ECEAE4" }}>
                 {nextThreshold ? (
                   <>
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-xs font-semibold" style={{ color: "#3A3A3A" }}>
+                    <div className="flex items-baseline justify-between gap-2 mb-2 flex-wrap">
+                      <span className="text-xs font-semibold min-w-0" style={{ color: "#3A3A3A" }}>
                         ${(nextThreshold.amount - totalPrice).toFixed(0)} away from {nextThreshold.label}
                       </span>
-                      <span className="text-xs" style={{ color: "#8A8075" }}>
+                      <span className="text-xs flex-shrink-0" style={{ color: "#8A8075" }}>
                         ${totalPrice.toFixed(0)} / ${nextThreshold.amount}
                       </span>
                     </div>
@@ -307,7 +307,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                                 <button
                                   onClick={() => updateQuantity(item.product.slug, item.format, item.quantity - 1)}
                                   className="w-11 h-11 flex items-center justify-center border transition-colors rounded"
-                                  style={{ borderColor: "#D8D4CC" }}
+                                  style={{ borderColor: "#D8D4CC", opacity: item.quantity <= 1 ? 0.35 : 1 }}
                                   disabled={item.quantity <= 1}
                                   aria-label="Decrease quantity"
                                 >
@@ -432,7 +432,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                                 ${product.price}
                               </p>
                             </div>
-                            <span className="text-xs font-medium" style={{ color: "#B8A44C" }}>
+                            <span className="text-xs font-medium whitespace-nowrap flex-shrink-0" style={{ color: "#B8A44C" }}>
                               Add to Order
                             </span>
                           </button>
@@ -447,7 +447,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
             {/* Footer - Checkout */}
             {items.length > 0 && (
               <div
-                className="px-6 py-5 border-t"
+                className="px-6 pt-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] border-t flex-shrink-0"
                 style={{ borderColor: "#ECEAE4" }}
               >
                 {/* Total */}
@@ -483,6 +483,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                 {/* Checkout Button */}
                 <button
                   className="btn-acid w-full justify-center"
+                  style={{ minHeight: "52px" }}
                   onClick={() => {
                     closeDrawer();
                     router.push('/checkout');

@@ -208,13 +208,20 @@ export default function CheckoutPage() {
       });
 
       if (!response.ok) {
-        throw new Error("Failed to create checkout session");
+        let message = "We could not start checkout. Please try again or contact support.";
+        try {
+          const payload = await response.json();
+          if (payload?.message) message = payload.message;
+        } catch {
+          /* swallow */
+        }
+        throw new Error(message);
       }
 
       const { url } = await response.json();
 
       if (!url) {
-        throw new Error("No checkout URL returned");
+        throw new Error("We could not start checkout. Please try again or contact support.");
       }
 
       window.location.href = url;
@@ -277,6 +284,7 @@ export default function CheckoutPage() {
                     Email Address
                   </label>
                   <input
+                    id="checkout-email"
                     type="email"
                     required
                     value={formData.email}
@@ -302,7 +310,7 @@ export default function CheckoutPage() {
                     return (
                       <label
                         key={option.id}
-                        className="flex items-start gap-4 p-4 rounded-lg border cursor-pointer transition-all"
+                        className="flex items-start gap-3 p-3 sm:gap-4 sm:p-4 rounded-lg border cursor-pointer transition-all"
                         style={{
                           borderColor: isSelected ? "#B8A44C" : "#D8D4CC",
                           backgroundColor: isSelected ? "#B8A44C10" : "#F7F5F0",
@@ -335,13 +343,13 @@ export default function CheckoutPage() {
                         </div>
 
                         <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-2 flex-wrap">
+                          <div className="flex flex-col gap-1">
                             <span className="text-sm font-semibold" style={{ color: "#010101" }}>
                               {option.label}
                             </span>
                             {option.badge && (
                               <span
-                                className="text-[10px] font-medium px-2 py-0.5 rounded-full"
+                                className="text-[10px] font-medium px-2 py-0.5 rounded-full self-start"
                                 style={{ backgroundColor: "#B8A44C20", color: "#8A7030" }}
                               >
                                 {option.badge}
@@ -809,7 +817,7 @@ export default function CheckoutPage() {
                   </div>
                   {promoApplied && (
                     <p className="text-xs mt-1.5" style={{ color: "#B8A44C" }}>
-                      Promo code applied — discount reflected at Stripe checkout.
+                      Promo code applied — adjustment reflected at Stripe checkout.
                     </p>
                   )}
                 </div>
@@ -918,8 +926,16 @@ export default function CheckoutPage() {
           </div>
           <button
             type="button"
-            onClick={handleCheckout}
-            disabled={isProcessing || !formData.email}
+            onClick={() => {
+              if (!formData.email) {
+                const el = document.getElementById("checkout-email");
+                el?.scrollIntoView({ behavior: "smooth", block: "center" });
+                el?.focus();
+                return;
+              }
+              handleCheckout();
+            }}
+            disabled={isProcessing}
             className="btn-acid flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isProcessing ? "Processing..." : "Place Order"}

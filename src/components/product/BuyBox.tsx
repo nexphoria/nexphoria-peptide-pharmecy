@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ShoppingCart, Shield, FlaskConical, Truck, RefreshCw } from "lucide-react";
+import { ShoppingCart, Shield, FlaskConical, Truck } from "lucide-react";
 import { useCart } from "@/lib/cart";
 import { Product, ProductDosage } from "@/lib/products";
 
@@ -16,12 +16,10 @@ interface BuyBoxProps {
 type PurchaseMode = 'one-time' | 'subscribe';
 
 const VOLUME_OPTIONS = [
-  { qty: 1, label: "1 Vial", discount: 0 },
-  { qty: 3, label: "Research Kit", discount: 0.05 },
-  { qty: 6, label: "Lab Protocol", discount: 0.10 },
+  { qty: 1, label: "1 Vial" },
+  { qty: 3, label: "Research Kit" },
+  { qty: 6, label: "Lab Protocol" },
 ] as const;
-
-const SUBSCRIBE_DISCOUNT = 0.05;
 
 export default function BuyBox({
   product,
@@ -52,24 +50,14 @@ export default function BuyBox({
   };
 
   const basePrice = getBasePrice();
-
-  const volumeDiscount = selectedVolume.discount;
-  const effectiveDiscount = purchaseMode === 'subscribe'
-    ? Math.min(volumeDiscount + SUBSCRIBE_DISCOUNT, 0.20)
-    : volumeDiscount;
-
-  const unitPrice = effectiveDiscount > 0
-    ? +(basePrice * (1 - effectiveDiscount)).toFixed(2)
-    : basePrice;
-
+  const unitPrice = basePrice;
   const qty = selectedVolume.qty;
   const totalPrice = +(unitPrice * qty).toFixed(2);
-  const subscribeSavings = +(basePrice * SUBSCRIBE_DISCOUNT * qty).toFixed(2);
 
   const handleAddToOrder = () => {
-    const subscriptionMonths = purchaseMode === 'subscribe' ? 3 : 1;
+    const subscriptionMonths = purchaseMode === 'subscribe' ? 1 : 0;
     for (let i = 0; i < selectedVolume.qty; i++) {
-      addItem(product, selectedFormat, selectedDosage, subscriptionMonths, effectiveDiscount);
+      addItem(product, selectedFormat, selectedDosage, subscriptionMonths, 0);
     }
     openDrawer();
   };
@@ -128,14 +116,14 @@ export default function BuyBox({
                 }}
                 aria-pressed={active}
               >
-                {mode === 'one-time' ? 'One-time' : 'Subscribe'}
+                {mode === 'one-time' ? 'One-time' : 'Monthly Auto-Ship'}
               </button>
             );
           })}
         </div>
         {purchaseMode === 'subscribe' && (
           <p className="text-[11px] mt-2 leading-relaxed" style={{ color: "#666666" }}>
-            3-month research cycle · cancel anytime · saves ${subscribeSavings.toFixed(2)} this order
+            Ships monthly · cancel anytime
           </p>
         )}
       </div>
@@ -225,9 +213,6 @@ export default function BuyBox({
         <div className="flex" style={{ borderTop: "1px solid #C4A265" }}>
           {VOLUME_OPTIONS.map((opt, i) => {
             const active = selectedVolume.qty === opt.qty;
-            const optUnitPrice = opt.discount > 0
-              ? +(basePrice * (1 - opt.discount)).toFixed(2)
-              : basePrice;
             return [
               i > 0 ? (
                 <div
@@ -261,7 +246,7 @@ export default function BuyBox({
                     fontVariantNumeric: "tabular-nums",
                   }}
                 >
-                  ${optUnitPrice.toFixed(2)} / vial
+                  {opt.qty === 1 ? "Single vial" : `${opt.qty} vials`}
                 </div>
               </button>,
             ];

@@ -411,7 +411,7 @@ export function Header() {
                   style={{ color: "#9B7FD4" }}
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Bundles (5–8% off) &#8594;
+                  Bundles &#8594;
                 </Link>
               </div>
             )}
