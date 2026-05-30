@@ -24,9 +24,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // GH Axis
   "ipamorelin": [
+    "mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research",
     "ipamorelin-dosing-timing-protocol-design-researchers-reference",
     "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
-    "peptide-synergy-stacking-science-of-combining-research-compounds",
   ],
   "cjc-1295": [
     "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
@@ -34,14 +34,14 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
   ],
   "cjc-1295-no-dac": [
+    "mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research",
     "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
-    "ipamorelin-dosing-timing-protocol-design-researchers-reference",
     "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
   ],
   "cjc-1295-ipamorelin": [
+    "mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research",
     "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
     "ipamorelin-dosing-timing-protocol-design-researchers-reference",
-    "ipamorelin-vs-ghrp2-vs-ghrp6-growth-hormone-secretagogue-comparison",
   ],
   "sermorelin": [
     "sermorelin-ghrh-analog-anti-aging-research",
@@ -49,9 +49,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
   ],
   "mk-677": [
+    "mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research",
     "mk-677-ibutamoren-oral-gh-secretagogue-guide",
     "ipamorelin-dosing-timing-protocol-design-researchers-reference",
-    "ipamorelin-vs-ghrp2-vs-ghrp6-growth-hormone-secretagogue-comparison",
   ],
   "tesamorelin": [
     "tesamorelin-ghrh-analog-visceral-fat-research",
@@ -66,9 +66,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "glp1-receptor-agonists-complete-research-landscape",
   ],
   "tirzepatide": [
+    "tirzepatide-research-dosing-guide-glp1-gip-dual-agonism-protocols",
     "semaglutide-vs-tirzepatide-research-comparison",
     "glp1-receptor-agonists-complete-research-landscape",
-    "retatrutide-triple-agonist-research-guide",
   ],
   "retatrutide": [
     "retatrutide-triple-agonist-research-guide",
@@ -88,9 +88,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // Longevity
   "nad-plus": [
+    "nad-plus-research-protocols-dosing-routes-study-design",
     "nad-plus-cellular-energy-sirtuins-longevity-research",
     "mots-c-mitochondria-derived-peptide-metabolic-research",
-    "epithalon-telomere-peptide-research-guide",
   ],
   "epitalon": [
     "epithalon-telomere-peptide-research-guide",
