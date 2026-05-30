@@ -31,7 +31,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "ipamorelin": [
     "mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research",
     "ipamorelin-dosing-timing-protocol-design-researchers-reference",
-    "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
+    "igf-1-vs-growth-hormone-downstream-mediator-explained",
   ],
   "cjc-1295": [
     "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
@@ -56,7 +56,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "mk-677": [
     "mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research",
     "mk-677-ibutamoren-oral-gh-secretagogue-guide",
-    "ipamorelin-dosing-timing-protocol-design-researchers-reference",
+    "igf-1-vs-growth-hormone-downstream-mediator-explained",
   ],
   "tesamorelin": [
     "tesamorelin-ghrh-analog-visceral-fat-research",

@@ -75,6 +75,8 @@ import { article as a71 } from './articles/peptide-research-mouse-vs-rat-model-s
 import { article as a72 } from './articles/follistatin-myostatin-inhibition-peptide-research-protocols';
 import { article as a73 } from './articles/adiponectin-leptin-metabolic-hormone-endpoints-peptide-research';
 import { article as a74 } from './articles/peptide-research-lab-setup-equipment-safety-best-practices';
+import { article as a75 } from './articles/igf-1-vs-growth-hormone-downstream-mediator-explained';
+import { article as a76 } from './articles/pcsk9-peptides-cardiovascular-research-targets';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -106,6 +108,8 @@ export const articles: BlogArticle[] = [
   a72,
   a73,
   a74,
+  a75,
+  a76,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
