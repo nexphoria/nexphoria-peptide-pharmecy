@@ -85,6 +85,11 @@ const GUIDES = [
     label: "Peptide Glossary",
     desc: "50+ research terms alphabetically indexed with cross-links",
   },
+  {
+    href: "/guides/coa-verification",
+    label: "COA Verification Guide",
+    desc: "6-step guide to authenticating certificates of analysis",
+  },
 ];
 
 const BLOG_CATEGORIES = [

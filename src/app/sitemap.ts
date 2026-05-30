@@ -258,6 +258,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.75,
     },
     {
+      url: `${baseUrl}/guides/coa-verification`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.76,
+    },
+    {
       url: `${baseUrl}/tools/vial-inventory-tracker`,
       lastModified: new Date(),
       changeFrequency: "monthly",

@@ -160,8 +160,23 @@ const TOOLS = [
     badge: "Reference",
   },
   {
-    href: "/guides/dosing-protocols",
+    href: "/guides/coa-verification",
+    title: "COA Verification Guide",
+    desc: "Step-by-step guide to authenticating peptide COAs: ISO 17025 lab accreditation, lot number matching, HPLC chromatograms, MS molecular mass, and LAL endotoxin values. 12-point checklist included.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+        <path d="M9 12h6"/>
+        <path d="M9 16h4"/>
+        <path d="M7.5 9l1.5 1.5 3-3"/>
+      </svg>
+    ),
+    badge: "Guide",
+  },
+  {
     title: "Dosing Protocol Design Guide",
+    href: "/guides/dosing-protocols",
     desc: "Comprehensive written guide to protocol design: loading vs maintenance phases, GH axis timing, injection site rotation, 3-month vs 6-month cycles, washout period calculation, stacking principles, and record-keeping standards.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">

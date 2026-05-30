@@ -57,6 +57,7 @@ const footerNav = {
     { label: "Dosing Protocols Guide", href: "/guides/dosing-protocols" },
     { label: "Biomarker Reference", href: "/tools/biomarker-reference" },
     { label: "Peptide Glossary", href: "/guides/peptide-glossary" },
+    { label: "COA Verification Guide", href: "/guides/coa-verification" },
     { label: "Track Your Order", href: "/account/orders" },
     { label: "Order Status", href: "/account/lookup" },
     { label: "Wholesale", href: "/wholesale" },
