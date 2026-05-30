@@ -4,25 +4,22 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import RUOBanner from "@/components/RUOBanner";
-import CartDrawer from "@/components/cart/CartDrawer";
-import AgeVerificationModal from "@/components/AgeVerificationModal";
-import SearchModal from "@/components/SearchModal";
-import BackToTop from "@/components/BackToTop";
-import NewsletterPopup from "@/components/NewsletterPopup";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import ClientModals from "@/components/ClientModals";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  display: "swap",
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  // "optional" eliminates font-swap CLS; locally-hosted fonts load within the 100ms block window
+  display: "optional",
+  weight: ["300", "400", "500", "700"],
 });
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   variable: "--font-cormorant",
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
+  display: "optional",
+  weight: ["300", "400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -240,11 +237,7 @@ export default function RootLayout({
         <main>{children}</main>
         <RUOBanner variant="band" />
         <Footer />
-        <CartDrawer />
-        <AgeVerificationModal />
-        <SearchModal />
-        <NewsletterPopup />
-        <BackToTop />
+        <ClientModals />
       </body>
     </html>
   );

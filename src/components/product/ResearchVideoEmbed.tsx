@@ -42,6 +42,8 @@ export default function ResearchVideoEmbed({ video }: Props) {
             src={thumbnailUrl}
             alt={video.title}
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            loading="lazy"
+            decoding="async"
             onError={(e) => {
               // Fallback to hqdefault if maxresdefault fails
               (e.target as HTMLImageElement).src = `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`;

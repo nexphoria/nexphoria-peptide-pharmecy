@@ -209,6 +209,8 @@ function BundleCard({ bundle }: { bundle: (typeof BUNDLES)[number] }) {
                       src={`/products/${p.slug}.png`}
                       alt={p.name}
                       className="w-8 h-8 object-contain"
+                      loading="lazy"
+                      decoding="async"
                       onError={(e) => {
                         (e.target as HTMLImageElement).style.display = "none";
                       }}

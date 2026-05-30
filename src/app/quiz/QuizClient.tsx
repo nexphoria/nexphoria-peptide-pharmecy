@@ -360,6 +360,8 @@ export default function QuizClient() {
                     src={`/products/${product.slug}.png`}
                     alt={product.name}
                     className="h-32 object-contain"
+                    loading="lazy"
+                    decoding="async"
                     onError={(e) => {
                       (e.currentTarget as HTMLImageElement).style.display = "none";
                     }}

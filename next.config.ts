@@ -5,6 +5,12 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  // Strip console.log in production — shrinks JS bundle slightly
+  compiler: {
+    removeConsole: {
+      exclude: ['error', 'warn'],
+    },
+  },
   async headers() {
     return [
       {
@@ -17,7 +23,16 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        source: '/products/:path*',
+        source: '/images/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/_next/static/:path*',
         headers: [
           {
             key: 'Cache-Control',

@@ -46,6 +46,8 @@ export default function RecentlyViewedBar({ currentSlug }: Props) {
                       src={getProductImagePath(product.slug)}
                       alt={product.name}
                       className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
                     />
                   ) : (
                     <span className="text-xs font-semibold text-[#B8A44C] text-center px-2">

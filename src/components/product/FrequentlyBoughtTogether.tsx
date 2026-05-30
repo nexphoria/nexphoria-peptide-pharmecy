@@ -158,6 +158,8 @@ export default function FrequentlyBoughtTogether({ currentSlug }: Props) {
                             src={getProductImagePath(product.slug)}
                             alt={product.name}
                             className="w-full h-full object-cover"
+                            loading="lazy"
+                            decoding="async"
                           />
                         ) : (
                           <span className="text-[9px] font-semibold text-[#B8A44C] text-center px-1 leading-tight">
