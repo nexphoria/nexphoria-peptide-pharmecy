@@ -56,6 +56,7 @@ const TOOLS = [
   { href: "/tools/peptide-dose-response-planner", label: "Dose-Response Study Planner", desc: "Log-spaced dose arms, power-calculated group sizes, compound requirements" },
   { href: "/tools/peptide-news-feed", label: "Research News Feed", desc: "Curated landmark PubMed papers — filter by compound, category, or impact level" },
   { href: "/tools/compound-half-life-reference", label: "Half-Life Reference Table", desc: "Fast-load static reference for 35+ compounds: half-life, Tmax, dosing frequency, route" },
+  { href: "/tools/molarity-calculator", label: "Molarity Calculator", desc: "Convert molar ↔ mass concentration (nM/μM ↔ mg/mL) for any peptide — 30+ compound MW database, rodent dose → nmol converter" },
   { href: "/compare", label: "Compare Compounds", desc: "Side-by-side purity, MW, storage, and pricing for up to 3 compounds" },
 ];
 

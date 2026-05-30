@@ -380,6 +380,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.72,
     },
     {
+      url: `${baseUrl}/tools/molarity-calculator`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.72,
+    },
+    {
       url: `${baseUrl}/legal/disclaimer`,
       lastModified: new Date(),
       changeFrequency: "yearly",
