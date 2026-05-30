@@ -84,6 +84,8 @@ import { article as a80 } from './articles/thymosin-beta-4-systemic-vs-local-eff
 import { article as a81 } from './articles/crh-stress-peptide-hpa-axis-research';
 import { article as a82 } from './articles/peptide-half-lives-quick-reference-guide';
 import { article as a83 } from './articles/peptide-bioassay-controls-vehicle-negative-positive-controls-explained';
+import { article as a84 } from './articles/peptide-ic50-ec50-ki-binding-affinity-research-guide';
+import { article as a85 } from './articles/ghrh-biology-pulsatile-gh-secretagogues-deep-dive';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -124,6 +126,8 @@ export const articles: BlogArticle[] = [
   a81,
   a82,
   a83,
+  a84,
+  a85,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

@@ -31,15 +31,15 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "ipamorelin": [
     "mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research",
     "ipamorelin-dosing-timing-protocol-design-researchers-reference",
-    "complete-blood-panel-guide-peptide-researchers",
+    "peptide-ic50-ec50-ki-binding-affinity-research-guide",
   ],
   "cjc-1295": [
+    "ghrh-biology-pulsatile-gh-secretagogues-deep-dive",
     "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
-    "ipamorelin-dosing-timing-protocol-design-researchers-reference",
     "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
   ],
   "cjc-1295-no-dac": [
-    "mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research",
+    "ghrh-biology-pulsatile-gh-secretagogues-deep-dive",
     "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
     "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
   ],
@@ -49,8 +49,8 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "ipamorelin-dosing-timing-protocol-design-researchers-reference",
   ],
   "sermorelin": [
+    "ghrh-biology-pulsatile-gh-secretagogues-deep-dive",
     "sermorelin-ghrh-analog-anti-aging-research",
-    "ipamorelin-dosing-timing-protocol-design-researchers-reference",
     "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
   ],
   "mk-677": [
@@ -59,15 +59,15 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "igf-1-vs-growth-hormone-downstream-mediator-explained",
   ],
   "tesamorelin": [
+    "ghrh-biology-pulsatile-gh-secretagogues-deep-dive",
     "tesamorelin-ghrh-analog-visceral-fat-research",
     "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
-    "sermorelin-ghrh-analog-anti-aging-research",
   ],
 
   // GLP-1 / Metabolic
   "semaglutide": [
     "semaglutide-dosing-timing-protocol-design-researchers-reference",
-    "semaglutide-vs-tirzepatide-research-comparison",
+    "peptide-ic50-ec50-ki-binding-affinity-research-guide",
     "adiponectin-leptin-metabolic-hormone-endpoints-peptide-research",
   ],
   "tirzepatide": [
