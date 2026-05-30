@@ -78,6 +78,7 @@ import { article as a74 } from './articles/peptide-research-lab-setup-equipment-
 import { article as a75 } from './articles/igf-1-vs-growth-hormone-downstream-mediator-explained';
 import { article as a76 } from './articles/pcsk9-peptides-cardiovascular-research-targets';
 import { article as a77 } from './articles/kisspeptin-10-vs-kisspeptin-54-research-protocol-differences';
+import { article as a78 } from './articles/complete-blood-panel-guide-peptide-researchers';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -112,6 +113,7 @@ export const articles: BlogArticle[] = [
   a75,
   a76,
   a77,
+  a78,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
