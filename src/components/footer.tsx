@@ -28,6 +28,7 @@ const footerProducts = popularProductSlugs
 
 footerProducts.push({ label: "New Arrivals", href: "/products/new-arrivals" });
 footerProducts.push({ label: "Best Sellers", href: "/products/best-sellers" });
+footerProducts.push({ label: "Bundles", href: "/products/bundles" });
 footerProducts.push({ label: "View All Products", href: "/products" });
 
 const footerNav = {

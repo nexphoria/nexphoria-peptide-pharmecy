@@ -120,6 +120,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.80,
     },
     {
+      url: `${baseUrl}/products/bundles`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.80,
+    },
+    {
       url: `${baseUrl}/quiz`,
       lastModified: new Date(),
       changeFrequency: "monthly",

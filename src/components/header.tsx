@@ -207,6 +207,15 @@ export function Header() {
                       <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: "#C9A96E" }} />
                       Best Sellers
                     </Link>
+                    <Link
+                      href="/products/bundles"
+                      onClick={() => setActiveDropdown(null)}
+                      className="flex items-center gap-1 text-sm font-medium hover:underline"
+                      style={{ color: "#9B7FD4" }}
+                    >
+                      <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: "#9B7FD4" }} />
+                      Bundles
+                    </Link>
                   </div>
                   <Link
                     href="/build-your-stack"
@@ -395,6 +404,14 @@ export function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   View All &#8594;
+                </Link>
+                <Link
+                  href="/products/bundles"
+                  className="col-span-2 py-2 text-sm font-medium"
+                  style={{ color: "#9B7FD4" }}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Bundles (5–8% off) &#8594;
                 </Link>
               </div>
             )}
