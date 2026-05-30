@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Shipping & Returns Policy",
@@ -56,6 +57,14 @@ export default function ShippingReturnsPage() {
   return (
     <div className="bg-ceramic text-black pt-36 pb-32">
       <div className="max-w-4xl mx-auto px-6 md:px-12">
+        <Breadcrumb
+          className="mb-8"
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Legal", href: "/legal/disclaimer" },
+            { label: "Shipping & Returns" },
+          ]}
+        />
         <div className="mb-12">
           <span className="section-label text-label text-grey-olive mb-5 block">Legal</span>
           <h1 className="text-h1 font-medium leading-tight tracking-tight">

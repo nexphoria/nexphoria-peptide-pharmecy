@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft, Shield, Lock } from "lucide-react";
 import type { Metadata } from "next";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Nexphoria Research Peptides",
@@ -31,6 +32,14 @@ export default function PrivacyPage() {
 
       <div style={{ paddingTop: "80px" }}>
         <div className="max-w-4xl mx-auto px-6 md:px-12 py-12">
+          <Breadcrumb
+            variant="dark"
+            className="mb-8"
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Privacy Policy" },
+            ]}
+          />
           {/* Back link */}
           <Link
             href="/"

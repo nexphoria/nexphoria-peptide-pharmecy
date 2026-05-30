@@ -5,6 +5,7 @@ import { products } from "@/lib/products";
 import { hasProductPhoto, getProductImagePath } from "@/lib/product-images";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import Breadcrumb from "@/components/Breadcrumb";
 
 type CycleOption = "3-month" | "6-month" | "one-time";
 
@@ -195,6 +196,14 @@ export default function BuildYourStackPage() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#F9F9F9", paddingTop: "72px" }}>
+      <div className="max-w-7xl mx-auto px-6 md:px-10 pt-8">
+        <Breadcrumb
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Build Your Stack" },
+          ]}
+        />
+      </div>
       {/* Step Progress */}
       <div
         className="border-b"
@@ -636,7 +645,7 @@ export default function BuildYourStackPage() {
                               className={`text-sm ${
                                 benefit.earned
                                   ? "text-black font-medium"
-                                  : "text-[#AAA]"
+                                  : "text-[#737373]"
                               }`}
                             >
                               {benefit.text}
@@ -691,7 +700,7 @@ export default function BuildYourStackPage() {
                       className={`w-full py-4 rounded-lg font-semibold text-lg transition-colors ${
                         selectedCycle
                           ? "bg-[#B8A44C] text-black hover:bg-[#8A9570]"
-                          : "bg-[#E8E5E0] text-[#AAA] cursor-not-allowed"
+                          : "bg-[#E8E5E0] text-[#737373] cursor-not-allowed"
                       }`}
                     >
                       Proceed to Checkout

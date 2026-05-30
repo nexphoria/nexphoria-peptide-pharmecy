@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft, AlertTriangle, Shield, Scale } from "lucide-react";
 import type { Metadata } from "next";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Terms of Service | Nexphoria Research Peptides",
@@ -489,6 +490,14 @@ export default function TermsPage() {
 
       <div style={{ paddingTop: "80px" }}>
         <div className="max-w-4xl mx-auto px-6 md:px-12 py-12">
+          <Breadcrumb
+            variant="dark"
+            className="mb-8"
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Terms of Service" },
+            ]}
+          />
           {/* Back link */}
           <Link
             href="/"

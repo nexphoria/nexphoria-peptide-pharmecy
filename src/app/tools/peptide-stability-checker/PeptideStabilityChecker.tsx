@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Breadcrumb from "@/components/Breadcrumb";
 
 // ── Types ────────────────────────────────────────────────────────────────────
 type StorageCondition =
@@ -938,6 +939,17 @@ export default function PeptideStabilityChecker() {
     <div className="min-h-screen bg-zinc-950 text-white">
       {/* Hero */}
       <section className="bg-zinc-900 border-b border-white/10 py-14 px-4">
+        <div className="max-w-4xl mx-auto">
+          <Breadcrumb
+            variant="dark"
+            className="mb-6 justify-center"
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Tools", href: "/tools" },
+              { label: "Peptide Stability Checker" },
+            ]}
+          />
+        </div>
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-xs tracking-widest uppercase text-[#d4af37] mb-3 font-medium">
             Research Tools

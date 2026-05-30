@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Link from "next/link";
+import Breadcrumb from "@/components/Breadcrumb";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -279,13 +280,15 @@ export default function PeptideCyclePlanner() {
         style={{ borderBottom: "1px solid #1A1A18" }}
       >
         <div className="max-w-4xl mx-auto">
-          <nav className="text-xs mb-6" style={{ color: "#6B6B60" }}>
-            <Link href="/" style={{ color: "#6B6B60" }}>Home</Link>
-            {" / "}
-            <Link href="/tools" style={{ color: "#6B6B60" }}>Tools</Link>
-            {" / "}
-            <span style={{ color: "#A0A090" }}>Peptide Cycle Planner</span>
-          </nav>
+          <Breadcrumb
+            variant="dark"
+            className="mb-6"
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Tools", href: "/tools" },
+              { label: "Peptide Cycle Planner" },
+            ]}
+          />
           <p className="text-xs uppercase tracking-widest mb-4" style={{ color: "#C9DD69" }}>
             Research Tools
           </p>
