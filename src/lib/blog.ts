@@ -82,6 +82,7 @@ import { article as a78 } from './articles/complete-blood-panel-guide-peptide-re
 import { article as a79 } from './articles/peptide-research-statistics-sample-size-power-calculations-data-analysis';
 import { article as a80 } from './articles/thymosin-beta-4-systemic-vs-local-effects-research';
 import { article as a81 } from './articles/crh-stress-peptide-hpa-axis-research';
+import { article as a82 } from './articles/peptide-half-lives-quick-reference-guide';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -120,6 +121,7 @@ export const articles: BlogArticle[] = [
   a79,
   a80,
   a81,
+  a82,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
