@@ -73,6 +73,7 @@ import { article as a69 } from './articles/peptide-stacking-longevity-nad-epital
 import { article as a70 } from './articles/ll-37-antimicrobial-wound-healing-protocols';
 import { article as a71 } from './articles/peptide-research-mouse-vs-rat-model-selection-guide';
 import { article as a72 } from './articles/follistatin-myostatin-inhibition-peptide-research-protocols';
+import { article as a73 } from './articles/adiponectin-leptin-metabolic-hormone-endpoints-peptide-research';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -102,6 +103,7 @@ export const articles: BlogArticle[] = [
   a70,
   a71,
   a72,
+  a73,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

@@ -68,17 +68,17 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "semaglutide": [
     "semaglutide-dosing-timing-protocol-design-researchers-reference",
     "semaglutide-vs-tirzepatide-research-comparison",
-    "glp1-receptor-agonists-complete-research-landscape",
+    "adiponectin-leptin-metabolic-hormone-endpoints-peptide-research",
   ],
   "tirzepatide": [
     "tirzepatide-research-dosing-guide-glp1-gip-dual-agonism-protocols",
     "retatrutide-vs-tirzepatide-triple-vs-dual-agonist-research-comparison",
-    "glp1-receptor-agonists-complete-research-landscape",
+    "adiponectin-leptin-metabolic-hormone-endpoints-peptide-research",
   ],
   "retatrutide": [
     "retatrutide-triple-agonist-research-guide",
     "retatrutide-vs-tirzepatide-triple-vs-dual-agonist-research-comparison",
-    "glp1-receptor-agonists-complete-research-landscape",
+    "adiponectin-leptin-metabolic-hormone-endpoints-peptide-research",
   ],
   "aod-9604": [
     "aod-9604-lipolytic-fragment-research-guide",
@@ -87,7 +87,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   ],
   "mots-c": [
     "mots-c-mitochondria-derived-peptide-metabolic-research",
-    "nad-plus-cellular-energy-sirtuins-longevity-research",
+    "adiponectin-leptin-metabolic-hormone-endpoints-peptide-research",
     "ss-31-elamipretide-mitochondria-targeted-peptide-research",
   ],
 
