@@ -70,6 +70,9 @@ import { article as a66 } from './articles/glp1-agonists-brain-central-mechanism
 import { article as a67 } from './articles/peptide-half-life-optimization-strategies-researchers-extend-compound-activity';
 import { article as a68 } from './articles/igf-1-peptide-research-key-biomarker';
 import { article as a69 } from './articles/peptide-stacking-longevity-nad-epitalon-ss31-ghk-cu';
+import { article as a70 } from './articles/ll-37-antimicrobial-wound-healing-protocols';
+import { article as a71 } from './articles/peptide-research-mouse-vs-rat-model-selection-guide';
+import { article as a72 } from './articles/follistatin-myostatin-inhibition-peptide-research-protocols';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -96,6 +99,9 @@ export const articles: BlogArticle[] = [
   a67,
   a68,
   a69,
+  a70,
+  a71,
+  a72,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

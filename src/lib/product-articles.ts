@@ -16,6 +16,11 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "tb-500-thymosin-beta-4-researchers-complete-guide",
     "bpc-157-tb-500-recovery-stack-deep-dive",
   ],
+  "follistatin-344": [
+    "follistatin-myostatin-inhibition-peptide-research-protocols",
+    "follistatin-344-igf-1-independent-muscle-research-guide",
+    "peptide-synergy-stacking-science-combining-research-compounds",
+  ],
   "ghk-cu": [
     "ghk-cu-wound-healing-research-protocols-study-design",
     "ghk-cu-vs-ghk-copper-complex-chemistry-research-guide",
@@ -149,9 +154,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "kpv-immunomodulatory-tripeptide-research-guide",
   ],
   "ll-37": [
+    "ll-37-antimicrobial-wound-healing-protocols",
     "ll-37-human-host-defense-peptide-research-guide",
     "thymosin-alpha-1-immune-peptide-research-guide",
-    "kpv-immunomodulatory-tripeptide-research-guide",
   ],
 
   // Reproductive / Hormonal
