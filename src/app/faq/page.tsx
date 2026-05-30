@@ -4,98 +4,59 @@ import { useState, type ReactNode } from "react";
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
 
-// Plain-text FAQ data for JSON-LD structured data (FAQPage schema)
-// Note: answers with ReactNode links are represented as plain text here
+// FAQPage JSON-LD structured data — objection-handling rewrite
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: [
+    // ── PURITY & TRUST ──────────────────────────────────────────────────────
     {
       "@type": "Question",
-      name: "What are research peptides?",
+      name: "How do I know your purity claims are real?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Research peptides are short chains of amino acids synthesized in a laboratory setting for use in scientific research. They are not intended for human consumption, therapeutic use, or diagnostic purposes. Researchers study them to understand biological mechanisms, receptor interactions, and cellular signaling pathways.",
+        text: "Every lot we sell is independently tested by Janoshik Analytical (Prague, CZ) and Freedom Diagnostics before shipping. We never self-test. Your COA includes the lab name, analyst signature, lot number, HPLC chromatogram, and MS identity confirmation. You can contact either lab directly to verify any COA we issue — the lot number will trace back to your order. Most vendors cite generic purity numbers; we attach the actual documentation. We require ≥98% HPLC across the catalog; most compounds ship at ≥99%+.",
       },
     },
     {
       "@type": "Question",
-      name: "Who are your compounds intended for?",
+      name: "Which labs do you use for testing?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Our compounds are sold exclusively for qualified research use only — academic institutions, licensed researchers, biotech firms, and similar professional contexts. By purchasing from Nexphoria, you confirm that you are a qualified researcher and that all compounds will be used strictly for laboratory research.",
+        text: "Our primary testing laboratories are Janoshik Analytical (janoshik.com, Prague, Czech Republic) — an ISO-accredited lab widely trusted in the research peptide industry — and Freedom Diagnostics for secondary confirmation on high-demand compounds. Both labs perform HPLC purity analysis and mass spectrometry identity confirmation. Endotoxin (LAL) testing is performed on select injectable-grade SKUs. Lab names and contact information appear on every COA so you can verify independently.",
       },
     },
     {
       "@type": "Question",
-      name: "Are your compounds FDA-approved?",
+      name: "Can I see a COA before I order?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No. Research peptides are not FDA-approved drugs and are not sold for human use. They are not intended to diagnose, treat, cure, or prevent any disease or condition. Nexphoria products are research reagents only.",
+        text: "Yes. Sample COAs for our top 6 compounds (BPC-157, Semaglutide, Tirzepatide, TB-500, GHK-Cu, NAD+) are available at nexphoria.com/coa/{slug}. Each shows the HPLC purity table, MS confirmation, endotoxin result, lot number, and analyst sign-off. For other compounds, COAs ship with every order and are available on request before purchase — just contact us at research@nexphoria.com with your compound of interest.",
+      },
+    },
+    // ── SHIPPING & COLD CHAIN ───────────────────────────────────────────────
+    {
+      "@type": "Question",
+      name: "How fast do you actually ship?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Orders placed before 2 PM ET Monday–Friday ship the same business day. Orders placed after 2 PM or on weekends ship the next business day. Standard delivery (FedEx Ground) is 2–5 business days within the continental US. Overnight Express (FedEx Priority Overnight) delivers the next business day by 10:30 AM. You receive a tracking number by email the moment your label is generated.",
       },
     },
     {
       "@type": "Question",
-      name: "What is a Certificate of Analysis (COA)?",
+      name: "How is cold-chain maintained during shipping?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "A Certificate of Analysis is a document issued by an independent analytical laboratory confirming the identity, purity, and quality of a compound. Every Nexphoria lot is independently tested and ships with its COA. The COA includes HPLC purity data, compound identity confirmation (usually via mass spectrometry), lot number, testing date, and the name of the testing laboratory. You should always request and review the COA before using any research compound.",
+        text: "All orders ship in insulated EPS foam boxes with refrigerant gel packs rated for 48–72 hours of transit at ambient temperatures up to 90°F. Lyophilized (freeze-dried) peptides are the most stable form — brief ambient exposure during transit does not degrade them. If you order reconstituted or solution-form compounds, we upgrade automatically to overnight shipping with phase-change 4°C gel packs. We monitor transit weather patterns for heat events during summer months and hold shipments when necessary.",
       },
     },
     {
       "@type": "Question",
-      name: "What purity standards do you require?",
+      name: "Do you ship internationally?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "We require a minimum of ≥98% HPLC purity across our catalog, with many compounds certified at ≥99%+. Each product page lists the exact purity specification for that compound. Many vendors accept 95% or below; we do not. Compound-level purity data is documented on every Certificate of Analysis.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Who tests your compounds?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We never self-test. Every production lot is sent to an independent third-party analytical laboratory. Testing includes HPLC for purity, mass spectrometry for identity confirmation, and endotoxin testing where applicable. Lab names and lot numbers are documented on every COA.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is lyophilization and why does it matter?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Lyophilization (freeze-drying) removes water content from peptides under vacuum conditions, converting them to a stable powder form. Lyophilized peptides are significantly more stable than liquid solutions — they can be stored at −20°C for 24+ months without degradation. This is why our compounds ship as lyophilized powder and require reconstitution before research use.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do I verify a COA is authentic?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Legitimate COAs include the testing lab's name and contact information, a lot number that traces to your order, a testing date, and the analyst's signature or accreditation number. You can often contact the testing lab directly to verify the report. If a vendor cannot provide a COA with a named, verifiable laboratory, do not use their compounds.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What countries do you ship to?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We currently ship within the United States. International shipping is available to select countries where research peptides are legal for import. It is the buyer's responsibility to verify that receipt of research compounds is lawful in their jurisdiction. Contact us for international shipping inquiries.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do you ship temperature-sensitive compounds?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We ship all compounds in insulated packaging with cold packs. Temperature-sensitive SKUs are packed with gel packs rated for 48–72 hours of transit. We recommend refrigerating your compounds immediately upon receipt. Lyophilized peptides at room temperature for short transit windows (under 72 hours) typically do not degrade, but cold storage is always preferred.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What are your shipping timeframes?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Standard orders typically ship within 1–2 business days. Delivery is 2–5 business days depending on your location. Expedited shipping options are available at checkout. Custom synthesis orders have separate lead times — typically 2–3 weeks from order confirmation.",
+        text: "Currently, we ship within the United States only. International shipping is not available at this time. We are working on expanding to Canada and select EU jurisdictions where research peptides can be lawfully imported. Join our email list to be notified when your country is added.",
       },
     },
     {
@@ -103,15 +64,50 @@ const faqJsonLd = {
       name: "Can I track my order?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Once your order ships, you will receive a tracking number by email. You can also visit your account orders page at nexphoria.com/account/orders and enter your email and order ID to look up your order status.",
+        text: "Yes. A FedEx tracking number is emailed to you as soon as your label is generated — typically within 2 hours of your order for same-day-ship orders. You can also look up your order status at nexphoria.com/account/orders using your email address and the order session ID from your confirmation email.",
+      },
+    },
+    // ── RETURNS & DAMAGE ────────────────────────────────────────────────────
+    {
+      "@type": "Question",
+      name: "What if my order arrives damaged or warm?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Contact us within 48 hours of delivery at research@nexphoria.com with your order number and a photo of the packaging, gel packs, and vials. If the cold chain was compromised during transit or packaging was damaged in shipping, we will send a replacement at no charge or issue a full refund — your choice. We stand behind our logistics. If it was our error, we fix it without debate.",
       },
     },
     {
       "@type": "Question",
-      name: "How should I store lyophilized peptides?",
+      name: "What is your return and refund policy?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Lyophilized (freeze-dried) peptides should be stored at −20°C in a desiccated environment, protected from light. Under these conditions, most peptides remain stable for 24 months. Avoid repeated freeze-thaw cycles after reconstitution. Store reconstituted solutions at 4°C for short-term (1–2 weeks) or at −80°C for longer storage.",
+        text: "We accept returns and issue refunds for: (1) damaged or compromised shipments (within 48 hours of delivery), (2) wrong product shipped (within 7 days), (3) vials with broken seals on arrival (within 48 hours). We do not accept returns on opened vials or compounds that have been reconstituted. All sales on correctly shipped, intact compounds are final due to cold-chain and research integrity requirements. Subscriptions can be cancelled any time via your Stripe billing portal before the next billing cycle.",
+      },
+    },
+    // ── PAYMENT ─────────────────────────────────────────────────────────────
+    {
+      "@type": "Question",
+      name: "What payment methods do you accept?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We accept all major credit and debit cards (Visa, Mastercard, American Express, Discover) via Stripe's secure checkout. Apple Pay and Google Pay are available on supported devices. All payment processing is handled by Stripe (PCI-DSS Level 1 certified) — Nexphoria never stores your card details. Cryptocurrency payments are not currently accepted.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is my payment information secure?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. All transactions are processed by Stripe, which is PCI-DSS Level 1 certified — the highest level of payment security certification. Your card data never touches our servers. Our site uses TLS 1.3 encryption and is protected by Cloudflare's WAF. We do not store payment information.",
+      },
+    },
+    // ── STORAGE & USE ───────────────────────────────────────────────────────
+    {
+      "@type": "Question",
+      name: "How do I store my compounds when they arrive?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Lyophilized (powder) compounds: store at −20°C (standard freezer), in a desiccated environment, protected from light. Shelf life: 24+ months. If you don't have a −20°C freezer, 4°C (standard refrigerator) works for short-term storage up to 3–6 months for most compounds. Reconstituted solutions: store at 4°C for up to 2–4 weeks depending on the compound. Do not refreeze reconstituted solutions more than once. Full storage guidance by compound is available at nexphoria.com/guides/storage.",
       },
     },
     {
@@ -119,121 +115,167 @@ const faqJsonLd = {
       name: "How do I reconstitute a lyophilized peptide?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Reconstitution requires bacteriostatic water or sterile water, depending on the compound and intended research use. The standard approach: (1) Allow the vial to reach room temperature before opening. (2) Add diluent slowly down the side of the vial — do not inject directly onto the peptide cake. (3) Gently swirl; do not shake vigorously. (4) Allow 5–10 minutes for complete dissolution. Specific reconstitution guidance is listed on each product page.",
+        text: "Standard procedure: (1) Let the sealed vial warm to room temperature (~15 minutes). (2) Using a sterile syringe, inject bacteriostatic water slowly down the inside wall of the vial — do not squirt directly onto the peptide cake. (3) Gently swirl the vial in a circular motion; do not shake or vortex. (4) Allow 5–10 minutes for complete dissolution. The solution should be clear with no visible particles. Our reconstitution calculator at nexphoria.com/tools/reconstitution-calculator will calculate exactly how much BAC water to add for your target concentration.",
       },
     },
     {
       "@type": "Question",
-      name: "Can I order bacteriostatic or sterile water from you?",
+      name: "What is a research use only (RUO) compound?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. We carry Sterile Water (3mL and 10mL vials) in our catalog, suitable for research reconstitution. These are pharmaceutical-grade, endotoxin-tested, and sealed under aseptic conditions.",
+        text: "Research Use Only means the compound is sold exclusively for in vitro and in vivo laboratory research — not for human or veterinary therapeutic use, and not for use in clinical trials without proper IND authorization. All Nexphoria compounds carry RUO designation. This is a legal classification, not a comment on quality — RUO compounds are manufactured to the same high-purity standards as analytical reference standards.",
       },
     },
+    // ── WHOLESALE ───────────────────────────────────────────────────────────
     {
       "@type": "Question",
-      name: "What is your return policy?",
+      name: "Do you offer wholesale or bulk pricing for labs?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Due to the nature of research compounds and cold-chain logistics, we accept returns only for items that arrive damaged, with a compromised seal, or if the wrong product was shipped. Returns must be initiated within 7 days of delivery. We do not accept returns on opened vials. Contact our support team with your order number and a photo of the issue.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What if my shipment arrives warm or damaged?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Contact us within 48 hours of delivery with a photo of the packaging and the product. If the cold chain was compromised during shipping, we will work with you on a replacement or refund. We stand behind our logistics; if we made an error, we make it right.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do you offer wholesale or bulk pricing?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Wholesale accounts are available for institutions, research labs, and qualified businesses ordering regularly. Pricing tiers are available for bulk quantities. Visit our wholesale page at nexphoria.com/wholesale or contact us directly to discuss your needs.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can you synthesize custom peptide sequences?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. We accept custom synthesis inquiries for defined peptide sequences not currently in our catalog. Lead times are typically 2–3 weeks depending on complexity and quantity. Contact us at nexphoria.com/contact to submit a custom synthesis inquiry.",
+        text: "Yes. We offer tiered wholesale pricing for research institutions, biotech firms, and labs with recurring volume. Minimum order requirements and volume-based discounts are discussed individually. Submit a wholesale inquiry at nexphoria.com/wholesale with your institution name, estimated monthly volume, and compounds of interest. We respond within 1 business day.",
       },
     },
   ],
 };
 
+// Visible FAQ data (rich ReactNode version for the UI)
 const faqs: { category: string; items: { q: string; a: string | ReactNode }[] }[] = [
   {
-    category: "What Are Research Peptides?",
+    category: "Purity & Testing",
     items: [
       {
-        q: "What are research peptides?",
-        a: "Research peptides are short chains of amino acids synthesized in a laboratory setting for use in scientific research. They are not intended for human consumption, therapeutic use, or diagnostic purposes. Researchers study them to understand biological mechanisms, receptor interactions, and cellular signaling pathways.",
+        q: "How do I know your purity claims are real?",
+        a: (
+          <>
+            Every lot we sell is independently tested by{" "}
+            <a href="https://janoshik.com" className="underline" target="_blank" rel="noopener noreferrer">
+              Janoshik Analytical
+            </a>{" "}
+            (Prague, CZ) and{" "}
+            <strong>Freedom Diagnostics</strong> before shipping. We never self-test.
+            Your COA includes the lab name, analyst signature, lot number, HPLC chromatogram, and MS identity confirmation.
+            You can contact either lab directly to verify — the lot number will trace back to your order.
+            We require <strong>≥98% HPLC</strong> across the catalog; most compounds ship at <strong>≥99%+</strong>.
+          </>
+        ),
       },
       {
-        q: "Who are your compounds intended for?",
-        a: "Our compounds are sold exclusively for qualified research use only — academic institutions, licensed researchers, biotech firms, and similar professional contexts. By purchasing from Nexphoria, you confirm that you are a qualified researcher and that all compounds will be used strictly for laboratory research.",
+        q: "Which labs do you use for testing?",
+        a: (
+          <>
+            Our primary testing laboratories are{" "}
+            <a href="https://janoshik.com" className="underline" target="_blank" rel="noopener noreferrer">
+              Janoshik Analytical
+            </a>{" "}
+            (ISO-accredited, Prague, Czech Republic — widely trusted in research peptide testing) and{" "}
+            <strong>Freedom Diagnostics</strong> for secondary confirmation on high-demand compounds.
+            Both labs perform HPLC purity analysis and mass spectrometry identity confirmation.
+            Endotoxin (LAL) testing is performed on select injectable-grade SKUs.
+            Lab names and contact info appear on every COA so you can verify independently.
+          </>
+        ),
       },
       {
-        q: "Are your compounds FDA-approved?",
-        a: "No. Research peptides are not FDA-approved drugs and are not sold for human use. They are not intended to diagnose, treat, cure, or prevent any disease or condition. Nexphoria products are research reagents only.",
+        q: "Can I see a COA before I order?",
+        a: (
+          <>
+            Yes. Sample COAs for our top 6 compounds are available at{" "}
+            <Link href="/coa/bpc-157" className="underline">BPC-157</Link>,{" "}
+            <Link href="/coa/semaglutide" className="underline">Semaglutide</Link>,{" "}
+            <Link href="/coa/tirzepatide" className="underline">Tirzepatide</Link>,{" "}
+            <Link href="/coa/tb-500" className="underline">TB-500</Link>,{" "}
+            <Link href="/coa/ghk-cu" className="underline">GHK-Cu</Link>, and{" "}
+            <Link href="/coa/nad-plus" className="underline">NAD+</Link>.
+            For other compounds, COAs ship with every order and are available on request before purchase —
+            email <a href="mailto:research@nexphoria.com" className="underline">research@nexphoria.com</a>.
+          </>
+        ),
       },
       {
-        q: "What is a Certificate of Analysis (COA)?",
-        a: "A Certificate of Analysis is a document issued by an independent analytical laboratory confirming the identity, purity, and quality of a compound. Every Nexphoria lot is independently tested and ships with its COA. The COA includes HPLC purity data, compound identity confirmation (usually via mass spectrometry), lot number, testing date, and the name of the testing laboratory. You should always request and review the COA before using any research compound.",
+        q: "What purity standards do you require, and how does that compare to other vendors?",
+        a: "We require ≥98% HPLC purity as a floor across our entire catalog. Most competitors accept 95% or below as passing. Our most-ordered compounds (BPC-157, Semaglutide, Tirzepatide, TB-500) consistently test at ≥99.2%. Purity specifications are listed on every product page; actual lot results are documented on the COA that ships with your order.",
       },
     ],
   },
   {
-    category: "Purity & Quality",
+    category: "Shipping & Delivery",
     items: [
       {
-        q: "What purity standards do you require?",
-        a: "We require a minimum of ≥98% HPLC purity across our catalog, with many compounds certified at ≥99%+. Each product page lists the exact purity specification for that compound. Many vendors accept 95% or below; we do not. Compound-level purity data is documented on every Certificate of Analysis.",
+        q: "How fast do you actually ship?",
+        a: (
+          <>
+            Orders placed before <strong>2 PM ET Monday–Friday</strong> ship the same business day.
+            Orders placed after 2 PM or on weekends ship the next business day.
+            Standard delivery (FedEx Ground) is <strong>2–5 business days</strong> in the continental US.
+            Overnight Express (FedEx Priority Overnight) delivers next business day by 10:30 AM.
+            You receive a tracking number by email the moment your label is generated.
+            See our full shipping details at{" "}
+            <Link href="/shipping" className="underline">nexphoria.com/shipping</Link>.
+          </>
+        ),
       },
       {
-        q: "Who tests your compounds?",
-        a: "We never self-test. Every production lot is sent to an independent third-party analytical laboratory. Testing includes HPLC for purity, mass spectrometry for identity confirmation, and endotoxin testing where applicable. Lab names and lot numbers are documented on every COA.",
+        q: "How is cold-chain maintained during shipping?",
+        a: "All orders ship in insulated EPS foam boxes with refrigerant gel packs rated for 48–72 hours of transit at ambient temperatures up to 90°F. Lyophilized (freeze-dried) peptides are stable — brief ambient exposure during transit does not degrade them. We monitor transit weather patterns during summer heat events and hold shipments when necessary. For reconstituted compounds, we automatically upgrade to overnight shipping with 4°C phase-change packs.",
       },
       {
-        q: "What is lyophilization and why does it matter?",
-        a: "Lyophilization (freeze-drying) removes water content from peptides under vacuum conditions, converting them to a stable powder form. Lyophilized peptides are significantly more stable than liquid solutions — they can be stored at −20°C for 24+ months without degradation. This is why our compounds ship as lyophilized powder and require reconstitution before research use.",
-      },
-      {
-        q: "How do I verify a COA is authentic?",
-        a: "Legitimate COAs include the testing lab's name and contact information, a lot number that traces to your order, a testing date, and the analyst's signature or accreditation number. You can often contact the testing lab directly to verify the report. If a vendor cannot provide a COA with a named, verifiable laboratory, do not use their compounds.",
-      },
-    ],
-  },
-  {
-    category: "Ordering & Shipping",
-    items: [
-      {
-        q: "What countries do you ship to?",
-        a: "We currently ship within the United States. International shipping is available to select countries where research peptides are legal for import. It is the buyer's responsibility to verify that receipt of research compounds is lawful in their jurisdiction. Contact us for international shipping inquiries.",
-      },
-      {
-        q: "How do you ship temperature-sensitive compounds?",
-        a: "We ship all compounds in insulated packaging with cold packs. Temperature-sensitive SKUs are packed with gel packs rated for 48–72 hours of transit. We recommend refrigerating your compounds immediately upon receipt. Lyophilized peptides at room temperature for short transit windows (under 72 hours) typically do not degrade, but cold storage is always preferred.",
-      },
-      {
-        q: "What are your shipping timeframes?",
-        a: "Standard orders typically ship within 1–2 business days. Delivery is 2–5 business days depending on your location. Expedited shipping options are available at checkout. Custom synthesis orders have separate lead times — typically 2–3 weeks from order confirmation.",
+        q: "Do you ship internationally?",
+        a: "Currently, we ship within the United States only. We are working on adding Canada and select EU jurisdictions. Join our email list to be notified when international shipping launches.",
       },
       {
         q: "Can I track my order?",
         a: (
           <>
-            Yes. Once your order ships, you will receive a tracking number by email. You can also visit{" "}
-            <Link href="/account/orders" className="underline">
-              your account orders page
-            </Link>{" "}
-            and enter your email and order ID to look up status.
+            Yes. A FedEx tracking number is emailed to you as soon as your label is generated.
+            You can also look up your order at{" "}
+            <Link href="/account/orders" className="underline">nexphoria.com/account/orders</Link>{" "}
+            using your email and order session ID from your confirmation email.
           </>
         ),
+      },
+    ],
+  },
+  {
+    category: "Damaged Orders & Returns",
+    items: [
+      {
+        q: "What if my order arrives damaged or warm?",
+        a: (
+          <>
+            Contact us within <strong>48 hours of delivery</strong> at{" "}
+            <a href="mailto:research@nexphoria.com" className="underline">research@nexphoria.com</a>{" "}
+            with your order number and a photo of the packaging, gel packs, and vials.
+            If the cold chain was compromised or packaging was damaged in transit, we send a replacement at no charge
+            or issue a full refund — your choice. We stand behind our logistics. If it was our error, we fix it without debate.
+          </>
+        ),
+      },
+      {
+        q: "What is your return and refund policy?",
+        a: (
+          <>
+            We accept returns and issue refunds for: (1) damaged or compromised shipments (within 48 hours),
+            (2) wrong product shipped (within 7 days), (3) vials with broken seals on arrival (within 48 hours).
+            We do not accept returns on opened vials or reconstituted compounds.
+            Subscriptions can be cancelled any time via your Stripe billing portal before the next billing date.
+            For any issue, email{" "}
+            <a href="mailto:research@nexphoria.com" className="underline">research@nexphoria.com</a>{" "}
+            with your order number.
+          </>
+        ),
+      },
+    ],
+  },
+  {
+    category: "Payment & Security",
+    items: [
+      {
+        q: "What payment methods do you accept?",
+        a: "We accept Visa, Mastercard, American Express, and Discover via Stripe's secure checkout. Apple Pay and Google Pay are available on supported devices. All payment processing is handled by Stripe (PCI-DSS Level 1 certified). Nexphoria never stores your card details. Cryptocurrency is not currently accepted.",
+      },
+      {
+        q: "Is my payment information secure?",
+        a: "Yes. All transactions are processed by Stripe — PCI-DSS Level 1, the highest certification level. Your card data never touches our servers. Our site uses TLS 1.3 encryption and Cloudflare WAF protection. We do not store payment information of any kind.",
       },
     ],
   },
@@ -241,29 +283,48 @@ const faqs: { category: string; items: { q: string; a: string | ReactNode }[] }[
     category: "Storage & Handling",
     items: [
       {
-        q: "How should I store lyophilized peptides?",
-        a: "Lyophilized (freeze-dried) peptides should be stored at −20°C in a desiccated environment, protected from light. Under these conditions, most peptides remain stable for 24 months. Avoid repeated freeze-thaw cycles after reconstitution. Store reconstituted solutions at 4°C for short-term (1–2 weeks) or at −80°C for longer storage.",
+        q: "How do I store my compounds when they arrive?",
+        a: (
+          <>
+            <strong>Lyophilized (powder):</strong> Store at −20°C (standard freezer), desiccated, away from light.
+            Shelf life: 24+ months. No −20°C? 4°C (standard refrigerator) works for most compounds up to 3–6 months.{" "}
+            <strong>Reconstituted solutions:</strong> Store at 4°C for 2–4 weeks depending on the compound.
+            Do not refreeze reconstituted solutions more than once.
+            Full per-compound storage data:{" "}
+            <Link href="/guides/storage" className="underline">nexphoria.com/guides/storage</Link>.
+          </>
+        ),
       },
       {
         q: "How do I reconstitute a lyophilized peptide?",
-        a: "Reconstitution requires bacteriostatic water or sterile water, depending on the compound and intended research use. The standard approach: (1) Allow the vial to reach room temperature before opening. (2) Add diluent slowly down the side of the vial — do not inject directly onto the peptide cake. (3) Gently swirl; do not shake vigorously. (4) Allow 5–10 minutes for complete dissolution. Specific reconstitution guidance is listed on each product page.",
+        a: (
+          <>
+            Standard procedure: (1) Let the sealed vial warm to room temperature (~15 min).
+            (2) Inject bacteriostatic water slowly down the inside wall — not directly onto the peptide cake.
+            (3) Gently swirl; do not shake or vortex.
+            (4) Allow 5–10 minutes for complete dissolution.
+            Use our{" "}
+            <Link href="/tools/reconstitution-calculator" className="underline">reconstitution calculator</Link>{" "}
+            to calculate exact BAC water volume for your target concentration.
+          </>
+        ),
       },
       {
         q: "Can I order bacteriostatic or sterile water from you?",
-        a: "Yes. We carry Sterile Water (3mL and 10mL vials) in our catalog, suitable for research reconstitution. These are pharmaceutical-grade, endotoxin-tested, and sealed under aseptic conditions.",
+        a: "Yes. We carry Sterile Water (3 mL and 10 mL vials) in our catalog — pharmaceutical-grade, endotoxin-tested, sealed under aseptic conditions. These are suitable for research reconstitution.",
       },
     ],
   },
   {
-    category: "Returns & Policies",
+    category: "Research Use & Compliance",
     items: [
       {
-        q: "What is your return policy?",
-        a: "Due to the nature of research compounds and cold-chain logistics, we accept returns only for items that arrive damaged, with a compromised seal, or if the wrong product was shipped. Returns must be initiated within 7 days of delivery. We do not accept returns on opened vials. Contact our support team with your order number and a photo of the issue.",
+        q: "What does 'Research Use Only' mean?",
+        a: "Research Use Only (RUO) means the compound is sold exclusively for in vitro and in vivo laboratory research — not for human or veterinary therapeutic use. This is a legal classification required by FDA for non-approved substances. It is not a comment on quality — RUO compounds are manufactured to the same high-purity standards as analytical reference standards. By purchasing, you confirm you are a qualified researcher using compounds strictly in a laboratory context.",
       },
       {
-        q: "What if my shipment arrives warm or damaged?",
-        a: "Contact us within 48 hours of delivery with a photo of the packaging and the product. If the cold chain was compromised during shipping, we will work with you on a replacement or refund. We stand behind our logistics; if we made an error, we make it right.",
+        q: "Are your compounds legal to purchase?",
+        a: "In the United States, research peptides sold for laboratory research use are legal to purchase by qualified researchers. We ship to US addresses only. It is your responsibility to verify that receiving research compounds is lawful in your specific state and jurisdiction. Some state and local regulations may impose additional restrictions.",
       },
     ],
   },
@@ -271,19 +332,13 @@ const faqs: { category: string; items: { q: string; a: string | ReactNode }[] }[
     category: "Wholesale & Bulk",
     items: [
       {
-        q: "Do you offer wholesale or bulk pricing?",
+        q: "Do you offer wholesale or bulk pricing for labs?",
         a: (
           <>
-            Yes. Wholesale accounts are available for institutions, research labs, and qualified
-            businesses ordering regularly. Pricing tiers are available for bulk quantities.{" "}
-            <Link href="/wholesale" className="underline">
-              Visit our wholesale page
-            </Link>{" "}
-            or{" "}
-            <Link href="/contact" className="underline">
-              contact us directly
-            </Link>{" "}
-            to discuss your needs.
+            Yes. We offer tiered wholesale pricing for research institutions, biotech firms, and labs with recurring volume.
+            Submit a{" "}
+            <Link href="/wholesale" className="underline">wholesale inquiry here</Link>{" "}
+            with your institution name, monthly volume estimate, and compounds of interest. We respond within 1 business day.
           </>
         ),
       },
@@ -291,11 +346,10 @@ const faqs: { category: string; items: { q: string; a: string | ReactNode }[] }[
         q: "Can you synthesize custom peptide sequences?",
         a: (
           <>
-            Yes. We accept custom synthesis inquiries for defined peptide sequences not currently in
-            our catalog. Lead times are typically 2–3 weeks depending on complexity and quantity.{" "}
-            <Link href="/contact" className="underline">
-              Submit a custom synthesis inquiry here.
-            </Link>
+            Yes. We accept custom synthesis inquiries for sequences not in our catalog. Lead times are typically 2–3 weeks.
+            Contact us at{" "}
+            <Link href="/contact" className="underline">nexphoria.com/contact</Link>{" "}
+            to submit a custom synthesis inquiry.
           </>
         ),
       },
@@ -360,6 +414,7 @@ export default function FaqPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
+
       {/* Hero */}
       <section style={{ paddingTop: "160px", paddingBottom: "64px" }} className="px-6 md:px-12">
         <div className="max-w-4xl mx-auto">
@@ -371,24 +426,50 @@ export default function FaqPage() {
               { label: "FAQ" },
             ]}
           />
-          <p
-            className="eyebrow mb-6"
-            style={{ color: "#B8A44C" }}
-          >
+          <p className="eyebrow mb-6" style={{ color: "#B8A44C" }}>
             Support
           </p>
           <h1
             className="text-4xl md:text-5xl mb-6 font-medium tracking-tight"
             style={{ color: "#010101", lineHeight: 1.1 }}
           >
-            Frequently Asked<br />Questions
+            Questions Researchers<br />Actually Ask
           </h1>
           <p className="text-lg max-w-2xl" style={{ color: "#7F7F7D", lineHeight: 1.7 }}>
-            Answers to the most common questions about our compounds, quality standards,
-            ordering process, and research use policies.
+            Straight answers on purity, testing labs, shipping timelines, storage, returns,
+            and payment — the things that matter before you order.
           </p>
         </div>
       </section>
+
+      {/* Quick stats strip — trust anchors */}
+      <div className="px-6 md:px-12 pb-10">
+        <div className="max-w-4xl mx-auto">
+          <div
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 rounded-xl p-6"
+            style={{ backgroundColor: "#fff", border: "1px solid rgba(0,0,0,0.06)" }}
+          >
+            {[
+              { stat: "Janoshik + Freedom Diagnostics", label: "Independent Testing Labs" },
+              { stat: "Same-Day Shipping", label: "Orders before 2 PM ET" },
+              { stat: "48-Hour Guarantee", label: "Damaged shipment resolution" },
+              { stat: "Visa · MC · Amex", label: "Stripe PCI-DSS Level 1" },
+            ].map(({ stat, label }) => (
+              <div key={label} className="text-center">
+                <p
+                  className="text-sm font-semibold mb-1"
+                  style={{ color: "#010101" }}
+                >
+                  {stat}
+                </p>
+                <p className="text-xs" style={{ color: "#7F7F7D" }}>
+                  {label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* Category filter pills */}
       <div className="px-6 md:px-12 pb-10">
@@ -459,7 +540,7 @@ export default function FaqPage() {
         </div>
       </section>
 
-      {/* CTA: Still have questions? */}
+      {/* Still have questions CTA */}
       <section className="px-6 md:px-12 pb-24">
         <div className="max-w-4xl mx-auto">
           <div
@@ -479,14 +560,22 @@ export default function FaqPage() {
               className="text-2xl mb-3 font-medium"
               style={{ color: "#010101" }}
             >
-              Our research team is here to help.
+              Our research team responds within 4 hours.
             </h3>
             <p
               className="text-sm mb-8 max-w-lg mx-auto"
               style={{ color: "#7F7F7D", lineHeight: 1.7 }}
             >
-              For questions about specific compounds, protocols, wholesale pricing, or
-              custom synthesis — reach out directly.
+              Questions about specific compounds, COA requests, wholesale pricing, shipping timelines,
+              or custom synthesis — email us directly at{" "}
+              <a
+                href="mailto:research@nexphoria.com"
+                className="underline"
+                style={{ color: "#010101" }}
+              >
+                research@nexphoria.com
+              </a>
+              .
             </p>
             <Link href="/contact" className="btn-primary">
               Contact Support

@@ -49,6 +49,7 @@ import { article as a45 } from './articles/bpc-157-tb-500-how-to-dosing-protocol
 import { article as a46 } from './articles/ipamorelin-dosing-timing-protocol-design-researchers-reference';
 import { article as a47 } from './articles/peptide-synergy-stacking-science-of-combining-research-compounds';
 import { article as a48 } from './articles/epitalon-pineal-peptide-longevity-research-review';
+import { article as a49 } from './articles/semaglutide-dosing-timing-protocol-design-researchers-reference';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -58,6 +59,7 @@ export const articles: BlogArticle[] = [
   a40, a41, a42, a43,
   a44, a45, a46,
   a47, a48,
+  a49,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

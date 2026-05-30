@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { ArrowLeft, ShieldCheck } from "lucide-react";
+import { ArrowLeft, ShieldCheck, Truck, Zap, Clock, RefreshCw, CheckCircle2 } from "lucide-react";
 import { useCart, getItemUnitPrice, getCadenceLabel } from "@/lib/cart";
 import { CHECKOUT_URL } from "@/lib/endpoints";
 import { getProductImagePath, hasProductPhoto } from "@/lib/product-images";
@@ -48,6 +48,36 @@ function ProductThumb({
   );
 }
 
+type ShippingMethod = "standard" | "overnight";
+
+const SHIPPING_OPTIONS: {
+  id: ShippingMethod;
+  label: string;
+  description: string;
+  price: number;
+  freeOver: number | null;
+  icon: React.ReactNode;
+  badge?: string;
+}[] = [
+  {
+    id: "standard",
+    label: "Standard Cold-Chain",
+    description: "2–5 business days · Insulated packaging + ice pack",
+    price: 15,
+    freeOver: 200,
+    icon: <Truck className="w-5 h-5" />,
+  },
+  {
+    id: "overnight",
+    label: "Overnight Express",
+    description: "Next business day by 12pm · Dry ice packing",
+    price: 38,
+    freeOver: null,
+    icon: <Zap className="w-5 h-5" />,
+    badge: "Recommended for temperature-sensitive orders",
+  },
+];
+
 export default function CheckoutPage() {
   const router = useRouter();
   const { items, getTotalPrice, getTotalItems } = useCart();
@@ -56,6 +86,7 @@ export default function CheckoutPage() {
   const [formData, setFormData] = useState({ email: "" });
   const [promoCode, setPromoCode] = useState("");
   const [promoApplied, setPromoApplied] = useState(false);
+  const [shippingMethod, setShippingMethod] = useState<ShippingMethod>("standard");
 
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -74,6 +105,8 @@ export default function CheckoutPage() {
   const totalPrice = getTotalPrice();
   const totalItems = getTotalItems();
   const hasSubscription = items.some((item) => item.subscriptionMonths > 1);
+  const subscriptionItems = items.filter((item) => item.subscriptionMonths > 1);
+  const oneTimeItems = items.filter((item) => item.subscriptionMonths <= 1);
 
   const handlePromoApply = () => {
     if (promoCode.trim()) setPromoApplied(true);
@@ -82,10 +115,15 @@ export default function CheckoutPage() {
   // Included supplies by order value (matches CartDrawer thresholds)
   const includedSupplies: string[] = [];
   if (totalPrice >= 100) includedSupplies.push("Bacteriostatic water");
-  if (totalPrice >= 200) includedSupplies.push("Free shipping");
-  if (totalPrice >= 300) includedSupplies.push("Cold-pack");
+  if (totalPrice >= 200) includedSupplies.push("Free standard shipping");
+  if (totalPrice >= 300) includedSupplies.push("Cold-pack upgrade");
 
-  const shipping = totalPrice >= 200 ? 0 : 15;
+  // Shipping cost calculation
+  const selectedShipping = SHIPPING_OPTIONS.find((o) => o.id === shippingMethod)!;
+  const shippingCost =
+    shippingMethod === "standard" && totalPrice >= 200
+      ? 0
+      : selectedShipping.price;
 
   const handleCheckout = async () => {
     if (!formData.email) {
@@ -97,7 +135,6 @@ export default function CheckoutPage() {
     setError(null);
 
     try {
-      // Worker / API expects: name, size, price (monthly unit), quantity, format, subscriptionMonths
       const checkoutItems = items.map((item) => ({
         productSlug: item.product.slug,
         name: item.product.name,
@@ -108,14 +145,13 @@ export default function CheckoutPage() {
         subscriptionMonths: item.subscriptionMonths,
       }));
 
-      // This site is a static export — checkout is handled by the Cloudflare
-      // Worker (see src/lib/endpoints.ts).
       const response = await fetch(CHECKOUT_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           items: checkoutItems,
           customerEmail: formData.email,
+          shippingMethod,
         }),
       });
 
@@ -129,10 +165,9 @@ export default function CheckoutPage() {
         throw new Error("No checkout URL returned");
       }
 
-      // Redirect to Stripe-hosted checkout.
       window.location.href = url;
     } catch (err) {
-      if (process.env.NODE_ENV === 'development') {
+      if (process.env.NODE_ENV === "development") {
         console.error("Checkout error:", err);
       }
       setError("We could not start checkout. Please try again.");
@@ -169,17 +204,17 @@ export default function CheckoutPage() {
           Checkout
         </h1>
         <p className="text-sm mb-12" style={{ color: "#8A8075" }}>
-          Complete your order
+          {totalItems} item{totalItems !== 1 ? "s" : ""} · Secure checkout via Stripe
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-          {/* Left Column - Form */}
+          {/* ── Left Column – Form ── */}
           <div className="lg:col-span-7">
             <form onSubmit={handleSubmit} className="space-y-8">
               {/* Contact Information */}
-              <div>
+              <section>
                 <h2 className="text-lg font-semibold mb-4" style={{ color: "#010101" }}>
-                  Contact Information
+                  1 · Contact Information
                 </h2>
                 <div>
                   <label className="block text-sm font-medium mb-2" style={{ color: "#3A3A3A" }}>
@@ -194,33 +229,200 @@ export default function CheckoutPage() {
                     placeholder="your.email@example.com"
                   />
                   <p className="text-xs mt-2" style={{ color: "#8A8075" }}>
-                    Order confirmation and COA references are sent here.
+                    Order confirmation, tracking, and COA references are sent here.
                   </p>
                 </div>
-              </div>
+              </section>
 
-              {/* Shipping Note */}
-              <div>
+              {/* ── Shipping Method ── */}
+              <section>
                 <h2 className="text-lg font-semibold mb-4" style={{ color: "#010101" }}>
-                  Shipping
+                  2 · Shipping Method
                 </h2>
-                <div
-                  className="p-4 rounded-lg border"
-                  style={{ backgroundColor: "#F7F5F0", borderColor: "#ECEAE4" }}
-                >
-                  <p className="text-sm" style={{ color: "#3A3A3A" }}>
-                    Shipping address is collected securely on the Stripe payment page.
-                  </p>
-                  <p className="text-xs mt-2" style={{ color: "#8A8075" }}>
-                    US shipping only. Cold-chain logistics with same-day dispatch.
-                  </p>
-                </div>
-              </div>
+                <div className="space-y-3">
+                  {SHIPPING_OPTIONS.map((option) => {
+                    const isFree = option.freeOver !== null && totalPrice >= option.freeOver;
+                    const isSelected = shippingMethod === option.id;
+                    return (
+                      <label
+                        key={option.id}
+                        className="flex items-start gap-4 p-4 rounded-lg border cursor-pointer transition-all"
+                        style={{
+                          borderColor: isSelected ? "#B8A44C" : "#D8D4CC",
+                          backgroundColor: isSelected ? "#B8A44C10" : "#F7F5F0",
+                          outline: isSelected ? "1px solid #B8A44C" : "none",
+                        }}
+                      >
+                        <input
+                          type="radio"
+                          name="shippingMethod"
+                          value={option.id}
+                          checked={isSelected}
+                          onChange={() => setShippingMethod(option.id)}
+                          className="sr-only"
+                        />
+                        {/* Custom radio circle */}
+                        <div
+                          className="flex-shrink-0 mt-0.5 w-4 h-4 rounded-full border-2 flex items-center justify-center"
+                          style={{ borderColor: isSelected ? "#B8A44C" : "#A09890" }}
+                        >
+                          {isSelected && (
+                            <div className="w-2 h-2 rounded-full" style={{ backgroundColor: "#B8A44C" }} />
+                          )}
+                        </div>
 
-              {/* Payment Method */}
-              <div>
+                        <div
+                          className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded"
+                          style={{ color: isSelected ? "#B8A44C" : "#8A8075", backgroundColor: isSelected ? "#B8A44C18" : "#EAE6DF" }}
+                        >
+                          {option.icon}
+                        </div>
+
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <span className="text-sm font-semibold" style={{ color: "#010101" }}>
+                              {option.label}
+                            </span>
+                            {option.badge && (
+                              <span
+                                className="text-[10px] font-medium px-2 py-0.5 rounded-full"
+                                style={{ backgroundColor: "#B8A44C20", color: "#8A7030" }}
+                              >
+                                {option.badge}
+                              </span>
+                            )}
+                          </div>
+                          <p className="text-xs mt-0.5" style={{ color: "#8A8075" }}>
+                            {option.description}
+                          </p>
+                          {option.freeOver !== null && (
+                            <p className="text-xs mt-1" style={{ color: "#B8A44C" }}>
+                              Free on orders over ${option.freeOver}
+                            </p>
+                          )}
+                        </div>
+
+                        <div className="flex-shrink-0 text-sm font-bold text-right" style={{ color: "#010101" }}>
+                          {isFree ? (
+                            <span style={{ color: "#B8A44C" }}>Free</span>
+                          ) : (
+                            `$${option.price.toFixed(2)}`
+                          )}
+                        </div>
+                      </label>
+                    );
+                  })}
+                </div>
+                <p className="text-xs mt-3" style={{ color: "#8A8075" }}>
+                  Shipping address is collected securely on the Stripe payment page. US addresses only.
+                </p>
+              </section>
+
+              {/* ── Subscription Details ── */}
+              {hasSubscription && (
+                <section>
+                  <h2 className="text-lg font-semibold mb-4" style={{ color: "#010101" }}>
+                    3 · Subscription Details
+                  </h2>
+                  <div
+                    className="p-5 rounded-lg border"
+                    style={{ backgroundColor: "#B8A44C08", borderColor: "#B8A44C40" }}
+                  >
+                    {/* Subscription header */}
+                    <div className="flex items-center gap-2 mb-4">
+                      <RefreshCw className="w-4 h-4" style={{ color: "#B8A44C" }} />
+                      <span className="text-sm font-semibold" style={{ color: "#010101" }}>
+                        Recurring Research Cycle
+                      </span>
+                    </div>
+
+                    {/* Subscription items */}
+                    <div className="space-y-3 mb-4">
+                      {subscriptionItems.map((item) => {
+                        const dosageLabel = item.selectedDosage?.size || item.product.size;
+                        const unitPrice = getItemUnitPrice(item);
+                        const cycleLabel =
+                          item.subscriptionMonths === 3
+                            ? "3-Month Research Cycle"
+                            : item.subscriptionMonths === 6
+                            ? "6-Month Research Cycle"
+                            : `${item.subscriptionMonths}-Month Cycle`;
+                        return (
+                          <div
+                            key={`sub-${item.product.slug}`}
+                            className="flex items-start gap-3 p-3 rounded"
+                            style={{ backgroundColor: "#ffffff60" }}
+                          >
+                            <div
+                              className="flex-shrink-0 w-10 h-10 rounded overflow-hidden flex items-center justify-center"
+                              style={{ backgroundColor: `${item.product.accentColor}12`, border: `1px solid ${item.product.accentColor}30` }}
+                            >
+                              <ProductThumb
+                                slug={item.product.slug}
+                                name={item.product.name}
+                                dosage={dosageLabel}
+                                category={item.product.category}
+                                accentColor={item.product.accentColor}
+                              />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <p className="text-sm font-medium truncate" style={{ color: "#010101" }}>
+                                {item.product.name}
+                              </p>
+                              <p className="text-xs" style={{ color: "#8A8075" }}>
+                                {dosageLabel} · {cycleLabel}
+                              </p>
+                            </div>
+                            <div className="text-sm font-semibold" style={{ color: "#010101" }}>
+                              ${(unitPrice * item.quantity).toFixed(2)}
+                              <span className="text-[10px] font-normal block text-right" style={{ color: "#8A8075" }}>
+                                /month
+                              </span>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    {/* What's included bullets */}
+                    <div className="border-t pt-4" style={{ borderColor: "#B8A44C30" }}>
+                      <p className="text-xs font-semibold mb-2" style={{ color: "#3A3A3A" }}>
+                        What&apos;s included in your research cycle:
+                      </p>
+                      <ul className="space-y-1.5">
+                        {[
+                          "Monthly shipment with fresh cold-chain delivery",
+                          "COA included with every batch",
+                          "Cancel or pause anytime — no commitment",
+                          "Locked-in pricing for the duration of your cycle",
+                          "Priority processing and dispatch",
+                        ].map((point) => (
+                          <li key={point} className="flex items-start gap-2 text-xs" style={{ color: "#555" }}>
+                            <CheckCircle2 className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: "#B8A44C" }} />
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Billing note */}
+                    <div
+                      className="mt-4 p-3 rounded text-xs"
+                      style={{ backgroundColor: "#fffff3", color: "#8A8075" }}
+                    >
+                      <Clock className="w-3.5 h-3.5 inline-block mr-1.5 mb-0.5" />
+                      Subscriptions are billed monthly via Stripe. Your first charge is today, then
+                      automatically on the same date each month. Manage or cancel from your Stripe
+                      customer portal (link sent with confirmation email).
+                    </div>
+                  </div>
+                </section>
+              )}
+
+              {/* ── Payment Method ── */}
+              <section>
                 <h2 className="text-lg font-semibold mb-4" style={{ color: "#010101" }}>
-                  Payment
+                  {hasSubscription ? "4" : "3"} · Payment
                 </h2>
                 <div
                   className="p-6 rounded-lg border flex items-start gap-4"
@@ -232,16 +434,41 @@ export default function CheckoutPage() {
                       Secure payment via Stripe
                     </p>
                     <p className="text-xs" style={{ color: "#8A8075" }}>
-                      Card details are processed by Stripe and encrypted end-to-end. You will be
-                      redirected to complete payment.
+                      Card details are processed directly by Stripe and encrypted end-to-end using
+                      TLS 1.3. Nexphoria never stores your payment information.
                     </p>
+                    {/* Payment icons */}
+                    <div className="flex items-center gap-2 mt-3 flex-wrap">
+                      {/* Visa */}
+                      <svg width="38" height="24" viewBox="0 0 38 24" fill="none" aria-label="Visa" className="opacity-70">
+                        <rect width="38" height="24" rx="4" fill="#1A1F71"/>
+                        <path d="M14.5 16.5H12.2L10.7 10.1C10.64 9.86 10.5 9.65 10.27 9.53C9.71 9.22 9.09 8.97 8.44 8.83V8.58H12.06C12.56 8.58 12.94 8.97 13 9.47L13.85 14.07L16.12 8.58H18.37L14.5 16.5Z" fill="white"/>
+                        <path d="M19.5 16.5H17.32L19.07 8.58H21.25L19.5 16.5Z" fill="white"/>
+                        <path d="M24.3 10.8C24.37 10.3 24.8 10 25.3 10C26.05 10 26.63 10.3 27 10.55L27.38 8.83C26.95 8.67 26.3 8.5 25.5 8.5C23.37 8.5 21.87 9.67 21.87 11.3C21.87 12.55 22.95 13.2 23.75 13.57C24.55 13.95 24.83 14.2 24.8 14.55C24.8 15.08 24.18 15.33 23.57 15.33C22.72 15.33 22.27 15.12 21.75 14.87L21.37 16.62C21.93 16.87 22.93 17.12 23.95 17.12C26.27 17.12 27.68 15.97 27.68 14.22C27.68 11.97 24.3 11.85 24.3 10.8Z" fill="white"/>
+                        <path d="M31.43 8.58H29.68C29.26 8.58 28.93 8.83 28.77 9.2L25.65 16.5H27.9L28.35 15.27H31.1L31.35 16.5H33.35L31.43 8.58ZM28.95 13.57L30.08 10.55L30.72 13.57H28.95Z" fill="white"/>
+                      </svg>
+                      {/* Mastercard */}
+                      <svg width="38" height="24" viewBox="0 0 38 24" fill="none" aria-label="Mastercard" className="opacity-70">
+                        <rect width="38" height="24" rx="4" fill="#252525"/>
+                        <circle cx="14" cy="12" r="6" fill="#EB001B"/>
+                        <circle cx="24" cy="12" r="6" fill="#F79E1B"/>
+                        <path d="M19 7.2C20.5 8.3 21.5 9.9 21.5 12C21.5 14.1 20.5 15.7 19 16.8C17.5 15.7 16.5 14.1 16.5 12C16.5 9.9 17.5 8.3 19 7.2Z" fill="#FF5F00"/>
+                      </svg>
+                      {/* Amex */}
+                      <svg width="38" height="24" viewBox="0 0 38 24" fill="none" aria-label="American Express" className="opacity-70">
+                        <rect width="38" height="24" rx="4" fill="#2557D6"/>
+                        <text x="6" y="16" fill="white" fontSize="8" fontWeight="bold" fontFamily="Arial">AMEX</text>
+                      </svg>
+                      {/* Apple Pay / Google Pay hint */}
+                      <span className="text-[10px]" style={{ color: "#A09890" }}>+ more via Stripe</span>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </section>
             </form>
           </div>
 
-          {/* Right Column - Order Summary */}
+          {/* ── Right Column – Order Summary ── */}
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-24">
               <div
@@ -252,72 +479,129 @@ export default function CheckoutPage() {
                   Order Summary
                 </h2>
 
-                {/* Items */}
-                <div className="space-y-3 mb-6">
-                  {items.map((item) => {
-                    const dosageLabel = item.selectedDosage?.size || item.product.size;
-                    const cadenceLabel = getCadenceLabel(item.subscriptionMonths);
-                    const unitPrice = getItemUnitPrice(item);
-                    return (
-                      <div
-                        key={`${item.product.slug}-${item.format}`}
-                        className="flex items-start gap-3 pb-3 border-b"
-                        style={{ borderColor: "#EAE6DF" }}
-                      >
+                {/* One-time items */}
+                {oneTimeItems.length > 0 && (
+                  <div className="space-y-3 mb-4">
+                    {hasSubscription && (
+                      <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: "#8A8075" }}>
+                        One-time items
+                      </p>
+                    )}
+                    {oneTimeItems.map((item) => {
+                      const dosageLabel = item.selectedDosage?.size || item.product.size;
+                      const unitPrice = getItemUnitPrice(item);
+                      return (
                         <div
-                          className="flex-shrink-0 flex items-center justify-center rounded overflow-hidden"
-                          style={{
-                            width: "48px",
-                            height: "48px",
-                            backgroundColor: `${item.product.accentColor}12`,
-                            border: `1px solid ${item.product.accentColor}30`,
-                          }}
+                          key={`${item.product.slug}-${item.format}-ot`}
+                          className="flex items-start gap-3 pb-3 border-b"
+                          style={{ borderColor: "#EAE6DF" }}
                         >
-                          <ProductThumb
-                            slug={item.product.slug}
-                            name={item.product.name}
-                            dosage={dosageLabel}
-                            category={item.product.category}
-                            accentColor={item.product.accentColor}
-                          />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <h4 className="text-sm font-semibold truncate" style={{ color: "#010101" }}>
-                            {item.product.name}
-                          </h4>
-                          <p className="text-xs" style={{ color: "#8A8075" }}>
-                            {dosageLabel} • {item.format === "pen" ? "Pen" : "Vial"} • Qty {item.quantity}
-                          </p>
-                          <p
-                            className="text-[11px] mt-0.5"
-                            style={{ color: item.subscriptionMonths > 1 ? "#B8A44C" : "#8A8075" }}
+                          <div
+                            className="flex-shrink-0 flex items-center justify-center rounded overflow-hidden"
+                            style={{
+                              width: "48px",
+                              height: "48px",
+                              backgroundColor: `${item.product.accentColor}12`,
+                              border: `1px solid ${item.product.accentColor}30`,
+                            }}
                           >
-                            {cadenceLabel}
-                            {item.subscriptionMonths > 1 ? " · billed monthly" : ""}
-                          </p>
+                            <ProductThumb
+                              slug={item.product.slug}
+                              name={item.product.name}
+                              dosage={dosageLabel}
+                              category={item.product.category}
+                              accentColor={item.product.accentColor}
+                            />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className="text-sm font-semibold truncate" style={{ color: "#010101" }}>
+                              {item.product.name}
+                            </h4>
+                            <p className="text-xs" style={{ color: "#8A8075" }}>
+                              {dosageLabel} · {item.format === "pen" ? "Pen" : "Vial"} · Qty {item.quantity}
+                            </p>
+                          </div>
+                          <div className="text-sm font-bold text-right" style={{ color: "#010101" }}>
+                            ${(unitPrice * item.quantity).toFixed(2)}
+                          </div>
                         </div>
-                        <div className="text-sm font-bold text-right" style={{ color: "#010101" }}>
-                          ${(unitPrice * item.quantity).toFixed(2)}
-                          {item.subscriptionMonths > 1 && (
+                      );
+                    })}
+                  </div>
+                )}
+
+                {/* Subscription items summary */}
+                {subscriptionItems.length > 0 && (
+                  <div className="space-y-3 mb-4">
+                    {hasSubscription && (
+                      <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: "#8A8075" }}>
+                        Monthly subscriptions
+                      </p>
+                    )}
+                    {subscriptionItems.map((item) => {
+                      const dosageLabel = item.selectedDosage?.size || item.product.size;
+                      const cadenceLabel = getCadenceLabel(item.subscriptionMonths);
+                      const unitPrice = getItemUnitPrice(item);
+                      return (
+                        <div
+                          key={`${item.product.slug}-${item.format}-sub`}
+                          className="flex items-start gap-3 pb-3 border-b"
+                          style={{ borderColor: "#EAE6DF" }}
+                        >
+                          <div
+                            className="flex-shrink-0 flex items-center justify-center rounded overflow-hidden"
+                            style={{
+                              width: "48px",
+                              height: "48px",
+                              backgroundColor: `${item.product.accentColor}12`,
+                              border: `1px solid ${item.product.accentColor}30`,
+                            }}
+                          >
+                            <ProductThumb
+                              slug={item.product.slug}
+                              name={item.product.name}
+                              dosage={dosageLabel}
+                              category={item.product.category}
+                              accentColor={item.product.accentColor}
+                            />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className="text-sm font-semibold truncate" style={{ color: "#010101" }}>
+                              {item.product.name}
+                            </h4>
+                            <p className="text-xs" style={{ color: "#8A8075" }}>
+                              {dosageLabel} · {item.format === "pen" ? "Pen" : "Vial"} · Qty {item.quantity}
+                            </p>
+                            <p className="text-[11px] mt-0.5" style={{ color: "#B8A44C" }}>
+                              {cadenceLabel} · billed monthly
+                            </p>
+                          </div>
+                          <div className="text-sm font-bold text-right" style={{ color: "#010101" }}>
+                            ${(unitPrice * item.quantity).toFixed(2)}
                             <span className="block text-[10px] font-normal" style={{ color: "#8A8075" }}>
                               per month
                             </span>
-                          )}
+                          </div>
                         </div>
-                      </div>
-                    );
-                  })}
-                </div>
+                      );
+                    })}
+                  </div>
+                )}
 
                 {/* Included supplies */}
                 {includedSupplies.length > 0 && (
-                  <div className="mb-6 p-3 rounded" style={{ backgroundColor: "#B8A44C20" }}>
+                  <div className="mb-5 p-3 rounded" style={{ backgroundColor: "#B8A44C20" }}>
                     <p className="text-xs font-semibold mb-1" style={{ color: "#3A3A3A" }}>
                       Included with your order
                     </p>
                     <ul className="text-xs space-y-0.5" style={{ color: "#8A8075" }}>
                       {includedSupplies.map((gift, idx) => (
-                        <li key={idx}>{gift}</li>
+                        <li key={idx} className="flex items-center gap-1.5">
+                          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                            <path d="M8.5 2.5L3.75 7.5L1.5 5.25" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                          {gift}
+                        </li>
                       ))}
                     </ul>
                   </div>
@@ -341,23 +625,38 @@ export default function CheckoutPage() {
                       className="px-4 py-2 text-sm font-medium rounded-lg border transition-colors disabled:opacity-40"
                       style={{ borderColor: "#ECEAE4", color: "#555" }}
                     >
-                      {promoApplied ? "Applied" : "Apply"}
+                      {promoApplied ? "Applied ✓" : "Apply"}
                     </button>
                   </div>
+                  {promoApplied && (
+                    <p className="text-xs mt-1.5" style={{ color: "#B8A44C" }}>
+                      Promo code applied — discount reflected at Stripe checkout.
+                    </p>
+                  )}
                 </div>
 
                 {/* Totals */}
-                <div className="space-y-2 mb-6">
+                <div className="space-y-2 mb-5">
                   <div className="flex justify-between text-sm">
                     <span style={{ color: "#8A8075" }}>Subtotal</span>
                     <span style={{ color: "#3A3A3A" }}>${totalPrice.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span style={{ color: "#8A8075" }}>Shipping</span>
-                    <span style={{ color: shipping === 0 ? "#B8A44C" : "#3A3A3A" }}>
-                      {shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`}
+                    <span style={{ color: "#8A8075" }}>
+                      Shipping
+                      <span className="text-[11px] ml-1" style={{ color: "#A09890" }}>
+                        ({selectedShipping.label})
+                      </span>
+                    </span>
+                    <span style={{ color: shippingCost === 0 ? "#B8A44C" : "#3A3A3A" }}>
+                      {shippingCost === 0 ? "Free" : `$${shippingCost.toFixed(2)}`}
                     </span>
                   </div>
+                  {hasSubscription && (
+                    <p className="text-xs" style={{ color: "#8A8075" }}>
+                      * Subscription items billed monthly · one-time items billed today
+                    </p>
+                  )}
                   <div
                     className="pt-2 border-t flex justify-between items-end"
                     style={{ borderColor: "#D8D4CC" }}
@@ -366,7 +665,7 @@ export default function CheckoutPage() {
                       {hasSubscription ? "Billed today" : "Total"}
                     </span>
                     <span className="text-xl font-bold" style={{ color: "#010101" }}>
-                      ${(totalPrice + shipping).toFixed(2)}
+                      ${(totalPrice + shippingCost).toFixed(2)}
                       {hasSubscription && (
                         <span className="block text-[11px] font-normal text-right" style={{ color: "#8A8075" }}>
                           then monthly per subscription
@@ -379,27 +678,25 @@ export default function CheckoutPage() {
                 {/* Trust badges */}
                 <div className="grid grid-cols-2 gap-2 mb-5">
                   {[
-                    "256-bit Encryption",
-                    "30-Day Guarantee",
-                    "Cold-Chain Shipped",
-                    "COA Enclosed",
+                    { label: "SSL Encrypted", icon: "🔒" },
+                    { label: "COA With Every Order", icon: "✓" },
+                    { label: "Cold-Chain Shipped", icon: "❄" },
+                    { label: "Cancel Anytime", icon: "↺" },
                   ].map((badge) => (
                     <div
-                      key={badge}
+                      key={badge.label}
                       className="flex items-center gap-1.5 px-2 py-1.5 rounded text-[11px]"
                       style={{ backgroundColor: "#F5F3F0", color: "#555" }}
                     >
-                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-                        <path d="M8.5 2.5L3.75 7.5L1.5 5.25" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                      {badge}
+                      <span style={{ color: "#B8A44C", fontSize: "12px" }}>{badge.icon}</span>
+                      {badge.label}
                     </div>
                   ))}
                 </div>
 
                 {/* Error Message */}
                 {error && (
-                  <div className="mb-4 p-3 rounded text-sm" style={{ backgroundColor: "#fee", color: "#c00" }}>
+                  <div className="mb-4 p-3 rounded text-sm" style={{ backgroundColor: "#fee2e2", color: "#b91c1c" }}>
                     {error}
                   </div>
                 )}
@@ -411,10 +708,10 @@ export default function CheckoutPage() {
                   disabled={isProcessing || !formData.email}
                   className="btn-acid w-full justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isProcessing ? "Processing..." : "Place Order"}
+                  {isProcessing ? "Processing..." : `Place Order · $${(totalPrice + shippingCost).toFixed(2)}`}
                 </button>
                 <p className="text-xs text-center mt-3" style={{ color: "#8A8075" }}>
-                  Secure payment via Stripe. You will be redirected to complete your order.
+                  You&apos;ll be redirected to Stripe to complete payment securely.
                 </p>
               </div>
             </div>
@@ -430,7 +727,7 @@ export default function CheckoutPage() {
               {hasSubscription ? "Billed today" : "Total"}
             </p>
             <p className="text-xl font-bold" style={{ color: "#010101" }}>
-              ${(totalPrice + shipping).toFixed(2)}
+              ${(totalPrice + shippingCost).toFixed(2)}
             </p>
           </div>
           <button

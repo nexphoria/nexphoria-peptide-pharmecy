@@ -61,9 +61,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // GLP-1 / Metabolic
   "semaglutide": [
+    "semaglutide-dosing-timing-protocol-design-researchers-reference",
     "semaglutide-vs-tirzepatide-research-comparison",
     "glp1-receptor-agonists-complete-research-landscape",
-    "retatrutide-triple-agonist-research-guide",
   ],
   "tirzepatide": [
     "semaglutide-vs-tirzepatide-research-comparison",

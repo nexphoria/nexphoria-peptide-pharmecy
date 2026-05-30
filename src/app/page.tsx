@@ -398,7 +398,7 @@ Discover Collection
               {
                 stat: "99.2%",
                 label: "Average Purity",
-                sub: "Across all lots, HPLC-verified",
+                sub: "Tested at Janoshik Analytical · HPLC + MS verified",
                 icon: (
                   <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
                     <circle cx="14" cy="14" r="13" stroke="#C4A265" strokeWidth="1.5"/>
@@ -409,7 +409,7 @@ Discover Collection
               {
                 stat: "48-Hour",
                 label: "Cold-Chain Shipping",
-                sub: "Temperature-controlled transit",
+                sub: "Sub-8°C gel-packed, every shipment",
                 icon: (
                   <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
                     <rect x="1.75" y="7" width="24.5" height="15" rx="2" stroke="#C4A265" strokeWidth="1.5"/>
@@ -421,7 +421,7 @@ Discover Collection
               {
                 stat: "COA",
                 label: "With Every Order",
-                sub: "Batch-specific, always enclosed",
+                sub: "Lot-specific, Janoshik Analytical certified",
                 icon: (
                   <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
                     <rect x="5" y="2" width="18" height="24" rx="2" stroke="#C4A265" strokeWidth="1.5"/>
@@ -445,6 +445,32 @@ Discover Collection
                 <div className="text-[11px] leading-relaxed hidden md:block" style={{ color: "#888" }}>{item.sub}</div>
               </div>
             ))}
+          </div>
+          {/* Lab partner credit line */}
+          <div className="mt-5 pt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6" style={{ borderTop: "1px solid #EBEBEB" }}>
+            <span className="text-[10px] uppercase tracking-widest font-medium" style={{ color: "#AAAAAA" }}>Independent Testing Partners</span>
+            <div className="flex items-center gap-4">
+              <span
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-medium"
+                style={{ background: "#F5F5F0", color: "#555", border: "1px solid #E0E0E0" }}
+              >
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <circle cx="6" cy="6" r="5" stroke="#C4A265" strokeWidth="1.2"/>
+                  <path d="M3.5 6.2l1.8 1.8 3.2-3.2" stroke="#C4A265" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                Janoshik Analytical
+              </span>
+              <span
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-medium"
+                style={{ background: "#F5F5F0", color: "#555", border: "1px solid #E0E0E0" }}
+              >
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <circle cx="6" cy="6" r="5" stroke="#C4A265" strokeWidth="1.2"/>
+                  <path d="M3.5 6.2l1.8 1.8 3.2-3.2" stroke="#C4A265" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                Freedom Diagnostics
+              </span>
+            </div>
           </div>
         </div>
       </section>
