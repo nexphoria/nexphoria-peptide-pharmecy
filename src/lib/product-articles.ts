@@ -13,8 +13,8 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   ],
   "tb-500": [
     "tb-500-mechanism-deep-dive-g-actin-sequestration-thymosin-beta-4-biology",
+    "thymosin-beta-4-systemic-vs-local-effects-research",
     "tb-500-thymosin-beta-4-researchers-complete-guide",
-    "bpc-157-tb-500-recovery-stack-deep-dive",
   ],
   "follistatin-344": [
     "follistatin-myostatin-inhibition-peptide-research-protocols",

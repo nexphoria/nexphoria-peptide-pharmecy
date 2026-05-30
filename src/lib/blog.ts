@@ -80,6 +80,7 @@ import { article as a76 } from './articles/pcsk9-peptides-cardiovascular-researc
 import { article as a77 } from './articles/kisspeptin-10-vs-kisspeptin-54-research-protocol-differences';
 import { article as a78 } from './articles/complete-blood-panel-guide-peptide-researchers';
 import { article as a79 } from './articles/peptide-research-statistics-sample-size-power-calculations-data-analysis';
+import { article as a80 } from './articles/thymosin-beta-4-systemic-vs-local-effects-research';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -116,6 +117,7 @@ export const articles: BlogArticle[] = [
   a77,
   a78,
   a79,
+  a80,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
