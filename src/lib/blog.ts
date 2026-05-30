@@ -68,6 +68,8 @@ import { article as a64 } from './articles/glp1-agonists-cardiovascular-research
 import { article as a65 } from './articles/peptide-purity-standards-hplc-ms-coa-data-researchers-guide';
 import { article as a66 } from './articles/glp1-agonists-brain-central-mechanisms-beyond-weight-loss';
 import { article as a67 } from './articles/peptide-half-life-optimization-strategies-researchers-extend-compound-activity';
+import { article as a68 } from './articles/igf-1-peptide-research-key-biomarker';
+import { article as a69 } from './articles/peptide-stacking-longevity-nad-epitalon-ss31-ghk-cu';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -92,6 +94,8 @@ export const articles: BlogArticle[] = [
   a65,
   a66,
   a67,
+  a68,
+  a69,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
