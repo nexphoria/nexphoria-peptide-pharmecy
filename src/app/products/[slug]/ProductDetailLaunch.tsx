@@ -671,7 +671,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
       <FrequentlyBoughtTogether currentSlug={product.slug} />
 
       {/* Related Research Articles */}
-      <RelatedArticles articleSlugs={getRelatedArticleSlugs(product.slug)} />
+      <RelatedArticles articleSlugs={getRelatedArticleSlugs(product.slug)} productSlug={product.slug} />
 
       {/* Complete Your Protocol */}
       <CompleteYourProtocol currentSlug={product.slug} />

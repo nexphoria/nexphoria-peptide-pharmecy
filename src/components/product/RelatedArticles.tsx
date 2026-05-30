@@ -5,6 +5,7 @@ import { articles } from "@/lib/blog";
 
 interface RelatedArticlesProps {
   articleSlugs: string[];
+  productSlug?: string;
 }
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -19,7 +20,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   "Cosmetic": "bg-pink-900/40 text-pink-200",
 };
 
-export default function RelatedArticles({ articleSlugs }: RelatedArticlesProps) {
+export default function RelatedArticles({ articleSlugs, productSlug }: RelatedArticlesProps) {
   const relatedArticles = articleSlugs
     .map((slug) => articles.find((a) => a.slug === slug))
     .filter(Boolean) as typeof articles;
@@ -46,11 +47,11 @@ export default function RelatedArticles({ articleSlugs }: RelatedArticlesProps) 
             </h2>
           </div>
           <Link
-            href="/blog"
+            href={productSlug ? `/blog/tag/${productSlug}` : "/blog"}
             className="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium transition-colors"
             style={{ color: "#d4af37" }}
           >
-            All articles
+            {productSlug ? `All ${productSlug.replace(/-/g, ' ').toUpperCase()} articles` : 'All articles'}
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="opacity-70">
               <path d="M3 7h8M7.5 3.5L11 7l-3.5 3.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
@@ -124,7 +125,7 @@ export default function RelatedArticles({ articleSlugs }: RelatedArticlesProps) 
         {/* Mobile: View all link */}
         <div className="mt-6 sm:hidden text-center">
           <Link
-            href="/blog"
+            href={productSlug ? `/blog/tag/${productSlug}` : "/blog"}
             className="text-sm font-medium underline underline-offset-4"
             style={{ color: "#d4af37" }}
           >

@@ -2,6 +2,7 @@ import { MetadataRoute } from "next";
 import { products } from "@/lib/products";
 import { articles } from "@/lib/blog";
 import { categoryToSlug } from "./blog/category/[category]/page";
+import { getAllTagSlugs } from "@/lib/article-tags";
 
 export const dynamic = "force-static";
 
@@ -323,6 +324,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.65,
+    })),
+    // Blog tag pages (compound-specific)
+    ...getAllTagSlugs().map((tag) => ({
+      url: `${baseUrl}/blog/tag/${tag}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.68,
     })),
     // COA pages for top 6 products
     ...(["bpc-157", "semaglutide", "tirzepatide", "tb-500", "ghk-cu", "nad-plus"].map((slug) => ({

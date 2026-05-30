@@ -5,6 +5,7 @@ import { articles, getArticleBySlug, type BlogSection } from "@/lib/blog";
 import Breadcrumb from "@/components/Breadcrumb";
 import ShareButtons from "@/components/ShareButtons";
 import { categoryToSlug } from "../category/[category]/page";
+import { getTagsForArticle } from "@/lib/article-tags";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -256,6 +257,9 @@ export default async function BlogArticlePage({ params }: Props) {
   );
   const related = [...sameCategory, ...otherCategory].slice(0, 3);
 
+  // Compound tags for this article
+  const compoundTags = getTagsForArticle(article.slug);
+
   return (
     <>
       <script
@@ -331,7 +335,34 @@ export default async function BlogArticlePage({ params }: Props) {
               title={article.title}
             />
 
-            {/* Research disclaimer */}
+            {/* Compound tags */}
+            {compoundTags.length > 0 && (
+              <div className="mt-8 pt-6" style={{ borderTop: "1px solid rgba(0,0,0,0.07)" }}>
+                <p
+                  className="text-xs uppercase tracking-widest mb-3"
+                  style={{ color: "#A0A0A0" }}
+                >
+                  Research Compounds
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {compoundTags.map((t) => (
+                    <Link
+                      key={t.slug}
+                      href={`/blog/tag/${t.slug}`}
+                      className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full transition-opacity hover:opacity-70"
+                      style={{
+                        backgroundColor: "#F0EDE8",
+                        border: "1px solid rgba(0,0,0,0.10)",
+                        color: "#555",
+                      }}
+                    >
+                      <span style={{ color: "#B8A44C" }}>#</span>{t.displayName}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <div
               className="mt-12 rounded-lg px-6 py-5"
               style={{
