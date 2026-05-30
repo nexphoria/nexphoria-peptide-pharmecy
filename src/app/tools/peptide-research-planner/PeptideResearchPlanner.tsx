@@ -530,7 +530,7 @@ export default function PeptideResearchPlanner() {
             >
               Step 1: Select Research Goal & Compounds
             </h2>
-            <p className="text-sm mb-8" style={{ color: "#888" }}>
+            <p className="text-sm mb-8" style={{ color: "#666666" }}>
               Choose a research goal to auto-populate a recommended compound stack, or build a custom stack.
             </p>
 
@@ -557,7 +557,7 @@ export default function PeptideResearchPlanner() {
                       {goal.label}
                     </span>
                   </div>
-                  <p className="text-xs" style={{ color: "#888" }}>
+                  <p className="text-xs" style={{ color: "#666666" }}>
                     {goal.description}
                   </p>
                 </button>
@@ -605,7 +605,7 @@ export default function PeptideResearchPlanner() {
                                 {name}
                               </div>
                               {p && (
-                                <div className="text-xs mt-0.5" style={{ color: "#888" }}>
+                                <div className="text-xs mt-0.5" style={{ color: "#666666" }}>
                                   {p.category} · {p.size}
                                 </div>
                               )}
@@ -614,7 +614,7 @@ export default function PeptideResearchPlanner() {
                           <button
                             onClick={() => removeCompound(c.id)}
                             className="text-xs px-2 py-1 rounded-sm flex-shrink-0"
-                            style={{ backgroundColor: "#1a1a18", color: "#888", border: "1px solid #333" }}
+                            style={{ backgroundColor: "#1a1a18", color: "#666666", border: "1px solid #333" }}
                           >
                             Remove
                           </button>
@@ -712,7 +712,7 @@ export default function PeptideResearchPlanner() {
             >
               Step 2: Cycle Setup & Study Info
             </h2>
-            <p className="text-sm mb-8" style={{ color: "#888" }}>
+            <p className="text-sm mb-8" style={{ color: "#666666" }}>
               Set your research cycle length, start date, and study metadata for the protocol document.
             </p>
 
@@ -754,12 +754,12 @@ export default function PeptideResearchPlanner() {
                       outline: "none",
                     }}
                   />
-                  <span className="text-sm" style={{ color: "#888" }}>
+                  <span className="text-sm" style={{ color: "#666666" }}>
                     weeks total
                   </span>
                 </div>
               )}
-              <div className="mt-3 text-sm" style={{ color: "#888" }}>
+              <div className="mt-3 text-sm" style={{ color: "#666666" }}>
                 Total: <strong style={{ color: "#F9F9F9" }}>{totalWeeks} weeks</strong>
               </div>
             </div>
@@ -783,7 +783,7 @@ export default function PeptideResearchPlanner() {
                     colorScheme: "dark",
                   }}
                 />
-                <span className="text-sm" style={{ color: "#888" }}>
+                <span className="text-sm" style={{ color: "#666666" }}>
                   →&nbsp;
                   <span style={{ color: "#F9F9F9" }}>
                     End: {formatDate(endDateObj)}
@@ -920,7 +920,7 @@ export default function PeptideResearchPlanner() {
                 style={{
                   backgroundColor: "#141412",
                   border: "1px solid #2a2a28",
-                  color: "#888",
+                  color: "#666666",
                   cursor: "pointer",
                 }}
               >
@@ -950,7 +950,7 @@ export default function PeptideResearchPlanner() {
             >
               Step 3: Doses, Routes & Biomarkers
             </h2>
-            <p className="text-sm mb-8" style={{ color: "#888" }}>
+            <p className="text-sm mb-8" style={{ color: "#666666" }}>
               Fine-tune doses, routes, and frequencies for each compound. Select biomarkers to track.
             </p>
 
@@ -1173,7 +1173,7 @@ export default function PeptideResearchPlanner() {
                 style={{
                   backgroundColor: "#141412",
                   border: "1px solid #2a2a28",
-                  color: "#888",
+                  color: "#666666",
                   cursor: "pointer",
                 }}
               >
@@ -1326,7 +1326,7 @@ export default function PeptideResearchPlanner() {
                       borderLeft: "3px solid #b8860b",
                     }}
                   >
-                    <div style={{ color: "#888", fontSize: "10px", textTransform: "uppercase", letterSpacing: "1px" }}>
+                    <div style={{ color: "#666666", fontSize: "10px", textTransform: "uppercase", letterSpacing: "1px" }}>
                       {item.label}
                     </div>
                     <div style={{ fontWeight: 600, color: "#1a1a18", marginTop: "2px" }}>
@@ -1505,7 +1505,7 @@ export default function PeptideResearchPlanner() {
                         >
                           <td style={{ padding: "6px 8px", fontWeight: 600 }}>
                             {name}
-                            <div style={{ fontSize: "10px", color: "#888", fontWeight: 400 }}>
+                            <div style={{ fontSize: "10px", color: "#666666", fontWeight: 400 }}>
                               {c.dose} {c.unit} {c.route}
                             </div>
                           </td>
@@ -1832,7 +1832,7 @@ export default function PeptideResearchPlanner() {
                   paddingTop: "16px",
                   fontSize: "10px",
                   fontFamily: "sans-serif",
-                  color: "#888",
+                  color: "#666666",
                   lineHeight: 1.5,
                 }}
               >
@@ -1855,7 +1855,7 @@ export default function PeptideResearchPlanner() {
                 style={{
                   backgroundColor: "#141412",
                   border: "1px solid #2a2a28",
-                  color: "#888",
+                  color: "#666666",
                   cursor: "pointer",
                 }}
               >
@@ -1867,7 +1867,7 @@ export default function PeptideResearchPlanner() {
                 style={{
                   backgroundColor: "#141412",
                   border: "1px solid #2a2a28",
-                  color: "#888",
+                  color: "#666666",
                   cursor: "pointer",
                 }}
               >
@@ -1901,7 +1901,7 @@ export default function PeptideResearchPlanner() {
       {/* Related tools */}
       <div className="no-print" style={{ borderTop: "1px solid #1e1e1c", marginTop: "80px" }}>
         <div className="max-w-4xl mx-auto px-6 py-12">
-          <p className="text-xs uppercase tracking-widest mb-6" style={{ color: "#888" }}>
+          <p className="text-xs uppercase tracking-widest mb-6" style={{ color: "#666666" }}>
             Related Tools
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">

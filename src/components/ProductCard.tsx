@@ -99,7 +99,7 @@ export default function ProductCard({
             <h3 className="text-base font-normal mb-1 leading-snug" style={{ color: "#1A1A1A", fontWeight: 400 }}>
               {product.name}
             </h3>
-            <p className="text-xs mb-3 leading-relaxed flex-1 line-clamp-2" style={{ color: "#888" }}>
+            <p className="text-xs mb-3 leading-relaxed flex-1 line-clamp-2" style={{ color: "#666666" }}>
               {product.tagline}
             </p>
           </div>
@@ -115,7 +115,7 @@ export default function ProductCard({
               <span className="text-base font-medium" style={{ color: "#B8A44C" }}>
                 {product.dosages && product.dosages.length > 1 ? "From " : ""}${basePrice}
               </span>
-              <span className="text-xs ml-1.5" style={{ color: "#888" }}>
+              <span className="text-xs ml-1.5" style={{ color: "#666666" }}>
                 {product.dosages && product.dosages.length > 1 ? product.dosages[0].size : product.size}
               </span>
             </div>

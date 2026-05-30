@@ -469,7 +469,7 @@ export default function StackBuilder() {
                 >
                   {active.difficulty}
                 </span>
-                <span className="text-xs" style={{ color: "#888" }}>{active.timeline}</span>
+                <span className="text-xs" style={{ color: "#666666" }}>{active.timeline}</span>
               </div>
             </div>
 
@@ -511,7 +511,7 @@ export default function StackBuilder() {
                         <p className="text-sm font-medium" style={{ color: "#000" }}>
                           {c.dose}
                         </p>
-                        <p className="text-xs" style={{ color: "#888" }}>{c.frequency}</p>
+                        <p className="text-xs" style={{ color: "#666666" }}>{c.frequency}</p>
                       </div>
                     </div>
                     <div
@@ -522,7 +522,7 @@ export default function StackBuilder() {
                       {c.mechanism}
                     </div>
                     <div className="flex items-center justify-between mt-3 ml-8">
-                      <p className="text-xs" style={{ color: "#888" }}>
+                      <p className="text-xs" style={{ color: "#666666" }}>
                         ~{c.monthlyVials} vial{c.monthlyVials > 1 ? "s" : ""}/month × ${c.price} ({c.vialSize})
                       </p>
                       <Link
@@ -547,7 +547,7 @@ export default function StackBuilder() {
                 <p className="text-xs uppercase tracking-widest mb-1" style={{ color: "#d4af37" }}>
                   Estimated Monthly Supply Cost
                 </p>
-                <p className="text-xs" style={{ color: "#888" }}>
+                <p className="text-xs" style={{ color: "#666666" }}>
                   Based on standard research quantities. Actual usage varies by protocol.
                 </p>
               </div>
@@ -648,7 +648,7 @@ export default function StackBuilder() {
 
             {/* References */}
             <div>
-              <p className="text-xs uppercase tracking-widest mb-3" style={{ color: "#888" }}>
+              <p className="text-xs uppercase tracking-widest mb-3" style={{ color: "#666666" }}>
                 Key References
               </p>
               <ul className="space-y-2">
@@ -696,7 +696,7 @@ export default function StackBuilder() {
             </div>
 
             {/* Disclaimer */}
-            <p className="text-xs text-center" style={{ color: "#AAA", lineHeight: 1.7 }}>
+            <p className="text-xs text-center" style={{ color: "#737373", lineHeight: 1.7 }}>
               All compounds sold for research use only. Not intended for human or veterinary use.
               Doses and schedules are from published preclinical literature and are provided for
               research reference only. Consult applicable institutional protocols for all research
@@ -715,7 +715,7 @@ export default function StackBuilder() {
             <p className="text-lg mb-3 tracking-tight" style={{ fontWeight: 300, color: "#333" }}>
               Select a research goal above
             </p>
-            <p className="text-sm" style={{ color: "#888" }}>
+            <p className="text-sm" style={{ color: "#666666" }}>
               Choose from Recovery, GH Axis, Metabolic, Longevity, or Cognitive to see the recommended stack.
             </p>
           </div>
@@ -726,11 +726,11 @@ export default function StackBuilder() {
       <section className="px-6 pb-16">
         <div className="max-w-4xl mx-auto border-t pt-10" style={{ borderColor: "#ECEAE4" }}>
           <div className="flex flex-wrap gap-4 text-sm">
-            <Link href="/tools" style={{ color: "#888", textDecoration: "none" }}>← All Tools</Link>
-            <Link href="/tools/reconstitution-calculator" style={{ color: "#888", textDecoration: "none" }}>Reconstitution Calculator</Link>
-            <Link href="/tools/dosing-frequency-planner" style={{ color: "#888", textDecoration: "none" }}>Dosing Planner</Link>
-            <Link href="/tools/half-life-calculator" style={{ color: "#888", textDecoration: "none" }}>Half-Life Calculator</Link>
-            <Link href="/compounds" style={{ color: "#888", textDecoration: "none" }}>Compound Index</Link>
+            <Link href="/tools" style={{ color: "#666666", textDecoration: "none" }}>← All Tools</Link>
+            <Link href="/tools/reconstitution-calculator" style={{ color: "#666666", textDecoration: "none" }}>Reconstitution Calculator</Link>
+            <Link href="/tools/dosing-frequency-planner" style={{ color: "#666666", textDecoration: "none" }}>Dosing Planner</Link>
+            <Link href="/tools/half-life-calculator" style={{ color: "#666666", textDecoration: "none" }}>Half-Life Calculator</Link>
+            <Link href="/compounds" style={{ color: "#666666", textDecoration: "none" }}>Compound Index</Link>
           </div>
         </div>
       </section>

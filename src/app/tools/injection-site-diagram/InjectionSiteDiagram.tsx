@@ -664,7 +664,7 @@ export default function InjectionSiteDiagram() {
                         className="flex-shrink-0 w-3 h-3 rounded-full"
                         style={{ backgroundColor: z.color }}
                       />
-                      <span className="text-xs" style={{ color: "#CCCCCC" }}>
+                      <span className="text-xs" style={{ color: "#737373" }}>
                         {z.shortLabel}
                       </span>
                       <span
@@ -793,7 +793,7 @@ export default function InjectionSiteDiagram() {
                             className="text-xs px-2 py-1 rounded-sm"
                             style={{
                               backgroundColor: zone.color + "15",
-                              color: "#CCCCCC",
+                              color: "#737373",
                               border: `1px solid ${zone.color}30`,
                             }}
                           >

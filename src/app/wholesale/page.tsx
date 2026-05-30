@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Mail, Phone, Calendar, Send, Loader2 } from "lucide-react";
 import { useState } from "react";
 import Breadcrumb from "@/components/Breadcrumb";
+import RUOBanner from "@/components/RUOBanner";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -77,6 +78,7 @@ export default function WholesalePage() {
   });
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [tcpaConsent, setTcpaConsent] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -90,13 +92,17 @@ export default function WholesalePage() {
       setErrorMsg("Please fill in all required fields.");
       return;
     }
+    if (!tcpaConsent) {
+      setErrorMsg("Please confirm your consent before submitting.");
+      return;
+    }
     setStatus("submitting");
     setErrorMsg("");
     try {
       const res = await fetch(`${WORKER_URL}/wholesale`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, tcpaConsent: true, tcpaConsentTimestamp: new Date().toISOString() }),
       });
       if (res.ok) {
         setStatus("success");
@@ -481,6 +487,26 @@ export default function WholesalePage() {
                   />
                 </div>
 
+                {/* TCPA Consent */}
+                <label className="flex items-start gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={tcpaConsent}
+                    onChange={(e) => {
+                      setTcpaConsent(e.target.checked);
+                      if (errorMsg) setErrorMsg("");
+                    }}
+                    required
+                    className="mt-0.5 flex-shrink-0 accent-[#B8A44C]"
+                    aria-required="true"
+                  />
+                  <span className="text-xs leading-relaxed" style={{ color: "var(--text-tertiary, #888)" }}>
+                    I agree to receive communications from Nexphoria Research, LLC regarding my wholesale inquiry and related updates.
+                    Consent is not a condition of any purchase or service. You may withdraw at any time.
+                    View our{" "}<a href="/privacy" className="underline hover:opacity-80">Privacy Policy</a>.
+                  </span>
+                </label>
+
                 {/* Error */}
                 {errorMsg && (
                   <p className="text-sm text-red-500">{errorMsg}</p>
@@ -489,7 +515,7 @@ export default function WholesalePage() {
                 {/* Submit */}
                 <button
                   type="submit"
-                  disabled={status === "submitting"}
+                  disabled={status === "submitting" || !tcpaConsent}
                   className="btn-acid w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {status === "submitting" ? (
@@ -540,6 +566,13 @@ export default function WholesalePage() {
               <ArrowRight className="w-4 h-4" />
             </a>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Research Use Only — applies to all wholesale and white-label product */}
+      <section className="px-6 pb-20">
+        <div className="max-w-3xl mx-auto">
+          <RUOBanner variant="card" />
         </div>
       </section>
     </div>

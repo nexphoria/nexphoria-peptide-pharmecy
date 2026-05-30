@@ -25,8 +25,8 @@ export default function RecentlyViewedBar({ currentSlug }: Props) {
     <section className="py-12 border-t" style={{ borderColor: "#ECEAE4" }}>
       <div className="container-nex">
         <div className="flex items-center gap-2 mb-6">
-          <Clock className="w-4 h-4 text-[#888]" />
-          <h2 className="text-sm font-semibold uppercase tracking-wider text-[#888]">
+          <Clock className="w-4 h-4 text-[#666666]" />
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-[#666666]">
             Recently Viewed
           </h2>
         </div>
@@ -53,13 +53,13 @@ export default function RecentlyViewedBar({ currentSlug }: Props) {
                     </span>
                   )}
                 </div>
-                <p className="text-[10px] uppercase tracking-wider text-[#888] mb-0.5">
+                <p className="text-[10px] uppercase tracking-wider text-[#666666] mb-0.5">
                   {product.category}
                 </p>
                 <p className="text-sm font-medium leading-tight group-hover:opacity-70 transition-opacity line-clamp-2">
                   {product.name}
                 </p>
-                <p className="text-xs text-[#888] mt-0.5">{product.size}</p>
+                <p className="text-xs text-[#666666] mt-0.5">{product.size}</p>
                 <p className="text-sm font-semibold mt-1">${product.price}</p>
               </Link>
             );

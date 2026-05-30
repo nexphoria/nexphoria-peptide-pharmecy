@@ -128,7 +128,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
             </h1>
             <p
             className="text-sm mt-2 font-medium"
-            style={{ color: "#C4A265", letterSpacing: "0.04em" }}
+            style={{ color: "#8E6C2F", letterSpacing: "0.04em" }}
           >
             {products.length} research-grade compounds
           </p>
@@ -160,7 +160,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                 <ChevronDown
                   size={11}
                   className="transition-transform"
-                  style={{ transform: sortOpen ? "rotate(180deg)" : "rotate(0deg)", color: "#C4A265" }}
+                  style={{ transform: sortOpen ? "rotate(180deg)" : "rotate(0deg)", color: "#8E6C2F" }}
                 />
               </button>
               {sortOpen && (
@@ -344,7 +344,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
         </div>
 
         {/* Product count */}
-        <p className="text-sm mb-6 text-[#888]">
+        <p className="text-sm mb-6 text-[#666666]">
           Showing {filtered.length} compound{filtered.length !== 1 ? "s" : ""}
           {normalizedQuery && (
             <span> matching &ldquo;<span style={{ color: "#010101", fontWeight: 500 }}>{searchQuery.trim()}</span>&rdquo;</span>
@@ -381,7 +381,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
               </svg>
             </div>
             <h3 className="text-lg font-medium mb-2">No compounds found</h3>
-            <p className="text-sm mb-6" style={{ color: "#888", maxWidth: 360 }}>
+            <p className="text-sm mb-6" style={{ color: "#666666", maxWidth: 360 }}>
               Try a different keyword or{" "}
               <button
                 onClick={() => { setSearchQuery(""); setActiveFilter("All"); }}
@@ -431,7 +431,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                 {hasProductPhoto(p.slug) ? (
                   <img src={getProductImagePath(p.slug)} alt={p.name} loading="lazy" decoding="async" width={32} height={32} className="w-full h-full object-cover" />
                 ) : (
-                  <span className="text-[8px] font-medium text-[#888] text-center leading-tight p-1 block">
+                  <span className="text-[8px] font-medium text-[#666666] text-center leading-tight p-1 block">
                     {p.name}
                   </span>
                 )}
@@ -448,7 +448,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
 
           <div className="flex-1 text-sm">
             <span className="font-medium">{compareSlugs.length}</span>
-            <span style={{ color: "#888" }}> / {MAX_COMPARE} selected</span>
+            <span style={{ color: "#666666" }}> / {MAX_COMPARE} selected</span>
           </div>
 
           <button
@@ -467,7 +467,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
           <button
             onClick={() => setCompareSlugs([])}
             className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors"
-            style={{ backgroundColor: "#1a1a1a", color: "#888" }}
+            style={{ backgroundColor: "#1a1a1a", color: "#666666" }}
             aria-label="Clear selection"
           >
             <svg width="10" height="10" viewBox="0 0 10 10" fill="none">

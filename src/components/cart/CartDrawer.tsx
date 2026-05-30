@@ -32,6 +32,7 @@ function ProductThumb({
         alt={name}
         width={size}
         height={size}
+        loading="lazy"
         style={{ objectFit: "cover", width: "100%", height: "100%", borderRadius: "4px" }}
       />
     );

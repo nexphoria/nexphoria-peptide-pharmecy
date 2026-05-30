@@ -80,7 +80,7 @@ export default function ResearchVideoEmbed({ video }: Props) {
           <h3 className="text-sm font-semibold text-white leading-snug mb-1 line-clamp-2">
             {video.title}
           </h3>
-          <p className="text-[11px]" style={{ color: "#888" }}>
+          <p className="text-[11px]" style={{ color: "#666666" }}>
             {video.channel}
           </p>
           <p className="text-xs mt-2 leading-relaxed line-clamp-2" style={{ color: "#999" }}>
@@ -134,7 +134,7 @@ export default function ResearchVideoEmbed({ video }: Props) {
             <div className="mt-3 flex items-start justify-between gap-4">
               <div>
                 <p className="text-sm font-semibold text-white leading-snug">{video.title}</p>
-                <p className="text-xs mt-0.5" style={{ color: "#888" }}>{video.channel}</p>
+                <p className="text-xs mt-0.5" style={{ color: "#666666" }}>{video.channel}</p>
               </div>
               <a
                 href={watchUrl}

@@ -333,19 +333,19 @@ export default function StorageGuidePage() {
                   <table className="w-full text-sm border-collapse">
                     <thead>
                       <tr style={{ borderBottom: "2px solid #ECEAE4" }}>
-                        <th className="text-left py-2.5 pr-4 font-medium text-xs uppercase tracking-wider" style={{ color: "#888888" }}>
+                        <th className="text-left py-2.5 pr-4 font-medium text-xs uppercase tracking-wider" style={{ color: "#666666" }}>
                           Compound
                         </th>
-                        <th className="text-left py-2.5 pr-4 font-medium text-xs uppercase tracking-wider" style={{ color: "#888888" }}>
+                        <th className="text-left py-2.5 pr-4 font-medium text-xs uppercase tracking-wider" style={{ color: "#666666" }}>
                           Category
                         </th>
-                        <th className="text-left py-2.5 pr-4 font-medium text-xs uppercase tracking-wider" style={{ color: "#888888" }}>
+                        <th className="text-left py-2.5 pr-4 font-medium text-xs uppercase tracking-wider" style={{ color: "#666666" }}>
                           Stability
                         </th>
-                        <th className="text-left py-2.5 pr-4 font-medium text-xs uppercase tracking-wider" style={{ color: "#888888" }}>
+                        <th className="text-left py-2.5 pr-4 font-medium text-xs uppercase tracking-wider" style={{ color: "#666666" }}>
                           Flags
                         </th>
-                        <th className="text-left py-2.5 font-medium text-xs uppercase tracking-wider" style={{ color: "#888888" }}>
+                        <th className="text-left py-2.5 font-medium text-xs uppercase tracking-wider" style={{ color: "#666666" }}>
                           Full Spec
                         </th>
                       </tr>
@@ -367,7 +367,7 @@ export default function StorageGuidePage() {
                               {p.name}
                             </Link>
                           </td>
-                          <td className="py-3 pr-4 text-xs" style={{ color: "#888888" }}>
+                          <td className="py-3 pr-4 text-xs" style={{ color: "#666666" }}>
                             {p.category}
                           </td>
                           <td className="py-3 pr-4 text-xs font-medium" style={{ color: "#444444" }}>
@@ -400,7 +400,7 @@ export default function StorageGuidePage() {
                                 </span>
                               )}
                               {!p.lightSensitive && !p.hygroscopic && !p.noFreeze && (
-                                <span className="text-xs" style={{ color: "#CCCCCC" }}>—</span>
+                                <span className="text-xs" style={{ color: "#737373" }}>—</span>
                               )}
                             </div>
                           </td>
@@ -436,7 +436,7 @@ export default function StorageGuidePage() {
                     <th
                       key={h}
                       className="text-left py-3 pr-6 font-medium text-xs uppercase tracking-wider"
-                      style={{ color: "#888888" }}
+                      style={{ color: "#666666" }}
                     >
                       {h}
                     </th>
@@ -478,7 +478,7 @@ export default function StorageGuidePage() {
                     solvent: "Any",
                     stability: "<4 hours",
                     notes: "Working solution only. Never store at room temperature for extended periods.",
-                    color: "#CCCCCC",
+                    color: "#737373",
                   },
                 ].map((row, i, arr) => (
                   <tr key={row.condition + row.solvent} style={{ borderBottom: i < arr.length - 1 ? "1px solid #F0EEE8" : "none" }}>

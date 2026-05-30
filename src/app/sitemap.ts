@@ -108,6 +108,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.70,
     },
     {
+      url: `${baseUrl}/products/new-arrivals`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.80,
+    },
+    {
+      url: `${baseUrl}/products/best-sellers`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.80,
+    },
+    {
       url: `${baseUrl}/quiz`,
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -321,6 +333,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/tools/peptide-dose-response-planner`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.72,
+    },
+    {
+      url: `${baseUrl}/tools/peptide-news-feed`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.72,
+    },
+    {
+      url: `${baseUrl}/tools/compound-half-life-reference`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.72,

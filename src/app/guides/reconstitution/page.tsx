@@ -142,11 +142,11 @@ export default function ReconstitutionGuidePage() {
             and safe disposal. Built for researchers who need to get it right.
           </p>
           <div className="flex flex-wrap gap-3 text-sm">
-            <span className="bg-[#1a1a1a] border border-[#333] rounded px-3 py-1.5 text-[#ccc]">Solvent Selection</span>
-            <span className="bg-[#1a1a1a] border border-[#333] rounded px-3 py-1.5 text-[#ccc]">Concentration Math</span>
-            <span className="bg-[#1a1a1a] border border-[#333] rounded px-3 py-1.5 text-[#ccc]">Injection Technique</span>
-            <span className="bg-[#1a1a1a] border border-[#333] rounded px-3 py-1.5 text-[#ccc]">Multi-Use Strategy</span>
-            <span className="bg-[#1a1a1a] border border-[#333] rounded px-3 py-1.5 text-[#ccc]">Storage After Mixing</span>
+            <span className="bg-[#1a1a1a] border border-[#333] rounded px-3 py-1.5 text-[#737373]">Solvent Selection</span>
+            <span className="bg-[#1a1a1a] border border-[#333] rounded px-3 py-1.5 text-[#737373]">Concentration Math</span>
+            <span className="bg-[#1a1a1a] border border-[#333] rounded px-3 py-1.5 text-[#737373]">Injection Technique</span>
+            <span className="bg-[#1a1a1a] border border-[#333] rounded px-3 py-1.5 text-[#737373]">Multi-Use Strategy</span>
+            <span className="bg-[#1a1a1a] border border-[#333] rounded px-3 py-1.5 text-[#737373]">Storage After Mixing</span>
           </div>
         </div>
       </section>
@@ -166,7 +166,7 @@ export default function ReconstitutionGuidePage() {
             <a
               key={href}
               href={href}
-              className="text-[#888] hover:text-[#C9A84C] transition-colors whitespace-nowrap"
+              className="text-[#666666] hover:text-[#C9A84C] transition-colors whitespace-nowrap"
             >
               {label}
             </a>
@@ -180,7 +180,7 @@ export default function ReconstitutionGuidePage() {
         <section>
           <div className="bg-[#C9A84C]/10 border border-[#C9A84C]/30 rounded-lg p-5 mb-8">
             <p className="text-[#C9A84C] font-semibold text-sm mb-2">What is reconstitution?</p>
-            <p className="text-[#ccc] text-sm leading-relaxed">
+            <p className="text-[#737373] text-sm leading-relaxed">
               Reconstitution is the process of dissolving a lyophilized (freeze-dried) peptide powder
               in a liquid solvent to create an injectable or working solution. Done correctly, it
               preserves compound integrity and ensures accurate dosing. Done incorrectly, it introduces
@@ -216,7 +216,7 @@ export default function ReconstitutionGuidePage() {
               <div key={i} className="border border-[#222] rounded-lg overflow-hidden">
                 <div className="bg-[#111] px-5 py-4 border-b border-[#222]">
                   <h3 className="text-white font-semibold text-base">{s.solvent}</h3>
-                  <p className="text-[#888] text-xs mt-1">Best for: {s.bestFor}</p>
+                  <p className="text-[#666666] text-xs mt-1">Best for: {s.bestFor}</p>
                 </div>
                 <div className="px-5 py-4 grid md:grid-cols-2 gap-4">
                   <div>
@@ -366,7 +366,7 @@ export default function ReconstitutionGuidePage() {
           </p>
 
           <div className="bg-[#111] border border-[#C9A84C]/30 rounded-lg p-6 mb-8 text-center">
-            <p className="text-[#888] text-sm mb-2">The Core Formula</p>
+            <p className="text-[#666666] text-sm mb-2">The Core Formula</p>
             <p className="text-2xl font-mono text-[#C9A84C] font-bold">
               Volume (mL) = Amount (mg or mcg) ÷ Target Concentration (mg/mL or mcg/mL)
             </p>
@@ -380,9 +380,9 @@ export default function ReconstitutionGuidePage() {
             <table className="w-full text-sm border-collapse">
               <thead>
                 <tr className="border-b border-[#222]">
-                  <th className="text-left text-[#888] font-medium py-2 pr-6">From</th>
-                  <th className="text-left text-[#888] font-medium py-2 pr-6">To</th>
-                  <th className="text-left text-[#888] font-medium py-2">Multiply by</th>
+                  <th className="text-left text-[#666666] font-medium py-2 pr-6">From</th>
+                  <th className="text-left text-[#666666] font-medium py-2 pr-6">To</th>
+                  <th className="text-left text-[#666666] font-medium py-2">Multiply by</th>
                 </tr>
               </thead>
               <tbody className="text-[#aaa]">
@@ -451,7 +451,7 @@ export default function ReconstitutionGuidePage() {
                         <span className="text-[#C9A84C] font-mono text-xs flex-shrink-0 mt-0.5 w-5">
                           {step.startsWith(" ") ? "" : `${j + 1}.`}
                         </span>
-                        <span className={`font-mono text-xs leading-relaxed ${step.startsWith("  ") ? "text-[#888] pl-4" : "text-[#ccc]"}`}>
+                        <span className={`font-mono text-xs leading-relaxed ${step.startsWith("  ") ? "text-[#666666] pl-4" : "text-[#737373]"}`}>
                           {step}
                         </span>
                       </li>
@@ -460,7 +460,7 @@ export default function ReconstitutionGuidePage() {
                   {ex.note && (
                     <div className="mt-4 pt-4 border-t border-[#1a1a1a]">
                       <p className="text-[#C9A84C] text-xs font-medium mb-1">Note</p>
-                      <p className="text-[#888] text-xs">{ex.note}</p>
+                      <p className="text-[#666666] text-xs">{ex.note}</p>
                     </div>
                   )}
                 </div>
@@ -502,7 +502,7 @@ export default function ReconstitutionGuidePage() {
                 the stability window (3–4 weeks with BAC water; 5–7 days with sterile water).
               </p>
               <p className="text-white text-xs font-medium mb-2">Best when:</p>
-              <ul className="space-y-1 text-[#888] text-xs">
+              <ul className="space-y-1 text-[#666666] text-xs">
                 <li>• BAC water (preservative) was used for reconstitution</li>
                 <li>• Study protocol requires daily or frequent dosing</li>
                 <li>• Total doses will be consumed within 3–4 weeks</li>
@@ -517,7 +517,7 @@ export default function ReconstitutionGuidePage() {
                 Thaw one aliquot per use session.
               </p>
               <p className="text-white text-xs font-medium mb-2">Best when:</p>
-              <ul className="space-y-1 text-[#888] text-xs">
+              <ul className="space-y-1 text-[#666666] text-xs">
                 <li>• Sterile water (no preservative) was used</li>
                 <li>• Study spans more than 3–4 weeks</li>
                 <li>• Compound is expensive or limited — each vial entry risks contamination</li>
@@ -563,8 +563,8 @@ export default function ReconstitutionGuidePage() {
                 { field: "Storage conditions", example: "4°C, protect from light" },
               ].map((item, i) => (
                 <div key={i} className="flex justify-between border-b border-[#1a1a1a] py-1.5">
-                  <span className="text-[#888]">{item.field}</span>
-                  <span className="text-[#ccc] font-mono text-xs">{item.example}</span>
+                  <span className="text-[#666666]">{item.field}</span>
+                  <span className="text-[#737373] font-mono text-xs">{item.example}</span>
                 </div>
               ))}
             </div>
@@ -614,7 +614,7 @@ export default function ReconstitutionGuidePage() {
             ].map((item, i) => (
               <div key={i} className="border border-[#222] rounded-lg p-4">
                 <h3 className="text-white font-medium text-sm mb-2">{item.title}</h3>
-                <p className="text-[#888] text-sm leading-relaxed">{item.body}</p>
+                <p className="text-[#666666] text-sm leading-relaxed">{item.body}</p>
               </div>
             ))}
           </div>
@@ -660,7 +660,7 @@ export default function ReconstitutionGuidePage() {
         {/* Disclaimer */}
         <section className="border-t border-[#1a1a1a] pt-8">
           <div className="bg-[#1a1a1a] rounded-lg p-5">
-            <p className="text-[#888] text-xs leading-relaxed">
+            <p className="text-[#666666] text-xs leading-relaxed">
               <strong className="text-[#aaa]">Research Use Only.</strong> All compounds supplied by
               Nexphoria are intended for laboratory research purposes only. They are not approved by
               the FDA for human or veterinary use and are not intended to diagnose, treat, cure, or

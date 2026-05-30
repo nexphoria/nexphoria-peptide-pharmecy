@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import Script from "next/script";
 import ProductsClient from "./client";
 import Breadcrumb from "@/components/Breadcrumb";
+import { products } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "Peptide Catalog — Research Compounds",
@@ -14,8 +16,89 @@ export default function ProductsPage({
 }: {
   searchParams?: { cat?: string };
 }) {
+  // ItemList JSON-LD for the catalog listing — gives every product a position
+  // in a structured collection so search engines understand site hierarchy.
+  const itemListLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Nexphoria Research Peptide Catalog",
+    description:
+      "Complete catalog of cGMP-manufactured research peptides with HPLC-verified purity and Certificate of Analysis.",
+    numberOfItems: products.length,
+    itemListElement: products.map((p, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: `https://nexphoria.com/products/${p.slug}`,
+      name: p.name,
+      item: {
+        "@type": "Product",
+        name: p.name,
+        sku: p.slug,
+        mpn: p.casNumber,
+        category: p.category,
+        description: p.tagline,
+        url: `https://nexphoria.com/products/${p.slug}`,
+        brand: { "@type": "Brand", name: "Nexphoria" },
+        offers: {
+          "@type": "Offer",
+          priceCurrency: "USD",
+          price: (p.dosages?.[0]?.price ?? p.price).toFixed(2),
+          availability: p.comingSoon
+            ? "https://schema.org/PreOrder"
+            : "https://schema.org/InStock",
+          url: `https://nexphoria.com/products/${p.slug}`,
+        },
+      },
+    })),
+  };
+
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://nexphoria.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Shop",
+        item: "https://nexphoria.com/products",
+      },
+    ],
+  };
+
+  const collectionLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Peptide Catalog — Research Compounds",
+    description:
+      "Browse Nexphoria's research compound catalog. cGMP-manufactured peptides with full Certificate of Analysis.",
+    url: "https://nexphoria.com/products",
+    isPartOf: { "@type": "WebSite", url: "https://nexphoria.com" },
+    mainEntity: { "@id": "#catalog-itemlist" },
+  };
+
   return (
     <div className="min-h-screen bg-cream">
+      <Script
+        id="products-itemlist-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }}
+      />
+      <Script
+        id="products-collection-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionLd) }}
+      />
+      <Script
+        id="products-breadcrumb-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       {/* Page Hero */}
       <div
         className="pt-36 pb-16 border-b"
@@ -51,7 +134,7 @@ export default function ProductsPage({
               fontSize: "0.6rem",
               letterSpacing: "0.18em",
               textTransform: "uppercase",
-              color: "#AAAAAA",
+              color: "#737373",
             }}
           >
             All compounds for qualified research use only — not for human consumption, diagnostic, or therapeutic use.

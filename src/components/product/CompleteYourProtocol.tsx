@@ -179,11 +179,11 @@ function ProductMini({
             Current
           </span>
         )}
-        <p className="text-xs text-[#888] mb-0.5">{product.category}</p>
+        <p className="text-xs text-[#666666] mb-0.5">{product.category}</p>
         <p className="text-sm font-medium leading-tight truncate max-w-[120px]">
           {product.name}
         </p>
-        <p className="text-xs text-[#888]">{product.size}</p>
+        <p className="text-xs text-[#666666]">{product.size}</p>
         <p className="text-sm font-semibold mt-0.5">${product.price}</p>
       </div>
     </div>

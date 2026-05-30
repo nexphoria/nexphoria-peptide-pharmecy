@@ -30,6 +30,7 @@ const fadeUp = {
 
 export default function ContactClient() {
   const [status, setStatus] = useState<FormStatus>("idle");
+  const [tcpaConsent, setTcpaConsent] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -46,6 +47,7 @@ export default function ContactClient() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!tcpaConsent) return;
     setStatus("loading");
 
     try {
@@ -54,7 +56,7 @@ export default function ContactClient() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, tcpaConsent: true, tcpaConsentTimestamp: new Date().toISOString() }),
       });
 
       if (response.ok) {
@@ -113,6 +115,7 @@ export default function ContactClient() {
               alt="Nexphoria — clarity in every detail"
               fill
               className="object-cover object-center"
+              loading="lazy"
               sizes="40vw"
             />
             <div
@@ -295,10 +298,28 @@ export default function ContactClient() {
                     </p>
                   )}
 
+                  {/* TCPA Consent */}
+                  <label className="flex items-start gap-3 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={tcpaConsent}
+                      onChange={(e) => setTcpaConsent(e.target.checked)}
+                      required
+                      className="mt-0.5 flex-shrink-0 accent-[#B8A44C]"
+                      aria-required="true"
+                    />
+                    <span className="text-xs leading-relaxed" style={{ color: "rgba(138,128,117,0.75)" }}>
+                      I agree to receive communications from Nexphoria Research, LLC regarding my inquiry.
+                      Consent is not a condition of purchase or service. You may withdraw consent at any time by contacting
+                      {" "}<a href="mailto:research@nexphoria.com" className="underline">research@nexphoria.com</a>.
+                      View our{" "}<a href="/privacy" className="underline">Privacy Policy</a>.
+                    </span>
+                  </label>
+
                   <div className="flex items-center gap-6">
                     <button
                       type="submit"
-                      disabled={status === "loading"}
+                      disabled={status === "loading" || !tcpaConsent}
                       className="btn-acid disabled:opacity-60"
                     >
                       {status === "loading" ? "Sending..." : "Submit Inquiry"}

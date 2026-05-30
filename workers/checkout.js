@@ -174,6 +174,118 @@ async function handleCheckout(request, env) {
   return json({ url: session.url, sessionId: session.id });
 }
 
+// ---------------------------------------------------------------------------
+// Crypto order handler — creates a pending order, returns wallet addresses
+// and a checkout reference. Crypto is the documented backup payment rail
+// (AllayPay primary, Stripe secondary, crypto backup). Actual on-chain
+// confirmation is done out-of-band by the fulfillment desk; the order moves
+// to fulfilled once a manual or automated reconciliation step matches the
+// txid against this reference.
+// ---------------------------------------------------------------------------
+async function handleCryptoOrder(request, env) {
+  const body = await request.json();
+  const { items, customerEmail, shippingMethod, asset } = body || {};
+
+  if (!items || !Array.isArray(items) || items.length === 0) {
+    return json({ error: 'No items' }, 400);
+  }
+  if (!customerEmail || !EMAIL_RE.test(customerEmail)) {
+    return json({ error: 'invalid_email' }, 400);
+  }
+
+  const assetUpper = String(asset || 'BTC').toUpperCase();
+  if (!['BTC', 'ETH'].includes(assetUpper)) {
+    return json({ error: 'unsupported_asset' }, 400);
+  }
+
+  // Wallet addresses must be configured in worker env. If not configured we
+  // refuse — we never want to display a placeholder address.
+  const btcAddress = (env.CRYPTO_BTC_ADDRESS || '').trim();
+  const ethAddress = (env.CRYPTO_ETH_ADDRESS || '').trim();
+  const walletAddress = assetUpper === 'BTC' ? btcAddress : ethAddress;
+
+  if (!walletAddress) {
+    return json(
+      { error: 'crypto_unavailable', message: 'Crypto payment is not currently configured. Please use card checkout or contact orders@nexphoria.com.' },
+      503,
+    );
+  }
+
+  // Compute total in USD from the line items the client supplied.
+  const subtotal = items.reduce((sum, item) => {
+    const qty = Number(item.quantity || 1);
+    const price = Number(item.price || 0);
+    return sum + qty * price;
+  }, 0);
+
+  const shipping = shippingMethod === 'overnight' ? 38 : subtotal >= 200 ? 0 : 15;
+  const totalUsd = Math.round((subtotal + shipping) * 100) / 100;
+
+  // Generate a short, human-friendly order reference. Crypto orders carry the
+  // CR- prefix so reconciliation can tell them apart from Stripe sessions.
+  const reference = `CR-${Date.now().toString(36).toUpperCase()}-${Math.random()
+    .toString(36)
+    .slice(2, 6)
+    .toUpperCase()}`;
+
+  const order = {
+    type: 'nexphoria_crypto_order',
+    reference,
+    asset: assetUpper,
+    walletAddress,
+    totalUsd,
+    subtotalUsd: Math.round(subtotal * 100) / 100,
+    shippingUsd: shipping,
+    shippingMethod: shippingMethod || 'standard',
+    customerEmail: customerEmail.toLowerCase(),
+    items: items.map((item) => ({
+      productSlug: item.productSlug || null,
+      name: item.name,
+      size: item.size || null,
+      format: item.format || null,
+      quantity: Number(item.quantity || 1),
+      unitPriceUsd: Number(item.price || 0),
+      subscriptionMonths: Number(item.subscriptionMonths || 1),
+    })),
+    status: 'awaiting_payment',
+    createdAt: new Date().toISOString(),
+  };
+
+  // Persist to KV so the success page + back office can look it up later.
+  if (env.SUBSCRIBERS) {
+    try {
+      await env.SUBSCRIBERS.put(`crypto:${reference}`, JSON.stringify(order), {
+        expirationTtl: 60 * 60 * 24 * 365,
+      });
+      const indexKey = 'index:crypto_orders';
+      const index = JSON.parse((await env.SUBSCRIBERS.get(indexKey)) || '[]');
+      index.push({
+        reference,
+        email: order.customerEmail,
+        asset: order.asset,
+        totalUsd: order.totalUsd,
+        createdAt: order.createdAt,
+      });
+      await env.SUBSCRIBERS.put(indexKey, JSON.stringify(index));
+    } catch {
+      // KV failure must not block the response
+    }
+  }
+
+  // Notify fulfillment desk via the same webhook lane Stripe orders use, so a
+  // single n8n workflow can fan out (email confirmation, slack alert, etc.).
+  await forwardWebhook(env.ORDER_WEBHOOK_URL, order);
+
+  return json({
+    success: true,
+    reference,
+    asset: order.asset,
+    walletAddress: order.walletAddress,
+    totalUsd: order.totalUsd,
+    instructionsUrl: `/checkout/crypto?ref=${encodeURIComponent(reference)}&asset=${order.asset}`,
+  });
+}
+
 async function handleSupport(request, env) {
   const body = await request.json();
   const { name, email, question, online, submittedAt } = body || {};
@@ -366,6 +478,7 @@ export default {
       if (path.endsWith('/waitlist')) return await handleWaitlist(request, env);
       if (path.endsWith('/wholesale')) return await handleWholesale(request, env);
       if (path.endsWith('/support')) return await handleSupport(request, env);
+      if (path.endsWith('/crypto-order')) return await handleCryptoOrder(request, env);
       if (path.endsWith('/webhook')) return await handleStripeWebhook(request, env);
       // Default (root or /checkout): Stripe checkout session.
       return await handleCheckout(request, env);

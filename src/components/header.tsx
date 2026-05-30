@@ -161,7 +161,7 @@ export function Header() {
                               className="block px-2 py-1.5 rounded-lg hover:bg-[#F0EDE7] transition-colors"
                             >
                               <span className="text-sm font-medium text-black block">{item.label}</span>
-                              <span className="text-xs text-[#888]">{item.sub}</span>
+                              <span className="text-xs text-[#666666]">{item.sub}</span>
                             </Link>
                           </li>
                         ))}
@@ -179,15 +179,35 @@ export function Header() {
                     </div>
                   ))}
                 </div>
-                <div className="pt-4 flex items-center justify-between" style={{ borderTop: "1px solid #E5E5E5" }}>
-                  <Link
-                    href="/products"
-                    onClick={() => setActiveDropdown(null)}
-                    className="text-sm font-medium hover:underline"
-                    style={{ color: "#C9A96E" }}
-                  >
-                    View All Compounds (36)
-                  </Link>
+                <div className="pt-4 flex items-center justify-between gap-4" style={{ borderTop: "1px solid #E5E5E5" }}>
+                  <div className="flex items-center gap-4">
+                    <Link
+                      href="/products"
+                      onClick={() => setActiveDropdown(null)}
+                      className="text-sm font-medium hover:underline"
+                      style={{ color: "#C9A96E" }}
+                    >
+                      View All Compounds (36)
+                    </Link>
+                    <Link
+                      href="/products/new-arrivals"
+                      onClick={() => setActiveDropdown(null)}
+                      className="flex items-center gap-1 text-sm font-medium hover:underline"
+                      style={{ color: "#22C55E" }}
+                    >
+                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-500" />
+                      New Arrivals
+                    </Link>
+                    <Link
+                      href="/products/best-sellers"
+                      onClick={() => setActiveDropdown(null)}
+                      className="flex items-center gap-1 text-sm font-medium hover:underline"
+                      style={{ color: "#C9A96E" }}
+                    >
+                      <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: "#C9A96E" }} />
+                      Best Sellers
+                    </Link>
+                  </div>
                   <Link
                     href="/build-your-stack"
                     onClick={() => setActiveDropdown(null)}
@@ -287,7 +307,7 @@ export function Header() {
             className="relative p-2 transition-colors group"
             aria-label="Open cart"
           >
-            <ShoppingBag className="w-5 h-5 transition-colors group-hover:text-[#C4A265]" strokeWidth={1.5} />
+            <ShoppingBag className="w-5 h-5 transition-colors group-hover:text-[#8E6C2F]" strokeWidth={1.5} />
             {totalItems > 0 && (
               <span
                 className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full text-[10px] font-bold flex items-center justify-center text-white"
@@ -306,7 +326,7 @@ export function Header() {
             className="relative flex items-center justify-center w-11 h-11 group"
             aria-label="Open cart"
           >
-            <ShoppingBag className="w-5 h-5 transition-colors group-hover:text-[#C4A265]" strokeWidth={1.5} />
+            <ShoppingBag className="w-5 h-5 transition-colors group-hover:text-[#8E6C2F]" strokeWidth={1.5} />
             {totalItems > 0 && (
               <span
                 className="absolute top-1 right-1 w-4 h-4 rounded-full text-[10px] font-bold flex items-center justify-center text-white"

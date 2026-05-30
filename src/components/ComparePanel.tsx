@@ -56,7 +56,7 @@ export default function ComparePanel({ products, onRemove, onClose }: ComparePan
         >
           <div>
             <h2 className="text-lg font-semibold tracking-tight">Compare Compounds</h2>
-            <p className="text-xs mt-0.5" style={{ color: "#888" }}>
+            <p className="text-xs mt-0.5" style={{ color: "#666666" }}>
               {products.length} of 3 selected
             </p>
           </div>
@@ -81,7 +81,7 @@ export default function ComparePanel({ products, onRemove, onClose }: ComparePan
               <tr>
                 <th
                   className="text-left text-xs font-medium uppercase tracking-wider px-6 py-4 sticky left-0"
-                  style={{ color: "#888", backgroundColor: "#F5F3F0", width: "160px", borderBottom: "1px solid #ECEAE4" }}
+                  style={{ color: "#666666", backgroundColor: "#F5F3F0", width: "160px", borderBottom: "1px solid #ECEAE4" }}
                 >
                   Attribute
                 </th>
@@ -113,6 +113,8 @@ export default function ComparePanel({ products, onRemove, onClose }: ComparePan
                           src={getProductImagePath(p.slug)}
                           alt={p.name}
                           className="w-full h-full object-cover"
+                          loading="lazy"
+                          decoding="async"
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center">
@@ -129,7 +131,7 @@ export default function ComparePanel({ products, onRemove, onClose }: ComparePan
                     >
                       {p.name}
                     </Link>
-                    <p className="text-xs mt-0.5" style={{ color: "#888" }}>{p.tagline.slice(0, 48)}{p.tagline.length > 48 ? "…" : ""}</p>
+                    <p className="text-xs mt-0.5" style={{ color: "#666666" }}>{p.tagline.slice(0, 48)}{p.tagline.length > 48 ? "…" : ""}</p>
                   </th>
                 ))}
                 {/* Empty placeholder columns */}
@@ -164,7 +166,7 @@ export default function ComparePanel({ products, onRemove, onClose }: ComparePan
                   <td
                     className="px-6 py-3 text-xs font-medium sticky left-0"
                     style={{
-                      color: "#888",
+                      color: "#666666",
                       backgroundColor: rowIdx % 2 === 0 ? "#F5F3F0" : "#EEECE8",
                       borderBottom: "1px solid #ECEAE4",
                     }}
@@ -209,7 +211,7 @@ export default function ComparePanel({ products, onRemove, onClose }: ComparePan
               <tr style={{ backgroundColor: "#F5F3F0" }}>
                 <td
                   className="px-6 py-4 text-xs font-medium sticky left-0"
-                  style={{ color: "#888", backgroundColor: "#EEECE8" }}
+                  style={{ color: "#666666", backgroundColor: "#EEECE8" }}
                 >
                   &nbsp;
                 </td>

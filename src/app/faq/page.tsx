@@ -457,7 +457,7 @@ export default function FaqPage() {
             ].map(({ stat, label }) => (
               <div key={label} className="text-center">
                 <p
-                  className="text-sm font-semibold mb-1"
+                  className="text-xs sm:text-sm font-semibold mb-1 leading-tight"
                   style={{ color: "#010101" }}
                 >
                   {stat}

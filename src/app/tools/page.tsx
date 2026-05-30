@@ -455,6 +455,32 @@ const TOOLS = [
     ),
     badge: "Tool",
   },
+  {
+    href: "/tools/peptide-news-feed",
+    title: "Peptide Research News Feed",
+    desc: "Curated landmark and high-impact PubMed papers on key research compounds. Filter by compound, category, or impact level. 20+ papers from NEJM, Nature, Cell, and more.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10l6 6v8a2 2 0 0 1-2 2z"/>
+        <polyline points="17 2 17 8 23 8"/>
+        <line x1="9" y1="12" x2="15" y2="12"/>
+        <line x1="9" y1="16" x2="13" y2="16"/>
+      </svg>
+    ),
+    badge: "Reference",
+  },
+  {
+    href: "/tools/compound-half-life-reference",
+    title: "Peptide Half-Life Reference Table",
+    desc: "Fast-load static reference table for 35+ research peptides: half-life, Tmax, recommended dosing frequency, and administration route — sourced from published PK data. No calculator, just the data.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <polyline points="12 6 12 12 16 14"/>
+      </svg>
+    ),
+    badge: "Reference",
+  },
 ];
 
 export default function ToolsPage() {

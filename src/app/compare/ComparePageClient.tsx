@@ -49,6 +49,8 @@ function ProductThumbnail({ product }: { product: Product }) {
           src={getProductImagePath(product.slug)}
           alt={product.name}
           className="w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
         />
       ) : (
         <div className="w-full h-full flex items-center justify-center p-2">
@@ -82,7 +84,7 @@ function AddSlot({ onAdd, existing }: AddSlotProps) {
         <button
           onClick={() => setOpen(true)}
           className="flex flex-col items-center gap-2 mx-auto group"
-          style={{ color: "#888" }}
+          style={{ color: "#666666" }}
         >
           <div
             className="w-20 h-20 rounded-xl border-2 border-dashed flex items-center justify-center transition-colors group-hover:border-[#C9A24B]"
@@ -108,7 +110,7 @@ function AddSlot({ onAdd, existing }: AddSlotProps) {
           />
           <div className="overflow-y-auto rounded border" style={{ maxHeight: "180px", borderColor: "#ECEAE4", backgroundColor: "#F9F9F9" }}>
             {filtered.length === 0 ? (
-              <div className="text-xs px-3 py-2" style={{ color: "#888" }}>No results</div>
+              <div className="text-xs px-3 py-2" style={{ color: "#666666" }}>No results</div>
             ) : (
               filtered.map((p) => (
                 <button
@@ -128,7 +130,7 @@ function AddSlot({ onAdd, existing }: AddSlotProps) {
           </div>
           <button
             className="text-xs text-center"
-            style={{ color: "#888" }}
+            style={{ color: "#666666" }}
             onClick={() => { setOpen(false); setQuery(""); }}
           >
             Cancel
@@ -257,7 +259,7 @@ export default function ComparePageClient({ initialSlugs }: { initialSlugs: stri
               <button
                 onClick={() => setSlugs([])}
                 className="text-xs px-3 py-1.5 rounded-lg border transition-colors hover:opacity-80"
-                style={{ borderColor: "rgba(255,255,255,0.12)", color: "#888" }}
+                style={{ borderColor: "rgba(255,255,255,0.12)", color: "#666666" }}
               >
                 Clear all
               </button>
@@ -310,7 +312,7 @@ export default function ComparePageClient({ initialSlugs }: { initialSlugs: stri
                   <th
                     className="text-left text-xs font-medium uppercase tracking-wider px-6 py-5 sticky left-0"
                     style={{
-                      color: "#888",
+                      color: "#666666",
                       backgroundColor: "#F5F3F0",
                       width: "160px",
                       borderBottom: "1px solid #ECEAE4",
@@ -341,7 +343,7 @@ export default function ComparePageClient({ initialSlugs }: { initialSlugs: stri
                         >
                           {p.name}
                         </Link>
-                        <p className="text-xs mt-1 leading-tight" style={{ color: "#888" }}>
+                        <p className="text-xs mt-1 leading-tight" style={{ color: "#666666" }}>
                           {p.tagline.slice(0, 60)}{p.tagline.length > 60 ? "…" : ""}
                         </p>
                         <span
@@ -370,7 +372,7 @@ export default function ComparePageClient({ initialSlugs }: { initialSlugs: stri
                     <td
                       className="px-6 py-3 text-xs font-medium sticky left-0"
                       style={{
-                        color: "#888",
+                        color: "#666666",
                         backgroundColor: rowIdx % 2 === 0 ? "#F5F3F0" : "#EEECE8",
                         borderBottom: "1px solid #ECEAE4",
                       }}
@@ -415,7 +417,7 @@ export default function ComparePageClient({ initialSlugs }: { initialSlugs: stri
                 <tr style={{ backgroundColor: "#F5F3F0" }}>
                   <td
                     className="px-6 py-4 text-xs font-medium sticky left-0"
-                    style={{ color: "#888", backgroundColor: "#EEECE8" }}
+                    style={{ color: "#666666", backgroundColor: "#EEECE8" }}
                   >
                     &nbsp;
                   </td>

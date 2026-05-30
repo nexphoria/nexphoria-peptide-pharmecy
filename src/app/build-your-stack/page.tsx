@@ -335,6 +335,7 @@ export default function BuildYourStackPage() {
                               alt={product.name}
                               width={64}
                               height={64}
+                              loading="lazy"
                               className="object-contain"
                             />
                           ) : (
@@ -470,7 +471,7 @@ export default function BuildYourStackPage() {
                           {option.description}
                         </p>
                         {option.eyebrow && (
-                          <p className="text-xs text-[#888] italic">
+                          <p className="text-xs text-[#666666] italic">
                             {option.eyebrow}
                           </p>
                         )}
@@ -559,7 +560,7 @@ export default function BuildYourStackPage() {
                 </h3>
 
                 {selectedProducts.size === 0 ? (
-                  <p className="text-[#888] text-sm">
+                  <p className="text-[#666666] text-sm">
                     No compounds selected yet. Choose from the grid above to
                     build your stack.
                   </p>
@@ -687,7 +688,7 @@ export default function BuildYourStackPage() {
                           </span>
                         </div>
                         {shipments > 1 && (
-                          <p className="text-xs text-[#888] mt-1">
+                          <p className="text-xs text-[#666666] mt-1">
                             {shipments} shipments × ${discountedSubtotal.toFixed(0)}
                           </p>
                         )}
@@ -705,7 +706,7 @@ export default function BuildYourStackPage() {
                     >
                       Proceed to Checkout
                     </button>
-                    <p className="text-xs text-[#888] text-center mt-3">
+                    <p className="text-xs text-[#666666] text-center mt-3">
                       Modify or cancel anytime
                     </p>
                   </>

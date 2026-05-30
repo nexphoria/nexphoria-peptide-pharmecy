@@ -103,14 +103,14 @@ function MassTab() {
       <h2 className="text-lg font-medium mb-1" style={{ color: "#F9F9F9" }}>
         Mass Unit Converter
       </h2>
-      <p className="text-sm mb-6" style={{ color: "#888" }}>
+      <p className="text-sm mb-6" style={{ color: "#666666" }}>
         Convert between micrograms (mcg), milligrams (mg), and grams (g). Optionally convert to International Units (IU) for compounds with known activity factors.
       </p>
 
       {/* Input row */}
       <div className="flex flex-wrap gap-3 mb-6">
         <div className="flex-1 min-w-40">
-          <label className="block text-xs mb-1.5 uppercase tracking-wider" style={{ color: "#888" }}>
+          <label className="block text-xs mb-1.5 uppercase tracking-wider" style={{ color: "#666666" }}>
             Value
           </label>
           <input
@@ -127,7 +127,7 @@ function MassTab() {
           />
         </div>
         <div>
-          <label className="block text-xs mb-1.5 uppercase tracking-wider" style={{ color: "#888" }}>
+          <label className="block text-xs mb-1.5 uppercase tracking-wider" style={{ color: "#666666" }}>
             From Unit
           </label>
           <select value={fromUnit} onChange={(e) => setFromUnit(e.target.value as "mcg" | "mg" | "g")} style={selectStyle}>
@@ -150,7 +150,7 @@ function MassTab() {
             className="rounded-sm p-4"
             style={{ backgroundColor: "#0D0D0C", border: "1px solid #2A2A28" }}
           >
-            <p className="text-xs mb-1 uppercase tracking-wider" style={{ color: "#888" }}>
+            <p className="text-xs mb-1 uppercase tracking-wider" style={{ color: "#666666" }}>
               {r.label}
             </p>
             <p className="text-xl font-light" style={{ color: "#C9DD69" }}>
@@ -182,7 +182,7 @@ function MassTab() {
         >
           <div className="flex flex-wrap gap-3 items-end mb-4">
             <div>
-              <label className="block text-xs mb-1.5 uppercase tracking-wider" style={{ color: "#888" }}>
+              <label className="block text-xs mb-1.5 uppercase tracking-wider" style={{ color: "#666666" }}>
                 Substance
               </label>
               <select
@@ -290,13 +290,13 @@ function SyringeTab() {
       <h2 className="text-lg font-medium mb-1" style={{ color: "#F9F9F9" }}>
         Syringe Unit Converter
       </h2>
-      <p className="text-sm mb-6" style={{ color: "#888" }}>
+      <p className="text-sm mb-6" style={{ color: "#666666" }}>
         Convert between mL (milliliters) and insulin syringe units (U). Insulin syringes come in 100U/mL, 50U/mL, and 30U/mL scales — make sure you select the right one.
       </p>
 
       {/* Syringe selector */}
       <div className="mb-6">
-        <label className="block text-xs mb-2 uppercase tracking-wider" style={{ color: "#888" }}>
+        <label className="block text-xs mb-2 uppercase tracking-wider" style={{ color: "#666666" }}>
           Syringe Scale
         </label>
         <div className="flex gap-3 flex-wrap">
@@ -329,7 +329,7 @@ function SyringeTab() {
           className="rounded-sm p-5"
           style={{ backgroundColor: "#0D0D0C", border: "1px solid #2A2A28" }}
         >
-          <p className="text-xs uppercase tracking-wider mb-3" style={{ color: "#888" }}>
+          <p className="text-xs uppercase tracking-wider mb-3" style={{ color: "#666666" }}>
             mL → Syringe Units
           </p>
           <input
@@ -359,7 +359,7 @@ function SyringeTab() {
           className="rounded-sm p-5"
           style={{ backgroundColor: "#0D0D0C", border: "1px solid #2A2A28" }}
         >
-          <p className="text-xs uppercase tracking-wider mb-3" style={{ color: "#888" }}>
+          <p className="text-xs uppercase tracking-wider mb-3" style={{ color: "#666666" }}>
             Syringe Units → mL
           </p>
           <input
@@ -419,7 +419,7 @@ function SyringeTab() {
 
       <div
         className="mt-6 rounded-sm p-4 text-xs"
-        style={{ backgroundColor: "#0D0D0C", border: "1px solid #2A2A28", color: "#888" }}
+        style={{ backgroundColor: "#0D0D0C", border: "1px solid #2A2A28", color: "#666666" }}
       >
         <strong style={{ color: "#C9DD69" }}>Important:</strong> Insulin syringes are calibrated for their specific scale (U/mL). A 100U/mL syringe and a 50U/mL syringe have different tick-mark spacing. Using the wrong scale will result in incorrect dosing volumes. Always verify syringe packaging before use.
       </div>
@@ -463,14 +463,14 @@ function ConcentrationTab() {
       <h2 className="text-lg font-medium mb-1" style={{ color: "#F9F9F9" }}>
         Concentration Unit Converter
       </h2>
-      <p className="text-sm mb-6" style={{ color: "#888" }}>
+      <p className="text-sm mb-6" style={{ color: "#666666" }}>
         Convert between molar (nmol/L, pmol/L, µmol/L) and mass-based (ng/mL, µg/mL) concentration units. Requires the molecular weight of the compound.
       </p>
 
       {/* Inputs row */}
       <div className="grid md:grid-cols-3 gap-3 mb-6">
         <div>
-          <label className="block text-xs mb-1.5 uppercase tracking-wider" style={{ color: "#888" }}>
+          <label className="block text-xs mb-1.5 uppercase tracking-wider" style={{ color: "#666666" }}>
             Value
           </label>
           <input
@@ -487,7 +487,7 @@ function ConcentrationTab() {
           />
         </div>
         <div>
-          <label className="block text-xs mb-1.5 uppercase tracking-wider" style={{ color: "#888" }}>
+          <label className="block text-xs mb-1.5 uppercase tracking-wider" style={{ color: "#666666" }}>
             From Unit
           </label>
           <select value={fromUnit} onChange={(e) => setFromUnit(e.target.value as "nmol" | "ngml")} style={selectStyle}>
@@ -496,7 +496,7 @@ function ConcentrationTab() {
           </select>
         </div>
         <div>
-          <label className="block text-xs mb-1.5 uppercase tracking-wider" style={{ color: "#888" }}>
+          <label className="block text-xs mb-1.5 uppercase tracking-wider" style={{ color: "#666666" }}>
             MW Used: {fmt(mw, 1)} Da
           </label>
           {!useCustom ? (
@@ -557,7 +557,7 @@ function ConcentrationTab() {
               border: `1px solid ${r.highlight ? "#3D4A20" : "#2A2A28"}`,
             }}
           >
-            <p className="text-xs mb-1 uppercase tracking-wider" style={{ color: "#888" }}>
+            <p className="text-xs mb-1 uppercase tracking-wider" style={{ color: "#666666" }}>
               {r.label}
             </p>
             <p
@@ -573,7 +573,7 @@ function ConcentrationTab() {
       {/* Formula note */}
       <div
         className="rounded-sm p-4 text-xs"
-        style={{ backgroundColor: "#0D0D0C", border: "1px solid #2A2A28", color: "#888" }}
+        style={{ backgroundColor: "#0D0D0C", border: "1px solid #2A2A28", color: "#666666" }}
       >
         <strong style={{ color: "#B8A44C" }}>Formula:</strong>{" "}
         ng/mL = nmol/L × MW (Da) ÷ 1000{" "}
@@ -678,13 +678,13 @@ function DilutionTab() {
       <h2 className="text-lg font-medium mb-1" style={{ color: "#F9F9F9" }}>
         Dilution Factor Calculator
       </h2>
-      <p className="text-sm mb-6" style={{ color: "#888" }}>
+      <p className="text-sm mb-6" style={{ color: "#666666" }}>
         Use the C₁V₁ = C₂V₂ formula to calculate how much stock solution to add and how much diluent (BAC water, saline, etc.) to reach your target working concentration.
       </p>
 
       {/* Stock concentration */}
       <div className="mb-5">
-        <p className="text-xs uppercase tracking-wider mb-2" style={{ color: "#888" }}>
+        <p className="text-xs uppercase tracking-wider mb-2" style={{ color: "#666666" }}>
           Stock (C₁) — Your reconstituted vial concentration
         </p>
         <div className="flex gap-3">
@@ -708,7 +708,7 @@ function DilutionTab() {
 
       {/* Target concentration */}
       <div className="mb-5">
-        <p className="text-xs uppercase tracking-wider mb-2" style={{ color: "#888" }}>
+        <p className="text-xs uppercase tracking-wider mb-2" style={{ color: "#666666" }}>
           Target (C₂) — Desired working concentration
         </p>
         <div className="flex gap-3">
@@ -732,7 +732,7 @@ function DilutionTab() {
 
       {/* Final volume */}
       <div className="mb-6">
-        <p className="text-xs uppercase tracking-wider mb-2" style={{ color: "#888" }}>
+        <p className="text-xs uppercase tracking-wider mb-2" style={{ color: "#666666" }}>
           Final Volume (V₂) — Total working solution needed (mL)
         </p>
         <input
@@ -748,7 +748,7 @@ function DilutionTab() {
           }}
           step="0.1"
         />
-        <span className="ml-2 text-sm" style={{ color: "#888" }}>mL</span>
+        <span className="ml-2 text-sm" style={{ color: "#666666" }}>mL</span>
       </div>
 
       {/* Results */}
@@ -780,7 +780,7 @@ function DilutionTab() {
               className="rounded-sm p-4"
               style={{ backgroundColor: "#0D0D0C", border: "1px solid #2A2A28" }}
             >
-              <p className="text-xs mb-1 uppercase tracking-wider" style={{ color: "#888" }}>
+              <p className="text-xs mb-1 uppercase tracking-wider" style={{ color: "#666666" }}>
                 {r.label}
               </p>
               <p className="text-xl font-light" style={{ color: "#C9DD69" }}>
@@ -823,7 +823,7 @@ function DilutionTab() {
       {/* Formula note */}
       <div
         className="mt-5 rounded-sm p-4 text-xs"
-        style={{ backgroundColor: "#0D0D0C", border: "1px solid #2A2A28", color: "#888" }}
+        style={{ backgroundColor: "#0D0D0C", border: "1px solid #2A2A28", color: "#666666" }}
       >
         <strong style={{ color: "#B8A44C" }}>Formula:</strong>{" "}
         C₁V₁ = C₂V₂ → V₁ = C₂ × V₂ / C₁ — where C₁ = stock concentration, V₁ = stock volume to add, C₂ = target concentration, V₂ = final volume.
@@ -948,7 +948,7 @@ export default function UnitConverter() {
                 <p className="text-sm font-medium mb-1" style={{ color: "#000" }}>
                   {link.title}
                 </p>
-                <p className="text-xs" style={{ color: "#888" }}>
+                <p className="text-xs" style={{ color: "#666666" }}>
                   {link.desc}
                 </p>
                 <p className="text-xs mt-2 font-medium" style={{ color: "#B8A44C" }}>

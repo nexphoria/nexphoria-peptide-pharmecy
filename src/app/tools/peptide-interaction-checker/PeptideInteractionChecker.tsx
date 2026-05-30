@@ -779,7 +779,7 @@ export default function PeptideInteractionChecker() {
                       <button
                         onClick={() => setSelected([])}
                         className="text-xs"
-                        style={{ color: "#888" }}
+                        style={{ color: "#666666" }}
                       >
                         Clear all
                       </button>
@@ -806,7 +806,7 @@ export default function PeptideInteractionChecker() {
                           }}
                         >
                           {c.name}
-                          <span style={{ color: "#888" }}>×</span>
+                          <span style={{ color: "#666666" }}>×</span>
                         </button>
                       ))}
                     </div>
@@ -923,7 +923,7 @@ export default function PeptideInteractionChecker() {
                   <h2 className="text-xl font-light mb-3" style={{ color: "#000" }}>
                     Select at least 2 compounds
                   </h2>
-                  <p className="text-sm" style={{ color: "#888" }}>
+                  <p className="text-sm" style={{ color: "#666666" }}>
                     Choose compounds from the list to analyze their interactions, receptor overlaps, and compatibility.
                   </p>
                 </div>
@@ -1220,7 +1220,7 @@ export default function PeptideInteractionChecker() {
                           sortedHl[sortedHl.length - 1].halfLifeHours;
                         if (ratio > 10) {
                           return (
-                            <p className="text-xs pt-2" style={{ color: "#888" }}>
+                            <p className="text-xs pt-2" style={{ color: "#666666" }}>
                               ⚠ Large half-life spread ({Math.round(ratio)}×). Synchronize dosing schedules carefully to avoid unpaired trough/peak plasma levels.
                             </p>
                           );
@@ -1236,7 +1236,7 @@ export default function PeptideInteractionChecker() {
                     style={{
                       backgroundColor: "#F5F4EE",
                       border: "1px solid #E0DED8",
-                      color: "#888",
+                      color: "#666666",
                     }}
                   >
                     <strong style={{ color: "#666" }}>Research Use Only.</strong> This interaction checker is provided as a reference tool for researchers. Interaction data is based on published preclinical and pharmacological literature. This tool does not constitute medical advice and does not replace expert review of research protocols. Nexphoria compounds are for research purposes only and are not approved for human therapeutic use.
@@ -1279,7 +1279,7 @@ export default function PeptideInteractionChecker() {
                 style={{ backgroundColor: "#FFF", border: "1px solid #E8E6E0", textDecoration: "none" }}
               >
                 <div className="font-medium text-sm mb-1" style={{ color: "#000" }}>{tool.title}</div>
-                <div className="text-xs leading-relaxed" style={{ color: "#888" }}>{tool.desc}</div>
+                <div className="text-xs leading-relaxed" style={{ color: "#666666" }}>{tool.desc}</div>
               </Link>
             ))}
           </div>

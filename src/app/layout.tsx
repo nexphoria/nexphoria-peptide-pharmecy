@@ -3,11 +3,13 @@ import { Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import RUOBanner from "@/components/RUOBanner";
 import CartDrawer from "@/components/cart/CartDrawer";
 import AgeVerificationModal from "@/components/AgeVerificationModal";
 import SearchModal from "@/components/SearchModal";
 import BackToTop from "@/components/BackToTop";
 import NewsletterPopup from "@/components/NewsletterPopup";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -76,8 +78,16 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    // Replace with real token from Google Search Console → Settings → Ownership verification → HTML tag
+    google: "nexphoria-gsc-verification-token",
+  },
   alternates: {
     canonical: "https://nexphoria.com",
+    languages: {
+      "en-US": "https://nexphoria.com",
+      "x-default": "https://nexphoria.com",
+    },
   },
 };
 
@@ -211,6 +221,7 @@ export default function RootLayout({
           fetchpriority="high"
         />
         <link rel="icon" href="/favicon.png" type="image/png" />
+        <GoogleAnalytics />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
@@ -227,6 +238,7 @@ export default function RootLayout({
       <body className="min-h-full" style={{ backgroundColor: "#FAF8F5" }}>
         <Header />
         <main>{children}</main>
+        <RUOBanner variant="band" />
         <Footer />
         <CartDrawer />
         <AgeVerificationModal />

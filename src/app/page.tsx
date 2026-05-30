@@ -9,6 +9,7 @@ import SectionReveal from "@/components/SectionReveal";
 import VialSVG from "@/components/VialSVG";
 import { getCategoryColor } from "@/lib/vial-colors";
 import AnnouncementBar from "@/components/AnnouncementBar";
+import RUOBanner from "@/components/RUOBanner";
 
 const FEATURED_SLUGS = [
   "bpc-157",
@@ -226,7 +227,7 @@ export default function HomePage() {
                 fontWeight: 500,
                 textTransform: "uppercase",
                 letterSpacing: "0.18em",
-                color: "#C4A265",
+                color: "#8E6C2F",
                 marginBottom: "2rem",
               }}
             >
@@ -279,7 +280,7 @@ Discover the Collection
                   fontWeight: 400,
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
-                  color: "#C4A265",
+                  color: "#8E6C2F",
                   textDecoration: "none",
                   transition: "opacity 150ms",
                   alignSelf: "flex-start",
@@ -320,7 +321,7 @@ Discover the Collection
                 fontWeight: 500,
                 textTransform: "uppercase",
                 letterSpacing: "0.18em",
-                color: "#C4A265",
+                color: "#8E6C2F",
                 marginBottom: "1.5rem",
               }}
             >
@@ -394,7 +395,7 @@ Discover Collection
       {/* ─── SOCIAL PROOF STRIP — subtle ─── */}
       <section className="py-8 px-6" style={{ borderTop: "1px solid #E5E5E5", borderBottom: "1px solid #E5E5E5" }}>
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-3 gap-4 md:gap-8">
+          <div className="grid grid-cols-3 gap-2 md:gap-8">
             {[
               {
                 stat: "99.2%",
@@ -433,23 +434,23 @@ Discover Collection
             ].map((item) => (
               <div
                 key={item.label}
-                className="flex flex-col items-center text-center px-4 py-5"
+                className="flex flex-col items-center text-center px-1 sm:px-4 py-5"
               >
                 <div className="mb-3">{item.icon}</div>
                 <div
-                  className="text-xl md:text-2xl tracking-tight mb-0.5"
+                  className="text-sm sm:text-xl md:text-2xl tracking-tight mb-0.5"
                   style={{ fontWeight: 300, color: "#1A1A1A", letterSpacing: "-0.02em" }}
                 >
                   {item.stat}
                 </div>
-                <div className="text-xs font-medium mb-1" style={{ color: "#666" }}>{item.label}</div>
-                <div className="text-[11px] leading-relaxed hidden md:block" style={{ color: "#888" }}>{item.sub}</div>
+                <div className="text-[10px] sm:text-xs font-medium mb-1" style={{ color: "#666" }}>{item.label}</div>
+                <div className="text-[11px] leading-relaxed hidden md:block" style={{ color: "#666666" }}>{item.sub}</div>
               </div>
             ))}
           </div>
           {/* Lab partner credit line */}
-          <div className="mt-5 pt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6" style={{ borderTop: "1px solid #EBEBEB" }}>
-            <span className="text-[10px] uppercase tracking-widest font-medium" style={{ color: "#AAAAAA" }}>Independent Testing Partners</span>
+          <div className="hidden sm:flex mt-5 pt-4 sm:flex-row items-center justify-center gap-3 sm:gap-6" style={{ borderTop: "1px solid #EBEBEB" }}>
+            <span className="text-[10px] uppercase tracking-widest font-medium" style={{ color: "#737373" }}>Independent Testing Partners</span>
             <div className="flex items-center gap-4">
               <span
                 className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-medium"
@@ -502,7 +503,7 @@ Discover Collection
                   >
                     <div className="mb-3">{cat.icon}</div>
                     <h3 className="text-sm font-semibold mb-1 leading-snug">{cat.label}</h3>
-                    <p className="text-xs text-[#888]">
+                    <p className="text-xs text-[#666666]">
                       {count > 0 ? `${count} compound${count !== 1 ? "s" : ""}` : "Browse"}
                     </p>
                   </Link>
@@ -572,19 +573,19 @@ Discover Collection
                       <div className="p-5">
                         <p
                           className="text-[10px] uppercase mb-1.5 font-medium"
-                          style={{ letterSpacing: "0.2em", color: "#C4A265" }}
+                          style={{ letterSpacing: "0.2em", color: "#8E6C2F" }}
                         >
                           {product.category}
                         </p>
                         <h3 className="text-base font-normal mb-1 group-hover:opacity-70 transition-opacity" style={{ color: "#1A1A1A", fontWeight: 400 }}>
                           {product.name}
                         </h3>
-                        <p className="text-xs mb-3 leading-snug" style={{ color: "#888" }}>{product.tagline}</p>
+                        <p className="text-xs mb-3 leading-snug" style={{ color: "#666666" }}>{product.tagline}</p>
                         <div className="flex items-center justify-between pt-3" style={{ borderTop: "1px solid #E5E5E5" }}>
-                          <span className="text-base font-medium" style={{ color: "#C4A265" }}>${price}</span>
+                          <span className="text-base font-medium" style={{ color: "#8E6C2F" }}>${price}</span>
                           <span
                             className="text-[10px] font-medium uppercase opacity-0 group-hover:opacity-100 transition-opacity"
-                            style={{ letterSpacing: "0.1em", color: "#888" }}
+                            style={{ letterSpacing: "0.1em", color: "#666666" }}
                           >
                             View →
                           </span>
@@ -610,7 +611,8 @@ Discover Collection
         <section className="py-24 md:py-36 px-6" style={{ backgroundColor: "#1A1A18" }}>
           <div className="max-w-6xl mx-auto">
             <div className="mb-14 text-center">
-              <p className="eyebrow mb-4">The Nexphoria Standard</p>
+              {/* Lighter gold for dark bg accessibility (AA on #1A1A18) */}
+              <p className="eyebrow mb-4" style={{ color: "#D4B26A" }}>The Nexphoria Standard</p>
               <h2 className="text-3xl md:text-4xl font-medium tracking-tight" style={{ color: "#F5F5F0" }}>
                 Manufactured under pharmaceutical standards.
                 <br className="hidden md:block" /> Every lot independently verified.
@@ -643,16 +645,17 @@ Discover Collection
                   className="p-8 rounded-xl border"
                   style={{ borderColor: "#2A2A28", backgroundColor: "#1C1C1A" }}
                 >
-                  <div className="text-xs font-mono mb-5 font-semibold" style={{ color: "#C4A265" }}>
+                  {/* Dark-bg accessible accents: brighter gold + lighter body for AA on #1C1C1A */}
+                  <div className="text-xs font-mono mb-5 font-semibold" style={{ color: "#D4B26A" }}>
                     {block.num}
                   </div>
                   <h3 className="text-lg font-semibold mb-3" style={{ color: "#F5F5F0" }}>
                     {block.title}
                   </h3>
-                  <p className="text-sm leading-relaxed mb-5" style={{ color: "#888" }}>
+                  <p className="text-sm leading-relaxed mb-5" style={{ color: "#B8B8B8" }}>
                     {block.body}
                   </p>
-                  <p className="text-xs font-medium" style={{ color: "#C4A265" }}>
+                  <p className="text-xs font-medium" style={{ color: "#D4B26A" }}>
                     {block.detail}
                   </p>
                 </div>
@@ -739,25 +742,25 @@ Discover Collection
                   className="blog-card block bg-white rounded-lg overflow-hidden card-shadow"
                 >
                   <div className="p-6">
-                    <p className="text-[11px] uppercase tracking-wider text-[#C4A265] mb-3 font-medium" style={{ letterSpacing: "0.2em" }}>
+                    <p className="text-[11px] uppercase tracking-wider text-[#8E6C2F] mb-3 font-medium" style={{ letterSpacing: "0.2em" }}>
                       {article.category}
                     </p>
                     <h3 className="text-base font-medium mb-3 leading-snug">
                       {article.title}
                     </h3>
-                    <p className="text-xs text-[#888] leading-relaxed mb-4 line-clamp-2">
+                    <p className="text-xs text-[#666666] leading-relaxed mb-4 line-clamp-2">
                       {article.description}
                     </p>
                     <div className="flex items-center gap-3 pt-4 border-t border-[#E5E5E5]">
-                      <span className="text-xs text-[#888]">
+                      <span className="text-xs text-[#666666]">
                         {new Date(article.publishedAt).toLocaleDateString("en-US", {
                           month: "short",
                           day: "numeric",
                           year: "numeric",
                         })}
                       </span>
-                      <span className="text-xs text-[#CCC]">·</span>
-                      <span className="text-xs text-[#888]">{article.readMinutes} min read</span>
+                      <span className="text-xs text-[#737373]">·</span>
+                      <span className="text-xs text-[#666666]">{article.readMinutes} min read</span>
                     </div>
                   </div>
                 </Link>
@@ -790,6 +793,15 @@ Discover Collection
             <Link href="/products" className="btn-primary">
 View Collection
             </Link>
+          </div>
+        </section>
+      </SectionReveal>
+
+      {/* ─── SITE-WIDE RUO DISCLAIMER ─── */}
+      <SectionReveal>
+        <section className="px-6 pb-16">
+          <div className="max-w-3xl mx-auto">
+            <RUOBanner variant="card" />
           </div>
         </section>
       </SectionReveal>

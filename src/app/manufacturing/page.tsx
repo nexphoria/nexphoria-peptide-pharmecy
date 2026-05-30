@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
+import RUOBanner from "@/components/RUOBanner";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -267,6 +268,13 @@ export default function ManufacturingPage() {
           <Link href="/products" className="btn-acid whitespace-nowrap">
             Browse Compounds <ArrowRight className="w-4 h-4" />
           </Link>
+        </div>
+      </section>
+
+      {/* Research Use Only — manufacturing output is RUO only */}
+      <section className="px-6 py-16">
+        <div className="max-w-3xl mx-auto">
+          <RUOBanner variant="card" tone="dark" />
         </div>
       </section>
     </div>

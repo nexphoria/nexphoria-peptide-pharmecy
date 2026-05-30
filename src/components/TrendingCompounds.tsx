@@ -95,7 +95,7 @@ function TrendingCard({ product, rank }: { product: Product; rank: number }) {
         </div>
         <p
           className="text-[11px] truncate"
-          style={{ color: "#888" }}
+          style={{ color: "#666666" }}
         >
           {product.category}
         </p>
@@ -109,7 +109,7 @@ function TrendingCard({ product, rank }: { product: Product; rank: number }) {
         >
           {hasMultiDosage ? "From " : ""}${basePrice}
         </p>
-        <p className="text-[10px]" style={{ color: "#AAA" }}>
+        <p className="text-[10px]" style={{ color: "#737373" }}>
           {product.dosages?.[0]?.size ?? product.size}
         </p>
       </div>
@@ -121,7 +121,7 @@ function TrendingCard({ product, rank }: { product: Product; rank: number }) {
         viewBox="0 0 14 14"
         fill="none"
         className="flex-shrink-0 opacity-30 group-hover:opacity-80 transition-opacity"
-        style={{ color: "#C4A265" }}
+        style={{ color: "#8E6C2F" }}
       >
         <path
           d="M2.5 7H11.5M7.5 3L11.5 7L7.5 11"
@@ -168,11 +168,11 @@ export default function TrendingCompounds() {
           <div>
             <p
               className="text-xs font-semibold uppercase tracking-widest"
-              style={{ color: "#C4A265", letterSpacing: "0.12em" }}
+              style={{ color: "#8E6C2F", letterSpacing: "0.12em" }}
             >
               Trending
             </p>
-            <p className="text-[11px]" style={{ color: "#888" }}>
+            <p className="text-[11px]" style={{ color: "#666666" }}>
               Most researched this week
             </p>
           </div>
@@ -185,7 +185,7 @@ export default function TrendingCompounds() {
             document.getElementById("all-compounds")?.scrollIntoView({ behavior: "smooth" });
           }}
           className="text-[11px] font-medium transition-opacity hover:opacity-60"
-          style={{ color: "#C4A265", textDecoration: "none" }}
+          style={{ color: "#8E6C2F", textDecoration: "none" }}
         >
           View all →
         </Link>

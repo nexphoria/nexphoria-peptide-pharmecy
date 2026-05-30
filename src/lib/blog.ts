@@ -63,6 +63,8 @@ import { article as a59 } from './articles/peptide-research-2026-glp1-revolution
 import { article as a60 } from './articles/oxytocin-research-protocols-intranasal-vs-ip-administration-deep-dive';
 import { article as a61 } from './articles/ghk-cu-wound-healing-research-protocols-study-design';
 import { article as a62 } from './articles/ultimate-guide-research-peptides-2026';
+import { article as a63 } from './articles/peptide-reconstitution-complete-step-by-step-guide';
+import { article as a64 } from './articles/glp1-agonists-cardiovascular-research-select-leader-trials';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -82,6 +84,8 @@ export const articles: BlogArticle[] = [
   a60,
   a61,
   a62,
+  a63,
+  a64,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

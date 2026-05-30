@@ -83,7 +83,7 @@ export default function AgeVerificationModal() {
 
           <p
             className="text-[10px] uppercase tracking-widest text-center font-semibold mb-2"
-            style={{ color: "#C4A265" }}
+            style={{ color: "#8E6C2F" }}
           >
             Nexphoria
           </p>
@@ -118,7 +118,7 @@ export default function AgeVerificationModal() {
               style={{
                 borderColor: confirmed ? "#C4A265" : "#D0D0D0",
                 backgroundColor: confirmed ? "#C4A265" : "transparent",
-                accentColor: "#C4A265",
+                accentColor: "#8E6C2F",
               }}
             />
             <span
@@ -162,7 +162,7 @@ export default function AgeVerificationModal() {
                 fontSize: "0.6rem",
                 letterSpacing: "0.18em",
                 textTransform: "uppercase",
-                color: "#AAA",
+                color: "#737373",
                 background: "none",
                 border: "none",
                 cursor: "pointer",

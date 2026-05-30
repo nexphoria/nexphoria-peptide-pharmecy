@@ -113,7 +113,7 @@ export default function BacWaterGuidePage() {
       {/* Table of Contents */}
       <section className="px-6 py-8 border-b" style={{ borderColor: "#ECEAE4", backgroundColor: "#FAFAF4" }}>
         <div className="max-w-3xl mx-auto">
-          <p className="text-xs uppercase tracking-widest mb-4" style={{ color: "#888" }}>
+          <p className="text-xs uppercase tracking-widest mb-4" style={{ color: "#666666" }}>
             In This Guide
           </p>
           <div className="flex flex-wrap gap-2">
@@ -373,7 +373,7 @@ export default function BacWaterGuidePage() {
                     borderTop: `3px solid ${color}`,
                   }}
                 >
-                  <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#888" }}>{label}</p>
+                  <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#666666" }}>{label}</p>
                   <p className="text-xl font-light mb-3" style={{ color: "#111" }}>{duration}</p>
                   <p className="text-xs leading-relaxed" style={{ color: "#666", lineHeight: 1.65 }}>{note}</p>
                 </div>
@@ -678,7 +678,7 @@ export default function BacWaterGuidePage() {
                       strokeWidth="1.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      style={{ color: "#888" }}
+                      style={{ color: "#666666" }}
                     >
                       <polyline points="6 9 12 15 18 9"/>
                     </svg>
@@ -769,7 +769,7 @@ export default function BacWaterGuidePage() {
             style={{
               backgroundColor: "#F7F7F0",
               border: "1px solid #DDDBD5",
-              color: "#888",
+              color: "#666666",
               lineHeight: 1.7,
             }}
           >

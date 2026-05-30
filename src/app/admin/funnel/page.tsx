@@ -43,28 +43,28 @@ type Period = (typeof PERIODS)[number];
 
 const DATA: Record<Period, FunnelStage[]> = {
   Today: [
-    { id: "visit", label: "Site Visits", sublabel: "Unique sessions", icon: <Users size={18} />, count: 412, prev: null, target: 500, color: "#C4A265", bgColor: "#FAF6F0" },
+    { id: "visit", label: "Site Visits", sublabel: "Unique sessions", icon: <Users size={18} />, count: 412, prev: null, target: 500, color: "#8E6C2F", bgColor: "#FAF6F0" },
     { id: "product_view", label: "Product Views", sublabel: "Catalog & detail pages", icon: <Eye size={18} />, count: 198, prev: 412, target: 250, color: "#7A9E87", bgColor: "#F0F5F1" },
     { id: "add_to_cart", label: "Add to Cart", sublabel: "Items added", icon: <ShoppingCart size={18} />, count: 74, prev: 198, target: 90, color: "#5B8FA8", bgColor: "#F0F4F7" },
     { id: "checkout", label: "Checkout Started", sublabel: "Checkout sessions", icon: <CreditCard size={18} />, count: 38, prev: 74, target: 45, color: "#8B6BB1", bgColor: "#F4F1F8" },
     { id: "purchase", label: "Purchase", sublabel: "Completed orders", icon: <CheckCircle size={18} />, count: 21, prev: 38, target: 28, color: "#4CAF7D", bgColor: "#F0F8F3" },
   ],
   "7 Days": [
-    { id: "visit", label: "Site Visits", sublabel: "Unique sessions", icon: <Users size={18} />, count: 2941, prev: null, target: 3500, color: "#C4A265", bgColor: "#FAF6F0" },
+    { id: "visit", label: "Site Visits", sublabel: "Unique sessions", icon: <Users size={18} />, count: 2941, prev: null, target: 3500, color: "#8E6C2F", bgColor: "#FAF6F0" },
     { id: "product_view", label: "Product Views", sublabel: "Catalog & detail pages", icon: <Eye size={18} />, count: 1389, prev: 2941, target: 1750, color: "#7A9E87", bgColor: "#F0F5F1" },
     { id: "add_to_cart", label: "Add to Cart", sublabel: "Items added", icon: <ShoppingCart size={18} />, count: 521, prev: 1389, target: 630, color: "#5B8FA8", bgColor: "#F0F4F7" },
     { id: "checkout", label: "Checkout Started", sublabel: "Checkout sessions", icon: <CreditCard size={18} />, count: 267, prev: 521, target: 315, color: "#8B6BB1", bgColor: "#F4F1F8" },
     { id: "purchase", label: "Purchase", sublabel: "Completed orders", icon: <CheckCircle size={18} />, count: 148, prev: 267, target: 196, color: "#4CAF7D", bgColor: "#F0F8F3" },
   ],
   "30 Days": [
-    { id: "visit", label: "Site Visits", sublabel: "Unique sessions", icon: <Users size={18} />, count: 12804, prev: null, target: 15000, color: "#C4A265", bgColor: "#FAF6F0" },
+    { id: "visit", label: "Site Visits", sublabel: "Unique sessions", icon: <Users size={18} />, count: 12804, prev: null, target: 15000, color: "#8E6C2F", bgColor: "#FAF6F0" },
     { id: "product_view", label: "Product Views", sublabel: "Catalog & detail pages", icon: <Eye size={18} />, count: 6102, prev: 12804, target: 7500, color: "#7A9E87", bgColor: "#F0F5F1" },
     { id: "add_to_cart", label: "Add to Cart", sublabel: "Items added", icon: <ShoppingCart size={18} />, count: 2287, prev: 6102, target: 2700, color: "#5B8FA8", bgColor: "#F0F4F7" },
     { id: "checkout", label: "Checkout Started", sublabel: "Checkout sessions", icon: <CreditCard size={18} />, count: 1171, prev: 2287, target: 1350, color: "#8B6BB1", bgColor: "#F4F1F8" },
     { id: "purchase", label: "Purchase", sublabel: "Completed orders", icon: <CheckCircle size={18} />, count: 648, prev: 1171, target: 810, color: "#4CAF7D", bgColor: "#F0F8F3" },
   ],
   "90 Days": [
-    { id: "visit", label: "Site Visits", sublabel: "Unique sessions", icon: <Users size={18} />, count: 38210, prev: null, target: 45000, color: "#C4A265", bgColor: "#FAF6F0" },
+    { id: "visit", label: "Site Visits", sublabel: "Unique sessions", icon: <Users size={18} />, count: 38210, prev: null, target: 45000, color: "#8E6C2F", bgColor: "#FAF6F0" },
     { id: "product_view", label: "Product Views", sublabel: "Catalog & detail pages", icon: <Eye size={18} />, count: 18340, prev: 38210, target: 22500, color: "#7A9E87", bgColor: "#F0F5F1" },
     { id: "add_to_cart", label: "Add to Cart", sublabel: "Items added", icon: <ShoppingCart size={18} />, count: 6874, prev: 18340, target: 8100, color: "#5B8FA8", bgColor: "#F0F4F7" },
     { id: "checkout", label: "Checkout Started", sublabel: "Checkout sessions", icon: <CreditCard size={18} />, count: 3519, prev: 6874, target: 4050, color: "#8B6BB1", bgColor: "#F4F1F8" },
@@ -123,7 +123,7 @@ function StatCard({
         gap: 6,
       }}
     >
-      <span style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "#AAAAAA" }}>
+      <span style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "#737373" }}>
         {label}
       </span>
       <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
@@ -133,7 +133,7 @@ function StatCard({
         {trend === "up" && <TrendingUp size={16} color="#4CAF7D" />}
         {trend === "down" && <TrendingDown size={16} color="#E05252" />}
       </div>
-      <span style={{ fontSize: "0.78rem", color: "#888" }}>{sub}</span>
+      <span style={{ fontSize: "0.78rem", color: "#666666" }}>{sub}</span>
       <div style={{ height: 3, background: "#F0F0F0", borderRadius: 2, marginTop: 4 }}>
         <div style={{ height: "100%", width: "60%", background: color, borderRadius: 2 }} />
       </div>
@@ -216,7 +216,7 @@ function FunnelBar({
                 }}
               />
             </div>
-            <span style={{ fontSize: "0.75rem", color: "#888", minWidth: 38 }}>{convFromTop}</span>
+            <span style={{ fontSize: "0.75rem", color: "#666666", minWidth: 38 }}>{convFromTop}</span>
           </div>
           {/* Target progress */}
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
@@ -393,7 +393,7 @@ export default function FunnelDashboardPage() {
             <h2 style={{ fontSize: "0.9rem", fontWeight: 600, color: "#111", letterSpacing: "0.04em" }}>
               Funnel Stages
             </h2>
-            <span style={{ fontSize: "0.7rem", color: "#AAAAAA", letterSpacing: "0.12em", textTransform: "uppercase" }}>
+            <span style={{ fontSize: "0.7rem", color: "#737373", letterSpacing: "0.12em", textTransform: "uppercase" }}>
               {period}
             </span>
           </div>
@@ -436,7 +436,7 @@ export default function FunnelDashboardPage() {
                 }}
               >
                 {["Product", "Views", "→ Cart", "→ Buy"].map((h) => (
-                  <span key={h} style={{ fontSize: "0.65rem", color: "#AAA", letterSpacing: "0.14em", textTransform: "uppercase" }}>
+                  <span key={h} style={{ fontSize: "0.65rem", color: "#737373", letterSpacing: "0.14em", textTransform: "uppercase" }}>
                     {h}
                   </span>
                 ))}
@@ -490,7 +490,7 @@ export default function FunnelDashboardPage() {
               },
               {
                 icon: "⚡",
-                color: "#C4A265",
+                color: "#8E6C2F",
                 bg: "#FAF6F0",
                 title: "Checkout abandonment opportunity",
                 body: `${cartAbandon} of initiated checkouts don't complete. Consider exit-intent + abandoned cart email sequence.`,
@@ -535,7 +535,7 @@ export default function FunnelDashboardPage() {
 
         {/* Footer note */}
         <div style={{ marginTop: 24, textAlign: "center" }}>
-          <p style={{ fontSize: "0.65rem", color: "#CCCCCC", letterSpacing: "0.12em", textTransform: "uppercase" }}>
+          <p style={{ fontSize: "0.65rem", color: "#737373", letterSpacing: "0.12em", textTransform: "uppercase" }}>
             Internal analytics — not for customer view · Nexphoria Admin
           </p>
         </div>

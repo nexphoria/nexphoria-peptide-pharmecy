@@ -66,16 +66,16 @@ function CompoundCard({ compound, accentColor }: { compound: CompoundEntry; acce
               {compound.comingSoon && (
                 <span
                   className="text-[10px] px-1.5 py-0.5 rounded font-bold uppercase tracking-wider"
-                  style={{ backgroundColor: "#EEE", color: "#888" }}
+                  style={{ backgroundColor: "#EEE", color: "#666666" }}
                 >
                   Coming Soon
                 </span>
               )}
             </div>
-            <p className="text-xs" style={{ color: "#888" }}>
+            <p className="text-xs" style={{ color: "#666666" }}>
               {compound.category}
               {compound.casNumber && compound.casNumber !== "Blend" && !compound.casNumber.startsWith("Blend") && (
-                <span className="ml-2 font-mono" style={{ color: "#AAA" }}>
+                <span className="ml-2 font-mono" style={{ color: "#737373" }}>
                   CAS {compound.casNumber.split("/")[0].trim()}
                 </span>
               )}
@@ -85,7 +85,7 @@ function CompoundCard({ compound, accentColor }: { compound: CompoundEntry; acce
             <div className="text-sm font-semibold" style={{ color: "#010101" }}>
               from ${compound.price}
             </div>
-            <div className="text-xs" style={{ color: "#AAA" }}>
+            <div className="text-xs" style={{ color: "#737373" }}>
               {compound.size}
             </div>
           </div>
@@ -104,7 +104,7 @@ function CompoundCard({ compound, accentColor }: { compound: CompoundEntry; acce
         </div>
 
         {/* MW + purity row */}
-        <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3 text-xs" style={{ color: "#888" }}>
+        <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3 text-xs" style={{ color: "#666666" }}>
           {compound.molecularWeight && compound.molecularWeight !== "Blend" && (
             <span>
               <span className="font-medium" style={{ color: "#555" }}>MW:</span>{" "}
@@ -228,7 +228,7 @@ export default function CompoundsClient({ grouped, categoryOrder }: Props) {
           <div className="relative flex-1 max-w-md">
             <svg
               className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4"
-              style={{ color: "#AAA" }}
+              style={{ color: "#737373" }}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -329,7 +329,7 @@ export default function CompoundsClient({ grouped, categoryOrder }: Props) {
                       >
                         {cat}
                       </h2>
-                      <p className="text-sm" style={{ color: "#888", fontWeight: 300 }}>
+                      <p className="text-sm" style={{ color: "#666666", fontWeight: 300 }}>
                         {meta?.description || ""}
                       </p>
                     </div>
@@ -362,7 +362,7 @@ export default function CompoundsClient({ grouped, categoryOrder }: Props) {
         ) : (
           // Flat search results
           <div>
-            <p className="text-sm mb-6" style={{ color: "#888" }}>
+            <p className="text-sm mb-6" style={{ color: "#666666" }}>
               {filtered.length} result{filtered.length !== 1 ? "s" : ""} for &ldquo;{searchQuery}&rdquo;
             </p>
             {filtered.length === 0 ? (
@@ -371,7 +371,7 @@ export default function CompoundsClient({ grouped, categoryOrder }: Props) {
                 <p className="text-lg font-medium mb-2" style={{ color: "#010101" }}>
                   No compounds found
                 </p>
-                <p className="text-sm mb-6" style={{ color: "#888" }}>
+                <p className="text-sm mb-6" style={{ color: "#666666" }}>
                   Try a different search term — compound name, category, or mechanism keyword.
                 </p>
                 <button

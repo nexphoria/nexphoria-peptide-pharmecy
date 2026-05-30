@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { products, categories } from "@/lib/products";
 import Breadcrumb from "@/components/Breadcrumb";
+import RUOBanner from "@/components/RUOBanner";
 import { articles } from "@/lib/blog";
 import { CATEGORY_META, CompoundEntry } from "@/lib/compounds";
 import CompoundsClient from "./CompoundsClient";
@@ -147,7 +148,7 @@ export default function CompoundsPage() {
               <span className="text-2xl font-semibold" style={{ color: "#010101" }}>
                 {totalCompounds}
               </span>
-              <span className="text-sm ml-2" style={{ color: "#888" }}>
+              <span className="text-sm ml-2" style={{ color: "#666666" }}>
                 compounds
               </span>
             </div>
@@ -162,7 +163,7 @@ export default function CompoundsPage() {
                   >
                     {count}
                   </span>
-                  <span className="text-sm ml-2" style={{ color: "#888" }}>
+                  <span className="text-sm ml-2" style={{ color: "#666666" }}>
                     {cat}
                   </span>
                 </div>
@@ -215,6 +216,13 @@ export default function CompoundsPage() {
                 Research Journal
               </Link>
             </div>
+          </div>
+        </section>
+
+        {/* Research Use Only — all compounds in index */}
+        <section className="px-6 py-16">
+          <div className="max-w-3xl mx-auto">
+            <RUOBanner variant="card" />
           </div>
         </section>
       </div>

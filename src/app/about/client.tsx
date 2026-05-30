@@ -124,6 +124,7 @@ export default function AboutClient() {
               alt="Research laboratory"
               fill
               className="object-cover object-center"
+              loading="lazy"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
@@ -281,6 +282,7 @@ export default function AboutClient() {
                 alt="Dare to Defy — Nexphoria"
                 fill
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </motion.div>

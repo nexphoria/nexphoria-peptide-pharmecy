@@ -191,7 +191,7 @@ export default function CostPerDoseCalculator() {
           <div>
             <p
               className="text-xs uppercase tracking-widest mb-3"
-              style={{ color: "#888888" }}
+              style={{ color: "#666666" }}
             >
               Quick Presets
             </p>
@@ -252,7 +252,7 @@ export default function CostPerDoseCalculator() {
                 <div className="md:col-span-2">
                   <label
                     className="block text-xs uppercase tracking-widest mb-2"
-                    style={{ color: "#888888" }}
+                    style={{ color: "#666666" }}
                   >
                     Compound
                   </label>
@@ -283,7 +283,7 @@ export default function CostPerDoseCalculator() {
                     ))}
                   </select>
                   {selectedProduct && (
-                    <p className="text-xs mt-1.5" style={{ color: "#888888" }}>
+                    <p className="text-xs mt-1.5" style={{ color: "#666666" }}>
                       Selected: {selectedProduct.sizeMg}mg vial at $
                       {selectedProduct.price}
                     </p>
@@ -294,7 +294,7 @@ export default function CostPerDoseCalculator() {
                   <div>
                     <label
                       className="block text-xs uppercase tracking-widest mb-2"
-                      style={{ color: "#888888" }}
+                      style={{ color: "#666666" }}
                     >
                       Vial Price ($)
                     </label>
@@ -317,7 +317,7 @@ export default function CostPerDoseCalculator() {
                   <div>
                     <label
                       className="block text-xs uppercase tracking-widest mb-2"
-                      style={{ color: "#888888" }}
+                      style={{ color: "#666666" }}
                     >
                       Vial Size (mg)
                     </label>
@@ -344,7 +344,7 @@ export default function CostPerDoseCalculator() {
               <div>
                 <label
                   className="block text-xs uppercase tracking-widest mb-2"
-                  style={{ color: "#888888" }}
+                  style={{ color: "#666666" }}
                 >
                   Dose (mcg)
                 </label>
@@ -366,7 +366,7 @@ export default function CostPerDoseCalculator() {
                     outline: "none",
                   }}
                 />
-                <p className="text-xs mt-1.5" style={{ color: "#AAAAAA" }}>
+                <p className="text-xs mt-1.5" style={{ color: "#737373" }}>
                   1 mg = 1,000 mcg &nbsp;|&nbsp; 0.5 mg = 500 mcg
                 </p>
               </div>
@@ -375,7 +375,7 @@ export default function CostPerDoseCalculator() {
               <div>
                 <label
                   className="block text-xs uppercase tracking-widest mb-2"
-                  style={{ color: "#888888" }}
+                  style={{ color: "#666666" }}
                 >
                   Doses per Week
                 </label>
@@ -397,7 +397,7 @@ export default function CostPerDoseCalculator() {
                     outline: "none",
                   }}
                 />
-                <p className="text-xs mt-1.5" style={{ color: "#AAAAAA" }}>
+                <p className="text-xs mt-1.5" style={{ color: "#737373" }}>
                   Daily = 7 &nbsp;|&nbsp; 3×/day = 21 &nbsp;|&nbsp; Weekly = 1
                 </p>
               </div>
@@ -476,7 +476,7 @@ export default function CostPerDoseCalculator() {
               >
                 <p
                   className="text-xs uppercase tracking-widest mb-5"
-                  style={{ color: "#888888" }}
+                  style={{ color: "#666666" }}
                 >
                   Extended Breakdown
                 </p>
@@ -562,7 +562,7 @@ export default function CostPerDoseCalculator() {
                 >
                   <p
                     className="text-xs uppercase tracking-widest mb-5"
-                    style={{ color: "#888888" }}
+                    style={{ color: "#666666" }}
                   >
                     Multi-Vial Planner
                   </p>
@@ -575,7 +575,7 @@ export default function CostPerDoseCalculator() {
                               <th
                                 key={h}
                                 className="text-left text-xs uppercase tracking-widest pb-3 pr-6"
-                                style={{ color: "#888888", fontWeight: 500 }}
+                                style={{ color: "#666666", fontWeight: 500 }}
                               >
                                 {h}
                               </th>
@@ -635,7 +635,7 @@ export default function CostPerDoseCalculator() {
               <p className="text-4xl mb-3" style={{ color: "#DDDBD5" }}>
                 —
               </p>
-              <p className="text-sm" style={{ color: "#AAAAAA" }}>
+              <p className="text-sm" style={{ color: "#737373" }}>
                 Fill in all fields above to see your cost breakdown.
               </p>
             </div>
@@ -699,7 +699,7 @@ export default function CostPerDoseCalculator() {
             className="rounded-sm p-5"
             style={{ backgroundColor: "#F8F7F2", border: "1px solid #ECEAE4" }}
           >
-            <p className="text-xs leading-relaxed" style={{ color: "#888888" }}>
+            <p className="text-xs leading-relaxed" style={{ color: "#666666" }}>
               <strong style={{ color: "#555" }}>Research Use Only.</strong> All
               pricing shown reflects Nexphoria catalog pricing for qualified
               researchers. Cost calculations are estimates based on the dose and

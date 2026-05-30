@@ -95,7 +95,7 @@ export default function LiveChatWidget() {
       <button
         onClick={() => { setOpen((v) => !v); if (status === 'success') reset(); }}
         aria-label="Open research support"
-        className="fixed bottom-8 right-8 z-50 flex items-center gap-2.5 text-xs font-medium transition-opacity hover:opacity-60 focus:outline-none"
+        className="fixed bottom-8 right-3 sm:right-8 z-50 flex items-center gap-2.5 text-xs font-medium transition-opacity hover:opacity-60 focus:outline-none"
         style={{ color: '#1A1A1A', letterSpacing: '0.08em' }}
       >
         <span>Research Support</span>
@@ -114,7 +114,7 @@ export default function LiveChatWidget() {
           role="dialog"
           aria-modal="true"
           aria-label="Research Support"
-          className="fixed bottom-16 right-8 z-50 w-[340px] max-w-[calc(100vw-2rem)] rounded-xl shadow-xl overflow-hidden"
+          className="fixed bottom-16 right-3 sm:right-8 z-50 w-[340px] max-w-[calc(100vw-1.5rem)] rounded-xl shadow-xl overflow-hidden"
           style={{ backgroundColor: '#FFFFFF', border: '1px solid #E5E5E5' }}
         >
           {/* Header */}
@@ -132,13 +132,13 @@ export default function LiveChatWidget() {
               </span>
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-xs" style={{ color: '#888888' }}>
+              <span className="text-xs" style={{ color: '#666666' }}>
                 {online ? 'Available' : 'Leave Message'}
               </span>
               <button
                 onClick={() => { setOpen(false); if (status === 'success') reset(); }}
                 aria-label="Close"
-                className="text-[#888888] hover:text-[#1A1A1A] transition-colors"
+                className="text-[#666666] hover:text-[#1A1A1A] transition-colors"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
                   <line x1="18" y1="6" x2="6" y2="18" />
@@ -161,7 +161,7 @@ export default function LiveChatWidget() {
                   </svg>
                 </div>
                 <p className="font-medium text-sm mb-1" style={{ color: '#1A1A1A' }}>Message received</p>
-                <p className="text-xs leading-relaxed" style={{ color: '#888888' }}>
+                <p className="text-xs leading-relaxed" style={{ color: '#666666' }}>
                   {online
                     ? "We'll respond to your email shortly."
                     : "We'll follow up by email on the next business day."}
@@ -194,7 +194,7 @@ export default function LiveChatWidget() {
 
                 <form onSubmit={handleSubmit} noValidate className="space-y-3">
                   <div>
-                    <label htmlFor="chat-name" className="block text-xs font-medium mb-1.5 uppercase tracking-wider" style={{ color: '#888888', letterSpacing: '0.08em' }}>
+                    <label htmlFor="chat-name" className="block text-xs font-medium mb-1.5 uppercase tracking-wider" style={{ color: '#666666', letterSpacing: '0.08em' }}>
                       Name
                     </label>
                     <input
@@ -215,7 +215,7 @@ export default function LiveChatWidget() {
                   </div>
 
                   <div>
-                    <label htmlFor="chat-email" className="block text-xs font-medium mb-1.5 uppercase tracking-wider" style={{ color: '#888888', letterSpacing: '0.08em' }}>
+                    <label htmlFor="chat-email" className="block text-xs font-medium mb-1.5 uppercase tracking-wider" style={{ color: '#666666', letterSpacing: '0.08em' }}>
                       Email
                     </label>
                     <input
@@ -236,7 +236,7 @@ export default function LiveChatWidget() {
                   </div>
 
                   <div>
-                    <label htmlFor="chat-question" className="block text-xs font-medium mb-1.5 uppercase tracking-wider" style={{ color: '#888888', letterSpacing: '0.08em' }}>
+                    <label htmlFor="chat-question" className="block text-xs font-medium mb-1.5 uppercase tracking-wider" style={{ color: '#666666', letterSpacing: '0.08em' }}>
                       Your Question
                     </label>
                     <textarea
@@ -270,7 +270,7 @@ export default function LiveChatWidget() {
                   </button>
                 </form>
 
-                <p className="mt-3 text-center text-xs" style={{ color: '#888888' }}>
+                <p className="mt-3 text-center text-xs" style={{ color: '#666666' }}>
                   Or email{' '}
                   <a href="mailto:research@nexphoria.com" style={{ color: '#C9A96E', textDecoration: 'underline' }}>
                     research@nexphoria.com

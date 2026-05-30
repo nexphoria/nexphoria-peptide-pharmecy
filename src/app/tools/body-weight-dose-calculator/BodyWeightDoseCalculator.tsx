@@ -767,7 +767,7 @@ export default function BodyWeightDoseCalculator() {
                       ))}
                     </div>
                     {compound.notes && (
-                      <p className="text-xs mt-3 leading-relaxed" style={{ color: "#888" }}>
+                      <p className="text-xs mt-3 leading-relaxed" style={{ color: "#666666" }}>
                         {compound.notes}
                       </p>
                     )}
@@ -1202,7 +1202,7 @@ export default function BodyWeightDoseCalculator() {
                   <div className="font-medium mb-1" style={{ color: "#d4af37" }}>
                     {c.title}
                   </div>
-                  <div style={{ color: "#888", lineHeight: 1.6 }}>{c.body}</div>
+                  <div style={{ color: "#666666", lineHeight: 1.6 }}>{c.body}</div>
                 </div>
               ))}
             </div>

@@ -644,7 +644,7 @@ export default function ProtocolTemplateGenerator() {
               </button>
               <button
                 onClick={() => setGenerated(false)}
-                style={{ ...actionBtnStyle, backgroundColor: "transparent", border: "1px solid #333", color: "#888" }}
+                style={{ ...actionBtnStyle, backgroundColor: "transparent", border: "1px solid #333", color: "#666666" }}
               >
                 ← Edit Protocol
               </button>
@@ -1118,7 +1118,7 @@ const labelStyle: React.CSSProperties = {
   fontWeight: 500,
   letterSpacing: "0.06em",
   textTransform: "uppercase",
-  color: "#888",
+  color: "#666666",
   marginBottom: "6px",
 };
 

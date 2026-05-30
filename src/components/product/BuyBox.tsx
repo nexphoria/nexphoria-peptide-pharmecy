@@ -84,14 +84,14 @@ export default function BuyBox({
               fontFamily: "var(--font-display)",
               fontSize: "2.25rem",
               fontWeight: 300,
-              color: "#C4A265",
+              color: "#8E6C2F",
               letterSpacing: "-0.02em",
               lineHeight: 1,
             }}
           >
             ${unitPrice.toFixed(2)}
           </span>
-          <span className="text-sm" style={{ color: "#888" }}>
+          <span className="text-sm" style={{ color: "#666666" }}>
             {purchaseMode === 'subscribe'
               ? 'per vial / month'
               : qty > 1 ? `per vial · ${qty} vials` : 'per vial'}
@@ -104,7 +104,7 @@ export default function BuyBox({
       <div className="mb-5">
         <p
           className="text-[10px] uppercase mb-3"
-          style={{ letterSpacing: "0.12em", color: "#888", fontWeight: 500 }}
+          style={{ letterSpacing: "0.12em", color: "#666666", fontWeight: 500 }}
         >
           Purchase Type
         </p>
@@ -134,7 +134,7 @@ export default function BuyBox({
           })}
         </div>
         {purchaseMode === 'subscribe' && (
-          <p className="text-[11px] mt-2" style={{ color: "#888" }}>
+          <p className="text-[11px] mt-2 leading-relaxed" style={{ color: "#666666" }}>
             3-month research cycle · cancel anytime · saves ${subscribeSavings.toFixed(2)} this order
           </p>
         )}
@@ -145,11 +145,11 @@ export default function BuyBox({
         <div className="mb-5">
           <p
             className="text-[10px] uppercase mb-2.5"
-            style={{ letterSpacing: "0.12em", color: "#888", fontWeight: 500 }}
+            style={{ letterSpacing: "0.12em", color: "#666666", fontWeight: 500 }}
           >
             Size
           </p>
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             {product.dosages.map((dosage) => {
               const active = selectedDosage?.size === dosage.size;
               return (
@@ -168,7 +168,7 @@ export default function BuyBox({
                   aria-pressed={active}
                 >
                   {dosage.size}{" "}
-                  <span style={{ color: "#888", fontWeight: 400 }}>· ${dosage.price}</span>
+                  <span style={{ color: "#666666", fontWeight: 400 }}>· ${dosage.price}</span>
                 </button>
               );
             })}
@@ -181,7 +181,7 @@ export default function BuyBox({
         <div className="mb-5">
           <p
             className="text-[10px] uppercase mb-3"
-            style={{ letterSpacing: "0.12em", color: "#888", fontWeight: 500 }}
+            style={{ letterSpacing: "0.12em", color: "#666666", fontWeight: 500 }}
           >
             Format
           </p>
@@ -218,7 +218,7 @@ export default function BuyBox({
       <div className="mb-5">
         <p
           className="text-[10px] uppercase mb-3"
-          style={{ letterSpacing: "0.12em", color: "#888", fontWeight: 500 }}
+          style={{ letterSpacing: "0.12em", color: "#666666", fontWeight: 500 }}
         >
           Quantity
         </p>
@@ -232,13 +232,13 @@ export default function BuyBox({
               i > 0 ? (
                 <div
                   key={`divider-${opt.qty}`}
-                  style={{ width: "1px", flexShrink: 0, backgroundColor: "#C4A265", margin: "4px 0" }}
+                  style={{ width: "1px", flexShrink: 0, backgroundColor: "#8E6C2F", margin: "4px 0" }}
                 />
               ) : null,
               <button
                 key={opt.qty}
                 onClick={() => setSelectedVolume(opt)}
-                className="flex-1 py-4 px-2 text-center transition-all"
+                className="flex-1 py-4 px-1 text-center transition-all min-w-0"
                 style={{
                   background: "none",
                   border: "none",
@@ -248,7 +248,7 @@ export default function BuyBox({
                 aria-pressed={active}
               >
                 <div
-                  className="text-sm"
+                  className="text-xs sm:text-sm leading-tight"
                   style={{ color: active ? "#1A1A1A" : "#666", fontWeight: active ? 500 : 400 }}
                 >
                   {opt.label}
@@ -280,7 +280,7 @@ export default function BuyBox({
               fontSize: "0.75rem",
               letterSpacing: "0.12em",
               textTransform: "uppercase",
-              color: "#888",
+              color: "#666666",
               fontWeight: 500,
             }}
           >
@@ -326,17 +326,17 @@ export default function BuyBox({
       </button>
 
       {/* Compact trust strip */}
-      <div className="mt-4 flex items-center justify-center gap-4 text-[11px]" style={{ color: "#888" }}>
+      <div className="mt-4 flex items-center justify-center gap-4 text-[11px]" style={{ color: "#666666" }}>
         <div className="flex items-center gap-1.5">
-          <FlaskConical className="w-3.5 h-3.5" style={{ color: "#C4A265" }} aria-hidden="true" />
+          <FlaskConical className="w-3.5 h-3.5" style={{ color: "#8E6C2F" }} aria-hidden="true" />
           <span>{product.purity}</span>
         </div>
         <div className="flex items-center gap-1.5">
-          <Shield className="w-3.5 h-3.5" style={{ color: "#C4A265" }} aria-hidden="true" />
+          <Shield className="w-3.5 h-3.5" style={{ color: "#8E6C2F" }} aria-hidden="true" />
           <span>HPLC Verified</span>
         </div>
         <div className="flex items-center gap-1.5">
-          <Truck className="w-3.5 h-3.5" style={{ color: "#C4A265" }} aria-hidden="true" />
+          <Truck className="w-3.5 h-3.5" style={{ color: "#8E6C2F" }} aria-hidden="true" />
           <span>Cold-Chain</span>
         </div>
       </div>

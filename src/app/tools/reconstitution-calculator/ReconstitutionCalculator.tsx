@@ -89,7 +89,7 @@ export default function ReconstitutionCalculatorPage() {
           <div className="mb-8">
             <p
               className="text-xs uppercase tracking-widest mb-3"
-              style={{ color: "#888888" }}
+              style={{ color: "#666666" }}
             >
               Quick Presets
             </p>
@@ -133,7 +133,7 @@ export default function ReconstitutionCalculatorPage() {
                 <label
                   htmlFor="vialMg"
                   className="block text-xs uppercase tracking-widest mb-2"
-                  style={{ color: "#888" }}
+                  style={{ color: "#666666" }}
                 >
                   Vial Size (mg)
                 </label>
@@ -153,7 +153,7 @@ export default function ReconstitutionCalculatorPage() {
                   }}
                   placeholder="e.g. 5"
                 />
-                <p className="text-xs mt-1.5" style={{ color: "#AAA" }}>
+                <p className="text-xs mt-1.5" style={{ color: "#737373" }}>
                   As labeled on vial
                 </p>
               </div>
@@ -163,7 +163,7 @@ export default function ReconstitutionCalculatorPage() {
                 <label
                   htmlFor="concMcgPerMl"
                   className="block text-xs uppercase tracking-widest mb-2"
-                  style={{ color: "#888" }}
+                  style={{ color: "#666666" }}
                 >
                   Desired Conc. (mcg/mL)
                 </label>
@@ -183,7 +183,7 @@ export default function ReconstitutionCalculatorPage() {
                   }}
                   placeholder="e.g. 500"
                 />
-                <p className="text-xs mt-1.5" style={{ color: "#AAA" }}>
+                <p className="text-xs mt-1.5" style={{ color: "#737373" }}>
                   Per mL after reconstitution
                 </p>
               </div>
@@ -193,7 +193,7 @@ export default function ReconstitutionCalculatorPage() {
                 <label
                   htmlFor="doseMcg"
                   className="block text-xs uppercase tracking-widest mb-2"
-                  style={{ color: "#888" }}
+                  style={{ color: "#666666" }}
                 >
                   Dose Per Administration (mcg)
                 </label>
@@ -213,7 +213,7 @@ export default function ReconstitutionCalculatorPage() {
                   }}
                   placeholder="e.g. 250"
                 />
-                <p className="text-xs mt-1.5" style={{ color: "#AAA" }}>
+                <p className="text-xs mt-1.5" style={{ color: "#737373" }}>
                   Used for dose volume calc
                 </p>
               </div>
@@ -241,7 +241,7 @@ export default function ReconstitutionCalculatorPage() {
                   className="p-5 rounded-sm"
                   style={{ backgroundColor: "#1C1C1A", border: "1px solid #2A2A28" }}
                 >
-                  <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#888" }}>
+                  <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#666666" }}>
                     BAC Water to Add
                   </p>
                   <p className="text-3xl font-light mb-1" style={{ color: "#F9F9F9" }}>
@@ -257,7 +257,7 @@ export default function ReconstitutionCalculatorPage() {
                   className="p-5 rounded-sm"
                   style={{ backgroundColor: "#1C1C1A", border: "1px solid #2A2A28" }}
                 >
-                  <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#888" }}>
+                  <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#666666" }}>
                     Volume Per Dose
                   </p>
                   <p className="text-3xl font-light mb-1" style={{ color: "#F9F9F9" }}>
@@ -278,7 +278,7 @@ export default function ReconstitutionCalculatorPage() {
                   className="p-5 rounded-sm"
                   style={{ backgroundColor: "#1C1C1A", border: "1px solid #2A2A28" }}
                 >
-                  <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#888" }}>
+                  <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#666666" }}>
                     Doses Per Vial
                   </p>
                   <p className="text-3xl font-light mb-1" style={{ color: "#F9F9F9" }}>
@@ -295,7 +295,7 @@ export default function ReconstitutionCalculatorPage() {
                   className="p-5 rounded-sm"
                   style={{ backgroundColor: "#1C1C1A", border: "1px solid #2A2A28" }}
                 >
-                  <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#888" }}>
+                  <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#666666" }}>
                     Working Concentration
                   </p>
                   <p className="text-3xl font-light mb-1" style={{ color: "#C9DD69" }}>
@@ -316,7 +316,7 @@ export default function ReconstitutionCalculatorPage() {
                 border: "1px solid #ECEAE4",
               }}
             >
-              <p style={{ color: "#888888" }} className="text-sm">
+              <p style={{ color: "#666666" }} className="text-sm">
                 Enter vial size and desired concentration to see results.
               </p>
             </div>
@@ -404,9 +404,9 @@ export default function ReconstitutionCalculatorPage() {
               <table className="w-full text-xs" style={{ borderCollapse: "collapse" }}>
                 <thead>
                   <tr style={{ borderBottom: "1px solid #DDDBD5" }}>
-                    <th className="text-left py-2 pr-4" style={{ color: "#888", fontWeight: 500 }}>Volume (mL)</th>
-                    <th className="text-left py-2 pr-4" style={{ color: "#888", fontWeight: 500 }}>Units (U-100)</th>
-                    <th className="text-left py-2" style={{ color: "#888", fontWeight: 500 }}>Common use</th>
+                    <th className="text-left py-2 pr-4" style={{ color: "#666666", fontWeight: 500 }}>Volume (mL)</th>
+                    <th className="text-left py-2 pr-4" style={{ color: "#666666", fontWeight: 500 }}>Units (U-100)</th>
+                    <th className="text-left py-2" style={{ color: "#666666", fontWeight: 500 }}>Common use</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -449,9 +449,9 @@ export default function ReconstitutionCalculatorPage() {
             >
               Browse Research Catalog
             </Link>
-            <p className="text-xs mt-4" style={{ color: "#AAA" }}>
+            <p className="text-xs mt-4" style={{ color: "#737373" }}>
               All compounds shipped as lyophilized powder with COA.{" "}
-              <Link href="/faq#reconstitution" className="underline" style={{ color: "#888" }}>
+              <Link href="/faq#reconstitution" className="underline" style={{ color: "#666666" }}>
                 FAQ: Reconstitution
               </Link>
             </p>

@@ -187,19 +187,19 @@ export default function SearchModal() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed top-20 left-1/2 -translate-x-1/2 w-full max-w-2xl mx-4 z-[60] rounded-xl border shadow-2xl overflow-hidden"
+            className="fixed top-20 left-4 right-4 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 sm:w-full sm:max-w-2xl sm:mx-4 z-[60] rounded-xl border shadow-2xl overflow-hidden"
             style={{ backgroundColor: "#FFFFFF", borderColor: "#E5E5E5" }}
           >
             {/* Search Input */}
             <div className="flex items-center gap-3 p-4 border-b" style={{ borderColor: "#E5E5E5" }}>
-              <Search className="w-5 h-5 flex-shrink-0" style={{ color: "#888" }} />
+              <Search className="w-5 h-5 flex-shrink-0" style={{ color: "#666666" }} />
               <input
                 ref={inputRef}
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search products, articles, pages..."
-                className="flex-1 bg-transparent text-base outline-none placeholder:text-[#888]"
+                className="flex-1 bg-transparent text-base outline-none placeholder:text-[#666666]"
                 style={{ color: "#1A1A1A" }}
               />
               <button
@@ -207,14 +207,14 @@ export default function SearchModal() {
                 className="p-1 hover:opacity-70 transition-opacity flex-shrink-0"
                 aria-label="Close search"
               >
-                <X className="w-5 h-5" style={{ color: "#888" }} />
+                <X className="w-5 h-5" style={{ color: "#666666" }} />
               </button>
             </div>
 
             {/* Results */}
             <div className="max-h-96 overflow-y-auto">
               {query && results.length === 0 && (
-                <div className="px-4 py-8 text-center text-sm" style={{ color: "#888" }}>
+                <div className="px-4 py-8 text-center text-sm" style={{ color: "#666666" }}>
                   No results found for &quot;{query}&quot;
                 </div>
               )}
@@ -254,7 +254,7 @@ export default function SearchModal() {
                           {result.title}
                         </div>
                         {result.subtitle && (
-                          <div className="text-xs truncate" style={{ color: "#888" }}>
+                          <div className="text-xs truncate" style={{ color: "#666666" }}>
                             {result.subtitle}
                           </div>
                         )}
@@ -269,7 +269,7 @@ export default function SearchModal() {
             </div>
 
             {/* Footer hint */}
-            <div className="px-4 py-2 border-t text-xs" style={{ borderColor: "#E5E5E5", color: "#888" }}>
+            <div className="px-4 py-2 border-t text-xs" style={{ borderColor: "#E5E5E5", color: "#666666" }}>
               <div className="flex items-center gap-4">
                 <span>↑↓ Navigate</span>
                 <span>↵ Select</span>
@@ -295,7 +295,7 @@ export function SearchTrigger() {
     <button
       onClick={handleClick}
       className="flex items-center gap-2 px-3 py-1.5 text-xs rounded-md border transition-colors hover:bg-[#F5F5F5]"
-      style={{ borderColor: "#E5E5E5", color: "#888" }}
+      style={{ borderColor: "#E5E5E5", color: "#666666" }}
       aria-label="Open search"
     >
       <Search className="w-3.5 h-3.5" />

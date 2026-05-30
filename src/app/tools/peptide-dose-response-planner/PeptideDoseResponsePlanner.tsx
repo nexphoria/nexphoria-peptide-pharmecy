@@ -565,7 +565,7 @@ export default function PeptideDoseResponsePlanner() {
                 </div>
               ))}
             </div>
-            <div className="mt-3 text-xs" style={{ color: "#888" }}>
+            <div className="mt-3 text-xs" style={{ color: "#666666" }}>
               <span className="font-medium" style={{ color: "#555" }}>Typical endpoint:</span> {compound.endpoint} ·{" "}
               <span className="font-medium" style={{ color: "#555" }}>Reference:</span> {compound.reference}
             </div>
@@ -693,7 +693,7 @@ export default function PeptideDoseResponsePlanner() {
             <div className="flex items-start justify-between mb-4">
               <div>
                 <h2 className="text-lg font-medium" style={{ color: "#111" }}>3. Study Design Output</h2>
-                <p className="text-xs mt-1" style={{ color: "#888" }}>{studyDesign.powerNote}</p>
+                <p className="text-xs mt-1" style={{ color: "#666666" }}>{studyDesign.powerNote}</p>
               </div>
               <button
                 onClick={() => setShowPrint(true)}
@@ -795,7 +795,7 @@ export default function PeptideDoseResponsePlanner() {
           {/* ── Expected Effect Chart ── */}
           <div className="rounded-sm p-6" style={{ backgroundColor: "#fff", border: "1px solid #ECEAE4" }}>
             <h2 className="text-lg font-medium mb-1" style={{ color: "#111" }}>4. Dose-Response Curve (Estimated)</h2>
-            <p className="text-xs mb-5" style={{ color: "#888" }}>
+            <p className="text-xs mb-5" style={{ color: "#666666" }}>
               Log-linear interpolation from published literature. Not a fitted curve — use actual experimental data for final curve fitting.
             </p>
             {/* SVG dose-response curve */}
@@ -809,7 +809,7 @@ export default function PeptideDoseResponsePlanner() {
           {/* ── Power Table ── */}
           <div className="rounded-sm p-6" style={{ backgroundColor: "#fff", border: "1px solid #ECEAE4" }}>
             <h2 className="text-lg font-medium mb-4" style={{ color: "#111" }}>5. Group Size vs. Effect Size Reference</h2>
-            <p className="text-xs mb-4" style={{ color: "#888" }}>
+            <p className="text-xs mb-4" style={{ color: "#666666" }}>
               Required n per group (80% power, α = 0.05, two-sample t-test) for {compound.name} with CV = {compound.cvPercent}%.
               Based on published inter-animal variability for this compound&apos;s endpoint: {compound.endpoint}.
             </p>
@@ -887,7 +887,7 @@ export default function PeptideDoseResponsePlanner() {
           {/* ── Reference Table ── */}
           <div className="rounded-sm p-6" style={{ backgroundColor: "#fff", border: "1px solid #ECEAE4" }}>
             <h2 className="text-lg font-medium mb-4" style={{ color: "#111" }}>Compound Reference: Dose-Response Data</h2>
-            <p className="text-xs mb-4" style={{ color: "#888" }}>
+            <p className="text-xs mb-4" style={{ color: "#666666" }}>
               Published preclinical dose ranges, endpoints, and inter-animal variability (CV%) for all catalog compounds.
             </p>
             <div className="overflow-x-auto">
@@ -941,7 +941,7 @@ export default function PeptideDoseResponsePlanner() {
           </div>
 
           {/* Disclaimer */}
-          <div className="rounded-sm p-5 text-xs" style={{ backgroundColor: "#F9F8F4", border: "1px solid #ECEAE4", color: "#888" }}>
+          <div className="rounded-sm p-5 text-xs" style={{ backgroundColor: "#F9F8F4", border: "1px solid #ECEAE4", color: "#666666" }}>
             <strong style={{ color: "#666" }}>Research Use Only.</strong> Group size calculations use simplified two-sample t-test power formula with published CV% estimates. Actual study power depends on true biological variability, effect size, and assay precision. Consult a biostatistician for IACUC protocol submissions. Expected effect sizes are literature-derived estimates — actual results vary by model, strain, age, sex, and experimental conditions. All compounds sold by Nexphoria are for in vitro and preclinical research only. Not for human or clinical use.
           </div>
         </div>

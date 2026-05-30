@@ -169,7 +169,7 @@ export default function WaterVolumeCalculator() {
           <div className="mb-8">
             <p
               className="text-xs uppercase tracking-widest mb-3"
-              style={{ color: "#888888" }}
+              style={{ color: "#666666" }}
             >
               Quick Presets
             </p>
@@ -218,7 +218,7 @@ export default function WaterVolumeCalculator() {
                 <label
                   htmlFor="vialMg"
                   className="block text-xs uppercase tracking-widest mb-2"
-                  style={{ color: "#888" }}
+                  style={{ color: "#666666" }}
                 >
                   Vial Size (mg)
                 </label>
@@ -251,7 +251,7 @@ export default function WaterVolumeCalculator() {
                 <label
                   htmlFor="targetConc"
                   className="block text-xs uppercase tracking-widest mb-2"
-                  style={{ color: "#888" }}
+                  style={{ color: "#666666" }}
                 >
                   Desired Concentration
                 </label>
@@ -315,7 +315,7 @@ export default function WaterVolumeCalculator() {
             >
               <p
                 className="text-xs uppercase tracking-widest mb-4"
-                style={{ color: "#888" }}
+                style={{ color: "#666666" }}
               >
                 Optional: Per-Dose Calculation
               </p>
@@ -324,7 +324,7 @@ export default function WaterVolumeCalculator() {
                   <label
                     htmlFor="desiredDose"
                     className="block text-xs uppercase tracking-widest mb-2"
-                    style={{ color: "#888" }}
+                    style={{ color: "#666666" }}
                   >
                     Dose Per Injection
                   </label>
@@ -418,7 +418,7 @@ export default function WaterVolumeCalculator() {
                 >
                   <p
                     className="text-xs uppercase tracking-widest mb-1"
-                    style={{ color: "#888" }}
+                    style={{ color: "#666666" }}
                   >
                     BAC Water
                   </p>
@@ -442,7 +442,7 @@ export default function WaterVolumeCalculator() {
                 >
                   <p
                     className="text-xs uppercase tracking-widest mb-1"
-                    style={{ color: "#888" }}
+                    style={{ color: "#666666" }}
                   >
                     Concentration
                   </p>
@@ -470,7 +470,7 @@ export default function WaterVolumeCalculator() {
                 >
                   <p
                     className="text-xs uppercase tracking-widest mb-1"
-                    style={{ color: "#888" }}
+                    style={{ color: "#666666" }}
                   >
                     Doses / Vial
                   </p>
@@ -502,7 +502,7 @@ export default function WaterVolumeCalculator() {
                 >
                   <p
                     className="text-xs uppercase tracking-widest mb-1"
-                    style={{ color: "#888" }}
+                    style={{ color: "#666666" }}
                   >
                     Volume / Dose
                   </p>
@@ -542,25 +542,25 @@ export default function WaterVolumeCalculator() {
                       <tr style={{ borderBottom: "1px solid #ECEAE4" }}>
                         <th
                           className="text-left py-2 pr-4 text-xs uppercase tracking-widest font-medium"
-                          style={{ color: "#888" }}
+                          style={{ color: "#666666" }}
                         >
                           Concentration
                         </th>
                         <th
                           className="text-right py-2 pr-4 text-xs uppercase tracking-widest font-medium"
-                          style={{ color: "#888" }}
+                          style={{ color: "#666666" }}
                         >
                           BAC Water (mL)
                         </th>
                         <th
                           className="text-right py-2 pr-4 text-xs uppercase tracking-widest font-medium hidden md:table-cell"
-                          style={{ color: "#888" }}
+                          style={{ color: "#666666" }}
                         >
                           BAC Water (units)
                         </th>
                         <th
                           className="text-right py-2 text-xs uppercase tracking-widest font-medium hidden md:table-cell"
-                          style={{ color: "#888" }}
+                          style={{ color: "#666666" }}
                         >
                           Typical Use
                         </th>
@@ -611,7 +611,7 @@ export default function WaterVolumeCalculator() {
                             </td>
                             <td
                               className="py-2.5 text-right text-xs hidden md:table-cell"
-                              style={{ color: "#888" }}
+                              style={{ color: "#666666" }}
                             >
                               {row.note}
                             </td>
@@ -631,7 +631,7 @@ export default function WaterVolumeCalculator() {
                 border: "1px solid #ECEAE4",
               }}
             >
-              <p className="text-sm" style={{ color: "#888" }}>
+              <p className="text-sm" style={{ color: "#666666" }}>
                 Enter a vial size and desired concentration to see results.
               </p>
             </div>
@@ -759,7 +759,7 @@ export default function WaterVolumeCalculator() {
                         <th
                           key={h}
                           className="text-left py-2 pr-3 text-xs uppercase tracking-widest font-medium"
-                          style={{ color: "#888" }}
+                          style={{ color: "#666666" }}
                         >
                           {h}
                         </th>
@@ -802,7 +802,7 @@ export default function WaterVolumeCalculator() {
                         </td>
                         <td
                           className="py-2.5 text-xs"
-                          style={{ color: "#888" }}
+                          style={{ color: "#666666" }}
                         >
                           {p.notes}
                         </td>
@@ -838,7 +838,7 @@ export default function WaterVolumeCalculator() {
           <div className="mt-10">
             <p
               className="text-xs uppercase tracking-widest mb-5"
-              style={{ color: "#888" }}
+              style={{ color: "#666666" }}
             >
               Related Tools
             </p>

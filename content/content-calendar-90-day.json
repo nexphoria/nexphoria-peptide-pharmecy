@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "brand": "Nexphoria",
+    "window": { "start": "2026-06-01", "end": "2026-08-29" },
+    "weeks": 13,
+    "pillars": ["Mechanism", "Protocol", "Source"],
+    "voice": "premium-authority-scientific-minimal",
+    "rules": [
+      "no exclamation marks",
+      "no discount language",
+      "no therapeutic claims",
+      "cite sources for literature claims",
+      "Add to Order not Add to Cart"
+    ],
+    "monthlyTarget": 60,
+    "totalPieces": 195
+  },
+  "phases": [
+    { "id": "foundation", "weeks": [1,2,3,4], "goal": "Establish authority, educational only" },
+    { "id": "authority",  "weeks": [5,6,7,8], "goal": "Convert reach to intent, social proof" },
+    { "id": "conversion", "weeks": [9,10,11,12,13], "goal": "Drive purchases without discounting" }
+  ],
+  "channels": {
+    "blog":     { "owner": "seo",      "perWeek": 3 },
+    "email":    { "owner": "write",    "perWeek": 4 },
+    "social":   { "owner": "content",  "perWeek": 5 },
+    "reddit":   { "owner": "outreach", "perWeek": 2 },
+    "pdp":      { "owner": "cc.sh",    "perWeek": 2 },
+    "influencer":{ "owner": "write",   "perWeek": 1 }
+  },
+  "source": "content/CONTENT-CALENDAR-90-DAY.md",
+  "version": 1,
+  "generatedAt": "2026-05-30T05:50:00Z"
+}

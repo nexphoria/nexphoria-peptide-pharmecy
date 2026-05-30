@@ -63,7 +63,7 @@ export default function Breadcrumb({
               {idx > 0 && (
                 <span
                   aria-hidden="true"
-                  style={{ color: "#C4A265", fontSize: "0.75rem" }}
+                  style={{ color: "#8E6C2F", fontSize: "0.75rem" }}
                 >
                   ·
                 </span>

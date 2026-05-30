@@ -309,7 +309,7 @@ export default function PurityChecker() {
               className="rounded-sm p-10 text-center"
               style={{ border: "1px solid #ECEAE4" }}
             >
-              <p className="text-sm" style={{ color: "#888" }}>
+              <p className="text-sm" style={{ color: "#666666" }}>
                 No compounds match your search.{" "}
                 <button
                   onClick={() => { setSearch(""); setCategory("All"); }}

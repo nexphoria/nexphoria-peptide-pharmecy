@@ -169,7 +169,7 @@ export default function FrequentlyBoughtTogether({ currentSlug }: Props) {
                       {/* Info */}
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-0.5">
-                          <p className="text-xs text-[#888] truncate">{product.category}</p>
+                          <p className="text-xs text-[#666666] truncate">{product.category}</p>
                           {isCurrent && (
                             <span className="text-[9px] uppercase tracking-widest text-white font-semibold px-1.5 py-0.5 rounded bg-[#B8A44C]">
                               This item
@@ -182,7 +182,7 @@ export default function FrequentlyBoughtTogether({ currentSlug }: Props) {
                           )}
                         </div>
                         <p className="text-sm font-medium leading-tight truncate">{product.name}</p>
-                        <p className="text-xs text-[#888] mt-0.5">{product.size}</p>
+                        <p className="text-xs text-[#666666] mt-0.5">{product.size}</p>
                       </div>
 
                       {/* Price */}
@@ -220,7 +220,7 @@ export default function FrequentlyBoughtTogether({ currentSlug }: Props) {
               <div className="px-5 py-4 border-t" style={{ borderColor: "#F0EDE8" }}>
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <p className="text-xs text-[#888] mb-0.5">
+                    <p className="text-xs text-[#666666] mb-0.5">
                       {selectedItems.length} item{selectedItems.length !== 1 ? "s" : ""} selected
                     </p>
                     <div className="flex items-baseline gap-2">
@@ -229,7 +229,7 @@ export default function FrequentlyBoughtTogether({ currentSlug }: Props) {
                       </span>
                       {savings > 0 && (
                         <>
-                          <span className="text-sm text-[#AAA] line-through">${originalPrice}</span>
+                          <span className="text-sm text-[#737373] line-through">${originalPrice}</span>
                           <span
                             className="text-xs font-semibold px-1.5 py-0.5 rounded"
                             style={{ backgroundColor: "#EDF5E8", color: "#4A7A3F" }}
@@ -267,7 +267,7 @@ export default function FrequentlyBoughtTogether({ currentSlug }: Props) {
             </div>
 
             {/* Sub-note */}
-            <p className="text-[11px] text-[#AAA] mt-3 text-center">
+            <p className="text-[11px] text-[#737373] mt-3 text-center">
               Uncheck any item to customize your bundle. Discount applied automatically at checkout.
             </p>
           </div>

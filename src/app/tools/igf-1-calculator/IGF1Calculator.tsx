@@ -567,7 +567,7 @@ export default function IGF1Calculator() {
               <div>
                 <label className="block text-xs font-medium mb-2" style={{ color: "#333" }}>
                   Baseline IGF-1 (ng/mL)
-                  <span className="font-normal ml-1" style={{ color: "#AAA" }}>(optional)</span>
+                  <span className="font-normal ml-1" style={{ color: "#737373" }}>(optional)</span>
                 </label>
                 <input
                   type="number"
@@ -720,7 +720,7 @@ export default function IGF1Calculator() {
                   <strong>Key study:</strong> {ghrhCompound.keyStudy}
                 </div>
                 {ghrhCompound.notes && (
-                  <p className="text-xs mt-2.5" style={{ color: "#888", lineHeight: 1.5 }}>
+                  <p className="text-xs mt-2.5" style={{ color: "#666666", lineHeight: 1.5 }}>
                     📋 {ghrhCompound.notes}
                   </p>
                 )}
@@ -756,7 +756,7 @@ export default function IGF1Calculator() {
                   <strong>Key study:</strong> {ghrpCompound.keyStudy}
                 </div>
                 {ghrpCompound.notes && (
-                  <p className="text-xs mt-2.5" style={{ color: "#888", lineHeight: 1.5 }}>
+                  <p className="text-xs mt-2.5" style={{ color: "#666666", lineHeight: 1.5 }}>
                     📋 {ghrpCompound.notes}
                   </p>
                 )}
@@ -794,7 +794,7 @@ export default function IGF1Calculator() {
                 <strong>Key studies:</strong> {standaloneCompound.keyStudy}
               </div>
               {standaloneCompound.notes && (
-                <p className="text-xs mt-2.5" style={{ color: "#888", lineHeight: 1.5 }}>
+                <p className="text-xs mt-2.5" style={{ color: "#666666", lineHeight: 1.5 }}>
                   📋 {standaloneCompound.notes}
                 </p>
               )}
@@ -846,14 +846,14 @@ export default function IGF1Calculator() {
                       <td className="py-2 pr-4 font-medium" style={{ color: "#222" }}>{row.name}</td>
                       <td className="py-2 pr-4" style={{ color: "#666" }}>{row.type}</td>
                       <td className="py-2 pr-4 font-medium" style={{ color: "#d4af37" }}>{row.range}</td>
-                      <td className="py-2 pr-4" style={{ color: "#888" }}>{row.duration}</td>
+                      <td className="py-2 pr-4" style={{ color: "#666666" }}>{row.duration}</td>
                       <td className="py-2" style={{ color: "#999" }}>{row.study}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <p className="text-xs mt-4" style={{ color: "#AAA" }}>
+            <p className="text-xs mt-4" style={{ color: "#737373" }}>
               * Stack ranges assume optimal frequency (5–7×/week) and 8–12 week duration.
               Actual results vary by species, sex, age, pituitary reserve, and somatostatin tone.
             </p>
@@ -931,7 +931,7 @@ export default function IGF1Calculator() {
                   }}
                 >
                   <p className="text-sm font-medium mb-1" style={{ color: "#111" }}>{t.label}</p>
-                  <p className="text-xs" style={{ color: "#888" }}>{t.desc}</p>
+                  <p className="text-xs" style={{ color: "#666666" }}>{t.desc}</p>
                 </Link>
               ))}
             </div>
@@ -945,7 +945,7 @@ export default function IGF1Calculator() {
               border: "1px solid #E0DED8",
             }}
           >
-            <p className="text-xs leading-relaxed" style={{ color: "#888" }}>
+            <p className="text-xs leading-relaxed" style={{ color: "#666666" }}>
               <strong style={{ color: "#555" }}>Research Use Only Disclaimer:</strong>{" "}
               All estimates in this tool are derived from published preclinical and clinical pharmacology
               studies and represent population-level ranges, not individual predictions. IGF-1 response

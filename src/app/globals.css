@@ -8,12 +8,14 @@
   --color-olive-dark: #A68B4B;
   --color-text-primary: #1A1A1A;
   --color-text-secondary: #666666;
-  --color-text-muted: #888888;
+  --color-text-muted: #666666;
   --color-near-black: #1A1A1A;
   --color-white-card: #FFFFFF;
   --color-cream: #F9F9F9;
   --color-stone: #666666;
-  --color-tertiary: #AAAAAA;
+  --color-tertiary: #737373;
+  /* WCAG 2.1 AA accessible text equivalent of brand gold (#C4A265) for body/eyebrow copy */
+  --color-gold-text: #8E6C2F;
   --color-dark: #0F0F0E;
   --color-dark-panel: #161614;
   --color-dark-card: #1C1C1A;
@@ -86,7 +88,8 @@
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    color: var(--color-gold);
+    /* Accessible gold for text (AA 4.5:1 on cream bg); --color-gold still used for borders/icons */
+    color: var(--color-gold-text);
     font-family: var(--font-sans);
   }
 
@@ -408,7 +411,7 @@
   transition: color 300ms ease;
 }
 .faq-trigger:hover {
-  color: #C4A265;
+  color: #8E6C2F;
 }
 .faq-body {
   overflow: hidden;
@@ -434,7 +437,7 @@
 .category-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-  border-color: #C4A265;
+  border-color: #8E6C2F;
 }
 
 /* ─── Blog card hover ─── */

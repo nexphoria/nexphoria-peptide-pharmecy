@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, ShieldCheck, Truck, Zap, Clock, RefreshCw, CheckCircle2 } from "lucide-react";
 import { useCart, getItemUnitPrice, getCadenceLabel } from "@/lib/cart";
-import { CHECKOUT_URL } from "@/lib/endpoints";
+import { CHECKOUT_URL, CRYPTO_ORDER_URL } from "@/lib/endpoints";
 import { getProductImagePath, hasProductPhoto } from "@/lib/product-images";
 import ProductVial from "@/components/ProductVial";
+import RUOBanner from "@/components/RUOBanner";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -31,6 +32,7 @@ function ProductThumb({
         alt={name}
         width={48}
         height={48}
+        loading="lazy"
         style={{ objectFit: "contain", width: "100%", height: "100%" }}
       />
     );
@@ -87,6 +89,14 @@ export default function CheckoutPage() {
   const [promoCode, setPromoCode] = useState("");
   const [promoApplied, setPromoApplied] = useState(false);
   const [shippingMethod, setShippingMethod] = useState<ShippingMethod>("standard");
+  // Payment rail. Stripe is the default (card). Crypto is a documented backup
+  // for customers in regions where card processors decline peptide orders.
+  // Subscriptions cannot be charged on-chain, so the UI hides the crypto
+  // option when the cart contains any subscription cycle.
+  const [paymentMethod, setPaymentMethod] = useState<"stripe" | "crypto">(
+    "stripe",
+  );
+  const [cryptoAsset, setCryptoAsset] = useState<"BTC" | "ETH">("BTC");
 
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -125,6 +135,14 @@ export default function CheckoutPage() {
       ? 0
       : selectedShipping.price;
 
+  // Crypto cannot service recurring subscriptions. Force Stripe in that case.
+  const cryptoDisabled = hasSubscription;
+  // Derive the effective rail at render time — if the cart turned into a
+  // subscription cart after the user picked crypto, we silently treat them as
+  // Stripe without writing to state inside an effect.
+  const effectivePaymentMethod: "stripe" | "crypto" =
+    cryptoDisabled ? "stripe" : paymentMethod;
+
   const handleCheckout = async () => {
     if (!formData.email) {
       setError("Please enter your email address.");
@@ -144,6 +162,40 @@ export default function CheckoutPage() {
         format: item.format,
         subscriptionMonths: item.subscriptionMonths,
       }));
+
+      if (effectivePaymentMethod === "crypto") {
+        const response = await fetch(CRYPTO_ORDER_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            items: checkoutItems,
+            customerEmail: formData.email,
+            shippingMethod,
+            asset: cryptoAsset,
+          }),
+        });
+
+        if (!response.ok) {
+          let message = "We could not start a crypto order. Please try card checkout.";
+          try {
+            const payload = await response.json();
+            if (payload?.message) message = payload.message;
+          } catch {
+            /* swallow */
+          }
+          throw new Error(message);
+        }
+
+        const data = await response.json();
+        const qs = new URLSearchParams({
+          ref: String(data.reference || ""),
+          asset: String(data.asset || cryptoAsset),
+        });
+        if (data.walletAddress) qs.set("address", String(data.walletAddress));
+        if (data.totalUsd != null) qs.set("total", String(data.totalUsd));
+        window.location.href = `/checkout/crypto?${qs.toString()}`;
+        return;
+      }
 
       const response = await fetch(CHECKOUT_URL, {
         method: "POST",
@@ -170,7 +222,11 @@ export default function CheckoutPage() {
       if (process.env.NODE_ENV === "development") {
         console.error("Checkout error:", err);
       }
-      setError("We could not start checkout. Please try again.");
+      const msg =
+        err instanceof Error && err.message
+          ? err.message
+          : "We could not start checkout. Please try again.";
+      setError(msg);
       setIsProcessing(false);
     }
   };
@@ -424,6 +480,128 @@ export default function CheckoutPage() {
                 <h2 className="text-lg font-semibold mb-4" style={{ color: "#010101" }}>
                   {hasSubscription ? "4" : "3"} · Payment
                 </h2>
+
+                {/* Rail selector: Card (Stripe) vs Crypto. Hidden for
+                    subscription carts — only one-time orders can settle on-chain. */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+                  <button
+                    type="button"
+                    onClick={() => setPaymentMethod("stripe")}
+                    className="text-left p-4 rounded-lg border transition-all"
+                    style={{
+                      backgroundColor:
+                        effectivePaymentMethod === "stripe" ? "#FFFFFF" : "#F7F5F0",
+                      borderColor:
+                        effectivePaymentMethod === "stripe" ? "#B8A44C" : "#D8D4CC",
+                      boxShadow:
+                        effectivePaymentMethod === "stripe"
+                          ? "0 0 0 2px rgba(184,164,76,0.2)"
+                          : "none",
+                    }}
+                  >
+                    <div className="flex items-center justify-between mb-1">
+                      <span
+                        className="text-sm font-medium"
+                        style={{ color: "#010101" }}
+                      >
+                        Card · Apple Pay · Google Pay
+                      </span>
+                      <span
+                        className="text-[10px] uppercase tracking-wide"
+                        style={{ color: "#8A8075" }}
+                      >
+                        Recommended
+                      </span>
+                    </div>
+                    <p className="text-xs" style={{ color: "#8A8075" }}>
+                      Instant authorization via Stripe. Includes Visa, Mastercard,
+                      AMEX, Apple Pay, and Google Pay.
+                    </p>
+                  </button>
+
+                  <button
+                    type="button"
+                    disabled={cryptoDisabled}
+                    onClick={() => !cryptoDisabled && setPaymentMethod("crypto")}
+                    className="text-left p-4 rounded-lg border transition-all disabled:cursor-not-allowed disabled:opacity-50"
+                    style={{
+                      backgroundColor:
+                        effectivePaymentMethod === "crypto" ? "#FFFFFF" : "#F7F5F0",
+                      borderColor:
+                        effectivePaymentMethod === "crypto" ? "#B8A44C" : "#D8D4CC",
+                      boxShadow:
+                        effectivePaymentMethod === "crypto"
+                          ? "0 0 0 2px rgba(184,164,76,0.2)"
+                          : "none",
+                    }}
+                    aria-disabled={cryptoDisabled}
+                  >
+                    <div className="flex items-center justify-between mb-1">
+                      <span
+                        className="text-sm font-medium"
+                        style={{ color: "#010101" }}
+                      >
+                        Bitcoin or Ethereum
+                      </span>
+                      <span
+                        className="text-[10px] uppercase tracking-wide"
+                        style={{ color: "#8A8075" }}
+                      >
+                        On-chain
+                      </span>
+                    </div>
+                    <p className="text-xs" style={{ color: "#8A8075" }}>
+                      {cryptoDisabled
+                        ? "Subscriptions require a card. Remove the subscription cycle to pay on-chain."
+                        : "Pay from any wallet. Order ships once your transaction confirms on-chain (≈10 min BTC, ≈2 min ETH)."}
+                    </p>
+                  </button>
+                </div>
+
+                {effectivePaymentMethod === "crypto" && !cryptoDisabled && (
+                  <div
+                    className="p-5 rounded-lg border mb-4"
+                    style={{ backgroundColor: "#FFFFFF", borderColor: "#D8D4CC" }}
+                  >
+                    <p
+                      className="text-xs uppercase tracking-wide mb-3"
+                      style={{ color: "#8A8075" }}
+                    >
+                      Choose asset
+                    </p>
+                    <div className="flex gap-3">
+                      {(["BTC", "ETH"] as const).map((asset) => {
+                        const selected = cryptoAsset === asset;
+                        return (
+                          <button
+                            type="button"
+                            key={asset}
+                            onClick={() => setCryptoAsset(asset)}
+                            className="px-4 py-2 rounded-md border text-sm font-medium transition"
+                            style={{
+                              backgroundColor: selected ? "#010101" : "#FFFFFF",
+                              color: selected ? "#FFFFFF" : "#010101",
+                              borderColor: selected ? "#010101" : "#D8D4CC",
+                            }}
+                          >
+                            {asset === "BTC" ? "Bitcoin (BTC)" : "Ethereum (ETH)"}
+                          </button>
+                        );
+                      })}
+                    </div>
+                    <p
+                      className="text-xs mt-3 leading-relaxed"
+                      style={{ color: "#8A8075" }}
+                    >
+                      You’ll see the receiving address and order reference on the
+                      next screen. Send the exact USD-equivalent amount in {cryptoAsset}.
+                      Cold-chain shipment is scheduled once the network confirms
+                      your transfer.
+                    </p>
+                  </div>
+                )}
+
+                {effectivePaymentMethod === "stripe" && (
                 <div
                   className="p-6 rounded-lg border flex items-start gap-4"
                   style={{ backgroundColor: "#EAE6DF", borderColor: "#D8D4CC" }}
@@ -464,6 +642,7 @@ export default function CheckoutPage() {
                     </div>
                   </div>
                 </div>
+                )}
               </section>
             </form>
           </div>
@@ -711,12 +890,19 @@ export default function CheckoutPage() {
                   {isProcessing ? "Processing..." : `Place Order · $${(totalPrice + shippingCost).toFixed(2)}`}
                 </button>
                 <p className="text-xs text-center mt-3" style={{ color: "#8A8075" }}>
-                  You&apos;ll be redirected to Stripe to complete payment securely.
+                  {effectivePaymentMethod === "crypto"
+                    ? `You’ll get a ${cryptoAsset} receiving address and order reference on the next screen.`
+                    : "You’ll be redirected to Stripe to complete payment securely."}
                 </p>
               </div>
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Research Use Only disclaimer above sticky checkout */}
+      <div className="max-w-6xl mx-auto px-4 pb-24 lg:pb-12">
+        <RUOBanner variant="card" />
       </div>
 
       {/* Mobile Sticky Summary */}

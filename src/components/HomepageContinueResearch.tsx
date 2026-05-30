@@ -128,7 +128,7 @@ export default function HomepageContinueResearch() {
                 >
                   {product.name}
                 </p>
-                <p className="text-xs" style={{ color: "#888" }}>
+                <p className="text-xs" style={{ color: "#666666" }}>
                   {product.size}
                 </p>
                 <p className="text-sm font-bold mt-1" style={{ color: "#1A1A1A" }}>

@@ -36,7 +36,7 @@ export default function AnnouncementBar() {
         className="text-[10px] uppercase tracking-widest font-medium transition-opacity duration-400"
         style={{
           letterSpacing: "0.18em",
-          color: "#888",
+          color: "#666666",
           opacity: visible ? 1 : 0,
           transition: "opacity 0.3s ease",
         }}
