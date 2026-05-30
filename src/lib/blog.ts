@@ -74,6 +74,7 @@ import { article as a70 } from './articles/ll-37-antimicrobial-wound-healing-pro
 import { article as a71 } from './articles/peptide-research-mouse-vs-rat-model-selection-guide';
 import { article as a72 } from './articles/follistatin-myostatin-inhibition-peptide-research-protocols';
 import { article as a73 } from './articles/adiponectin-leptin-metabolic-hormone-endpoints-peptide-research';
+import { article as a74 } from './articles/peptide-research-lab-setup-equipment-safety-best-practices';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -104,6 +105,7 @@ export const articles: BlogArticle[] = [
   a71,
   a72,
   a73,
+  a74,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
