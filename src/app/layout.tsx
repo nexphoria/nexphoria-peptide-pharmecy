@@ -81,6 +81,97 @@ export const metadata: Metadata = {
   },
 };
 
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://nexphoria.com/#website",
+  name: "Nexphoria",
+  url: "https://nexphoria.com",
+  description:
+    "Research-grade peptide compounds manufactured under cGMP standards for qualified researchers.",
+  inLanguage: "en-US",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://nexphoria.com/products?search={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
+const siteNavigationSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "https://nexphoria.com/#navigation",
+  name: "Site Navigation",
+  itemListElement: [
+    {
+      "@type": "SiteNavigationElement",
+      position: 1,
+      name: "Shop",
+      description: "Browse all research-grade peptide compounds",
+      url: "https://nexphoria.com/products",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 2,
+      name: "Protocol Finder Quiz",
+      description: "Find the right research protocol for your goals",
+      url: "https://nexphoria.com/quiz",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 3,
+      name: "Research Journal",
+      description: "Peer-reviewed peptide research articles and compound profiles",
+      url: "https://nexphoria.com/blog",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 4,
+      name: "Research Tools",
+      description: "Peptide calculators, planners, and reference tools",
+      url: "https://nexphoria.com/tools",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 5,
+      name: "Research Hub",
+      description: "All Nexphoria resources in one place",
+      url: "https://nexphoria.com/resources",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 6,
+      name: "Compounds Index",
+      description: "Reference index of all research compounds with mechanism summaries",
+      url: "https://nexphoria.com/compounds",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 7,
+      name: "Build Your Stack",
+      description: "Customize a multi-compound research protocol",
+      url: "https://nexphoria.com/build-your-stack",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 8,
+      name: "FAQ",
+      description: "Frequently asked questions about research peptides",
+      url: "https://nexphoria.com/faq",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 9,
+      name: "About",
+      description: "About Nexphoria research peptide company",
+      url: "https://nexphoria.com/about",
+    },
+  ],
+};
+
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -104,10 +195,29 @@ export default function RootLayout({
   return (
     <html lang="en" className={`h-full antialiased ${inter.variable} ${cormorant.variable}`}>
       <head>
+        {/* Next.js font/google self-hosts fonts, so no external googleapis preconnect needed */}
+        <link rel="preconnect" href="https://nexphoria-checkout.chiya-b60.workers.dev" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://nexphoria-checkout.chiya-b60.workers.dev" />
+        {/* Preload LCP images for fast discovery - desktop uses packaging-unboxing.webp, mobile too */}
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+        <link rel="preload" as="image" href="/brand/packaging-unboxing.webp" type="image/webp"
+          media="(min-width: 769px)"
+        />
+        <link rel="preload" as="image" href="/brand/packaging-unboxing-mobile.webp" type="image/webp"
+          media="(max-width: 768px)"
+        />
         <link rel="icon" href="/favicon.png" type="image/png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationSchema) }}
         />
       </head>
       <body className="min-h-full" style={{ backgroundColor: "#FAF8F5" }}>

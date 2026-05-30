@@ -372,7 +372,7 @@ export default function ResearchLog() {
           </p>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>
-              <h1 className="text-4xl md:text-5xl mb-4 tracking-tight" style={{ fontWeight: 200, color: "#FFFFF3", lineHeight: 1.05 }}>
+              <h1 className="text-4xl md:text-5xl mb-4 tracking-tight" style={{ fontWeight: 200, color: "#F9F9F9", lineHeight: 1.05 }}>
                 Research Log
               </h1>
               <p className="text-base max-w-xl" style={{ fontWeight: 300, color: "#A0A0A0", lineHeight: 1.65 }}>
@@ -432,7 +432,7 @@ export default function ResearchLog() {
         <section className="no-print px-6 py-10">
           <div className="max-w-3xl mx-auto">
             <div className="rounded-sm p-8" style={{ border: "1px solid #2A2A28", backgroundColor: "#0E0E0C" }}>
-              <h2 className="text-xl font-light mb-8" style={{ color: "#FFFFF3" }}>
+              <h2 className="text-xl font-light mb-8" style={{ color: "#F9F9F9" }}>
                 {view === "edit" ? "Edit Entry" : "New Log Entry"}
               </h2>
 
@@ -444,7 +444,7 @@ export default function ResearchLog() {
                   value={form.date}
                   onChange={(e) => setForm((f) => ({ ...f, date: e.target.value }))}
                   className="w-full px-4 py-3 rounded-sm text-sm"
-                  style={{ backgroundColor: "#1A1A18", border: "1px solid #3A3A38", color: "#FFFFF3", colorScheme: "dark" }}
+                  style={{ backgroundColor: "#1A1A18", border: "1px solid #3A3A38", color: "#F9F9F9", colorScheme: "dark" }}
                 />
               </div>
 
@@ -479,7 +479,7 @@ export default function ResearchLog() {
                               }
                             }}
                             className="w-full px-3 py-2 rounded-sm text-sm"
-                            style={{ backgroundColor: "#1A1A18", border: "1px solid #3A3A38", color: "#FFFFF3" }}
+                            style={{ backgroundColor: "#1A1A18", border: "1px solid #3A3A38", color: "#F9F9F9" }}
                           >
                             <option value="">Select…</option>
                             {COMPOUND_OPTIONS.map((o) => (
@@ -496,7 +496,7 @@ export default function ResearchLog() {
                                 updateCompound(idx, { compound: e.target.value });
                               }}
                               className="w-full px-3 py-2 rounded-sm text-sm mt-2"
-                              style={{ backgroundColor: "#1A1A18", border: "1px solid #3A3A38", color: "#FFFFF3" }}
+                              style={{ backgroundColor: "#1A1A18", border: "1px solid #3A3A38", color: "#F9F9F9" }}
                             />
                           )}
                         </div>
@@ -511,13 +511,13 @@ export default function ResearchLog() {
                               value={c.dose}
                               onChange={(e) => updateCompound(idx, { dose: e.target.value })}
                               className="flex-1 min-w-0 px-3 py-2 rounded-sm text-sm"
-                              style={{ backgroundColor: "#1A1A18", border: "1px solid #3A3A38", color: "#FFFFF3" }}
+                              style={{ backgroundColor: "#1A1A18", border: "1px solid #3A3A38", color: "#F9F9F9" }}
                             />
                             <select
                               value={c.unit}
                               onChange={(e) => updateCompound(idx, { unit: e.target.value as "mcg" | "mg" | "IU" })}
                               className="px-2 py-2 rounded-sm text-xs"
-                              style={{ backgroundColor: "#1A1A18", border: "1px solid #3A3A38", color: "#FFFFF3" }}
+                              style={{ backgroundColor: "#1A1A18", border: "1px solid #3A3A38", color: "#F9F9F9" }}
                             >
                               <option value="mcg">mcg</option>
                               <option value="mg">mg</option>
@@ -533,7 +533,7 @@ export default function ResearchLog() {
                             value={c.route}
                             onChange={(e) => updateCompound(idx, { route: e.target.value as Route })}
                             className="w-full px-3 py-2 rounded-sm text-sm"
-                            style={{ backgroundColor: "#1A1A18", border: "1px solid #3A3A38", color: "#FFFFF3" }}
+                            style={{ backgroundColor: "#1A1A18", border: "1px solid #3A3A38", color: "#F9F9F9" }}
                           >
                             {ROUTES.map((r) => (
                               <option key={r} value={r}>{r}</option>
@@ -551,7 +551,7 @@ export default function ResearchLog() {
                             value={c.time}
                             onChange={(e) => updateCompound(idx, { time: e.target.value })}
                             className="px-3 py-2 rounded-sm text-sm"
-                            style={{ backgroundColor: "#1A1A18", border: "1px solid #3A3A38", color: "#FFFFF3", colorScheme: "dark" }}
+                            style={{ backgroundColor: "#1A1A18", border: "1px solid #3A3A38", color: "#F9F9F9", colorScheme: "dark" }}
                           />
                         </div>
                         {form.compounds.length > 1 && (
@@ -602,7 +602,7 @@ export default function ResearchLog() {
                   value={form.observations}
                   onChange={(e) => setForm((f) => ({ ...f, observations: e.target.value }))}
                   className="w-full px-4 py-3 rounded-sm text-sm resize-y"
-                  style={{ backgroundColor: "#1A1A18", border: "1px solid #3A3A38", color: "#FFFFF3", lineHeight: 1.6 }}
+                  style={{ backgroundColor: "#1A1A18", border: "1px solid #3A3A38", color: "#F9F9F9", lineHeight: 1.6 }}
                 />
               </div>
 
@@ -617,7 +617,7 @@ export default function ResearchLog() {
                   value={form.subjectiveNotes}
                   onChange={(e) => setForm((f) => ({ ...f, subjectiveNotes: e.target.value }))}
                   className="w-full px-4 py-3 rounded-sm text-sm resize-y"
-                  style={{ backgroundColor: "#1A1A18", border: "1px solid #3A3A38", color: "#FFFFF3", lineHeight: 1.6 }}
+                  style={{ backgroundColor: "#1A1A18", border: "1px solid #3A3A38", color: "#F9F9F9", lineHeight: 1.6 }}
                 />
               </div>
 
@@ -648,7 +648,7 @@ export default function ResearchLog() {
                     onChange={(e) => setTagInput(e.target.value)}
                     onKeyDown={(e) => e.key === "Enter" && (e.preventDefault(), addCustomTag())}
                     className="flex-1 px-3 py-2 rounded-sm text-sm"
-                    style={{ backgroundColor: "#1A1A18", border: "1px solid #3A3A38", color: "#FFFFF3" }}
+                    style={{ backgroundColor: "#1A1A18", border: "1px solid #3A3A38", color: "#F9F9F9" }}
                   />
                   <button
                     onClick={addCustomTag}
@@ -719,7 +719,7 @@ export default function ResearchLog() {
                   <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#666660" }}>
                     {formatDate(detailEntry.date)}
                   </p>
-                  <h2 className="text-xl font-light" style={{ color: "#FFFFF3" }}>
+                  <h2 className="text-xl font-light" style={{ color: "#F9F9F9" }}>
                     {detailEntry.compounds.map((c) => c.compound || "—").join(" + ")}
                   </h2>
                 </div>
@@ -750,7 +750,7 @@ export default function ResearchLog() {
                     <tbody>
                       {detailEntry.compounds.map((c, i) => (
                         <tr key={i} style={{ borderBottom: i < detailEntry.compounds.length - 1 ? "1px solid #2A2A28" : "none" }}>
-                          <td className="px-4 py-3" style={{ color: "#FFFFF3" }}>{c.compound || "—"}</td>
+                          <td className="px-4 py-3" style={{ color: "#F9F9F9" }}>{c.compound || "—"}</td>
                           <td className="px-4 py-3" style={{ color: "#A0A0A0" }}>{c.dose ? `${c.dose} ${c.unit}` : "—"}</td>
                           <td className="px-4 py-3" style={{ color: "#A0A0A0" }}>{c.route}</td>
                           <td className="px-4 py-3" style={{ color: "#A0A0A0" }}>{c.time || "—"}</td>
@@ -862,7 +862,7 @@ export default function ResearchLog() {
                         value={searchText}
                         onChange={(e) => setSearchText(e.target.value)}
                         className="w-full px-4 py-2.5 rounded-sm text-sm pr-8"
-                        style={{ backgroundColor: "#161614", border: "1px solid #2A2A28", color: "#FFFFF3" }}
+                        style={{ backgroundColor: "#161614", border: "1px solid #2A2A28", color: "#F9F9F9" }}
                       />
                       {searchText && (
                         <button
@@ -883,7 +883,7 @@ export default function ResearchLog() {
                       value={filterCompound}
                       onChange={(e) => setFilterCompound(e.target.value)}
                       className="px-3 py-2.5 rounded-sm text-sm"
-                      style={{ backgroundColor: "#161614", border: "1px solid #2A2A28", color: filterCompound ? "#FFFFF3" : "#555550" }}
+                      style={{ backgroundColor: "#161614", border: "1px solid #2A2A28", color: filterCompound ? "#F9F9F9" : "#555550" }}
                     >
                       <option value="">All compounds</option>
                       {usedCompounds.map((c) => (
@@ -900,7 +900,7 @@ export default function ResearchLog() {
                         value={filterTag}
                         onChange={(e) => setFilterTag(e.target.value)}
                         className="px-3 py-2.5 rounded-sm text-sm"
-                        style={{ backgroundColor: "#161614", border: "1px solid #2A2A28", color: filterTag ? "#FFFFF3" : "#555550" }}
+                        style={{ backgroundColor: "#161614", border: "1px solid #2A2A28", color: filterTag ? "#F9F9F9" : "#555550" }}
                       >
                         <option value="">All tags</option>
                         {usedTags.map((t) => (
@@ -917,7 +917,7 @@ export default function ResearchLog() {
                       value={filterOutcome}
                       onChange={(e) => setFilterOutcome(e.target.value as Outcome | "")}
                       className="px-3 py-2.5 rounded-sm text-sm"
-                      style={{ backgroundColor: "#161614", border: "1px solid #2A2A28", color: filterOutcome ? "#FFFFF3" : "#555550" }}
+                      style={{ backgroundColor: "#161614", border: "1px solid #2A2A28", color: filterOutcome ? "#F9F9F9" : "#555550" }}
                     >
                       <option value="">All outcomes</option>
                       {(Object.entries(OUTCOME_LABELS) as [Outcome, string][]).map(([k, v]) => (
@@ -977,7 +977,7 @@ export default function ResearchLog() {
                             </div>
 
                             {/* Compound summary */}
-                            <p className="text-sm font-medium mb-1.5 truncate" style={{ color: "#FFFFF3" }}>
+                            <p className="text-sm font-medium mb-1.5 truncate" style={{ color: "#F9F9F9" }}>
                               {entry.compounds.map((c) => c.compound || "—").join(" + ")}
                             </p>
 

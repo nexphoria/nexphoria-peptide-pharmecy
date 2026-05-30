@@ -96,6 +96,7 @@ export default function HomepageContinueResearch() {
                     <img
                       src={getProductImagePath(product.slug)}
                       alt={product.name}
+                      loading="lazy"
                       className="w-full h-full object-cover"
                     />
                   ) : (

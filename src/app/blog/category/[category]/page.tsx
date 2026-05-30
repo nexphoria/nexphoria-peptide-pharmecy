@@ -117,7 +117,7 @@ export default async function BlogCategoryPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(categorySchema) }}
       />
 
-      <div style={{ backgroundColor: "#FFFFF3" }}>
+      <div style={{ backgroundColor: "#F9F9F9" }}>
         {/* Hero */}
         <section
           className="relative px-6 pt-32 pb-16 md:pt-40 md:pb-20"
@@ -133,14 +133,14 @@ export default async function BlogCategoryPage({ params }: Props) {
                 { label: displayName },
               ]}
             />
-            <p className="eyebrow mb-5" style={{ color: "#A4B08A" }}>
+            <p className="eyebrow mb-5" style={{ color: "#B8A44C" }}>
               Category
             </p>
             <h1
               className="text-4xl md:text-5xl mb-4"
               style={{
                 fontWeight: 500,
-                color: "#FFFFF3",
+                color: "#F9F9F9",
                 lineHeight: 1.05,
                 letterSpacing: "-0.02em",
               }}
@@ -185,8 +185,8 @@ export default async function BlogCategoryPage({ params }: Props) {
                   style={
                     c.slug === category
                       ? {
-                          backgroundColor: "#A4B08A",
-                          border: "1px solid #A4B08A",
+                          backgroundColor: "#B8A44C",
+                          border: "1px solid #B8A44C",
                           color: "#010101",
                           fontWeight: 600,
                         }
@@ -230,7 +230,7 @@ export default async function BlogCategoryPage({ params }: Props) {
                       className="rounded-lg h-full"
                       style={{
                         border: "1px solid rgba(0,0,0,0.06)",
-                        borderTop: "2px solid #A4B08A",
+                        borderTop: "2px solid #B8A44C",
                         backgroundColor: "#fff",
                         transition: "transform 0.2s, box-shadow 0.2s",
                       }}
@@ -240,7 +240,7 @@ export default async function BlogCategoryPage({ params }: Props) {
                           <span
                             className="text-xs uppercase tracking-widest px-2 py-0.5 rounded-full"
                             style={{
-                              backgroundColor: "#A4B08A",
+                              backgroundColor: "#B8A44C",
                               color: "#010101",
                             }}
                           >
@@ -313,7 +313,7 @@ export default async function BlogCategoryPage({ params }: Props) {
             <div className="mt-8 pt-8" style={{ borderTop: "1px solid rgba(0,0,0,0.1)" }}>
               <p
                 className="text-xs uppercase tracking-widest mb-4"
-                style={{ color: "#A4B08A" }}
+                style={{ color: "#B8A44C" }}
               >
                 Research Catalog
               </p>

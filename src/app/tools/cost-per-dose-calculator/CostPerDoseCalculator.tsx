@@ -144,7 +144,7 @@ export default function CostPerDoseCalculator() {
   const categories = Array.from(new Set(CATALOG_PRODUCTS.map((p) => p.category)));
 
   return (
-    <div style={{ backgroundColor: "#FFFFF3", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "#F9F9F9", minHeight: "100vh" }}>
       {/* Hero */}
       <section
         className="relative px-6 pt-32 pb-16 md:pt-40 md:pb-20"
@@ -168,7 +168,7 @@ export default function CostPerDoseCalculator() {
           </p>
           <h1
             className="text-4xl md:text-5xl mb-5 tracking-tight"
-            style={{ fontWeight: 200, color: "#FFFFF3", lineHeight: 1.05 }}
+            style={{ fontWeight: 200, color: "#F9F9F9", lineHeight: 1.05 }}
           >
             Cost Per Dose Calculator
           </h1>
@@ -202,8 +202,8 @@ export default function CostPerDoseCalculator() {
                   onClick={() => applyPreset(p)}
                   className="text-xs px-3 py-1.5 rounded-sm transition-all"
                   style={{
-                    border: `1px solid ${activePreset === p.label ? "#A4B08A" : "#DDDBD5"}`,
-                    backgroundColor: activePreset === p.label ? "#A4B08A18" : "transparent",
+                    border: `1px solid ${activePreset === p.label ? "#B8A44C" : "#DDDBD5"}`,
+                    backgroundColor: activePreset === p.label ? "#B8A44C18" : "transparent",
                     color: activePreset === p.label ? "#5A7040" : "#555555",
                   }}
                 >
@@ -224,8 +224,8 @@ export default function CostPerDoseCalculator() {
                 onClick={() => setUseCustom(false)}
                 className="text-sm px-4 py-2 rounded-sm transition-all"
                 style={{
-                  border: `1px solid ${!useCustom ? "#A4B08A" : "#DDDBD5"}`,
-                  backgroundColor: !useCustom ? "#A4B08A18" : "transparent",
+                  border: `1px solid ${!useCustom ? "#B8A44C" : "#DDDBD5"}`,
+                  backgroundColor: !useCustom ? "#B8A44C18" : "transparent",
                   color: !useCustom ? "#5A7040" : "#777",
                   fontWeight: !useCustom ? 500 : 400,
                 }}
@@ -236,8 +236,8 @@ export default function CostPerDoseCalculator() {
                 onClick={() => setUseCustom(true)}
                 className="text-sm px-4 py-2 rounded-sm transition-all"
                 style={{
-                  border: `1px solid ${useCustom ? "#A4B08A" : "#DDDBD5"}`,
-                  backgroundColor: useCustom ? "#A4B08A18" : "transparent",
+                  border: `1px solid ${useCustom ? "#B8A44C" : "#DDDBD5"}`,
+                  backgroundColor: useCustom ? "#B8A44C18" : "transparent",
                   color: useCustom ? "#5A7040" : "#777",
                   fontWeight: useCustom ? 500 : 400,
                 }}
@@ -453,7 +453,7 @@ export default function CostPerDoseCalculator() {
                       className="text-2xl md:text-3xl mb-1"
                       style={{
                         fontWeight: 300,
-                        color: card.accent ? "#FFFFF3" : "#111111",
+                        color: card.accent ? "#F9F9F9" : "#111111",
                         lineHeight: 1.1,
                       }}
                     >
@@ -686,7 +686,7 @@ export default function CostPerDoseCalculator() {
                 </p>
                 <p
                   className="text-xs mt-2 font-medium"
-                  style={{ color: "#A4B08A" }}
+                  style={{ color: "#B8A44C" }}
                 >
                   Open →
                 </p>

@@ -510,12 +510,12 @@ export default function BodyWeightDoseCalculator() {
     }));
   }, []);
 
-  const catColor = (cat: string) => CATEGORY_COLORS[cat] ?? "#A4B08A";
+  const catColor = (cat: string) => CATEGORY_COLORS[cat] ?? "#B8A44C";
 
   const inputStyle = {
     backgroundColor: "#18181a",
     border: "1px solid rgba(255,255,255,0.12)",
-    color: "#FFFFF3",
+    color: "#F9F9F9",
     borderRadius: 4,
     padding: "10px 14px",
     fontSize: 14,
@@ -565,7 +565,7 @@ export default function BodyWeightDoseCalculator() {
           </p>
           <h1
             className="text-4xl md:text-5xl mb-5 tracking-tight"
-            style={{ fontWeight: 200, color: "#FFFFF3", lineHeight: 1.05 }}
+            style={{ fontWeight: 200, color: "#F9F9F9", lineHeight: 1.05 }}
           >
             Body Weight Dose Calculator
           </h1>
@@ -762,7 +762,7 @@ export default function BodyWeightDoseCalculator() {
                       ].map(([k, v]) => (
                         <div key={k}>
                           <div style={{ color: "#666" }}>{k}</div>
-                          <div style={{ color: "#FFFFF3", marginTop: 2 }}>{v}</div>
+                          <div style={{ color: "#F9F9F9", marginTop: 2 }}>{v}</div>
                         </div>
                       ))}
                     </div>
@@ -785,18 +785,18 @@ export default function BodyWeightDoseCalculator() {
                         <div className="text-xs uppercase tracking-widest mb-1" style={{ color: "#d4af37" }}>
                           Absolute Dose
                         </div>
-                        <div className="text-2xl font-light" style={{ color: "#FFFFF3" }}>
+                        <div className="text-2xl font-light" style={{ color: "#F9F9F9" }}>
                           {fmtNum(forwardResult.absoluteMcg)} <span className="text-sm text-gray-400">mcg</span>
                         </div>
                         <div className="text-sm mt-1" style={{ color: "#A0A0A0" }}>
                           {fmtNum(forwardResult.absoluteMg, 4)} mg
                         </div>
                       </div>
-                      <div style={resultCardStyle("#A4B08A")}>
-                        <div className="text-xs uppercase tracking-widest mb-1" style={{ color: "#A4B08A" }}>
+                      <div style={resultCardStyle("#B8A44C")}>
+                        <div className="text-xs uppercase tracking-widest mb-1" style={{ color: "#B8A44C" }}>
                           Subject Weight
                         </div>
-                        <div className="text-2xl font-light" style={{ color: "#FFFFF3" }}>
+                        <div className="text-2xl font-light" style={{ color: "#F9F9F9" }}>
                           {fmtNum(forwardResult.weightKg * 1000, 1)} <span className="text-sm text-gray-400">g</span>
                         </div>
                         <div className="text-sm mt-1" style={{ color: "#A0A0A0" }}>
@@ -814,7 +814,7 @@ export default function BodyWeightDoseCalculator() {
                         <div className="flex items-center gap-3">
                           <div>
                             <div className="text-xs" style={{ color: "#666" }}>Low</div>
-                            <div className="text-lg font-light" style={{ color: "#FFFFF3" }}>
+                            <div className="text-lg font-light" style={{ color: "#F9F9F9" }}>
                               {fmtNum(rangeResults.low)} mcg
                             </div>
                           </div>
@@ -832,7 +832,7 @@ export default function BodyWeightDoseCalculator() {
                           </div>
                           <div className="text-right">
                             <div className="text-xs" style={{ color: "#666" }}>High</div>
-                            <div className="text-lg font-light" style={{ color: "#FFFFF3" }}>
+                            <div className="text-lg font-light" style={{ color: "#F9F9F9" }}>
                               {fmtNum(rangeResults.high)} mcg
                             </div>
                           </div>
@@ -868,7 +868,7 @@ export default function BodyWeightDoseCalculator() {
                               key={i}
                               style={{
                                 borderTop: "1px solid rgba(255,255,255,0.05)",
-                                color: v.volumeMl < 0.001 || v.volumeMl > 1 ? "#666" : "#FFFFF3",
+                                color: v.volumeMl < 0.001 || v.volumeMl > 1 ? "#666" : "#F9F9F9",
                               }}
                             >
                               <td className="py-1.5">{v.label}</td>
@@ -981,16 +981,16 @@ export default function BodyWeightDoseCalculator() {
                         <div className="text-xs uppercase tracking-widest mb-1" style={{ color: "#d4af37" }}>
                           Dose (mcg/kg)
                         </div>
-                        <div className="text-2xl font-light" style={{ color: "#FFFFF3" }}>
+                        <div className="text-2xl font-light" style={{ color: "#F9F9F9" }}>
                           {fmtNum(reverseResult.mcgPerKg, 1)}
                         </div>
                         <div className="text-xs mt-1" style={{ color: "#A0A0A0" }}>mcg/kg</div>
                       </div>
-                      <div style={resultCardStyle("#A4B08A")}>
-                        <div className="text-xs uppercase tracking-widest mb-1" style={{ color: "#A4B08A" }}>
+                      <div style={resultCardStyle("#B8A44C")}>
+                        <div className="text-xs uppercase tracking-widest mb-1" style={{ color: "#B8A44C" }}>
                           Dose (mg/kg)
                         </div>
-                        <div className="text-2xl font-light" style={{ color: "#FFFFF3" }}>
+                        <div className="text-2xl font-light" style={{ color: "#F9F9F9" }}>
                           {fmtNum(reverseResult.mgPerKg, 4)}
                         </div>
                         <div className="text-xs mt-1" style={{ color: "#A0A0A0" }}>mg/kg</div>
@@ -1021,7 +1021,7 @@ export default function BodyWeightDoseCalculator() {
                                 border: `1px solid ${catColor(c.category)}30`,
                               }}
                             >
-                              <span style={{ color: "#FFFFF3" }}>{c.name}</span>
+                              <span style={{ color: "#F9F9F9" }}>{c.name}</span>
                               <span style={{ color: catColor(c.category) }}>
                                 {c.doseRange[0]}–{c.doseRange[1]} {c.unit}
                               </span>
@@ -1066,7 +1066,7 @@ export default function BodyWeightDoseCalculator() {
           <div>
             <h2
               className="text-xl mb-5 tracking-tight"
-              style={{ fontWeight: 300, color: "#FFFFF3" }}
+              style={{ fontWeight: 300, color: "#F9F9F9" }}
             >
               Published Rodent Dosing Reference
             </h2>
@@ -1120,7 +1120,7 @@ export default function BodyWeightDoseCalculator() {
                               borderTop: i > 0 ? "1px solid rgba(255,255,255,0.05)" : undefined,
                             }}
                           >
-                            <td className="px-4 py-3" style={{ color: "#FFFFF3" }}>
+                            <td className="px-4 py-3" style={{ color: "#F9F9F9" }}>
                               <button
                                 onClick={() => {
                                   setSelectedCompound(c.slug);
@@ -1168,7 +1168,7 @@ export default function BodyWeightDoseCalculator() {
               border: "1px solid rgba(255,255,255,0.07)",
             }}
           >
-            <h3 className="text-base font-medium mb-4" style={{ color: "#FFFFF3" }}>
+            <h3 className="text-base font-medium mb-4" style={{ color: "#F9F9F9" }}>
               Research Design Considerations
             </h3>
             <div className="grid md:grid-cols-2 gap-4 text-sm">
@@ -1256,7 +1256,7 @@ export default function BodyWeightDoseCalculator() {
                   textDecoration: "none",
                 }}
               >
-                <div className="text-sm font-medium mb-1" style={{ color: "#FFFFF3" }}>
+                <div className="text-sm font-medium mb-1" style={{ color: "#F9F9F9" }}>
                   {t.title}
                 </div>
                 <div className="text-xs" style={{ color: "#666" }}>

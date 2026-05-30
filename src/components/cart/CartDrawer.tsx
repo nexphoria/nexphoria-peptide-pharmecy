@@ -142,7 +142,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
               mass: 0.8
             }}
             className={`fixed top-0 right-0 bottom-0 z-50 w-full max-w-md flex flex-col ${className}`}
-            style={{ backgroundColor: "#FFFFF3", borderLeft: "1px solid #ECEAE4" }}
+            style={{ backgroundColor: "#F9F9F9", borderLeft: "1px solid #ECEAE4" }}
           >
             {/* Header */}
             <div
@@ -182,7 +182,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                     <div className="relative h-2 rounded-full overflow-hidden" style={{ backgroundColor: "#EAE6DF" }}>
                       <motion.div
                         className="absolute top-0 left-0 h-full"
-                        style={{ backgroundColor: "#A4B08A" }}
+                        style={{ backgroundColor: "#B8A44C" }}
                         initial={{ width: 0 }}
                         animate={{ width: `${progressToNext}%` }}
                         transition={{ duration: 0.3 }}
@@ -195,7 +195,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                           className={`flex items-center gap-1 text-xs ${
                             totalPrice >= threshold.amount ? "opacity-100" : "opacity-40"
                           }`}
-                          style={{ color: totalPrice >= threshold.amount ? "#A4B08A" : "#8A8075" }}
+                          style={{ color: totalPrice >= threshold.amount ? "#B8A44C" : "#8A8075" }}
                         >
                           <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8.5 2.5L3.75 7.5L1.5 5.25" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -207,7 +207,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                   </>
                 ) : (
                   <div className="text-center py-2">
-                    <div className="text-sm font-semibold mb-1" style={{ color: "#A4B08A" }}>
+                    <div className="text-sm font-semibold mb-1" style={{ color: "#B8A44C" }}>
                       All rewards unlocked
                     </div>
                     <div className="text-xs" style={{ color: "#8A8075" }}>
@@ -295,7 +295,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                             </p>
                             <p
                               className="text-[11px] mt-0.5"
-                              style={{ color: item.subscriptionMonths > 1 ? "#A4B08A" : "#8A8075" }}
+                              style={{ color: item.subscriptionMonths > 1 ? "#B8A44C" : "#8A8075" }}
                             >
                               {cadenceLabel}
                               {item.subscriptionMonths > 1 ? " · billed monthly" : ""}
@@ -305,7 +305,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                               <div className="flex items-center gap-1">
                                 <button
                                   onClick={() => updateQuantity(item.product.slug, item.format, item.quantity - 1)}
-                                  className="w-9 h-9 flex items-center justify-center border transition-colors rounded"
+                                  className="w-11 h-11 flex items-center justify-center border transition-colors rounded"
                                   style={{ borderColor: "#D8D4CC" }}
                                   disabled={item.quantity <= 1}
                                   aria-label="Decrease quantity"
@@ -317,7 +317,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                                 </span>
                                 <button
                                   onClick={() => updateQuantity(item.product.slug, item.format, item.quantity + 1)}
-                                  className="w-7 h-7 flex items-center justify-center border transition-colors rounded"
+                                  className="w-11 h-11 flex items-center justify-center border transition-colors rounded"
                                   style={{ borderColor: "#D8D4CC" }}
                                   aria-label="Increase quantity"
                                 >
@@ -374,7 +374,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                               {supply.desc}
                             </p>
                           </div>
-                          <span className="text-sm font-bold flex-shrink-0" style={{ color: "#A4B08A" }}>
+                          <span className="text-sm font-bold flex-shrink-0" style={{ color: "#B8A44C" }}>
                             ${supply.price}
                           </span>
                         </div>
@@ -399,7 +399,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                           <button
                             key={product.slug}
                             type="button"
-                            className="w-full flex items-center gap-3 p-3 rounded-lg border hover:border-[#A4B08A] transition-colors group text-left"
+                            className="w-full flex items-center gap-3 p-3 rounded-lg border hover:border-[#B8A44C] transition-colors group text-left"
                             style={{ borderColor: "#ECEAE4" }}
                             onClick={() => addItem(product)}
                           >
@@ -430,7 +430,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                                 ${product.price}
                               </p>
                             </div>
-                            <span className="text-xs font-medium" style={{ color: "#A4B08A" }}>
+                            <span className="text-xs font-medium" style={{ color: "#B8A44C" }}>
                               Add to Order
                             </span>
                           </button>

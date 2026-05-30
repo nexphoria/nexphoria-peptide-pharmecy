@@ -226,7 +226,7 @@ export default function CheckoutPage() {
                   className="p-6 rounded-lg border flex items-start gap-4"
                   style={{ backgroundColor: "#EAE6DF", borderColor: "#D8D4CC" }}
                 >
-                  <ShieldCheck className="w-8 h-8 flex-shrink-0" style={{ color: "#A4B08A" }} />
+                  <ShieldCheck className="w-8 h-8 flex-shrink-0" style={{ color: "#B8A44C" }} />
                   <div>
                     <p className="text-sm font-medium mb-1" style={{ color: "#3A3A3A" }}>
                       Secure payment via Stripe
@@ -290,7 +290,7 @@ export default function CheckoutPage() {
                           </p>
                           <p
                             className="text-[11px] mt-0.5"
-                            style={{ color: item.subscriptionMonths > 1 ? "#A4B08A" : "#8A8075" }}
+                            style={{ color: item.subscriptionMonths > 1 ? "#B8A44C" : "#8A8075" }}
                           >
                             {cadenceLabel}
                             {item.subscriptionMonths > 1 ? " · billed monthly" : ""}
@@ -311,7 +311,7 @@ export default function CheckoutPage() {
 
                 {/* Included supplies */}
                 {includedSupplies.length > 0 && (
-                  <div className="mb-6 p-3 rounded" style={{ backgroundColor: "#A4B08A20" }}>
+                  <div className="mb-6 p-3 rounded" style={{ backgroundColor: "#B8A44C20" }}>
                     <p className="text-xs font-semibold mb-1" style={{ color: "#3A3A3A" }}>
                       Included with your order
                     </p>
@@ -354,7 +354,7 @@ export default function CheckoutPage() {
                   </div>
                   <div className="flex justify-between text-sm">
                     <span style={{ color: "#8A8075" }}>Shipping</span>
-                    <span style={{ color: shipping === 0 ? "#A4B08A" : "#3A3A3A" }}>
+                    <span style={{ color: shipping === 0 ? "#B8A44C" : "#3A3A3A" }}>
                       {shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`}
                     </span>
                   </div>
@@ -390,7 +390,7 @@ export default function CheckoutPage() {
                       style={{ backgroundColor: "#F5F3F0", color: "#555" }}
                     >
                       <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-                        <path d="M8.5 2.5L3.75 7.5L1.5 5.25" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M8.5 2.5L3.75 7.5L1.5 5.25" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                       {badge}
                     </div>

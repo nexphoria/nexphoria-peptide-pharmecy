@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useRef, useMemo } from "react";
+import { useState, useRef, useMemo, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { products, categories } from "@/lib/products";
 import { hasProductPhoto, getProductImagePath } from "@/lib/product-images";
@@ -27,7 +28,19 @@ function getBasePrice(p: (typeof products)[0]) {
 }
 
 export default function ProductsClient({ initialCategory }: { initialCategory?: string }) {
-  const [activeFilter, setActiveFilter] = useState(initialCategory || "All");
+  const searchParams = useSearchParams();
+  const urlCategory = searchParams.get("cat") || initialCategory || "All";
+  const [activeFilter, setActiveFilter] = useState(urlCategory);
+
+  // Sync filter when URL query param changes (e.g. mega menu navigation)
+  useEffect(() => {
+    const cat = searchParams.get("cat");
+    if (cat && categories.includes(cat)) {
+      setActiveFilter(cat);
+    } else if (!cat) {
+      setActiveFilter(initialCategory || "All");
+    }
+  }, [searchParams, initialCategory]);
   const [searchQuery, setSearchQuery] = useState("");
   const [compareMode, setCompareMode] = useState(false);
   const [compareSlugs, setCompareSlugs] = useState<string[]>([]);
@@ -36,6 +49,18 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
   const [sortOpen, setSortOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const sortRef = useRef<HTMLDivElement>(null);
+
+  // Close sort dropdown on outside click
+  useEffect(() => {
+    if (!sortOpen) return;
+    const handler = (e: MouseEvent) => {
+      if (sortRef.current && !sortRef.current.contains(e.target as Node)) {
+        setSortOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [sortOpen]);
 
   const normalizedQuery = searchQuery.trim().toLowerCase();
 
@@ -91,7 +116,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
   const activeSortLabel = SORT_OPTIONS.find((o) => o.key === sortKey)?.label ?? "Sort";
 
   return (
-    <div className="pb-20 px-6 md:px-10" style={{ backgroundColor: "#FFFFF3" }}>
+    <div className="pb-20 px-6 md:px-10" style={{ backgroundColor: "#F9F9F9" }}>
       <div className="max-w-7xl mx-auto">
         {/* Page header */}
         <div className="pt-24 mb-8 flex items-start justify-between gap-4 flex-wrap">
@@ -100,9 +125,12 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
             <h1 className="text-3xl md:text-4xl font-medium tracking-tight">
               All Compounds
             </h1>
-            <p className="text-sm text-[#888] mt-2">
-              {products.length} research-grade compounds
-            </p>
+            <p
+            className="text-sm mt-2 font-medium"
+            style={{ color: "#C4A265", letterSpacing: "0.04em" }}
+          >
+            {products.length} research-grade compounds
+          </p>
           </div>
 
           <div className="flex items-center gap-3 mt-2">
@@ -110,18 +138,20 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
             <div className="relative" ref={sortRef}>
               <button
                 onClick={() => setSortOpen(!sortOpen)}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all border"
+                className="flex items-center gap-1.5 px-3 py-2 text-[11px] font-medium transition-opacity hover:opacity-60"
                 style={{
-                  backgroundColor: "#FFFFFF",
-                  color: "#333",
-                  border: "1px solid #ECEAE4",
+                  letterSpacing: "0.15em",
+                  textTransform: "uppercase",
+                  color: "#555",
+                  background: "none",
+                  border: "none",
                 }}
               >
                 {activeSortLabel}
                 <ChevronDown
-                  size={14}
+                  size={12}
                   className="transition-transform"
-                  style={{ transform: sortOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+                  style={{ transform: sortOpen ? "rotate(180deg)" : "rotate(0deg)", color: "#C4A265" }}
                 />
               </button>
               {sortOpen && (
@@ -134,7 +164,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                       onClick={() => { setSortKey(opt.key); setSortOpen(false); }}
                       className="w-full text-left px-4 py-2.5 text-sm hover:bg-[#F7F5F0] transition-colors"
                       style={{
-                        color: sortKey === opt.key ? "#A4B08A" : "#333",
+                        color: sortKey === opt.key ? "#B8A44C" : "#333",
                         fontWeight: sortKey === opt.key ? 600 : 400,
                       }}
                     >
@@ -148,14 +178,18 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
             {/* Compare toggle */}
             <button
               onClick={toggleCompareMode}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all"
+              className="flex items-center gap-1.5 px-3 py-2 text-[11px] font-medium transition-colors"
               style={{
-                backgroundColor: compareMode ? "#010101" : "#F5F3F0",
-                color: compareMode ? "#FFFFF3" : "#555",
-                border: compareMode ? "none" : "1px solid #ECEAE4",
+                letterSpacing: "0.15em",
+                textTransform: "uppercase",
+                color: compareMode ? "#C4A265" : "#888",
+                background: "none",
+                border: "none",
               }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.color = "#C4A265"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.color = compareMode ? "#C4A265" : "#888"; }}
             >
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
                 <rect x="1" y="1" width="5" height="12" rx="1" stroke="currentColor" strokeWidth="1.25" />
                 <rect x="8" y="1" width="5" height="12" rx="1" stroke="currentColor" strokeWidth="1.25" />
               </svg>
@@ -184,19 +218,19 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search compounds by name, category..."
-              className="w-full pl-10 pr-10 py-3 text-sm rounded-lg outline-none transition-all"
+              className="w-full pl-10 pr-10 py-3 text-sm outline-none transition-all"
               style={{
-                backgroundColor: "#FFFFFF",
-                border: "1px solid #ECEAE4",
-                color: "#010101",
+                background: "none",
+                border: "none",
+                borderBottom: "1px solid #D8D4CC",
+                borderRadius: 0,
+                color: "#1A1A1A",
               }}
               onFocus={(e) => {
-                e.currentTarget.style.borderColor = "#A4B08A";
-                e.currentTarget.style.boxShadow = "0 0 0 3px rgba(164,176,138,0.12)";
+                e.currentTarget.style.borderBottomColor = "#C4A265";
               }}
               onBlur={(e) => {
-                e.currentTarget.style.borderColor = "#ECEAE4";
-                e.currentTarget.style.boxShadow = "none";
+                e.currentTarget.style.borderBottomColor = "#D8D4CC";
               }}
             />
             {searchQuery && (
@@ -236,33 +270,38 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
 
         {/* Sticky filter tabs */}
         <div className="filter-bar-sticky -mx-6 md:-mx-10 px-6 md:px-10">
-          <div className="flex gap-2" style={{ flexWrap: "wrap" }}>
+          <div className="flex gap-1" style={{ flexWrap: "wrap" }}>
             <button
               onClick={() => setActiveFilter("All")}
-              className="px-4 py-2 text-xs uppercase rounded-md transition-all"
+              className="px-4 py-2 text-[11px] uppercase transition-all"
               style={{
-                letterSpacing: "0.08em",
-                backgroundColor: activeFilter === "All" ? "#000" : "transparent",
-                color: activeFilter === "All" ? "#fff" : "#666",
-                border: activeFilter === "All" ? "none" : "1px solid #ECEAE4",
-                minHeight: "36px",
+                letterSpacing: "0.15em",
+                background: "none",
+                border: "none",
+                color: activeFilter === "All" ? "#C4A265" : "#888",
+                fontWeight: activeFilter === "All" ? 500 : 400,
+                borderBottom: activeFilter === "All" ? "1px solid #C4A265" : "1px solid transparent",
+                minHeight: "44px",
               }}
             >
               All ({products.length})
             </button>
             {categories.filter((cat) => cat !== "All").map((cat) => {
               const count = products.filter((p) => p.category === cat).length;
+              const active = activeFilter === cat;
               return (
                 <button
                   key={cat}
                   onClick={() => setActiveFilter(cat)}
-                  className="px-4 py-2 text-xs uppercase rounded-md transition-all"
+                  className="px-4 py-2 text-[11px] uppercase transition-all"
                   style={{
-                    letterSpacing: "0.08em",
-                    backgroundColor: activeFilter === cat ? "#000" : "transparent",
-                    color: activeFilter === cat ? "#fff" : "#666",
-                    border: activeFilter === cat ? "none" : "1px solid #ECEAE4",
-                    minHeight: "36px",
+                    letterSpacing: "0.15em",
+                    background: "none",
+                    border: "none",
+                    color: active ? "#C4A265" : "#888",
+                    fontWeight: active ? 500 : 400,
+                    borderBottom: active ? "1px solid #C4A265" : "1px solid transparent",
+                    minHeight: "44px",
                   }}
                 >
                   {cat} ({count})
@@ -283,7 +322,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
         {/* Product grid */}
         {filtered.length > 0 ? (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filtered.map((product) => (
+            {filtered.map((product, idx) => (
               <ProductCard
                 key={product.slug}
                 product={product}
@@ -293,6 +332,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                 compareDisabled={
                   !compareSlugs.includes(product.slug) && compareSlugs.length >= MAX_COMPARE
                 }
+                priority={idx < 4}
               />
             ))}
           </div>
@@ -314,7 +354,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
               <button
                 onClick={() => { setSearchQuery(""); setActiveFilter("All"); }}
                 className="underline transition-colors"
-                style={{ color: "#A4B08A" }}
+                style={{ color: "#B8A44C" }}
               >
                 browse all compounds
               </button>.
@@ -344,7 +384,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
           className="fixed bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3 sm:gap-4 px-4 sm:px-5 py-3.5 rounded-2xl shadow-2xl"
           style={{
             backgroundColor: "#010101",
-            color: "#FFFFF3",
+            color: "#F9F9F9",
             width: "calc(100vw - 32px)",
             maxWidth: "420px",
           }}
@@ -357,7 +397,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                 style={{ backgroundColor: "#2a2a2a" }}
               >
                 {hasProductPhoto(p.slug) ? (
-                  <img src={getProductImagePath(p.slug)} alt={p.name} className="w-full h-full object-cover" />
+                  <img src={getProductImagePath(p.slug)} alt={p.name} loading="lazy" decoding="async" width={32} height={32} className="w-full h-full object-cover" />
                 ) : (
                   <span className="text-[8px] font-medium text-[#888] text-center leading-tight p-1 block">
                     {p.name}
@@ -384,7 +424,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
             disabled={compareSlugs.length < 2}
             className="px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all"
             style={{
-              backgroundColor: compareSlugs.length >= 2 ? "#A4B08A" : "#333",
+              backgroundColor: compareSlugs.length >= 2 ? "#B8A44C" : "#333",
               color: compareSlugs.length >= 2 ? "#010101" : "#666",
               cursor: compareSlugs.length < 2 ? "not-allowed" : "pointer",
             }}

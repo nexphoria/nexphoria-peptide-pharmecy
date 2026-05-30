@@ -63,7 +63,7 @@ export default function AgeVerificationModal() {
           transition={{ duration: 0.3, delay: 0.1 }}
           className="relative w-full max-w-sm rounded-xl border p-8"
           style={{
-            backgroundColor: "#FAF6F0",
+            backgroundColor: "#F9F9F9",
             borderColor: "#E5E5E5",
           }}
         >
@@ -145,7 +145,7 @@ export default function AgeVerificationModal() {
               onMouseEnter={(e) => {
                 if (confirmed) {
                   (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#C4A265";
-                  (e.currentTarget as HTMLButtonElement).style.color = "#FAF6F0";
+                  (e.currentTarget as HTMLButtonElement).style.color = "#F9F9F9";
                 }
               }}
               onMouseLeave={(e) => {

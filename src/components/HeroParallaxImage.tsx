@@ -46,13 +46,13 @@ export default function HeroParallaxImage() {
         {/* Scale-breathe layer */}
         <div className="hero-scale-breathe">
           <Image
-            src="/brand/packaging-unboxing.png"
+            src="/brand/packaging-unboxing.webp"
             alt="Nexphoria premium peptide presentation — vials, Certificate of Analysis, and cold-chain pack"
             width={1400}
             height={1400}
             className="w-full h-auto"
             priority
-            unoptimized
+            sizes="(max-width: 768px) 100vw, 72vw"
           />
         </div>
       </div>

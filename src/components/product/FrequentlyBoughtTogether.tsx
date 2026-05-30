@@ -105,8 +105,8 @@ export default function FrequentlyBoughtTogether({ currentSlug }: Props) {
         >
           {/* Header */}
           <div className="flex items-center gap-2 mb-2">
-            <Package className="w-4 h-4 text-[#A4B08A]" />
-            <p className="text-[11px] uppercase tracking-wider text-[#A4B08A] font-semibold">
+            <Package className="w-4 h-4 text-[#B8A44C]" />
+            <p className="text-[11px] uppercase tracking-wider text-[#B8A44C] font-semibold">
               Frequently Bought Together
             </p>
           </div>
@@ -140,8 +140,8 @@ export default function FrequentlyBoughtTogether({ currentSlug }: Props) {
                         onClick={() => handleToggle(product.slug)}
                         className="flex-shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center transition-all"
                         style={{
-                          borderColor: isChecked ? "#A4B08A" : "#D0CEC8",
-                          backgroundColor: isChecked ? "#A4B08A" : "transparent",
+                          borderColor: isChecked ? "#B8A44C" : "#D0CEC8",
+                          backgroundColor: isChecked ? "#B8A44C" : "transparent",
                         }}
                         aria-label={`${isChecked ? "Remove" : "Add"} ${product.name}`}
                       >
@@ -160,7 +160,7 @@ export default function FrequentlyBoughtTogether({ currentSlug }: Props) {
                             className="w-full h-full object-cover"
                           />
                         ) : (
-                          <span className="text-[9px] font-semibold text-[#A4B08A] text-center px-1 leading-tight">
+                          <span className="text-[9px] font-semibold text-[#B8A44C] text-center px-1 leading-tight">
                             {product.name}
                           </span>
                         )}
@@ -171,12 +171,12 @@ export default function FrequentlyBoughtTogether({ currentSlug }: Props) {
                         <div className="flex items-center gap-2 mb-0.5">
                           <p className="text-xs text-[#888] truncate">{product.category}</p>
                           {isCurrent && (
-                            <span className="text-[9px] uppercase tracking-widest text-white font-semibold px-1.5 py-0.5 rounded bg-[#A4B08A]">
+                            <span className="text-[9px] uppercase tracking-widest text-white font-semibold px-1.5 py-0.5 rounded bg-[#B8A44C]">
                               This item
                             </span>
                           )}
                           {idx === 1 && (
-                            <span className="text-[9px] uppercase tracking-widest text-[#A4B08A] font-semibold px-1.5 py-0.5 rounded border border-[#A4B08A]">
+                            <span className="text-[9px] uppercase tracking-widest text-[#B8A44C] font-semibold px-1.5 py-0.5 rounded border border-[#B8A44C]">
                               Recommended
                             </span>
                           )}
@@ -247,7 +247,7 @@ export default function FrequentlyBoughtTogether({ currentSlug }: Props) {
                   disabled={addedState !== "idle" || selectedItems.length < 1}
                   className="w-full flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-sm text-white transition-all hover:opacity-90 active:scale-[0.98] disabled:opacity-60"
                   style={{
-                    backgroundColor: addedState === "done" ? "#6B8C5F" : "#A4B08A",
+                    backgroundColor: addedState === "done" ? "#6B8C5F" : "#B8A44C",
                   }}
                 >
                   {addedState === "done" ? (

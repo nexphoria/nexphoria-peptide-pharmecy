@@ -32,7 +32,7 @@ export default function CheckoutSuccess() {
           className="w-20 h-20 mx-auto mb-8 rounded-full flex items-center justify-center"
           style={{ backgroundColor: "rgba(198, 241, 132, 0.15)" }}
         >
-          <CheckCircle className="w-10 h-10" style={{ color: "#A4B08A" }} />
+          <CheckCircle className="w-10 h-10" style={{ color: "#B8A44C" }} />
         </motion.div>
 
         <h1
@@ -50,7 +50,7 @@ export default function CheckoutSuccess() {
 
         <div className="p-6 rounded-xl border mb-8" style={{ backgroundColor: "#F7F5F0", borderColor: "#ECEAE4" }}>
           <div className="flex items-center gap-3 mb-3">
-            <Package className="w-5 h-5" style={{ color: "#A4B08A" }} />
+            <Package className="w-5 h-5" style={{ color: "#B8A44C" }} />
             <span className="font-medium" style={{ color: "#000000" }}>What happens next:</span>
           </div>
           <ul className="text-sm space-y-2 text-left" style={{ color: "#555555" }}>

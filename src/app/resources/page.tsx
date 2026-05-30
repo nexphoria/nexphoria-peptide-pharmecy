@@ -51,12 +51,15 @@ const TOOLS = [
   { href: "/tools/vial-inventory-tracker", label: "Vial Inventory Tracker", desc: "Track vial counts, expiry dates, reconstituted status" },
   { href: "/tools/biomarker-reference", label: "Biomarker Reference", desc: "32 lab markers with compound interactions and ranges" },
   { href: "/tools/peptide-timer", label: "Peptide Injection Timer", desc: "Live countdown to next dose, multi-compound status tracking" },
+  { href: "/tools/injection-site-diagram", label: "Injection Site Diagram", desc: "Interactive body diagram — needle length, angle, volume limits per zone" },
+  { href: "/tools/peptide-research-planner", label: "Peptide Research Planner", desc: "All-in-one 4-step wizard to generate a complete printable research protocol" },
+  { href: "/compare", label: "Compare Compounds", desc: "Side-by-side purity, MW, storage, and pricing for up to 3 compounds" },
 ];
 
 // Deduplicated tools
 const TOOLS_DEDUPED = Array.from(
   new Map(TOOLS.map((t) => [t.href, t])).values()
-).filter((t) => t.href.startsWith("/tools") || t.href === "/quiz");
+).filter((t) => t.href.startsWith("/tools") || t.href === "/quiz" || t.href === "/compare");
 
 const GUIDES = [
   {
@@ -298,7 +301,7 @@ export default function ResourcesPage() {
                   className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
                   style={{ backgroundColor: "rgba(164,176,138,0.12)" }}
                 >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A4B08A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B8A44C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/>
                   </svg>
                 </div>
@@ -333,13 +336,13 @@ export default function ResourcesPage() {
                   className="w-9 h-9 rounded-xl flex items-center justify-center mb-3"
                   style={{ backgroundColor: "rgba(164,176,138,0.12)" }}
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A4B08A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8A44C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
                   </svg>
                 </div>
                 <h3 className="text-white font-semibold text-sm mb-1 group-hover:text-white transition-colors">{label}</h3>
                 <p className="text-white/45 text-xs leading-relaxed">{desc}</p>
-                <div className="mt-3 flex items-center gap-1 text-xs font-medium" style={{ color: "#A4B08A" }}>
+                <div className="mt-3 flex items-center gap-1 text-xs font-medium" style={{ color: "#B8A44C" }}>
                   Read guide
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -384,7 +387,7 @@ export default function ResourcesPage() {
                 </div>
                 <span
                   className="text-xs px-2.5 py-1 rounded-full font-semibold"
-                  style={{ backgroundColor: "rgba(164,176,138,0.15)", color: "#A4B08A" }}
+                  style={{ backgroundColor: "rgba(164,176,138,0.15)", color: "#B8A44C" }}
                 >
                   {count} articles
                 </span>
@@ -421,7 +424,7 @@ export default function ResourcesPage() {
                     <span
                       key={cat}
                       className="text-xs px-3 py-1 rounded-full"
-                      style={{ backgroundColor: "rgba(164,176,138,0.12)", color: "#A4B08A" }}
+                      style={{ backgroundColor: "rgba(164,176,138,0.12)", color: "#B8A44C" }}
                     >
                       {cat}
                     </span>
@@ -429,12 +432,12 @@ export default function ResourcesPage() {
                 </div>
               </div>
               <div className="hidden md:flex items-center justify-center w-16 h-16 rounded-2xl flex-shrink-0 ml-6" style={{ backgroundColor: "rgba(164,176,138,0.1)" }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/>
                 </svg>
               </div>
             </div>
-            <div className="mt-4 flex items-center gap-1 text-sm font-semibold" style={{ color: "#A4B08A" }}>
+            <div className="mt-4 flex items-center gap-1 text-sm font-semibold" style={{ color: "#B8A44C" }}>
               Browse Compound Index
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M12 5l7 7-7 7"/>

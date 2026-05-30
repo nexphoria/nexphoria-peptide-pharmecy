@@ -132,7 +132,7 @@ export default function ScienceClient() {
       >
         <div className="container-nex py-20 md:py-44">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0} className="max-w-2xl">
-            <span className="eyebrow mb-5 block" style={{ color: "#A4B08A" }}>Analytical Science</span>
+            <span className="eyebrow mb-5 block" style={{ color: "#B8A44C" }}>Analytical Science</span>
             <h1
               className="font-medium tracking-tight mb-6 text-near-black"
               style={{
@@ -170,7 +170,7 @@ export default function ScienceClient() {
               >
                 <div
                   className="inline-flex items-center justify-center font-mono text-sm font-medium px-3 py-1.5 mb-4 bg-white"
-                  style={{ color: "#A4B08A" }}
+                  style={{ color: "#B8A44C" }}
                 >
                   {method.code}
                 </div>
@@ -220,13 +220,13 @@ export default function ScienceClient() {
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             className="mb-14"
           >
-            <span className="eyebrow mb-4 block" style={{ color: "#A4B08A" }}>Compound Classes</span>
+            <span className="eyebrow mb-4 block" style={{ color: "#B8A44C" }}>Compound Classes</span>
             <h2
               className="font-medium tracking-tight text-near-black max-w-2xl"
               style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", letterSpacing: "-0.01em" }}
             >
               Understanding Peptide{" "}
-              <em className="italic" style={{ color: "#A4B08A" }}>Research Areas</em>
+              <em className="italic" style={{ color: "#B8A44C" }}>Research Areas</em>
             </h2>
           </motion.div>
 
@@ -245,7 +245,7 @@ export default function ScienceClient() {
                     <span
                       key={c}
                       className="inline-flex items-center px-2.5 py-1 text-xs font-mono border"
-                      style={{ borderColor: "#D8D4CC", color: "#A4B08A" }}
+                      style={{ borderColor: "#D8D4CC", color: "#B8A44C" }}
                     >
                       {c}
                     </span>
@@ -269,7 +269,7 @@ export default function ScienceClient() {
         <div className="container-nex">
           <div className="grid lg:grid-cols-3 gap-12">
             <div>
-              <span className="eyebrow mb-4 block" style={{ color: "#A4B08A" }}>Documentation</span>
+              <span className="eyebrow mb-4 block" style={{ color: "#B8A44C" }}>Documentation</span>
               <h2
                 className="tracking-tight mb-4 text-near-black"
                 style={{ fontSize: "2rem", fontWeight: 500 }}
@@ -304,7 +304,7 @@ export default function ScienceClient() {
       <section className="py-20 border-b" style={{ backgroundColor: "#1A1A18", borderColor: "#2A2A28" }}>
         <div className="container-nex">
           <div className="mb-12 text-center">
-            <span className="eyebrow mb-4 block" style={{ color: "#A4B08A" }}>Testing Partners</span>
+            <span className="eyebrow mb-4 block" style={{ color: "#B8A44C" }}>Testing Partners</span>
             <h2
               className="tracking-tight font-medium mx-auto max-w-xl"
               style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", color: "#F5F5F0" }}
@@ -340,7 +340,7 @@ export default function ScienceClient() {
                 className="p-6 rounded-xl border"
                 style={{ borderColor: "#2A2A28", backgroundColor: "#1C1C1A" }}
               >
-                <div className="text-xs font-mono font-semibold mb-1" style={{ color: "#A4B08A" }}>
+                <div className="text-xs font-mono font-semibold mb-1" style={{ color: "#B8A44C" }}>
                   {lab.spec}
                 </div>
                 <h3 className="text-sm font-semibold mb-3" style={{ color: "#F5F5F0" }}>

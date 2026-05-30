@@ -45,6 +45,7 @@ const footerNav = {
     { label: "Customer Support", href: "/contact" },
     { label: "FAQs", href: "/faq" },
     { label: "Shipping & Cold-Chain", href: "/shipping" },
+    { label: "Compare Compounds", href: "/compare" },
     { label: "Research Tools", href: "/tools" },
     { label: "BAC Water Guide", href: "/tools/bac-water-guide" },
     { label: "Storage Guide", href: "/guides/storage" },

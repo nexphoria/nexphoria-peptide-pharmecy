@@ -27,7 +27,7 @@ export default function ProtocolsPage() {
           </p>
           <h1
             className="text-4xl md:text-5xl mb-6"
-            style={{ fontWeight: 200, color: "#FFFFF3", lineHeight: 1.05, letterSpacing: "-0.02em" }}
+            style={{ fontWeight: 200, color: "#F9F9F9", lineHeight: 1.05, letterSpacing: "-0.02em" }}
           >
             The research-cycle model.
           </h1>
@@ -261,7 +261,7 @@ export default function ProtocolsPage() {
             <Link
               href="/products"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold uppercase tracking-wide text-sm transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "#A4B08A", color: "#000000" }}
+              style={{ backgroundColor: "#B8A44C", color: "#000000" }}
             >
               Browse the Catalog
             </Link>

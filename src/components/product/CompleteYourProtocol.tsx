@@ -51,8 +51,8 @@ export default function CompleteYourProtocol({ currentSlug }: Props) {
         >
           {/* Header */}
           <div className="flex items-center gap-2 mb-2">
-            <Layers className="w-4 h-4 text-[#A4B08A]" />
-            <p className="text-[11px] uppercase tracking-wider text-[#A4B08A] font-semibold">
+            <Layers className="w-4 h-4 text-[#B8A44C]" />
+            <p className="text-[11px] uppercase tracking-wider text-[#B8A44C] font-semibold">
               Complete Your Protocol
             </p>
           </div>
@@ -73,8 +73,8 @@ export default function CompleteYourProtocol({ currentSlug }: Props) {
 
                 {/* Plus connector */}
                 <div className="flex-shrink-0 flex flex-col items-center gap-1">
-                  <div className="w-8 h-8 rounded-full bg-[#A4B08A]/15 flex items-center justify-center">
-                    <span className="text-sm font-bold text-[#A4B08A]">+</span>
+                  <div className="w-8 h-8 rounded-full bg-[#B8A44C]/15 flex items-center justify-center">
+                    <span className="text-sm font-bold text-[#B8A44C]">+</span>
                   </div>
                   <ArrowRight className="w-3 h-3 text-[#CCCCC0]" />
                   <span className="text-[9px] uppercase tracking-widest text-[#999]">stack</span>
@@ -91,7 +91,7 @@ export default function CompleteYourProtocol({ currentSlug }: Props) {
                   <div className="text-2xl font-semibold tracking-tight">
                     ${stackPrice}
                   </div>
-                  <div className="text-[10px] text-[#A4B08A] font-medium mt-0.5">
+                  <div className="text-[10px] text-[#B8A44C] font-medium mt-0.5">
                     Save ${stackDiscount} (5% stack discount)
                   </div>
                 </div>
@@ -103,7 +103,7 @@ export default function CompleteYourProtocol({ currentSlug }: Props) {
                   <div className="text-xs text-[#999] line-through">${combinedPrice}</div>
                   <div className="text-xl font-semibold">${stackPrice}</div>
                 </div>
-                <span className="text-[10px] text-[#A4B08A] font-medium">
+                <span className="text-[10px] text-[#B8A44C] font-medium">
                   Save ${stackDiscount} (5% off)
                 </span>
               </div>
@@ -114,7 +114,7 @@ export default function CompleteYourProtocol({ currentSlug }: Props) {
               <button
                 onClick={handleAddBoth}
                 className="flex-1 flex items-center justify-center gap-2 px-5 py-3 rounded-lg font-medium text-sm text-white transition-all hover:opacity-90 active:scale-[0.98]"
-                style={{ backgroundColor: "#A4B08A" }}
+                style={{ backgroundColor: "#B8A44C" }}
               >
                 <ShoppingCart className="w-4 h-4" />
                 Add Both to Order
@@ -166,7 +166,7 @@ function ProductMini({
             className="w-full h-full object-cover"
           />
         ) : (
-          <span className="text-[10px] font-semibold text-[#A4B08A] text-center px-1 leading-tight">
+          <span className="text-[10px] font-semibold text-[#B8A44C] text-center px-1 leading-tight">
             {product.name}
           </span>
         )}
@@ -175,7 +175,7 @@ function ProductMini({
       {/* Info */}
       <div className="min-w-0">
         {isCurrent && (
-          <span className="text-[9px] uppercase tracking-widest text-[#A4B08A] font-semibold block mb-0.5">
+          <span className="text-[9px] uppercase tracking-widest text-[#B8A44C] font-semibold block mb-0.5">
             Current
           </span>
         )}

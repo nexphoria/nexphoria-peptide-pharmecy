@@ -132,7 +132,7 @@ export default function ShippingPage() {
           <div className="mt-8 max-w-3xl">
             <p
               className="eyebrow mb-4"
-              style={{ color: "#A4B08A" }}
+              style={{ color: "#B8A44C" }}
             >
               Cold-Chain Logistics
             </p>
@@ -360,7 +360,7 @@ export default function ShippingPage() {
                 <li key={item.title} className="flex gap-4">
                   <div
                     className="w-1.5 h-1.5 rounded-full mt-2 shrink-0"
-                    style={{ backgroundColor: "#A4B08A" }}
+                    style={{ backgroundColor: "#B8A44C" }}
                   />
                   <div>
                     <span
@@ -412,7 +412,7 @@ export default function ShippingPage() {
                     </span>
                     <span
                       className="text-sm font-semibold"
-                      style={{ color: "#A4B08A" }}
+                      style={{ color: "#B8A44C" }}
                     >
                       {row.value}
                     </span>
@@ -481,7 +481,7 @@ export default function ShippingPage() {
                   <li key={i} className="flex gap-3 text-sm" style={{ color: "#3A3A32" }}>
                     <span
                       className="font-bold text-xs mt-0.5 shrink-0"
-                      style={{ color: "#A4B08A" }}
+                      style={{ color: "#B8A44C" }}
                     >
                       {i + 1}.
                     </span>
@@ -615,7 +615,7 @@ export default function ShippingPage() {
                     <li key={i} className="flex gap-2 text-sm" style={{ color: "#5A5A52" }}>
                       <span
                         className="text-xs font-semibold shrink-0 mt-0.5"
-                        style={{ color: "#A4B08A" }}
+                        style={{ color: "#B8A44C" }}
                       >
                         {i + 1}.
                       </span>
@@ -674,7 +674,7 @@ export default function ShippingPage() {
             <Link
               href="/products"
               className="px-6 py-3 rounded text-sm font-semibold transition-all"
-              style={{ backgroundColor: "#A4B08A", color: "#1A1A18" }}
+              style={{ backgroundColor: "#B8A44C", color: "#1A1A18" }}
             >
               Browse Compounds
             </Link>

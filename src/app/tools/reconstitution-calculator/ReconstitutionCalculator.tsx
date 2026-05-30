@@ -44,7 +44,7 @@ export default function ReconstitutionCalculatorPage() {
   const isValid = vialMgNum > 0 && concNum > 0;
 
   return (
-    <div style={{ backgroundColor: "#FFFFF3", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "#F9F9F9", minHeight: "100vh" }}>
       {/* Hero */}
       <section
         className="relative px-6 pt-32 pb-16 md:pt-40 md:pb-20"
@@ -68,7 +68,7 @@ export default function ReconstitutionCalculatorPage() {
           </p>
           <h1
             className="text-4xl md:text-5xl mb-5 tracking-tight"
-            style={{ fontWeight: 200, color: "#FFFFF3", lineHeight: 1.05 }}
+            style={{ fontWeight: 200, color: "#F9F9F9", lineHeight: 1.05 }}
           >
             Reconstitution Calculator
           </h1>
@@ -100,8 +100,8 @@ export default function ReconstitutionCalculatorPage() {
                   onClick={() => applyPreset(p)}
                   className="text-xs px-3 py-1.5 rounded-sm transition-all"
                   style={{
-                    border: `1px solid ${preset === p.label ? "#A4B08A" : "#DDDBD5"}`,
-                    backgroundColor: preset === p.label ? "#A4B08A22" : "transparent",
+                    border: `1px solid ${preset === p.label ? "#B8A44C" : "#DDDBD5"}`,
+                    backgroundColor: preset === p.label ? "#B8A44C22" : "transparent",
                     color: preset === p.label ? "#000" : "#555",
                     fontWeight: preset === p.label ? 600 : 400,
                   }}
@@ -118,7 +118,7 @@ export default function ReconstitutionCalculatorPage() {
             style={{
               backgroundColor: "#FFFFFF",
               border: "1px solid #ECEAE4",
-              borderTop: "2px solid #A4B08A",
+              borderTop: "2px solid #B8A44C",
             }}
           >
             <h2
@@ -244,7 +244,7 @@ export default function ReconstitutionCalculatorPage() {
                   <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#888" }}>
                     BAC Water to Add
                   </p>
-                  <p className="text-3xl font-light mb-1" style={{ color: "#FFFFF3" }}>
+                  <p className="text-3xl font-light mb-1" style={{ color: "#F9F9F9" }}>
                     {bacWaterMl} <span className="text-lg" style={{ color: "#A0A0A0" }}>mL</span>
                   </p>
                   <p className="text-xs" style={{ color: "#666" }}>
@@ -260,7 +260,7 @@ export default function ReconstitutionCalculatorPage() {
                   <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#888" }}>
                     Volume Per Dose
                   </p>
-                  <p className="text-3xl font-light mb-1" style={{ color: "#FFFFF3" }}>
+                  <p className="text-3xl font-light mb-1" style={{ color: "#F9F9F9" }}>
                     {doseNum > 0 ? volumePerDoseMl : "—"}{" "}
                     <span className="text-lg" style={{ color: "#A0A0A0" }}>mL</span>
                   </p>
@@ -281,7 +281,7 @@ export default function ReconstitutionCalculatorPage() {
                   <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#888" }}>
                     Doses Per Vial
                   </p>
-                  <p className="text-3xl font-light mb-1" style={{ color: "#FFFFF3" }}>
+                  <p className="text-3xl font-light mb-1" style={{ color: "#F9F9F9" }}>
                     {doseNum > 0 ? dosesPerVial : "—"}{" "}
                     <span className="text-lg" style={{ color: "#A0A0A0" }}>doses</span>
                   </p>
@@ -369,7 +369,7 @@ export default function ReconstitutionCalculatorPage() {
                 <li key={item.step} className="flex gap-4">
                   <div
                     className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-semibold mt-0.5"
-                    style={{ backgroundColor: "#A4B08A22", color: "#7A8A60", border: "1px solid #A4B08A44" }}
+                    style={{ backgroundColor: "#B8A44C22", color: "#7A8A60", border: "1px solid #B8A44C44" }}
                   >
                     {item.step}
                   </div>

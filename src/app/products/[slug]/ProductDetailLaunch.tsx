@@ -28,6 +28,7 @@ const COA_AVAILABLE_SLUGS = new Set([
 ]);
 
 import type { Product, ProductDosage } from "@/lib/products";
+import { products } from "@/lib/products";
 import BuyBox from "@/components/product/BuyBox";
 import StickyAddToOrderBar from "@/components/product/StickyAddToOrderBar";
 import RecentlyViewedBar from "@/components/product/RecentlyViewedBar";
@@ -228,6 +229,10 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                     alt={`${product.name} ${product.size}`}
                     className="max-w-full max-h-full object-contain"
                     style={{ padding: "2rem" }}
+                    fetchPriority="high"
+                    width={400}
+                    height={400}
+                    decoding="async"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center p-12" style={{ backgroundColor: "#1A1A18" }}>
@@ -360,10 +365,10 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                     className="flex-shrink-0 inline-flex items-center gap-1.5 text-xs font-medium px-3 py-2 transition-all duration-300"
                     style={{
                       border: "1px solid #1A1A1A",
-                      borderRadius: "6px",
+                      borderRadius: "999px",
                       color: "#1A1A1A",
                       backgroundColor: "transparent",
-                      letterSpacing: "0.06em",
+                      letterSpacing: "0.1em",
                     }}
                     onMouseEnter={(e) => {
                       (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#1A1A1A";
@@ -389,13 +394,13 @@ export default function ProductDetailLaunch({ product, related }: Props) {
         <div className="container-nex">
           <div className="max-w-3xl">
 
-            <AccordionSection title="About This Compound" defaultOpen={true}>
+            <AccordionSection title="What It Is" defaultOpen={true}>
               <p className="text-sm leading-relaxed" style={{ color: "#555", lineHeight: 1.8 }}>
                 {product.description}
               </p>
             </AccordionSection>
 
-            <AccordionSection title="Mechanism of Action">
+            <AccordionSection title="How It Works">
               <p className="text-sm leading-relaxed" style={{ color: "#555", lineHeight: 1.8 }}>
                 {product.mechanism}
               </p>
@@ -541,7 +546,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
             </AccordionSection>
 
             {product.features.length > 0 && (
-              <AccordionSection title="Key Characteristics">
+              <AccordionSection title="Research Characteristics">
                 <div className="grid sm:grid-cols-2 gap-3">
                   {product.features.map((feature) => (
                     <div key={feature} className="flex items-start gap-3">
@@ -611,6 +616,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                         <img
                           src={getProductImagePath(rp.slug)}
                           alt={rp.name}
+                          loading="lazy"
                           className="max-w-full max-h-full object-contain"
                         />
                       ) : (
@@ -659,6 +665,51 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                 For research context only — not medical advice.
               </p>
               <ResearchVideoEmbed video={PRODUCT_VIDEOS[product.slug]} />
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Compare with Similar — deep-link to /compare */}
+      {product.relatedSlugs && product.relatedSlugs.length > 0 && (
+        <section
+          className="py-10 border-t"
+          style={{ borderColor: "rgba(255,255,255,0.07)", backgroundColor: "#0D0D0D" }}
+        >
+          <div className="container-nex">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
+              <div className="flex-1">
+                <p
+                  className="text-[10px] uppercase tracking-widest font-medium mb-1"
+                  style={{ color: "#C4A265" }}
+                >
+                  Side-by-Side Analysis
+                </p>
+                <h3 className="text-base font-semibold" style={{ color: "#F9F9F9" }}>
+                  Compare {product.name} with Similar Compounds
+                </h3>
+                <p className="text-xs mt-1" style={{ color: "#666" }}>
+                  View purity, MW, storage, and pricing side by side.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2 shrink-0">
+                {/* Compare with top related slug */}
+                <Link
+                  href={`/compare?slugs=${product.slug},${product.relatedSlugs[0]}`}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium transition-colors hover:opacity-80"
+                  style={{ borderRadius: "999px", backgroundColor: "rgba(201,162,75,0.10)", color: "#C9A24B", border: "1px solid rgba(201,162,75,0.25)", letterSpacing: "0.1em", textTransform: "uppercase" }}
+                >
+                  Compare with {products.find((p) => p.slug === product.relatedSlugs[0])?.name ?? product.relatedSlugs[0]}
+                </Link>
+                {/* Compare all related (up to 3 total) */}
+                <Link
+                  href={`/compare?slugs=${[product.slug, ...product.relatedSlugs].slice(0, 3).join(",")}`}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium transition-colors hover:opacity-80"
+                  style={{ borderRadius: "999px", backgroundColor: "rgba(255,255,255,0.06)", color: "#F9F9F9", border: "1px solid rgba(255,255,255,0.12)", letterSpacing: "0.1em", textTransform: "uppercase" }}
+                >
+                  Compare all similar
+                </Link>
+              </div>
             </div>
           </div>
         </section>

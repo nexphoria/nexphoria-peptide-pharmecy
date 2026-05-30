@@ -272,7 +272,7 @@ export default function PeptideCyclePlanner() {
   }
 
   return (
-    <div style={{ backgroundColor: "#0A0A0A", minHeight: "100vh", color: "#FFFFF3" }}>
+    <div style={{ backgroundColor: "#0A0A0A", minHeight: "100vh", color: "#F9F9F9" }}>
       {/* Hero */}
       <section
         className="px-6 py-16 md:py-20"
@@ -310,7 +310,7 @@ export default function PeptideCyclePlanner() {
             className="rounded-sm p-6 md:p-8"
             style={{ backgroundColor: "#111110", border: "1px solid #222220" }}
           >
-            <h2 className="text-base font-medium mb-6" style={{ color: "#FFFFF3" }}>
+            <h2 className="text-base font-medium mb-6" style={{ color: "#F9F9F9" }}>
               Step 1 — Cycle Setup
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
@@ -349,7 +349,7 @@ export default function PeptideCyclePlanner() {
                   className="w-full py-2.5 px-3 rounded-sm text-sm"
                   style={{
                     backgroundColor: "#1A1A18",
-                    color: "#FFFFF3",
+                    color: "#F9F9F9",
                     border: "1px solid #2A2A28",
                     outline: "none",
                   }}
@@ -381,7 +381,7 @@ export default function PeptideCyclePlanner() {
             className="rounded-sm p-6 md:p-8"
             style={{ backgroundColor: "#111110", border: "1px solid #222220" }}
           >
-            <h2 className="text-base font-medium mb-6" style={{ color: "#FFFFF3" }}>
+            <h2 className="text-base font-medium mb-6" style={{ color: "#F9F9F9" }}>
               Step 2 — Add Compounds
             </h2>
             <div className="flex flex-col sm:flex-row gap-3 mb-4">
@@ -391,7 +391,7 @@ export default function PeptideCyclePlanner() {
                 className="flex-1 py-2.5 px-3 rounded-sm text-sm"
                 style={{
                   backgroundColor: "#1A1A18",
-                  color: "#FFFFF3",
+                  color: "#F9F9F9",
                   border: "1px solid #2A2A28",
                   outline: "none",
                 }}
@@ -460,7 +460,7 @@ export default function PeptideCyclePlanner() {
                           value={c.dose}
                           onChange={(e) => updateField(c.id, "dose", e.target.value)}
                           className="w-full py-1.5 px-2 rounded-sm text-xs"
-                          style={{ backgroundColor: "#1A1A18", color: "#FFFFF3", border: "1px solid #2A2A28", outline: "none" }}
+                          style={{ backgroundColor: "#1A1A18", color: "#F9F9F9", border: "1px solid #2A2A28", outline: "none" }}
                         />
                       </div>
                       <div>
@@ -470,7 +470,7 @@ export default function PeptideCyclePlanner() {
                           value={c.unit}
                           onChange={(e) => updateField(c.id, "unit", e.target.value)}
                           className="w-full py-1.5 px-2 rounded-sm text-xs"
-                          style={{ backgroundColor: "#1A1A18", color: "#FFFFF3", border: "1px solid #2A2A28", outline: "none" }}
+                          style={{ backgroundColor: "#1A1A18", color: "#F9F9F9", border: "1px solid #2A2A28", outline: "none" }}
                         />
                       </div>
                       <div>
@@ -480,7 +480,7 @@ export default function PeptideCyclePlanner() {
                           value={c.route}
                           onChange={(e) => updateField(c.id, "route", e.target.value)}
                           className="w-full py-1.5 px-2 rounded-sm text-xs"
-                          style={{ backgroundColor: "#1A1A18", color: "#FFFFF3", border: "1px solid #2A2A28", outline: "none" }}
+                          style={{ backgroundColor: "#1A1A18", color: "#F9F9F9", border: "1px solid #2A2A28", outline: "none" }}
                         />
                       </div>
                       <div>
@@ -490,7 +490,7 @@ export default function PeptideCyclePlanner() {
                           value={c.frequency}
                           onChange={(e) => updateField(c.id, "frequency", e.target.value)}
                           className="w-full py-1.5 px-2 rounded-sm text-xs"
-                          style={{ backgroundColor: "#1A1A18", color: "#FFFFF3", border: "1px solid #2A2A28", outline: "none" }}
+                          style={{ backgroundColor: "#1A1A18", color: "#F9F9F9", border: "1px solid #2A2A28", outline: "none" }}
                         />
                       </div>
                     </div>
@@ -508,7 +508,7 @@ export default function PeptideCyclePlanner() {
                         >
                           −
                         </button>
-                        <span className="text-sm w-8 text-center" style={{ color: "#FFFFF3" }}>
+                        <span className="text-sm w-8 text-center" style={{ color: "#F9F9F9" }}>
                           {c.washoutWeeks}w
                         </span>
                         <button
@@ -606,7 +606,7 @@ export default function PeptideCyclePlanner() {
               style={{ backgroundColor: "#111110", border: "1px solid #222220" }}
             >
               <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
-                <h2 className="text-base font-medium" style={{ color: "#FFFFF3" }}>
+                <h2 className="text-base font-medium" style={{ color: "#F9F9F9" }}>
                   Step 3 — Cycle Calendar
                 </h2>
                 <div className="flex gap-3">
@@ -888,7 +888,7 @@ export default function PeptideCyclePlanner() {
                     textDecoration: "none",
                   }}
                 >
-                  <div className="text-sm font-medium mb-1" style={{ color: "#FFFFF3" }}>
+                  <div className="text-sm font-medium mb-1" style={{ color: "#F9F9F9" }}>
                     {tool.title}
                   </div>
                   <div className="text-xs" style={{ color: "#6B6B60" }}>

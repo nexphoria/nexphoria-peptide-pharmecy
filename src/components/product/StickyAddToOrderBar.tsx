@@ -20,7 +20,7 @@ export default function StickyAddToOrderBar({
   selectedFormat,
   selectedDosage,
   buyBoxRef,
-  accentColor = "#A4B08A",
+  accentColor = "#B8A44C",
 }: StickyAddToOrderBarProps) {
   const [visible, setVisible] = useState(false);
   const { addItem, openDrawer } = useCart();

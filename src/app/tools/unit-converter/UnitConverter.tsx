@@ -89,7 +89,7 @@ function MassTab() {
 
   const selectStyle = {
     backgroundColor: "#1A1A18",
-    color: "#FFFFF3",
+    color: "#F9F9F9",
     border: "1px solid #333",
     borderRadius: "4px",
     padding: "8px 12px",
@@ -100,7 +100,7 @@ function MassTab() {
 
   return (
     <div>
-      <h2 className="text-lg font-medium mb-1" style={{ color: "#FFFFF3" }}>
+      <h2 className="text-lg font-medium mb-1" style={{ color: "#F9F9F9" }}>
         Mass Unit Converter
       </h2>
       <p className="text-sm mb-6" style={{ color: "#888" }}>
@@ -121,7 +121,7 @@ function MassTab() {
             style={{
               backgroundColor: "#1A1A18",
               border: "1px solid #333",
-              color: "#FFFFF3",
+              color: "#F9F9F9",
               outline: "none",
             }}
           />
@@ -164,11 +164,11 @@ function MassTab() {
       <button
         onClick={() => setShowIU(!showIU)}
         className="text-xs mb-4 flex items-center gap-1.5"
-        style={{ color: "#A4B08A", background: "none", border: "none", cursor: "pointer", padding: 0 }}
+        style={{ color: "#B8A44C", background: "none", border: "none", cursor: "pointer", padding: 0 }}
       >
         <span
           className="inline-block w-4 h-4 rounded-sm flex items-center justify-center text-xs font-bold"
-          style={{ border: "1px solid #A4B08A", color: showIU ? "#C9DD69" : "#555" }}
+          style={{ border: "1px solid #B8A44C", color: showIU ? "#C9DD69" : "#555" }}
         >
           {showIU ? "✓" : ""}
         </span>
@@ -242,7 +242,7 @@ function MassTab() {
               ].map((row, i) => (
                 <tr key={i} style={{ borderBottom: "1px solid #1A1A18" }}>
                   {row.map((cell, j) => (
-                    <td key={j} className="py-2 px-3" style={{ color: j === 0 ? "#FFFFF3" : "#A0A0A0" }}>
+                    <td key={j} className="py-2 px-3" style={{ color: j === 0 ? "#F9F9F9" : "#A0A0A0" }}>
                       {typeof cell === "number" ? cell.toString() : cell}
                     </td>
                   ))}
@@ -273,7 +273,7 @@ function SyringeTab() {
 
   const selectStyle = {
     backgroundColor: "#1A1A18",
-    color: "#FFFFF3",
+    color: "#F9F9F9",
     border: "1px solid #333",
     borderRadius: "4px",
     padding: "8px 12px",
@@ -287,7 +287,7 @@ function SyringeTab() {
 
   return (
     <div>
-      <h2 className="text-lg font-medium mb-1" style={{ color: "#FFFFF3" }}>
+      <h2 className="text-lg font-medium mb-1" style={{ color: "#F9F9F9" }}>
         Syringe Unit Converter
       </h2>
       <p className="text-sm mb-6" style={{ color: "#888" }}>
@@ -340,7 +340,7 @@ function SyringeTab() {
             style={{
               backgroundColor: "#1A1A18",
               border: "1px solid #333",
-              color: "#FFFFF3",
+              color: "#F9F9F9",
               outline: "none",
             }}
             placeholder="mL"
@@ -370,7 +370,7 @@ function SyringeTab() {
             style={{
               backgroundColor: "#1A1A18",
               border: "1px solid #333",
-              color: "#FFFFF3",
+              color: "#F9F9F9",
               outline: "none",
             }}
             placeholder="Units"
@@ -405,7 +405,7 @@ function SyringeTab() {
               const u = ml * syringeSize;
               return (
                 <tr key={ml} style={{ borderBottom: "1px solid #1A1A18" }}>
-                  <td className="py-2 px-3" style={{ color: "#FFFFF3" }}>{ml} mL</td>
+                  <td className="py-2 px-3" style={{ color: "#F9F9F9" }}>{ml} mL</td>
                   <td className="py-2 px-3" style={{ color: "#C9DD69" }}>{u} U</td>
                   <td className="py-2 px-3 text-xs" style={{ color: "#666" }}>
                     {Number.isInteger(u / 5) ? `${u / 5} × 5-unit marks` : `between marks`}
@@ -448,7 +448,7 @@ function ConcentrationTab() {
 
   const selectStyle = {
     backgroundColor: "#1A1A18",
-    color: "#FFFFF3",
+    color: "#F9F9F9",
     border: "1px solid #333",
     borderRadius: "4px",
     padding: "8px 12px",
@@ -460,7 +460,7 @@ function ConcentrationTab() {
 
   return (
     <div>
-      <h2 className="text-lg font-medium mb-1" style={{ color: "#FFFFF3" }}>
+      <h2 className="text-lg font-medium mb-1" style={{ color: "#F9F9F9" }}>
         Concentration Unit Converter
       </h2>
       <p className="text-sm mb-6" style={{ color: "#888" }}>
@@ -481,7 +481,7 @@ function ConcentrationTab() {
             style={{
               backgroundColor: "#1A1A18",
               border: "1px solid #333",
-              color: "#FFFFF3",
+              color: "#F9F9F9",
               outline: "none",
             }}
           />
@@ -524,7 +524,7 @@ function ConcentrationTab() {
               style={{
                 backgroundColor: "#1A1A18",
                 border: "1px solid #333",
-                color: "#FFFFF3",
+                color: "#F9F9F9",
                 outline: "none",
               }}
             />
@@ -532,7 +532,7 @@ function ConcentrationTab() {
           <button
             onClick={() => { setUseCustom(!useCustom); setCustomMw(""); }}
             className="text-xs mt-1.5"
-            style={{ color: "#A4B08A", background: "none", border: "none", cursor: "pointer", padding: 0 }}
+            style={{ color: "#B8A44C", background: "none", border: "none", cursor: "pointer", padding: 0 }}
           >
             {useCustom ? "← Use peptide selector" : "Enter custom MW →"}
           </button>
@@ -562,7 +562,7 @@ function ConcentrationTab() {
             </p>
             <p
               className="text-xl font-light"
-              style={{ color: r.highlight ? "#C9DD69" : "#FFFFF3" }}
+              style={{ color: r.highlight ? "#C9DD69" : "#F9F9F9" }}
             >
               {r.value}
             </p>
@@ -575,7 +575,7 @@ function ConcentrationTab() {
         className="rounded-sm p-4 text-xs"
         style={{ backgroundColor: "#0D0D0C", border: "1px solid #2A2A28", color: "#888" }}
       >
-        <strong style={{ color: "#A4B08A" }}>Formula:</strong>{" "}
+        <strong style={{ color: "#B8A44C" }}>Formula:</strong>{" "}
         ng/mL = nmol/L × MW (Da) ÷ 1000{" "}
         <span style={{ color: "#555" }}>|</span>{" "}
         nmol/L = ng/mL ÷ MW (Da) × 1000<br />
@@ -608,7 +608,7 @@ function ConcentrationTab() {
                   onClick={() => { setSelectedPeptide(p); setUseCustom(false); }}
                   style={{ borderBottom: "1px solid #1A1A18" }}
                 >
-                  <td className="py-2 px-3" style={{ color: selectedPeptide.slug === p.slug ? "#C9DD69" : "#FFFFF3" }}>
+                  <td className="py-2 px-3" style={{ color: selectedPeptide.slug === p.slug ? "#C9DD69" : "#F9F9F9" }}>
                     {p.name}
                     {selectedPeptide.slug === p.slug && (
                       <span className="ml-2 text-xs" style={{ color: "#C9DD69" }}>← in use</span>
@@ -662,7 +662,7 @@ function DilutionTab() {
 
   const selectStyle = {
     backgroundColor: "#1A1A18",
-    color: "#FFFFF3",
+    color: "#F9F9F9",
     border: "1px solid #333",
     borderRadius: "4px",
     padding: "8px 12px",
@@ -675,7 +675,7 @@ function DilutionTab() {
 
   return (
     <div>
-      <h2 className="text-lg font-medium mb-1" style={{ color: "#FFFFF3" }}>
+      <h2 className="text-lg font-medium mb-1" style={{ color: "#F9F9F9" }}>
         Dilution Factor Calculator
       </h2>
       <p className="text-sm mb-6" style={{ color: "#888" }}>
@@ -696,7 +696,7 @@ function DilutionTab() {
             style={{
               backgroundColor: "#1A1A18",
               border: "1px solid #333",
-              color: "#FFFFF3",
+              color: "#F9F9F9",
               outline: "none",
             }}
           />
@@ -720,7 +720,7 @@ function DilutionTab() {
             style={{
               backgroundColor: "#1A1A18",
               border: "1px solid #333",
-              color: "#FFFFF3",
+              color: "#F9F9F9",
               outline: "none",
             }}
           />
@@ -743,7 +743,7 @@ function DilutionTab() {
           style={{
             backgroundColor: "#1A1A18",
             border: "1px solid #333",
-            color: "#FFFFF3",
+            color: "#F9F9F9",
             outline: "none",
           }}
           step="0.1"
@@ -799,16 +799,16 @@ function DilutionTab() {
           className="rounded-sm p-5 text-sm"
           style={{ backgroundColor: "#0D0D0C", border: "1px solid #2A2A28" }}
         >
-          <p className="text-xs uppercase tracking-wider mb-3" style={{ color: "#A4B08A" }}>
+          <p className="text-xs uppercase tracking-wider mb-3" style={{ color: "#B8A44C" }}>
             Preparation Protocol
           </p>
           <ol className="list-decimal list-inside space-y-1.5" style={{ color: "#A0A0A0" }}>
             <li>Begin with a clean {fmt(finalVol, 2)} mL total volume container.</li>
             <li>
-              Add <strong style={{ color: "#FFFFF3" }}>{fmt(V1, 4)} mL ({fmt(V1 * 1000, 2)} µL)</strong> of stock solution ({fmt(parseNum(stockConc), 3)} {stockUnit}).
+              Add <strong style={{ color: "#F9F9F9" }}>{fmt(V1, 4)} mL ({fmt(V1 * 1000, 2)} µL)</strong> of stock solution ({fmt(parseNum(stockConc), 3)} {stockUnit}).
             </li>
             <li>
-              Add <strong style={{ color: "#FFFFF3" }}>{fmt(diluentVol, 4)} mL ({fmt(diluentVol * 1000, 2)} µL)</strong> of diluent (BAC water, saline, or buffer).
+              Add <strong style={{ color: "#F9F9F9" }}>{fmt(diluentVol, 4)} mL ({fmt(diluentVol * 1000, 2)} µL)</strong> of diluent (BAC water, saline, or buffer).
             </li>
             <li>
               Gently swirl to mix. Do not vortex or shake vigorously.
@@ -825,7 +825,7 @@ function DilutionTab() {
         className="mt-5 rounded-sm p-4 text-xs"
         style={{ backgroundColor: "#0D0D0C", border: "1px solid #2A2A28", color: "#888" }}
       >
-        <strong style={{ color: "#A4B08A" }}>Formula:</strong>{" "}
+        <strong style={{ color: "#B8A44C" }}>Formula:</strong>{" "}
         C₁V₁ = C₂V₂ → V₁ = C₂ × V₂ / C₁ — where C₁ = stock concentration, V₁ = stock volume to add, C₂ = target concentration, V₂ = final volume.
       </div>
     </div>
@@ -837,7 +837,7 @@ export default function UnitConverter() {
   const [activeTab, setActiveTab] = useState<Tab>("mass");
 
   return (
-    <div style={{ backgroundColor: "#FFFFF3", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "#F9F9F9", minHeight: "100vh" }}>
       {/* Hero */}
       <section
         className="relative px-6 pt-32 pb-12 md:pt-40 md:pb-16"
@@ -858,7 +858,7 @@ export default function UnitConverter() {
           </p>
           <h1
             className="text-4xl md:text-5xl mb-5 tracking-tight"
-            style={{ fontWeight: 200, color: "#FFFFF3", lineHeight: 1.05 }}
+            style={{ fontWeight: 200, color: "#F9F9F9", lineHeight: 1.05 }}
           >
             Unit Converter
           </h1>
@@ -951,7 +951,7 @@ export default function UnitConverter() {
                 <p className="text-xs" style={{ color: "#888" }}>
                   {link.desc}
                 </p>
-                <p className="text-xs mt-2 font-medium" style={{ color: "#A4B08A" }}>
+                <p className="text-xs mt-2 font-medium" style={{ color: "#B8A44C" }}>
                   Open →
                 </p>
               </Link>

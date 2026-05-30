@@ -83,9 +83,9 @@ const TEMP_INFO = {
   },
   fridge: {
     label: "2–8°C Refrigerator",
-    color: "#A4B08A",
-    bg: "#A4B08A15",
-    border: "#A4B08A40",
+    color: "#B8A44C",
+    bg: "#B8A44C15",
+    border: "#B8A44C40",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="5" y="2" width="14" height="20" rx="2"/>
@@ -135,7 +135,7 @@ const CATEGORIES = ["All", ...Array.from(new Set(STORAGE_DATA.map((p) => p.categ
 
 export default function StorageGuidePage() {
   return (
-    <div style={{ backgroundColor: "#FFFFF3", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "#F9F9F9", minHeight: "100vh" }}>
       {/* Hero */}
       <section
         className="relative px-6 pt-32 pb-16 md:pt-40 md:pb-20"
@@ -156,7 +156,7 @@ export default function StorageGuidePage() {
           </p>
           <h1
             className="text-4xl md:text-5xl mb-5 tracking-tight"
-            style={{ fontWeight: 200, color: "#FFFFF3", lineHeight: 1.05 }}
+            style={{ fontWeight: 200, color: "#F9F9F9", lineHeight: 1.05 }}
           >
             Peptide Storage Guide
           </h1>
@@ -195,7 +195,7 @@ export default function StorageGuidePage() {
             {[
               {
                 title: "Lyophilized (Dry Powder)",
-                color: "#A4B08A",
+                color: "#B8A44C",
                 points: [
                   "Most stable form — typically 24 months at −20°C when stored desiccated",
                   "Keep sealed in original vial until ready to reconstitute",
@@ -450,7 +450,7 @@ export default function StorageGuidePage() {
                     solvent: "Bacteriostatic Water (BAC)",
                     stability: "30 days",
                     notes: "Recommended for active-use multi-dose vials. Benzyl alcohol prevents microbial growth.",
-                    color: "#A4B08A",
+                    color: "#B8A44C",
                   },
                   {
                     condition: "4°C (Refrigerator)",
@@ -561,7 +561,7 @@ export default function StorageGuidePage() {
                 name: "GHK-Cu",
                 slug: "ghk-cu",
                 reason: "Fridge-stable, light-sensitive",
-                color: "#A4B08A",
+                color: "#B8A44C",
                 notes: [
                   "Do NOT freeze — ice crystal formation degrades the copper complex",
                   "Store at 2–8°C; avoid freeze-thaw cycles entirely",
@@ -660,13 +660,13 @@ export default function StorageGuidePage() {
           </p>
           <h2
             className="text-2xl mb-10 tracking-tight"
-            style={{ fontWeight: 200, color: "#FFFFF3" }}
+            style={{ fontWeight: 200, color: "#F9F9F9" }}
           >
             Storage Checklist
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wider mb-4" style={{ color: "#A4B08A" }}>
+              <h3 className="text-sm font-semibold uppercase tracking-wider mb-4" style={{ color: "#B8A44C" }}>
                 Do
               </h3>
               <ul className="space-y-3">
@@ -683,7 +683,7 @@ export default function StorageGuidePage() {
                   "Check for turbidity or color change before each use",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "rgba(255,255,255,0.7)", lineHeight: 1.5 }}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A4B08A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 mt-0.5">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8A44C" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 mt-0.5">
                       <polyline points="20 6 9 17 4 12"/>
                     </svg>
                     {item}
@@ -761,13 +761,13 @@ export default function StorageGuidePage() {
                   </span>
                   <span
                     className="text-xs px-1.5 py-0.5 rounded-sm"
-                    style={{ backgroundColor: "#A4B08A22", color: "#7A8A60", border: "1px solid #A4B08A44", fontWeight: 500 }}
+                    style={{ backgroundColor: "#B8A44C22", color: "#7A8A60", border: "1px solid #B8A44C44", fontWeight: 500 }}
                   >
                     {link.badge}
                   </span>
                 </div>
                 <p className="text-xs leading-relaxed" style={{ color: "#666666" }}>{link.desc}</p>
-                <p className="text-xs mt-3 font-medium" style={{ color: "#A4B08A" }}>Open →</p>
+                <p className="text-xs mt-3 font-medium" style={{ color: "#B8A44C" }}>Open →</p>
               </Link>
             ))}
           </div>

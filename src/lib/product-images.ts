@@ -18,5 +18,9 @@ export function hasProductPhoto(slug: string): boolean {
 }
 
 export function getProductImagePath(slug: string): string {
+  return `/products/${slug}.webp`;
+}
+
+export function getProductImagePathPng(slug: string): string {
   return `/products/${slug}.png`;
 }

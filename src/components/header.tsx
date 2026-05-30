@@ -9,6 +9,7 @@ import { SearchTrigger } from "@/components/SearchModal";
 const SHOP_CATEGORIES = [
   {
     group: "Recovery",
+    cat: "Recovery & Healing",
     items: [
       { label: "BPC-157", href: "/products/bpc-157", sub: "Tissue repair" },
       { label: "TB-500", href: "/products/tb-500", sub: "Actin binding" },
@@ -16,7 +17,8 @@ const SHOP_CATEGORIES = [
     ],
   },
   {
-    group: "Metabolic",
+    group: "Weight Management",
+    cat: "Weight Management",
     items: [
       { label: "Semaglutide", href: "/products/semaglutide", sub: "GLP-1 agonist" },
       { label: "Tirzepatide", href: "/products/tirzepatide", sub: "GLP-1/GIP dual" },
@@ -25,6 +27,7 @@ const SHOP_CATEGORIES = [
   },
   {
     group: "Growth Hormone",
+    cat: "Growth Hormone",
     items: [
       { label: "Ipamorelin", href: "/products/ipamorelin", sub: "GH secretagogue" },
       { label: "Sermorelin", href: "/products/sermorelin", sub: "GHRH analog" },
@@ -33,6 +36,7 @@ const SHOP_CATEGORIES = [
   },
   {
     group: "Cognitive",
+    cat: "Cognitive",
     items: [
       { label: "Selank", href: "/products/selank", sub: "Anxiolytic peptide" },
       { label: "Semax", href: "/products/semax", sub: "Nootropic analog" },
@@ -130,7 +134,7 @@ export function Header() {
               className={`flex items-center gap-1 px-3 py-2 text-[11px] rounded-md transition-colors uppercase ${
                 activeDropdown === "shop" ? "text-black" : "text-black/60 hover:text-black"
               }`}
-              style={{ letterSpacing: "0.12em", fontWeight: 500 }}
+              style={{ letterSpacing: "0.15em", fontWeight: 500 }}
             >
               Shop
               <ChevronDown
@@ -161,6 +165,16 @@ export function Header() {
                             </Link>
                           </li>
                         ))}
+                        <li>
+                          <Link
+                            href={`/products?cat=${encodeURIComponent(group.cat)}`}
+                            onClick={() => setActiveDropdown(null)}
+                            className="block px-2 py-1 text-xs font-medium hover:underline"
+                            style={{ color: "#C9A96E" }}
+                          >
+                            View all {group.group} &rarr;
+                          </Link>
+                        </li>
                       </ul>
                     </div>
                   ))}
@@ -172,7 +186,7 @@ export function Header() {
                     className="text-sm font-medium hover:underline"
                     style={{ color: "#C9A96E" }}
                   >
-                    View All Compounds ({20})
+                    View All Compounds (36)
                   </Link>
                   <Link
                     href="/build-your-stack"
@@ -193,7 +207,7 @@ export function Header() {
               className={`flex items-center gap-1 px-3 py-2 text-[11px] rounded-md transition-colors uppercase ${
                 activeDropdown === "research" ? "text-black" : "text-black/60 hover:text-black"
               }`}
-              style={{ letterSpacing: "0.12em", fontWeight: 500 }}
+              style={{ letterSpacing: "0.15em", fontWeight: 500 }}
             >
               Research
               <ChevronDown
@@ -258,7 +272,7 @@ export function Header() {
               key={link.href}
               href={link.href}
               className="px-3 py-2 text-[11px] uppercase text-black/60 hover:text-black rounded-md transition-colors"
-              style={{ letterSpacing: "0.12em", fontWeight: 500 }}
+              style={{ letterSpacing: "0.15em", fontWeight: 500 }}
             >
               {link.label}
             </Link>
@@ -270,10 +284,10 @@ export function Header() {
           <SearchTrigger />
           <button
             onClick={openDrawer}
-            className="relative p-2 hover:opacity-70 transition-opacity"
+            className="relative p-2 hover:opacity-60 transition-opacity"
             aria-label="Open cart"
           >
-            <ShoppingBag className="w-5 h-5" />
+            <ShoppingBag className="w-5 h-5" strokeWidth={1.5} />
             {totalItems > 0 && (
               <span
                 className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full text-[10px] font-bold flex items-center justify-center text-white"
@@ -283,13 +297,6 @@ export function Header() {
               </span>
             )}
           </button>
-          <Link
-            href="/products"
-            className="text-xs font-medium hover:opacity-60 transition-opacity"
-            style={{ letterSpacing: "0.12em", color: "#1A1A1A" }}
-          >
-            Explore
-          </Link>
         </div>
 
         {/* Mobile: Cart + Hamburger */}
@@ -299,7 +306,7 @@ export function Header() {
             className="relative flex items-center justify-center w-11 h-11"
             aria-label="Open cart"
           >
-            <ShoppingBag className="w-5 h-5" />
+            <ShoppingBag className="w-5 h-5" strokeWidth={1.5} />
             {totalItems > 0 && (
               <span
                 className="absolute top-1 right-1 w-4 h-4 rounded-full text-[10px] font-bold flex items-center justify-center text-white"
@@ -314,7 +321,7 @@ export function Header() {
             className="flex items-center justify-center w-11 h-11"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileMenuOpen ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
           </button>
         </div>
       </div>
@@ -337,7 +344,7 @@ export function Header() {
             {/* Shop accordion */}
             <button
               className="flex items-center justify-between py-3 text-[11px] uppercase font-medium text-black/70 border-b border-[#E5E5E5]"
-              style={{ letterSpacing: "0.12em" }}
+              style={{ letterSpacing: "0.15em" }}
               onClick={() => setMobileSection(mobileSection === "shop" ? null : "shop")}
             >
               Shop
@@ -375,7 +382,7 @@ export function Header() {
             {/* Research accordion */}
             <button
               className="flex items-center justify-between py-3 text-[11px] uppercase font-medium text-black/70 border-b border-[#E5E5E5]"
-              style={{ letterSpacing: "0.12em" }}
+              style={{ letterSpacing: "0.15em" }}
               onClick={() => setMobileSection(mobileSection === "research" ? null : "research")}
             >
               Research

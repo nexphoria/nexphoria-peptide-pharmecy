@@ -24,7 +24,7 @@ interface Props {
 let _vialCounter = 0;
 
 export default function ProductVial({ productName, dosage, category, accentColor, size = "default" }: Props) {
-  const capColor = accentColor ?? categoryAccentColors[category] ?? "#A4B08A";
+  const capColor = accentColor ?? categoryAccentColors[category] ?? "#B8A44C";
   // Generate stable unique IDs per render instance to avoid SVG gradient ID collisions
   const uid = useMemo(() => {
     _vialCounter += 1;

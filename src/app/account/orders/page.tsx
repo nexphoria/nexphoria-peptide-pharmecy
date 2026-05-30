@@ -133,14 +133,14 @@ export default function OrdersPage() {
               style={{ backgroundColor: "rgba(164,176,138,0.15)" }}
             >
               {/* Package icon */}
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 10V20a1 1 0 01-1 1H4a1 1 0 01-1-1V10" />
                 <path d="M23 3H1l2 7h18l2-7z" />
                 <path d="M12 3v7" />
               </svg>
             </div>
             <div>
-              <h1 className="text-2xl font-light mb-1.5" style={{ color: "#FFFFF3", letterSpacing: "-0.01em" }}>
+              <h1 className="text-2xl font-light mb-1.5" style={{ color: "#F9F9F9", letterSpacing: "-0.01em" }}>
                 Order Lookup
               </h1>
               <p className="text-sm" style={{ color: "rgba(255,255,255,0.4)" }}>
@@ -157,7 +157,7 @@ export default function OrdersPage() {
       <div className="max-w-3xl mx-auto px-6 py-14">
 
         {/* Lookup form card */}
-        <div className="rounded-2xl p-8 mb-8" style={{ backgroundColor: "#FFFFF3", boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}>
+        <div className="rounded-2xl p-8 mb-8" style={{ backgroundColor: "#F9F9F9", boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}>
           <h2 className="text-base font-semibold mb-1.5" style={{ color: "#010101" }}>Look Up Your Order</h2>
           <p className="text-sm mb-7 leading-relaxed" style={{ color: "#7F7F7D" }}>
             Enter the email address used at checkout and your Stripe order confirmation ID. Both can be found in your confirmation email.
@@ -182,7 +182,7 @@ export default function OrdersPage() {
                   color: "#010101",
                   outline: "none",
                 }}
-                onFocus={(e) => (e.currentTarget.style.borderColor = "#A4B08A")}
+                onFocus={(e) => (e.currentTarget.style.borderColor = "#B8A44C")}
                 onBlur={(e) => (e.currentTarget.style.borderColor = "rgba(0,0,0,0.1)")}
               />
             </div>
@@ -205,7 +205,7 @@ export default function OrdersPage() {
                   color: "#010101",
                   outline: "none",
                 }}
-                onFocus={(e) => (e.currentTarget.style.borderColor = "#A4B08A")}
+                onFocus={(e) => (e.currentTarget.style.borderColor = "#B8A44C")}
                 onBlur={(e) => (e.currentTarget.style.borderColor = "rgba(0,0,0,0.1)")}
               />
               <p className="text-xs mt-1.5" style={{ color: "#B0ADA8" }}>
@@ -219,7 +219,7 @@ export default function OrdersPage() {
               className="w-full py-3 px-6 text-sm font-medium rounded-lg transition-all"
               style={{
                 backgroundColor: ready && state !== "loading" ? "#010101" : "rgba(0,0,0,0.12)",
-                color: ready && state !== "loading" ? "#FFFFF3" : "#9ca3af",
+                color: ready && state !== "loading" ? "#F9F9F9" : "#9ca3af",
                 cursor: ready && state !== "loading" ? "pointer" : "not-allowed",
               }}
             >
@@ -242,7 +242,7 @@ export default function OrdersPage() {
 
           {/* NOT FOUND */}
           {state === "not_found" && (
-            <div className="rounded-2xl p-8 text-center" style={{ backgroundColor: "#FFFFF3", boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}>
+            <div className="rounded-2xl p-8 text-center" style={{ backgroundColor: "#F9F9F9", boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}>
               <div className="w-12 h-12 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: "#fef3c7" }}>
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d97706" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="11" cy="11" r="8" />
@@ -262,7 +262,7 @@ export default function OrdersPage() {
                 >
                   Try Again
                 </button>
-                <Link href="/contact" className="px-5 py-2.5 text-sm rounded-lg font-medium" style={{ backgroundColor: "#010101", color: "#FFFFF3" }}>
+                <Link href="/contact" className="px-5 py-2.5 text-sm rounded-lg font-medium" style={{ backgroundColor: "#010101", color: "#F9F9F9" }}>
                   Contact Support
                 </Link>
               </div>
@@ -298,7 +298,7 @@ export default function OrdersPage() {
           {[
             {
               icon: (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2" y="3" width="20" height="14" rx="2" />
                   <path d="M8 21h8M12 17v4" />
                 </svg>
@@ -308,7 +308,7 @@ export default function OrdersPage() {
             },
             {
               icon: (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z" />
                   <path d="M16 3H8a2 2 0 00-2 2v2h12V5a2 2 0 00-2-2z" />
                 </svg>
@@ -318,7 +318,7 @@ export default function OrdersPage() {
             },
             {
               icon: (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
                 </svg>
               ),
@@ -338,7 +338,7 @@ export default function OrdersPage() {
               ),
             },
           ].map((item, i) => (
-            <div key={i} className="rounded-xl p-5" style={{ backgroundColor: "#FFFFF3", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
+            <div key={i} className="rounded-xl p-5" style={{ backgroundColor: "#F9F9F9", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
               <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: "rgba(164,176,138,0.12)" }}>
                 {item.icon}
               </div>
@@ -361,7 +361,7 @@ export default function OrdersPage() {
 // ---------------------------------------------------------------------------
 function OrderCard({ order }: { order: OrderStatus }) {
   return (
-    <div className="rounded-2xl overflow-hidden" style={{ backgroundColor: "#FFFFF3", boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}>
+    <div className="rounded-2xl overflow-hidden" style={{ backgroundColor: "#F9F9F9", boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}>
       {/* Top bar */}
       <div className="px-8 py-5 flex flex-wrap items-center justify-between gap-3" style={{ borderBottom: "1px solid rgba(0,0,0,0.07)" }}>
         <div>
@@ -401,7 +401,7 @@ function OrderCard({ order }: { order: OrderStatus }) {
             {order.items.map((item, i) => (
               <div key={i} className="flex items-center justify-between py-2 px-3 rounded-lg" style={{ backgroundColor: "#F7F6F1" }}>
                 <div className="flex items-center gap-3">
-                  <span className="text-xs font-medium w-5 h-5 rounded flex items-center justify-center" style={{ backgroundColor: "#A4B08A", color: "#fff" }}>
+                  <span className="text-xs font-medium w-5 h-5 rounded flex items-center justify-center" style={{ backgroundColor: "#B8A44C", color: "#fff" }}>
                     {item.qty}
                   </span>
                   <span className="text-sm font-medium" style={{ color: "#010101" }}>{item.name}</span>
@@ -418,7 +418,7 @@ function OrderCard({ order }: { order: OrderStatus }) {
       {/* Status notice */}
       <div className="px-8 py-5">
         <div className="flex items-start gap-3 p-4 rounded-xl" style={{ backgroundColor: "rgba(164,176,138,0.1)" }}>
-          <svg className="flex-shrink-0 mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A4B08A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="flex-shrink-0 mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <circle cx="12" cy="12" r="10" />
             <path d="M12 8v4M12 16h.01" />
           </svg>

@@ -194,7 +194,7 @@ export default function BuildYourStackPage() {
   }, [selectedProducts, selectedCycle]);
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#FFFFF3", paddingTop: "72px" }}>
+    <div className="min-h-screen" style={{ backgroundColor: "#F9F9F9", paddingTop: "72px" }}>
       {/* Step Progress */}
       <div
         className="border-b"
@@ -213,9 +213,9 @@ export default function BuildYourStackPage() {
                     <div
                       className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold transition-colors ${
                         isComplete
-                          ? "bg-[#A4B08A] text-white"
+                          ? "bg-[#B8A44C] text-white"
                           : isActive
-                          ? "bg-[#A4B08A] text-white"
+                          ? "bg-[#B8A44C] text-white"
                           : "bg-[#E8E5E0] text-[#8A8075]"
                       }`}
                     >
@@ -253,7 +253,7 @@ export default function BuildYourStackPage() {
                       className="flex-1 h-px mx-4"
                       style={{
                         backgroundColor:
-                          step < currentStep ? "#A4B08A" : "#E8E5E0",
+                          step < currentStep ? "#B8A44C" : "#E8E5E0",
                       }}
                     />
                   )}
@@ -286,8 +286,8 @@ export default function BuildYourStackPage() {
                     onClick={() => setSelectedCategory(cat)}
                     className={`px-5 py-2.5 rounded-lg text-sm font-medium transition-all ${
                       selectedCategory === cat
-                        ? "bg-[#A4B08A] text-white border border-[#A4B08A]"
-                        : "bg-white text-[#555] border border-[#E8E5E0] hover:border-[#A4B08A]"
+                        ? "bg-[#B8A44C] text-white border border-[#B8A44C]"
+                        : "bg-white text-[#555] border border-[#E8E5E0] hover:border-[#B8A44C]"
                     }`}
                   >
                     {cat}
@@ -307,8 +307,8 @@ export default function BuildYourStackPage() {
                       layout
                       className={`bg-white rounded-lg p-6 transition-all ${
                         quantity > 0
-                          ? "border-2 border-[#A4B08A] bg-[#A4B08A]/5"
-                          : "border border-[#E8E5E0] hover:border-[#A4B08A]"
+                          ? "border-2 border-[#B8A44C] bg-[#B8A44C]/5"
+                          : "border border-[#E8E5E0] hover:border-[#B8A44C]"
                       }`}
                       style={{
                         boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
@@ -351,7 +351,7 @@ export default function BuildYourStackPage() {
                           {quantity === 0 ? (
                             <button
                               onClick={() => addProduct(product.slug)}
-                              className="w-10 h-10 rounded-full bg-[#A4B08A] text-white flex items-center justify-center hover:bg-[#8A9570] transition-colors"
+                              className="w-10 h-10 rounded-full bg-[#B8A44C] text-white flex items-center justify-center hover:bg-[#8A9570] transition-colors"
                               aria-label="Add product"
                             >
                               <svg
@@ -372,7 +372,7 @@ export default function BuildYourStackPage() {
                             <div className="flex flex-col items-center gap-2">
                               <button
                                 onClick={() => addProduct(product.slug)}
-                                className="w-8 h-8 rounded-full bg-[#A4B08A] text-white flex items-center justify-center hover:bg-[#8A9570] transition-colors"
+                                className="w-8 h-8 rounded-full bg-[#B8A44C] text-white flex items-center justify-center hover:bg-[#8A9570] transition-colors"
                                 aria-label="Add more"
                               >
                                 <svg
@@ -389,12 +389,12 @@ export default function BuildYourStackPage() {
                                   />
                                 </svg>
                               </button>
-                              <span className="text-lg font-bold text-[#A4B08A]">
+                              <span className="text-lg font-bold text-[#B8A44C]">
                                 {quantity}
                               </span>
                               <button
                                 onClick={() => removeProduct(product.slug)}
-                                className="w-8 h-8 rounded-full border-2 border-[#A4B08A] text-[#A4B08A] flex items-center justify-center hover:bg-[#A4B08A] hover:text-white transition-colors"
+                                className="w-8 h-8 rounded-full border-2 border-[#B8A44C] text-[#B8A44C] flex items-center justify-center hover:bg-[#B8A44C] hover:text-white transition-colors"
                                 aria-label="Remove one"
                               >
                                 <svg
@@ -444,8 +444,8 @@ export default function BuildYourStackPage() {
                         onClick={() => setSelectedCycle(option.id)}
                         className={`bg-white rounded-lg p-6 text-left transition-all ${
                           selectedCycle === option.id
-                            ? "border-2 border-[#A4B08A] bg-[#A4B08A]/5"
-                            : "border border-[#E8E5E0] hover:border-[#A4B08A]"
+                            ? "border-2 border-[#B8A44C] bg-[#B8A44C]/5"
+                            : "border border-[#E8E5E0] hover:border-[#B8A44C]"
                         }`}
                         style={{
                           boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
@@ -454,7 +454,7 @@ export default function BuildYourStackPage() {
                         <h3 className="text-xl font-medium text-black mb-2">
                           {option.name}
                         </h3>
-                        <p className="text-lg font-semibold text-[#A4B08A] mb-3">
+                        <p className="text-lg font-semibold text-[#B8A44C] mb-3">
                           {option.savings}
                         </p>
                         <p className="text-sm text-[#555] mb-2">
@@ -512,14 +512,14 @@ export default function BuildYourStackPage() {
                           {/* Dot */}
                           <div
                             className="absolute left-0 w-8 h-8 rounded-full flex items-center justify-center"
-                            style={{ backgroundColor: "#A4B08A" }}
+                            style={{ backgroundColor: "#B8A44C" }}
                           >
                             <div className="w-3 h-3 rounded-full bg-white" />
                           </div>
 
                           {/* Content */}
                           <div>
-                            <p className="text-sm font-semibold text-[#A4B08A] mb-1">
+                            <p className="text-sm font-semibold text-[#B8A44C] mb-1">
                               {item.week}
                             </p>
                             <h3 className="text-xl font-medium text-black mb-2">
@@ -611,7 +611,7 @@ export default function BuildYourStackPage() {
                             <div
                               className={`w-5 h-5 rounded flex items-center justify-center flex-shrink-0 ${
                                 benefit.earned
-                                  ? "bg-[#A4B08A]"
+                                  ? "bg-[#B8A44C]"
                                   : "bg-[#E8E5E0]"
                               }`}
                             >
@@ -655,7 +655,7 @@ export default function BuildYourStackPage() {
                         </span>
                       </div>
                       {cycleDiscount > 0 && (
-                        <div className="flex justify-between text-[#A4B08A]">
+                        <div className="flex justify-between text-[#B8A44C]">
                           <span>Cycle discount ({cycleDiscount * 100}%):</span>
                           <span className="font-semibold">
                             -${(subtotal * cycleDiscount).toFixed(0)}
@@ -690,7 +690,7 @@ export default function BuildYourStackPage() {
                       disabled={!selectedCycle}
                       className={`w-full py-4 rounded-lg font-semibold text-lg transition-colors ${
                         selectedCycle
-                          ? "bg-[#A4B08A] text-black hover:bg-[#8A9570]"
+                          ? "bg-[#B8A44C] text-black hover:bg-[#8A9570]"
                           : "bg-[#E8E5E0] text-[#AAA] cursor-not-allowed"
                       }`}
                     >

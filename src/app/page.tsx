@@ -6,6 +6,9 @@ import { hasProductPhoto, getProductImagePath } from "@/lib/product-images";
 import HomepageContinueResearch from "@/components/HomepageContinueResearch";
 import HeroParallaxImage from "@/components/HeroParallaxImage";
 import SectionReveal from "@/components/SectionReveal";
+import VialSVG from "@/components/VialSVG";
+import { getCategoryColor } from "@/lib/vial-colors";
+import AnnouncementBar from "@/components/AnnouncementBar";
 
 const FEATURED_SLUGS = [
   "bpc-157",
@@ -121,10 +124,13 @@ export default function HomePage() {
 
   return (
     <>
+      {/* ─── TRUST MICROBAR ─── */}
+      <AnnouncementBar />
+
       {/* ─── HERO ─── */}
       <section
         className="relative overflow-hidden"
-        style={{ backgroundColor: "#FAF6F0", minHeight: "100vh" }}
+        style={{ backgroundColor: "#F9F9F9", minHeight: "100vh" }}
       >
 
         {/* ── DESKTOP ── */}
@@ -141,7 +147,7 @@ export default function HomePage() {
               top: 0,
               bottom: 0,
               width: "14%",
-              background: "linear-gradient(to right, #FAF6F0 0%, transparent 100%)",
+              background: "linear-gradient(to right, #F9F9F9 0%, transparent 100%)",
               zIndex: 3,
               pointerEvents: "none",
             }}
@@ -161,11 +167,13 @@ export default function HomePage() {
             }}
           >
             <Image
-              src="/brand/hero-lineup.png"
+              src="/brand/hero-lineup.webp"
               alt="Nexphoria vials"
               width={600}
               height={450}
               className="w-full h-auto"
+              priority
+              sizes="(max-width: 768px) 0vw, 26vw"
               unoptimized
             />
           </div>
@@ -188,11 +196,13 @@ export default function HomePage() {
               }}
             >
               <Image
-                src="/brand/box-detail.jpg"
+                src="/brand/box-detail.webp"
                 alt="Nexphoria box detail"
                 width={200}
                 height={240}
                 className="w-full h-auto object-cover"
+                loading="lazy"
+                sizes="110px"
                 unoptimized
               />
             </div>
@@ -359,15 +369,20 @@ Discover Collection
                 backgroundColor: "#F5F3EE",
               }}
             >
-              <Image
-                src="/brand/packaging-unboxing.png"
-                alt="Nexphoria premium peptide presentation"
-                width={800}
-                height={800}
-                className="w-full h-auto"
-                priority
-                unoptimized
-              />
+              {/* Use smaller mobile-optimized image to reduce LCP bytes */}
+              <picture>
+                <source media="(max-width: 480px)" srcSet="/brand/packaging-unboxing-mobile.webp" type="image/webp" />
+                <Image
+                  src="/brand/packaging-unboxing.webp"
+                  alt="Nexphoria premium peptide presentation"
+                  width={800}
+                  height={534}
+                  className="w-full h-auto"
+                  priority
+                  sizes="(max-width: 480px) 480px, (max-width: 768px) 100vw, 800px"
+                  unoptimized
+                />
+              </picture>
             </div>
           </div>
         </div>
@@ -434,7 +449,7 @@ Discover Collection
 
       {/* ─── SHOP BY RESEARCH CATEGORY ─── */}
       <SectionReveal>
-        <section className="py-20 md:py-28 px-6" style={{ backgroundColor: "#FAF6F0" }}>
+        <section className="py-20 md:py-28 px-6" style={{ backgroundColor: "#F9F9F9" }}>
           <div className="max-w-6xl mx-auto">
             <div className="mb-12">
               <p className="eyebrow mb-4">Shop by Research Category</p>
@@ -506,13 +521,21 @@ Discover Collection
                           <img
                             src={getProductImagePath(product.slug)}
                             alt={product.name}
+                            width={400}
+                            height={224}
                             className="w-full h-full object-cover"
+                            loading="lazy"
+                            decoding="async"
+                            sizes="(max-width: 640px) 100vw, 300px"
                           />
                         ) : (
-                          <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: "#F0EDE7" }}>
-                            <span className="text-sm font-semibold text-[#B8A44C] text-center px-4">
-                              {product.name}
-                            </span>
+                          <div className="w-full h-full flex items-center justify-center p-6" style={{ backgroundColor: "#1A1A18" }}>
+                            <VialSVG
+                              name={product.name}
+                              size={product.dosages?.[0]?.size || product.size || "5mg"}
+                              capColor={getCategoryColor(product.category)}
+                              className="max-h-full"
+                            />
                           </div>
                         )}
                         {/* Badges removed — luxury doesn't label itself */}
@@ -618,11 +641,13 @@ Discover Collection
               <div className="relative">
                 <div className="rounded-lg overflow-hidden">
                   <Image
-                    src="/brand/packaging-unboxing.png"
+                    src="/brand/packaging-unboxing.webp"
                     alt="Nexphoria pharmaceutical-grade packaging"
                     width={700}
                     height={700}
                     className="w-full h-auto"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 700px"
                     unoptimized
                   />
                 </div>

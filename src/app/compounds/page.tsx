@@ -75,7 +75,7 @@ export default function CompoundsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(compoundsSchema) }}
       />
 
-      <div style={{ backgroundColor: "#FFFFF3" }}>
+      <div style={{ backgroundColor: "#F9F9F9" }}>
         {/* Hero */}
         <section
           className="relative px-6 pt-32 pb-16 md:pt-40 md:pb-20"
@@ -90,14 +90,14 @@ export default function CompoundsPage() {
                 { label: "Compounds" },
               ]}
             />
-            <p className="eyebrow mb-5" style={{ color: "#A4B08A" }}>
+            <p className="eyebrow mb-5" style={{ color: "#B8A44C" }}>
               Research Reference
             </p>
             <h1
               className="text-4xl md:text-5xl mb-6"
               style={{
                 fontWeight: 500,
-                color: "#FFFFF3",
+                color: "#F9F9F9",
                 lineHeight: 1.05,
                 letterSpacing: "-0.02em",
               }}
@@ -123,7 +123,7 @@ export default function CompoundsPage() {
                     href={`#${cat.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")}`}
                     className="text-xs px-3 py-1.5 rounded-full transition-opacity hover:opacity-80"
                     style={{
-                      backgroundColor: meta?.color || "#A4B08A",
+                      backgroundColor: meta?.color || "#B8A44C",
                       color: "#010101",
                       fontWeight: 500,
                       letterSpacing: "0.03em",
@@ -182,13 +182,13 @@ export default function CompoundsPage() {
           <div className="max-w-3xl mx-auto text-center">
             <p
               className="text-xs uppercase tracking-widest mb-4"
-              style={{ color: "#A4B08A" }}
+              style={{ color: "#B8A44C" }}
             >
               Ready to Source
             </p>
             <h2
               className="text-3xl md:text-4xl mb-5 font-medium tracking-tight"
-              style={{ color: "#FFFFF3" }}
+              style={{ color: "#F9F9F9" }}
             >
               Every compound ships with a COA.
             </h2>
@@ -208,7 +208,7 @@ export default function CompoundsPage() {
                 className="text-sm px-5 py-2.5 rounded-lg transition-opacity hover:opacity-80"
                 style={{
                   backgroundColor: "rgba(255,255,255,0.08)",
-                  color: "#FFFFF3",
+                  color: "#F9F9F9",
                   border: "1px solid rgba(255,255,255,0.15)",
                 }}
               >

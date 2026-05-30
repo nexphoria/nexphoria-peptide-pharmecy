@@ -54,7 +54,9 @@ export default function BuyBox({
   const basePrice = getBasePrice();
 
   const volumeDiscount = selectedVolume.discount;
-  const effectiveDiscount = volumeDiscount;
+  const effectiveDiscount = purchaseMode === 'subscribe'
+    ? Math.min(volumeDiscount + SUBSCRIBE_DISCOUNT, 0.20)
+    : volumeDiscount;
 
   const unitPrice = effectiveDiscount > 0
     ? +(basePrice * (1 - effectiveDiscount)).toFixed(2)
@@ -62,11 +64,12 @@ export default function BuyBox({
 
   const qty = selectedVolume.qty;
   const totalPrice = +(unitPrice * qty).toFixed(2);
+  const subscribeSavings = +(basePrice * SUBSCRIBE_DISCOUNT * qty).toFixed(2);
 
   const handleAddToOrder = () => {
-    // Add items with volume discount applied
+    const subscriptionMonths = purchaseMode === 'subscribe' ? 3 : 1;
     for (let i = 0; i < selectedVolume.qty; i++) {
-      addItem(product, selectedFormat, selectedDosage, 1, volumeDiscount);
+      addItem(product, selectedFormat, selectedDosage, subscriptionMonths, effectiveDiscount);
     }
     openDrawer();
   };
@@ -88,6 +91,53 @@ export default function BuyBox({
       </div>
       <div style={{ borderBottom: "1px solid #E5E5E5", marginBottom: "1.5rem" }} />
 
+      {/* Purchase Mode Toggle */}
+      <div className="mb-5">
+        <p
+          className="text-[10px] uppercase mb-2.5"
+          style={{ letterSpacing: "0.12em", color: "#888", fontWeight: 500 }}
+        >
+          Purchase Type
+        </p>
+        <div className="grid grid-cols-2 gap-2">
+          {(['one-time', 'subscribe'] as const).map((mode) => {
+            const active = purchaseMode === mode;
+            return (
+              <button
+                key={mode}
+                onClick={() => setPurchaseMode(mode)}
+                className="py-3 px-3 text-center transition-all duration-300"
+                style={{
+                  borderRadius: "999px",
+                  border: active ? "1px solid #C4A265" : "1px solid #E5E5E5",
+                  backgroundColor: active ? "rgba(196,162,101,0.06)" : "transparent",
+                  fontWeight: active ? 500 : 400,
+                  color: active ? "#1A1A1A" : "#666",
+                }}
+                aria-pressed={active}
+              >
+                <div className="text-sm">
+                  {mode === 'one-time' ? 'One-time' : 'Subscribe'}
+                </div>
+                {mode === 'subscribe' && (
+                  <div
+                    className="text-[10px] mt-0.5 font-medium"
+                    style={{ color: active ? "#C4A265" : "#AAA" }}
+                  >
+                    Save 5% / month
+                  </div>
+                )}
+              </button>
+            );
+          })}
+        </div>
+        {purchaseMode === 'subscribe' && (
+          <p className="text-[11px] mt-2" style={{ color: "#888" }}>
+            3-month research cycle · cancel anytime · saves ${subscribeSavings.toFixed(2)} this order
+          </p>
+        )}
+      </div>
+
       {/* Dosage Selection */}
       {selectedFormat === 'vial' && product.dosages && product.dosages.length > 1 && (
         <div className="mb-5">
@@ -106,7 +156,7 @@ export default function BuyBox({
                   onClick={() => handleDosageChange(dosage)}
                   className="flex-1 py-2.5 px-3 text-sm text-center transition-all duration-300"
                   style={{
-                    borderRadius: "8px",
+                    borderRadius: "999px",
                     border: active ? "1px solid #C4A265" : "1px solid #E5E5E5",
                     backgroundColor: active ? "rgba(184,164,76,0.06)" : "transparent",
                     fontWeight: active ? 500 : 400,
@@ -141,7 +191,7 @@ export default function BuyBox({
                   onClick={() => setSelectedFormat(fmt)}
                   className="py-2 px-3 text-sm text-center transition-all duration-300"
                   style={{
-                    borderRadius: "8px",
+                    borderRadius: "999px",
                     border: active ? "1px solid #C4A265" : "1px solid #E5E5E5",
                     backgroundColor: active ? "rgba(184,164,76,0.06)" : "transparent",
                     fontWeight: active ? 500 : 400,
@@ -179,7 +229,7 @@ export default function BuyBox({
                 onClick={() => setSelectedVolume(opt)}
                 className="py-2.5 px-2 text-center transition-all duration-300"
                 style={{
-                  borderRadius: "8px",
+                  borderRadius: "999px",
                   border: active ? "1px solid #C4A265" : "1px solid #E5E5E5",
                   backgroundColor: active ? "rgba(196,162,101,0.06)" : "transparent",
                 }}
@@ -207,11 +257,11 @@ export default function BuyBox({
 
       {/* Total */}
       <div
-        className="px-4 py-3 mb-4"
-        style={{ border: "1px solid #E5E5E5", borderRadius: "8px", backgroundColor: "#F7F7F7" }}
+        className="py-4 mb-4"
+        style={{ borderTop: "1px solid #E5E5E5", borderBottom: "1px solid #E5E5E5" }}
       >
         <div className="flex items-center justify-between">
-          <span className="text-sm" style={{ color: "#666" }}>
+          <span className="text-xs uppercase" style={{ letterSpacing: "0.12em", color: "#888", fontWeight: 500 }}>
             {qty > 1 ? `${qty} vials — total` : 'Total'}
           </span>
           <span className="text-2xl font-light" style={{ color: "#1A1A1A", letterSpacing: "-0.02em" }}>
@@ -226,11 +276,11 @@ export default function BuyBox({
         className="w-full flex items-center justify-center gap-2 font-medium uppercase transition-all duration-300 active:scale-[0.98]"
         style={{
           height: "52px",
-          fontSize: "12px",
-          letterSpacing: "0.12em",
+          fontSize: "11px",
+          letterSpacing: "0.15em",
           backgroundColor: "#1A1A1A",
           color: "#F9F9F9",
-          borderRadius: "8px",
+          borderRadius: "999px",
           border: "1px solid #1A1A1A",
         }}
         onMouseEnter={(e) => {
@@ -244,11 +294,6 @@ export default function BuyBox({
         <ShoppingCart className="w-4 h-4" aria-hidden="true" />
         Add to Order
       </button>
-
-      {/* Quiet subscribe option */}
-      <p className="text-xs text-center mt-3" style={{ color: "#888" }}>
-        Available as recurring research supply →
-      </p>
 
       {/* Compact trust strip */}
       <div className="mt-4 flex items-center justify-center gap-4 text-[11px]" style={{ color: "#888" }}>

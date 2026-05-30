@@ -713,7 +713,7 @@ export default function PeptideInteractionChecker() {
   const neutrals = interactions.filter((r) => r.type === "neutral");
 
   return (
-    <div style={{ backgroundColor: "#FFFFF3", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "#F9F9F9", minHeight: "100vh" }}>
       {/* Hero */}
       <section className="relative px-6 pt-32 pb-16 md:pt-40 md:pb-20" style={{ backgroundColor: "#010101" }}>
         <div className="max-w-4xl mx-auto">
@@ -731,7 +731,7 @@ export default function PeptideInteractionChecker() {
           </p>
           <h1
             className="text-4xl md:text-5xl mb-5 tracking-tight"
-            style={{ fontWeight: 200, color: "#FFFFF3", lineHeight: 1.05 }}
+            style={{ fontWeight: 200, color: "#F9F9F9", lineHeight: 1.05 }}
           >
             Peptide Interaction Checker
           </h1>
@@ -749,7 +749,7 @@ export default function PeptideInteractionChecker() {
               { val: "Free", label: "No login required" },
             ].map((stat) => (
               <div key={stat.label}>
-                <div className="text-2xl font-light" style={{ color: "#FFFFF3" }}>
+                <div className="text-2xl font-light" style={{ color: "#F9F9F9" }}>
                   {stat.val}
                 </div>
                 <div className="text-xs uppercase tracking-widest mt-0.5" style={{ color: "#555" }}>
@@ -801,7 +801,7 @@ export default function PeptideInteractionChecker() {
                           className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-sm"
                           style={{
                             backgroundColor: "#010101",
-                            color: "#FFFFF3",
+                            color: "#F9F9F9",
                             border: "1px solid #333",
                           }}
                         >
@@ -847,7 +847,7 @@ export default function PeptideInteractionChecker() {
                       className="text-xs px-2.5 py-1 rounded-sm transition-all"
                       style={{
                         backgroundColor: categoryFilter === cat ? "#010101" : "#F5F4EE",
-                        color: categoryFilter === cat ? "#FFFFF3" : "#666",
+                        color: categoryFilter === cat ? "#F9F9F9" : "#666",
                         border: "1px solid " + (categoryFilter === cat ? "#010101" : "#DDD"),
                         fontWeight: categoryFilter === cat ? 500 : 400,
                       }}
@@ -884,7 +884,7 @@ export default function PeptideInteractionChecker() {
                             <div>
                               <div
                                 className="text-sm font-medium"
-                                style={{ color: isSelected ? "#FFFFF3" : "#000" }}
+                                style={{ color: isSelected ? "#F9F9F9" : "#000" }}
                               >
                                 {compound.name}
                               </div>
@@ -942,7 +942,7 @@ export default function PeptideInteractionChecker() {
                         (overallRisk === "warning" ? "#E0525240" :
                          overallRisk === "caution" ? "#d4af3740" :
                          overallRisk === "review" ? "#4A9B8E40" :
-                         "#A4B08A40"),
+                         "#B8A44C40"),
                     }}
                   >
                     <div className="flex items-start gap-4">
@@ -952,7 +952,7 @@ export default function PeptideInteractionChecker() {
                           backgroundColor:
                             overallRisk === "warning" ? "#E05252" :
                             overallRisk === "caution" ? "#d4af37" :
-                            overallRisk === "review" ? "#4A9B8E" : "#A4B08A",
+                            overallRisk === "review" ? "#4A9B8E" : "#B8A44C",
                           color: "#FFF",
                           fontSize: 16,
                           fontWeight: 600,
@@ -988,7 +988,7 @@ export default function PeptideInteractionChecker() {
                       className="px-5 py-3.5 border-b"
                       style={{ backgroundColor: "#010101", borderColor: "#1A1A18" }}
                     >
-                      <h2 className="text-sm font-medium uppercase tracking-widest" style={{ color: "#FFFFF3" }}>
+                      <h2 className="text-sm font-medium uppercase tracking-widest" style={{ color: "#F9F9F9" }}>
                         Compatibility Matrix
                       </h2>
                     </div>

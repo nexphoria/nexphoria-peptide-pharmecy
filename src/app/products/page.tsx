@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import ProductsClient from "./client";
 import Breadcrumb from "@/components/Breadcrumb";
 
@@ -50,7 +51,9 @@ export default function ProductsPage({
         </div>
       </div>
 
-      <ProductsClient initialCategory={searchParams?.cat} />
+      <Suspense fallback={null}>
+        <ProductsClient initialCategory={searchParams?.cat} />
+      </Suspense>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-page-bg: #FAF6F0;
+  --color-page-bg: #F9F9F9;
   --color-card-bg: #F7F7F7;
   --color-card-border: #E5E5E5;
   --color-olive: #C4A265;
@@ -11,7 +11,7 @@
   --color-text-muted: #888888;
   --color-near-black: #1A1A1A;
   --color-white-card: #FFFFFF;
-  --color-cream: #FAF6F0;
+  --color-cream: #F9F9F9;
   --color-stone: #666666;
   --color-tertiary: #AAAAAA;
   --color-dark: #0F0F0E;
@@ -95,21 +95,21 @@
     align-items: center;
     gap: 0.5rem;
     justify-content: center;
-    padding: 14px 32px;
+    padding: 14px 36px;
     background-color: transparent;
     color: #1A1A1A;
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    border-radius: 8px;
+    border-radius: 999px;
     transition: all 300ms ease;
     text-decoration: none;
     border: 1px solid #1A1A1A;
   }
   .btn-primary:hover {
     background-color: #1A1A1A;
-    color: #FAF6F0;
+    color: #F9F9F9;
   }
 
   .btn-outline {
@@ -117,7 +117,7 @@
     align-items: center;
     gap: 0.5rem;
     justify-content: center;
-    padding: 14px 32px;
+    padding: 14px 36px;
     background-color: transparent;
     color: #1A1A1A;
     font-size: 11px;
@@ -125,13 +125,13 @@
     letter-spacing: 0.15em;
     text-transform: uppercase;
     border: 1px solid #1A1A1A;
-    border-radius: 8px;
+    border-radius: 999px;
     transition: all 300ms ease;
     text-decoration: none;
   }
   .btn-outline:hover {
     background-color: #1A1A1A;
-    color: #FAF6F0;
+    color: #F9F9F9;
   }
 
   .btn-acid {
@@ -139,21 +139,21 @@
     align-items: center;
     gap: 0.5rem;
     justify-content: center;
-    padding: 14px 32px;
+    padding: 14px 36px;
     background-color: transparent;
     color: #1A1A1A;
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    border-radius: 8px;
+    border-radius: 999px;
     transition: all 300ms ease;
     text-decoration: none;
     border: 1px solid #1A1A1A;
   }
   .btn-acid:hover {
     background-color: #1A1A1A;
-    color: #FAF6F0;
+    color: #F9F9F9;
   }
 
   .product-image-container {
@@ -205,15 +205,15 @@
     align-items: center;
     gap: 0.5rem;
     justify-content: center;
-    padding: 14px 32px;
+    padding: 14px 36px;
     background-color: transparent;
     color: var(--color-gold);
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 500;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     border: 1px solid var(--color-gold);
-    border-radius: 8px;
+    border-radius: 999px;
     transition: all 300ms ease;
     text-decoration: none;
   }
@@ -351,7 +351,7 @@
   top: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%);
-  background: #FAF6F0;
+  background: #F9F9F9;
   border: 1px solid #E5E5E5;
   border-radius: 8px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
@@ -382,7 +382,7 @@
   position: sticky;
   top: 72px;
   z-index: 20;
-  background: #FAF6F0;
+  background: #F9F9F9;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid #E5E5E5;
@@ -418,7 +418,7 @@
   left: 0;
   right: 0;
   height: 120px;
-  background: linear-gradient(to bottom, transparent 0%, #FAF6F0 100%);
+  background: linear-gradient(to bottom, transparent 0%, #F9F9F9 100%);
   pointer-events: none;
   z-index: 6;
 }
@@ -493,4 +493,38 @@
 }
 .filter-bar-sticky::-webkit-scrollbar {
   display: none;
+}
+
+/* ─── Luxury thin-line divider ─── */
+.thin-rule {
+  border: none;
+  border-top: 1px solid #E5E5E5;
+}
+
+/* ─── Luxury section spacing ─── */
+.section-gap {
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
+}
+
+/* ─── Pill button variant for inline use ─── */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 28px;
+  background-color: transparent;
+  color: #1A1A1A;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 1px solid #1A1A1A;
+  border-radius: 999px;
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+.btn-pill:hover {
+  background-color: #1A1A1A;
+  color: #F9F9F9;
 }

@@ -9,12 +9,12 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "bpc-157": [
     "bpc-157-researchers-complete-guide",
     "bpc-157-tb-500-recovery-stack-deep-dive",
-    "wolverine-blend-bpc157-tb500-ghk-cu-triple-combination-guide",
+    "peptide-synergy-stacking-science-of-combining-research-compounds",
   ],
   "tb-500": [
     "tb-500-thymosin-beta-4-researchers-complete-guide",
     "bpc-157-tb-500-recovery-stack-deep-dive",
-    "follistatin-344-igf1-independent-muscle-research",
+    "peptide-synergy-stacking-science-of-combining-research-compounds",
   ],
   "ghk-cu": [
     "ghk-cu-vs-ghk-copper-complex-chemistry-research-guide",
@@ -24,34 +24,34 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // GH Axis
   "ipamorelin": [
+    "ipamorelin-dosing-timing-protocol-design-researchers-reference",
     "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
-    "ipamorelin-vs-ghrp2-vs-ghrp6-growth-hormone-secretagogue-comparison",
-    "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
+    "peptide-synergy-stacking-science-of-combining-research-compounds",
   ],
   "cjc-1295": [
     "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
+    "ipamorelin-dosing-timing-protocol-design-researchers-reference",
     "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
-    "sermorelin-ghrh-analog-anti-aging-research",
   ],
   "cjc-1295-no-dac": [
     "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
+    "ipamorelin-dosing-timing-protocol-design-researchers-reference",
     "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
-    "sermorelin-ghrh-analog-anti-aging-research",
   ],
   "cjc-1295-ipamorelin": [
     "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
-    "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
+    "ipamorelin-dosing-timing-protocol-design-researchers-reference",
     "ipamorelin-vs-ghrp2-vs-ghrp6-growth-hormone-secretagogue-comparison",
   ],
   "sermorelin": [
     "sermorelin-ghrh-analog-anti-aging-research",
+    "ipamorelin-dosing-timing-protocol-design-researchers-reference",
     "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
-    "ipamorelin-vs-ghrp2-vs-ghrp6-growth-hormone-secretagogue-comparison",
   ],
   "mk-677": [
     "mk-677-ibutamoren-oral-gh-secretagogue-guide",
+    "ipamorelin-dosing-timing-protocol-design-researchers-reference",
     "ipamorelin-vs-ghrp2-vs-ghrp6-growth-hormone-secretagogue-comparison",
-    "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
   ],
   "tesamorelin": [
     "tesamorelin-ghrh-analog-visceral-fat-research",
@@ -106,8 +106,8 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   // Nootropics / Neuro
   "selank": [
     "selank-semax-nootropic-peptide-research-overview",
-    "dsip-delta-sleep-inducing-peptide-sleep-research-review",
-    "oxytocin-research-neuropeptide-guide",
+    "peptide-synergy-stacking-science-of-combining-research-compounds",
+    "adamax-dsip-selank-nad-nootropic-stack-protocol-deep-dive",
   ],
   "semax": [
     "selank-semax-nootropic-peptide-research-overview",

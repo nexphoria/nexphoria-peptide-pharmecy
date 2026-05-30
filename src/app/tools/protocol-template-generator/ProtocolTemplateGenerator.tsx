@@ -295,7 +295,7 @@ export default function ProtocolTemplateGenerator() {
   // ── Render ────────────────────────────────────────────────────────────────
 
   return (
-    <div style={{ backgroundColor: "#080808", minHeight: "100vh", color: "#FFFFF3" }}>
+    <div style={{ backgroundColor: "#080808", minHeight: "100vh", color: "#F9F9F9" }}>
       <style>{PRINT_STYLES}</style>
 
       {/* ── Header ── */}
@@ -334,7 +334,7 @@ export default function ProtocolTemplateGenerator() {
             fontSize: "clamp(24px, 4vw, 38px)",
             fontWeight: 200,
             letterSpacing: "-0.02em",
-            color: "#FFFFF3",
+            color: "#F9F9F9",
             marginBottom: "12px",
           }}
         >
@@ -639,7 +639,7 @@ export default function ProtocolTemplateGenerator() {
               <button onClick={handlePrint} style={actionBtnStyle}>
                 🖨 Print Protocol
               </button>
-              <button onClick={copyText} style={{ ...actionBtnStyle, backgroundColor: copied ? "#2A4A1A" : "#1A1A18", color: copied ? "#C9DD69" : "#FFFFF3" }}>
+              <button onClick={copyText} style={{ ...actionBtnStyle, backgroundColor: copied ? "#2A4A1A" : "#1A1A18", color: copied ? "#C9DD69" : "#F9F9F9" }}>
                 {copied ? "✓ Copied!" : "Copy as Text"}
               </button>
               <button
@@ -906,7 +906,7 @@ export default function ProtocolTemplateGenerator() {
 
         {/* ── Back to tools ── */}
         <div className="no-print" style={{ marginTop: "48px", paddingTop: "24px", borderTop: "1px solid #1E1E1C" }}>
-          <Link href="/tools" style={{ color: "#A4B08A", fontSize: "13px", textDecoration: "none" }}>
+          <Link href="/tools" style={{ color: "#B8A44C", fontSize: "13px", textDecoration: "none" }}>
             ← Back to Research Tools
           </Link>
         </div>
@@ -1128,7 +1128,7 @@ const inputStyle: React.CSSProperties = {
   backgroundColor: "#1A1A18",
   border: "1px solid #333",
   borderRadius: "2px",
-  color: "#FFFFF3",
+  color: "#F9F9F9",
   fontSize: "13px",
   outline: "none",
   boxSizing: "border-box",
@@ -1157,7 +1157,7 @@ const actionBtnStyle: React.CSSProperties = {
   backgroundColor: "#1A1A18",
   border: "1px solid #333",
   borderRadius: "2px",
-  color: "#FFFFF3",
+  color: "#F9F9F9",
   fontSize: "13px",
   fontWeight: 500,
   cursor: "pointer",

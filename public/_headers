@@ -1,0 +1,40 @@
+# Cloudflare Pages cache headers for static assets
+
+# Preconnect and security headers for all pages
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Brand images — 1 year immutable
+/brand/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Product images — 1 year immutable
+/products/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/products/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+# OG images — 1 year immutable
+/og/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Fonts — 1 year immutable
+/_next/static/media/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Next.js JS/CSS chunks — 1 year immutable
+/_next/static/chunks/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/_next/static/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML pages — short TTL with stale-while-revalidate
+/
+  Cache-Control: public, max-age=0, s-maxage=3600, stale-while-revalidate=86400
+
+/*.html
+  Cache-Control: public, max-age=0, s-maxage=3600, stale-while-revalidate=86400

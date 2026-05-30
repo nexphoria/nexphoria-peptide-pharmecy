@@ -54,7 +54,7 @@ export default function ShareButtons({ url, title }: ShareButtonsProps) {
         className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs transition-opacity hover:opacity-75"
         style={{
           backgroundColor: "#010101",
-          color: "#FFFFF3",
+          color: "#F9F9F9",
           fontWeight: 500,
           letterSpacing: "0.02em",
         }}
@@ -105,11 +105,11 @@ export default function ShareButtons({ url, title }: ShareButtonsProps) {
         aria-label="Copy article link"
         className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs transition-opacity hover:opacity-75"
         style={{
-          backgroundColor: copied ? "#A4B08A" : "transparent",
+          backgroundColor: copied ? "#B8A44C" : "transparent",
           color: copied ? "#010101" : "#555",
           fontWeight: 500,
           letterSpacing: "0.02em",
-          border: copied ? "1px solid #A4B08A" : "1px solid rgba(0,0,0,0.12)",
+          border: copied ? "1px solid #B8A44C" : "1px solid rgba(0,0,0,0.12)",
           cursor: "pointer",
           transition: "background-color 0.2s, color 0.2s",
         }}

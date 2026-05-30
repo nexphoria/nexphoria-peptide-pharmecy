@@ -48,7 +48,7 @@ export default function RecentlyViewedBar({ currentSlug }: Props) {
                       className="w-full h-full object-cover"
                     />
                   ) : (
-                    <span className="text-xs font-semibold text-[#A4B08A] text-center px-2">
+                    <span className="text-xs font-semibold text-[#B8A44C] text-center px-2">
                       {product.name}
                     </span>
                   )}

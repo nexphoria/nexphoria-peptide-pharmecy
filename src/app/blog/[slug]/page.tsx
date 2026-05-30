@@ -97,7 +97,7 @@ function RenderSection({ section }: { section: BlogSection }) {
             >
               <span
                 className="absolute -left-4 top-2.5 w-1.5 h-1.5 rounded-full flex-shrink-0"
-                style={{ backgroundColor: "#A4B08A" }}
+                style={{ backgroundColor: "#B8A44C" }}
               />
               {item}
             </li>
@@ -111,7 +111,7 @@ function RenderSection({ section }: { section: BlogSection }) {
           className="rounded-lg px-6 py-5 my-8"
           style={{
             backgroundColor: "#F5F3EE",
-            borderLeft: "3px solid #A4B08A",
+            borderLeft: "3px solid #B8A44C",
           }}
         >
           <p
@@ -263,7 +263,7 @@ export default async function BlogArticlePage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      <div style={{ backgroundColor: "#FFFFF3" }}>
+      <div style={{ backgroundColor: "#F9F9F9" }}>
         {/* Hero */}
         <section
           className="relative px-6 pt-32 pb-14 md:pt-40 md:pb-16"
@@ -284,7 +284,7 @@ export default async function BlogArticlePage({ params }: Props) {
               <Link
                 href={`/blog/category/${categoryToSlug(article.category)}`}
                 className="text-xs uppercase tracking-widest px-3 py-1 rounded-full hover:opacity-80 transition-opacity"
-                style={{ backgroundColor: "#A4B08A", color: "#010101" }}
+                style={{ backgroundColor: "#B8A44C", color: "#010101" }}
               >
                 {article.category}
               </Link>
@@ -300,7 +300,7 @@ export default async function BlogArticlePage({ params }: Props) {
               className="text-3xl md:text-5xl mb-6"
               style={{
                 fontWeight: 500,
-                color: "#FFFFF3",
+                color: "#F9F9F9",
                 lineHeight: 1.1,
                 letterSpacing: "-0.02em",
               }}
@@ -339,7 +339,7 @@ export default async function BlogArticlePage({ params }: Props) {
                 border: "1px solid rgba(0,0,0,0.06)",
               }}
             >
-              <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#A4B08A" }}>
+              <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#B8A44C" }}>
                 Research Use Only
               </p>
               <p className="text-xs" style={{ color: "#777", lineHeight: 1.7 }}>
@@ -363,14 +363,14 @@ export default async function BlogArticlePage({ params }: Props) {
               <div className="flex items-baseline justify-between mb-7">
               <p
                 className="text-xs uppercase tracking-widest"
-                style={{ color: "#A4B08A" }}
+                style={{ color: "#B8A44C" }}
               >
                 Related Articles
               </p>
               <Link
                 href="/blog"
                 className="text-xs hover:opacity-70 transition-opacity"
-                style={{ color: "#A4B08A" }}
+                style={{ color: "#B8A44C" }}
               >
                 All articles →
               </Link>
@@ -383,7 +383,7 @@ export default async function BlogArticlePage({ params }: Props) {
                     key={rel.slug}
                     className="group rounded-lg p-6"
                     style={{
-                      backgroundColor: "#FFFFF3",
+                      backgroundColor: "#F9F9F9",
                       border: "1px solid rgba(0,0,0,0.06)",
                     }}
                   >
@@ -391,14 +391,14 @@ export default async function BlogArticlePage({ params }: Props) {
                       <Link
                         href={`/blog/category/${categoryToSlug(rel.category)}`}
                         className="text-xs uppercase tracking-widest hover:opacity-70 transition-opacity"
-                        style={{ color: "#A4B08A" }}
+                        style={{ color: "#B8A44C" }}
                       >
                         {rel.category}
                       </Link>
                       {rel.category === article.category && (
                         <span
                           className="text-xs px-1.5 py-0.5 rounded-full"
-                          style={{ backgroundColor: "#A4B08A", color: "#010101", fontSize: "0.6rem", letterSpacing: "0.05em" }}
+                          style={{ backgroundColor: "#B8A44C", color: "#010101", fontSize: "0.6rem", letterSpacing: "0.05em" }}
                         >
                           RELATED
                         </span>
@@ -429,7 +429,7 @@ export default async function BlogArticlePage({ params }: Props) {
                     <Link
                       href={`/blog/${rel.slug}`}
                       className="text-xs inline-flex items-center gap-1"
-                      style={{ color: "#A4B08A" }}
+                      style={{ color: "#B8A44C" }}
                     >
                       {rel.readMinutes} min read <span aria-hidden>→</span>
                     </Link>
@@ -445,7 +445,7 @@ export default async function BlogArticlePage({ params }: Props) {
           <div className="max-w-3xl mx-auto text-center">
             <p
               className="text-xs uppercase tracking-widest mb-4"
-              style={{ color: "#A4B08A" }}
+              style={{ color: "#B8A44C" }}
             >
               Research Catalog
             </p>

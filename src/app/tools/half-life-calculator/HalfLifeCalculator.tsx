@@ -124,7 +124,7 @@ export default function HalfLifeCalculator() {
   const curvePoints = halfLifeHours > 0 ? decayCurvePoints(halfLifeHours, SVG_W, SVG_H) : "";
 
   return (
-    <div style={{ backgroundColor: "#FFFFF3", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "#F9F9F9", minHeight: "100vh" }}>
       {/* Hero */}
       <section className="relative px-6 pt-32 pb-16 md:pt-40 md:pb-20" style={{ backgroundColor: "#010101" }}>
         <div className="max-w-3xl mx-auto">
@@ -142,7 +142,7 @@ export default function HalfLifeCalculator() {
           </p>
           <h1
             className="text-4xl md:text-5xl mb-5 tracking-tight"
-            style={{ fontWeight: 200, color: "#FFFFF3", lineHeight: 1.05 }}
+            style={{ fontWeight: 200, color: "#F9F9F9", lineHeight: 1.05 }}
           >
             Half-Life &amp; Dosing<br />Frequency Calculator
           </h1>
@@ -163,7 +163,7 @@ export default function HalfLifeCalculator() {
               className="px-4 py-2 text-sm rounded transition-colors"
               style={{
                 backgroundColor: mode === m ? "#010101" : "#ECEAE4",
-                color: mode === m ? "#FFFFF3" : "#010101",
+                color: mode === m ? "#F9F9F9" : "#010101",
                 fontWeight: mode === m ? 600 : 400,
               }}
             >
@@ -378,7 +378,7 @@ export default function HalfLifeCalculator() {
                       </p>
                       <p
                         className="text-lg font-semibold"
-                        style={{ color: highlight ? "#FFFFF3" : "#010101" }}
+                        style={{ color: highlight ? "#F9F9F9" : "#010101" }}
                       >
                         {formatHours(time)}
                       </p>
@@ -452,7 +452,7 @@ export default function HalfLifeCalculator() {
               </thead>
               <tbody>
                 {COMPOUND_DATA.map((c, i) => (
-                  <tr key={c.name} style={{ backgroundColor: i % 2 === 0 ? "#FFFFF3" : "#FAFAF8" }}>
+                  <tr key={c.name} style={{ backgroundColor: i % 2 === 0 ? "#F9F9F9" : "#FAFAF8" }}>
                     <td className="px-4 py-2.5 font-medium" style={{ color: "#010101", borderBottom: "1px solid #F0EEE8" }}>
                       {c.name}
                     </td>

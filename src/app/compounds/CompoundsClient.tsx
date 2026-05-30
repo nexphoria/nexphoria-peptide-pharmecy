@@ -254,7 +254,7 @@ export default function CompoundsClient({ grouped, categoryOrder }: Props) {
                 fontWeight: 300,
               }}
               onFocus={(e) =>
-                (e.target.style.borderColor = "#A4B08A")
+                (e.target.style.borderColor = "#B8A44C")
               }
               onBlur={(e) =>
                 (e.target.style.borderColor = "#DDD")
@@ -292,7 +292,7 @@ export default function CompoundsClient({ grouped, categoryOrder }: Props) {
                   onClick={() => setActiveCategory(isActive ? null : cat)}
                   className="text-xs px-3 py-1.5 rounded-full transition-all"
                   style={{
-                    backgroundColor: isActive ? (meta?.color || "#A4B08A") : "#EEE",
+                    backgroundColor: isActive ? (meta?.color || "#B8A44C") : "#EEE",
                     color: isActive ? "#fff" : "#555",
                     fontWeight: 500,
                   }}
@@ -351,7 +351,7 @@ export default function CompoundsClient({ grouped, categoryOrder }: Props) {
                       <CompoundCard
                         key={compound.slug}
                         compound={compound}
-                        accentColor={compound.accentColor || meta?.color || "#A4B08A"}
+                        accentColor={compound.accentColor || meta?.color || "#B8A44C"}
                       />
                     ))}
                   </div>
@@ -390,7 +390,7 @@ export default function CompoundsClient({ grouped, categoryOrder }: Props) {
                     <CompoundCard
                       key={compound.slug}
                       compound={compound}
-                      accentColor={compound.accentColor || meta?.color || "#A4B08A"}
+                      accentColor={compound.accentColor || meta?.color || "#B8A44C"}
                     />
                   );
                 })}

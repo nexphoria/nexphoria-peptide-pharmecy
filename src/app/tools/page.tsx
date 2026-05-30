@@ -402,11 +402,37 @@ const TOOLS = [
     ),
     badge: "Tool",
   },
+  {
+    href: "/tools/injection-site-diagram",
+    title: "Injection Site Diagram",
+    desc: "Interactive body diagram with clickable injection zones. Each zone shows needle length, insertion angle, volume limits, rotation advice, step-by-step technique, and common mistakes. SC vs IM comparison + 8-site rotation guide.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        <path d="M8 12h8"/>
+        <path d="M12 8v8"/>
+        <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/>
+      </svg>
+    ),
+    badge: "Tool",
+  },
+  {
+    href: "/tools/peptide-research-planner",
+    title: "Peptide Research Planner",
+    desc: "The all-in-one 4-step protocol wizard. Select your goal, set cycle dates, configure doses and frequencies, then generate a complete printable research protocol document with reconstitution notes, weekly schedule grid, and biomarker tracking.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M9 11l3 3L22 4"/>
+        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+      </svg>
+    ),
+    badge: "Super-Tool",
+  },
 ];
 
 export default function ToolsPage() {
   return (
-    <div style={{ backgroundColor: "#FFFFF3", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "#F9F9F9", minHeight: "100vh" }}>
       {/* Hero */}
       <section
         className="relative px-6 pt-32 pb-16 md:pt-40 md:pb-20"
@@ -429,7 +455,7 @@ export default function ToolsPage() {
           </p>
           <h1
             className="text-4xl md:text-5xl mb-5 tracking-tight"
-            style={{ fontWeight: 200, color: "#FFFFF3", lineHeight: 1.05 }}
+            style={{ fontWeight: 200, color: "#F9F9F9", lineHeight: 1.05 }}
           >
             Research Tools
           </h1>
@@ -460,7 +486,7 @@ export default function ToolsPage() {
                 <div className="flex items-start gap-4">
                   <div
                     className="flex-shrink-0 mt-0.5"
-                    style={{ color: "#A4B08A" }}
+                    style={{ color: "#B8A44C" }}
                   >
                     {tool.icon}
                   </div>
@@ -475,9 +501,9 @@ export default function ToolsPage() {
                       <span
                         className="text-xs px-2 py-0.5 rounded-sm"
                         style={{
-                          backgroundColor: "#A4B08A22",
+                          backgroundColor: "#B8A44C22",
                           color: "#7A8A60",
-                          border: "1px solid #A4B08A44",
+                          border: "1px solid #B8A44C44",
                           fontWeight: 500,
                         }}
                       >
@@ -492,7 +518,7 @@ export default function ToolsPage() {
                     </p>
                     <p
                       className="text-xs mt-3 font-medium"
-                      style={{ color: "#A4B08A" }}
+                      style={{ color: "#B8A44C" }}
                     >
                       Open →
                     </p>
@@ -518,7 +544,7 @@ export default function ToolsPage() {
             </p>
             <h3
               className="text-2xl mb-3 tracking-tight"
-              style={{ fontWeight: 200, color: "#FFFFF3" }}
+              style={{ fontWeight: 200, color: "#F9F9F9" }}
             >
               Research-grade compounds, independently verified.
             </h3>

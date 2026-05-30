@@ -178,7 +178,7 @@ export default function PurityChecker() {
     s === "critical" ? "CRITICAL" : "WARNING";
 
   return (
-    <div style={{ backgroundColor: "#FFFFF3", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "#F9F9F9", minHeight: "100vh" }}>
       {/* Hero */}
       <section
         className="relative px-6 pt-32 pb-12 md:pt-40 md:pb-16"
@@ -202,7 +202,7 @@ export default function PurityChecker() {
           </p>
           <h1
             className="text-4xl md:text-5xl mb-4 tracking-tight"
-            style={{ fontWeight: 200, color: "#FFFFF3", lineHeight: 1.05 }}
+            style={{ fontWeight: 200, color: "#F9F9F9", lineHeight: 1.05 }}
           >
             Purity Checker &amp; COA Guide
           </h1>
@@ -314,7 +314,7 @@ export default function PurityChecker() {
                 <button
                   onClick={() => { setSearch(""); setCategory("All"); }}
                   className="underline"
-                  style={{ color: "#A4B08A" }}
+                  style={{ color: "#B8A44C" }}
                 >
                   Clear filters
                 </button>
@@ -392,7 +392,7 @@ export default function PurityChecker() {
                       <td className="px-4 py-3 text-right">
                         <span
                           className="text-xs"
-                          style={{ color: "#A4B08A" }}
+                          style={{ color: "#B8A44C" }}
                         >
                           {selected?.name === c.name ? "▲" : "▼"}
                         </span>
@@ -417,7 +417,7 @@ export default function PurityChecker() {
                 <div>
                   <h3
                     className="text-xl font-medium mb-1"
-                    style={{ color: "#FFFFF3" }}
+                    style={{ color: "#F9F9F9" }}
                   >
                     {selected.name}
                   </h3>
@@ -453,7 +453,7 @@ export default function PurityChecker() {
                   style={{ backgroundColor: "#1a1a18", border: "1px solid #2a2a28" }}
                 >
                   <p className="text-xs mb-1" style={{ color: "#666" }}>Min Acceptable</p>
-                  <p className="text-lg font-mono font-medium" style={{ color: "#FFFFF3" }}>
+                  <p className="text-lg font-mono font-medium" style={{ color: "#F9F9F9" }}>
                     ≥{selected.hplcMin}%
                   </p>
                 </div>
@@ -470,7 +470,7 @@ export default function PurityChecker() {
                           ? "#4ade80"
                           : selected.hplcTypical >= 99
                           ? "#facc15"
-                          : "#FFFFF3",
+                          : "#F9F9F9",
                     }}
                   >
                     {selected.hplcTypical}%
@@ -603,7 +603,7 @@ export default function PurityChecker() {
                 <ul className="px-5 py-4 space-y-1.5">
                   {item.required.map((r) => (
                     <li key={r} className="flex items-start gap-2 text-sm" style={{ color: "#444" }}>
-                      <span style={{ color: "#A4B08A", marginTop: "2px" }}>✓</span>
+                      <span style={{ color: "#B8A44C", marginTop: "2px" }}>✓</span>
                       <span>{r}</span>
                     </li>
                   ))}
@@ -723,7 +723,7 @@ export default function PurityChecker() {
                   style={{
                     backgroundColor: "#1a1a18",
                     border: "1px solid #2a2a28",
-                    color: "#FFFFF3",
+                    color: "#F9F9F9",
                     textDecoration: "none",
                   }}
                 >

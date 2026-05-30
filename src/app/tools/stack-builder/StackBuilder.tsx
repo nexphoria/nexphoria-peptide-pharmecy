@@ -377,7 +377,7 @@ export default function StackBuilder() {
     : 0;
 
   return (
-    <div style={{ backgroundColor: "#FFFFF3", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "#F9F9F9", minHeight: "100vh" }}>
       {/* Hero */}
       <section className="relative px-6 pt-32 pb-14 md:pt-40 md:pb-16" style={{ backgroundColor: "#010101" }}>
         <div className="max-w-4xl mx-auto">
@@ -395,7 +395,7 @@ export default function StackBuilder() {
           </p>
           <h1
             className="text-4xl md:text-5xl mb-5 tracking-tight"
-            style={{ fontWeight: 200, color: "#FFFFF3", lineHeight: 1.05 }}
+            style={{ fontWeight: 200, color: "#F9F9F9", lineHeight: 1.05 }}
           >
             Stack Builder
           </h1>
@@ -452,7 +452,7 @@ export default function StackBuilder() {
             {/* Header */}
             <div className="flex flex-wrap items-start justify-between gap-4">
               <div>
-                <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#A4B08A" }}>
+                <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#B8A44C" }}>
                   Recommended Stack
                 </p>
                 <h2 className="text-3xl md:text-4xl tracking-tight" style={{ fontWeight: 200, color: "#000" }}>
@@ -475,7 +475,7 @@ export default function StackBuilder() {
 
             {/* Compounds */}
             <div>
-              <p className="text-xs uppercase tracking-widest mb-4" style={{ color: "#A4B08A" }}>
+              <p className="text-xs uppercase tracking-widest mb-4" style={{ color: "#B8A44C" }}>
                 Compounds
               </p>
               <div className="space-y-4">
@@ -493,7 +493,7 @@ export default function StackBuilder() {
                         <div className="flex items-center gap-3 mb-1">
                           <span
                             className="text-xs font-mono w-5 h-5 flex items-center justify-center rounded-full"
-                            style={{ backgroundColor: "#A4B08A22", color: "#7A8A60", border: "1px solid #A4B08A44" }}
+                            style={{ backgroundColor: "#B8A44C22", color: "#7A8A60", border: "1px solid #B8A44C44" }}
                           >
                             {i + 1}
                           </span>
@@ -528,7 +528,7 @@ export default function StackBuilder() {
                       <Link
                         href={`/products/${c.slug}`}
                         className="text-xs px-3 py-1.5 rounded-sm transition-all hover:opacity-80"
-                        style={{ backgroundColor: "#010101", color: "#FFFFF3", textDecoration: "none" }}
+                        style={{ backgroundColor: "#010101", color: "#F9F9F9", textDecoration: "none" }}
                       >
                         View Product
                       </Link>
@@ -561,7 +561,7 @@ export default function StackBuilder() {
               className="rounded-sm p-7"
               style={{ backgroundColor: "#FFFFFF", border: "1px solid #ECEAE4" }}
             >
-              <p className="text-xs uppercase tracking-widest mb-3" style={{ color: "#A4B08A" }}>
+              <p className="text-xs uppercase tracking-widest mb-3" style={{ color: "#B8A44C" }}>
                 Why This Stack
               </p>
               <p className="text-sm leading-relaxed mb-5" style={{ color: "#444" }}>
@@ -569,7 +569,7 @@ export default function StackBuilder() {
               </p>
               <div
                 className="rounded-sm px-5 py-4"
-                style={{ backgroundColor: "#F7F5EF", borderLeft: "3px solid #A4B08A" }}
+                style={{ backgroundColor: "#F7F5EF", borderLeft: "3px solid #B8A44C" }}
               >
                 <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#7A8A60" }}>
                   Synergy Mechanism
@@ -630,7 +630,7 @@ export default function StackBuilder() {
                                   <span
                                     key={inj}
                                     className="text-xs px-2 py-1 rounded-sm"
-                                    style={{ backgroundColor: "#A4B08A22", color: "#5a6a40", border: "1px solid #A4B08A44" }}
+                                    style={{ backgroundColor: "#B8A44C22", color: "#5a6a40", border: "1px solid #B8A44C44" }}
                                   >
                                     {inj}
                                   </span>
@@ -668,7 +668,7 @@ export default function StackBuilder() {
               <p className="text-xs uppercase tracking-widest mb-3" style={{ color: "#C9DD69" }}>
                 Order This Stack
               </p>
-              <h3 className="text-xl mb-3 tracking-tight" style={{ fontWeight: 200, color: "#FFFFF3" }}>
+              <h3 className="text-xl mb-3 tracking-tight" style={{ fontWeight: 200, color: "#F9F9F9" }}>
                 All compounds available with COA-verified purity.
               </h3>
               <p className="text-sm mb-6" style={{ color: "#A0A0A0" }}>
@@ -688,7 +688,7 @@ export default function StackBuilder() {
                 <Link
                   href="/products"
                   className="text-sm px-4 py-2 rounded-sm transition-all hover:opacity-80"
-                  style={{ backgroundColor: "#FFFFF3", color: "#000", border: "1px solid #FFFFF3", textDecoration: "none" }}
+                  style={{ backgroundColor: "#F9F9F9", color: "#000", border: "1px solid #F9F9F9", textDecoration: "none" }}
                 >
                   Browse All Products →
                 </Link>

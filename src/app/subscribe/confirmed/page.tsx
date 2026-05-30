@@ -22,7 +22,7 @@ export default function SubscribeConfirmedPage() {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#A4B08A"
+          stroke="#B8A44C"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -60,7 +60,7 @@ export default function SubscribeConfirmedPage() {
         >
           <span
             className="text-[11px] uppercase tracking-widest font-medium"
-            style={{ color: "#A4B08A" }}
+            style={{ color: "#B8A44C" }}
           >
             Research Journal
           </span>
@@ -72,7 +72,7 @@ export default function SubscribeConfirmedPage() {
           </span>
           <span
             className="text-xs font-medium mt-1 group-hover:underline"
-            style={{ color: "#A4B08A" }}
+            style={{ color: "#B8A44C" }}
           >
             Visit Blog &rarr;
           </span>
@@ -88,7 +88,7 @@ export default function SubscribeConfirmedPage() {
         >
           <span
             className="text-[11px] uppercase tracking-widest font-medium"
-            style={{ color: "#A4B08A" }}
+            style={{ color: "#B8A44C" }}
           >
             Research Tools
           </span>
@@ -100,7 +100,7 @@ export default function SubscribeConfirmedPage() {
           </span>
           <span
             className="text-xs font-medium mt-1 group-hover:underline"
-            style={{ color: "#A4B08A" }}
+            style={{ color: "#B8A44C" }}
           >
             Open Tools &rarr;
           </span>
@@ -111,7 +111,7 @@ export default function SubscribeConfirmedPage() {
       <Link
         href="/products"
         className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-semibold transition-all duration-200 hover:opacity-90"
-        style={{ backgroundColor: "#A4B08A", color: "#1A1A18" }}
+        style={{ backgroundColor: "#B8A44C", color: "#1A1A18" }}
       >
         Browse the Catalog
         <svg

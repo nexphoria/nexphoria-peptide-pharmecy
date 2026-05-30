@@ -15,6 +15,7 @@ interface ProductCardProps {
   isCompared?: boolean;
   onCompareToggle?: (slug: string) => void;
   compareDisabled?: boolean;
+  priority?: boolean;
 }
 
 export default function ProductCard({
@@ -24,6 +25,7 @@ export default function ProductCard({
   isCompared = false,
   onCompareToggle,
   compareDisabled = false,
+  priority = false,
 }: ProductCardProps) {
   const { addItem, openDrawer } = useCart();
   const basePrice =
@@ -41,19 +43,18 @@ export default function ProductCard({
   return (
     <div className={`group relative h-full flex flex-col ${className}`}>
       <div
-        className="h-full bg-white overflow-hidden flex flex-col transition-all duration-300"
+        className="h-full bg-white overflow-hidden flex flex-col transition-all duration-500"
         style={{
           border: "1px solid #E5E5E5",
           borderRadius: "8px",
-          boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
         }}
         onMouseEnter={(e) => {
           (e.currentTarget as HTMLDivElement).style.transform = "scale(1.02)";
-          (e.currentTarget as HTMLDivElement).style.boxShadow = "0 4px 20px rgba(0,0,0,0.08)";
+          (e.currentTarget as HTMLDivElement).style.boxShadow = "0 8px 32px rgba(0,0,0,0.07)";
         }}
         onMouseLeave={(e) => {
           (e.currentTarget as HTMLDivElement).style.transform = "scale(1)";
-          (e.currentTarget as HTMLDivElement).style.boxShadow = "0 2px 8px rgba(0,0,0,0.04)";
+          (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
         }}
       >
         {/* Clickable area: image + text */}
@@ -67,6 +68,11 @@ export default function ProductCard({
               <img
                 src={getProductImagePath(product.slug)}
                 alt={product.name}
+                width={400}
+                height={208}
+                loading={priority ? "eager" : "lazy"}
+                fetchPriority={priority ? "high" : "auto"}
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             ) : (
@@ -79,13 +85,14 @@ export default function ProductCard({
                 />
               </div>
             )}
+
           </div>
 
           {/* Body */}
-          <div className="p-5 flex flex-col flex-1">
+          <div className="p-5 flex flex-col flex-1 text-center">
             <p
               className="text-[10px] uppercase mb-2 font-medium"
-              style={{ letterSpacing: "0.12em", color: "#B8A44C" }}
+              style={{ letterSpacing: "0.14em", color: "#B8A44C" }}
             >
               {product.category}
             </p>
@@ -101,12 +108,12 @@ export default function ProductCard({
         {/* Price + Add to Order — outside Link */}
         <div className="px-5 pb-5">
           <div
-            className="flex items-center justify-between pt-3"
+            className="flex flex-col items-center gap-3 pt-4"
             style={{ borderTop: "1px solid #E5E5E5" }}
           >
-            <div>
+            <div className="text-center">
               <span className="text-base font-medium" style={{ color: "#B8A44C" }}>
-                ${basePrice}
+                {product.dosages && product.dosages.length > 1 ? "From " : ""}${basePrice}
               </span>
               <span className="text-xs ml-1.5" style={{ color: "#888" }}>
                 {product.dosages && product.dosages.length > 1 ? product.dosages[0].size : product.size}
@@ -114,12 +121,12 @@ export default function ProductCard({
             </div>
             <button
               onClick={handleAddToOrder}
-              className="text-[11px] font-medium uppercase px-3 py-1.5 transition-all duration-300"
+              className="w-full text-[10px] font-medium uppercase py-2.5 transition-all duration-300"
               style={{
-                letterSpacing: "0.1em",
+                letterSpacing: "0.15em",
                 color: "#1A1A1A",
                 border: "1px solid #1A1A1A",
-                borderRadius: "6px",
+                borderRadius: "999px",
                 backgroundColor: "transparent",
               }}
               onMouseEnter={(e) => {
@@ -132,7 +139,7 @@ export default function ProductCard({
               }}
               aria-label={`Add ${product.name} to order`}
             >
-              Add
+              Add to Order
             </button>
           </div>
         </div>

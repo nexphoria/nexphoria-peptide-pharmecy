@@ -40,10 +40,10 @@ function formatDate(iso: string) {
 }
 
 const categoryColors: Record<string, string> = {
-  "Research Fundamentals": "#A4B08A",
-  "Quality & Testing": "#A4B08A",
-  "Handling & Storage": "#A4B08A",
-  "Compound Profiles": "#A4B08A",
+  "Research Fundamentals": "#B8A44C",
+  "Quality & Testing": "#B8A44C",
+  "Handling & Storage": "#B8A44C",
+  "Compound Profiles": "#B8A44C",
 };
 
 // Derive unique categories with counts for the filter bar
@@ -73,7 +73,7 @@ export default function BlogIndexPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
       />
 
-      <div style={{ backgroundColor: "#FFFFF3" }}>
+      <div style={{ backgroundColor: "#F9F9F9" }}>
         {/* Hero */}
         <section
           className="relative px-6 pt-32 pb-16 md:pt-40 md:pb-20"
@@ -90,7 +90,7 @@ export default function BlogIndexPage() {
             />
             <p
               className="eyebrow mb-5"
-              style={{ color: "#A4B08A" }}
+              style={{ color: "#B8A44C" }}
             >
               Nexphoria Research
             </p>
@@ -98,7 +98,7 @@ export default function BlogIndexPage() {
               className="text-4xl md:text-5xl mb-6"
               style={{
                 fontWeight: 500,
-                color: "#FFFFF3",
+                color: "#F9F9F9",
                 lineHeight: 1.05,
                 letterSpacing: "-0.02em",
               }}
@@ -126,8 +126,8 @@ export default function BlogIndexPage() {
               <span
                 className="text-xs px-4 py-2 rounded-full"
                 style={{
-                  backgroundColor: "#A4B08A",
-                  border: "1px solid #A4B08A",
+                  backgroundColor: "#B8A44C",
+                  border: "1px solid #B8A44C",
                   color: "#010101",
                   fontWeight: 600,
                 }}
@@ -157,7 +157,7 @@ export default function BlogIndexPage() {
           <div className="max-w-5xl mx-auto">
             <p
               className="text-xs uppercase tracking-widest mb-6"
-              style={{ color: "#A4B08A" }}
+              style={{ color: "#B8A44C" }}
             >
               Featured Article
             </p>
@@ -166,7 +166,7 @@ export default function BlogIndexPage() {
               style={{
                 border: "1px solid rgba(0,0,0,0.06)",
                 borderTop: `3px solid ${categoryColors[featured.category] || "#C9DD69"}`,
-                backgroundColor: "#FFFFF3",
+                backgroundColor: "#F9F9F9",
               }}
             >
               <div className="p-8 md:p-12">
@@ -232,7 +232,7 @@ export default function BlogIndexPage() {
               <>
                 <p
                   className="text-xs uppercase tracking-widest mb-8"
-                  style={{ color: "#A4B08A" }}
+                  style={{ color: "#B8A44C" }}
                 >
                   More Articles
                 </p>
@@ -332,7 +332,7 @@ export default function BlogIndexPage() {
           <div className="max-w-3xl mx-auto text-center">
             <p
               className="text-xs uppercase tracking-widest mb-4"
-              style={{ color: "#A4B08A" }}
+              style={{ color: "#B8A44C" }}
             >
               Research Catalog
             </p>

@@ -53,7 +53,8 @@ export default function Breadcrumb({
       {/* Visual breadcrumb nav */}
       <nav
         aria-label="Breadcrumb"
-        className={`flex items-center flex-wrap gap-1 text-xs ${className}`}
+        className={`flex items-center flex-wrap gap-1 ${className}`}
+        style={{ fontSize: "0.6875rem", letterSpacing: "0.14em", textTransform: "uppercase" }}
       >
         {items.map((item, idx) => {
           const isLast = idx === items.length - 1;
@@ -62,9 +63,9 @@ export default function Breadcrumb({
               {idx > 0 && (
                 <span
                   aria-hidden="true"
-                  className={isDark ? "text-white/30" : "text-black/25"}
+                  style={{ color: "#C4A265", fontSize: "0.75rem" }}
                 >
-                  /
+                  ·
                 </span>
               )}
               {item.href && !isLast ? (
@@ -72,26 +73,21 @@ export default function Breadcrumb({
                   href={item.href}
                   className={
                     isDark
-                      ? "hover:text-white/80 transition-colors text-white/50"
-                      : "hover:text-black transition-colors text-black/50"
+                      ? "hover:text-white/80 transition-colors text-white/40"
+                      : "hover:text-black transition-colors"
                   }
-                  style={{ letterSpacing: "0.04em" }}
+                  style={{ color: isDark ? undefined : "#AAA" }}
                 >
                   {item.label}
                 </Link>
               ) : (
                 <span
                   aria-current={isLast ? "page" : undefined}
-                  className={
-                    isDark
-                      ? isLast
-                        ? "text-white/80"
-                        : "text-white/50"
-                      : isLast
-                      ? "text-black/70"
-                      : "text-black/50"
-                  }
-                  style={{ letterSpacing: "0.04em" }}
+                  style={{
+                    color: isDark
+                      ? isLast ? "rgba(255,255,255,0.8)" : "rgba(255,255,255,0.4)"
+                      : isLast ? "#555" : "#AAA",
+                  }}
                 >
                   {item.label}
                 </span>

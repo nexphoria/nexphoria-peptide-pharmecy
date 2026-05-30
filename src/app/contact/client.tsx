@@ -98,7 +98,7 @@ export default function ContactClient() {
                 }}
               >
                 Contact{" "}
-                <em className="italic" style={{ color: "#A4B08A" }}>Nexphoria</em>
+                <em className="italic" style={{ color: "#B8A44C" }}>Nexphoria</em>
               </h1>
               <p className="text-lg max-w-xl leading-relaxed text-secondary">
                 Compound inquiries, custom synthesis requests, bulk orders, and documentation
@@ -188,7 +188,7 @@ export default function ContactClient() {
                     backgroundColor: "rgba(198,241,132,0.05)",
                   }}
                 >
-                  <div className="w-8 h-px mx-auto mb-6" style={{ backgroundColor: "#A4B08A" }} />
+                  <div className="w-8 h-px mx-auto mb-6" style={{ backgroundColor: "#B8A44C" }} />
                   <h3
                     className="text-2xl font-medium mb-3"
                     style={{ fontFamily: "Georgia, serif", color: "#FDFCF8" }}

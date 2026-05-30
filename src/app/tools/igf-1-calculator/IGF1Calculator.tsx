@@ -279,7 +279,7 @@ export default function IGF1Calculator() {
   const confidenceColor = activeResults.pctHigh > 120 ? "#ef4444" : activeResults.pctHigh > 60 ? "#d4af37" : "#4ade80";
 
   return (
-    <div style={{ backgroundColor: "#FFFFF3", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "#F9F9F9", minHeight: "100vh" }}>
       {/* Hero */}
       <section
         className="relative px-6 pt-32 pb-16 md:pt-40 md:pb-20"
@@ -300,7 +300,7 @@ export default function IGF1Calculator() {
           </p>
           <h1
             className="text-4xl md:text-5xl mb-5 tracking-tight"
-            style={{ fontWeight: 200, color: "#FFFFF3", lineHeight: 1.05 }}
+            style={{ fontWeight: 200, color: "#F9F9F9", lineHeight: 1.05 }}
           >
             IGF-1 Response<br />Estimator
           </h1>
@@ -365,7 +365,7 @@ export default function IGF1Calculator() {
                   className="px-4 py-2 rounded-sm text-sm font-medium transition-all"
                   style={{
                     backgroundColor: mode === m.id ? "#010101" : "transparent",
-                    color: mode === m.id ? "#FFFFF3" : "#666",
+                    color: mode === m.id ? "#F9F9F9" : "#666",
                     border: `1px solid ${mode === m.id ? "#010101" : "#DDD"}`,
                     cursor: "pointer",
                   }}
@@ -638,7 +638,7 @@ export default function IGF1Calculator() {
                 <p className="text-xs mb-1.5" style={{ color: "#606060" }}>
                   Estimated absolute IGF-1 at steady state
                 </p>
-                <p className="text-2xl" style={{ fontWeight: 200, color: "#FFFFF3" }}>
+                <p className="text-2xl" style={{ fontWeight: 200, color: "#F9F9F9" }}>
                   {Math.round(activeResults.absLow)}–{Math.round(activeResults.absHigh)} ng/mL
                 </p>
                 <p className="text-xs mt-1" style={{ color: "#505050" }}>
@@ -703,7 +703,7 @@ export default function IGF1Calculator() {
                     <Link
                       href={`/products/${ghrhCompound.slug}`}
                       className="text-xs"
-                      style={{ color: "#A4B08A" }}
+                      style={{ color: "#B8A44C" }}
                     >
                       View Product →
                     </Link>
@@ -739,7 +739,7 @@ export default function IGF1Calculator() {
                     <Link
                       href={`/products/${ghrpCompound.slug}`}
                       className="text-xs"
-                      style={{ color: "#A4B08A" }}
+                      style={{ color: "#B8A44C" }}
                     >
                       View Product →
                     </Link>
@@ -777,7 +777,7 @@ export default function IGF1Calculator() {
                   <Link
                     href={`/products/${standaloneCompound.slug}`}
                     className="text-xs"
-                    style={{ color: "#A4B08A" }}
+                    style={{ color: "#B8A44C" }}
                   >
                     View Product →
                   </Link>

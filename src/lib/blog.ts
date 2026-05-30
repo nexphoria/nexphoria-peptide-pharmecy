@@ -44,6 +44,11 @@ import { article as a40 } from './articles/peptide-administration-routes-sc-ip-i
 import { article as a41 } from './articles/ghk-cu-vs-ghk-copper-complex-chemistry-research-guide';
 import { article as a42 } from './articles/peptide-stability-lyophilization-matters';
 import { article as a43 } from './articles/cjc-1295-ipamorelin-gh-axis-stack-deep-dive';
+import { article as a44 } from './articles/peptide-bioavailability-route-of-administration-research-guide';
+import { article as a45 } from './articles/bpc-157-tb-500-how-to-dosing-protocol-guide';
+import { article as a46 } from './articles/ipamorelin-dosing-timing-protocol-design-researchers-reference';
+import { article as a47 } from './articles/peptide-synergy-stacking-science-of-combining-research-compounds';
+import { article as a48 } from './articles/epitalon-pineal-peptide-longevity-research-review';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -51,6 +56,8 @@ export const articles: BlogArticle[] = [
   a21, a22, a23, a24, a25, a26, a27, a28, a29, a30,
   a31, a32, a33, a34, a35, a36, a37, a38, a39,
   a40, a41, a42, a43,
+  a44, a45, a46,
+  a47, a48,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

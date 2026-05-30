@@ -315,7 +315,7 @@ export default function VialInventoryTracker() {
             <div>
               <h1
                 className="text-4xl md:text-5xl tracking-tight mb-4"
-                style={{ fontWeight: 200, color: "#FFFFF3", lineHeight: 1.05 }}
+                style={{ fontWeight: 200, color: "#F9F9F9", lineHeight: 1.05 }}
               >
                 Vial Inventory Tracker
               </h1>
@@ -336,7 +336,7 @@ export default function VialInventoryTracker() {
           {/* Stats strip */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
             {[
-              { label: "Total Vials", value: totalVials, color: "#FFFFF3" },
+              { label: "Total Vials", value: totalVials, color: "#F9F9F9" },
               { label: "Reconstituted", value: reconstitutedCount, color: "#60a5fa" },
               {
                 label: "Expiring ≤7d",
@@ -412,7 +412,7 @@ export default function VialInventoryTracker() {
                 className="w-full px-4 py-2.5 text-sm rounded-sm bg-transparent"
                 style={{
                   border: "1px solid #3A3A38",
-                  color: "#FFFFF3",
+                  color: "#F9F9F9",
                   outline: "none",
                 }}
               />
@@ -432,7 +432,7 @@ export default function VialInventoryTracker() {
               value={filterCompound}
               onChange={(e) => setFilterCompound(e.target.value)}
               className="px-3 py-2.5 text-sm rounded-sm bg-transparent"
-              style={{ border: "1px solid #3A3A38", color: "#FFFFF3", backgroundColor: "#010101" }}
+              style={{ border: "1px solid #3A3A38", color: "#F9F9F9", backgroundColor: "#010101" }}
             >
               <option value="all">All compounds</option>
               {allCompounds.map((c) => (
@@ -445,7 +445,7 @@ export default function VialInventoryTracker() {
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
               className="px-3 py-2.5 text-sm rounded-sm bg-transparent"
-              style={{ border: "1px solid #3A3A38", color: "#FFFFF3", backgroundColor: "#010101" }}
+              style={{ border: "1px solid #3A3A38", color: "#F9F9F9", backgroundColor: "#010101" }}
             >
               <option value="all">All statuses</option>
               <option value="lyophilized">Lyophilized only</option>
@@ -457,7 +457,7 @@ export default function VialInventoryTracker() {
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
               className="px-3 py-2.5 text-sm rounded-sm bg-transparent"
-              style={{ border: "1px solid #3A3A38", color: "#FFFFF3", backgroundColor: "#010101" }}
+              style={{ border: "1px solid #3A3A38", color: "#F9F9F9", backgroundColor: "#010101" }}
             >
               <option value="added">Sort: Date Added</option>
               <option value="name">Sort: Compound Name</option>
@@ -617,7 +617,7 @@ function VialCard({
         {/* Main info */}
         <div className="flex-1 min-w-0">
           <div className="flex flex-wrap items-center gap-2 mb-1">
-            <h3 className="text-base font-medium" style={{ color: "#FFFFF3" }}>
+            <h3 className="text-base font-medium" style={{ color: "#F9F9F9" }}>
               {label}
             </h3>
             {entry.size && (
@@ -723,7 +723,7 @@ function VialCard({
             </button>
             <span
               className="w-8 text-center text-sm font-medium"
-              style={{ color: "#FFFFF3" }}
+              style={{ color: "#F9F9F9" }}
             >
               {entry.quantity}
             </span>
@@ -915,7 +915,7 @@ function VialForm({ initial, onSave, onCancel }: VialFormProps) {
   const inputClass = "w-full px-3 py-2.5 text-sm rounded-sm bg-transparent";
   const inputStyle = {
     border: "1px solid #3A3A38",
-    color: "#FFFFF3",
+    color: "#F9F9F9",
     outline: "none",
     backgroundColor: "transparent",
   };
@@ -937,7 +937,7 @@ function VialForm({ initial, onSave, onCancel }: VialFormProps) {
           />
           <h1
             className="text-3xl md:text-4xl tracking-tight mb-2"
-            style={{ fontWeight: 200, color: "#FFFFF3" }}
+            style={{ fontWeight: 200, color: "#F9F9F9" }}
           >
             {initial ? "Edit Vial Entry" : "Add Vial Entry"}
           </h1>

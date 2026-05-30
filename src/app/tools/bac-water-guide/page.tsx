@@ -58,7 +58,7 @@ const SECTIONS = [
 
 export default function BacWaterGuidePage() {
   return (
-    <div style={{ backgroundColor: "#FFFFF3", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "#F9F9F9", minHeight: "100vh" }}>
       {/* Hero */}
       <section
         className="relative px-6 pt-32 pb-16 md:pt-40 md:pb-20"
@@ -82,7 +82,7 @@ export default function BacWaterGuidePage() {
           </p>
           <h1
             className="text-4xl md:text-5xl mb-5 tracking-tight"
-            style={{ fontWeight: 200, color: "#FFFFF3", lineHeight: 1.05 }}
+            style={{ fontWeight: 200, color: "#F9F9F9", lineHeight: 1.05 }}
           >
             Bacteriostatic Water
             <br />
@@ -162,7 +162,7 @@ export default function BacWaterGuidePage() {
                 style={{
                   backgroundColor: "#F7F7F0",
                   border: "1px solid #DDDBD5",
-                  borderLeft: "3px solid #A4B08A",
+                  borderLeft: "3px solid #B8A44C",
                 }}
               >
                 <p className="text-sm font-medium mb-1" style={{ color: "#333" }}>Key Specification</p>
@@ -193,7 +193,7 @@ export default function BacWaterGuidePage() {
               <div className="overflow-x-auto mt-6">
                 <table className="w-full text-sm" style={{ borderCollapse: "collapse" }}>
                   <thead>
-                    <tr style={{ backgroundColor: "#010101", color: "#FFFFF3" }}>
+                    <tr style={{ backgroundColor: "#010101", color: "#F9F9F9" }}>
                       <th className="px-4 py-3 text-left font-medium">Property</th>
                       <th className="px-4 py-3 text-left font-medium">Value</th>
                       <th className="px-4 py-3 text-left font-medium">Research Relevance</th>
@@ -309,7 +309,7 @@ export default function BacWaterGuidePage() {
               }}
             >
               <div>
-                <p className="text-sm font-medium mb-0.5" style={{ color: "#FFFFF3" }}>
+                <p className="text-sm font-medium mb-0.5" style={{ color: "#F9F9F9" }}>
                   Not sure how much BAC water to add?
                 </p>
                 <p className="text-xs" style={{ color: "#A0A0A0" }}>
@@ -563,7 +563,7 @@ export default function BacWaterGuidePage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm" style={{ borderCollapse: "collapse" }}>
                 <thead>
-                  <tr style={{ backgroundColor: "#010101", color: "#FFFFF3" }}>
+                  <tr style={{ backgroundColor: "#010101", color: "#F9F9F9" }}>
                     <th className="px-4 py-3 text-left font-medium">Characteristic</th>
                     <th className="px-4 py-3 text-left font-medium">BAC Water</th>
                     <th className="px-4 py-3 text-left font-medium">Sterile Water (USP)</th>
@@ -601,7 +601,7 @@ export default function BacWaterGuidePage() {
               style={{
                 backgroundColor: "#F7F7F0",
                 border: "1px solid #DDDBD5",
-                borderLeft: "3px solid #A4B08A",
+                borderLeft: "3px solid #B8A44C",
               }}
             >
               <p className="text-sm font-medium mb-1" style={{ color: "#333" }}>Practical Rule of Thumb</p>
@@ -708,7 +708,7 @@ export default function BacWaterGuidePage() {
               </p>
               <h3
                 className="text-2xl mb-6 tracking-tight"
-                style={{ fontWeight: 200, color: "#FFFFF3" }}
+                style={{ fontWeight: 200, color: "#F9F9F9" }}
               >
                 More research tools and resources
               </h3>
@@ -755,7 +755,7 @@ export default function BacWaterGuidePage() {
                       textDecoration: "none",
                     }}
                   >
-                    <p className="text-sm font-medium mb-1" style={{ color: "#FFFFF3" }}>{label}</p>
+                    <p className="text-sm font-medium mb-1" style={{ color: "#F9F9F9" }}>{label}</p>
                     <p className="text-xs" style={{ color: "#A0A0A0" }}>{desc}</p>
                   </Link>
                 ))}

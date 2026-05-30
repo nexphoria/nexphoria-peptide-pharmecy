@@ -325,7 +325,7 @@ function FaqItem({ q, a }: { q: string; a: string | ReactNode }) {
         <span
           className="shrink-0 mt-0.5 text-lg transition-transform duration-200"
           style={{
-            color: "#A4B08A",
+            color: "#B8A44C",
             transform: open ? "rotate(45deg)" : "rotate(0deg)",
             display: "inline-block",
           }}
@@ -373,7 +373,7 @@ export default function FaqPage() {
           />
           <p
             className="eyebrow mb-6"
-            style={{ color: "#A4B08A" }}
+            style={{ color: "#B8A44C" }}
           >
             Support
           </p>
@@ -441,7 +441,7 @@ export default function FaqPage() {
               <h2
                 className="text-xs uppercase mb-6 pb-3 border-b"
                 style={{
-                  color: "#A4B08A",
+                  color: "#B8A44C",
                   letterSpacing: "0.2em",
                   fontWeight: 600,
                   borderColor: "rgba(0,0,0,0.1)",
@@ -471,7 +471,7 @@ export default function FaqPage() {
           >
             <p
               className="text-xs uppercase mb-4"
-              style={{ color: "#A4B08A", letterSpacing: "0.2em" }}
+              style={{ color: "#B8A44C", letterSpacing: "0.2em" }}
             >
               Still Have Questions?
             </p>

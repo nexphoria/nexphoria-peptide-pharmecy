@@ -355,7 +355,7 @@ export default function DosingProtocolsGuide() {
           <h1 style={{ fontSize: "clamp(1.8rem, 4vw, 2.8rem)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.2, marginTop: "12px", marginBottom: "16px" }}>
             Peptide Dosing Protocol Design
           </h1>
-          <p style={{ fontSize: "1.1rem", color: "#A4B08A", lineHeight: 1.7, maxWidth: "680px", marginBottom: "24px" }}>
+          <p style={{ fontSize: "1.1rem", color: "#B8A44C", lineHeight: 1.7, maxWidth: "680px", marginBottom: "24px" }}>
             General principles for structuring rigorous research protocols: when to use loading phases, how to time administration for GH axis compounds, injection site rotation, cycle length selection, washout period calculation, and documentation standards.
           </p>
           <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", fontSize: "13px", color: "#8a9070" }}>

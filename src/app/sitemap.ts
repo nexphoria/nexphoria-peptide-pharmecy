@@ -96,6 +96,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.72,
     },
     {
+      url: `${baseUrl}/compare`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
       url: `${baseUrl}/shipping`,
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -291,6 +297,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/tools/peptide-timer`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.72,
+    },
+    {
+      url: `${baseUrl}/tools/peptide-research-planner`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/tools/injection-site-diagram`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.72,

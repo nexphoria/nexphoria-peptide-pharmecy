@@ -47,7 +47,7 @@ export default function ComparePanel({ products, onRemove, onClose }: ComparePan
       {/* Modal */}
       <div
         className="fixed inset-x-4 inset-y-6 md:inset-x-8 md:inset-y-10 z-50 flex flex-col rounded-2xl overflow-hidden"
-        style={{ backgroundColor: "#FFFFF3", boxShadow: "0 24px 64px rgba(0,0,0,0.22)" }}
+        style={{ backgroundColor: "#F9F9F9", boxShadow: "0 24px 64px rgba(0,0,0,0.22)" }}
       >
         {/* Header */}
         <div
@@ -116,7 +116,7 @@ export default function ComparePanel({ products, onRemove, onClose }: ComparePan
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center">
-                          <span className="text-[10px] font-semibold text-center px-1" style={{ color: "#A4B08A" }}>
+                          <span className="text-[10px] font-semibold text-center px-1" style={{ color: "#B8A44C" }}>
                             {p.name}
                           </span>
                         </div>
@@ -159,7 +159,7 @@ export default function ComparePanel({ products, onRemove, onClose }: ComparePan
               {ROW_DEFS.map((row, rowIdx) => (
                 <tr
                   key={row.label}
-                  style={{ backgroundColor: rowIdx % 2 === 0 ? "#FFFFF3" : "#F9F8F4" }}
+                  style={{ backgroundColor: rowIdx % 2 === 0 ? "#F9F9F9" : "#F9F8F4" }}
                 >
                   <td
                     className="px-6 py-3 text-xs font-medium sticky left-0"
@@ -218,7 +218,7 @@ export default function ComparePanel({ products, onRemove, onClose }: ComparePan
                     <Link
                       href={`/products/${p.slug}`}
                       className="inline-block px-4 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider transition-colors"
-                      style={{ backgroundColor: "#010101", color: "#FFFFF3" }}
+                      style={{ backgroundColor: "#010101", color: "#F9F9F9" }}
                     >
                       View Details
                     </Link>
