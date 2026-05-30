@@ -156,8 +156,9 @@ export default function BuyBox({
                 <button
                   key={dosage.size}
                   onClick={() => handleDosageChange(dosage)}
-                  className="flex-1 py-2.5 px-3 text-sm text-center transition-all duration-300"
+                  className="flex-1 py-3 px-3 text-sm text-center transition-all duration-300"
                   style={{
+                    minHeight: "44px",
                     borderRadius: "999px",
                     border: active ? "1px solid #C4A265" : "1px solid #E5E5E5",
                     backgroundColor: "transparent",

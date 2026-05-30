@@ -48,10 +48,11 @@ export default function HeroParallaxImage() {
           <Image
             src="/brand/packaging-unboxing.webp"
             alt="Nexphoria premium peptide presentation — vials, Certificate of Analysis, and cold-chain pack"
-            width={1400}
-            height={1400}
+            width={1536}
+            height={1024}
             className="w-full h-auto"
             priority
+            fetchPriority="high"
             sizes="(max-width: 768px) 100vw, 72vw"
           />
         </div>

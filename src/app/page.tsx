@@ -169,8 +169,8 @@ export default function HomePage() {
             <Image
               src="/brand/hero-lineup.webp"
               alt="Nexphoria vials"
-              width={600}
-              height={450}
+              width={2048}
+              height={1152}
               className="w-full h-auto"
               priority
               sizes="(max-width: 768px) 0vw, 26vw"
@@ -198,8 +198,8 @@ export default function HomePage() {
               <Image
                 src="/brand/box-detail.webp"
                 alt="Nexphoria box detail"
-                width={200}
-                height={240}
+                width={400}
+                height={600}
                 className="w-full h-auto object-cover"
                 loading="lazy"
                 sizes="110px"
@@ -381,6 +381,7 @@ Discover Collection
                   height={534}
                   className="w-full h-auto"
                   priority
+                  fetchPriority="high"
                   sizes="(max-width: 480px) 480px, (max-width: 768px) 100vw, 800px"
                   unoptimized
                 />
@@ -671,8 +672,8 @@ Discover Collection
                   <Image
                     src="/brand/packaging-unboxing.webp"
                     alt="Nexphoria pharmaceutical-grade packaging"
-                    width={700}
-                    height={700}
+                    width={1536}
+                    height={1024}
                     className="w-full h-auto"
                     loading="lazy"
                     sizes="(max-width: 768px) 100vw, 700px"

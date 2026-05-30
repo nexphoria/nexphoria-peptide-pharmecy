@@ -8,6 +8,7 @@ import { hasProductPhoto, getProductImagePath } from "@/lib/product-images";
 import ProductCard from "@/components/ProductCard";
 import ComparePanel from "@/components/ComparePanel";
 import { ChevronDown } from "lucide-react";
+import TrendingCompounds from "@/components/TrendingCompounds";
 
 const MAX_COMPARE = 3;
 
@@ -150,7 +151,8 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                   background: "none",
                   border: "none",
                   cursor: "pointer",
-                  padding: 0,
+                  padding: "10px 0",
+                  minHeight: "44px",
                   fontWeight: 500,
                 }}
               >
@@ -194,7 +196,8 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                 background: "none",
                 border: "none",
                 cursor: "pointer",
-                padding: 0,
+                padding: "10px 0",
+                minHeight: "44px",
                 fontWeight: 500,
               }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.color = "#C4A265"; }}
@@ -279,9 +282,19 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
           </div>
         )}
 
+        {/* Trending Compounds strip — only show when no active search/filter */}
+        {!normalizedQuery && activeFilter === "All" && !compareMode && (
+          <div id="trending-strip">
+            <TrendingCompounds />
+          </div>
+        )}
+
+        {/* All compounds anchor */}
+        <div id="all-compounds" />
+
         {/* Sticky filter tabs */}
         <div className="filter-bar-sticky -mx-6 md:-mx-10 px-6 md:px-10">
-          <div className="flex gap-1" style={{ flexWrap: "wrap" }}>
+          <div className="flex gap-1" style={{ flexWrap: "nowrap", minWidth: "max-content" }}>
             <button
               onClick={() => setActiveFilter("All")}
               className="px-4 py-2 text-[11px] uppercase transition-all"

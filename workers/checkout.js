@@ -242,6 +242,113 @@ async function handleWholesale(request, env) {
   return json({ success: true }, 201);
 }
 
+// ---------------------------------------------------------------------------
+// Stripe webhook handler — verifies signature, processes order events
+// ---------------------------------------------------------------------------
+async function handleStripeWebhook(request, env) {
+  const signature = request.headers.get('stripe-signature');
+  if (!signature) {
+    return new Response('Missing stripe-signature header', { status: 400 });
+  }
+
+  const body = await request.text();
+  let event;
+
+  // Verify webhook signature using Web Crypto (no Node.js crypto available)
+  try {
+    event = await verifyStripeWebhook(body, signature, env.STRIPE_WEBHOOK_SECRET);
+  } catch (err) {
+    return new Response(`Webhook signature verification failed: ${err.message}`, { status: 400 });
+  }
+
+  // Process relevant events
+  if (event.type === 'checkout.session.completed') {
+    const session = event.data.object;
+    const orderData = {
+      type: 'nexphoria_order',
+      sessionId: session.id,
+      customerEmail: session.customer_email || session.customer_details?.email,
+      amountTotal: session.amount_total,
+      currency: session.currency,
+      status: session.payment_status,
+      shippingAddress: session.shipping_details?.address || null,
+      createdAt: new Date(session.created * 1000).toISOString(),
+    };
+
+    // Store order in KV
+    if (env.SUBSCRIBERS) {
+      try {
+        const key = `order:${session.id}`;
+        await env.SUBSCRIBERS.put(key, JSON.stringify(orderData), { expirationTtl: 60 * 60 * 24 * 365 * 2 });
+        const indexKey = 'index:orders';
+        const index = JSON.parse((await env.SUBSCRIBERS.get(indexKey)) || '[]');
+        index.push({ sessionId: session.id, email: orderData.customerEmail, createdAt: orderData.createdAt });
+        await env.SUBSCRIBERS.put(indexKey, JSON.stringify(index));
+      } catch { /* KV failure must not fail webhook ack */ }
+    }
+
+    // Forward to n8n if configured
+    await forwardWebhook(env.ORDER_WEBHOOK_URL, orderData);
+  }
+
+  if (event.type === 'payment_intent.payment_failed') {
+    const pi = event.data.object;
+    await forwardWebhook(env.ORDER_WEBHOOK_URL, {
+      type: 'nexphoria_payment_failed',
+      paymentIntentId: pi.id,
+      amount: pi.amount,
+      lastError: pi.last_payment_error?.message,
+      createdAt: new Date().toISOString(),
+    });
+  }
+
+  return new Response(JSON.stringify({ received: true }), {
+    status: 200,
+    headers: { 'Content-Type': 'application/json' },
+  });
+}
+
+// Stripe webhook signature verification using HMAC-SHA256 via Web Crypto API
+async function verifyStripeWebhook(payload, sigHeader, secret) {
+  if (!secret) throw new Error('STRIPE_WEBHOOK_SECRET not configured');
+
+  // Parse the stripe-signature header
+  const parts = {};
+  for (const part of sigHeader.split(',')) {
+    const [k, v] = part.split('=');
+    parts[k.trim()] = v.trim();
+  }
+  const timestamp = parts['t'];
+  const signature = parts['v1'];
+  if (!timestamp || !signature) throw new Error('Invalid stripe-signature format');
+
+  // Check timestamp tolerance (5 minutes)
+  const tolerance = 300;
+  const now = Math.floor(Date.now() / 1000);
+  if (Math.abs(now - parseInt(timestamp, 10)) > tolerance) {
+    throw new Error('Timestamp outside tolerance window');
+  }
+
+  // Compute expected signature
+  const signedPayload = `${timestamp}.${payload}`;
+  const enc = new TextEncoder();
+  const keyMaterial = await crypto.subtle.importKey(
+    'raw',
+    enc.encode(secret),
+    { name: 'HMAC', hash: 'SHA-256' },
+    false,
+    ['sign']
+  );
+  const signatureBuffer = await crypto.subtle.sign('HMAC', keyMaterial, enc.encode(signedPayload));
+  const expected = Array.from(new Uint8Array(signatureBuffer))
+    .map(b => b.toString(16).padStart(2, '0'))
+    .join('');
+
+  if (expected !== signature) throw new Error('Signature mismatch');
+
+  return JSON.parse(payload);
+}
+
 export default {
   async fetch(request, env) {
     if (request.method === 'OPTIONS') {
@@ -259,6 +366,7 @@ export default {
       if (path.endsWith('/waitlist')) return await handleWaitlist(request, env);
       if (path.endsWith('/wholesale')) return await handleWholesale(request, env);
       if (path.endsWith('/support')) return await handleSupport(request, env);
+      if (path.endsWith('/webhook')) return await handleStripeWebhook(request, env);
       // Default (root or /checkout): Stripe checkout session.
       return await handleCheckout(request, env);
     } catch (err) {

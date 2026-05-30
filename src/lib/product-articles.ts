@@ -7,18 +7,18 @@
 export const PRODUCT_ARTICLES: Record<string, string[]> = {
   // Repair / Recovery
   "bpc-157": [
+    "bpc-157-mechanism-deep-dive-no-vegf-fak-signaling",
     "bpc-157-researchers-complete-guide",
     "bpc-157-tb-500-recovery-stack-deep-dive",
-    "peptide-synergy-stacking-science-of-combining-research-compounds",
   ],
   "tb-500": [
+    "tb-500-mechanism-deep-dive-g-actin-sequestration-thymosin-beta-4-biology",
     "tb-500-thymosin-beta-4-researchers-complete-guide",
     "bpc-157-tb-500-recovery-stack-deep-dive",
-    "peptide-synergy-stacking-science-of-combining-research-compounds",
   ],
   "ghk-cu": [
+    "ghk-cu-wound-healing-research-protocols-study-design",
     "ghk-cu-vs-ghk-copper-complex-chemistry-research-guide",
-    "ghk-cu-copper-peptide-research-review",
     "wolverine-blend-bpc157-tb500-ghk-cu-triple-combination-guide",
   ],
 
@@ -67,12 +67,12 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   ],
   "tirzepatide": [
     "tirzepatide-research-dosing-guide-glp1-gip-dual-agonism-protocols",
-    "semaglutide-vs-tirzepatide-research-comparison",
+    "retatrutide-vs-tirzepatide-triple-vs-dual-agonist-research-comparison",
     "glp1-receptor-agonists-complete-research-landscape",
   ],
   "retatrutide": [
     "retatrutide-triple-agonist-research-guide",
-    "semaglutide-vs-tirzepatide-research-comparison",
+    "retatrutide-vs-tirzepatide-triple-vs-dual-agonist-research-comparison",
     "glp1-receptor-agonists-complete-research-landscape",
   ],
   "aod-9604": [
@@ -88,19 +88,19 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // Longevity
   "nad-plus": [
+    "nad-precursors-nmn-nr-vs-direct-nad-injection-research",
     "nad-plus-research-protocols-dosing-routes-study-design",
     "nad-plus-cellular-energy-sirtuins-longevity-research",
-    "mots-c-mitochondria-derived-peptide-metabolic-research",
   ],
   "epitalon": [
-    "epithalon-telomere-peptide-research-guide",
+    "epitalon-pineal-peptide-longevity-research-review",
+    "glutathione-peptides-oxidative-stress-research-overview",
     "nad-plus-cellular-energy-sirtuins-longevity-research",
-    "sermorelin-ghrh-analog-anti-aging-research",
   ],
   "ss-31": [
     "ss-31-elamipretide-mitochondria-targeted-peptide-research",
+    "glutathione-peptides-oxidative-stress-research-overview",
     "mots-c-mitochondria-derived-peptide-metabolic-research",
-    "nad-plus-cellular-energy-sirtuins-longevity-research",
   ],
 
   // Nootropics / Neuro
@@ -121,8 +121,8 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   ],
   "oxytocin": [
     "oxytocin-research-neuropeptide-guide",
-    "selank-semax-nootropic-peptide-research-overview",
-    "kisspeptin-lh-surge-reproductive-neuroendocrinology-research",
+    "oxytocin-research-protocols-intranasal-vs-ip-administration-deep-dive",
+    "peptide-administration-routes-sc-ip-iv-intranasal-guide",
   ],
 
   // Melanocortin

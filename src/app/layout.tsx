@@ -7,6 +7,7 @@ import CartDrawer from "@/components/cart/CartDrawer";
 import AgeVerificationModal from "@/components/AgeVerificationModal";
 import SearchModal from "@/components/SearchModal";
 import BackToTop from "@/components/BackToTop";
+import NewsletterPopup from "@/components/NewsletterPopup";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -197,13 +198,17 @@ export default function RootLayout({
         {/* Next.js font/google self-hosts fonts, so no external googleapis preconnect needed */}
         <link rel="preconnect" href="https://nexphoria-checkout.chiya-b60.workers.dev" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://nexphoria-checkout.chiya-b60.workers.dev" />
-        {/* Preload LCP images for fast discovery - desktop uses packaging-unboxing.webp, mobile too */}
+        {/* Preload LCP images — high priority for both breakpoints */}
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link rel="preload" as="image" href="/brand/packaging-unboxing.webp" type="image/webp"
           media="(min-width: 769px)"
+          // @ts-ignore fetchpriority is valid HTML attr
+          fetchpriority="high"
         />
         <link rel="preload" as="image" href="/brand/packaging-unboxing-mobile.webp" type="image/webp"
           media="(max-width: 768px)"
+          // @ts-ignore fetchpriority is valid HTML attr
+          fetchpriority="high"
         />
         <link rel="icon" href="/favicon.png" type="image/png" />
         <script
@@ -226,6 +231,7 @@ export default function RootLayout({
         <CartDrawer />
         <AgeVerificationModal />
         <SearchModal />
+        <NewsletterPopup />
         <BackToTop />
       </body>
     </html>

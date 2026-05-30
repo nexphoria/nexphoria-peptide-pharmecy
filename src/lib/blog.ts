@@ -53,6 +53,16 @@ import { article as a49 } from './articles/semaglutide-dosing-timing-protocol-de
 import { article as a50 } from './articles/tirzepatide-research-dosing-guide-glp1-gip-dual-agonism-protocols';
 import { article as a51 } from './articles/nad-plus-research-protocols-dosing-routes-study-design';
 import { article as a52 } from './articles/mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research';
+import { article as a53 } from './articles/glutathione-peptides-oxidative-stress-research-overview';
+import { article as a54 } from './articles/peptide-storage-temperatures-cold-chain-reference';
+import { article as a55 } from './articles/retatrutide-vs-tirzepatide-triple-vs-dual-agonist-research-comparison';
+import { article as a56 } from './articles/bpc-157-mechanism-deep-dive-no-vegf-fak-signaling';
+import { article as a57 } from './articles/tb-500-mechanism-deep-dive-g-actin-sequestration-thymosin-beta-4-biology';
+import { article as a58 } from './articles/nad-precursors-nmn-nr-vs-direct-nad-injection-research';
+import { article as a59 } from './articles/peptide-research-2026-glp1-revolution-semaglutide-tirzepatide-retatrutide';
+import { article as a60 } from './articles/oxytocin-research-protocols-intranasal-vs-ip-administration-deep-dive';
+import { article as a61 } from './articles/ghk-cu-wound-healing-research-protocols-study-design';
+import { article as a62 } from './articles/ultimate-guide-research-peptides-2026';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -64,6 +74,14 @@ export const articles: BlogArticle[] = [
   a47, a48,
   a49, a50,
   a51, a52,
+  a53, a54,
+  a55, a56,
+  a57,
+  a58,
+  a59,
+  a60,
+  a61,
+  a62,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

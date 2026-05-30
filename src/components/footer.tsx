@@ -70,11 +70,17 @@ function EmailCapture() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [tcpaConsent, setTcpaConsent] = useState(false);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!email || !email.includes("@")) {
       setErrorMsg("Please enter a valid email.");
+      setStatus("error");
+      return;
+    }
+    if (!tcpaConsent) {
+      setErrorMsg("Please confirm your consent to receive updates.");
       setStatus("error");
       return;
     }
@@ -93,7 +99,7 @@ function EmailCapture() {
       const res = await fetch("https://nexphoria-checkout.chiya-b60.workers.dev/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, source: "nexphoria-footer" }),
+        body: JSON.stringify({ email, source: "nexphoria-footer", tcpaConsent: true, tcpaConsentTimestamp: new Date().toISOString() }),
         signal: AbortSignal.timeout(5000),
       });
       if (!res.ok && process.env.NODE_ENV === "development") {
@@ -124,6 +130,7 @@ function EmailCapture() {
           You&apos;re on the list. We&apos;ll be in touch.
         </p>
       ) : (
+        <>
         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
           <input
             type="email"
@@ -142,17 +149,38 @@ function EmailCapture() {
           />
           <button
             type="submit"
-            disabled={status === "loading"}
+            disabled={status === "loading" || !tcpaConsent}
             className="px-5 py-2.5 text-sm font-medium rounded transition-all duration-200 whitespace-nowrap shrink-0"
             style={{
-              backgroundColor: status === "loading" ? "rgba(184,164,76,0.5)" : "#B8A44C",
+              backgroundColor: (status === "loading" || !tcpaConsent) ? "rgba(184,164,76,0.4)" : "#B8A44C",
               color: "#1A1A18",
-              cursor: status === "loading" ? "not-allowed" : "pointer",
+              cursor: (status === "loading" || !tcpaConsent) ? "not-allowed" : "pointer",
             }}
           >
             {status === "loading" ? "Subscribing..." : "Subscribe"}
           </button>
         </form>
+        {/* TCPA consent */}
+        <label className="flex items-start gap-2 mt-3 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={tcpaConsent}
+            onChange={(e) => {
+              setTcpaConsent(e.target.checked);
+              if (status === "error") { setStatus("idle"); setErrorMsg(""); }
+            }}
+            className="mt-0.5 flex-shrink-0 accent-[#B8A44C]"
+            aria-required="true"
+          />
+          <span className="text-[10px] leading-relaxed" style={{ color: "rgba(255,255,255,0.3)" }}>
+            I agree to receive research updates and marketing communications from Nexphoria Research, LLC by email.
+            Consent is not a condition of purchase. Message frequency varies. You may{" "}
+            <a href="/privacy" className="underline hover:text-white transition-colors">unsubscribe</a>{" "}
+            at any time. View our{" "}
+            <a href="/privacy" className="underline hover:text-white transition-colors">Privacy Policy</a>.
+          </span>
+        </label>
+        </>
       )}
       {status === "error" && errorMsg && (
         <p className="text-xs mt-2" style={{ color: "rgba(255,100,100,0.8)" }}>

@@ -428,6 +428,33 @@ const TOOLS = [
     ),
     badge: "Super-Tool",
   },
+  {
+    href: "/tools/water-volume-calculator",
+    title: "BAC Water Volume Calculator",
+    desc: "Enter your vial size and desired concentration — get the exact mL of bacteriostatic water to add. Includes multi-concentration comparison table and optional per-dose breakdown.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+      </svg>
+    ),
+    badge: "Tool",
+  },
+  {
+    href: "/tools/peptide-dose-response-planner",
+    title: "Dose-Response Study Planner",
+    desc: "Design multi-arm preclinical dose-response studies: log-spaced dose groups, statistically powered group sizes (80% power, α = 0.05), expected effect sizes from literature, total compound requirements, and printable protocol export.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 3v18h18"/>
+        <circle cx="7" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="10" cy="10" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="14" cy="7" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="18" cy="5" r="1.5" fill="currentColor" stroke="none"/>
+        <path d="M7 16 10 10 14 7 18 5" strokeDasharray="3 2"/>
+      </svg>
+    ),
+    badge: "Tool",
+  },
 ];
 
 export default function ToolsPage() {

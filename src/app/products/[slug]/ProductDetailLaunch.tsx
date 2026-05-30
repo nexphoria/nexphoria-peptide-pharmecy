@@ -228,14 +228,14 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                     src={getProductImagePath(product.slug)}
                     alt={`${product.name} ${product.size}`}
                     className="max-w-full max-h-full object-contain"
-                    style={{ padding: "3.5rem" }}
+                    style={{ padding: "clamp(1.5rem, 5vw, 3.5rem)" }}
                     fetchPriority="high"
                     width={400}
                     height={400}
                     decoding="async"
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center p-12" style={{ backgroundColor: "#1A1A18" }}>
+                  <div className="w-full h-full flex items-center justify-center p-6 md:p-12" style={{ backgroundColor: "#1A1A18" }}>
                     <VialSVG
                       name={product.name}
                       size={product.dosages?.[0]?.size || product.size || "5mg"}

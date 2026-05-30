@@ -53,6 +53,7 @@ const TOOLS = [
   { href: "/tools/peptide-timer", label: "Peptide Injection Timer", desc: "Live countdown to next dose, multi-compound status tracking" },
   { href: "/tools/injection-site-diagram", label: "Injection Site Diagram", desc: "Interactive body diagram — needle length, angle, volume limits per zone" },
   { href: "/tools/peptide-research-planner", label: "Peptide Research Planner", desc: "All-in-one 4-step wizard to generate a complete printable research protocol" },
+  { href: "/tools/peptide-dose-response-planner", label: "Dose-Response Study Planner", desc: "Log-spaced dose arms, power-calculated group sizes, compound requirements" },
   { href: "/compare", label: "Compare Compounds", desc: "Side-by-side purity, MW, storage, and pricing for up to 3 compounds" },
 ];
 

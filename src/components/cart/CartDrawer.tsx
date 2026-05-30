@@ -335,7 +335,8 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                                 </div>
                                 <button
                                   onClick={() => removeItem(item.product.slug, item.format)}
-                                  className="text-xs text-tertiary hover:text-stone transition-colors"
+                                  className="text-xs text-tertiary hover:text-stone transition-colors inline-flex items-center justify-end"
+                                  style={{ minHeight: "32px", padding: "4px 0" }}
                                 >
                                   Remove
                                 </button>
