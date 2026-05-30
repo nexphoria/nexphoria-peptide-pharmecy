@@ -161,6 +161,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // Reproductive / Hormonal
   "kisspeptin": [
+    "kisspeptin-10-vs-kisspeptin-54-research-protocol-differences",
     "kisspeptin-lh-surge-reproductive-neuroendocrinology-research",
     "oxytocin-research-neuropeptide-guide",
   ],
