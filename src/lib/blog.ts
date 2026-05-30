@@ -65,6 +65,7 @@ import { article as a61 } from './articles/ghk-cu-wound-healing-research-protoco
 import { article as a62 } from './articles/ultimate-guide-research-peptides-2026';
 import { article as a63 } from './articles/peptide-reconstitution-complete-step-by-step-guide';
 import { article as a64 } from './articles/glp1-agonists-cardiovascular-research-select-leader-trials';
+import { article as a65 } from './articles/peptide-purity-standards-hplc-ms-coa-data-researchers-guide';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -86,6 +87,7 @@ export const articles: BlogArticle[] = [
   a62,
   a63,
   a64,
+  a65,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
