@@ -11,10 +11,6 @@ import {
   ChevronDown,
   Truck,
   FlaskConical,
-  Snowflake,
-  PackageCheck,
-  BadgeCheck,
-  RotateCcw,
 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
 
@@ -47,33 +43,36 @@ interface Props {
   related: Product[];
 }
 
-function getProductCOA(slug: string, productPurity?: string) {
+// Deterministic hash matching COADocument.tsx logic
+function deterministicNum(seed: string, min: number, max: number): number {
   let hash = 0;
-  for (let i = 0; i < slug.length; i++) {
-    hash = (hash * 31 + slug.charCodeAt(i)) & 0x7fffffff;
+  for (let i = 0; i < seed.length; i++) {
+    hash = (hash * 31 + seed.charCodeAt(i)) & 0x7fffffff;
   }
+  return min + (hash % (max - min + 1));
+}
+
+// Extract numeric purity value from spec string like "≥99.2%" → 99.2
+function parsePurityValue(purity: string): number {
+  const match = purity.match(/(\d+\.?\d*)/);
+  return match ? parseFloat(match[1]) : 98.8;
+}
+
+function getProductCOA(slug: string, productPurity?: string) {
+  const hash = deterministicNum(slug, 0, 0x7fffffff);
   const labs = ["Janoshik Analytical", "Freedom Diagnostics", "BioRegen Analytics", "Colmaric Analyticals"];
   const lab = labs[hash % labs.length];
   const year = 2025;
-  const monthNum = (hash % 10) + 1;
-  const dayNum = (hash % 20) + 1;
+  const monthNum = deterministicNum(slug + "month", 1, 12);
+  const dayNum = deterministicNum(slug + "day", 1, 28);
   const lotMonth = String(monthNum).padStart(2, "0");
   const lotDay = String(dayNum).padStart(2, "0");
-  const lotNum = Math.abs((hash * 7) % 9000) + 1000;
-  const reportNum = Math.abs((hash * 13) % 900000) + 100000;
+  const lotNum = deterministicNum(slug + "lot", 1000, 9999);
+  const reportNum = deterministicNum(slug + "batch", 100000, 999999);
 
-  let purity: string;
-  if (productPurity) {
-    const minVal = parseFloat(productPurity.replace(/[^0-9.]/g, ""));
-    if (!isNaN(minVal)) {
-      const offset = (hash % 49) / 100;
-      purity = (minVal + offset).toFixed(2);
-    } else {
-      purity = ((9880 + (hash % 80)) / 100).toFixed(2);
-    }
-  } else {
-    purity = ((9880 + (hash % 80)) / 100).toFixed(2);
-  }
+  // Use exact spec minimum value — consistent with COADocument.tsx HPLC peak display
+  const purityBase = productPurity ? parsePurityValue(productPurity) : 98.8;
+  const purity = purityBase.toFixed(2);
 
   return {
     lot: `LOT-${year}${lotMonth}${lotDay}-${lotNum}`,
@@ -220,6 +219,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                   aspectRatio: "1 / 1",
                   backgroundColor: "#F7F7F7",
                   borderRadius: "8px",
+                  border: "1px solid #E5E5E5",
                   boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
                 }}
               >
@@ -228,7 +228,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                     src={getProductImagePath(product.slug)}
                     alt={`${product.name} ${product.size}`}
                     className="max-w-full max-h-full object-contain"
-                    style={{ padding: "2rem" }}
+                    style={{ padding: "3.5rem" }}
                     fetchPriority="high"
                     width={400}
                     height={400}
@@ -246,31 +246,6 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                 )}
               </div>
 
-              {/* Trust badges — thin-line, below image on desktop */}
-              <div className="hidden lg:grid grid-cols-3 gap-3 mt-4">
-                {[
-                  { icon: FlaskConical, label: "99%+ Purity", sub: "HPLC verified" },
-                  { icon: BadgeCheck, label: "COA Enclosed", sub: "Batch-specific" },
-                  { icon: Snowflake, label: "Cold Shipped", sub: "48-hr transit" },
-                  { icon: PackageCheck, label: "Batch Tracked", sub: "Lot traceable" },
-                  { icon: Truck, label: "Free Shipping", sub: "Orders over $150" },
-                  { icon: RotateCcw, label: "Research Only", sub: "cGMP manufactured" },
-                ].map(({ icon: Icon, label, sub }) => (
-                  <div
-                    key={label}
-                    className="flex flex-col items-center text-center p-3"
-                    style={{
-                      border: "1px solid #E5E5E5",
-                      borderRadius: "8px",
-                      backgroundColor: "#FFFFFF",
-                    }}
-                  >
-                    <Icon className="w-3.5 h-3.5 mb-1.5" style={{ color: "#C4A265", strokeWidth: 1.5 }} />
-                    <span className="text-[11px] font-medium leading-tight" style={{ color: "#1A1A1A" }}>{label}</span>
-                    <span className="text-[10px] mt-0.5" style={{ color: "#888" }}>{sub}</span>
-                  </div>
-                ))}
-              </div>
             </div>
 
             {/* Right: Product info + buy box */}
@@ -304,30 +279,6 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                 onDosageChange={setSelectedDosage}
               />
 
-              {/* Trust badges — mobile */}
-              <div className="lg:hidden grid grid-cols-3 gap-2 mt-5">
-                {[
-                  { icon: FlaskConical, label: "99%+ Purity" },
-                  { icon: BadgeCheck, label: "COA Enclosed" },
-                  { icon: Snowflake, label: "Cold Shipped" },
-                  { icon: PackageCheck, label: "Batch Tracked" },
-                  { icon: Truck, label: "Free Shipping" },
-                  { icon: RotateCcw, label: "cGMP Made" },
-                ].map(({ icon: Icon, label }) => (
-                  <div
-                    key={label}
-                    className="flex flex-col items-center text-center p-2.5"
-                    style={{
-                      border: "1px solid #E5E5E5",
-                      borderRadius: "8px",
-                      backgroundColor: "#FFFFFF",
-                    }}
-                  >
-                    <Icon className="w-3.5 h-3.5 mb-1" style={{ color: "#C4A265", strokeWidth: 1.5 }} />
-                    <span className="text-[10px] font-medium" style={{ color: "#1A1A1A" }}>{label}</span>
-                  </div>
-                ))}
-              </div>
 
               {/* Research Disclaimer */}
               <div
@@ -465,7 +416,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                 {[
                   { label: "CAS Number", value: product.casNumber, mono: true },
                   { label: "Molecular Weight", value: product.molecularWeight },
-                  { label: "Purity (HPLC)", value: coa.purity },
+                  { label: "Purity (HPLC)", value: product.purity },
                   { label: "Appearance", value: product.appearance },
                   { label: "Molecular Formula", value: product.formula, mono: true },
                   ...(product.sequence ? [{ label: "Sequence", value: product.sequence, mono: true }] : []),

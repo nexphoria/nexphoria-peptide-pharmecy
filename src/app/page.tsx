@@ -240,7 +240,7 @@ export default function HomePage() {
                 lineHeight: 0.91,
                 letterSpacing: "-0.035em",
                 color: "#1A1A1A",
-                marginBottom: "2rem",
+                marginBottom: "3rem",
               }}
             >
               <span style={{ fontWeight: 300 }}>Precision,</span>
@@ -262,7 +262,7 @@ export default function HomePage() {
               Cold-chain shipped with Certificate of Analysis.
             </p>
 
-            <div className="hero-cta-animate flex items-center gap-5">
+            <div className="hero-cta-animate flex flex-col gap-3">
               <Link
                 href="/products"
                 className="btn-primary"
@@ -275,16 +275,18 @@ Discover the Collection
               <Link
                 href="/quiz"
                 style={{
-                  fontSize: "0.75rem",
-                  fontWeight: 500,
-                  letterSpacing: "0.06em",
+                  fontSize: "0.6875rem",
+                  fontWeight: 400,
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
                   color: "#C4A265",
                   textDecoration: "none",
                   transition: "opacity 150ms",
+                  alignSelf: "flex-start",
                 }}
                 className="hover:opacity-60"
               >
-                Find Your Protocol →
+                Find your protocol →
               </Link>
             </div>
           </div>
@@ -449,7 +451,7 @@ Discover Collection
 
       {/* ─── SHOP BY RESEARCH CATEGORY ─── */}
       <SectionReveal>
-        <section className="py-20 md:py-28 px-6" style={{ backgroundColor: "#F9F9F9" }}>
+        <section className="py-24 md:py-36 px-6" style={{ backgroundColor: "#F9F9F9" }}>
           <div className="max-w-6xl mx-auto">
             <div className="mb-12">
               <p className="eyebrow mb-4">Shop by Research Category</p>
@@ -486,7 +488,7 @@ Discover Collection
 
       {/* ─── FEATURED PRODUCTS ─── */}
       <SectionReveal>
-        <section className="py-20 md:py-28 px-6" style={{ backgroundColor: "#F7F7F7" }}>
+        <section className="py-24 md:py-36 px-6" style={{ backgroundColor: "#F7F7F7" }}>
           <div className="max-w-7xl mx-auto">
             <div className="flex items-end justify-between mb-12">
               <div>
@@ -578,7 +580,7 @@ Discover Collection
 
       {/* ─── THE NEXPHORIA STANDARD ─── */}
       <SectionReveal>
-        <section className="py-20 md:py-28 px-6" style={{ backgroundColor: "#1A1A18" }}>
+        <section className="py-24 md:py-36 px-6" style={{ backgroundColor: "#1A1A18" }}>
           <div className="max-w-6xl mx-auto">
             <div className="mb-14 text-center">
               <p className="eyebrow mb-4">The Nexphoria Standard</p>
@@ -635,7 +637,7 @@ Discover Collection
 
       {/* ─── PACKAGING ─── */}
       <SectionReveal>
-        <section className="py-20 md:py-28 px-6">
+        <section className="py-24 md:py-36 px-6">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
               <div className="relative">
@@ -685,7 +687,7 @@ Discover Collection
 
       {/* ─── LATEST FROM THE JOURNAL ─── */}
       <SectionReveal>
-        <section className="py-20 md:py-28 px-6" style={{ backgroundColor: "#F7F7F7" }}>
+        <section className="py-24 md:py-36 px-6" style={{ backgroundColor: "#F7F7F7" }}>
           <div className="max-w-6xl mx-auto">
             <div className="flex items-end justify-between mb-12">
               <div>

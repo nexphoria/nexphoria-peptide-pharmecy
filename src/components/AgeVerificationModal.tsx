@@ -130,28 +130,26 @@ export default function AgeVerificationModal() {
           </label>
 
           {/* Buttons */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-4">
             <button
               onClick={handleEnter}
               disabled={!confirmed}
-              className="flex h-12 items-center justify-center rounded-lg text-sm font-medium uppercase tracking-wider transition-all duration-300"
+              className="flex h-12 items-center justify-center rounded-full text-xs font-medium uppercase tracking-wider transition-all duration-300"
               style={{
-                backgroundColor: "transparent",
-                color: confirmed ? "#1A1A1A" : "#CCC",
-                border: confirmed ? "1px solid #C4A265" : "1px solid #E5E5E5",
+                backgroundColor: confirmed ? "#1A1A1A" : "transparent",
+                color: confirmed ? "#C4A265" : "#CCC",
+                border: confirmed ? "1px solid #1A1A1A" : "1px solid #E5E5E5",
                 cursor: confirmed ? "pointer" : "not-allowed",
-                letterSpacing: "0.15em",
+                letterSpacing: "0.16em",
               }}
               onMouseEnter={(e) => {
                 if (confirmed) {
-                  (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#C4A265";
-                  (e.currentTarget as HTMLButtonElement).style.color = "#F9F9F9";
+                  (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#333";
                 }
               }}
               onMouseLeave={(e) => {
                 if (confirmed) {
-                  (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent";
-                  (e.currentTarget as HTMLButtonElement).style.color = "#1A1A1A";
+                  (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#1A1A1A";
                 }
               }}
             >
@@ -159,13 +157,22 @@ export default function AgeVerificationModal() {
             </button>
             <button
               onClick={handleDecline}
-              className="text-sm text-center transition-colors"
-              style={{ color: "#888" }}
+              className="text-center transition-colors"
+              style={{
+                fontSize: "0.6rem",
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "#AAA",
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                fontWeight: 500,
+              }}
               onMouseEnter={(e) =>
                 (e.currentTarget.style.color = "#666")
               }
               onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "#888")
+                (e.currentTarget.style.color = "#AAA")
               }
             >
               Exit Site

@@ -284,10 +284,10 @@ export function Header() {
           <SearchTrigger />
           <button
             onClick={openDrawer}
-            className="relative p-2 hover:opacity-60 transition-opacity"
+            className="relative p-2 transition-colors group"
             aria-label="Open cart"
           >
-            <ShoppingBag className="w-5 h-5" strokeWidth={1.5} />
+            <ShoppingBag className="w-5 h-5 transition-colors group-hover:text-[#C4A265]" strokeWidth={1.5} />
             {totalItems > 0 && (
               <span
                 className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full text-[10px] font-bold flex items-center justify-center text-white"
@@ -303,10 +303,10 @@ export function Header() {
         <div className="flex md:hidden items-center gap-1">
           <button
             onClick={openDrawer}
-            className="relative flex items-center justify-center w-11 h-11"
+            className="relative flex items-center justify-center w-11 h-11 group"
             aria-label="Open cart"
           >
-            <ShoppingBag className="w-5 h-5" strokeWidth={1.5} />
+            <ShoppingBag className="w-5 h-5 transition-colors group-hover:text-[#C4A265]" strokeWidth={1.5} />
             {totalItems > 0 && (
               <span
                 className="absolute top-1 right-1 w-4 h-4 rounded-full text-[10px] font-bold flex items-center justify-center text-white"
@@ -418,7 +418,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 className="text-[11px] uppercase text-black/60 hover:text-black transition-colors py-3 block border-b border-[#E5E5E5]"
-                style={{ letterSpacing: "0.12em", fontWeight: 500 }}
+                style={{ letterSpacing: "0.15em", fontWeight: 500 }}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.label}

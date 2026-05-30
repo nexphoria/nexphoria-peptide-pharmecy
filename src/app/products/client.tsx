@@ -133,23 +133,30 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
           </p>
           </div>
 
-          <div className="flex items-center gap-3 mt-2">
+          <div
+            className="flex items-center gap-3 mt-2 pb-2"
+            style={{ borderBottom: "1px solid #E8E5DF" }}
+          >
             {/* Sort dropdown */}
             <div className="relative" ref={sortRef}>
               <button
                 onClick={() => setSortOpen(!sortOpen)}
-                className="flex items-center gap-1.5 px-3 py-2 text-[11px] font-medium transition-opacity hover:opacity-60"
+                className="flex items-center gap-1.5 transition-opacity hover:opacity-60"
                 style={{
+                  fontSize: "0.7rem",
                   letterSpacing: "0.15em",
                   textTransform: "uppercase",
                   color: "#555",
                   background: "none",
                   border: "none",
+                  cursor: "pointer",
+                  padding: 0,
+                  fontWeight: 500,
                 }}
               >
                 {activeSortLabel}
                 <ChevronDown
-                  size={12}
+                  size={11}
                   className="transition-transform"
                   style={{ transform: sortOpen ? "rotate(180deg)" : "rotate(0deg)", color: "#C4A265" }}
                 />
@@ -178,16 +185,20 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
             {/* Compare toggle */}
             <button
               onClick={toggleCompareMode}
-              className="flex items-center gap-1.5 px-3 py-2 text-[11px] font-medium transition-colors"
+              className="flex items-center gap-1.5 transition-colors"
               style={{
+                fontSize: "0.7rem",
                 letterSpacing: "0.15em",
                 textTransform: "uppercase",
-                color: compareMode ? "#C4A265" : "#888",
+                color: compareMode ? "#C4A265" : "#999",
                 background: "none",
                 border: "none",
+                cursor: "pointer",
+                padding: 0,
+                fontWeight: 500,
               }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.color = "#C4A265"; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.color = compareMode ? "#C4A265" : "#888"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.color = compareMode ? "#C4A265" : "#999"; }}
             >
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
                 <rect x="1" y="1" width="5" height="12" rx="1" stroke="currentColor" strokeWidth="1.25" />
@@ -282,9 +293,13 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                 fontWeight: activeFilter === "All" ? 500 : 400,
                 borderBottom: activeFilter === "All" ? "1px solid #C4A265" : "1px solid transparent",
                 minHeight: "44px",
+                cursor: "pointer",
               }}
             >
-              All ({products.length})
+              All{" "}
+              <span style={{ fontSize: "0.6rem", fontWeight: 400, color: activeFilter === "All" ? "#C4A265" : "#AAA" }}>
+                {products.length}
+              </span>
             </button>
             {categories.filter((cat) => cat !== "All").map((cat) => {
               const count = products.filter((p) => p.category === cat).length;
@@ -302,9 +317,13 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                     fontWeight: active ? 500 : 400,
                     borderBottom: active ? "1px solid #C4A265" : "1px solid transparent",
                     minHeight: "44px",
+                    cursor: "pointer",
                   }}
                 >
-                  {cat} ({count})
+                  {cat}{" "}
+                  <span style={{ fontSize: "0.6rem", fontWeight: 400, color: active ? "#C4A265" : "#AAA" }}>
+                    {count}
+                  </span>
                 </button>
               );
             })}

@@ -35,7 +35,7 @@ export default function ProductsPage({
           >
             The Catalog
           </h1>
-          <p className="max-w-xl leading-relaxed" style={{ color: "#7F7F7D" }}>
+          <p className="leading-relaxed" style={{ color: "#7F7F7D", maxWidth: "520px" }}>
             cGMP-manufactured research compounds. Full Certificate of Analysis and technical
             documentation for every production lot. Available as lyophilized vials ready for research.
           </p>
@@ -43,10 +43,18 @@ export default function ProductsPage({
       </div>
 
       {/* Research disclaimer */}
-      <div className="border-b" style={{ backgroundColor: "#FFFFFF", borderColor: "var(--border-subtle)" }}>
+      <div style={{ borderBottom: "1px solid #E8E5DF" }}>
         <div className="container-nex py-3">
-          <p className="text-xs font-mono text-center" style={{ color: "#7F7F7D" }}>
-            All compounds for qualified research use only. Not for human consumption, diagnostic, or therapeutic use.
+          <p
+            className="text-center"
+            style={{
+              fontSize: "0.6rem",
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "#AAAAAA",
+            }}
+          >
+            All compounds for qualified research use only — not for human consumption, diagnostic, or therapeutic use.
           </p>
         </div>
       </div>

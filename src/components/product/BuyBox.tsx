@@ -79,7 +79,16 @@ export default function BuyBox({
       {/* Price — with thin rules above/below (Niance style) */}
       <div style={{ borderTop: "1px solid #E5E5E5", paddingTop: "1.25rem", marginBottom: "1.25rem" }}>
         <div className="flex items-baseline gap-2">
-          <span className="text-3xl font-light" style={{ color: "#C4A265", letterSpacing: "-0.02em" }}>
+          <span
+            style={{
+              fontFamily: "var(--font-display)",
+              fontSize: "2.25rem",
+              fontWeight: 300,
+              color: "#C4A265",
+              letterSpacing: "-0.02em",
+              lineHeight: 1,
+            }}
+          >
             ${unitPrice.toFixed(2)}
           </span>
           <span className="text-sm" style={{ color: "#888" }}>
@@ -94,39 +103,32 @@ export default function BuyBox({
       {/* Purchase Mode Toggle */}
       <div className="mb-5">
         <p
-          className="text-[10px] uppercase mb-2.5"
+          className="text-[10px] uppercase mb-3"
           style={{ letterSpacing: "0.12em", color: "#888", fontWeight: 500 }}
         >
           Purchase Type
         </p>
-        <div className="grid grid-cols-2 gap-2">
+        <div className="flex gap-6">
           {(['one-time', 'subscribe'] as const).map((mode) => {
             const active = purchaseMode === mode;
             return (
               <button
                 key={mode}
                 onClick={() => setPurchaseMode(mode)}
-                className="py-3 px-3 text-center transition-all duration-300"
+                className="text-[11px] uppercase transition-all"
                 style={{
-                  borderRadius: "999px",
-                  border: active ? "1px solid #C4A265" : "1px solid #E5E5E5",
-                  backgroundColor: active ? "rgba(196,162,101,0.06)" : "transparent",
+                  letterSpacing: "0.14em",
+                  color: active ? "#1A1A1A" : "#888",
+                  background: "none",
+                  border: "none",
+                  borderBottom: active ? "1px solid #C4A265" : "1px solid transparent",
                   fontWeight: active ? 500 : 400,
-                  color: active ? "#1A1A1A" : "#666",
+                  cursor: "pointer",
+                  padding: "0 0 3px 0",
                 }}
                 aria-pressed={active}
               >
-                <div className="text-sm">
-                  {mode === 'one-time' ? 'One-time' : 'Subscribe'}
-                </div>
-                {mode === 'subscribe' && (
-                  <div
-                    className="text-[10px] mt-0.5 font-medium"
-                    style={{ color: active ? "#C4A265" : "#AAA" }}
-                  >
-                    Save 5% / month
-                  </div>
-                )}
+                {mode === 'one-time' ? 'One-time' : 'Subscribe'}
               </button>
             );
           })}
@@ -158,7 +160,7 @@ export default function BuyBox({
                   style={{
                     borderRadius: "999px",
                     border: active ? "1px solid #C4A265" : "1px solid #E5E5E5",
-                    backgroundColor: active ? "rgba(184,164,76,0.06)" : "transparent",
+                    backgroundColor: "transparent",
                     fontWeight: active ? 500 : 400,
                     color: active ? "#1A1A1A" : "#666",
                   }}
@@ -177,25 +179,28 @@ export default function BuyBox({
       {product.penAvailable && (
         <div className="mb-5">
           <p
-            className="text-[10px] uppercase mb-2.5"
+            className="text-[10px] uppercase mb-3"
             style={{ letterSpacing: "0.12em", color: "#888", fontWeight: 500 }}
           >
             Format
           </p>
-          <div className="grid grid-cols-2 gap-2">
+          <div className="flex gap-6">
             {(['vial', 'pen'] as const).map((fmt) => {
               const active = selectedFormat === fmt;
               return (
                 <button
                   key={fmt}
                   onClick={() => setSelectedFormat(fmt)}
-                  className="py-2 px-3 text-sm text-center transition-all duration-300"
+                  className="text-[11px] uppercase transition-all"
                   style={{
-                    borderRadius: "999px",
-                    border: active ? "1px solid #C4A265" : "1px solid #E5E5E5",
-                    backgroundColor: active ? "rgba(184,164,76,0.06)" : "transparent",
+                    letterSpacing: "0.14em",
+                    color: active ? "#1A1A1A" : "#888",
+                    background: "none",
+                    border: "none",
+                    borderBottom: active ? "1px solid #C4A265" : "1px solid transparent",
                     fontWeight: active ? 500 : 400,
-                    color: active ? "#1A1A1A" : "#666",
+                    cursor: "pointer",
+                    padding: "0 0 3px 0",
                   }}
                   aria-pressed={active}
                 >
@@ -208,49 +213,57 @@ export default function BuyBox({
       )}
 
 
-      {/* Volume options */}
+      {/* Volume options — wine-list columns */}
       <div className="mb-5">
         <p
-          className="text-[10px] uppercase mb-2.5"
+          className="text-[10px] uppercase mb-3"
           style={{ letterSpacing: "0.12em", color: "#888", fontWeight: 500 }}
         >
           Quantity
         </p>
-        <div className="grid grid-cols-3 gap-2">
-          {VOLUME_OPTIONS.map((opt) => {
+        <div className="flex" style={{ borderTop: "1px solid #C4A265" }}>
+          {VOLUME_OPTIONS.map((opt, i) => {
             const active = selectedVolume.qty === opt.qty;
             const optUnitPrice = opt.discount > 0
               ? +(basePrice * (1 - opt.discount)).toFixed(2)
               : basePrice;
-            const optTotal = +(optUnitPrice * opt.qty).toFixed(2);
-            return (
+            return [
+              i > 0 ? (
+                <div
+                  key={`divider-${opt.qty}`}
+                  style={{ width: "1px", flexShrink: 0, backgroundColor: "#C4A265", margin: "4px 0" }}
+                />
+              ) : null,
               <button
                 key={opt.qty}
                 onClick={() => setSelectedVolume(opt)}
-                className="py-2.5 px-2 text-center transition-all duration-300"
+                className="flex-1 py-4 px-2 text-center transition-all"
                 style={{
-                  borderRadius: "999px",
-                  border: active ? "1px solid #C4A265" : "1px solid #E5E5E5",
-                  backgroundColor: active ? "rgba(196,162,101,0.06)" : "transparent",
+                  background: "none",
+                  border: "none",
+                  borderBottom: active ? "1px solid #C4A265" : "1px solid transparent",
+                  cursor: "pointer",
                 }}
                 aria-pressed={active}
               >
                 <div
                   className="text-sm"
-                  style={{ color: active ? "#1A1A1A" : "#555", fontWeight: active ? 500 : 400 }}
+                  style={{ color: active ? "#1A1A1A" : "#666", fontWeight: active ? 500 : 400 }}
                 >
                   {opt.label}
                 </div>
-                <div className="text-[11px] mt-0.5" style={{ color: "#888" }}>
-                  {opt.qty > 1 ? `${opt.qty} × $${optUnitPrice.toFixed(2)}` : `$${optUnitPrice.toFixed(2)}`}
+                <div
+                  className="text-[10px] mt-1.5 uppercase"
+                  style={{
+                    letterSpacing: "0.09em",
+                    color: active ? "#C4A265" : "#AAA",
+                    fontVariantNumeric: "tabular-nums",
+                  }}
+                >
+                  ${optUnitPrice.toFixed(2)} / vial
                 </div>
-                {opt.qty > 1 && (
-                  <div className="text-[10px] mt-0.5 font-medium" style={{ color: "#1A1A1A" }}>
-                    ${optTotal.toFixed(2)}
-                  </div>
-                )}
-              </button>
-            );
+              </button>,
+            ];
           })}
         </div>
       </div>
@@ -258,13 +271,29 @@ export default function BuyBox({
       {/* Total */}
       <div
         className="py-4 mb-4"
-        style={{ borderTop: "1px solid #E5E5E5", borderBottom: "1px solid #E5E5E5" }}
+        style={{ borderTop: "1px solid #C4A265", borderBottom: "1px solid #E5E5E5" }}
       >
-        <div className="flex items-center justify-between">
-          <span className="text-xs uppercase" style={{ letterSpacing: "0.12em", color: "#888", fontWeight: 500 }}>
-            {qty > 1 ? `${qty} vials — total` : 'Total'}
+        <div className="flex items-baseline justify-between">
+          <span
+            style={{
+              fontSize: "0.75rem",
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              color: "#888",
+              fontWeight: 500,
+            }}
+          >
+            {qty > 1 ? `${qty} vials` : 'Total'}
           </span>
-          <span className="text-2xl font-light" style={{ color: "#1A1A1A", letterSpacing: "-0.02em" }}>
+          <span
+            style={{
+              fontFamily: "var(--font-display)",
+              fontSize: "1.5rem",
+              fontWeight: 300,
+              color: "#1A1A1A",
+              letterSpacing: "-0.02em",
+            }}
+          >
             ${totalPrice.toFixed(2)}
           </span>
         </div>
