@@ -22,9 +22,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "myostatin-inhibition-follistatin-actriiib-protocols",
   ],
   "ghk-cu": [
+    "collagen-synthesis-research-ghk-cu-tgf-beta-pathway-deep-dive",
     "ghk-cu-wound-healing-research-protocols-study-design",
     "ghk-cu-vs-ghk-copper-complex-chemistry-research-guide",
-    "wolverine-blend-bpc157-tb500-ghk-cu-triple-combination-guide",
   ],
 
   // GH Axis
