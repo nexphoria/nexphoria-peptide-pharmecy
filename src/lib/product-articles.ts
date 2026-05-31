@@ -8,8 +8,8 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   // Repair / Recovery
   "bpc-157": [
     "bpc-157-mechanism-deep-dive-no-vegf-fak-signaling",
+    "bpc-157-gut-health-research-gi-protection-leaky-gut-intestinal-repair",
     "bpc-157-tb-500-recovery-stack-deep-dive",
-    "peptide-cardiac-protection-research-bpc157-tb500-glp1",
   ],
   "tb-500": [
     "tb-500-mechanism-deep-dive-g-actin-sequestration-thymosin-beta-4-biology",
