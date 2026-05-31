@@ -31,7 +31,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "ipamorelin": [
     "mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research",
     "ipamorelin-dosing-timing-protocol-design-researchers-reference",
-    "ghrp-desensitization-tachyphylaxis-research-review",
+    "peptide-research-sex-differences-female-dosing-protocols",
   ],
   "cjc-1295": [
     "ghrh-biology-pulsatile-gh-secretagogues-deep-dive",
@@ -68,7 +68,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "semaglutide": [
     "semaglutide-dosing-timing-protocol-design-researchers-reference",
     "glp1-agonists-neurodegeneration-parkinsons-alzheimers-tbi-research",
-    "peptide-cardiac-protection-research-bpc157-tb500-glp1",
+    "peptide-research-sex-differences-female-dosing-protocols",
   ],
   "tirzepatide": [
     "tirzepatide-research-dosing-guide-glp1-gip-dual-agonism-protocols",
@@ -127,7 +127,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "oxytocin": [
     "oxytocin-research-neuropeptide-guide",
     "oxytocin-research-protocols-intranasal-vs-ip-administration-deep-dive",
-    "peptide-administration-routes-sc-ip-iv-intranasal-guide",
+    "peptide-research-sex-differences-female-dosing-protocols",
   ],
 
   // Melanocortin
