@@ -7,9 +7,9 @@
 export const PRODUCT_ARTICLES: Record<string, string[]> = {
   // Repair / Recovery
   "bpc-157": [
+    "peptide-research-cardiovascular-fibrosis-tgfbeta-bpc157-ghk-cu-myofibroblast",
     "bpc-157-mechanism-deep-dive-no-vegf-fak-signaling",
     "bpc-157-gut-health-research-gi-protection-leaky-gut-intestinal-repair",
-    "peptide-biomarkers-monitoring-research-protocols-what-to-track-when",
   ],
   "tb-500": [
     "tb-500-mechanism-deep-dive-g-actin-sequestration-thymosin-beta-4-biology",
@@ -22,10 +22,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "myostatin-inhibition-follistatin-actriiib-protocols",
   ],
   "ghk-cu": [
+    "peptide-research-cardiovascular-fibrosis-tgfbeta-bpc157-ghk-cu-myofibroblast",
     "collagen-synthesis-research-ghk-cu-tgf-beta-pathway-deep-dive",
-    "peptide-research-skin-health-ghk-cu-snap8-cosmetic-peptides-study-design",
     "ghk-cu-wound-healing-research-protocols-study-design",
-    "peptide-research-immune-senescence-inflammaging-nad-thymosin-alpha1",
   ],
 
   // GH Axis
