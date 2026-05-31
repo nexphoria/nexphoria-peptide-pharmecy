@@ -7,7 +7,7 @@
 export const PRODUCT_ARTICLES: Record<string, string[]> = {
   // Repair / Recovery
   "bpc-157": [
-    "bpc-157-joint-tendon-cartilage-repair-musculoskeletal-research",
+    "peptide-research-gut-microbiome-bpc157-glp1-prebiotics-study-design",
     "bpc-157-gut-brain-axis-vagus-nerve-enteric-nervous-system",
     "bpc-157-mechanism-deep-dive-no-vegf-fak-signaling",
   ],
@@ -66,8 +66,8 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // GLP-1 / Metabolic
   "semaglutide": [
+    "peptide-research-gut-microbiome-bpc157-glp1-prebiotics-study-design",
     "semaglutide-dosing-timing-protocol-design-researchers-reference",
-    "peptide-research-kidney-health-renoprotection-glp1-bpc157",
     "glp-1-receptor-agonists-complete-research-landscape",
   ],
   "tirzepatide": [
