@@ -8,18 +8,18 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   // Repair / Recovery
   "bpc-157": [
     "bpc-157-mechanism-deep-dive-no-vegf-fak-signaling",
-    "bpc-157-researchers-complete-guide",
+    "peptide-research-skeletal-muscle-hypertrophy-repair-performance-endpoints",
     "bpc-157-tb-500-recovery-stack-deep-dive",
   ],
   "tb-500": [
     "tb-500-mechanism-deep-dive-g-actin-sequestration-thymosin-beta-4-biology",
-    "thymosin-beta-4-systemic-vs-local-effects-research",
+    "peptide-research-skeletal-muscle-hypertrophy-repair-performance-endpoints",
     "tb-500-thymosin-beta-4-researchers-complete-guide",
   ],
   "follistatin-344": [
-    "follistatin-myostatin-inhibition-peptide-research-protocols",
-    "follistatin-344-igf-1-independent-muscle-research-guide",
-    "peptide-synergy-stacking-science-combining-research-compounds",
+    "follistatin-344-igf-1-independent-muscle-research",
+    "peptide-research-skeletal-muscle-hypertrophy-repair-performance-endpoints",
+    "myostatin-inhibition-follistatin-actriiib-protocols",
   ],
   "ghk-cu": [
     "ghk-cu-wound-healing-research-protocols-study-design",
