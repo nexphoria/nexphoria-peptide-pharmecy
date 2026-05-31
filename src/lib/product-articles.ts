@@ -114,12 +114,12 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   // Nootropics / Neuro
   "selank": [
     "selank-semax-nootropic-peptide-research-overview",
-    "neuroinflammation-research-microglia-nlrp3-peptide-interventions",
+    "blood-brain-barrier-peptide-cns-delivery-research",
     "adamax-dsip-selank-nad-nootropic-stack-protocol-deep-dive",
   ],
   "semax": [
     "selank-semax-nootropic-peptide-research-overview",
-    "neuroinflammation-research-microglia-nlrp3-peptide-interventions",
+    "blood-brain-barrier-peptide-cns-delivery-research",
     "cerebrolysin-neurotrophic-peptide-research-review",
   ],
   "dsip": [
@@ -129,7 +129,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   ],
   "oxytocin": [
     "oxytocin-research-neuropeptide-guide",
-    "oxytocin-research-protocols-intranasal-vs-ip-administration-deep-dive",
+    "blood-brain-barrier-peptide-cns-delivery-research",
     "peptide-research-sex-differences-female-dosing-protocols",
   ],
 
