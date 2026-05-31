@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import { Product } from './products';
+import { Product, SubscriptionCadence, SUBSCRIPTION_CADENCE_CONFIG } from './products';
 
 export interface CartItem {
   product: Product;
@@ -10,9 +10,10 @@ export interface CartItem {
     price: number;
   };
   format: 'vial' | 'pen';
-  subscriptionMonths: number; // 1 = one-time, 3+ = subscription
+  subscriptionMonths: number; // 0 = one-time, interval days otherwise (legacy compat)
+  subscriptionCadence?: SubscriptionCadence; // cadence for subscription items
   monthlyPrice: number; // per-shipment price after discount
-  discount: number; // fractional discount applied (0, 0.05, or 0.10)
+  discount: number; // fractional discount applied
 }
 
 interface CartState {
@@ -20,7 +21,7 @@ interface CartState {
   isOpen: boolean;
 
   // Actions
-  addItem: (product: Product, format?: 'vial' | 'pen', selectedDosage?: { size: string; price: number }, subscriptionMonths?: number, discount?: number) => void;
+  addItem: (product: Product, format?: 'vial' | 'pen', selectedDosage?: { size: string; price: number }, subscriptionMonths?: number, discount?: number, subscriptionCadence?: SubscriptionCadence) => void;
   removeItem: (productSlug: string, format: 'vial' | 'pen') => void;
   updateQuantity: (productSlug: string, format: 'vial' | 'pen', quantity: number) => void;
   clearCart: () => void;
@@ -62,7 +63,7 @@ export const useCart = create<CartState>()(
       items: [],
       isOpen: false,
 
-      addItem: (product, format = 'vial', selectedDosage, subscriptionMonths = 1, discount = 0) => {
+      addItem: (product, format = 'vial', selectedDosage, subscriptionMonths = 0, discount = 0, subscriptionCadence) => {
         const existingItemIndex = get().items.findIndex(
           item => item.product.slug === product.slug && item.format === format
         );
@@ -75,22 +76,23 @@ export const useCart = create<CartState>()(
 
         const basePrice = resolveUnitPrice(product, format, dosageInfo);
 
-        // Apply the discount passed from BuyBox (volume or subscription)
-        const monthlyPrice = discount > 0
-          ? +(basePrice * (1 - discount)).toFixed(2)
+        // Apply discount: cadence config takes precedence over explicit discount arg.
+        const effectiveDiscount = subscriptionCadence
+          ? SUBSCRIPTION_CADENCE_CONFIG[subscriptionCadence].discount
+          : discount;
+        const monthlyPrice = effectiveDiscount > 0
+          ? +(basePrice * (1 - effectiveDiscount)).toFixed(2)
           : basePrice;
 
         if (existingItemIndex >= 0) {
-          // Update existing item
           set(state => ({
             items: state.items.map((item, index) =>
               index === existingItemIndex
-                ? { ...item, quantity: item.quantity + 1, subscriptionMonths, monthlyPrice, discount }
+                ? { ...item, quantity: item.quantity + 1, subscriptionMonths, subscriptionCadence, monthlyPrice, discount: effectiveDiscount }
                 : item
             )
           }));
         } else {
-          // Add new item
           set(state => ({
             items: [...state.items, {
               product,
@@ -98,8 +100,9 @@ export const useCart = create<CartState>()(
               selectedDosage: dosageInfo,
               format,
               subscriptionMonths,
+              subscriptionCadence,
               monthlyPrice,
-              discount,
+              discount: effectiveDiscount,
             }]
           }));
         }
@@ -173,11 +176,10 @@ export function getItemUnitPrice(item: CartItem): number {
   return item.monthlyPrice;
 }
 
-// Human-readable cadence label for a subscription length.
-export function getCadenceLabel(subscriptionMonths: number): string {
-  if (subscriptionMonths >= 6) return '6-Month Research Cycle';
-  if (subscriptionMonths >= 3) return '3-Month Research Cycle';
-  return 'One-time';
+// Human-readable cadence label for a cart item.
+export function getCadenceLabel(cadence?: SubscriptionCadence): string {
+  if (!cadence) return 'One-time';
+  return SUBSCRIPTION_CADENCE_CONFIG[cadence].label;
 }
 
 // Helper functions for formatting

@@ -1,5 +1,7 @@
-// Products that have real photography available (.webp)
-export const PHOTO_SLUGS = [
+// All products now have consistent .webp product photography
+// Generated via FAL Flux Pro — matching pharmaceutical vial style
+
+const ALL_PRODUCT_SLUGS = [
   'bpc-157',
   'tb-500',
   'ghk-cu',
@@ -11,10 +13,6 @@ export const PHOTO_SLUGS = [
   'ipamorelin',
   'pt-141',
   'aod-9604',
-] as const;
-
-// Products that have AI-generated imagery (-gen.jpg)
-export const GEN_SLUGS = [
   'semaglutide',
   'selank',
   'semax',
@@ -34,16 +32,17 @@ export const GEN_SLUGS = [
   'snap-8',
   'sterile-water-3ml',
   'sterile-water-10ml',
+  'cjc-1295',
+  'cjc-1295-ipamorelin',
+  'sermorelin',
+  'mk-677',
 ] as const;
 
 export function hasProductPhoto(slug: string): boolean {
-  return PHOTO_SLUGS.includes(slug as any) || GEN_SLUGS.includes(slug as any);
+  return ALL_PRODUCT_SLUGS.includes(slug as any);
 }
 
 export function getProductImagePath(slug: string): string {
-  if (GEN_SLUGS.includes(slug as any)) {
-    return `/products/${slug}-gen.jpg`;
-  }
   return `/products/${slug}.webp`;
 }
 

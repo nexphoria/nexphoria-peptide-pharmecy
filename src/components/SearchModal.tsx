@@ -7,6 +7,7 @@ import { Search, X, ArrowRight } from "lucide-react";
 import { products } from "@/lib/products";
 import { articles } from "@/lib/blog";
 import Link from "next/link";
+import { trackSearch } from "@/lib/analytics";
 
 interface SearchResult {
   type: "product" | "article" | "page";
@@ -75,6 +76,15 @@ export default function SearchModal() {
       document.body.style.overflow = "";
     };
   }, [isOpen]);
+
+  // Fire search event after 600ms idle (debounced)
+  useEffect(() => {
+    if (!query.trim()) return;
+    const timer = setTimeout(() => {
+      trackSearch(query.trim());
+    }, 600);
+    return () => clearTimeout(timer);
+  }, [query]);
 
   // Search logic
   useEffect(() => {

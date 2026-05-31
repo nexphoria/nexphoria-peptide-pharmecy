@@ -49,6 +49,7 @@ const footerNav = {
     { label: "Customer Support", href: "/contact" },
     { label: "FAQs", href: "/faq" },
     { label: "Shipping & Cold-Chain", href: "/shipping" },
+    { label: "Returns & Refunds", href: "/returns" },
     { label: "Compare Compounds", href: "/compare" },
     { label: "Research Tools", href: "/tools" },
     { label: "BAC Water Guide", href: "/tools/bac-water-guide" },
@@ -69,6 +70,8 @@ const footerNav = {
     { label: "Terms of Service", href: "/terms" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Research Use Policy", href: "/legal/disclaimer" },
+    { label: "Shipping Policy", href: "/shipping" },
+    { label: "Returns & Refunds", href: "/returns" },
   ],
 };
 

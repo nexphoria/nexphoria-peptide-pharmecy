@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Weight Management Peptides Compared — Nexphoria</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    background: #0A0A0A;
+    color: #F9F9F9;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+  }
+
+  /* Header */
+  .brand-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 56px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .brand-name {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #C9A24B;
+  }
+  .brand-ruo {
+    font-size: 0.625rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #444;
+  }
+
+  /* Hero */
+  .eyebrow {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #C9A24B;
+    margin-bottom: 16px;
+  }
+  .hero-title {
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #F9F9F9;
+    margin-bottom: 16px;
+  }
+  .hero-title span { color: #C9A24B; }
+  .hero-sub {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: #6B6B67;
+    max-width: 640px;
+    margin-bottom: 48px;
+  }
+
+  /* Product cards */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 48px;
+  }
+  .product-card {
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .card-top {
+    padding: 28px 24px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .card-badge {
+    display: inline-block;
+    font-size: 0.5625rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #0A0A0A;
+    background: #C9A24B;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 14px;
+  }
+  .card-badge.new { background: #EF4444; color: #fff; }
+  .card-name {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: #F9F9F9;
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+  .card-tagline {
+    font-size: 0.75rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  .card-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .card-price {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #F9F9F9;
+  }
+  .card-price-unit {
+    font-size: 0.75rem;
+    color: #555;
+  }
+  .card-bottom { padding: 20px 24px; }
+  .spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    gap: 12px;
+  }
+  .spec-row:last-child { border-bottom: none; }
+  .spec-label {
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #555;
+    flex-shrink: 0;
+  }
+  .spec-value {
+    font-size: 0.75rem;
+    color: #AAA;
+    text-align: right;
+    line-height: 1.4;
+  }
+  .spec-value.highlight { color: #4CAF50; font-weight: 600; }
+
+  /* Visual comparison bars */
+  .section-label {
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #C9A24B;
+    margin-bottom: 24px;
+  }
+  .comparison-section {
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 32px;
+    margin-bottom: 24px;
+  }
+  .comparison-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #F9F9F9;
+    margin-bottom: 24px;
+  }
+  .bar-group { margin-bottom: 20px; }
+  .bar-group:last-child { margin-bottom: 0; }
+  .bar-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  .bar-name {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #DDD;
+  }
+  .bar-value {
+    font-size: 0.75rem;
+    color: #888;
+  }
+  .bar-track {
+    height: 6px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.3s;
+  }
+  .bar-fill.sema { background: #EF4444; }
+  .bar-fill.tirz { background: #F97316; }
+  .bar-fill.reta { background: #C9A24B; }
+
+  /* Mechanism comparison */
+  .mechanism-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .mech-card {
+    background: #0D0D0D;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    padding: 20px;
+  }
+  .mech-compound {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #F9F9F9;
+    margin-bottom: 10px;
+  }
+  .receptor-tag {
+    display: inline-block;
+    font-size: 0.5625rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 3px 7px;
+    border-radius: 4px;
+    margin: 2px 2px 2px 0;
+  }
+  .receptor-tag.glp1 { background: rgba(239,68,68,0.15); color: #EF4444; border: 1px solid rgba(239,68,68,0.3); }
+  .receptor-tag.gip  { background: rgba(249,115,22,0.15); color: #F97316; border: 1px solid rgba(249,115,22,0.3); }
+  .receptor-tag.gcg  { background: rgba(201,162,75,0.15); color: #C9A24B; border: 1px solid rgba(201,162,75,0.3); }
+  .mech-note {
+    font-size: 0.6875rem;
+    color: #555;
+    line-height: 1.5;
+    margin-top: 10px;
+  }
+
+  /* Half-life timeline */
+  .timeline-section {
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 32px;
+    margin-bottom: 24px;
+  }
+  .timeline-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .timeline-row:last-child { margin-bottom: 0; }
+  .timeline-compound {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #DDD;
+    width: 100px;
+    flex-shrink: 0;
+  }
+  .timeline-track {
+    flex: 1;
+    height: 28px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+  }
+  .timeline-fill {
+    height: 100%;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: rgba(0,0,0,0.7);
+  }
+  .timeline-fill.sema { width: 70%; background: #EF4444; }
+  .timeline-fill.tirz { width: 50%; background: #F97316; }
+  .timeline-fill.reta { width: 70%; background: #C9A24B; color: rgba(0,0,0,0.8); }
+  .timeline-label {
+    font-size: 0.6875rem;
+    color: #666;
+    width: 80px;
+    flex-shrink: 0;
+    text-align: right;
+  }
+
+  /* Research highlights */
+  .highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .highlight-card {
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 22px;
+  }
+  .highlight-stat {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+  .highlight-stat.red { color: #EF4444; }
+  .highlight-stat.orange { color: #F97316; }
+  .highlight-stat.gold { color: #C9A24B; }
+  .highlight-desc {
+    font-size: 0.6875rem;
+    color: #666;
+    line-height: 1.5;
+  }
+  .highlight-compound {
+    font-size: 0.5625rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .highlight-compound.red { color: #EF4444; }
+  .highlight-compound.orange { color: #F97316; }
+  .highlight-compound.gold { color: #C9A24B; }
+
+  /* Full comparison table */
+  .table-wrap {
+    background: #F9F9F9;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8125rem;
+  }
+  th {
+    padding: 14px 16px;
+    text-align: center;
+    font-weight: 700;
+    color: #010101;
+    background: #F0EDE7;
+    border-bottom: 1px solid #ECEAE4;
+    font-size: 0.8125rem;
+  }
+  th:first-child { text-align: left; width: 180px; }
+  td {
+    padding: 10px 16px;
+    text-align: center;
+    color: #333;
+    border-bottom: 1px solid #ECEAE4;
+    font-size: 0.75rem;
+    vertical-align: middle;
+  }
+  td:first-child {
+    text-align: left;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #666;
+    background: #F5F3F0;
+  }
+  tr:nth-child(even) td { background: #F5F3F0; }
+  tr:nth-child(even) td:first-child { background: #EEECE8; }
+  .purity-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 99px;
+    background: #E8F5E9;
+    color: #2E7D32;
+    font-weight: 600;
+    font-size: 0.6875rem;
+  }
+  .check { color: #4CAF50; font-size: 1.1em; }
+  .dash { color: #BBB; }
+
+  /* Footer */
+  .footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .footer-disclaimer {
+    font-size: 0.6rem;
+    color: #333;
+    line-height: 1.6;
+    max-width: 680px;
+  }
+  .footer-url {
+    font-size: 0.625rem;
+    color: #C9A24B;
+    letter-spacing: 0.08em;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Brand Bar -->
+  <div class="brand-bar">
+    <div class="brand-name">Nexphoria</div>
+    <div class="brand-ruo">Research Use Only · Not for Human or Veterinary Use</div>
+  </div>
+
+  <!-- Hero -->
+  <div class="eyebrow">Category Comparison · Weight Management</div>
+  <h1 class="hero-title">Incretin-Based Research Compounds<br><span>GLP-1 Generation Compared</span></h1>
+  <p class="hero-sub">
+    A technical comparison of the three leading GLP-1-class research peptides: Semaglutide (single agonist),
+    Tirzepatide (dual agonist), and Retatrutide (triple agonist). Each represents a distinct generation of
+    incretin-based research chemistry.
+  </p>
+
+  <!-- Product Cards -->
+  <div class="products-grid">
+
+    <!-- Semaglutide -->
+    <div class="product-card">
+      <div class="card-top">
+        <div class="card-badge">Generation 1</div>
+        <div class="card-name">Semaglutide</div>
+        <div class="card-tagline">Long-acting GLP-1 receptor agonist.<br>Metabolic and appetite regulation research.</div>
+        <div class="card-price-row">
+          <div class="card-price">$78</div>
+          <div class="card-price-unit">/ 5mg vial</div>
+        </div>
+      </div>
+      <div class="card-bottom">
+        <div class="spec-row">
+          <span class="spec-label">Purity</span>
+          <span class="spec-value highlight">≥98.0%</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Mol. Weight</span>
+          <span class="spec-value">4,113.58 g/mol</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Half-Life</span>
+          <span class="spec-value">~7 days</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Route</span>
+          <span class="spec-value">SC, once weekly</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Receptors</span>
+          <span class="spec-value">GLP-1R</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">CAS</span>
+          <span class="spec-value">910463-68-2</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">FDA Analogue</span>
+          <span class="spec-value">Ozempic / Wegovy</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tirzepatide -->
+    <div class="product-card">
+      <div class="card-top">
+        <div class="card-badge">Generation 2</div>
+        <div class="card-name">Tirzepatide</div>
+        <div class="card-tagline">Dual GIP/GLP-1 receptor agonist.<br>FDA-approved metabolic research compound.</div>
+        <div class="card-price-row">
+          <div class="card-price">$120</div>
+          <div class="card-price-unit">/ 10mg vial</div>
+        </div>
+      </div>
+      <div class="card-bottom">
+        <div class="spec-row">
+          <span class="spec-label">Purity</span>
+          <span class="spec-value highlight">≥98.0%</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Mol. Weight</span>
+          <span class="spec-value">4,813.50 g/mol</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Half-Life</span>
+          <span class="spec-value">~5 days</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Route</span>
+          <span class="spec-value">SC, once weekly</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Receptors</span>
+          <span class="spec-value">GIP-R + GLP-1R</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">CAS</span>
+          <span class="spec-value">2023788-19-2</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">FDA Analogue</span>
+          <span class="spec-value">Mounjaro / Zepbound</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Retatrutide -->
+    <div class="product-card">
+      <div class="card-top">
+        <div class="card-badge new">NEW · Gen 3</div>
+        <div class="card-name">Retatrutide</div>
+        <div class="card-tagline">Triple GIP/GLP-1/glucagon receptor agonist.<br>Advanced metabolic research compound.</div>
+        <div class="card-price-row">
+          <div class="card-price">$210</div>
+          <div class="card-price-unit">/ 10mg vial</div>
+        </div>
+      </div>
+      <div class="card-bottom">
+        <div class="spec-row">
+          <span class="spec-label">Purity</span>
+          <span class="spec-value highlight">≥98.0%</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Mol. Weight</span>
+          <span class="spec-value">4,859.00 g/mol</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Half-Life</span>
+          <span class="spec-value">~7 days</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Route</span>
+          <span class="spec-value">SC, once weekly</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Receptors</span>
+          <span class="spec-value">GIP-R + GLP-1R + GCG-R</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">CAS</span>
+          <span class="spec-value">2381089-83-2</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">FDA Analogue</span>
+          <span class="spec-value">LY3437943 (Phase III)</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Receptor Targets -->
+  <div class="section-label">Receptor Target Profile</div>
+  <div class="mechanism-grid" style="margin-bottom: 32px;">
+    <div class="mech-card">
+      <div class="mech-compound">Semaglutide</div>
+      <span class="receptor-tag glp1">GLP-1R ✓</span>
+      <span class="receptor-tag" style="background:rgba(255,255,255,0.04);color:#333;border:1px solid rgba(255,255,255,0.08);">GIP-R —</span>
+      <span class="receptor-tag" style="background:rgba(255,255,255,0.04);color:#333;border:1px solid rgba(255,255,255,0.08);">GCG-R —</span>
+      <div class="mech-note">Single-axis incretin agonism. Albumin binding via C18 fatty acid chain enables once-weekly dosing. Established clinical reference standard.</div>
+    </div>
+    <div class="mech-card">
+      <div class="mech-compound">Tirzepatide</div>
+      <span class="receptor-tag glp1">GLP-1R ✓</span>
+      <span class="receptor-tag gip">GIP-R ✓</span>
+      <span class="receptor-tag" style="background:rgba(255,255,255,0.04);color:#333;border:1px solid rgba(255,255,255,0.08);">GCG-R —</span>
+      <div class="mech-note">Dual incretin agonism. GIP activation adds adipose tissue modulation and enhanced insulin secretion. Head-to-head trial data vs semaglutide available.</div>
+    </div>
+    <div class="mech-card">
+      <div class="mech-compound">Retatrutide</div>
+      <span class="receptor-tag glp1">GLP-1R ✓</span>
+      <span class="receptor-tag gip">GIP-R ✓</span>
+      <span class="receptor-tag gcg">GCG-R ✓</span>
+      <div class="mech-note">Triple receptor agonism. Glucagon receptor engagement adds energy expenditure via hepatic and adipose mechanisms. Phase II data shows superior weight outcomes.</div>
+    </div>
+  </div>
+
+  <!-- Clinical Outcomes Visualization -->
+  <div class="section-label">Phase II/III Clinical Weight Loss Outcomes (% Body Weight Reduction)</div>
+  <div class="comparison-section">
+    <div class="comparison-title">Reported Mean Body Weight Reduction — Pivotal Trials</div>
+    <div class="bar-group">
+      <div class="bar-header">
+        <span class="bar-name">Semaglutide 2.4mg/wk</span>
+        <span class="bar-value">~15–17% (STEP 1 trial, 68 weeks)</span>
+      </div>
+      <div class="bar-track"><div class="bar-fill sema" style="width:62%"></div></div>
+    </div>
+    <div class="bar-group">
+      <div class="bar-header">
+        <span class="bar-name">Tirzepatide 15mg/wk</span>
+        <span class="bar-value">~20–22% (SURMOUNT-1, 72 weeks)</span>
+      </div>
+      <div class="bar-track"><div class="bar-fill tirz" style="width:84%"></div></div>
+    </div>
+    <div class="bar-group">
+      <div class="bar-header">
+        <span class="bar-name">Retatrutide 12mg/wk</span>
+        <span class="bar-value">~24.2% (TRIUMPH Phase II, 48 weeks)</span>
+      </div>
+      <div class="bar-track"><div class="bar-fill reta" style="width:100%"></div></div>
+    </div>
+    <p style="font-size:0.5625rem;color:#333;margin-top:16px;line-height:1.5;">
+      ⚠ Figures from published clinical trial literature. Research compound. Not indicative of expected outcomes in any use. For research protocol reference only.
+    </p>
+  </div>
+
+  <!-- Half-Life Timeline -->
+  <div class="section-label">Half-Life Profile</div>
+  <div class="timeline-section">
+    <div class="comparison-title">Plasma Half-Life (approximate, from published pharmacokinetic data)</div>
+    <div class="timeline-row">
+      <span class="timeline-compound">Semaglutide</span>
+      <div class="timeline-track">
+        <div class="timeline-fill sema">~7 days</div>
+      </div>
+      <span class="timeline-label">~7 days</span>
+    </div>
+    <div class="timeline-row">
+      <span class="timeline-compound">Tirzepatide</span>
+      <div class="timeline-track">
+        <div class="timeline-fill tirz">~5 days</div>
+      </div>
+      <span class="timeline-label">~5 days</span>
+    </div>
+    <div class="timeline-row">
+      <span class="timeline-compound">Retatrutide</span>
+      <div class="timeline-track">
+        <div class="timeline-fill reta">~7 days</div>
+      </div>
+      <span class="timeline-label">~7 days</span>
+    </div>
+  </div>
+
+  <!-- Research Highlights -->
+  <div class="section-label">Key Research Differentiators</div>
+  <div class="highlight-grid" style="margin-bottom: 32px;">
+    <div class="highlight-card">
+      <div class="highlight-compound red">Semaglutide</div>
+      <div class="highlight-stat red">94%</div>
+      <div class="highlight-desc">Sequence homology to native human GLP-1. Two arginine substitutions confer DPP-4 resistance. Largest clinical dataset of the three compounds.</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-compound orange">Tirzepatide</div>
+      <div class="highlight-stat orange">2×</div>
+      <div class="highlight-desc">Dual incretin receptor co-activation. SURPASS program demonstrated superior HbA1c reduction vs semaglutide in direct head-to-head trial (SURPASS-2).</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-compound gold">Retatrutide</div>
+      <div class="highlight-stat gold">3×</div>
+      <div class="highlight-desc">Triple receptor activation — the most mechanistically complex incretin agonist in active clinical development. Phase III enrollment ongoing (LY3437943).</div>
+    </div>
+  </div>
+
+  <!-- Full Spec Table -->
+  <div class="section-label">Full Specification Comparison</div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Attribute</th>
+          <th>Semaglutide</th>
+          <th>Tirzepatide</th>
+          <th>Retatrutide</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Category</td>
+          <td>Weight Management</td>
+          <td>Weight Management</td>
+          <td>Weight Management</td>
+        </tr>
+        <tr>
+          <td>Purity</td>
+          <td><span class="purity-badge">≥98.0%</span></td>
+          <td><span class="purity-badge">≥98.0%</span></td>
+          <td><span class="purity-badge">≥98.0%</span></td>
+        </tr>
+        <tr>
+          <td>Molecular Weight</td>
+          <td>4,113.58 g/mol</td>
+          <td>4,813.50 g/mol</td>
+          <td>4,859.00 g/mol</td>
+        </tr>
+        <tr>
+          <td>Receptor Targets</td>
+          <td>GLP-1R</td>
+          <td>GIP-R · GLP-1R</td>
+          <td>GIP-R · GLP-1R · GCG-R</td>
+        </tr>
+        <tr>
+          <td>Plasma Half-Life</td>
+          <td>~7 days</td>
+          <td>~5 days</td>
+          <td>~7 days</td>
+        </tr>
+        <tr>
+          <td>Dosing Frequency</td>
+          <td>Once weekly (SC)</td>
+          <td>Once weekly (SC)</td>
+          <td>Once weekly (SC)</td>
+        </tr>
+        <tr>
+          <td>Storage (lyophilized)</td>
+          <td>−20°C, 24 months</td>
+          <td>−20°C, 24 months</td>
+          <td>−20°C, 24 months</td>
+        </tr>
+        <tr>
+          <td>Reconstituted stability</td>
+          <td>28 days at 2–8°C</td>
+          <td>28 days at 2–8°C</td>
+          <td>28 days at 2–8°C</td>
+        </tr>
+        <tr>
+          <td>CAS Number</td>
+          <td>910463-68-2</td>
+          <td>2023788-19-2</td>
+          <td>2381089-83-2</td>
+        </tr>
+        <tr>
+          <td>FDA Analogue Status</td>
+          <td>Approved (2017/2021)</td>
+          <td>Approved (2022/2023)</td>
+          <td>Phase III</td>
+        </tr>
+        <tr>
+          <td>Starting Price</td>
+          <td><strong>$78 / 5mg</strong></td>
+          <td><strong>$120 / 10mg</strong></td>
+          <td><strong>$210 / 10mg</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-disclaimer">
+      <strong style="color:#444;">Research Use Only.</strong> All compounds listed are for in vitro research and preclinical study only. Not for human or veterinary diagnostic, therapeutic, or clinical use.
+      Compound data sourced from peer-reviewed literature and published pharmacokinetic studies. Clinical trial outcomes referenced from published Phase II/III data and are for scientific context only —
+      they do not constitute efficacy or safety claims for the research compounds listed. Nexphoria, 2026.
+    </div>
+    <div class="footer-url">nexphoria.com/compare</div>
+  </div>
+
+</div>
+</body>
+</html>

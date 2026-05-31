@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, ShieldCheck, Truck, Zap, Clock, RefreshCw, CheckCircle2 } from "lucide-react";
 import { useCart, getItemUnitPrice, getCadenceLabel } from "@/lib/cart";
+import { buildItem, trackBeginCheckout } from "@/lib/analytics";
 import { CHECKOUT_URL, CRYPTO_ORDER_URL } from "@/lib/endpoints";
 import { getProductImagePath, hasProductPhoto } from "@/lib/product-images";
 import ProductVial from "@/components/ProductVial";
@@ -151,6 +152,18 @@ export default function CheckoutPage() {
 
     setIsProcessing(true);
     setError(null);
+
+    const ga4Items = items.map((item) =>
+      buildItem({
+        slug: item.product.slug,
+        name: item.product.name,
+        category: item.product.category,
+        price: getItemUnitPrice(item),
+        quantity: item.quantity,
+        format: item.format,
+      })
+    );
+    trackBeginCheckout(ga4Items, getTotalPrice());
 
     try {
       const checkoutItems = items.map((item) => ({
@@ -727,7 +740,7 @@ export default function CheckoutPage() {
                     )}
                     {subscriptionItems.map((item) => {
                       const dosageLabel = item.selectedDosage?.size || item.product.size;
-                      const cadenceLabel = getCadenceLabel(item.subscriptionMonths);
+                      const cadenceLabel = getCadenceLabel(item.subscriptionCadence);
                       const unitPrice = getItemUnitPrice(item);
                       return (
                         <div

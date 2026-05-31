@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexphoria — Visual Identity Guide v1</title>
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* Brand palette */
+      --gold:         #C4A265;
+      --gold-dark:    #A68B4B;
+      --gold-text:    #8E6C2F;
+      --yellow-green: #C9DD69;
+      --olive:        #A4B08A;
+      --near-black:   #0F0F0E;
+      --dark-panel:   #161614;
+      --dark-card:    #1C1C1A;
+      --dark-border:  #2A2A28;
+      --cream:        #F9F9F9;
+      --card-bg:      #F7F7F7;
+      --text-primary: #1A1A1A;
+      --text-secondary:#666666;
+      --border:       #E5E5E5;
+
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans:  system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+    }
+
+    html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+
+    /* ─── Page layout ──────────────────────────────────────── */
+    .page { max-width: 960px; margin: 0 auto; padding: 3rem 2rem; }
+
+    /* Section dividers */
+    .section { margin-bottom: 5rem; }
+    .section + .section { border-top: 1px solid var(--border); padding-top: 4rem; }
+
+    /* ─── Typography ───────────────────────────────────────── */
+    .guide-title {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: var(--near-black);
+    }
+    .guide-subtitle {
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--gold-text);
+      margin-bottom: 1.25rem;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 400;
+      color: var(--near-black);
+      margin-bottom: 0.5rem;
+    }
+    .section-number {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--gold-text);
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 640px;
+      margin-bottom: 2.5rem;
+    }
+    p { margin-bottom: 1rem; color: var(--text-secondary); }
+    h4 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-primary); margin-bottom: 0.5rem; }
+
+    /* ─── Cover ────────────────────────────────────────────── */
+    .cover {
+      background: var(--near-black);
+      color: var(--cream);
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem;
+      margin-bottom: 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(196,162,101,0.12), transparent);
+      pointer-events: none;
+    }
+    .cover .guide-title { color: var(--cream); }
+    .cover .guide-subtitle { color: var(--gold); }
+    .cover-meta {
+      margin-top: 2rem;
+      font-size: 0.75rem;
+      color: rgba(249,249,249,0.4);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ─── TOC ──────────────────────────────────────────────── */
+    .toc { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 2rem; }
+    .toc li {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+    }
+    .toc li span { color: var(--gold-text); font-size: 0.75rem; font-variant-numeric: tabular-nums; }
+
+    /* ─── Logo grid ────────────────────────────────────────── */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .logo-cell {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .logo-cell.dark { background: var(--dark-panel); border-color: var(--dark-border); }
+    .logo-cell.olive-bg { background: #A4B08A; border-color: #8A9672; }
+    .logo-cell .logo-demo {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .logo-cell .logo-name { font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-secondary); }
+    .logo-cell.dark .logo-name { color: rgba(249,249,249,0.45); }
+    .logo-cell.olive-bg .logo-name { color: rgba(255,255,255,0.7); }
+
+    .clearzone-demo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px dashed var(--gold);
+      padding: 2rem 3rem;
+      background: rgba(196,162,101,0.04);
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+    .clearzone-demo .wordmark {
+      font-family: var(--serif);
+      font-size: 2rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--near-black);
+      outline: 2px dashed rgba(196,162,101,0.4);
+      outline-offset: 20px;
+    }
+
+    .do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+    .do-card, .dont-card {
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      font-size: 0.875rem;
+    }
+    .do-card { background: rgba(201,221,105,0.08); border: 1px solid rgba(201,221,105,0.3); }
+    .dont-card { background: rgba(239,68,68,0.05); border: 1px solid rgba(239,68,68,0.2); }
+    .do-card strong { color: #4D7C0F; display: block; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.6875rem; letter-spacing: 0.15em; }
+    .dont-card strong { color: #B91C1C; display: block; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.6875rem; letter-spacing: 0.15em; }
+    .do-card ul, .dont-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.375rem; }
+    .do-card li::before { content: '✓ '; color: #4D7C0F; font-weight: 700; }
+    .dont-card li::before { content: '✗ '; color: #B91C1C; font-weight: 700; }
+
+    /* ─── Color palette ────────────────────────────────────── */
+    .palette { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
+    .swatch {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .swatch-color { height: 100px; }
+    .swatch-info { padding: 0.875rem 1rem; background: white; }
+    .swatch-name { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-primary); }
+    .swatch-hex { font-size: 0.875rem; font-family: 'Courier New', monospace; color: var(--gold-text); margin: 0.2rem 0; }
+    .swatch-cmyk { font-size: 0.6875rem; color: var(--text-secondary); line-height: 1.5; }
+    .swatch-pantone { font-size: 0.6875rem; color: var(--text-secondary); }
+
+    .palette-secondary { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.75rem; margin-bottom: 2rem; }
+    .swatch-sm .swatch-color { height: 64px; }
+    .swatch-sm .swatch-info { padding: 0.625rem 0.875rem; }
+
+    /* ─── Typography ───────────────────────────────────────── */
+    .type-specimen { margin-bottom: 2.5rem; }
+    .specimen-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 1.5rem;
+      align-items: baseline;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .specimen-label { font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-secondary); }
+    .specimen-label small { display: block; margin-top: 0.25rem; font-size: 0.625rem; font-family: 'Courier New', monospace; color: var(--border); color: #aaa; }
+
+    .type-h1 { font-family: var(--serif); font-size: 3.5rem; font-weight: 400; line-height: 1.05; letter-spacing: -0.02em; color: var(--near-black); }
+    .type-h2 { font-family: var(--serif); font-size: 2.25rem; font-weight: 400; line-height: 1.15; letter-spacing: -0.015em; color: var(--near-black); }
+    .type-h3 { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; line-height: 1.25; color: var(--near-black); }
+    .type-eyebrow { font-size: 0.6875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold-text); }
+    .type-body-lg { font-size: 1.125rem; color: var(--text-secondary); line-height: 1.75; }
+    .type-body { font-size: 1rem; color: var(--text-secondary); line-height: 1.7; }
+    .type-small { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; }
+    .type-caption { font-size: 0.75rem; color: #999; letter-spacing: 0.05em; }
+    .type-label { font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-primary); }
+
+    .font-stack {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .font-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem;
+    }
+    .font-card .font-name { font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold-text); margin-bottom: 1rem; }
+    .font-card .font-sample-serif { font-family: var(--serif); font-size: 2rem; font-weight: 400; color: var(--near-black); line-height: 1.2; }
+    .font-card .font-sample-sans { font-family: var(--sans); font-size: 1rem; color: var(--text-secondary); margin-top: 0.75rem; line-height: 1.6; }
+    .font-card .font-usage { font-size: 0.75rem; color: var(--text-secondary); margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+
+    /* ─── Spacing ──────────────────────────────────────────── */
+    .spacing-scale { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
+    .spacing-row { display: flex; align-items: center; gap: 1.5rem; }
+    .spacing-bar { background: var(--gold); opacity: 0.7; height: 8px; border-radius: 2px; }
+    .spacing-meta { font-size: 0.75rem; color: var(--text-secondary); font-family: 'Courier New', monospace; min-width: 200px; }
+
+    .grid-demo {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .grid-row { display: grid; grid-template-columns: repeat(12, 1fr); gap: 0.5rem; }
+    .grid-col { background: rgba(196,162,101,0.15); border: 1px solid rgba(196,162,101,0.3); border-radius: 2px; height: 32px; }
+
+    /* ─── Motifs ───────────────────────────────────────────── */
+    .motif-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+    .motif-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .motif-preview {
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .motif-info { padding: 1rem 1.25rem; background: white; }
+    .motif-title { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-primary); margin-bottom: 0.25rem; }
+    .motif-desc { font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; }
+
+    /* Chemical pattern SVG motif */
+    .motif-chemical {
+      background: var(--dark-panel);
+    }
+    .motif-pattern-bg {
+      background: var(--cream);
+    }
+    .motif-grain {
+      background: var(--dark-card);
+    }
+
+    /* Grain texture overlay demo */
+    .grain-overlay {
+      position: absolute;
+      inset: 0;
+      opacity: 0.12;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+
+    /* ─── Buttons ──────────────────────────────────────────── */
+    .btn-demo-row { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-bottom: 2rem; }
+    .btn-demo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 14px 36px;
+      min-height: 44px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      text-decoration: none;
+      cursor: default;
+    }
+    .btn-demo.outline { background: transparent; color: #1A1A1A; border: 1px solid #1A1A1A; }
+    .btn-demo.filled { background: #1A1A1A; color: #F9F9F9; border: 1px solid #1A1A1A; }
+    .btn-demo.gold-outline { background: transparent; color: var(--gold-text); border: 1px solid var(--gold); }
+    .btn-demo.acid { background: var(--yellow-green); color: #1A1A1A; border: 1px solid var(--yellow-green); }
+
+    /* ─── Callout ──────────────────────────────────────────── */
+    .callout {
+      background: var(--dark-panel);
+      border: 1px solid var(--dark-border);
+      border-left: 3px solid var(--gold);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .callout p { color: rgba(249,249,249,0.7); font-size: 0.875rem; margin: 0; }
+    .callout strong { color: var(--gold); }
+
+    /* ─── Footer ───────────────────────────────────────────── */
+    .guide-footer {
+      margin-top: 5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .guide-footer p { font-size: 0.75rem; color: var(--text-secondary); margin: 0; }
+
+    @media (max-width: 640px) {
+      .cover { padding: 2.5rem 2rem; }
+      .do-dont { grid-template-columns: 1fr; }
+      .font-stack { grid-template-columns: 1fr; }
+      .toc { grid-template-columns: 1fr; }
+      .specimen-row { grid-template-columns: 1fr; gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── COVER ─────────────────────────────────────────────── -->
+<div class="cover">
+  <div class="page" style="padding-top:0;padding-bottom:0;margin:0 auto;">
+    <p class="guide-subtitle">Nexphoria Brand System</p>
+    <h1 class="guide-title">Visual Identity<br>Guide <em>v1</em></h1>
+    <p class="cover-meta">Version 1.0 &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; Confidential</p>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- ─── TABLE OF CONTENTS ─────────────────────────────── -->
+  <section class="section">
+    <span class="section-number">Contents</span>
+    <h2 class="section-title">In This Guide</h2>
+    <p class="section-desc">A complete reference for Nexphoria's brand expression — for designers, developers, and partners.</p>
+    <ul class="toc">
+      <li>01 &nbsp; Brand Overview <span>→ below</span></li>
+      <li>02 &nbsp; Logo System <span>→ §2</span></li>
+      <li>03 &nbsp; Color Palette <span>→ §3</span></li>
+      <li>04 &nbsp; Typography <span>→ §4</span></li>
+      <li>05 &nbsp; Spacing & Layout <span>→ §5</span></li>
+      <li>06 &nbsp; Visual Motifs <span>→ §6</span></li>
+      <li>07 &nbsp; UI Components <span>→ §7</span></li>
+      <li>08 &nbsp; Asset Index <span>→ §8</span></li>
+    </ul>
+  </section>
+
+  <!-- ─── §01 BRAND OVERVIEW ──────────────────────────── -->
+  <section class="section">
+    <span class="section-number">01 — Brand Overview</span>
+    <h2 class="section-title">Futuristic Luxury Lab</h2>
+    <p class="section-desc">Nexphoria presents research-grade peptides through the lens of precision science and sober luxury. Every design decision reinforces expertise, restraint, and trust.</p>
+
+    <div class="callout">
+      <p><strong>Brand voice in one sentence:</strong> Clinical, educational, precise — sober luxury, not hype. Products are presented as research compounds; copy never promises personal health outcomes or implies approved therapeutic use.</p>
+    </div>
+
+    <h4>Brand Pillars</h4>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin-top:1rem;">
+      <div style="border:1px solid var(--border);border-radius:8px;padding:1.25rem;">
+        <div style="font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--gold-text);margin-bottom:0.5rem;">Precision</div>
+        <p style="font-size:0.875rem;margin:0;">Every spec, purity %, and storage condition is stated with exactness. No rounding, no vagueness.</p>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:8px;padding:1.25rem;">
+        <div style="font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--gold-text);margin-bottom:0.5rem;">Restraint</div>
+        <p style="font-size:0.875rem;margin:0;">Whitespace is an asset. Fewer elements, more intention. Luxury communicates through what is absent as much as what is present.</p>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:8px;padding:1.25rem;">
+        <div style="font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--gold-text);margin-bottom:0.5rem;">Education</div>
+        <p style="font-size:0.875rem;margin:0;">Informed customers are empowered customers. Every product page teaches; the brand earns trust through knowledge.</p>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:8px;padding:1.25rem;">
+        <div style="font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--gold-text);margin-bottom:0.5rem;">Aspiration</div>
+        <p style="font-size:0.875rem;margin:0;">"Find Your Focus" — aspirational storytelling belongs on brand/about pages only. Never as product claims.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── §02 LOGO SYSTEM ─────────────────────────────── -->
+  <section class="section">
+    <span class="section-number">02 — Logo System</span>
+    <h2 class="section-title">Logo Usage Rules</h2>
+    <p class="section-desc">The Nexphoria wordmark and typemark are the primary brand identifiers. Use the approved files from the official logo library — never recreate, approximate, or retype the logo.</p>
+
+    <h4>Approved Logo Variants</h4>
+    <div class="logo-grid" style="margin-top:1rem;">
+      <div class="logo-cell" style="background:#F9F9F9;">
+        <img src="Nexphoria Logo Files/lockups/black lockup/nexphoria.svg" alt="Nexphoria black lockup" style="max-width:100%;max-height:60px;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div style="display:none;font-family:Georgia,serif;font-size:1.25rem;letter-spacing:0.08em;text-transform:uppercase;color:#0F0F0E;align-items:center;justify-content:center;">NEXPHORIA</div>
+        <span class="logo-name">Black lockup — light bg</span>
+      </div>
+      <div class="logo-cell dark">
+        <img src="Nexphoria Logo Files/lockups/yellow-green lockup/nexphoria.svg" alt="Nexphoria yellow-green lockup" style="max-width:100%;max-height:60px;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div style="display:none;font-family:Georgia,serif;font-size:1.25rem;letter-spacing:0.08em;text-transform:uppercase;color:#C9DD69;align-items:center;justify-content:center;">NEXPHORIA</div>
+        <span class="logo-name">Yellow-green lockup — dark bg</span>
+      </div>
+      <div class="logo-cell olive-bg">
+        <img src="Nexphoria Logo Files/lockups/olive lockup/nexphoria.svg" alt="Nexphoria olive lockup" style="max-width:100%;max-height:60px;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div style="display:none;font-family:Georgia,serif;font-size:1.25rem;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;align-items:center;justify-content:center;">NEXPHORIA</div>
+        <span class="logo-name">White lockup — olive bg</span>
+      </div>
+      <div class="logo-cell" style="background:#F9F9F9;">
+        <img src="Nexphoria Logo Files/tymemark/nexphoria.svg" alt="Nexphoria tymemark" style="max-width:60px;max-height:60px;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div style="display:none;width:48px;height:48px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:1.25rem;color:white;">N</div>
+        <span class="logo-name">Tymemark — standalone mark</span>
+      </div>
+    </div>
+
+    <h4>Clear Zone</h4>
+    <p>Always maintain a minimum clear zone equal to the cap-height of the wordmark on all four sides. No other graphic elements, text, or imagery may intrude into this zone.</p>
+    <div class="clearzone-demo">
+      <span class="wordmark">NEXPHORIA</span>
+    </div>
+    <p style="font-size:0.75rem;color:var(--text-secondary);margin-top:-1rem;">Dashed border indicates minimum clear zone — approximately the cap-height of the wordmark.</p>
+
+    <h4 style="margin-top:2rem;">Minimum Size</h4>
+    <div style="display:flex;gap:2rem;align-items:flex-end;margin:1rem 0 1.5rem;">
+      <div style="text-align:center;">
+        <div style="font-family:Georgia,serif;font-size:1rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--near-black);">NEXPHORIA</div>
+        <div style="font-size:0.6875rem;color:var(--text-secondary);margin-top:0.5rem;">Digital min: 80px wide</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-family:Georgia,serif;font-size:0.6875rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--near-black);">NEXPHORIA</div>
+        <div style="font-size:0.6875rem;color:var(--text-secondary);margin-top:0.5rem;color:#EF4444;">Too small — avoid</div>
+      </div>
+    </div>
+    <p>Print minimum: 25mm wide. Digital minimum: 80px wide. Below these sizes, legibility of secondary details is compromised.</p>
+
+    <div class="do-dont">
+      <div class="do-card">
+        <strong>Do</strong>
+        <ul>
+          <li>Use only approved SVG/PNG master files</li>
+          <li>Place on approved background colours (cream, near-black, olive)</li>
+          <li>Maintain clear zone on all sides</li>
+          <li>Use the tymemark alone on brand merchandise or favicon contexts</li>
+          <li>Scale proportionally</li>
+        </ul>
+      </div>
+      <div class="dont-card">
+        <strong>Don't</strong>
+        <ul>
+          <li>Recreate or retype the wordmark in any font</li>
+          <li>Stretch, skew, or rotate the logo</li>
+          <li>Add drop shadows, outlines, or effects</li>
+          <li>Place on busy photographic backgrounds without an overlay</li>
+          <li>Change the logo colour arbitrarily</li>
+          <li>Place below minimum size</li>
+        </ul>
+      </div>
+    </div>
+
+    <h4 style="margin-top:2rem;">Logo File Index</h4>
+    <div style="font-size:0.8125rem;color:var(--text-secondary);">
+      <table style="width:100%;border-collapse:collapse;">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border);">
+            <th style="text-align:left;padding:0.5rem 0;font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-primary);">Variant</th>
+            <th style="text-align:left;padding:0.5rem 0;font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-primary);">Formats</th>
+            <th style="text-align:left;padding:0.5rem 0;font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-primary);">Use when</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.625rem 0;">Black lockup</td>
+            <td style="padding:0.625rem 0;">SVG, PNG, AI, PDF, JPG</td>
+            <td style="padding:0.625rem 0;">Light / cream / white backgrounds</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.625rem 0;">Yellow-green lockup</td>
+            <td style="padding:0.625rem 0;">SVG, PNG, AI, PDF, JPG</td>
+            <td style="padding:0.625rem 0;">Dark / near-black backgrounds</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.625rem 0;">Olive lockup</td>
+            <td style="padding:0.625rem 0;">SVG, PNG, AI, PDF, JPG</td>
+            <td style="padding:0.625rem 0;">Olive / mid-tone backgrounds</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.625rem 0;">Tymemark</td>
+            <td style="padding:0.625rem 0;">SVG, PNG, AI, PDF, JPG</td>
+            <td style="padding:0.625rem 0;">Favicon, social avatar, emboss, icon contexts</td>
+          </tr>
+          <tr>
+            <td style="padding:0.625rem 0;">Yellow-green logo (mark only)</td>
+            <td style="padding:0.625rem 0;">SVG, PNG, AI, PDF, JPG</td>
+            <td style="padding:0.625rem 0;">Dark bg, mark without full lockup text</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ─── §03 COLOR PALETTE ────────────────────────────── -->
+  <section class="section">
+    <span class="section-number">03 — Color Palette</span>
+    <h2 class="section-title">Brand Colors</h2>
+    <p class="section-desc">The Nexphoria palette is anchored by a warm near-black ground, a restrained cream field, and a gold accent. Yellow-green (#C9DD69) and olive (#A4B08A) serve as secondary brand colors — used sparingly.</p>
+
+    <h4>Primary Colors</h4>
+    <div class="palette" style="margin-top:1rem;">
+
+      <div class="swatch">
+        <div class="swatch-color" style="background:#0F0F0E;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Near Black</div>
+          <div class="swatch-hex">#0F0F0E</div>
+          <div class="swatch-cmyk">CMYK: 0, 0, 2, 94</div>
+          <div class="swatch-pantone">Pantone: Black 6 C</div>
+          <div class="swatch-cmyk" style="margin-top:0.25rem;">Use: Backgrounds, primary text on light</div>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="swatch-color" style="background:#F9F9F9;border-bottom:1px solid var(--border);"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Cream</div>
+          <div class="swatch-hex">#F9F9F9</div>
+          <div class="swatch-cmyk">CMYK: 0, 0, 0, 2</div>
+          <div class="swatch-pantone">Pantone: 9161 C</div>
+          <div class="swatch-cmyk" style="margin-top:0.25rem;">Use: Page background, light-mode base</div>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="swatch-color" style="background:#C4A265;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Gold</div>
+          <div class="swatch-hex">#C4A265</div>
+          <div class="swatch-cmyk">CMYK: 0, 17, 49, 23</div>
+          <div class="swatch-pantone">Pantone: 7509 C</div>
+          <div class="swatch-cmyk" style="margin-top:0.25rem;">Use: Accents, borders, icons, eyebrows</div>
+        </div>
+      </div>
+
+    </div>
+
+    <h4>Secondary Colors</h4>
+    <div class="palette">
+
+      <div class="swatch">
+        <div class="swatch-color" style="background:#C9DD69;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Yellow-Green</div>
+          <div class="swatch-hex">#C9DD69</div>
+          <div class="swatch-cmyk">CMYK: 9, 0, 52, 13</div>
+          <div class="swatch-pantone">Pantone: 381 C</div>
+          <div class="swatch-cmyk" style="margin-top:0.25rem;">Use: Primary CTA button, logo on dark</div>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="swatch-color" style="background:#A4B08A;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Olive</div>
+          <div class="swatch-hex">#A4B08A</div>
+          <div class="swatch-cmyk">CMYK: 7, 0, 21, 31</div>
+          <div class="swatch-pantone">Pantone: 5783 C</div>
+          <div class="swatch-cmyk" style="margin-top:0.25rem;">Use: Secondary brand accent, logo variant background</div>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="swatch-color" style="background:#8E6C2F;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Gold Text</div>
+          <div class="swatch-hex">#8E6C2F</div>
+          <div class="swatch-cmyk">CMYK: 0, 24, 67, 44</div>
+          <div class="swatch-pantone">Pantone: 7562 C</div>
+          <div class="swatch-cmyk" style="margin-top:0.25rem;">Use: Eyebrow/accent text on light bg (WCAG AA)</div>
+        </div>
+      </div>
+
+    </div>
+
+    <h4>Dark Mode / Dark Panel Colors</h4>
+    <div class="palette-secondary">
+      <div class="swatch swatch-sm">
+        <div class="swatch-color" style="background:#161614;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Dark Panel</div>
+          <div class="swatch-hex">#161614</div>
+        </div>
+      </div>
+      <div class="swatch swatch-sm">
+        <div class="swatch-color" style="background:#1C1C1A;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Dark Card</div>
+          <div class="swatch-hex">#1C1C1A</div>
+        </div>
+      </div>
+      <div class="swatch swatch-sm">
+        <div class="swatch-color" style="background:#2A2A28;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Dark Border</div>
+          <div class="swatch-hex">#2A2A28</div>
+        </div>
+      </div>
+      <div class="swatch swatch-sm">
+        <div class="swatch-color" style="background:#F7F7F7;border-bottom:1px solid #eee;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Card BG</div>
+          <div class="swatch-hex">#F7F7F7</div>
+        </div>
+      </div>
+      <div class="swatch swatch-sm">
+        <div class="swatch-color" style="background:#E5E5E5;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Border</div>
+          <div class="swatch-hex">#E5E5E5</div>
+        </div>
+      </div>
+      <div class="swatch swatch-sm">
+        <div class="swatch-color" style="background:#666666;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Text Secondary</div>
+          <div class="swatch-hex">#666666</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong>Accessibility note:</strong> Gold (#C4A265) on cream (#F9F9F9) does not meet WCAG AA for body text. Use the Gold Text token (#8E6C2F, 4.5:1 contrast ratio) for any textual use. Gold may be used freely for decorative elements, borders, and icons.</p>
+    </div>
+
+    <h4>Product Category Accent Colors</h4>
+    <p style="font-size:0.875rem;">These are functional colors assigned to product categories — use only within product UI contexts, not as brand colors.</p>
+    <div class="palette-secondary" style="margin-top:1rem;">
+      <div class="swatch swatch-sm">
+        <div class="swatch-color" style="background:#4A9B8E;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Recovery</div>
+          <div class="swatch-hex">#4A9B8E</div>
+        </div>
+      </div>
+      <div class="swatch swatch-sm">
+        <div class="swatch-color" style="background:#C9A24B;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Growth Hormone</div>
+          <div class="swatch-hex">#C9A24B</div>
+        </div>
+      </div>
+      <div class="swatch swatch-sm">
+        <div class="swatch-color" style="background:#8B5CF6;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Anti-Aging</div>
+          <div class="swatch-hex">#8B5CF6</div>
+        </div>
+      </div>
+      <div class="swatch swatch-sm">
+        <div class="swatch-color" style="background:#3B82F6;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Cognitive</div>
+          <div class="swatch-hex">#3B82F6</div>
+        </div>
+      </div>
+      <div class="swatch swatch-sm">
+        <div class="swatch-color" style="background:#EF4444;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Weight Mgmt</div>
+          <div class="swatch-hex">#EF4444</div>
+        </div>
+      </div>
+      <div class="swatch swatch-sm">
+        <div class="swatch-color" style="background:#22C55E;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Wellness</div>
+          <div class="swatch-hex">#22C55E</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── §04 TYPOGRAPHY ──────────────────────────────── -->
+  <section class="section">
+    <span class="section-number">04 — Typography</span>
+    <h2 class="section-title">Type System</h2>
+    <p class="section-desc">Two typefaces. One purpose: precision meets warmth. The serif display font carries authority and sophistication; the sans body font delivers clarity and legibility.</p>
+
+    <div class="font-stack">
+      <div class="font-card">
+        <div class="font-name">Display / Headings</div>
+        <div class="font-sample-serif">Cormorant Garamond<br><em>Italic variant</em></div>
+        <div class="font-sample-sans" style="font-size:0.75rem;margin-top:0.5rem;">Primary: Roc Grotesk (Adobe Fonts)<br>Fallback: Cormorant Garamond (Google Fonts)<br>System: Georgia, Times New Roman</div>
+        <div class="font-usage">Use for: H1–H3, hero titles, section titles, pull quotes.<br>Weight: 400 (regular). Use italics sparingly for emphasis.</div>
+      </div>
+      <div class="font-card">
+        <div class="font-name">Body / UI</div>
+        <div class="font-sample-sans" style="font-size:1.25rem;color:var(--text-primary);font-weight:400;">Inter / Neue Haas Grotesk</div>
+        <div class="font-sample-sans">Body copy, UI labels, navigation, and all functional text. Achieves clinical precision without coldness.</div>
+        <div class="font-usage">Primary: Neue Haas Grotesk (Adobe Fonts)<br>Fallback: Inter (Google Fonts)<br>System: system-ui, Helvetica Neue, Arial</div>
+      </div>
+    </div>
+
+    <h4>Type Scale — Desktop</h4>
+    <div class="type-specimen">
+      <div class="specimen-row">
+        <div class="specimen-label">Display / H1<small>4.5rem · 400wt · -0.02em</small></div>
+        <div class="type-h1">Find Your Focus</div>
+      </div>
+      <div class="specimen-row">
+        <div class="specimen-label">Section Title / H2<small>2.25rem · 400wt · -0.015em</small></div>
+        <div class="type-h2">Research Compounds</div>
+      </div>
+      <div class="specimen-row">
+        <div class="specimen-label">Card Title / H3<small>1.5rem · 400wt</small></div>
+        <div class="type-h3">BPC-157 — Tissue Repair</div>
+      </div>
+      <div class="specimen-row">
+        <div class="specimen-label">Eyebrow<small>0.6875rem · 500wt · 0.2em spacing</small></div>
+        <div class="type-eyebrow">Research Grade · Third-Party Tested</div>
+      </div>
+      <div class="specimen-row">
+        <div class="specimen-label">Body Large<small>1.125rem · 400wt · 1.75lh</small></div>
+        <div class="type-body-lg">Peptides are short chains of amino acids — the building blocks of every protein in the human body. Precision delivery unlocks their potential.</div>
+      </div>
+      <div class="specimen-row">
+        <div class="specimen-label">Body<small>1rem · 400wt · 1.7lh</small></div>
+        <div class="type-body">All products are manufactured to research-grade purity standards. Third-party COA documentation is available for each batch.</div>
+      </div>
+      <div class="specimen-row">
+        <div class="specimen-label">Small<small>0.875rem · 400wt · 1.6lh</small></div>
+        <div class="type-small">Storage: 2–8°C refrigerated. Keep away from light. Reconstitute with bacteriostatic water.</div>
+      </div>
+      <div class="specimen-row">
+        <div class="specimen-label">Caption<small>0.75rem · 400wt · 0.05em</small></div>
+        <div class="type-caption">Lot #NEX-2024-0441 · Lab: Janssen Pharma · Purity: 99.1%</div>
+      </div>
+      <div class="specimen-row">
+        <div class="specimen-label">UI Label<small>0.6875rem · 600wt · 0.15em UC</small></div>
+        <div class="type-label">Add to Cart &nbsp;·&nbsp; View COA &nbsp;·&nbsp; Free Shipping</div>
+      </div>
+    </div>
+
+    <div class="do-dont">
+      <div class="do-card">
+        <strong>Do</strong>
+        <ul>
+          <li>Use serif for all headings H1–H3</li>
+          <li>Use weight 400 for serif — never bold</li>
+          <li>Use italics in serif for emphasis or sub-labels</li>
+          <li>Set body text at 1rem/16px minimum</li>
+          <li>Use uppercase sparingly (eyebrows, labels, buttons only)</li>
+          <li>Keep line-height ≥ 1.6 for body text</li>
+        </ul>
+      </div>
+      <div class="dont-card">
+        <strong>Don't</strong>
+        <ul>
+          <li>Set headings in the sans-serif font</li>
+          <li>Bold the display serif font</li>
+          <li>Use more than 2 type sizes within one UI component</li>
+          <li>Set body text below 14px</li>
+          <li>Use all-caps for body copy or headings</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── §05 SPACING & LAYOUT ─────────────────────────── -->
+  <section class="section">
+    <span class="section-number">05 — Spacing & Layout</span>
+    <h2 class="section-title">Spacing Principles</h2>
+    <p class="section-desc">Spacing is a brand signal. Generous whitespace communicates premium quality; cramped layouts signal discount brands. Follow the spacing scale precisely.</p>
+
+    <h4>Base Spacing Scale (4px base unit)</h4>
+    <div class="spacing-scale">
+      <div class="spacing-row">
+        <div class="spacing-meta">4px &nbsp; — &nbsp; 0.25rem &nbsp; (t-1)</div>
+        <div class="spacing-bar" style="width:4px;"></div>
+        <span style="font-size:0.75rem;color:var(--text-secondary);">Inline tight gap</span>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-meta">8px &nbsp; — &nbsp; 0.5rem &nbsp;&nbsp; (t-2)</div>
+        <div class="spacing-bar" style="width:8px;"></div>
+        <span style="font-size:0.75rem;color:var(--text-secondary);">Micro gaps, icon-text</span>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-meta">12px — &nbsp; 0.75rem &nbsp; (t-3)</div>
+        <div class="spacing-bar" style="width:12px;"></div>
+        <span style="font-size:0.75rem;color:var(--text-secondary);">Button internal padding</span>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-meta">16px — &nbsp; 1rem &nbsp;&nbsp;&nbsp;&nbsp; (t-4)</div>
+        <div class="spacing-bar" style="width:16px;"></div>
+        <span style="font-size:0.75rem;color:var(--text-secondary);">Default component gap</span>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-meta">24px — &nbsp; 1.5rem &nbsp;&nbsp; (t-6)</div>
+        <div class="spacing-bar" style="width:24px;"></div>
+        <span style="font-size:0.75rem;color:var(--text-secondary);">Container padding (mobile)</span>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-meta">32px — &nbsp; 2rem &nbsp;&nbsp;&nbsp;&nbsp; (t-8)</div>
+        <div class="spacing-bar" style="width:32px;"></div>
+        <span style="font-size:0.75rem;color:var(--text-secondary);">Card padding, section-internal</span>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-meta">48px — &nbsp; 3rem &nbsp;&nbsp;&nbsp;&nbsp; (t-12)</div>
+        <div class="spacing-bar" style="width:48px;"></div>
+        <span style="font-size:0.75rem;color:var(--text-secondary);">Container padding (desktop)</span>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-meta">120px — 7.5rem &nbsp;&nbsp; (section-y)</div>
+        <div class="spacing-bar" style="width:120px;"></div>
+        <span style="font-size:0.75rem;color:var(--text-secondary);">Section vertical rhythm (--section-y)</span>
+      </div>
+    </div>
+
+    <h4>Layout Grid</h4>
+    <p>All pages use a 12-column grid with a max-width container of 80rem (1280px). Column gutters are 1.5rem.</p>
+    <div class="grid-demo">
+      <div class="grid-row">
+        <div class="grid-col"></div>
+        <div class="grid-col"></div>
+        <div class="grid-col"></div>
+        <div class="grid-col"></div>
+        <div class="grid-col"></div>
+        <div class="grid-col"></div>
+        <div class="grid-col"></div>
+        <div class="grid-col"></div>
+        <div class="grid-col"></div>
+        <div class="grid-col"></div>
+        <div class="grid-col"></div>
+        <div class="grid-col"></div>
+      </div>
+      <div style="font-size:0.6875rem;color:var(--text-secondary);text-align:center;margin-top:0.75rem;">12 columns · max-width 80rem · gutter 1.5rem</div>
+    </div>
+
+    <h4>Common Layout Patterns</h4>
+    <div style="display:grid;gap:0.75rem;margin-top:1rem;">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:0.75rem 1rem;border:1px solid var(--border);border-radius:6px;font-size:0.875rem;">
+        <span>Hero section</span>
+        <span style="color:var(--text-secondary);font-size:0.75rem;font-family:'Courier New',monospace;">full-width · min-height 90vh · centered content</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:0.75rem 1rem;border:1px solid var(--border);border-radius:6px;font-size:0.875rem;">
+        <span>Product grid</span>
+        <span style="color:var(--text-secondary);font-size:0.75rem;font-family:'Courier New',monospace;">4-col desktop · 2-col tablet · 1-col mobile</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:0.75rem 1rem;border:1px solid var(--border);border-radius:6px;font-size:0.875rem;">
+        <span>Content + aside</span>
+        <span style="color:var(--text-secondary);font-size:0.75rem;font-family:'Courier New',monospace;">7-col body · 5-col aside (desktop)</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:0.75rem 1rem;border:1px solid var(--border);border-radius:6px;font-size:0.875rem;">
+        <span>Split section</span>
+        <span style="color:var(--text-secondary);font-size:0.75rem;font-family:'Courier New',monospace;">50/50 split · image + text</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:0.75rem 1rem;border:1px solid var(--border);border-radius:6px;font-size:0.875rem;">
+        <span>Trust / feature strip</span>
+        <span style="color:var(--text-secondary);font-size:0.75rem;font-family:'Courier New',monospace;">4-col equal width · dark background</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── §06 VISUAL MOTIFS ────────────────────────────── -->
+  <section class="section">
+    <span class="section-number">06 — Visual Motifs</span>
+    <h2 class="section-title">Approved Visual Motifs</h2>
+    <p class="section-desc">Visual motifs are recurring graphic elements that reinforce the brand's scientific-luxury positioning. Use each motif as specified — overuse or misuse dilutes the premium feel.</p>
+
+    <div class="motif-grid">
+
+      <div class="motif-card">
+        <div class="motif-preview motif-chemical">
+          <!-- Chemical / DNA pattern visualization -->
+          <svg width="200" height="120" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" style="opacity:0.3;">
+            <circle cx="40" cy="30" r="6" fill="#C4A265"/>
+            <circle cx="80" cy="60" r="4" fill="#C9DD69"/>
+            <circle cx="120" cy="20" r="5" fill="#C4A265"/>
+            <circle cx="160" cy="50" r="6" fill="#C9DD69"/>
+            <circle cx="60" cy="90" r="4" fill="#A4B08A"/>
+            <circle cx="140" cy="90" r="5" fill="#C4A265"/>
+            <line x1="40" y1="30" x2="80" y2="60" stroke="#C4A265" stroke-width="1" opacity="0.5"/>
+            <line x1="80" y1="60" x2="120" y2="20" stroke="#C4A265" stroke-width="1" opacity="0.5"/>
+            <line x1="120" y1="20" x2="160" y2="50" stroke="#C9DD69" stroke-width="1" opacity="0.5"/>
+            <line x1="80" y1="60" x2="60" y2="90" stroke="#C4A265" stroke-width="1" opacity="0.5"/>
+            <line x1="120" y1="20" x2="140" y2="90" stroke="#C4A265" stroke-width="1" opacity="0.5"/>
+            <line x1="160" y1="50" x2="140" y2="90" stroke="#C9DD69" stroke-width="1" opacity="0.5"/>
+            <circle cx="40" cy="30" r="2" fill="white" opacity="0.6"/>
+            <circle cx="80" cy="60" r="2" fill="white" opacity="0.6"/>
+            <circle cx="120" cy="20" r="2" fill="white" opacity="0.6"/>
+            <circle cx="160" cy="50" r="2" fill="white" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="motif-info">
+          <div class="motif-title">Chemical / Molecular Pattern</div>
+          <div class="motif-desc">The DNA/molecular line-work overlay. Use on dark hero backgrounds and section dividers. Scale at low opacity (5–15%). Never use at full opacity or over busy images.</div>
+        </div>
+      </div>
+
+      <div class="motif-card">
+        <div class="motif-preview motif-pattern-bg">
+          <!-- Grain texture demo -->
+          <div style="position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
+            <div class="grain-overlay" style="opacity:0.3;"></div>
+            <span style="font-size:0.75rem;color:var(--text-secondary);position:relative;z-index:1;">Grain overlay (6% opacity)</span>
+          </div>
+        </div>
+        <div class="motif-info">
+          <div class="motif-title">Film Grain Texture</div>
+          <div class="motif-desc">SVG fractalNoise overlay applied globally at 6% opacity via body::before. Adds warmth and tactility to what would otherwise be flat digital surfaces.</div>
+        </div>
+      </div>
+
+      <div class="motif-card">
+        <div class="motif-preview" style="background:var(--dark-panel);">
+          <!-- SVG Vial illustration -->
+          <svg viewBox="0 0 100 200" height="140" xmlns="http://www.w3.org/2000/svg">
+            <rect x="35" y="5" width="30" height="12" rx="3" fill="#2A2A28"/>
+            <rect x="38" y="17" width="24" height="8" rx="1" fill="#1C1C1A"/>
+            <rect x="30" y="25" width="40" height="130" rx="20" fill="rgba(196,162,101,0.15)" stroke="#C4A265" stroke-width="1"/>
+            <rect x="30" y="100" width="40" height="55" rx="0" fill="rgba(201,221,105,0.2)"/>
+            <rect x="30" y="155" width="40" height="20" rx="0" rx2="20" fill="rgba(201,221,105,0.1)"/>
+            <rect x="32" y="40" width="2" height="60" rx="1" fill="rgba(255,255,255,0.15)"/>
+          </svg>
+        </div>
+        <div class="motif-info">
+          <div class="motif-title">SVG Pharmaceutical Vial</div>
+          <div class="motif-desc">Custom SVG vial illustrations replace product photography on cards and the product detail page. Each vial inherits the product category accent color. See <code>src/components/ProductVial.tsx</code>.</div>
+        </div>
+      </div>
+
+      <div class="motif-card">
+        <div class="motif-preview" style="background:linear-gradient(135deg, #1A1A18 0%, #0F0F0E 50%, #1C1C1A 100%);">
+          <div style="text-align:center;padding:1rem;">
+            <div style="font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.25em;color:rgba(196,162,101,0.6);margin-bottom:0.5rem;">Research Grade</div>
+            <div style="width:40px;height:1px;background:rgba(196,162,101,0.3);margin:0 auto 1rem;"></div>
+            <div style="font-family:Georgia,serif;font-size:1.25rem;color:rgba(249,249,249,0.9);">Find Your<br>Focus</div>
+          </div>
+        </div>
+        <div class="motif-info">
+          <div class="motif-title">Dark Gradient Panels</div>
+          <div class="motif-desc">Section backgrounds alternating between light cream and dark near-black. Dark panels use subtle radial gold gradient at 8–12% opacity. Never flat black — always warm dark tones.</div>
+        </div>
+      </div>
+
+      <div class="motif-card">
+        <div class="motif-preview" style="background:var(--cream);">
+          <div style="display:flex;flex-direction:column;gap:0.5rem;padding:1rem;width:100%;">
+            <div style="width:100%;height:1px;background:var(--border);"></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.6875rem;color:var(--text-secondary);">
+              <span>Lot #NEX-2024-0441</span>
+              <span style="color:var(--gold-text);">99.1% purity</span>
+            </div>
+            <div style="width:100%;height:1px;background:var(--border);"></div>
+          </div>
+        </div>
+        <div class="motif-info">
+          <div class="motif-title">Hairline Rules</div>
+          <div class="motif-desc">1px horizontal rules in #E5E5E5 (light) or #2A2A28 (dark) used to separate data rows, section zones, and spec tables. Precision detail that echoes lab documentation.</div>
+        </div>
+      </div>
+
+      <div class="motif-card">
+        <div class="motif-preview" style="background:var(--cream);overflow:hidden;">
+          <div style="width:100%;height:100%;background: repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(196,162,101,0.06) 20px, rgba(196,162,101,0.06) 21px), repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(196,162,101,0.06) 20px, rgba(196,162,101,0.06) 21px);"></div>
+        </div>
+        <div class="motif-info">
+          <div class="motif-title">Grid / Lab Paper Overlay</div>
+          <div class="motif-desc">Ultra-subtle grid pattern used in select section backgrounds (e.g., science page) to evoke laboratory graph paper. Maximum 5% opacity. Use only on light backgrounds.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <h4>Photography Art Direction</h4>
+    <div class="do-dont">
+      <div class="do-card">
+        <strong>Approved image styles</strong>
+        <ul>
+          <li>Clinical lab environments: clean benches, glassware, precision equipment</li>
+          <li>Close-up vial and syringe photography with clinical lighting</li>
+          <li>High-contrast black-and-white lab imagery</li>
+          <li>Desaturated, cool-toned scientific imagery</li>
+          <li>Abstract molecular / structural close-ups</li>
+        </ul>
+      </div>
+      <div class="dont-card">
+        <strong>Avoid</strong>
+        <ul>
+          <li>Fitness / gym / bodybuilding imagery</li>
+          <li>Celebrity or influencer-style photography</li>
+          <li>Highly saturated or warm-toned lifestyle images</li>
+          <li>Images showing product use on humans</li>
+          <li>Competitive product comparisons</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── §07 UI COMPONENTS ────────────────────────────── -->
+  <section class="section">
+    <span class="section-number">07 — UI Components</span>
+    <h2 class="section-title">Core UI Patterns</h2>
+    <p class="section-desc">Key interactive and structural components that implement the brand on-screen.</p>
+
+    <h4>Buttons</h4>
+    <div class="btn-demo-row" style="margin-top:1rem;">
+      <div>
+        <div class="btn-demo outline">Shop Products</div>
+        <div style="font-size:0.6875rem;color:var(--text-secondary);text-align:center;margin-top:0.5rem;">Primary outline<br>Light bg</div>
+      </div>
+      <div>
+        <div class="btn-demo filled">Add to Cart</div>
+        <div style="font-size:0.6875rem;color:var(--text-secondary);text-align:center;margin-top:0.5rem;">Filled / hover state</div>
+      </div>
+      <div>
+        <div class="btn-demo gold-outline">View COA</div>
+        <div style="font-size:0.6875rem;color:var(--text-secondary);text-align:center;margin-top:0.5rem;">Gold outline<br>Secondary action</div>
+      </div>
+      <div>
+        <div class="btn-demo acid">Buy Now</div>
+        <div style="font-size:0.6875rem;color:var(--text-secondary);text-align:center;margin-top:0.5rem;">Yellow-green CTA<br>High-conversion</div>
+      </div>
+    </div>
+    <p style="font-size:0.875rem;">All buttons use 999px border-radius (pill shape), 44px minimum height, 11px/500wt uppercase text at 0.15em tracking. Transition: 300ms ease.</p>
+
+    <h4 style="margin-top:2rem;">Eyebrow Label</h4>
+    <div style="padding:1.5rem;background:var(--card-bg);border-radius:8px;border:1px solid var(--border);margin-top:0.75rem;">
+      <span style="font-size:0.6875rem;font-weight:500;text-transform:uppercase;letter-spacing:0.2em;color:var(--gold-text);">Research Grade · Third-Party Tested</span>
+      <h3 style="font-family:Georgia,serif;font-size:1.75rem;font-weight:400;color:var(--near-black);margin-top:0.5rem;">BPC-157 Peptide</h3>
+    </div>
+    <p style="font-size:0.75rem;margin-top:0.5rem;">Eyebrows always precede section or card titles. 0.6875rem, 500 weight, uppercase, 0.2em tracking, gold-text colour (#8E6C2F).</p>
+
+    <h4 style="margin-top:2rem;">Card Pattern</h4>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:0.75rem;">
+      <div style="border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+        <div style="height:140px;background:var(--dark-card);display:flex;align-items:center;justify-content:center;">
+          <span style="font-size:0.6875rem;color:rgba(255,255,255,0.3);">SVG Vial Illustration</span>
+        </div>
+        <div style="padding:1.25rem;">
+          <div style="font-size:0.6875rem;font-weight:500;text-transform:uppercase;letter-spacing:0.15em;color:var(--gold-text);margin-bottom:0.375rem;">Recovery &amp; Healing</div>
+          <div style="font-family:Georgia,serif;font-size:1.125rem;color:var(--near-black);margin-bottom:0.25rem;">BPC-157</div>
+          <div style="font-size:0.875rem;color:var(--text-secondary);margin-bottom:1rem;">Tissue repair · Fast recovery · GI support</div>
+          <div style="font-size:1rem;font-weight:500;color:var(--near-black);">From $89</div>
+        </div>
+      </div>
+      <div style="background:var(--dark-panel);border:1px solid var(--dark-border);border-radius:12px;overflow:hidden;">
+        <div style="height:140px;background:var(--dark-card);display:flex;align-items:center;justify-content:center;">
+          <span style="font-size:0.6875rem;color:rgba(255,255,255,0.2);">SVG Vial Illustration</span>
+        </div>
+        <div style="padding:1.25rem;">
+          <div style="font-size:0.6875rem;font-weight:500;text-transform:uppercase;letter-spacing:0.15em;color:var(--gold);margin-bottom:0.375rem;">Anti-Aging</div>
+          <div style="font-family:Georgia,serif;font-size:1.125rem;color:rgba(249,249,249,0.95);margin-bottom:0.25rem;">Epitalon</div>
+          <div style="font-size:0.875rem;color:rgba(249,249,249,0.5);margin-bottom:1rem;">Telomere support · Longevity · Sleep quality</div>
+          <div style="font-size:1rem;font-weight:500;color:rgba(249,249,249,0.95);">From $129</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── §08 ASSET INDEX ──────────────────────────────── -->
+  <section class="section">
+    <span class="section-number">08 — Asset Index</span>
+    <h2 class="section-title">Brand Asset Library</h2>
+    <p class="section-desc">All assets live in <code>./brand-assets/</code> within the project repository.</p>
+
+    <div style="font-size:0.875rem;">
+      <table style="width:100%;border-collapse:collapse;">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border);">
+            <th style="text-align:left;padding:0.625rem 0;font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-primary);">Asset</th>
+            <th style="text-align:left;padding:0.625rem 0;font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-primary);">Path</th>
+            <th style="text-align:left;padding:0.625rem 0;font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-primary);">Formats</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.5rem 0;">Logo — Black lockup</td>
+            <td style="padding:0.5rem 0;font-family:'Courier New',monospace;font-size:0.75rem;color:var(--text-secondary);">Nexphoria Logo Files/lockups/black lockup/</td>
+            <td style="padding:0.5rem 0;color:var(--text-secondary);">SVG, PNG, AI, PDF, JPG</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.5rem 0;">Logo — Yellow-green lockup</td>
+            <td style="padding:0.5rem 0;font-family:'Courier New',monospace;font-size:0.75rem;color:var(--text-secondary);">Nexphoria Logo Files/lockups/yellow-green lockup/</td>
+            <td style="padding:0.5rem 0;color:var(--text-secondary);">SVG, PNG, AI, PDF, JPG</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.5rem 0;">Logo — Olive lockup</td>
+            <td style="padding:0.5rem 0;font-family:'Courier New',monospace;font-size:0.75rem;color:var(--text-secondary);">Nexphoria Logo Files/lockups/olive lockup/</td>
+            <td style="padding:0.5rem 0;color:var(--text-secondary);">SVG, PNG, AI, PDF, JPG</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.5rem 0;">Tymemark</td>
+            <td style="padding:0.5rem 0;font-family:'Courier New',monospace;font-size:0.75rem;color:var(--text-secondary);">Nexphoria Logo Files/tymemark/</td>
+            <td style="padding:0.5rem 0;color:var(--text-secondary);">SVG, PNG, AI, PDF, JPG</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.5rem 0;">Chemical / DNA pattern</td>
+            <td style="padding:0.5rem 0;font-family:'Courier New',monospace;font-size:0.75rem;color:var(--text-secondary);">Chemical Pattern/DNA copy.png</td>
+            <td style="padding:0.5rem 0;color:var(--text-secondary);">PNG, PSB (source)</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.5rem 0;">Moving shapes</td>
+            <td style="padding:0.5rem 0;font-family:'Courier New',monospace;font-size:0.75rem;color:var(--text-secondary);">Shapes/Nexphoria Moving Shapes copy.svg</td>
+            <td style="padding:0.5rem 0;color:var(--text-secondary);">SVG, AI, PDF</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.5rem 0;">Brand presentation</td>
+            <td style="padding:0.5rem 0;font-family:'Courier New',monospace;font-size:0.75rem;color:var(--text-secondary);">Nexphoria Final Presentation.pdf</td>
+            <td style="padding:0.5rem 0;color:var(--text-secondary);">PDF</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.5rem 0;">Brand guidelines (original)</td>
+            <td style="padding:0.5rem 0;font-family:'Courier New',monospace;font-size:0.75rem;color:var(--text-secondary);">Nexphoria Brand Guidlines.pdf</td>
+            <td style="padding:0.5rem 0;color:var(--text-secondary);">PDF</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.5rem 0;">Brand messaging</td>
+            <td style="padding:0.5rem 0;font-family:'Courier New',monospace;font-size:0.75rem;color:var(--text-secondary);">Nexphoria Brand Messaging.pdf</td>
+            <td style="padding:0.5rem 0;color:var(--text-secondary);">PDF</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.5rem 0;">Stationary — Business card</td>
+            <td style="padding:0.5rem 0;font-family:'Courier New',monospace;font-size:0.75rem;color:var(--text-secondary);">Stationary Designs/Business Card/</td>
+            <td style="padding:0.5rem 0;color:var(--text-secondary);">PSB (Photoshop)</td>
+          </tr>
+          <tr>
+            <td style="padding:0.5rem 0;">Stationary — Letterhead</td>
+            <td style="padding:0.5rem 0;font-family:'Courier New',monospace;font-size:0.75rem;color:var(--text-secondary);">Stationary Designs/Letterhead/</td>
+            <td style="padding:0.5rem 0;color:var(--text-secondary);">PSB, PDF</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 style="margin-top:2rem;">Web Stock Image Library</h4>
+    <p style="font-size:0.875rem;">Approved lab stock images for web use live in <code>public/images/stock/</code>. See <code>MEMORY.md</code> for the full list with assigned page contexts. Always use optimised Next.js <code>&lt;Image&gt;</code> for all web images.</p>
+  </section>
+
+  <!-- ─── FOOTER ─────────────────────────────────────────── -->
+  <div class="guide-footer">
+    <p>Nexphoria Visual Identity Guide v1 &nbsp;·&nbsp; May 2026</p>
+    <p>Internal use only. Do not distribute externally without brand approval.</p>
+  </div>
+
+</div><!-- /page -->
+</body>
+</html>

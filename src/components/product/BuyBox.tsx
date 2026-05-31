@@ -3,7 +3,14 @@
 import { useState } from "react";
 import { ShoppingCart, Shield, FlaskConical, Truck } from "lucide-react";
 import { useCart } from "@/lib/cart";
-import { Product, ProductDosage } from "@/lib/products";
+import {
+  Product,
+  ProductDosage,
+  SubscriptionCadence,
+  SUBSCRIPTION_CADENCE_CONFIG,
+  getSubscriptionCadences,
+} from "@/lib/products";
+import { buildItem, trackAddToCart } from "@/lib/analytics";
 
 interface BuyBoxProps {
   product: Product;
@@ -39,6 +46,9 @@ export default function BuyBox({
   const [purchaseMode, setPurchaseMode] = useState<PurchaseMode>('one-time');
   const [selectedVolume, setSelectedVolume] = useState<(typeof VOLUME_OPTIONS)[number]>(VOLUME_OPTIONS[0]);
 
+  const availableCadences = getSubscriptionCadences(product.slug);
+  const [selectedCadence, setSelectedCadence] = useState<SubscriptionCadence>(availableCadences[0]);
+
   const handleDosageChange = (d: ProductDosage | undefined) => {
     setSelectedDosage(d);
     onDosageChange?.(d);
@@ -50,15 +60,27 @@ export default function BuyBox({
   };
 
   const basePrice = getBasePrice();
-  const unitPrice = basePrice;
+  const cadenceDiscount =
+    purchaseMode === 'subscribe' ? SUBSCRIPTION_CADENCE_CONFIG[selectedCadence].discount : 0;
+  const unitPrice = cadenceDiscount > 0 ? +(basePrice * (1 - cadenceDiscount)).toFixed(2) : basePrice;
   const qty = selectedVolume.qty;
   const totalPrice = +(unitPrice * qty).toFixed(2);
 
   const handleAddToOrder = () => {
-    const subscriptionMonths = purchaseMode === 'subscribe' ? 1 : 0;
+    const cadence = purchaseMode === 'subscribe' ? selectedCadence : undefined;
+    const intervalDays = cadence ? SUBSCRIPTION_CADENCE_CONFIG[cadence].intervalDays : 0;
     for (let i = 0; i < selectedVolume.qty; i++) {
-      addItem(product, selectedFormat, selectedDosage, subscriptionMonths, 0);
+      addItem(product, selectedFormat, selectedDosage, intervalDays, 0, cadence);
     }
+    trackAddToCart(buildItem({
+      slug: product.slug,
+      name: product.name,
+      category: product.category,
+      price: unitPrice,
+      quantity: selectedVolume.qty,
+      format: selectedFormat,
+      discount: cadenceDiscount > 0 ? +(basePrice * cadenceDiscount * selectedVolume.qty).toFixed(2) : 0,
+    }));
     openDrawer();
   };
 
@@ -81,7 +103,7 @@ export default function BuyBox({
           </span>
           <span className="text-sm" style={{ color: "#666666" }}>
             {purchaseMode === 'subscribe'
-              ? 'per vial / month'
+              ? `per vial · ${SUBSCRIPTION_CADENCE_CONFIG[selectedCadence].sublabel.toLowerCase()}`
               : qty > 1 ? `per vial · ${qty} vials` : 'per vial'}
           </span>
         </div>
@@ -122,9 +144,51 @@ export default function BuyBox({
           })}
         </div>
         {purchaseMode === 'subscribe' && (
-          <p className="text-[11px] mt-2 leading-relaxed" style={{ color: "#666666" }}>
-            Ships monthly · cancel anytime
-          </p>
+          <div className="mt-3">
+            <p
+              className="text-[10px] uppercase mb-2"
+              style={{ letterSpacing: "0.12em", color: "#666666", fontWeight: 500 }}
+            >
+              Shipment Cadence
+            </p>
+            <div className="flex flex-wrap gap-2 mb-2">
+              {availableCadences.map((cadence) => {
+                const cfg = SUBSCRIPTION_CADENCE_CONFIG[cadence];
+                const active = selectedCadence === cadence;
+                return (
+                  <button
+                    key={cadence}
+                    onClick={() => setSelectedCadence(cadence)}
+                    className="flex-1 py-2 px-2 text-center transition-all duration-200"
+                    style={{
+                      minWidth: "70px",
+                      borderRadius: "999px",
+                      border: active ? "1px solid #C4A265" : "1px solid #E5E5E5",
+                      backgroundColor: "transparent",
+                      cursor: "pointer",
+                    }}
+                    aria-pressed={active}
+                  >
+                    <div
+                      className="text-[11px] leading-tight"
+                      style={{ color: active ? "#1A1A1A" : "#666", fontWeight: active ? 500 : 400 }}
+                    >
+                      {cfg.label}
+                    </div>
+                    <div
+                      className="text-[9px] mt-0.5 uppercase"
+                      style={{ letterSpacing: "0.08em", color: active ? "#C4A265" : "#AAA" }}
+                    >
+                      {Math.round(cfg.discount * 100)}% off
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+            <p className="text-[11px] leading-relaxed" style={{ color: "#666666" }}>
+              {SUBSCRIPTION_CADENCE_CONFIG[selectedCadence].sublabel} · cancel anytime
+            </p>
+          </div>
         )}
       </div>
 
@@ -311,7 +375,7 @@ export default function BuyBox({
       </button>
 
       {/* Compact trust strip */}
-      <div className="mt-4 flex items-center justify-center gap-4 text-[11px]" style={{ color: "#666666" }}>
+      <div className="mt-4 flex flex-wrap items-center justify-center gap-3 text-[11px]" style={{ color: "#666666" }}>
         <div className="flex items-center gap-1.5">
           <FlaskConical className="w-3.5 h-3.5" style={{ color: "#8E6C2F" }} aria-hidden="true" />
           <span>{product.purity}</span>

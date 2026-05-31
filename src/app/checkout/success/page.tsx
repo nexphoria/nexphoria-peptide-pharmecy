@@ -4,18 +4,36 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { CheckCircle, Package, ArrowRight } from "lucide-react";
-import { useCart } from "@/lib/cart";
+import { useCart, getItemUnitPrice } from "@/lib/cart";
+import { buildItem, trackPurchase } from "@/lib/analytics";
 
 export default function CheckoutSuccess() {
-  const { clearCart } = useCart();
+  const { items, clearCart, getTotalPrice } = useCart();
   const [cleared, setCleared] = useState(false);
 
   useEffect(() => {
     if (!cleared) {
+      const ga4Items = items.map((item) =>
+        buildItem({
+          slug: item.product.slug,
+          name: item.product.name,
+          category: item.product.category,
+          price: getItemUnitPrice(item),
+          quantity: item.quantity,
+          format: item.format,
+        })
+      );
+      if (ga4Items.length > 0) {
+        trackPurchase({
+          transactionId: `order-${Date.now()}`,
+          items: ga4Items,
+          value: getTotalPrice(),
+        });
+      }
       clearCart();
       setCleared(true);
     }
-  }, [clearCart, cleared]);
+  }, [clearCart, cleared]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="min-h-screen flex items-center justify-center px-6 py-20">

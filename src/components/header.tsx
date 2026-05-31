@@ -126,12 +126,14 @@ export function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
           {/* Shop — mega menu trigger */}
           <div className="relative">
             <button
               onClick={() => toggleDropdown("shop")}
-              className={`flex items-center gap-1 px-3 py-2 text-[11px] rounded-md transition-colors uppercase ${
+              aria-haspopup="true"
+              aria-expanded={activeDropdown === "shop"}
+              className={`flex items-center gap-1 px-2 lg:px-3 py-2 text-[11px] rounded-md transition-colors uppercase ${
                 activeDropdown === "shop" ? "text-black" : "text-black/60 hover:text-black"
               }`}
               style={{ letterSpacing: "0.15em", fontWeight: 500 }}
@@ -139,6 +141,7 @@ export function Header() {
               Shop
               <ChevronDown
                 size={13}
+                aria-hidden="true"
                 className="transition-transform duration-200"
                 style={{ transform: activeDropdown === "shop" ? "rotate(180deg)" : "rotate(0deg)" }}
               />
@@ -233,7 +236,9 @@ export function Header() {
           <div className="relative">
             <button
               onClick={() => toggleDropdown("research")}
-              className={`flex items-center gap-1 px-3 py-2 text-[11px] rounded-md transition-colors uppercase ${
+              aria-haspopup="true"
+              aria-expanded={activeDropdown === "research"}
+              className={`flex items-center gap-1 px-2 lg:px-3 py-2 text-[11px] rounded-md transition-colors uppercase ${
                 activeDropdown === "research" ? "text-black" : "text-black/60 hover:text-black"
               }`}
               style={{ letterSpacing: "0.15em", fontWeight: 500 }}
@@ -241,6 +246,7 @@ export function Header() {
               Research
               <ChevronDown
                 size={13}
+                aria-hidden="true"
                 className="transition-transform duration-200"
                 style={{ transform: activeDropdown === "research" ? "rotate(180deg)" : "rotate(0deg)" }}
               />
@@ -300,7 +306,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="px-3 py-2 text-[11px] uppercase text-black/60 hover:text-black rounded-md transition-colors"
+              className="px-2 lg:px-3 py-2 text-[11px] uppercase text-black/60 hover:text-black rounded-md transition-colors"
               style={{ letterSpacing: "0.15em", fontWeight: 500 }}
             >
               {link.label}
@@ -348,9 +354,11 @@ export function Header() {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="flex items-center justify-center w-11 h-11"
-            aria-label="Toggle menu"
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-nav"
           >
-            {mobileMenuOpen ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
+            {mobileMenuOpen ? <X size={22} strokeWidth={1.5} aria-hidden="true" /> : <Menu size={22} strokeWidth={1.5} aria-hidden="true" />}
           </button>
         </div>
       </div>
@@ -369,22 +377,25 @@ export function Header() {
             borderColor: "#E5E5E5",
           }}
         >
-          <nav className="flex flex-col px-6 py-4">
+          <nav id="mobile-nav" className="flex flex-col px-6 py-4" aria-label="Mobile navigation">
             {/* Shop accordion */}
             <button
               className="flex items-center justify-between py-3 text-[11px] uppercase font-medium text-black/70 border-b border-[#E5E5E5]"
               style={{ letterSpacing: "0.15em" }}
               onClick={() => setMobileSection(mobileSection === "shop" ? null : "shop")}
+              aria-expanded={mobileSection === "shop"}
+              aria-controls="mobile-shop-section"
             >
               Shop
               <ChevronDown
                 size={16}
+                aria-hidden="true"
                 className="transition-transform"
                 style={{ transform: mobileSection === "shop" ? "rotate(180deg)" : "rotate(0deg)" }}
               />
             </button>
             {mobileSection === "shop" && (
-              <div className="py-3 grid grid-cols-2 gap-x-4 gap-y-1">
+              <div id="mobile-shop-section" className="py-3 grid grid-cols-2 gap-x-4 gap-y-1">
                 {SHOP_CATEGORIES.flatMap((g) =>
                   g.items.map((item) => (
                     <Link
@@ -421,16 +432,19 @@ export function Header() {
               className="flex items-center justify-between py-3 text-[11px] uppercase font-medium text-black/70 border-b border-[#E5E5E5]"
               style={{ letterSpacing: "0.15em" }}
               onClick={() => setMobileSection(mobileSection === "research" ? null : "research")}
+              aria-expanded={mobileSection === "research"}
+              aria-controls="mobile-research-section"
             >
               Research
               <ChevronDown
                 size={16}
+                aria-hidden="true"
                 className="transition-transform"
                 style={{ transform: mobileSection === "research" ? "rotate(180deg)" : "rotate(0deg)" }}
               />
             </button>
             {mobileSection === "research" && (
-              <div className="py-3 space-y-1">
+              <div id="mobile-research-section" className="py-3 space-y-1">
                 {[...RESEARCH_TOOLS, ...RESEARCH_RESOURCES].map((item) => (
                   <Link
                     key={item.href}

@@ -6,6 +6,7 @@ import { hasProductPhoto, getProductImagePath } from "@/lib/product-images";
 import { useCart } from "@/lib/cart";
 import VialSVG from "@/components/VialSVG";
 import { getCategoryColor } from "@/lib/vial-colors";
+import { buildItem, trackAddToCart } from "@/lib/analytics";
 
 interface ProductCardProps {
   product: Product;
@@ -37,6 +38,14 @@ export default function ProductCard({
     e.preventDefault();
     e.stopPropagation();
     addItem(product, "vial", product.dosages?.[0], 1);
+    trackAddToCart(buildItem({
+      slug: product.slug,
+      name: product.name,
+      category: product.category,
+      price: basePrice,
+      quantity: 1,
+      format: "vial",
+    }));
     openDrawer();
   }
 

@@ -9,6 +9,7 @@ import ProductCard from "@/components/ProductCard";
 import ComparePanel from "@/components/ComparePanel";
 import { ChevronDown } from "lucide-react";
 import TrendingCompounds from "@/components/TrendingCompounds";
+import { buildItem, trackViewItemList } from "@/lib/analytics";
 
 const MAX_COMPARE = 3;
 
@@ -50,6 +51,20 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
   const [sortOpen, setSortOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const sortRef = useRef<HTMLDivElement>(null);
+
+  // Track view_item_list when filtered products change
+  useEffect(() => {
+    if (filtered.length === 0) return;
+    const ga4Items = filtered.slice(0, 20).map((p) =>
+      buildItem({
+        slug: p.slug,
+        name: p.name,
+        category: p.category,
+        price: getBasePrice(p),
+      })
+    );
+    trackViewItemList(ga4Items, activeFilter === "All" ? "Product Catalog" : activeFilter);
+  }, [activeFilter, sortKey]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Close sort dropdown on outside click
   useEffect(() => {
@@ -165,7 +180,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
               </button>
               {sortOpen && (
                 <div
-                  className="absolute right-0 top-full mt-1.5 w-48 rounded-xl border border-[#ECEAE4] bg-white shadow-lg z-30 py-1"
+                  className="absolute left-0 sm:left-auto sm:right-0 top-full mt-1.5 w-48 rounded-xl border border-[#ECEAE4] bg-white shadow-lg z-30 py-1"
                 >
                   {SORT_OPTIONS.map((opt) => (
                     <button

@@ -128,10 +128,10 @@ export default function HomePage() {
       {/* ─── TRUST MICROBAR ─── */}
       <AnnouncementBar />
 
-      {/* ─── HERO ─── */}
+      {/* ─── HERO v2 — Niance-inspired ─── */}
       <section
         className="relative overflow-hidden"
-        style={{ backgroundColor: "#F9F9F9", minHeight: "100vh" }}
+        style={{ backgroundColor: "#0F0F0E", minHeight: "100vh" }}
       >
 
         {/* ── DESKTOP ── */}
@@ -140,76 +140,89 @@ export default function HomePage() {
           {/* Main packaging shot — parallax, right side */}
           <HeroParallaxImage />
 
-          {/* Left-edge cream fade */}
+          {/* Dark vignette — solid left panel fading into image */}
           <div
             style={{
               position: "absolute",
-              left: "28%",
+              left: 0,
               top: 0,
               bottom: 0,
-              width: "14%",
-              background: "linear-gradient(to right, #F9F9F9 0%, transparent 100%)",
+              width: "58%",
+              background:
+                "linear-gradient(to right, #0F0F0E 0%, #0F0F0E 52%, rgba(15,15,14,0.88) 72%, transparent 100%)",
               zIndex: 3,
               pointerEvents: "none",
             }}
           />
 
-          {/* Vials lineup — peeks from bottom edge */}
+          {/* Top fade */}
           <div
             style={{
               position: "absolute",
-              bottom: "-3%",
-              right: "1%",
-              width: "26vw",
-              maxWidth: "340px",
-              zIndex: 4,
-              opacity: 0.65,
-              filter: "drop-shadow(0 16px 40px rgba(0,0,0,0.14))",
+              top: 0,
+              left: 0,
+              right: 0,
+              height: "140px",
+              background: "linear-gradient(to bottom, #0F0F0E 0%, transparent 100%)",
+              zIndex: 3,
+              pointerEvents: "none",
             }}
-          >
-            <Image
-              src="/brand/hero-lineup.webp"
-              alt="Nexphoria vials"
-              width={2048}
-              height={1152}
-              className="w-full h-auto"
-              priority
-              sizes="(max-width: 768px) 0vw, 26vw"
-              unoptimized
-            />
-          </div>
+          />
 
-          {/* Box detail — accent card */}
+          {/* Bottom fade — transition to next section */}
           <div
             style={{
               position: "absolute",
-              bottom: "14%",
-              left: "32%",
-              width: "110px",
-              zIndex: 5,
-              transform: "rotate(-2.5deg)",
+              bottom: 0,
+              left: 0,
+              right: 0,
+              height: "160px",
+              background: "linear-gradient(to top, #0F0F0E 0%, transparent 100%)",
+              zIndex: 3,
+              pointerEvents: "none",
             }}
+          />
+
+          {/* Floating credential pills — over the image */}
+          <div
+            className="hero-pill-float"
+            style={{ position: "absolute", right: "29%", top: "28%", zIndex: 10, animationDelay: "0.75s" }}
           >
-            <div
-              className="hero-detail-hover rounded-xl overflow-hidden"
-              style={{
-                boxShadow: "0 18px 48px rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.04)",
-              }}
-            >
-              <Image
-                src="/brand/box-detail.webp"
-                alt="Nexphoria box detail"
-                width={400}
-                height={600}
-                className="w-full h-auto object-cover"
-                loading="lazy"
-                sizes="110px"
-                unoptimized
-              />
+            <div className="hero-pill">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                <circle cx="5" cy="5" r="4" stroke="#C4A265" strokeWidth="1.1" />
+                <path d="M2.5 5.2l1.5 1.5 3.5-3.5" stroke="#C4A265" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              99.2% Purity
             </div>
           </div>
 
-          {/* Text block — left side, vertically centered */}
+          <div
+            className="hero-pill-float"
+            style={{ position: "absolute", right: "14%", top: "44%", zIndex: 10, animationDelay: "0.9s" }}
+          >
+            <div className="hero-pill">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                <rect x="1.5" y="1" width="7" height="8" rx="1" stroke="#C4A265" strokeWidth="1.1" />
+                <path d="M3 4h4M3 6h2.5" stroke="#C4A265" strokeWidth="1.1" strokeLinecap="round" />
+              </svg>
+              COA Every Order
+            </div>
+          </div>
+
+          <div
+            className="hero-pill-float"
+            style={{ position: "absolute", right: "27%", top: "61%", zIndex: 10, animationDelay: "1.05s" }}
+          >
+            <div className="hero-pill">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                <path d="M1.5 5h7M5.5 2.5l3 2.5-3 2.5" stroke="#C4A265" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              Cold-Chain Delivery
+            </div>
+          </div>
+
+          {/* Text block — left, vertically centered */}
           <div
             style={{
               position: "absolute",
@@ -217,19 +230,12 @@ export default function HomePage() {
               top: "50%",
               transform: "translateY(-50%)",
               zIndex: 10,
-              maxWidth: "440px",
+              maxWidth: "480px",
             }}
           >
             <p
-              className="hero-eyebrow-animate"
-              style={{
-                fontSize: "0.6875rem",
-                fontWeight: 500,
-                textTransform: "uppercase",
-                letterSpacing: "0.18em",
-                color: "#8E6C2F",
-                marginBottom: "2rem",
-              }}
+              className="hero-eyebrow-animate eyebrow"
+              style={{ color: "#C4A265", marginBottom: "2.25rem" }}
             >
               Research-Grade Peptides
             </p>
@@ -237,25 +243,43 @@ export default function HomePage() {
             <h1
               className="hero-text-animate"
               style={{
-                fontSize: "clamp(3.75rem, 6.25vw, 7.25rem)",
-                lineHeight: 0.91,
-                letterSpacing: "-0.035em",
-                color: "#1A1A1A",
-                marginBottom: "3rem",
+                fontSize: "clamp(4.5rem, 7.25vw, 8.5rem)",
+                lineHeight: 0.88,
+                letterSpacing: "-0.04em",
+                marginBottom: "2.75rem",
               }}
             >
-              <span style={{ fontWeight: 300 }}>Precision,</span>
-              <br />
-              <span style={{ fontWeight: 700, color: "#1A1A1A" }}>delivered.</span>
+              <span
+                style={{
+                  display: "block",
+                  fontFamily: "var(--font-display)",
+                  fontStyle: "italic",
+                  fontWeight: 300,
+                  color: "#F5F5F0",
+                }}
+              >
+                Precision,
+              </span>
+              <span
+                style={{
+                  display: "block",
+                  fontFamily: "var(--font-display)",
+                  fontWeight: 700,
+                  color: "#C9DD69",
+                  letterSpacing: "-0.045em",
+                }}
+              >
+                delivered.
+              </span>
             </h1>
 
             <p
               className="hero-sub-animate"
               style={{
                 fontSize: "0.9375rem",
-                color: "#777",
+                color: "rgba(245,245,240,0.52)",
                 lineHeight: 1.75,
-                maxWidth: "320px",
+                maxWidth: "310px",
                 marginBottom: "2.75rem",
               }}
             >
@@ -264,13 +288,10 @@ export default function HomePage() {
             </p>
 
             <div className="hero-cta-animate flex flex-col gap-3">
-              <Link
-                href="/products"
-                className="btn-primary"
-              >
-Discover the Collection
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
-                  <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+              <Link href="/products" className="btn-hero-white">
+                Discover the Collection
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
+                  <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </Link>
               <Link
@@ -280,33 +301,60 @@ Discover the Collection
                   fontWeight: 400,
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
-                  color: "#8E6C2F",
+                  color: "rgba(245,245,240,0.38)",
                   textDecoration: "none",
-                  transition: "opacity 150ms",
+                  transition: "color 200ms",
                   alignSelf: "flex-start",
                 }}
-                className="hover:opacity-60"
+                className="hover:!text-[rgba(245,245,240,0.75)]"
               >
                 Find your protocol →
               </Link>
             </div>
           </div>
 
-          {/* Bottom gradient — seamless transition to social proof */}
-          <div className="hero-bottom-fade" />
-
-          {/* Fine editorial rule */}
+          {/* Bottom editorial strip */}
           <div
             style={{
               position: "absolute",
               bottom: 0,
               left: "6%",
               right: "6%",
-              height: "1px",
-              backgroundColor: "#E8E5DF",
-              zIndex: 10,
+              zIndex: 20,
+              paddingBottom: "1.5rem",
+              paddingTop: "1rem",
+              borderTop: "1px solid rgba(255,255,255,0.07)",
+              display: "flex",
+              alignItems: "center",
+              gap: "1.75rem",
             }}
-          />
+          >
+            {[
+              "Nexphoria Laboratories",
+              "Janoshik Analytical Certified",
+              "99.2% Average Purity",
+              "Cold-Chain Every Shipment",
+              "COA Included",
+            ].map((item, i) => (
+              <div key={item} style={{ display: "flex", alignItems: "center", gap: "1.75rem" }}>
+                {i > 0 && (
+                  <span style={{ color: "rgba(255,255,255,0.12)", userSelect: "none" }}>·</span>
+                )}
+                <span
+                  style={{
+                    fontSize: "0.5625rem",
+                    fontWeight: 500,
+                    letterSpacing: "0.22em",
+                    textTransform: "uppercase",
+                    color: "rgba(255,255,255,0.28)",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  {item}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* ── MOBILE ── */}
@@ -316,36 +364,47 @@ Discover the Collection
         >
           <div className="px-6 pt-8 pb-6">
             <p
-              style={{
-                fontSize: "0.6875rem",
-                fontWeight: 500,
-                textTransform: "uppercase",
-                letterSpacing: "0.18em",
-                color: "#8E6C2F",
-                marginBottom: "1.5rem",
-              }}
+              className="eyebrow"
+              style={{ color: "#C4A265", marginBottom: "1.5rem" }}
             >
               Research-Grade Peptides
             </p>
 
             <h1
               style={{
-                fontSize: "clamp(2.75rem, 11.5vw, 3.75rem)",
+                fontSize: "clamp(3rem, 12vw, 4.5rem)",
                 lineHeight: 0.92,
                 letterSpacing: "-0.03em",
-                color: "#1A1A1A",
                 marginBottom: "1.5rem",
               }}
             >
-              <span style={{ fontWeight: 300 }}>Precision,</span>
-              <br />
-              <span style={{ fontWeight: 700 }}>delivered.</span>
+              <span
+                style={{
+                  display: "block",
+                  fontFamily: "var(--font-display)",
+                  fontStyle: "italic",
+                  fontWeight: 300,
+                  color: "#F5F5F0",
+                }}
+              >
+                Precision,
+              </span>
+              <span
+                style={{
+                  display: "block",
+                  fontFamily: "var(--font-display)",
+                  fontWeight: 700,
+                  color: "#C9DD69",
+                }}
+              >
+                delivered.
+              </span>
             </h1>
 
             <p
               style={{
                 fontSize: "0.9375rem",
-                color: "#777",
+                color: "rgba(245,245,240,0.52)",
                 lineHeight: 1.7,
                 marginBottom: "2.25rem",
                 maxWidth: "300px",
@@ -355,11 +414,8 @@ Discover the Collection
               Cold-chain shipped with COA.
             </p>
 
-            <Link
-              href="/products"
-              className="btn-primary"
-            >
-Discover Collection
+            <Link href="/products" className="btn-hero-white">
+              Discover Collection
             </Link>
           </div>
 
@@ -368,11 +424,11 @@ Discover Collection
               style={{
                 borderRadius: "20px",
                 overflow: "hidden",
-                boxShadow: "0 24px 56px rgba(0,0,0,0.10)",
-                backgroundColor: "#F5F3EE",
+                boxShadow: "0 24px 56px rgba(0,0,0,0.5)",
+                backgroundColor: "#1C1C1A",
+                position: "relative",
               }}
             >
-              {/* Use smaller mobile-optimized image to reduce LCP bytes */}
               <picture>
                 <source media="(max-width: 480px)" srcSet="/brand/packaging-unboxing-mobile.webp" type="image/webp" />
                 <Image
@@ -387,6 +443,19 @@ Discover Collection
                   unoptimized
                 />
               </picture>
+              {/* Floating pills over mobile image */}
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "1rem",
+                  left: "1rem",
+                  display: "flex",
+                  gap: "0.5rem",
+                }}
+              >
+                <div className="hero-pill" style={{ fontSize: "10px", padding: "5px 10px" }}>99.2% Purity</div>
+                <div className="hero-pill" style={{ fontSize: "10px", padding: "5px 10px" }}>COA Every Order</div>
+              </div>
             </div>
           </div>
         </div>

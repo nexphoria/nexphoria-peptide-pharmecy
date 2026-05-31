@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Plus, Minus, ShoppingBag, ArrowRight, RefreshCw } from "lucide-react";
 import { useCart, getItemUnitPrice, getCadenceLabel } from "@/lib/cart";
+import { buildItem, trackViewCart, trackRemoveFromCart } from "@/lib/analytics";
 import { products, getRelatedProducts } from "@/lib/products";
 import { getProductImagePath, hasProductPhoto } from "@/lib/product-images";
 import ProductVial from "@/components/ProductVial";
@@ -81,6 +82,23 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
   const progressToNext = nextThreshold
     ? (totalPrice / nextThreshold.amount) * 100
     : 100;
+
+  // Track view_cart when drawer opens
+  useEffect(() => {
+    if (isOpen && items.length > 0) {
+      const ga4Items = items.map((item) =>
+        buildItem({
+          slug: item.product.slug,
+          name: item.product.name,
+          category: item.product.category,
+          price: getItemUnitPrice(item),
+          quantity: item.quantity,
+          format: item.format,
+        })
+      );
+      trackViewCart(ga4Items, totalPrice);
+    }
+  }, [isOpen]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Close on escape key
   useEffect(() => {
@@ -250,7 +268,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                     <AnimatePresence mode="popLayout">
                       {items.map((item) => {
                         const dosageLabel = item.selectedDosage?.size || item.product.size;
-                        const cadenceLabel = getCadenceLabel(item.subscriptionMonths);
+                        const cadenceLabel = getCadenceLabel(item.subscriptionCadence);
                         const unitPrice = getItemUnitPrice(item);
                         return (
                         <motion.div
@@ -296,10 +314,10 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                             </p>
                             <p
                               className="text-[11px] mt-0.5"
-                              style={{ color: item.subscriptionMonths > 1 ? "#B8A44C" : "#8A8075" }}
+                              style={{ color: item.subscriptionCadence != null ? "#B8A44C" : "#8A8075" }}
                             >
                               {cadenceLabel}
-                              {item.subscriptionMonths > 1 ? " · billed monthly" : ""}
+                              {item.subscriptionCadence != null ? " · billed monthly" : ""}
                             </p>
                             <div className="flex items-center justify-between mt-2">
                               {/* Quantity Controls */}
@@ -330,12 +348,22 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                               <div className="text-right">
                                 <div className="text-sm font-bold text-near-black">
                                   ${(unitPrice * item.quantity).toFixed(2)}
-                                  {item.subscriptionMonths > 1 && (
+                                  {item.subscriptionCadence != null && (
                                     <span className="text-[10px] font-normal text-stone">/mo</span>
                                   )}
                                 </div>
                                 <button
-                                  onClick={() => removeItem(item.product.slug, item.format)}
+                                  onClick={() => {
+                                    trackRemoveFromCart(buildItem({
+                                      slug: item.product.slug,
+                                      name: item.product.name,
+                                      category: item.product.category,
+                                      price: unitPrice,
+                                      quantity: item.quantity,
+                                      format: item.format,
+                                    }));
+                                    removeItem(item.product.slug, item.format);
+                                  }}
                                   className="text-xs text-tertiary hover:text-stone transition-colors inline-flex items-center justify-end"
                                   style={{ minHeight: "32px", padding: "4px 0" }}
                                 >

@@ -233,8 +233,14 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full" style={{ backgroundColor: "#FAF8F5" }}>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[200] focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:rounded focus:bg-[#1A1A1A] focus:text-white focus:outline-none"
+        >
+          Skip to main content
+        </a>
         <Header />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <RUOBanner variant="band" />
         <Footer />
         <ClientModals />
