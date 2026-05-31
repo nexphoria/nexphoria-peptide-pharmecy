@@ -262,6 +262,50 @@ export default function CheckoutPage() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#fffff3", paddingTop: "80px" }}>
+      {/* ── 3-Step Progress Bar ── */}
+      <div
+        className="sticky top-0 z-30 border-b"
+        style={{ backgroundColor: "rgba(255,255,243,0.97)", borderColor: "#ECEAE4", backdropFilter: "blur(8px)" }}
+      >
+        <div className="container-nex py-4">
+          <div className="flex items-center justify-center gap-0 max-w-xs mx-auto">
+            {(["Cart", "Details", "Payment"] as const).map((label, idx) => {
+              const stepState = idx === 0 ? "done" : idx === 1 ? "active" : "pending";
+              return (
+                <div key={label} className="flex items-center">
+                  <div className="flex flex-col items-center gap-1">
+                    <div
+                      className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-semibold transition-all"
+                      style={{
+                        backgroundColor: stepState === "done" ? "#C4A265" : stepState === "active" ? "#C4A265" : "transparent",
+                        color: stepState === "pending" ? "#999" : "#fff",
+                        border: stepState === "pending" ? "1.5px solid #D8D4CC" : "1.5px solid #C4A265",
+                      }}
+                    >
+                      {stepState === "done" ? (
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                      ) : idx + 1}
+                    </div>
+                    <span
+                      className="text-[10px] font-medium uppercase tracking-wide"
+                      style={{ color: stepState === "pending" ? "#999" : "#C4A265", letterSpacing: "0.08em" }}
+                    >
+                      {label}
+                    </span>
+                  </div>
+                  {idx < 2 && (
+                    <div
+                      className="h-px w-12 mx-2 mb-4"
+                      style={{ backgroundColor: idx === 0 ? "#C4A265" : "#D8D4CC" }}
+                    />
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
       <div className="container-nex py-12 md:py-16 pb-32 lg:pb-16">
         {/* Back button */}
         <Link
@@ -302,7 +346,7 @@ export default function CheckoutPage() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="nex-input w-full"
+                    className="input-luxury w-full"
                     placeholder="your.email@example.com"
                   />
                   <p className="text-xs mt-2" style={{ color: "#8A8075" }}>
@@ -670,7 +714,7 @@ export default function CheckoutPage() {
                 className="p-6 rounded-lg border"
                 style={{ backgroundColor: "#FFFFFF", borderColor: "#D8D4CC" }}
               >
-                <h2 className="text-lg font-semibold mb-4" style={{ color: "#010101" }}>
+                <h2 className="text-lg font-semibold mb-4" style={{ color: "#010101", fontFamily: "var(--font-display)" }}>
                   Order Summary
                 </h2>
 
@@ -830,36 +874,39 @@ export default function CheckoutPage() {
                   )}
                 </div>
 
-                {/* Totals */}
-                <div className="space-y-2 mb-5">
+                {/* Totals — dark panel */}
+                <div
+                  className="rounded-lg p-4 mb-5 space-y-2"
+                  style={{ backgroundColor: "#1A1A18", border: "1px solid #2A2A28" }}
+                >
                   <div className="flex justify-between text-sm">
                     <span style={{ color: "#8A8075" }}>Subtotal</span>
-                    <span style={{ color: "#3A3A3A" }}>${totalPrice.toFixed(2)}</span>
+                    <span style={{ color: "#D8D4CC" }}>${totalPrice.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between text-sm">
                     <span style={{ color: "#8A8075" }}>
                       Shipping
-                      <span className="text-[11px] ml-1" style={{ color: "#A09890" }}>
+                      <span className="text-[11px] ml-1" style={{ color: "#666" }}>
                         ({selectedShipping.label})
                       </span>
                     </span>
-                    <span style={{ color: shippingCost === 0 ? "#B8A44C" : "#3A3A3A" }}>
+                    <span style={{ color: shippingCost === 0 ? "#C4A265" : "#D8D4CC" }}>
                       {shippingCost === 0 ? "Free" : `$${shippingCost.toFixed(2)}`}
                     </span>
                   </div>
                   {hasSubscription && (
-                    <p className="text-xs" style={{ color: "#8A8075" }}>
+                    <p className="text-xs" style={{ color: "#666" }}>
                       * Subscription items billed monthly · one-time items billed today
                     </p>
                   )}
                   <div
                     className="pt-2 border-t flex justify-between items-end"
-                    style={{ borderColor: "#D8D4CC" }}
+                    style={{ borderColor: "#2A2A28" }}
                   >
-                    <span className="font-semibold" style={{ color: "#010101" }}>
+                    <span className="font-semibold" style={{ color: "#F9F9F9", fontFamily: "var(--font-display)", fontSize: "1rem" }}>
                       {hasSubscription ? "Billed today" : "Total"}
                     </span>
-                    <span className="text-xl font-bold" style={{ color: "#010101" }}>
+                    <span className="text-xl font-bold" style={{ color: "#C4A265", fontFamily: "var(--font-display)" }}>
                       ${(totalPrice + shippingCost).toFixed(2)}
                       {hasSubscription && (
                         <span className="block text-[11px] font-normal text-right" style={{ color: "#8A8075" }}>

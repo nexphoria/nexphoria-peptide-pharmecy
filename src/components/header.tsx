@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Menu, X, ShoppingBag, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useCart } from "@/lib/cart";
 import { SearchTrigger } from "@/components/SearchModal";
 
@@ -365,129 +366,187 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div
-          className="md:hidden border-t overflow-y-auto"
-          style={{
-            position: "absolute",
-            top: "72px",
-            left: 0,
-            right: 0,
-            maxHeight: "calc(100vh - 72px)",
-            backgroundColor: "#FAF8F5",
-            borderColor: "#E5E5E5",
-          }}
-        >
-          <nav id="mobile-nav" className="flex flex-col px-6 py-4" aria-label="Mobile navigation">
-            {/* Shop accordion */}
-            <button
-              className="flex items-center justify-between py-3 text-[11px] uppercase font-medium text-black/70 border-b border-[#E5E5E5]"
-              style={{ letterSpacing: "0.15em" }}
-              onClick={() => setMobileSection(mobileSection === "shop" ? null : "shop")}
-              aria-expanded={mobileSection === "shop"}
-              aria-controls="mobile-shop-section"
-            >
-              Shop
-              <ChevronDown
-                size={16}
-                aria-hidden="true"
-                className="transition-transform"
-                style={{ transform: mobileSection === "shop" ? "rotate(180deg)" : "rotate(0deg)" }}
-              />
-            </button>
-            {mobileSection === "shop" && (
-              <div id="mobile-shop-section" className="py-3 grid grid-cols-2 gap-x-4 gap-y-1">
-                {SHOP_CATEGORIES.flatMap((g) =>
-                  g.items.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="py-2 text-sm text-black/70"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  ))
-                )}
-                <Link
-                  href="/products"
-                  className="col-span-2 py-2 text-sm font-medium mt-2"
-                  style={{ color: "#C9A96E" }}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  View All &#8594;
-                </Link>
-                <Link
-                  href="/products/bundles"
-                  className="col-span-2 py-2 text-sm font-medium"
-                  style={{ color: "#9B7FD4" }}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Bundles &#8594;
-                </Link>
-              </div>
-            )}
-
-            {/* Research accordion */}
-            <button
-              className="flex items-center justify-between py-3 text-[11px] uppercase font-medium text-black/70 border-b border-[#E5E5E5]"
-              style={{ letterSpacing: "0.15em" }}
-              onClick={() => setMobileSection(mobileSection === "research" ? null : "research")}
-              aria-expanded={mobileSection === "research"}
-              aria-controls="mobile-research-section"
-            >
-              Research
-              <ChevronDown
-                size={16}
-                aria-hidden="true"
-                className="transition-transform"
-                style={{ transform: mobileSection === "research" ? "rotate(180deg)" : "rotate(0deg)" }}
-              />
-            </button>
-            {mobileSection === "research" && (
-              <div id="mobile-research-section" className="py-3 space-y-1">
-                {[...RESEARCH_TOOLS, ...RESEARCH_RESOURCES].map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="block py-2 text-sm text-black/70"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            )}
-
-            {/* Simple links */}
-            {[
-              { href: "/resources", label: "Resources" },
-              { href: "/science", label: "Science" },
-              { href: "/about", label: "About" },
-              { href: "/contact", label: "Contact" },
-            ].map((link) => (
+      {/* Mobile Menu — Full-Screen Overlay */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            id="mobile-nav"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="md:hidden fixed inset-0 z-[55] overflow-y-auto"
+            style={{ backgroundColor: "#1A1A18" }}
+            aria-label="Mobile navigation"
+          >
+            {/* Close button */}
+            <div className="flex items-center justify-between px-6 pt-6 pb-4">
               <Link
-                key={link.href}
-                href={link.href}
-                className="text-[11px] uppercase text-black/60 hover:text-black transition-colors py-3 block border-b border-[#E5E5E5]"
-                style={{ letterSpacing: "0.15em", fontWeight: 500 }}
+                href="/"
+                className="flex items-center gap-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                {link.label}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" className="h-7 w-7" aria-label="Nexphoria">
+                  <g>
+                    <circle fill="#C4A265" cx="129.698" cy="380.792" r="71.864" />
+                    <path
+                      fill="#C4A265"
+                      d="M519.834,328.405c-17.864-16.774-41.141-22.533-62.628-18.55c-18.724,3.471-38.055-0.118-53.17-11.702l-6.86-5.257c-15.349-11.763-23.999-29.746-25.629-49.016c-1.685-19.927-11.623-39.039-29.014-51.808c-16.815-12.346-37.204-16.273-56.18-12.583c-18.19,3.537-37.03,0.099-51.739-11.173l-7.496-5.744c-15.472-11.857-24.203-29.973-25.892-49.393c-1.792-20.603-12.408-40.363-31.14-53.138c-29.987-20.451-71.799-14.725-95.228,12.998c-26.524,31.385-21.393,78.205,10.727,103.18c17.127,13.317,38.364,17.629,58.085,13.695c18.6-3.71,37.886,0.889,52.94,12.426l6.216,4.764c15.349,11.763,23.999,29.746,25.629,49.016c1.685,19.927,11.623,39.039,29.014,51.809c16.815,12.346,37.204,16.273,56.18,12.583c18.19-3.537,37.03-0.099,51.739,11.173l7.704,5.904c14.677,11.248,24.521,28.127,25.467,46.594c1.094,21.348,11.653,41.983,30.521,55.197c34.727,24.32,83.49,13.65,104.428-24.632C548.956,386.504,543.301,350.44,519.834,328.405z"
+                    />
+                    <circle fill="#C4A265" cx="470.305" cy="119.208" r="71.864" />
+                  </g>
+                </svg>
+                <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: "#C4A265" }}>Nexphoria</span>
               </Link>
-            ))}
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-center w-11 h-11 transition-colors group"
+                aria-label="Close menu"
+              >
+                <X
+                  size={24}
+                  strokeWidth={1.5}
+                  aria-hidden="true"
+                  className="transition-colors text-white/60 group-hover:text-[#C4A265]"
+                />
+              </button>
+            </div>
 
-            <Link
-              href="/products"
-              className="btn-outline text-center mt-5"
-              onClick={() => setMobileMenuOpen(false)}
+            {/* Nav items with staggered entrance */}
+            <motion.nav
+              className="flex flex-col px-6 pb-10"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.05, delayChildren: 0.1 } },
+              }}
             >
-              Explore Collection
-            </Link>
-          </nav>
-        </div>
-      )}
+              {/* Shop accordion */}
+              <motion.div
+                variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.3 } } }}
+              >
+                <button
+                  className="flex items-center justify-between w-full py-5 text-2xl uppercase font-light tracking-widest transition-colors"
+                  style={{ color: mobileSection === "shop" ? "#C4A265" : "rgba(255,255,255,0.85)", letterSpacing: "0.2em" }}
+                  onClick={() => setMobileSection(mobileSection === "shop" ? null : "shop")}
+                  aria-expanded={mobileSection === "shop"}
+                  aria-controls="mobile-shop-section"
+                >
+                  Shop
+                  <ChevronDown
+                    size={20}
+                    aria-hidden="true"
+                    className="transition-transform"
+                    style={{ transform: mobileSection === "shop" ? "rotate(180deg)" : "rotate(0deg)", color: "#C4A265" }}
+                  />
+                </button>
+                <div style={{ height: "1px", backgroundColor: "rgba(196,162,101,0.2)" }} />
+                {mobileSection === "shop" && (
+                  <div id="mobile-shop-section" className="py-4 grid grid-cols-2 gap-x-4 gap-y-1">
+                    {SHOP_CATEGORIES.flatMap((g) =>
+                      g.items.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className="py-2 text-sm transition-colors"
+                          style={{ color: "rgba(255,255,255,0.6)" }}
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {item.label}
+                        </Link>
+                      ))
+                    )}
+                    <Link
+                      href="/products"
+                      className="col-span-2 py-2 text-sm font-medium mt-2"
+                      style={{ color: "#C4A265" }}
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      View All &#8594;
+                    </Link>
+                  </div>
+                )}
+              </motion.div>
+
+              {/* Research accordion */}
+              <motion.div
+                variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.3 } } }}
+              >
+                <button
+                  className="flex items-center justify-between w-full py-5 text-2xl uppercase font-light tracking-widest transition-colors"
+                  style={{ color: mobileSection === "research" ? "#C4A265" : "rgba(255,255,255,0.85)", letterSpacing: "0.2em" }}
+                  onClick={() => setMobileSection(mobileSection === "research" ? null : "research")}
+                  aria-expanded={mobileSection === "research"}
+                  aria-controls="mobile-research-section"
+                >
+                  Research
+                  <ChevronDown
+                    size={20}
+                    aria-hidden="true"
+                    className="transition-transform"
+                    style={{ transform: mobileSection === "research" ? "rotate(180deg)" : "rotate(0deg)", color: "#C4A265" }}
+                  />
+                </button>
+                <div style={{ height: "1px", backgroundColor: "rgba(196,162,101,0.2)" }} />
+                {mobileSection === "research" && (
+                  <div id="mobile-research-section" className="py-4 grid grid-cols-2 gap-x-4 gap-y-1">
+                    {[...RESEARCH_TOOLS, ...RESEARCH_RESOURCES].map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="block py-2 text-sm transition-colors"
+                        style={{ color: "rgba(255,255,255,0.6)" }}
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </motion.div>
+
+              {/* Simple top-level links */}
+              {[
+                { href: "/resources", label: "Resources" },
+                { href: "/science", label: "Science" },
+                { href: "/about", label: "About" },
+                { href: "/contact", label: "Contact" },
+              ].map((link) => (
+                <motion.div
+                  key={link.href}
+                  variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.3 } } }}
+                >
+                  <Link
+                    href={link.href}
+                    className="block py-5 text-2xl uppercase font-light tracking-widest transition-colors hover:text-[#C4A265]"
+                    style={{ color: "rgba(255,255,255,0.85)", letterSpacing: "0.2em" }}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                  <div style={{ height: "1px", backgroundColor: "rgba(196,162,101,0.2)" }} />
+                </motion.div>
+              ))}
+
+              {/* CTA */}
+              <motion.div
+                variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.3 } } }}
+                className="mt-8"
+              >
+                <Link
+                  href="/products"
+                  className="inline-block w-full text-center py-4 text-sm uppercase tracking-widest font-medium border transition-colors hover:bg-[#C4A265] hover:border-[#C4A265] hover:text-[#1A1A18]"
+                  style={{ color: "#C4A265", borderColor: "rgba(196,162,101,0.5)", letterSpacing: "0.2em" }}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Explore Collection
+                </Link>
+              </motion.div>
+            </motion.nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

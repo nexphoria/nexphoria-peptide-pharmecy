@@ -54,7 +54,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
   ],
   "mk-677": [
-    "protein-synthesis-skeletal-muscle-mtor-s6k-eif4e-gh-axis-research",
+    "peptide-research-sleep-circadian-rhythms-dsip-mk677-epitalon",
     "mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research",
     "mk-677-ibutamoren-oral-gh-secretagogue-guide",
   ],
@@ -100,9 +100,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "aging-biomarkers-telomere-epigenetic-clocks-nad-longevity-research",
   ],
   "epitalon": [
+    "peptide-research-sleep-circadian-rhythms-dsip-mk677-epitalon",
     "epitalon-pineal-peptide-longevity-research-review",
     "aging-biomarkers-telomere-epigenetic-clocks-nad-longevity-research",
-    "peptide-research-anti-aging-longevity-biomarkers-study-design",
   ],
   "ss-31": [
     "ss-31-elamipretide-mitochondria-targeted-peptide-research",
@@ -122,9 +122,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "cerebrolysin-neurotrophic-peptide-research-review",
   ],
   "dsip": [
+    "peptide-research-sleep-circadian-rhythms-dsip-mk677-epitalon",
     "dsip-delta-sleep-inducing-peptide-sleep-research-review",
     "selank-semax-nootropic-peptide-research-overview",
-    "oxytocin-research-neuropeptide-guide",
   ],
   "oxytocin": [
     "oxytocin-research-neuropeptide-guide",

@@ -1233,8 +1233,24 @@
 
 /* Sweep 19: Search modal overlay */
 .search-overlay {
-  background: rgba(26, 26, 24, 0.85);
-  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Gold focus ring for search input */
+#search-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.search-overlay input:focus {
+  outline: none;
+}
+.search-overlay [role="dialog"] {
+  outline: none;
+}
+.search-overlay [role="dialog"]:focus-within .search-focus-ring {
+  box-shadow: 0 0 0 2px #C4A265;
 }
 
 /* Sweep 14: Scroll reveal */

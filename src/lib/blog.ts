@@ -116,6 +116,7 @@ import { article as a112 } from './articles/peptide-degradation-proteolysis-dpp4
 import { article as a113 } from './articles/blood-brain-barrier-peptide-cns-delivery-research';
 import { article as a114 } from './articles/peptide-research-kidney-health-renoprotection-glp1-bpc157';
 import { article as a115 } from './articles/peptide-research-bone-health-bpc157-ghk-cu-ipamorelin-collagen';
+import { article as a116 } from './articles/peptide-research-sleep-circadian-rhythms-dsip-mk677-epitalon';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -188,6 +189,7 @@ export const articles: BlogArticle[] = [
   a113,
   a114,
   a115,
+  a116,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

@@ -133,21 +133,21 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
 
   return (
     <>
-      {/* Overlay */}
+      {/* Overlay with backdrop blur */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 bg-black/60 z-50"
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="fixed inset-0 cart-backdrop cart-drawer-overlay z-50"
             onClick={closeDrawer}
           />
         )}
       </AnimatePresence>
 
-      {/* Drawer */}
+      {/* Drawer with smooth slide animation */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -155,14 +155,14 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{
-              type: "spring",
-              damping: 30,
-              stiffness: 300,
-              mass: 0.8
+              duration: 0.3,
+              ease: [0.22, 1, 0.36, 1]
             }}
             className={`fixed top-0 right-0 bottom-0 z-50 w-full max-w-md flex flex-col overflow-hidden ${className}`}
             style={{ backgroundColor: "#F9F9F9", borderLeft: "1px solid #ECEAE4" }}
           >
+            {/* Gold accent line at top */}
+            <div className="cart-gold-accent" />
             {/* Header */}
             <div
               className="flex items-center justify-between px-6 py-5 border-b"
@@ -283,14 +283,12 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                             backgroundColor: "#F5F3F0"
                           }}
                         >
-                          {/* Product Thumbnail */}
+                          {/* Product Thumbnail - larger 100px */}
                           <div
-                            className="flex-shrink-0 flex items-center justify-center rounded overflow-hidden"
+                            className="flex-shrink-0 flex items-center justify-center rounded-lg overflow-hidden cart-item-thumbnail"
                             style={{
-                              width: "48px",
-                              height: "48px",
                               backgroundColor: `${item.product.accentColor}12`,
-                              border: `1px solid ${item.product.accentColor}30`
+                              border: `1.5px solid ${item.product.accentColor}30`
                             }}
                           >
                             <ProductThumb
@@ -299,6 +297,7 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                               dosage={dosageLabel}
                               category={item.product.category}
                               accentColor={item.product.accentColor}
+                              size={100}
                             />
                           </div>
 
@@ -319,28 +318,46 @@ export default function CartDrawer({ className = "" }: CartDrawerProps) {
                               {cadenceLabel}
                               {item.subscriptionCadence != null ? " · billed monthly" : ""}
                             </p>
-                            <div className="flex items-center justify-between mt-2">
-                              {/* Quantity Controls */}
-                              <div className="flex items-center gap-1">
+                            <div className="flex items-center justify-between mt-3">
+                              {/* Elegant Quantity Controls with Gold Borders */}
+                              <div className="flex items-center gap-2">
                                 <button
                                   onClick={() => updateQuantity(item.product.slug, item.format, item.quantity - 1)}
-                                  className="w-11 h-11 flex items-center justify-center border transition-colors rounded"
-                                  style={{ borderColor: "#D8D4CC", opacity: item.quantity <= 1 ? 0.35 : 1 }}
+                                  className="w-11 h-11 flex items-center justify-center border transition-all duration-300 rounded-lg btn-press-effect"
+                                  style={{
+                                    borderColor: item.quantity <= 1 ? "#E5E5E5" : "#C4A265",
+                                    opacity: item.quantity <= 1 ? 0.4 : 1,
+                                    backgroundColor: "transparent"
+                                  }}
                                   disabled={item.quantity <= 1}
                                   aria-label="Decrease quantity"
+                                  onMouseEnter={(e) => {
+                                    if (item.quantity > 1) {
+                                      (e.currentTarget as HTMLButtonElement).style.backgroundColor = "rgba(196,162,101,0.05)";
+                                    }
+                                  }}
+                                  onMouseLeave={(e) => {
+                                    (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent";
+                                  }}
                                 >
-                                  <Minus className="w-3 h-3 text-stone" />
+                                  <Minus className="w-3.5 h-3.5" style={{ color: "#666" }} />
                                 </button>
-                                <span className="w-8 text-center text-sm font-medium text-near-black">
+                                <span className="w-10 text-center text-sm font-semibold" style={{ color: "#1A1A1A" }}>
                                   {item.quantity}
                                 </span>
                                 <button
                                   onClick={() => updateQuantity(item.product.slug, item.format, item.quantity + 1)}
-                                  className="w-11 h-11 flex items-center justify-center border transition-colors rounded"
-                                  style={{ borderColor: "#D8D4CC" }}
+                                  className="w-11 h-11 flex items-center justify-center border transition-all duration-300 rounded-lg btn-press-effect"
+                                  style={{ borderColor: "#C4A265", backgroundColor: "transparent" }}
                                   aria-label="Increase quantity"
+                                  onMouseEnter={(e) => {
+                                    (e.currentTarget as HTMLButtonElement).style.backgroundColor = "rgba(196,162,101,0.05)";
+                                  }}
+                                  onMouseLeave={(e) => {
+                                    (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent";
+                                  }}
                                 >
-                                  <Plus className="w-3 h-3 text-stone" />
+                                  <Plus className="w-3.5 h-3.5" style={{ color: "#666" }} />
                                 </button>
                               </div>
 

@@ -218,42 +218,51 @@ export default function ProductDetailLaunch({ product, related }: Props) {
         </div>
       </div>
 
-      {/* Hero — 55/45 asymmetric split */}
+      {/* Hero — 60/40 asymmetric split with larger image */}
       <section className="py-10 lg:py-16">
         <div className="container-nex">
-          <div className="grid lg:grid-cols-[55fr_45fr] gap-10 lg:gap-16 items-start">
+          <div className="grid lg:grid-cols-[60fr_40fr] gap-10 lg:gap-20 items-start">
 
-            {/* Left: Product image in soft grey frame */}
-            <div>
+            {/* Left: Large product image with parallax effect */}
+            <div className="product-hero-container">
               <div
-                className="relative flex items-center justify-center"
+                className="product-hero-image relative flex items-center justify-center"
                 style={{
-                  aspectRatio: "1 / 1",
+                  minHeight: "60vh",
                   backgroundColor: "#F7F7F7",
-                  borderRadius: "8px",
+                  borderRadius: "12px",
                   border: "1px solid #E5E5E5",
-                  boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
+                  boxShadow: "0 8px 32px rgba(0,0,0,0.08)",
+                }}
+                onMouseMove={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  const x = (e.clientX - rect.left) / rect.width - 0.5;
+                  const y = (e.clientY - rect.top) / rect.height - 0.5;
+                  e.currentTarget.style.transform = `perspective(1000px) rotateY(${x * 2}deg) rotateX(${-y * 2}deg)`;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
                 }}
               >
                 {hasPhoto ? (
                   <img
                     src={getProductImagePath(product.slug)}
                     alt={`${product.name} ${product.size}`}
-                    className="max-w-full max-h-full object-contain"
-                    style={{ padding: "clamp(1.5rem, 5vw, 3.5rem)" }}
+                    className="max-w-full max-h-full object-contain product-detail-fade"
+                    style={{ padding: "clamp(2rem, 6vw, 4rem)" }}
                     loading="eager"
                     fetchPriority="high"
-                    width={400}
-                    height={400}
+                    width={600}
+                    height={600}
                     decoding="async"
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center p-6 md:p-12" style={{ backgroundColor: "#1A1A18" }}>
+                  <div className="w-full h-full flex items-center justify-center p-8 md:p-16" style={{ backgroundColor: "#1A1A18" }}>
                     <VialSVG
                       name={product.name}
                       size={product.dosages?.[0]?.size || product.size || "5mg"}
                       capColor={getCategoryColor(product.category)}
-                      className="max-h-full"
+                      className="max-h-full product-detail-fade"
                     />
                   </div>
                 )}
@@ -261,8 +270,8 @@ export default function ProductDetailLaunch({ product, related }: Props) {
 
             </div>
 
-            {/* Right: Product info + buy box */}
-            <div ref={buyBoxRef}>
+            {/* Right: Product info + buy box with fade animations */}
+            <div ref={buyBoxRef} className="product-detail-fade-delay">
               {/* Brand eyebrow */}
               <p
                 className="text-[10px] uppercase font-medium mb-1"
@@ -271,16 +280,16 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                 NEXPHORIA
               </p>
 
-              {/* Product title */}
+              {/* Product title - larger and more prominent */}
               <h1
-                className="mb-2 tracking-tight"
-                style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)", fontWeight: 300, color: "#1A1A1A", letterSpacing: "-0.02em" }}
+                className="mb-3 tracking-tight"
+                style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 300, color: "#1A1A1A", letterSpacing: "-0.03em" }}
               >
                 {product.name}
               </h1>
 
               {/* Tagline */}
-              <p className="text-sm mb-3" style={{ color: "#666666", fontStyle: "italic", lineHeight: 1.6 }}>
+              <p className="text-base mb-4" style={{ color: "#666666", fontStyle: "italic", lineHeight: 1.7 }}>
                 {product.tagline}
               </p>
 

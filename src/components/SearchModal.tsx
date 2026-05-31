@@ -86,7 +86,7 @@ export default function SearchModal() {
     return () => clearTimeout(timer);
   }, [query]);
 
-  // Search logic
+  // Search logic — 5 products + 3 articles max
   useEffect(() => {
     if (!query.trim()) {
       setResults([]);
@@ -95,18 +95,20 @@ export default function SearchModal() {
     }
 
     const q = query.toLowerCase();
-    const found: SearchResult[] = [];
+    const productResults: SearchResult[] = [];
+    const articleResults: SearchResult[] = [];
 
-    // Search products
+    // Search products (max 5)
     products
       .filter((p) => !p.comingSoon)
       .forEach((p) => {
         if (
-          p.name.toLowerCase().includes(q) ||
-          p.category.toLowerCase().includes(q) ||
-          p.tagline?.toLowerCase().includes(q)
+          productResults.length < 5 &&
+          (p.name.toLowerCase().includes(q) ||
+            p.category.toLowerCase().includes(q) ||
+            p.tagline?.toLowerCase().includes(q))
         ) {
-          found.push({
+          productResults.push({
             type: "product",
             title: p.name,
             subtitle: p.category,
@@ -115,14 +117,15 @@ export default function SearchModal() {
         }
       });
 
-    // Search articles
+    // Search articles (max 3)
     articles.forEach((a) => {
       if (
-        a.title.toLowerCase().includes(q) ||
-        a.description.toLowerCase().includes(q) ||
-        a.category.toLowerCase().includes(q)
+        articleResults.length < 3 &&
+        (a.title.toLowerCase().includes(q) ||
+          a.description.toLowerCase().includes(q) ||
+          a.category.toLowerCase().includes(q))
       ) {
-        found.push({
+        articleResults.push({
           type: "article",
           title: a.title,
           subtitle: a.category,
@@ -131,14 +134,15 @@ export default function SearchModal() {
       }
     });
 
-    // Search static pages
+    // Pages (fill remaining up to 2 extra)
+    const pageResults: SearchResult[] = [];
     STATIC_PAGES.forEach((page) => {
       if (page.title.toLowerCase().includes(q)) {
-        found.push(page);
+        pageResults.push(page);
       }
     });
 
-    setResults(found.slice(0, 8));
+    setResults([...productResults, ...articleResults, ...pageResults.slice(0, 2)]);
     setSelectedIndex(0);
   }, [query]);
 
@@ -174,58 +178,72 @@ export default function SearchModal() {
   };
 
   return (
-    <>
-      {/* Overlay */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 bg-black/60 z-[60]"
-            onClick={handleClose}
-          />
-        )}
-      </AnimatePresence>
-
-      {/* Modal */}
-      <AnimatePresence>
-        {isOpen && (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          className="search-overlay fixed inset-0 z-[60] flex items-start justify-center pt-[10vh] px-4"
+          style={{ backgroundColor: "rgba(0,0,0,0.7)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+          onClick={handleClose}
+        >
+          {/* Panel — stop propagation so clicking inside doesn't close */}
           <motion.div
             role="dialog"
             aria-modal="true"
             aria-label="Search"
-            initial={{ opacity: 0, scale: 0.95, y: -20 }}
+            initial={{ opacity: 0, scale: 0.96, y: -24 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: -20 }}
-            transition={{ duration: 0.2 }}
-            className="fixed top-20 left-4 right-4 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 sm:w-full sm:max-w-2xl sm:mx-4 z-[60] rounded-xl border shadow-2xl overflow-hidden"
-            style={{ backgroundColor: "#FFFFFF", borderColor: "#E5E5E5" }}
+            exit={{ opacity: 0, scale: 0.96, y: -24 }}
+            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+            className="w-full rounded-2xl border shadow-2xl overflow-hidden"
+            style={{
+              maxWidth: "600px",
+              backgroundColor: "#FFFFFF",
+              borderColor: "#E5E5E5",
+            }}
+            onClick={(e) => e.stopPropagation()}
           >
             {/* Search Input */}
-            <div className="flex items-center gap-3 p-4 border-b" style={{ borderColor: "#E5E5E5" }}>
-              <Search className="w-5 h-5 flex-shrink-0" aria-hidden="true" style={{ color: "#666666" }} />
-              <label htmlFor="search-input" className="sr-only">Search products, articles, and pages</label>
+            <div
+              className="flex items-center gap-3 px-5 py-4 border-b"
+              style={{ borderColor: "#E5E5E5" }}
+            >
+              <Search
+                className="w-5 h-5 flex-shrink-0"
+                aria-hidden="true"
+                style={{ color: "#999999" }}
+              />
+              <label htmlFor="search-input" className="sr-only">
+                Search products, articles, and pages
+              </label>
               <input
                 id="search-input"
                 ref={inputRef}
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search products, articles, pages..."
-                className="flex-1 bg-transparent text-base outline-none placeholder:text-[#666666]"
-                style={{ color: "#1A1A1A" }}
+                placeholder="Search compounds, articles, guides…"
+                className="flex-1 bg-transparent text-lg outline-none placeholder:text-[#AAAAAA]"
+                style={{
+                  color: "#1A1A1A",
+                  caretColor: "#C4A265",
+                  // gold focus ring handled via CSS below
+                }}
                 aria-autocomplete="list"
                 aria-controls="search-results"
-                aria-activedescendant={results.length > 0 ? `search-result-${selectedIndex}` : undefined}
+                aria-activedescendant={
+                  results.length > 0 ? `search-result-${selectedIndex}` : undefined
+                }
               />
               <button
                 onClick={handleClose}
-                className="p-1 hover:opacity-70 transition-opacity flex-shrink-0"
+                className="flex items-center justify-center w-8 h-8 rounded-full transition-colors hover:bg-[#F5F5F5] flex-shrink-0"
                 aria-label="Close search"
               >
-                <X className="w-5 h-5" style={{ color: "#666666" }} />
+                <X className="w-4 h-4" style={{ color: "#666666" }} />
               </button>
             </div>
 
@@ -234,91 +252,203 @@ export default function SearchModal() {
               id="search-results"
               role="listbox"
               aria-label="Search results"
-              className="max-h-96 overflow-y-auto"
+              className="max-h-[420px] overflow-y-auto"
             >
               {/* Live region for screen readers */}
               <div aria-live="polite" aria-atomic="true" className="sr-only">
                 {query && results.length === 0 && "No results found"}
-                {results.length > 0 && `${results.length} result${results.length !== 1 ? "s" : ""} found`}
+                {results.length > 0 &&
+                  `${results.length} result${results.length !== 1 ? "s" : ""} found`}
               </div>
+
               {query && results.length === 0 && (
-                <div className="px-4 py-8 text-center text-sm" style={{ color: "#666666" }}>
-                  No results found for &quot;{query}&quot;
+                <div className="px-5 py-10 text-center text-sm" style={{ color: "#666666" }}>
+                  No results for &ldquo;{query}&rdquo;
                 </div>
               )}
+
+              {!query && (
+                <div className="px-5 py-8 text-center">
+                  <p className="text-sm" style={{ color: "#999999" }}>
+                    Search compounds, guides, or pages
+                  </p>
+                  <p className="text-xs mt-2" style={{ color: "#CCCCCC" }}>
+                    Try &ldquo;BPC-157&rdquo;, &ldquo;reconstitution&rdquo;, &ldquo;GLP-1&rdquo;
+                  </p>
+                </div>
+              )}
+
               {results.length > 0 && (
                 <div className="py-2">
-                  {results.map((result, index) => (
-                    <button
-                      key={`${result.type}-${result.href}`}
-                      id={`search-result-${index}`}
-                      role="option"
-                      aria-selected={index === selectedIndex}
-                      onClick={() => handleNavigate(result.href)}
-                      onMouseEnter={() => setSelectedIndex(index)}
-                      className="w-full flex items-center gap-3 px-4 py-3 text-left transition-colors"
-                      style={{
-                        backgroundColor: index === selectedIndex ? "#F5F5F5" : "transparent",
-                      }}
+                  {/* Section label for products */}
+                  {results.some((r) => r.type === "product") && (
+                    <div
+                      className="px-5 py-2 text-[10px] uppercase tracking-widest font-medium"
+                      style={{ color: "#C4A265", letterSpacing: "0.2em" }}
                     >
-                      <div
-                        className="w-8 h-8 rounded flex items-center justify-center flex-shrink-0 text-xs font-medium uppercase"
-                        style={{
-                          backgroundColor:
-                            result.type === "product"
-                              ? "#B8A44C20"
-                              : result.type === "article"
-                              ? "#88888820"
-                              : "#B8A44C10",
-                          color:
-                            result.type === "product"
-                              ? "#B8A44C"
-                              : result.type === "article"
-                              ? "#666"
-                              : "#B8A44C",
-                        }}
-                      >
-                        {result.type === "product" ? "P" : result.type === "article" ? "A" : "Pg"}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="text-sm font-medium truncate" style={{ color: "#1A1A1A" }}>
-                          {result.title}
-                        </div>
-                        {result.subtitle && (
-                          <div className="text-xs truncate" style={{ color: "#666666" }}>
-                            {result.subtitle}
+                      Compounds
+                    </div>
+                  )}
+                  {results
+                    .filter((r) => r.type === "product")
+                    .map((result, i) => {
+                      const absIndex = results.indexOf(result);
+                      return (
+                        <button
+                          key={`product-${result.href}`}
+                          id={`search-result-${absIndex}`}
+                          role="option"
+                          aria-selected={absIndex === selectedIndex}
+                          onClick={() => handleNavigate(result.href)}
+                          onMouseEnter={() => setSelectedIndex(absIndex)}
+                          className="w-full flex items-center gap-3 px-5 py-3 text-left transition-colors"
+                          style={{
+                            backgroundColor:
+                              absIndex === selectedIndex ? "#FBF9F5" : "transparent",
+                          }}
+                        >
+                          <div
+                            className="w-8 h-8 rounded flex items-center justify-center flex-shrink-0 text-xs font-semibold uppercase"
+                            style={{ backgroundColor: "rgba(196,162,101,0.12)", color: "#C4A265" }}
+                          >
+                            {result.title.slice(0, 2)}
                           </div>
-                        )}
-                      </div>
-                      {index === selectedIndex && (
-                        <ArrowRight className="w-4 h-4 flex-shrink-0" style={{ color: "#B8A44C" }} />
-                      )}
-                    </button>
-                  ))}
+                          <div className="flex-1 min-w-0">
+                            <div
+                              className="text-sm font-medium truncate"
+                              style={{ color: "#1A1A1A" }}
+                            >
+                              {result.title}
+                            </div>
+                            {result.subtitle && (
+                              <div className="text-xs truncate" style={{ color: "#999999" }}>
+                                {result.subtitle}
+                              </div>
+                            )}
+                          </div>
+                          {absIndex === selectedIndex && (
+                            <ArrowRight className="w-4 h-4 flex-shrink-0" style={{ color: "#C4A265" }} />
+                          )}
+                        </button>
+                      );
+                    })}
+
+                  {/* Section label for articles */}
+                  {results.some((r) => r.type === "article") && (
+                    <div
+                      className="px-5 pt-3 pb-2 text-[10px] uppercase tracking-widest font-medium"
+                      style={{ color: "#C4A265", letterSpacing: "0.2em", borderTop: "1px solid #F0EDE7" }}
+                    >
+                      Articles
+                    </div>
+                  )}
+                  {results
+                    .filter((r) => r.type === "article")
+                    .map((result) => {
+                      const absIndex = results.indexOf(result);
+                      return (
+                        <button
+                          key={`article-${result.href}`}
+                          id={`search-result-${absIndex}`}
+                          role="option"
+                          aria-selected={absIndex === selectedIndex}
+                          onClick={() => handleNavigate(result.href)}
+                          onMouseEnter={() => setSelectedIndex(absIndex)}
+                          className="w-full flex items-center gap-3 px-5 py-3 text-left transition-colors"
+                          style={{
+                            backgroundColor:
+                              absIndex === selectedIndex ? "#FBF9F5" : "transparent",
+                          }}
+                        >
+                          <div
+                            className="w-8 h-8 rounded flex items-center justify-center flex-shrink-0 text-xs font-medium"
+                            style={{ backgroundColor: "rgba(100,100,100,0.08)", color: "#888" }}
+                          >
+                            A
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div
+                              className="text-sm font-medium truncate"
+                              style={{ color: "#1A1A1A" }}
+                            >
+                              {result.title}
+                            </div>
+                            {result.subtitle && (
+                              <div className="text-xs truncate" style={{ color: "#999999" }}>
+                                {result.subtitle}
+                              </div>
+                            )}
+                          </div>
+                          {absIndex === selectedIndex && (
+                            <ArrowRight className="w-4 h-4 flex-shrink-0" style={{ color: "#C4A265" }} />
+                          )}
+                        </button>
+                      );
+                    })}
+
+                  {/* Pages */}
+                  {results
+                    .filter((r) => r.type === "page")
+                    .map((result) => {
+                      const absIndex = results.indexOf(result);
+                      return (
+                        <button
+                          key={`page-${result.href}`}
+                          id={`search-result-${absIndex}`}
+                          role="option"
+                          aria-selected={absIndex === selectedIndex}
+                          onClick={() => handleNavigate(result.href)}
+                          onMouseEnter={() => setSelectedIndex(absIndex)}
+                          className="w-full flex items-center gap-3 px-5 py-3 text-left transition-colors"
+                          style={{
+                            backgroundColor:
+                              absIndex === selectedIndex ? "#FBF9F5" : "transparent",
+                          }}
+                        >
+                          <div
+                            className="w-8 h-8 rounded flex items-center justify-center flex-shrink-0 text-xs font-medium"
+                            style={{ backgroundColor: "rgba(196,162,101,0.06)", color: "#C4A265" }}
+                          >
+                            Pg
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div
+                              className="text-sm font-medium truncate"
+                              style={{ color: "#1A1A1A" }}
+                            >
+                              {result.title}
+                            </div>
+                          </div>
+                          {absIndex === selectedIndex && (
+                            <ArrowRight className="w-4 h-4 flex-shrink-0" style={{ color: "#C4A265" }} />
+                          )}
+                        </button>
+                      );
+                    })}
                 </div>
               )}
             </div>
 
             {/* Footer hint */}
-            <div className="px-4 py-2 border-t text-xs" style={{ borderColor: "#E5E5E5", color: "#666666" }}>
-              <div className="flex items-center gap-4">
-                <span>↑↓ Navigate</span>
-                <span>↵ Select</span>
-                <span>Esc Close</span>
-              </div>
+            <div
+              className="px-5 py-2.5 border-t flex items-center gap-4 text-[10px]"
+              style={{ borderColor: "#F0EDE7", color: "#AAAAAA", letterSpacing: "0.05em" }}
+            >
+              <span>↑↓ Navigate</span>
+              <span>↵ Select</span>
+              <span>Esc Close</span>
+              <span className="ml-auto opacity-60">⌘K</span>
             </div>
           </motion.div>
-        )}
-      </AnimatePresence>
-
-    </>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
 
 // Trigger button component to be used in header
 export function SearchTrigger() {
   const handleClick = () => {
-    // Dispatch custom event to open search
     window.dispatchEvent(new CustomEvent("open-search"));
   };
 
@@ -327,7 +457,7 @@ export function SearchTrigger() {
       onClick={handleClick}
       className="flex items-center gap-2 px-3 py-1.5 text-xs rounded-md border transition-colors hover:bg-[#F5F5F5]"
       style={{ borderColor: "#E5E5E5", color: "#666666" }}
-      aria-label="Open search"
+      aria-label="Open search (⌘K)"
     >
       <Search className="w-3.5 h-3.5" />
       <span className="hidden lg:inline">Search</span>

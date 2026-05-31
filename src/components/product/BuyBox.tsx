@@ -102,9 +102,15 @@ export default function BuyBox({
         >
           Purchase Type
         </p>
+
+        {/* Prominent segmented control — rounded-full */}
         <div
-          className="grid grid-cols-2 gap-0 rounded-lg overflow-hidden"
-          style={{ border: "1px solid #E5E5E5" }}
+          className="flex p-1 gap-1"
+          style={{
+            border: "1px solid #E5E5E5",
+            borderRadius: "999px",
+            backgroundColor: "#F5F3F0",
+          }}
           role="radiogroup"
           aria-label="Purchase type"
         >
@@ -114,35 +120,42 @@ export default function BuyBox({
               <button
                 key={mode}
                 onClick={() => setPurchaseMode(mode)}
-                className="flex flex-col items-center justify-center py-3 px-2 transition-all duration-200"
+                className="flex-1 flex flex-col items-center justify-center py-2.5 px-3 transition-all duration-250"
                 style={{
-                  backgroundColor: active ? "#1A1A1A" : "transparent",
-                  color: active ? "#F9F9F9" : "#666",
-                  borderRight: mode === 'one-time' ? "1px solid #E5E5E5" : "none",
-                  minHeight: "60px",
+                  borderRadius: "999px",
+                  backgroundColor: active ? "#C4A265" : "transparent",
+                  color: active ? "#FFFFFF" : "#666",
+                  border: active ? "none" : "none",
+                  minHeight: "56px",
                   cursor: "pointer",
+                  boxShadow: active ? "0 1px 4px rgba(196,162,101,0.35)" : "none",
                 }}
                 aria-pressed={active}
                 aria-label={mode === 'one-time' ? 'One-time purchase' : 'Monthly Auto-Ship'}
               >
                 <span
-                  className="text-[11px] uppercase font-medium"
+                  className="text-[11px] uppercase font-semibold"
                   style={{ letterSpacing: "0.12em" }}
                 >
                   {mode === 'one-time' ? 'One-Time' : 'Monthly Auto-Ship'}
                 </span>
                 <span
                   className="text-[10px] mt-0.5"
-                  style={{ color: active ? "rgba(245,245,240,0.6)" : "#999" }}
+                  style={{ color: active ? "rgba(255,255,255,0.75)" : "#999" }}
                 >
-                  {mode === 'one-time' ? `$${unitPrice.toFixed(2)}` : `$${unitPrice.toFixed(2)} · cancel anytime`}
+                  ${unitPrice.toFixed(2)}
                 </span>
               </button>
             );
           })}
         </div>
 
-        {/* Monthly Auto-Ship descriptor */}
+        {/* Delivery tag — always visible below toggle */}
+        <p className="mt-2 text-center text-[11px]" style={{ color: "#8A8075" }}>
+          Fresh cold-chain delivery every 30 days
+        </p>
+
+        {/* Monthly Auto-Ship descriptor — shown when subscribe active */}
         {purchaseMode === 'subscribe' && (
           <div
             className="mt-3 flex items-start gap-2.5 p-3 rounded-lg"
