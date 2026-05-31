@@ -7,7 +7,7 @@
 export const PRODUCT_ARTICLES: Record<string, string[]> = {
   // Repair / Recovery
   "bpc-157": [
-    "peptide-research-cardiovascular-fibrosis-tgfbeta-bpc157-ghk-cu-myofibroblast",
+    "peptide-research-neuroprotection-bpc157-ss31-nad-semax",
     "bpc-157-mechanism-deep-dive-no-vegf-fak-signaling",
     "bpc-157-gut-health-research-gi-protection-leaky-gut-intestinal-repair",
   ],
@@ -94,9 +94,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // Longevity
   "nad-plus": [
+    "peptide-research-neuroprotection-bpc157-ss31-nad-semax",
     "nad-plus-research-protocols-dosing-routes-study-design",
     "nad-precursors-nmn-nr-vs-direct-nad-injection-research",
-    "peptide-biomarkers-monitoring-research-protocols-what-to-track-when",
   ],
   "epitalon": [
     "sleep-peptides-dsip-gh-axis-circadian-biology-research",
@@ -104,9 +104,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "epitalon-pineal-peptide-longevity-research-review",
   ],
   "ss-31": [
+    "peptide-research-neuroprotection-bpc157-ss31-nad-semax",
     "ss-31-elamipretide-mitochondria-targeted-peptide-research",
     "mitophagy-research-ss31-nad-plus-pink1-parkin-pathway",
-    "peptide-research-immune-senescence-inflammaging-nad-thymosin-alpha1",
   ],
 
   // Nootropics / Neuro
@@ -116,9 +116,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "adamax-dsip-selank-nad-nootropic-stack-protocol-deep-dive",
   ],
   "semax": [
+    "peptide-research-neuroprotection-bpc157-ss31-nad-semax",
     "selank-semax-nootropic-peptide-research-overview",
     "blood-brain-barrier-peptide-cns-delivery-research",
-    "cerebrolysin-neurotrophic-peptide-research-review",
   ],
   "dsip": [
     "sleep-peptides-dsip-gh-axis-circadian-biology-research",

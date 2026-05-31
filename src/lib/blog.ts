@@ -131,6 +131,7 @@ import { article as a127 } from './articles/sleep-peptides-dsip-gh-axis-circadia
 import { article as a128 } from './articles/testosterone-hpg-axis-peptide-research-kisspeptin-lh-hormone-endpoints';
 import { article as a129 } from './articles/peptide-research-metabolic-syndrome-multitarget-protocol-design';
 import { article as a130 } from './articles/peptide-research-cardiovascular-fibrosis-tgfbeta-bpc157-ghk-cu-myofibroblast';
+import { article as a131 } from './articles/peptide-research-neuroprotection-bpc157-ss31-nad-semax';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -218,6 +219,7 @@ export const articles: BlogArticle[] = [
   a128,
   a129,
   a130,
+  a131,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
