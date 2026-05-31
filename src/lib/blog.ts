@@ -137,6 +137,7 @@ import { article as a133 } from './articles/bpc-157-gut-brain-axis-vagus-nerve-e
 import { article as a134 } from './articles/peptide-research-respiratory-health-bpc157-nad-pulmonary-study-design';
 import { article as a135 } from './articles/peptide-research-reproductive-fertility-kisspeptin-bpc157-gonadal-axis';
 import { article as a136 } from './articles/bpc-157-joint-tendon-cartilage-repair-musculoskeletal-research';
+import { article as a137 } from './articles/peptide-research-neuroprotection-bdnf-gdnf-neurotrophic-signaling';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -230,6 +231,7 @@ export const articles: BlogArticle[] = [
   a134,
   a135,
   a136,
+  a137,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

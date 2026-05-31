@@ -114,11 +114,13 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "selank-semax-nootropic-peptide-research-overview",
     "blood-brain-barrier-peptide-cns-delivery-research",
     "adamax-dsip-selank-nad-nootropic-stack-protocol-deep-dive",
+    "peptide-research-neuroprotection-bdnf-gdnf-neurotrophic-signaling",
   ],
   "semax": [
     "peptide-research-neuroprotection-bpc157-ss31-nad-semax",
     "selank-semax-nootropic-peptide-research-overview",
     "blood-brain-barrier-peptide-cns-delivery-research",
+    "peptide-research-neuroprotection-bdnf-gdnf-neurotrophic-signaling",
   ],
   "dsip": [
     "sleep-peptides-dsip-gh-axis-circadian-biology-research",
