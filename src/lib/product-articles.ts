@@ -68,17 +68,17 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "semaglutide": [
     "semaglutide-dosing-timing-protocol-design-researchers-reference",
     "glp1-agonists-neurodegeneration-parkinsons-alzheimers-tbi-research",
-    "peptide-research-sex-differences-female-dosing-protocols",
+    "adiponectin-insulin-resistance-glp1-metabolic-peptide-endpoints",
   ],
   "tirzepatide": [
     "tirzepatide-research-dosing-guide-glp1-gip-dual-agonism-protocols",
     "retatrutide-vs-tirzepatide-triple-vs-dual-agonist-research-comparison",
-    "adiponectin-leptin-metabolic-hormone-endpoints-peptide-research",
+    "adiponectin-insulin-resistance-glp1-metabolic-peptide-endpoints",
   ],
   "retatrutide": [
     "retatrutide-triple-agonist-research-guide",
     "retatrutide-vs-tirzepatide-triple-vs-dual-agonist-research-comparison",
-    "adiponectin-leptin-metabolic-hormone-endpoints-peptide-research",
+    "adiponectin-insulin-resistance-glp1-metabolic-peptide-endpoints",
   ],
   "aod-9604": [
     "aod-9604-lipolytic-fragment-research-guide",
