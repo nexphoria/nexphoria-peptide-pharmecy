@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, FlaskConical, Shield, Award, Microscope } from "lucide-react";
+import TrustBadges from "@/components/TrustBadges";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -91,6 +92,9 @@ export default function AboutClient() {
               the same standards as pharmaceutical drugs. We manufacture to that standard on every
               single batch.
             </p>
+            <div className="mt-8">
+              <TrustBadges variant="dark" size="md" />
+            </div>
           </motion.div>
         </div>
       </section>

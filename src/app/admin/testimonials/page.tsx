@@ -781,7 +781,7 @@ export default function TestimonialsReviewPage() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <ShieldCheck size={18} color="#C4A265" />
+          <ShieldCheck size={18} color="#B8A44C" />
           <span
             style={{
               color: "#FFFFFF",

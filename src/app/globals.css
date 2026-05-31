@@ -4,7 +4,7 @@
   --color-page-bg: #F9F9F9;
   --color-card-bg: #F7F7F7;
   --color-card-border: #E5E5E5;
-  --color-olive: #C4A265;
+  --color-olive: #B8A44C;
   --color-olive-dark: #A68B4B;
   --color-text-primary: #1A1A1A;
   --color-text-secondary: #666666;
@@ -14,15 +14,15 @@
   --color-cream: #F9F9F9;
   --color-stone: #666666;
   --color-tertiary: #737373;
-  /* WCAG 2.1 AA accessible text equivalent of brand gold (#C4A265) for body/eyebrow copy */
-  --color-gold-text: #8E6C2F;
+  /* WCAG 2.1 AA accessible text equivalent of brand gold (#B8A44C) for body/eyebrow copy */
+  --color-gold-text: #7A6B2A;
   --color-dark: #0F0F0E;
   --color-dark-panel: #161614;
   --color-dark-card: #1C1C1A;
   --color-dark-border: #2A2A28;
   --color-dark-border-hover: #3A3A38;
-  --color-gold: #C4A265;
-  --color-acid-green: #C4A265;
+  --color-gold: #B8A44C;
+  --color-acid-green: #B8A44C;
   --color-border-subtle: #E5E5E5;
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
   --font-display: var(--font-cormorant), Georgia, serif;
@@ -459,7 +459,7 @@
   transition: color 300ms ease;
 }
 .faq-trigger:hover {
-  color: #8E6C2F;
+  color: #7A6B2A;
 }
 .faq-body {
   overflow: hidden;
@@ -485,7 +485,7 @@
 .category-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-  border-color: #8E6C2F;
+  border-color: #7A6B2A;
 }
 
 /* ─── Blog card hover ─── */
@@ -499,21 +499,69 @@
 
 /* ─── Mobile optimizations ─── */
 @media (max-width: 767px) {
-  /* Min 44px touch targets for interactive elements */
+  /* Min 44px touch targets for all interactive elements */
   button,
-  [role="button"] {
+  [role="button"],
+  a[href],
+  input[type="checkbox"],
+  input[type="radio"],
+  select {
     min-height: 44px;
   }
 
-  /* Prevent horizontal overflow */
-  section,
-  .container-nex {
-    overflow-x: hidden;
+  /* Tappable links in nav/lists don't always need 44px height, but
+     ensure inline links in paragraph text are still readable */
+  p a[href],
+  li a[href] {
+    min-height: unset;
+    display: inline;
   }
 
-  /* Readable body text */
-  body {
+  /* Prevent horizontal overflow on all containers */
+  section,
+  .container-nex,
+  article,
+  main,
+  aside {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* Readable body text — minimum 16px */
+  body,
+  p,
+  li,
+  span,
+  label {
     font-size: 16px;
+  }
+
+  /* Ensure inputs are at least 16px to prevent iOS zoom */
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+
+  /* Prevent image overflow */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Fix table overflow on mobile */
+  table {
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  /* Grid: collapse to single column at 375px */
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4 {
+    /* Let tailwind handle this via responsive prefixes;
+       only force collapse if explicitly needed */
   }
 }
 

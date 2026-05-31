@@ -1,10 +1,22 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Research Cycles & Protocols | Nexphoria",
   description:
     "Understand the Nexphoria research-cycle model — 3-Month and 6-Month cycles, monthly billing, reconstitution and storage guidance, and research-use terms.",
+  alternates: {
+    canonical: "https://nexphoria.com/protocols",
+  },
+  openGraph: {
+    title: "Research Cycles & Protocols | Nexphoria",
+    description: "3-Month and 6-Month research cycles, monthly billing, reconstitution and storage guidance.",
+    url: "https://nexphoria.com/protocols",
+    siteName: "Nexphoria",
+    type: "website",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+  },
 };
 
 export default function ProtocolsPage() {

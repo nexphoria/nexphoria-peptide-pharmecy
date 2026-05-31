@@ -46,7 +46,7 @@ function RecommendedCard({ product }: { product: (typeof products)[0] }) {
           borderRadius: "6px",
         }}
         onMouseEnter={(e) => {
-          (e.currentTarget as HTMLDivElement).style.borderColor = "#C4A265";
+          (e.currentTarget as HTMLDivElement).style.borderColor = "#B8A44C";
           (e.currentTarget as HTMLDivElement).style.boxShadow =
             "0 4px 24px rgba(196,162,101,0.10)";
         }}
@@ -89,7 +89,7 @@ function RecommendedCard({ product }: { product: (typeof products)[0] }) {
         <div className="flex flex-col flex-1 px-4 pt-4 pb-4">
           <p
             className="text-[9px] uppercase font-medium mb-1.5"
-            style={{ letterSpacing: "0.16em", color: "#C4A265" }}
+            style={{ letterSpacing: "0.16em", color: "#B8A44C" }}
           >
             {product.category}
           </p>
@@ -116,7 +116,7 @@ function RecommendedCard({ product }: { product: (typeof products)[0] }) {
             className="pt-3 flex items-center justify-between"
             style={{ borderTop: "1px solid #EBEBEB" }}
           >
-            <span className="text-sm font-medium" style={{ color: "#C4A265" }}>
+            <span className="text-sm font-medium" style={{ color: "#B8A44C" }}>
               {product.dosages && product.dosages.length > 1 ? "From " : ""}$
               {basePrice}
             </span>
@@ -225,7 +225,7 @@ export default function NotFound() {
         {/* Gold label */}
         <p
           className="uppercase tracking-widest text-xs font-light mb-8"
-          style={{ color: "#C4A265", letterSpacing: "0.35em" }}
+          style={{ color: "#B8A44C", letterSpacing: "0.35em" }}
         >
           Error 404
         </p>
@@ -276,7 +276,7 @@ export default function NotFound() {
             style={{
               letterSpacing: "0.18em",
               color: "#0F0F0E",
-              backgroundColor: "#C4A265",
+              backgroundColor: "#B8A44C",
               padding: "12px 28px",
               borderRadius: "2px",
             }}
@@ -286,7 +286,7 @@ export default function NotFound() {
             }}
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLAnchorElement).style.backgroundColor =
-                "#C4A265";
+                "#B8A44C";
             }}
           >
             Browse Catalog
@@ -296,14 +296,14 @@ export default function NotFound() {
             className="inline-flex items-center gap-2 text-xs font-light uppercase transition-all duration-200"
             style={{
               letterSpacing: "0.18em",
-              color: "#C4A265",
+              color: "#B8A44C",
               border: "1px solid rgba(196,162,101,0.35)",
               padding: "12px 28px",
               borderRadius: "2px",
             }}
             onMouseEnter={(e) => {
               (e.currentTarget as HTMLAnchorElement).style.borderColor =
-                "#C4A265";
+                "#B8A44C";
             }}
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLAnchorElement).style.borderColor =
@@ -343,13 +343,13 @@ export default function NotFound() {
               style={{
                 width: "32px",
                 height: "1px",
-                backgroundColor: "#C4A265",
+                backgroundColor: "#B8A44C",
                 marginBottom: "1.25rem",
               }}
             />
             <p
               className="uppercase text-[10px] font-medium tracking-widest mb-3"
-              style={{ color: "#C4A265", letterSpacing: "0.3em" }}
+              style={{ color: "#B8A44C", letterSpacing: "0.3em" }}
             >
               Recommended
             </p>

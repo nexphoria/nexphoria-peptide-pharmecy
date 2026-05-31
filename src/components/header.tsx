@@ -322,7 +322,7 @@ export function Header() {
             className="relative p-2 transition-colors group"
             aria-label="Open cart"
           >
-            <ShoppingBag className="w-5 h-5 transition-colors group-hover:text-[#8E6C2F]" strokeWidth={1.5} />
+            <ShoppingBag className="w-5 h-5 transition-colors group-hover:text-[#7A6B2A]" strokeWidth={1.5} />
             {totalItems > 0 && (
               <span
                 className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full text-[10px] font-bold flex items-center justify-center text-white"
@@ -341,7 +341,7 @@ export function Header() {
             className="relative flex items-center justify-center w-11 h-11 group"
             aria-label="Open cart"
           >
-            <ShoppingBag className="w-5 h-5 transition-colors group-hover:text-[#8E6C2F]" strokeWidth={1.5} />
+            <ShoppingBag className="w-5 h-5 transition-colors group-hover:text-[#7A6B2A]" strokeWidth={1.5} />
             {totalItems > 0 && (
               <span
                 className="absolute top-1 right-1 w-4 h-4 rounded-full text-[10px] font-bold flex items-center justify-center text-white"

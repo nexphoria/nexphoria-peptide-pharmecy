@@ -1,5 +1,7 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import TrustBadges from "@/components/TrustBadges";
 import { products } from "@/lib/products";
 import { articles } from "@/lib/blog";
 import { hasProductPhoto, getProductImagePath } from "@/lib/product-images";
@@ -10,6 +12,39 @@ import VialSVG from "@/components/VialSVG";
 import { getCategoryColor } from "@/lib/vial-colors";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import RUOBanner from "@/components/RUOBanner";
+import { EmailCapture } from "@/components/email-capture";
+
+export const metadata: Metadata = {
+  title: "Nexphoria — Research-Grade Peptide Compounds",
+  description:
+    "Pharmaceutical-grade peptide compounds manufactured under cGMP standards. Third-party tested for identity, purity, and potency. BPC-157, Semaglutide, Tirzepatide, GHK-Cu, and 30+ more. For qualified research use only.",
+  alternates: {
+    canonical: "https://nexphoria.com",
+  },
+  openGraph: {
+    title: "Nexphoria — Research-Grade Peptide Compounds",
+    description:
+      "Pharmaceutical-grade peptide compounds manufactured under cGMP standards. Third-party tested for identity, purity, and potency.",
+    url: "https://nexphoria.com",
+    siteName: "Nexphoria",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Nexphoria — Research-Grade Peptide Compounds",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nexphoria — Research-Grade Peptide Compounds",
+    description:
+      "Pharmaceutical-grade peptide compounds manufactured under cGMP standards.",
+    images: ["/og-image.jpg"],
+  },
+};
 
 const FEATURED_SLUGS = [
   "bpc-157",
@@ -34,8 +69,8 @@ const RESEARCH_CATEGORIES = [
     slug: "Recovery & Healing",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M14 4v20M4 14h20" stroke="#C4A265" strokeWidth="1.8" strokeLinecap="round"/>
-        <circle cx="14" cy="14" r="12" stroke="#C4A265" strokeWidth="1.4"/>
+        <path d="M14 4v20M4 14h20" stroke="#B8A44C" strokeWidth="1.8" strokeLinecap="round"/>
+        <circle cx="14" cy="14" r="12" stroke="#B8A44C" strokeWidth="1.4"/>
       </svg>
     ),
   },
@@ -44,7 +79,7 @@ const RESEARCH_CATEGORIES = [
     slug: "Weight Management",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M6 22l4-8 4 4 4-12 4 6" stroke="#C4A265" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M6 22l4-8 4 4 4-12 4 6" stroke="#B8A44C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
   },
@@ -53,10 +88,10 @@ const RESEARCH_CATEGORIES = [
     slug: "Cognitive",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <ellipse cx="14" cy="13" rx="9" ry="8" stroke="#C4A265" strokeWidth="1.5"/>
-        <path d="M9 10c0-2.761 2.239-5 5-5" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M10 18c-.667 1.333-1 2.5-.667 3.5" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M18 18c.667 1.333 1 2.5.667 3.5" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round"/>
+        <ellipse cx="14" cy="13" rx="9" ry="8" stroke="#B8A44C" strokeWidth="1.5"/>
+        <path d="M9 10c0-2.761 2.239-5 5-5" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M10 18c-.667 1.333-1 2.5-.667 3.5" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M18 18c.667 1.333 1 2.5.667 3.5" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round"/>
       </svg>
     ),
   },
@@ -65,8 +100,8 @@ const RESEARCH_CATEGORIES = [
     slug: "Immune Support",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M14 4l7 4v6c0 5-3.5 9-7 10C10.5 23 7 19 7 14V8l7-4z" stroke="#C4A265" strokeWidth="1.5"/>
-        <path d="M10.5 14l2.5 2.5 5-5" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M14 4l7 4v6c0 5-3.5 9-7 10C10.5 23 7 19 7 14V8l7-4z" stroke="#B8A44C" strokeWidth="1.5"/>
+        <path d="M10.5 14l2.5 2.5 5-5" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
   },
@@ -75,8 +110,8 @@ const RESEARCH_CATEGORIES = [
     slug: "Longevity",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <circle cx="14" cy="14" r="10" stroke="#C4A265" strokeWidth="1.5"/>
-        <path d="M14 8v6l4 2" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="14" cy="14" r="10" stroke="#B8A44C" strokeWidth="1.5"/>
+        <path d="M14 8v6l4 2" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
   },
@@ -85,8 +120,8 @@ const RESEARCH_CATEGORIES = [
     slug: "Growth Hormone",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M7 22V12l7-8 7 8v10" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <rect x="11" y="16" width="6" height="6" rx="0.5" stroke="#C4A265" strokeWidth="1.5"/>
+        <path d="M7 22V12l7-8 7 8v10" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <rect x="11" y="16" width="6" height="6" rx="0.5" stroke="#B8A44C" strokeWidth="1.5"/>
       </svg>
     ),
   },
@@ -95,10 +130,10 @@ const RESEARCH_CATEGORIES = [
     slug: "Anti-Aging",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M7 16c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M11 20c0-1.657 1.343-3 3-3s3 1.343 3 3" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M14 5v2" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M6 9l1.5 1.5M20.5 10.5L22 9" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M7 16c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M11 20c0-1.657 1.343-3 3-3s3 1.343 3 3" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M14 5v2" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M6 9l1.5 1.5M20.5 10.5L22 9" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round"/>
       </svg>
     ),
   },
@@ -107,8 +142,8 @@ const RESEARCH_CATEGORIES = [
     slug: "Dermatological",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M8 22c0-5.523 2.686-9.333 6-9.333S20 16.477 20 22" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M12 12c0-2.5 1.5-5.5 2-8 .5 2.5 2 5.5 2 8" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M8 22c0-5.523 2.686-9.333 6-9.333S20 16.477 20 22" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M12 12c0-2.5 1.5-5.5 2-8 .5 2.5 2 5.5 2 8" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
   },
@@ -190,8 +225,8 @@ export default function HomePage() {
           >
             <div className="hero-pill">
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-                <circle cx="5" cy="5" r="4" stroke="#C4A265" strokeWidth="1.1" />
-                <path d="M2.5 5.2l1.5 1.5 3.5-3.5" stroke="#C4A265" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
+                <circle cx="5" cy="5" r="4" stroke="#B8A44C" strokeWidth="1.1" />
+                <path d="M2.5 5.2l1.5 1.5 3.5-3.5" stroke="#B8A44C" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
               99.2% Purity
             </div>
@@ -203,8 +238,8 @@ export default function HomePage() {
           >
             <div className="hero-pill">
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-                <rect x="1.5" y="1" width="7" height="8" rx="1" stroke="#C4A265" strokeWidth="1.1" />
-                <path d="M3 4h4M3 6h2.5" stroke="#C4A265" strokeWidth="1.1" strokeLinecap="round" />
+                <rect x="1.5" y="1" width="7" height="8" rx="1" stroke="#B8A44C" strokeWidth="1.1" />
+                <path d="M3 4h4M3 6h2.5" stroke="#B8A44C" strokeWidth="1.1" strokeLinecap="round" />
               </svg>
               COA Every Order
             </div>
@@ -216,7 +251,7 @@ export default function HomePage() {
           >
             <div className="hero-pill">
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-                <path d="M1.5 5h7M5.5 2.5l3 2.5-3 2.5" stroke="#C4A265" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M1.5 5h7M5.5 2.5l3 2.5-3 2.5" stroke="#B8A44C" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
               Cold-Chain Delivery
             </div>
@@ -235,7 +270,7 @@ export default function HomePage() {
           >
             <p
               className="hero-eyebrow-animate eyebrow"
-              style={{ color: "#C4A265", marginBottom: "2.25rem" }}
+              style={{ color: "#B8A44C", marginBottom: "2.25rem" }}
             >
               Research-Grade Peptides
             </p>
@@ -365,7 +400,7 @@ export default function HomePage() {
           <div className="px-6 pt-8 pb-6">
             <p
               className="eyebrow"
-              style={{ color: "#C4A265", marginBottom: "1.5rem" }}
+              style={{ color: "#B8A44C", marginBottom: "1.5rem" }}
             >
               Research-Grade Peptides
             </p>
@@ -472,8 +507,8 @@ export default function HomePage() {
                 sub: "Tested at Janoshik Analytical · HPLC + MS verified",
                 icon: (
                   <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                    <circle cx="14" cy="14" r="13" stroke="#C4A265" strokeWidth="1.5"/>
-                    <path d="M8 14.5l4 4 8-8" stroke="#C4A265" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="14" cy="14" r="13" stroke="#B8A44C" strokeWidth="1.5"/>
+                    <path d="M8 14.5l4 4 8-8" stroke="#B8A44C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 ),
               },
@@ -483,9 +518,9 @@ export default function HomePage() {
                 sub: "Sub-8°C gel-packed, every shipment",
                 icon: (
                   <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                    <rect x="1.75" y="7" width="24.5" height="15" rx="2" stroke="#C4A265" strokeWidth="1.5"/>
-                    <path d="M7 7V5a2 2 0 012-2h10a2 2 0 012 2v2" stroke="#C4A265" strokeWidth="1.5"/>
-                    <path d="M9 14h10M14 11v6" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round"/>
+                    <rect x="1.75" y="7" width="24.5" height="15" rx="2" stroke="#B8A44C" strokeWidth="1.5"/>
+                    <path d="M7 7V5a2 2 0 012-2h10a2 2 0 012 2v2" stroke="#B8A44C" strokeWidth="1.5"/>
+                    <path d="M9 14h10M14 11v6" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round"/>
                   </svg>
                 ),
               },
@@ -495,8 +530,8 @@ export default function HomePage() {
                 sub: "Lot-specific, Janoshik Analytical certified",
                 icon: (
                   <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                    <rect x="5" y="2" width="18" height="24" rx="2" stroke="#C4A265" strokeWidth="1.5"/>
-                    <path d="M9 9h10M9 13h10M9 17h6" stroke="#C4A265" strokeWidth="1.5" strokeLinecap="round"/>
+                    <rect x="5" y="2" width="18" height="24" rx="2" stroke="#B8A44C" strokeWidth="1.5"/>
+                    <path d="M9 9h10M9 13h10M9 17h6" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round"/>
                   </svg>
                 ),
               },
@@ -526,8 +561,8 @@ export default function HomePage() {
                 style={{ background: "#F5F5F0", color: "#555", border: "1px solid #E0E0E0" }}
               >
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <circle cx="6" cy="6" r="5" stroke="#C4A265" strokeWidth="1.2"/>
-                  <path d="M3.5 6.2l1.8 1.8 3.2-3.2" stroke="#C4A265" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <circle cx="6" cy="6" r="5" stroke="#B8A44C" strokeWidth="1.2"/>
+                  <path d="M3.5 6.2l1.8 1.8 3.2-3.2" stroke="#B8A44C" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 Janoshik Analytical
               </span>
@@ -536,8 +571,8 @@ export default function HomePage() {
                 style={{ background: "#F5F5F0", color: "#555", border: "1px solid #E0E0E0" }}
               >
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <circle cx="6" cy="6" r="5" stroke="#C4A265" strokeWidth="1.2"/>
-                  <path d="M3.5 6.2l1.8 1.8 3.2-3.2" stroke="#C4A265" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <circle cx="6" cy="6" r="5" stroke="#B8A44C" strokeWidth="1.2"/>
+                  <path d="M3.5 6.2l1.8 1.8 3.2-3.2" stroke="#B8A44C" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 Freedom Diagnostics
               </span>
@@ -642,7 +677,7 @@ export default function HomePage() {
                       <div className="p-5">
                         <p
                           className="text-[10px] uppercase mb-1.5 font-medium"
-                          style={{ letterSpacing: "0.2em", color: "#8E6C2F" }}
+                          style={{ letterSpacing: "0.2em", color: "#7A6B2A" }}
                         >
                           {product.category}
                         </p>
@@ -651,7 +686,7 @@ export default function HomePage() {
                         </h3>
                         <p className="text-xs mb-3 leading-snug" style={{ color: "#666666" }}>{product.tagline}</p>
                         <div className="flex items-center justify-between pt-3" style={{ borderTop: "1px solid #E5E5E5" }}>
-                          <span className="text-base font-medium" style={{ color: "#8E6C2F" }}>${price}</span>
+                          <span className="text-base font-medium" style={{ color: "#7A6B2A" }}>${price}</span>
                           <span
                             className="text-[10px] font-medium uppercase opacity-0 group-hover:opacity-100 transition-opacity"
                             style={{ letterSpacing: "0.1em", color: "#666666" }}
@@ -686,6 +721,9 @@ export default function HomePage() {
                 Manufactured under pharmaceutical standards.
                 <br className="hidden md:block" /> Every lot independently verified.
               </h2>
+              <div className="mt-8 flex justify-center">
+                <TrustBadges variant="dark" size="md" />
+              </div>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -773,7 +811,7 @@ export default function HomePage() {
                     "Batch IDs traceable to HPLC records",
                   ].map((line) => (
                     <div key={line} className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 bg-[#C4A265]" />
+                      <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 bg-[#B8A44C]" />
                       <p className="text-sm text-[#555]">{line}</p>
                     </div>
                   ))}
@@ -811,7 +849,7 @@ export default function HomePage() {
                   className="blog-card block bg-white rounded-lg overflow-hidden card-shadow"
                 >
                   <div className="p-6">
-                    <p className="text-[11px] uppercase tracking-wider text-[#8E6C2F] mb-3 font-medium" style={{ letterSpacing: "0.2em" }}>
+                    <p className="text-[11px] uppercase tracking-wider text-[#7A6B2A] mb-3 font-medium" style={{ letterSpacing: "0.2em" }}>
                       {article.category}
                     </p>
                     <h3 className="text-base font-medium mb-3 leading-snug">
@@ -847,6 +885,38 @@ export default function HomePage() {
 
       {/* ─── CONTINUE YOUR RESEARCH ─── */}
       <HomepageContinueResearch />
+
+      {/* ─── EMAIL CAPTURE ─── */}
+      <SectionReveal>
+        <section className="py-20 px-6" style={{ backgroundColor: "#F7F7F7", borderTop: "1px solid #E5E5E5" }}>
+          <div className="max-w-xl mx-auto text-center">
+            <p
+              className="text-[10px] uppercase mb-4"
+              style={{ letterSpacing: "0.18em", color: "#B8A44C", fontWeight: 500 }}
+            >
+              Research Intelligence
+            </p>
+            <h2
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(1.5rem, 3vw, 2.25rem)",
+                fontWeight: 300,
+                color: "#1A1A1A",
+                letterSpacing: "-0.02em",
+                marginBottom: "0.75rem",
+              }}
+            >
+              Stay informed on new compounds and protocols
+            </h2>
+            <p className="text-sm text-[#666666] mb-8">
+              No promotions. Only research updates, COA announcements, and new compound releases.
+            </p>
+            <div className="max-w-sm mx-auto">
+              <EmailCapture variant="light" />
+            </div>
+          </div>
+        </section>
+      </SectionReveal>
 
       {/* ─── CLOSING CTA ─── */}
       <SectionReveal>

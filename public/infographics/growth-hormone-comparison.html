@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Growth Hormone Secretagogues Compared — Nexphoria</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    background: #0A0A0A;
+    color: #F9F9F9;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 1200px; margin: 0 auto; padding: 60px 40px; }
+
+  .brand-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 56px; padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .brand-name { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #C9A24B; }
+  .brand-ruo { font-size: 0.625rem; letter-spacing: 0.12em; text-transform: uppercase; color: #444; }
+
+  .eyebrow { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #C9A24B; margin-bottom: 16px; }
+  .hero-title { font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; color: #F9F9F9; margin-bottom: 16px; }
+  .hero-title span { color: #C9A24B; }
+  .hero-sub { font-size: 0.9375rem; line-height: 1.65; color: #6B6B67; max-width: 680px; margin-bottom: 48px; }
+
+  .section-label { font-size: 0.625rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #C9A24B; margin-bottom: 20px; }
+
+  /* 4-column product grid */
+  .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 48px; }
+  .product-card { background: #111; border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; overflow: hidden; }
+  .card-top { padding: 22px 20px 16px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .card-category-dot {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.5625rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    color: #C9A24B; margin-bottom: 10px;
+  }
+  .card-category-dot::before { content: ''; display: block; width: 6px; height: 6px; border-radius: 50%; background: #C9A24B; }
+  .card-name { font-size: 1.125rem; font-weight: 700; color: #F9F9F9; margin-bottom: 4px; letter-spacing: -0.01em; }
+  .card-alias { font-size: 0.625rem; color: #555; margin-bottom: 10px; }
+  .card-tagline { font-size: 0.6875rem; color: #666; line-height: 1.5; margin-bottom: 16px; }
+  .card-price-row { display: flex; align-items: baseline; gap: 6px; }
+  .card-price { font-size: 1.5rem; font-weight: 700; color: #F9F9F9; }
+  .card-price-unit { font-size: 0.6875rem; color: #555; }
+  .card-bottom { padding: 16px 20px; }
+  .spec-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.04); gap: 8px; }
+  .spec-row:last-child { border-bottom: none; }
+  .spec-label { font-size: 0.5625rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #444; flex-shrink: 0; }
+  .spec-value { font-size: 0.6875rem; color: #AAA; text-align: right; line-height: 1.4; }
+  .spec-value.green { color: #4CAF50; font-weight: 600; }
+  .spec-value.oral { color: #C9A24B; font-weight: 600; }
+
+  /* Mechanism pathway diagram */
+  .pathway-section { background: #111; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 32px; margin-bottom: 24px; }
+  .pathway-title { font-size: 0.9375rem; font-weight: 600; color: #F9F9F9; margin-bottom: 28px; }
+  .pathway-row { display: flex; align-items: stretch; gap: 0; margin-bottom: 16px; }
+  .pathway-row:last-child { margin-bottom: 0; }
+  .pathway-compound { width: 120px; flex-shrink: 0; padding: 12px 0; display: flex; align-items: center; }
+  .pathway-compound-name { font-size: 0.75rem; font-weight: 700; color: #DDD; }
+  .pathway-nodes { display: flex; align-items: center; gap: 0; flex: 1; }
+  .pathway-node {
+    padding: 8px 12px; border-radius: 8px; font-size: 0.625rem; font-weight: 600;
+    letter-spacing: 0.06em; text-align: center; min-width: 80px;
+  }
+  .pathway-node.active-ghrh { background: rgba(201,162,75,0.2); color: #C9A24B; border: 1px solid rgba(201,162,75,0.4); }
+  .pathway-node.active-ghs  { background: rgba(99,179,237,0.15); color: #63B3ED; border: 1px solid rgba(99,179,237,0.35); }
+  .pathway-node.inactive    { background: rgba(255,255,255,0.03); color: #333; border: 1px solid rgba(255,255,255,0.06); }
+  .pathway-arrow { font-size: 0.75rem; color: #333; padding: 0 6px; display: flex; align-items: center; }
+  .pathway-outcome { margin-left: 16px; padding: 8px 14px; border-radius: 8px; background: rgba(76,175,80,0.1); border: 1px solid rgba(76,175,80,0.25); }
+  .pathway-outcome-label { font-size: 0.5625rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #4CAF50; }
+  .pathway-outcome-note { font-size: 0.6875rem; color: #666; }
+
+  /* Half-life bars */
+  .comparison-section { background: #111; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 32px; margin-bottom: 24px; }
+  .bar-group { margin-bottom: 18px; }
+  .bar-group:last-child { margin-bottom: 0; }
+  .bar-header { display: flex; justify-content: space-between; margin-bottom: 7px; }
+  .bar-name { font-size: 0.75rem; font-weight: 600; color: #DDD; }
+  .bar-value { font-size: 0.75rem; color: #666; }
+  .bar-track { height: 6px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 3px; }
+
+  /* Selectivity matrix */
+  .matrix-section { background: #111; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 32px; margin-bottom: 24px; }
+  .matrix-table { width: 100%; border-collapse: collapse; }
+  .matrix-table th { font-size: 0.625rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #555; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.06); text-align: center; }
+  .matrix-table th:first-child { text-align: left; }
+  .matrix-table td { padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 0.6875rem; text-align: center; color: #888; }
+  .matrix-table td:first-child { text-align: left; font-weight: 600; color: #DDD; }
+  .matrix-table tr:last-child td { border-bottom: none; }
+  .check-yes { color: #4CAF50; font-size: 1em; }
+  .check-no  { color: #333; font-size: 1em; }
+  .check-low { color: #888; font-size: 0.8em; }
+
+  /* Key differentiators grid */
+  .diff-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+  .diff-card { background: #111; border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 20px; }
+  .diff-compound { font-size: 0.5625rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C9A24B; margin-bottom: 10px; }
+  .diff-headline { font-size: 1.125rem; font-weight: 700; color: #F9F9F9; line-height: 1.2; margin-bottom: 8px; }
+  .diff-desc { font-size: 0.6875rem; color: #666; line-height: 1.5; }
+
+  /* Full spec table */
+  .table-wrap { background: #F9F9F9; border-radius: 16px; overflow: hidden; margin-bottom: 24px; }
+  table { width: 100%; border-collapse: collapse; }
+  th { padding: 13px 14px; text-align: center; font-weight: 700; color: #010101; background: #F0EDE7; border-bottom: 1px solid #ECEAE4; font-size: 0.75rem; }
+  th:first-child { text-align: left; width: 160px; }
+  td { padding: 9px 14px; text-align: center; color: #333; border-bottom: 1px solid #ECEAE4; font-size: 0.6875rem; vertical-align: middle; }
+  td:first-child { text-align: left; font-size: 0.625rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #666; background: #F5F3F0; }
+  tr:nth-child(even) td { background: #F5F3F0; }
+  tr:nth-child(even) td:first-child { background: #EEECE8; }
+  .purity-badge { display: inline-block; padding: 2px 7px; border-radius: 99px; background: #E8F5E9; color: #2E7D32; font-weight: 600; font-size: 0.625rem; }
+  .oral-badge { display: inline-block; padding: 2px 7px; border-radius: 99px; background: rgba(201,162,75,0.15); color: #C9A24B; font-weight: 600; font-size: 0.625rem; border: 1px solid rgba(201,162,75,0.3); }
+
+  .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+  .footer-disclaimer { font-size: 0.6rem; color: #333; line-height: 1.6; max-width: 680px; }
+  .footer-url { font-size: 0.625rem; color: #C9A24B; letter-spacing: 0.08em; flex-shrink: 0; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="brand-bar">
+    <div class="brand-name">Nexphoria</div>
+    <div class="brand-ruo">Research Use Only · Not for Human or Veterinary Use</div>
+  </div>
+
+  <div class="eyebrow">Category Comparison · Growth Hormone Axis</div>
+  <h1 class="hero-title">GH Secretagogue Research Compounds<br><span>Mechanism, Half-Life &amp; Selectivity</span></h1>
+  <p class="hero-sub">
+    A technical comparison of four distinct somatotropic-axis research tools: Sermorelin (GHRH analog, short-acting),
+    CJC-1295 (GHRH analog with DAC, long-acting), Ipamorelin (selective GHS-R1a agonist), and MK-677 (oral non-peptide
+    ghrelin mimetic). Each occupies a distinct pharmacological niche on the GH release pathway.
+  </p>
+
+  <!-- Product Cards -->
+  <div class="section-label">Compound Profiles</div>
+  <div class="products-grid">
+
+    <div class="product-card">
+      <div class="card-top">
+        <div class="card-category-dot">GHRH Receptor</div>
+        <div class="card-name">Sermorelin</div>
+        <div class="card-alias">GHRH(1-29)</div>
+        <div class="card-tagline">Native GHRH fragment. Short half-life, pulsatile GH release.</div>
+        <div class="card-price-row">
+          <div class="card-price">$52</div>
+          <div class="card-price-unit">/ 5mg</div>
+        </div>
+      </div>
+      <div class="card-bottom">
+        <div class="spec-row"><span class="spec-label">Purity</span><span class="spec-value green">≥98.5%</span></div>
+        <div class="spec-row"><span class="spec-label">MW</span><span class="spec-value">3,357.93 g/mol</span></div>
+        <div class="spec-row"><span class="spec-label">Half-Life</span><span class="spec-value">~11–12 min</span></div>
+        <div class="spec-row"><span class="spec-label">Route</span><span class="spec-value">SC (daily)</span></div>
+        <div class="spec-row"><span class="spec-label">Receptor</span><span class="spec-value">GHRHR</span></div>
+        <div class="spec-row"><span class="spec-label">FDA History</span><span class="spec-value">Approved 1997</span></div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="card-top">
+        <div class="card-category-dot">GHRH Receptor + DAC</div>
+        <div class="card-name">CJC-1295</div>
+        <div class="card-alias">GHRH analog with DAC</div>
+        <div class="card-tagline">Albumin-binding GHRH analog. 6–8 day half-life.</div>
+        <div class="card-price-row">
+          <div class="card-price">$46</div>
+          <div class="card-price-unit">/ 5mg</div>
+        </div>
+      </div>
+      <div class="card-bottom">
+        <div class="spec-row"><span class="spec-label">Purity</span><span class="spec-value green">≥98.5%</span></div>
+        <div class="spec-row"><span class="spec-label">MW</span><span class="spec-value">3,647.29 g/mol</span></div>
+        <div class="spec-row"><span class="spec-label">Half-Life</span><span class="spec-value">6–8 days</span></div>
+        <div class="spec-row"><span class="spec-label">Route</span><span class="spec-value">SC (weekly)</span></div>
+        <div class="spec-row"><span class="spec-label">Receptor</span><span class="spec-value">GHRHR (albumin-bound)</span></div>
+        <div class="spec-row"><span class="spec-label">Modification</span><span class="spec-value">DAC (maleimide-Cys)</span></div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="card-top">
+        <div class="card-category-dot">GHS-R1a Agonist</div>
+        <div class="card-name">Ipamorelin</div>
+        <div class="card-alias">Pentapeptide GHS</div>
+        <div class="card-tagline">Selective ghrelin mimetic. Clean GH pulse without HPA axis effects.</div>
+        <div class="card-price-row">
+          <div class="card-price">$54</div>
+          <div class="card-price-unit">/ 10mg</div>
+        </div>
+      </div>
+      <div class="card-bottom">
+        <div class="spec-row"><span class="spec-label">Purity</span><span class="spec-value green">≥99.0%</span></div>
+        <div class="spec-row"><span class="spec-label">MW</span><span class="spec-value">711.85 g/mol</span></div>
+        <div class="spec-row"><span class="spec-label">Half-Life</span><span class="spec-value">~2 hours</span></div>
+        <div class="spec-row"><span class="spec-label">Route</span><span class="spec-value">SC (1–3×/day)</span></div>
+        <div class="spec-row"><span class="spec-label">Receptor</span><span class="spec-value">GHS-R1a</span></div>
+        <div class="spec-row"><span class="spec-label">Selectivity</span><span class="spec-value">No cortisol/ACTH rise</span></div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="card-top">
+        <div class="card-category-dot" style="color:#C9A24B;">Oral GHS-R1a</div>
+        <div class="card-name">MK-677</div>
+        <div class="card-alias">Ibutamoren — non-peptide</div>
+        <div class="card-tagline">Oral non-peptide ghrelin mimetic. 24-hour half-life.</div>
+        <div class="card-price-row">
+          <div class="card-price">$66</div>
+          <div class="card-price-unit">/ 25mg×30ct</div>
+        </div>
+      </div>
+      <div class="card-bottom">
+        <div class="spec-row"><span class="spec-label">Purity</span><span class="spec-value green">≥99.0%</span></div>
+        <div class="spec-row"><span class="spec-label">MW</span><span class="spec-value">528.67 g/mol</span></div>
+        <div class="spec-row"><span class="spec-label">Half-Life</span><span class="spec-value">~24 hours</span></div>
+        <div class="spec-row"><span class="spec-label">Route</span><span class="spec-value oral">Oral (daily)</span></div>
+        <div class="spec-row"><span class="spec-label">Receptor</span><span class="spec-value">GHS-R1a</span></div>
+        <div class="spec-row"><span class="spec-label">Form</span><span class="spec-value">Oral capsule</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Receptor Pathway Diagram -->
+  <div class="section-label">Somatotropic Axis Targeting — Receptor Pathway</div>
+  <div class="pathway-section">
+    <div class="pathway-title">Which node of the GH release cascade does each compound activate?</div>
+
+    <div class="pathway-row">
+      <div class="pathway-compound"><div class="pathway-compound-name">Sermorelin</div></div>
+      <div class="pathway-nodes">
+        <div class="pathway-node active-ghrh">GHRH-R<br><span style="font-size:0.5em;font-weight:400;">Hypothalamic/Pituitary</span></div>
+        <div class="pathway-arrow">→</div>
+        <div class="pathway-node inactive">GHS-R1a<br><span style="font-size:0.5em;font-weight:400;">Not targeted</span></div>
+        <div class="pathway-arrow">→</div>
+        <div class="pathway-outcome">
+          <div class="pathway-outcome-label">Pulsatile GH</div>
+          <div class="pathway-outcome-note" style="font-size:0.5625rem;color:#555;">Short burst (t½ ~12 min)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pathway-row">
+      <div class="pathway-compound"><div class="pathway-compound-name">CJC-1295</div></div>
+      <div class="pathway-nodes">
+        <div class="pathway-node active-ghrh">GHRH-R<br><span style="font-size:0.5em;font-weight:400;">Albumin-sustained</span></div>
+        <div class="pathway-arrow">→</div>
+        <div class="pathway-node inactive">GHS-R1a<br><span style="font-size:0.5em;font-weight:400;">Not targeted</span></div>
+        <div class="pathway-arrow">→</div>
+        <div class="pathway-outcome">
+          <div class="pathway-outcome-label">Sustained GH + IGF-1</div>
+          <div class="pathway-outcome-note" style="font-size:0.5625rem;color:#555;">6–8 day elevation window</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pathway-row">
+      <div class="pathway-compound"><div class="pathway-compound-name">Ipamorelin</div></div>
+      <div class="pathway-nodes">
+        <div class="pathway-node inactive">GHRH-R<br><span style="font-size:0.5em;font-weight:400;">Not targeted</span></div>
+        <div class="pathway-arrow">→</div>
+        <div class="pathway-node active-ghs">GHS-R1a<br><span style="font-size:0.5em;font-weight:400;">Selective agonism</span></div>
+        <div class="pathway-arrow">→</div>
+        <div class="pathway-outcome">
+          <div class="pathway-outcome-label">Selective GH Pulse</div>
+          <div class="pathway-outcome-note" style="font-size:0.5625rem;color:#555;">No cortisol / ACTH co-secretion</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pathway-row">
+      <div class="pathway-compound"><div class="pathway-compound-name">MK-677</div></div>
+      <div class="pathway-nodes">
+        <div class="pathway-node inactive">GHRH-R<br><span style="font-size:0.5em;font-weight:400;">Not targeted</span></div>
+        <div class="pathway-arrow">→</div>
+        <div class="pathway-node active-ghs">GHS-R1a<br><span style="font-size:0.5em;font-weight:400;">Oral non-peptide</span></div>
+        <div class="pathway-arrow">→</div>
+        <div class="pathway-outcome">
+          <div class="pathway-outcome-label">24h GH + IGF-1</div>
+          <div class="pathway-outcome-note" style="font-size:0.5625rem;color:#555;">Oral bioavailability, once-daily</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Half-Life Comparison -->
+  <div class="section-label">Half-Life &amp; Dosing Frequency</div>
+  <div class="comparison-section">
+    <p style="font-size:0.875rem;font-weight:600;color:#F9F9F9;margin-bottom:20px;">Plasma Half-Life (log scale represented linearly for clarity)</p>
+    <div class="bar-group">
+      <div class="bar-header">
+        <span class="bar-name">Sermorelin (GHRH 1-29)</span>
+        <span class="bar-value">~11–12 minutes · Daily SC</span>
+      </div>
+      <div class="bar-track"><div class="bar-fill" style="width:4%;background:#C9A24B;"></div></div>
+    </div>
+    <div class="bar-group">
+      <div class="bar-header">
+        <span class="bar-name">Ipamorelin (GHS-R1a peptide)</span>
+        <span class="bar-value">~2 hours · 1–3× daily SC</span>
+      </div>
+      <div class="bar-track"><div class="bar-fill" style="width:18%;background:#63B3ED;"></div></div>
+    </div>
+    <div class="bar-group">
+      <div class="bar-header">
+        <span class="bar-name">MK-677 (oral non-peptide)</span>
+        <span class="bar-value">~24 hours · Once-daily oral</span>
+      </div>
+      <div class="bar-track"><div class="bar-fill" style="width:50%;background:#C9A24B;opacity:0.7;"></div></div>
+    </div>
+    <div class="bar-group">
+      <div class="bar-header">
+        <span class="bar-name">CJC-1295 (GHRH + DAC)</span>
+        <span class="bar-value">6–8 days · Once-weekly SC</span>
+      </div>
+      <div class="bar-track"><div class="bar-fill" style="width:100%;background:#C9A24B;"></div></div>
+    </div>
+  </div>
+
+  <!-- Selectivity Matrix -->
+  <div class="section-label">Off-Target Effect Selectivity</div>
+  <div class="matrix-section">
+    <p style="font-size:0.875rem;font-weight:600;color:#F9F9F9;margin-bottom:20px;">Co-secretion profile at research doses — published preclinical &amp; clinical data</p>
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th style="text-align:left;">Compound</th>
+          <th>GH ↑</th>
+          <th>IGF-1 ↑</th>
+          <th>Cortisol ↑</th>
+          <th>Prolactin ↑</th>
+          <th>ACTH ↑</th>
+          <th>Oral Available</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sermorelin</td>
+          <td><span class="check-yes">✓</span></td>
+          <td><span class="check-yes">✓</span></td>
+          <td><span class="check-low">Minimal</span></td>
+          <td><span class="check-no">—</span></td>
+          <td><span class="check-no">—</span></td>
+          <td><span class="check-no">—</span></td>
+        </tr>
+        <tr>
+          <td>CJC-1295</td>
+          <td><span class="check-yes">✓</span></td>
+          <td><span class="check-yes">✓</span></td>
+          <td><span class="check-low">Minimal</span></td>
+          <td><span class="check-no">—</span></td>
+          <td><span class="check-no">—</span></td>
+          <td><span class="check-no">—</span></td>
+        </tr>
+        <tr>
+          <td>Ipamorelin</td>
+          <td><span class="check-yes">✓</span></td>
+          <td><span class="check-yes">✓</span></td>
+          <td><span class="check-no" style="color:#4CAF50;">None</span></td>
+          <td><span class="check-no" style="color:#4CAF50;">None</span></td>
+          <td><span class="check-no" style="color:#4CAF50;">None</span></td>
+          <td><span class="check-no">—</span></td>
+        </tr>
+        <tr>
+          <td>MK-677</td>
+          <td><span class="check-yes">✓</span></td>
+          <td><span class="check-yes">✓</span></td>
+          <td><span class="check-low">Slight</span></td>
+          <td><span class="check-no">—</span></td>
+          <td><span class="check-no">—</span></td>
+          <td><span class="check-yes" style="color:#C9A24B;">✓</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.5625rem;color:#333;margin-top:14px;line-height:1.5;">Data from published peer-reviewed studies. ✓ = documented effect at research doses. — = not observed or not reported. For preclinical research context only.</p>
+  </div>
+
+  <!-- Key Differentiators -->
+  <div class="section-label">Key Research Differentiators</div>
+  <div class="diff-grid">
+    <div class="diff-card">
+      <div class="diff-compound">Sermorelin</div>
+      <div class="diff-headline">Shortest t½ in class</div>
+      <div class="diff-desc">Native GHRH fragment. Ideal for controlled GH pulse studies where precise timing and rapid clearance are required. FDA-approved clinical precedent.</div>
+    </div>
+    <div class="diff-card">
+      <div class="diff-compound">CJC-1295</div>
+      <div class="diff-headline">DAC = albumin binding</div>
+      <div class="diff-desc">Maleimide-Cys34 covalent albumin bond extends t½ from minutes to days. Once-weekly protocol. Phase I/II trials documented 6–8 day GH/IGF-1 elevation per injection.</div>
+    </div>
+    <div class="diff-card">
+      <div class="diff-compound">Ipamorelin</div>
+      <div class="diff-headline">Cleanest selectivity</div>
+      <div class="diff-desc">Pentapeptide GHS-R1a agonist. Only compound in class with confirmed absence of cortisol, prolactin, and ACTH co-secretion at therapeutic doses.</div>
+    </div>
+    <div class="diff-card">
+      <div class="diff-compound">MK-677</div>
+      <div class="diff-headline">Only oral option</div>
+      <div class="diff-desc">Non-peptide small molecule. Oral bioavailability eliminates reconstitution. ~24h t½ enables consistent once-daily protocol with sustained IGF-1 elevation.</div>
+    </div>
+  </div>
+
+  <!-- Full Spec Table -->
+  <div class="section-label">Full Specification Comparison</div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Attribute</th>
+          <th>Sermorelin</th>
+          <th>CJC-1295</th>
+          <th>Ipamorelin</th>
+          <th>MK-677</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Mechanism Class</td>
+          <td>GHRH analog</td>
+          <td>GHRH analog + DAC</td>
+          <td>GHS-R1a agonist</td>
+          <td>GHS-R1a agonist (oral)</td>
+        </tr>
+        <tr>
+          <td>Purity</td>
+          <td><span class="purity-badge">≥98.5%</span></td>
+          <td><span class="purity-badge">≥98.5%</span></td>
+          <td><span class="purity-badge">≥99.0%</span></td>
+          <td><span class="purity-badge">≥99.0%</span></td>
+        </tr>
+        <tr>
+          <td>Molecular Weight</td>
+          <td>3,357.93 g/mol</td>
+          <td>3,647.29 g/mol</td>
+          <td>711.85 g/mol</td>
+          <td>528.67 g/mol</td>
+        </tr>
+        <tr>
+          <td>Plasma Half-Life</td>
+          <td>~11–12 minutes</td>
+          <td>6–8 days</td>
+          <td>~2 hours</td>
+          <td>~24 hours</td>
+        </tr>
+        <tr>
+          <td>Route of Administration</td>
+          <td>SC injection</td>
+          <td>SC injection</td>
+          <td>SC injection</td>
+          <td><span class="oral-badge">Oral capsule</span></td>
+        </tr>
+        <tr>
+          <td>Receptor Target</td>
+          <td>GHRHR</td>
+          <td>GHRHR (albumin-sustained)</td>
+          <td>GHS-R1a</td>
+          <td>GHS-R1a</td>
+        </tr>
+        <tr>
+          <td>Storage</td>
+          <td>−20°C, 24 months</td>
+          <td>−20°C, 24 months</td>
+          <td>−20°C, 24 months</td>
+          <td>15–25°C (oral)</td>
+        </tr>
+        <tr>
+          <td>Reconstitution</td>
+          <td>Required</td>
+          <td>Required</td>
+          <td>Required</td>
+          <td>Not required</td>
+        </tr>
+        <tr>
+          <td>CAS Number</td>
+          <td>86168-78-7</td>
+          <td>863288-34-0</td>
+          <td>170851-70-4</td>
+          <td>159634-47-6</td>
+        </tr>
+        <tr>
+          <td>Starting Price</td>
+          <td><strong>$52 / 5mg</strong></td>
+          <td><strong>$46 / 5mg</strong></td>
+          <td><strong>$54 / 10mg</strong></td>
+          <td><strong>$66 / 25mg×30ct</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    <div class="footer-disclaimer">
+      <strong style="color:#444;">Research Use Only.</strong> All compounds listed are for in vitro research and preclinical study only. Not for human or veterinary diagnostic, therapeutic, or clinical use.
+      Selectivity data sourced from peer-reviewed preclinical and clinical pharmacokinetic literature. Half-life values are approximate and model-dependent.
+      Nexphoria, 2026.
+    </div>
+    <div class="footer-url">nexphoria.com/compare</div>
+  </div>
+
+</div>
+</body>
+</html>

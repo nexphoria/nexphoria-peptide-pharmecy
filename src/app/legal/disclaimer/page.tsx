@@ -2,9 +2,23 @@ import type { Metadata } from "next";
 import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Research Use Disclaimer",
+  title: "Research Use Disclaimer | Nexphoria",
   description:
     "Nexphoria compounds are for qualified research use only. Not for human consumption, diagnostic, or therapeutic use.",
+  alternates: {
+    canonical: "https://nexphoria.com/legal/disclaimer",
+  },
+  openGraph: {
+    title: "Research Use Disclaimer | Nexphoria",
+    description: "Nexphoria compounds are for qualified research use only. Not for human consumption, diagnostic, or therapeutic use.",
+    url: "https://nexphoria.com/legal/disclaimer",
+    siteName: "Nexphoria",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: false,
+  },
 };
 
 const sections = [

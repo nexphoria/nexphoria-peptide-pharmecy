@@ -33,15 +33,13 @@ export default function AnnouncementBar() {
       }}
     >
       <p
-        className="text-[10px] uppercase font-medium transition-opacity truncate"
+        className="text-[10px] uppercase font-medium transition-opacity"
         style={{
           letterSpacing: "0.15em",
           color: "#666666",
           opacity: visible ? 1 : 0,
           transition: "opacity 0.3s ease",
-          whiteSpace: "nowrap",
-          overflow: "hidden",
-          textOverflow: "ellipsis",
+          lineHeight: 1.5,
         }}
       >
         {MESSAGES[idx]}

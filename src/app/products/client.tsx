@@ -143,7 +143,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
             </h1>
             <p
             className="text-sm mt-2 font-medium"
-            style={{ color: "#8E6C2F", letterSpacing: "0.04em" }}
+            style={{ color: "#7A6B2A", letterSpacing: "0.04em" }}
           >
             {products.length} research-grade compounds
           </p>
@@ -175,7 +175,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                 <ChevronDown
                   size={11}
                   className="transition-transform"
-                  style={{ transform: sortOpen ? "rotate(180deg)" : "rotate(0deg)", color: "#8E6C2F" }}
+                  style={{ transform: sortOpen ? "rotate(180deg)" : "rotate(0deg)", color: "#7A6B2A" }}
                 />
               </button>
               {sortOpen && (
@@ -207,7 +207,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                 fontSize: "0.7rem",
                 letterSpacing: "0.15em",
                 textTransform: "uppercase",
-                color: compareMode ? "#C4A265" : "#999",
+                color: compareMode ? "#B8A44C" : "#999",
                 background: "none",
                 border: "none",
                 cursor: "pointer",
@@ -215,8 +215,8 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                 minHeight: "44px",
                 fontWeight: 500,
               }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.color = "#C4A265"; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.color = compareMode ? "#C4A265" : "#999"; }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.color = "#B8A44C"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.color = compareMode ? "#B8A44C" : "#999"; }}
             >
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
                 <rect x="1" y="1" width="5" height="12" rx="1" stroke="currentColor" strokeWidth="1.25" />
@@ -256,7 +256,7 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                 color: "#1A1A1A",
               }}
               onFocus={(e) => {
-                e.currentTarget.style.borderBottomColor = "#C4A265";
+                e.currentTarget.style.borderBottomColor = "#B8A44C";
               }}
               onBlur={(e) => {
                 e.currentTarget.style.borderBottomColor = "#D8D4CC";
@@ -317,15 +317,15 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                 letterSpacing: "0.15em",
                 background: "none",
                 border: "none",
-                color: activeFilter === "All" ? "#C4A265" : "#888",
+                color: activeFilter === "All" ? "#B8A44C" : "#888",
                 fontWeight: activeFilter === "All" ? 500 : 400,
-                borderBottom: activeFilter === "All" ? "1px solid #C4A265" : "1px solid transparent",
+                borderBottom: activeFilter === "All" ? "1px solid #B8A44C" : "1px solid transparent",
                 minHeight: "44px",
                 cursor: "pointer",
               }}
             >
               All{" "}
-              <span style={{ fontSize: "0.6rem", fontWeight: 400, color: activeFilter === "All" ? "#C4A265" : "#AAA" }}>
+              <span style={{ fontSize: "0.6rem", fontWeight: 400, color: activeFilter === "All" ? "#B8A44C" : "#AAA" }}>
                 {products.length}
               </span>
             </button>
@@ -341,15 +341,15 @@ export default function ProductsClient({ initialCategory }: { initialCategory?: 
                     letterSpacing: "0.15em",
                     background: "none",
                     border: "none",
-                    color: active ? "#C4A265" : "#888",
+                    color: active ? "#B8A44C" : "#888",
                     fontWeight: active ? 500 : 400,
-                    borderBottom: active ? "1px solid #C4A265" : "1px solid transparent",
+                    borderBottom: active ? "1px solid #B8A44C" : "1px solid transparent",
                     minHeight: "44px",
                     cursor: "pointer",
                   }}
                 >
                   {cat}{" "}
-                  <span style={{ fontSize: "0.6rem", fontWeight: 400, color: active ? "#C4A265" : "#AAA" }}>
+                  <span style={{ fontSize: "0.6rem", fontWeight: 400, color: active ? "#B8A44C" : "#AAA" }}>
                     {count}
                   </span>
                 </button>

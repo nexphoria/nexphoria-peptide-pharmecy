@@ -3,9 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, Clock, MapPin } from "lucide-react";
+import { ArrowRight, Mail, Clock, MapPin, MessageCircle } from "lucide-react";
 import { CONTACT_URL } from "@/lib/endpoints";
 import Breadcrumb from "@/components/Breadcrumb";
+import TrustBadges from "@/components/TrustBadges";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
@@ -166,6 +167,14 @@ export default function ContactClient() {
                       <p className="text-sm" style={{ color: "#FDFCF8" }}>United States only</p>
                     </div>
                   </div>
+                  <div className="flex items-start gap-4">
+                    <MessageCircle className="w-4 h-4 mt-0.5 flex-shrink-0 text-secondary" strokeWidth={1.5} />
+                    <div>
+                      <div className="text-label mb-1 text-secondary">WhatsApp</div>
+                      <p className="text-sm" style={{ color: "#FDFCF8" }}>Available for urgent inquiries</p>
+                      <p className="text-xs mt-0.5" style={{ color: "rgba(253,252,248,0.4)" }}>Contact us by email for WhatsApp access</p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -175,6 +184,12 @@ export default function ContactClient() {
                   All orders require verification of researcher or institutional credentials. Please
                   include your institution or license information when submitting.
                 </p>
+              </div>
+
+              {/* Trust badges */}
+              <div>
+                <div className="text-label mb-4 text-secondary">Our Standards</div>
+                <TrustBadges variant="dark" className="flex-col items-start" />
               </div>
 
             </motion.div>

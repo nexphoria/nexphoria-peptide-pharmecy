@@ -3,9 +3,27 @@ import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Our Standards — Science & Testing",
+  title: "Our Standards — Science & Testing | Nexphoria",
   description:
-    "Nexphoria's commitment to purity: cGMP manufacturing, independent HPLC testing, mass spectrometry verification, and Certificate of Analysis with every order.",
+    "Nexphoria's commitment to purity: cGMP manufacturing, independent HPLC testing, mass spectrometry verification, and Certificate of Analysis with every order. ≥99% purity guaranteed.",
+  alternates: {
+    canonical: "https://nexphoria.com/science",
+  },
+  openGraph: {
+    title: "Our Standards — Science & Testing | Nexphoria",
+    description:
+      "cGMP manufacturing, independent HPLC testing, mass spectrometry verification, and Certificate of Analysis with every order.",
+    url: "https://nexphoria.com/science",
+    siteName: "Nexphoria",
+    type: "website",
+    images: [{ url: "https://nexphoria.com/og-image.jpg", width: 1200, height: 630, alt: "Nexphoria Science & Testing Standards" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Standards — Science & Testing | Nexphoria",
+    description: "cGMP manufacturing, independent HPLC testing, and Certificate of Analysis with every order.",
+    images: ["https://nexphoria.com/og-image.jpg"],
+  },
 };
 
 const qualityCards = [
@@ -26,8 +44,37 @@ const qualityCards = [
   },
 ];
 
+const scienceSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://nexphoria.com/science",
+  name: "Our Standards — Science & Testing",
+  url: "https://nexphoria.com/science",
+  description:
+    "Nexphoria's commitment to purity: cGMP manufacturing, independent HPLC testing, mass spectrometry verification.",
+  isPartOf: { "@type": "WebSite", url: "https://nexphoria.com" },
+  about: {
+    "@type": "Thing",
+    name: "Peptide Quality Standards",
+    description:
+      "cGMP manufacturing, HPLC purity verification, mass spectrometry identity confirmation, and independent third-party testing.",
+  },
+  specialty: [
+    "cGMP Manufacturing",
+    "HPLC Purity Analysis",
+    "Mass Spectrometry Verification",
+    "Certificate of Analysis",
+    "Third-Party Testing",
+  ],
+};
+
 export default function SciencePage() {
   return (
+    <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(scienceSchema) }}
+    />
     <div style={{ backgroundColor: "#EAE7E3", minHeight: "100vh" }}>
       {/* Hero */}
       <section style={{ paddingTop: "160px", paddingBottom: "80px" }} className="px-6 md:px-12">
@@ -221,5 +268,6 @@ export default function SciencePage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

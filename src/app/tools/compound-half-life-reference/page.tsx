@@ -496,7 +496,7 @@ export default function CompoundHalfLifeReferencePage() {
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-8">
         <div className="max-w-3xl">
-          <div className="inline-block bg-[#C4A265]/10 border border-[#C4A265]/20 rounded-full px-3 py-1 text-xs font-semibold tracking-widest text-[#C4A265] uppercase mb-4">
+          <div className="inline-block bg-[#B8A44C]/10 border border-[#B8A44C]/20 rounded-full px-3 py-1 text-xs font-semibold tracking-widest text-[#B8A44C] uppercase mb-4">
             Research Tools · Pharmacokinetics
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
@@ -506,7 +506,7 @@ export default function CompoundHalfLifeReferencePage() {
             Fast-load pharmacokinetic reference for {COMPOUND_PK.length}+ research peptides. Half-life,
             peak time (T<sub>max</sub>), recommended dosing frequency, and administration route — all
             sourced from published PK studies. For interactive decay modeling, use the{" "}
-            <Link href="/tools/half-life-calculator" className="text-[#C4A265] underline hover:text-[#d4af37]">
+            <Link href="/tools/half-life-calculator" className="text-[#B8A44C] underline hover:text-[#d4af37]">
               Half-Life Calculator
             </Link>
             .
@@ -537,12 +537,12 @@ export default function CompoundHalfLifeReferencePage() {
               <a
                 key={g.category}
                 href={`#${g.category.toLowerCase().replace(/[\s/]+/g, "-")}`}
-                className="text-zinc-400 hover:text-[#C4A265] transition-colors py-1"
+                className="text-zinc-400 hover:text-[#B8A44C] transition-colors py-1"
               >
                 {g.category}
               </a>
             ))}
-            <a href="#full-table" className="text-zinc-400 hover:text-[#C4A265] transition-colors py-1 font-medium">
+            <a href="#full-table" className="text-zinc-400 hover:text-[#B8A44C] transition-colors py-1 font-medium">
               ↓ Full Table
             </a>
           </div>
@@ -598,7 +598,7 @@ export default function CompoundHalfLifeReferencePage() {
                       <td className="px-4 py-3">
                         <Link
                           href={`/products/${c.slug}`}
-                          className="text-[#C4A265] hover:text-[#d4af37] text-xs font-medium transition-colors whitespace-nowrap"
+                          className="text-[#B8A44C] hover:text-[#d4af37] text-xs font-medium transition-colors whitespace-nowrap"
                         >
                           View →
                         </Link>
@@ -646,7 +646,7 @@ export default function CompoundHalfLifeReferencePage() {
                     <td className="px-4 py-2.5">
                       <Link
                         href={`/products/${c.slug}`}
-                        className="text-white hover:text-[#C4A265] transition-colors font-medium"
+                        className="text-white hover:text-[#B8A44C] transition-colors font-medium"
                       >
                         {c.name}
                       </Link>
@@ -703,9 +703,9 @@ export default function CompoundHalfLifeReferencePage() {
             <Link
               key={tool.title}
               href={tool.href}
-              className="bg-zinc-900/60 border border-white/8 rounded-xl p-4 hover:border-[#C4A265]/40 transition-colors group"
+              className="bg-zinc-900/60 border border-white/8 rounded-xl p-4 hover:border-[#B8A44C]/40 transition-colors group"
             >
-              <h3 className="text-white font-semibold text-sm group-hover:text-[#C4A265] transition-colors">
+              <h3 className="text-white font-semibold text-sm group-hover:text-[#B8A44C] transition-colors">
                 {tool.title}
               </h3>
               <p className="text-zinc-500 text-xs mt-1 leading-relaxed">{tool.desc}</p>

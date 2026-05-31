@@ -39,7 +39,7 @@ function TrendingCard({ product, rank }: { product: Product; rank: number }) {
       <div
         className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-[10px] font-bold"
         style={{
-          backgroundColor: rank <= 3 ? "#C4A265" : "#ECEAE4",
+          backgroundColor: rank <= 3 ? "#B8A44C" : "#ECEAE4",
           color: rank <= 3 ? "#FFFFFF" : "#888",
         }}
       >
@@ -85,7 +85,7 @@ function TrendingCard({ product, rank }: { product: Product; rank: number }) {
             <span
               className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full flex-shrink-0"
               style={{
-                backgroundColor: product.badge === "POPULAR" ? "#C4A265" : "#1A1A1A",
+                backgroundColor: product.badge === "POPULAR" ? "#B8A44C" : "#1A1A1A",
                 color: "#FFFFFF",
               }}
             >
@@ -121,7 +121,7 @@ function TrendingCard({ product, rank }: { product: Product; rank: number }) {
         viewBox="0 0 14 14"
         fill="none"
         className="flex-shrink-0 opacity-30 group-hover:opacity-80 transition-opacity"
-        style={{ color: "#8E6C2F" }}
+        style={{ color: "#7A6B2A" }}
       >
         <path
           d="M2.5 7H11.5M7.5 3L11.5 7L7.5 11"
@@ -168,7 +168,7 @@ export default function TrendingCompounds() {
           <div>
             <p
               className="text-xs font-semibold uppercase tracking-widest"
-              style={{ color: "#8E6C2F", letterSpacing: "0.12em" }}
+              style={{ color: "#7A6B2A", letterSpacing: "0.12em" }}
             >
               Trending
             </p>
@@ -185,7 +185,7 @@ export default function TrendingCompounds() {
             document.getElementById("all-compounds")?.scrollIntoView({ behavior: "smooth" });
           }}
           className="text-[11px] font-medium transition-opacity hover:opacity-60"
-          style={{ color: "#8E6C2F", textDecoration: "none" }}
+          style={{ color: "#7A6B2A", textDecoration: "none" }}
         >
           View all →
         </Link>

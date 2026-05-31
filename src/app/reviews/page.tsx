@@ -6,6 +6,23 @@ export const metadata: Metadata = {
   title: "Researcher Reviews — Nexphoria Research Peptides",
   description:
     "What qualified researchers say about Nexphoria's purity, packaging, cold-chain shipping, and COA documentation. 4.8/5 across 200+ research orders.",
+  alternates: {
+    canonical: "https://nexphoria.com/reviews",
+  },
+  openGraph: {
+    title: "Researcher Reviews — Nexphoria Research Peptides",
+    description: "4.8/5 across 200+ research orders. Read what qualified researchers say about purity, packaging, and COA documentation.",
+    url: "https://nexphoria.com/reviews",
+    siteName: "Nexphoria",
+    type: "website",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Nexphoria Researcher Reviews" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Researcher Reviews — Nexphoria Research Peptides",
+    description: "4.8/5 across 200+ research orders. Verified researcher reviews.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 const testimonials = [

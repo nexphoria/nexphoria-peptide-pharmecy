@@ -71,19 +71,19 @@ export default function AgeVerificationModal() {
           <div className="mb-6 flex justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" className="h-10 w-10" aria-label="Nexphoria">
               <g>
-                <circle fill="#C4A265" cx="129.698" cy="380.792" r="71.864" />
+                <circle fill="#B8A44C" cx="129.698" cy="380.792" r="71.864" />
                 <path
-                  fill="#C4A265"
+                  fill="#B8A44C"
                   d="M519.834,328.405c-17.864-16.774-41.141-22.533-62.628-18.55c-18.724,3.471-38.055-0.118-53.17-11.702l-6.86-5.257c-15.349-11.763-23.999-29.746-25.629-49.016c-1.685-19.927-11.623-39.039-29.014-51.808c-16.815-12.346-37.204-16.273-56.18-12.583c-18.19,3.537-37.03,0.099-51.739-11.173l-7.496-5.744c-15.472-11.857-24.203-29.973-25.892-49.393c-1.792-20.603-12.408-40.363-31.14-53.138c-29.987-20.451-71.799-14.725-95.228,12.998c-26.524,31.385-21.393,78.205,10.727,103.18c17.127,13.317,38.364,17.629,58.085,13.695c18.6-3.71,37.886,0.889,52.94,12.426l6.216,4.764c15.349,11.763,23.999,29.746,25.629,49.016c1.685,19.927,11.623,39.039,29.014,51.809c16.815,12.346,37.204,16.273,56.18,12.583c18.19-3.537,37.03-0.099,51.739,11.173l7.704,5.904c14.677,11.248,24.521,28.127,25.467,46.594c1.094,21.348,11.653,41.983,30.521,55.197c34.727,24.32,83.49,13.65,104.428-24.632C548.956,386.504,543.301,350.44,519.834,328.405z"
                 />
-                <circle fill="#C4A265" cx="470.305" cy="119.208" r="71.864" />
+                <circle fill="#B8A44C" cx="470.305" cy="119.208" r="71.864" />
               </g>
             </svg>
           </div>
 
           <p
             className="text-[10px] uppercase tracking-widest text-center font-semibold mb-2"
-            style={{ color: "#8E6C2F" }}
+            style={{ color: "#7A6B2A" }}
           >
             Nexphoria
           </p>
@@ -116,9 +116,9 @@ export default function AgeVerificationModal() {
               onChange={(e) => setConfirmed(e.target.checked)}
               className="mt-0.5 h-5 w-5 flex-shrink-0 cursor-pointer rounded border-2 transition-all"
               style={{
-                borderColor: confirmed ? "#C4A265" : "#D0D0D0",
-                backgroundColor: confirmed ? "#C4A265" : "transparent",
-                accentColor: "#8E6C2F",
+                borderColor: confirmed ? "#B8A44C" : "#D0D0D0",
+                backgroundColor: confirmed ? "#B8A44C" : "transparent",
+                accentColor: "#7A6B2A",
               }}
             />
             <span
@@ -137,7 +137,7 @@ export default function AgeVerificationModal() {
               className="flex h-12 items-center justify-center rounded-full text-xs font-medium uppercase tracking-wider transition-all duration-300"
               style={{
                 backgroundColor: confirmed ? "#1A1A1A" : "transparent",
-                color: confirmed ? "#C4A265" : "#CCC",
+                color: confirmed ? "#B8A44C" : "#CCC",
                 border: confirmed ? "1px solid #1A1A1A" : "1px solid #E5E5E5",
                 cursor: confirmed ? "pointer" : "not-allowed",
                 letterSpacing: "0.16em",

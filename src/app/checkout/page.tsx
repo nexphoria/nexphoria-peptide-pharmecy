@@ -115,9 +115,9 @@ export default function CheckoutPage() {
 
   const totalPrice = getTotalPrice();
   const totalItems = getTotalItems();
-  const hasSubscription = items.some((item) => item.subscriptionMonths > 1);
-  const subscriptionItems = items.filter((item) => item.subscriptionMonths > 1);
-  const oneTimeItems = items.filter((item) => item.subscriptionMonths <= 1);
+  const hasSubscription = items.some((item) => item.subscriptionCadence != null);
+  const subscriptionItems = items.filter((item) => item.subscriptionCadence != null);
+  const oneTimeItems = items.filter((item) => item.subscriptionCadence == null);
 
   const handlePromoApply = () => {
     if (promoCode.trim()) setPromoApplied(true);
@@ -418,12 +418,7 @@ export default function CheckoutPage() {
                       {subscriptionItems.map((item) => {
                         const dosageLabel = item.selectedDosage?.size || item.product.size;
                         const unitPrice = getItemUnitPrice(item);
-                        const cycleLabel =
-                          item.subscriptionMonths === 3
-                            ? "3-Month Research Cycle"
-                            : item.subscriptionMonths === 6
-                            ? "6-Month Research Cycle"
-                            : `${item.subscriptionMonths}-Month Cycle`;
+                        const cycleLabel = "Monthly Auto-Ship";
                         return (
                           <div
                             key={`sub-${item.product.slug}`}

@@ -6,9 +6,27 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { products } from "@/lib/products";
 
 export const metadata: Metadata = {
-  title: "Peptide Catalog — Research Compounds",
+  title: "Peptide Catalog — Research Compounds | Nexphoria",
   description:
-    "Browse Nexphoria's research compound catalog. cGMP-manufactured peptides with full Certificate of Analysis and HPLC-verified purity. Research use only.",
+    "Browse Nexphoria's research compound catalog. cGMP-manufactured peptides with full Certificate of Analysis and HPLC-verified purity. BPC-157, Semaglutide, Tirzepatide, GHK-Cu, and 30+ more. Research use only.",
+  alternates: {
+    canonical: "https://nexphoria.com/products",
+  },
+  openGraph: {
+    title: "Peptide Catalog — Research Compounds | Nexphoria",
+    description:
+      "cGMP-manufactured peptides with full Certificate of Analysis and HPLC-verified purity. BPC-157, Semaglutide, Tirzepatide, GHK-Cu, and 30+ more.",
+    url: "https://nexphoria.com/products",
+    siteName: "Nexphoria",
+    type: "website",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Nexphoria Peptide Catalog" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Peptide Catalog — Research Compounds | Nexphoria",
+    description: "cGMP-manufactured peptides with HPLC-verified purity and Certificate of Analysis.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 export default function ProductsPage({

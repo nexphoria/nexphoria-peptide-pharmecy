@@ -152,15 +152,15 @@ export default function GuidesIndexPage() {
           {/* Stats strip */}
           <div className="flex flex-wrap gap-6 text-sm text-zinc-400">
             <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#C4A265]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#B8A44C]" />
               <strong className="text-white">7</strong> guides
             </span>
             <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#C4A265]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#B8A44C]" />
               <strong className="text-white">9</strong> topic categories
             </span>
             <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#C4A265]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#B8A44C]" />
               Free &amp; unrestricted
             </span>
           </div>
@@ -174,11 +174,11 @@ export default function GuidesIndexPage() {
             <Link
               key={guide.href}
               href={guide.href}
-              className="group flex flex-col bg-zinc-900 border border-white/8 rounded-2xl p-6 hover:border-[#C4A265]/50 hover:bg-zinc-800/60 transition-all duration-200"
+              className="group flex flex-col bg-zinc-900 border border-white/8 rounded-2xl p-6 hover:border-[#B8A44C]/50 hover:bg-zinc-800/60 transition-all duration-200"
             >
               {/* Icon + badge row */}
               <div className="flex items-start justify-between mb-4">
-                <div className="w-10 h-10 rounded-xl bg-[#C4A265]/10 flex items-center justify-center text-[#C4A265]">
+                <div className="w-10 h-10 rounded-xl bg-[#B8A44C]/10 flex items-center justify-center text-[#B8A44C]">
                   {guide.icon}
                 </div>
                 <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${guide.badgeColor}`}>
@@ -187,7 +187,7 @@ export default function GuidesIndexPage() {
               </div>
 
               {/* Title + desc */}
-              <h2 className="text-base font-semibold text-white mb-2 group-hover:text-[#C4A265] transition-colors">
+              <h2 className="text-base font-semibold text-white mb-2 group-hover:text-[#B8A44C] transition-colors">
                 {guide.label}
               </h2>
               <p className="text-sm text-zinc-400 leading-relaxed mb-4 flex-1">
@@ -204,7 +204,7 @@ export default function GuidesIndexPage() {
               </div>
 
               {/* CTA */}
-              <div className="flex items-center gap-1 text-[#C4A265] text-sm font-medium">
+              <div className="flex items-center gap-1 text-[#B8A44C] text-sm font-medium">
                 <span>Read guide</span>
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 16 16" fill="currentColor">
                   <path fillRule="evenodd" d="M1 8a7 7 0 1114 0A7 7 0 011 8zm7.75-4.25a.75.75 0 00-1.5 0V8c0 .414.336.75.75.75h3.25a.75.75 0 000-1.5H8.75V3.75z" clipRule="evenodd" />
@@ -228,9 +228,9 @@ export default function GuidesIndexPage() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="group flex flex-col bg-zinc-900 border border-white/8 rounded-xl p-5 hover:border-[#C4A265]/50 transition-all duration-200"
+                className="group flex flex-col bg-zinc-900 border border-white/8 rounded-xl p-5 hover:border-[#B8A44C]/50 transition-all duration-200"
               >
-                <p className="font-semibold text-white group-hover:text-[#C4A265] transition-colors mb-1">
+                <p className="font-semibold text-white group-hover:text-[#B8A44C] transition-colors mb-1">
                   {link.label}
                 </p>
                 <p className="text-sm text-zinc-500">{link.desc}</p>

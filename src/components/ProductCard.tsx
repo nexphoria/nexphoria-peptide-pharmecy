@@ -130,8 +130,8 @@ export default function ProductCard({
             </div>
             <button
               onClick={handleAddToOrder}
-              className="w-full text-[10px] font-medium uppercase py-2.5 transition-all duration-300"
-              style={{
+              className="w-full text-[10px] font-medium uppercase transition-all duration-300"
+              style={{ minHeight: "44px",
                 letterSpacing: "0.15em",
                 color: "#1A1A1A",
                 border: "1px solid #1A1A1A",

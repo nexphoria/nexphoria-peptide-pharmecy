@@ -3,9 +3,20 @@ import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Clinical Programs — Physician-Guided Peptide Therapy",
+  title: "Clinical Programs — Physician-Guided Peptide Therapy | Nexphoria",
   description:
     "Nexphoria clinical programs: telehealth consultation, custom prescriptions, compounding pharmacy delivery. Starting at $149/month.",
+  alternates: {
+    canonical: "https://nexphoria.com/clinical",
+  },
+  openGraph: {
+    title: "Clinical Programs — Physician-Guided Peptide Therapy | Nexphoria",
+    description: "Telehealth consultation, custom prescriptions, compounding pharmacy delivery. Starting at $149/month.",
+    url: "https://nexphoria.com/clinical",
+    siteName: "Nexphoria",
+    type: "website",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+  },
 };
 
 const protocols = [

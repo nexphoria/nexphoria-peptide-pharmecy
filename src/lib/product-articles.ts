@@ -143,19 +143,19 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   ],
   "kpv": [
     "kpv-immunomodulatory-tripeptide-research-guide",
+    "klw-stack-kpv-ll37-thymosin-alpha1-triple-immune-modulation-research-guide",
     "peptide-immunology-research-tlr-signaling-cytokine-assays-nfkb-endpoints",
-    "thymosin-alpha-1-immune-peptide-research-guide",
   ],
 
   // Immunology
   "thymosin-alpha-1": [
     "thymosin-alpha-1-immune-peptide-research-guide",
+    "klw-stack-kpv-ll37-thymosin-alpha1-triple-immune-modulation-research-guide",
     "peptide-immunology-research-tlr-signaling-cytokine-assays-nfkb-endpoints",
-    "ll-37-human-host-defense-peptide-research-guide",
   ],
   "ll-37": [
     "ll-37-antimicrobial-wound-healing-protocols",
-    "peptide-immunology-research-tlr-signaling-cytokine-assays-nfkb-endpoints",
+    "klw-stack-kpv-ll37-thymosin-alpha1-triple-immune-modulation-research-guide",
     "ll-37-human-host-defense-peptide-research-guide",
   ],
 
@@ -184,8 +184,8 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "ghk-cu-copper-peptide-research-review",
   ],
   "klw-blend": [
-    "kisspeptin-lh-surge-reproductive-neuroendocrinology-research",
-    "ll-37-human-host-defense-peptide-research-guide",
+    "klw-stack-kpv-ll37-thymosin-alpha1-triple-immune-modulation-research-guide",
+    "peptide-immunology-research-tlr-signaling-cytokine-assays-nfkb-endpoints",
     "kpv-immunomodulatory-tripeptide-research-guide",
   ],
 };

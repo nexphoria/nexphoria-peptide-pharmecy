@@ -193,6 +193,9 @@ export default function SearchModal() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Search"
             initial={{ opacity: 0, scale: 0.95, y: -20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -20 }}
@@ -202,8 +205,10 @@ export default function SearchModal() {
           >
             {/* Search Input */}
             <div className="flex items-center gap-3 p-4 border-b" style={{ borderColor: "#E5E5E5" }}>
-              <Search className="w-5 h-5 flex-shrink-0" style={{ color: "#666666" }} />
+              <Search className="w-5 h-5 flex-shrink-0" aria-hidden="true" style={{ color: "#666666" }} />
+              <label htmlFor="search-input" className="sr-only">Search products, articles, and pages</label>
               <input
+                id="search-input"
                 ref={inputRef}
                 type="text"
                 value={query}
@@ -211,6 +216,9 @@ export default function SearchModal() {
                 placeholder="Search products, articles, pages..."
                 className="flex-1 bg-transparent text-base outline-none placeholder:text-[#666666]"
                 style={{ color: "#1A1A1A" }}
+                aria-autocomplete="list"
+                aria-controls="search-results"
+                aria-activedescendant={results.length > 0 ? `search-result-${selectedIndex}` : undefined}
               />
               <button
                 onClick={handleClose}

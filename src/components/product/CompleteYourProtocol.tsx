@@ -85,14 +85,8 @@ export default function CompleteYourProtocol({ currentSlug }: Props) {
 
                 {/* Pricing */}
                 <div className="ml-auto text-right flex-shrink-0 hidden sm:block">
-                  <div className="text-xs text-[#999] line-through mb-0.5">
-                    ${combinedPrice}
-                  </div>
                   <div className="text-2xl font-semibold tracking-tight">
-                    ${stackPrice}
-                  </div>
-                  <div className="text-[10px] text-[#B8A44C] font-medium mt-0.5">
-                    Save ${stackDiscount} (5% stack discount)
+                    ${combinedPrice}
                   </div>
                 </div>
               </div>
@@ -100,12 +94,8 @@ export default function CompleteYourProtocol({ currentSlug }: Props) {
               {/* Mobile pricing */}
               <div className="sm:hidden mt-4 flex items-center justify-between">
                 <div>
-                  <div className="text-xs text-[#999] line-through">${combinedPrice}</div>
-                  <div className="text-xl font-semibold">${stackPrice}</div>
+                  <div className="text-xl font-semibold">${combinedPrice}</div>
                 </div>
-                <span className="text-[10px] text-[#B8A44C] font-medium">
-                  Save ${stackDiscount} (5% off)
-                </span>
               </div>
             </div>
 

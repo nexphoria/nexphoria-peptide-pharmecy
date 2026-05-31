@@ -111,11 +111,11 @@ export default function FrequentlyBoughtTogether({ currentSlug }: Props) {
             </p>
           </div>
           <h2 className="text-2xl font-medium tracking-tight mb-1">
-            Bundle &amp; Save
+            Complete Your Protocol
           </h2>
           <p className="text-sm text-[#777] mb-8 max-w-lg leading-relaxed">
             Researchers commonly order these compounds together.{" "}
-            {secondary ? "Save 8% when you add all three." : "Save 5% when you add both."}
+            {secondary ? "Convenient multi-compound ordering." : "Convenient multi-compound ordering."}
           </p>
 
           <div className="max-w-2xl">
@@ -227,19 +227,8 @@ export default function FrequentlyBoughtTogether({ currentSlug }: Props) {
                     </p>
                     <div className="flex items-baseline gap-2">
                       <span className="text-2xl font-semibold tracking-tight">
-                        ${finalPrice}
+                        ${originalPrice}
                       </span>
-                      {savings > 0 && (
-                        <>
-                          <span className="text-sm text-[#737373] line-through">${originalPrice}</span>
-                          <span
-                            className="text-xs font-semibold px-1.5 py-0.5 rounded"
-                            style={{ backgroundColor: "#EDF5E8", color: "#4A7A3F" }}
-                          >
-                            Save ${savings} ({Math.round(discountPct * 100)}% off)
-                          </span>
-                        </>
-                      )}
                     </div>
                   </div>
                 </div>
@@ -261,7 +250,6 @@ export default function FrequentlyBoughtTogether({ currentSlug }: Props) {
                     <>
                       <ShoppingCart className="w-4 h-4" />
                       Add {selectedItems.length} Item{selectedItems.length !== 1 ? "s" : ""} to Order
-                      {savings > 0 && ` — Save $${savings}`}
                     </>
                   )}
                 </button>

@@ -43,28 +43,28 @@ type Period = (typeof PERIODS)[number];
 
 const DATA: Record<Period, FunnelStage[]> = {
   Today: [
-    { id: "visit", label: "Site Visits", sublabel: "Unique sessions", icon: <Users size={18} />, count: 412, prev: null, target: 500, color: "#8E6C2F", bgColor: "#FAF6F0" },
+    { id: "visit", label: "Site Visits", sublabel: "Unique sessions", icon: <Users size={18} />, count: 412, prev: null, target: 500, color: "#7A6B2A", bgColor: "#FAF6F0" },
     { id: "product_view", label: "Product Views", sublabel: "Catalog & detail pages", icon: <Eye size={18} />, count: 198, prev: 412, target: 250, color: "#7A9E87", bgColor: "#F0F5F1" },
     { id: "add_to_cart", label: "Add to Cart", sublabel: "Items added", icon: <ShoppingCart size={18} />, count: 74, prev: 198, target: 90, color: "#5B8FA8", bgColor: "#F0F4F7" },
     { id: "checkout", label: "Checkout Started", sublabel: "Checkout sessions", icon: <CreditCard size={18} />, count: 38, prev: 74, target: 45, color: "#8B6BB1", bgColor: "#F4F1F8" },
     { id: "purchase", label: "Purchase", sublabel: "Completed orders", icon: <CheckCircle size={18} />, count: 21, prev: 38, target: 28, color: "#4CAF7D", bgColor: "#F0F8F3" },
   ],
   "7 Days": [
-    { id: "visit", label: "Site Visits", sublabel: "Unique sessions", icon: <Users size={18} />, count: 2941, prev: null, target: 3500, color: "#8E6C2F", bgColor: "#FAF6F0" },
+    { id: "visit", label: "Site Visits", sublabel: "Unique sessions", icon: <Users size={18} />, count: 2941, prev: null, target: 3500, color: "#7A6B2A", bgColor: "#FAF6F0" },
     { id: "product_view", label: "Product Views", sublabel: "Catalog & detail pages", icon: <Eye size={18} />, count: 1389, prev: 2941, target: 1750, color: "#7A9E87", bgColor: "#F0F5F1" },
     { id: "add_to_cart", label: "Add to Cart", sublabel: "Items added", icon: <ShoppingCart size={18} />, count: 521, prev: 1389, target: 630, color: "#5B8FA8", bgColor: "#F0F4F7" },
     { id: "checkout", label: "Checkout Started", sublabel: "Checkout sessions", icon: <CreditCard size={18} />, count: 267, prev: 521, target: 315, color: "#8B6BB1", bgColor: "#F4F1F8" },
     { id: "purchase", label: "Purchase", sublabel: "Completed orders", icon: <CheckCircle size={18} />, count: 148, prev: 267, target: 196, color: "#4CAF7D", bgColor: "#F0F8F3" },
   ],
   "30 Days": [
-    { id: "visit", label: "Site Visits", sublabel: "Unique sessions", icon: <Users size={18} />, count: 12804, prev: null, target: 15000, color: "#8E6C2F", bgColor: "#FAF6F0" },
+    { id: "visit", label: "Site Visits", sublabel: "Unique sessions", icon: <Users size={18} />, count: 12804, prev: null, target: 15000, color: "#7A6B2A", bgColor: "#FAF6F0" },
     { id: "product_view", label: "Product Views", sublabel: "Catalog & detail pages", icon: <Eye size={18} />, count: 6102, prev: 12804, target: 7500, color: "#7A9E87", bgColor: "#F0F5F1" },
     { id: "add_to_cart", label: "Add to Cart", sublabel: "Items added", icon: <ShoppingCart size={18} />, count: 2287, prev: 6102, target: 2700, color: "#5B8FA8", bgColor: "#F0F4F7" },
     { id: "checkout", label: "Checkout Started", sublabel: "Checkout sessions", icon: <CreditCard size={18} />, count: 1171, prev: 2287, target: 1350, color: "#8B6BB1", bgColor: "#F4F1F8" },
     { id: "purchase", label: "Purchase", sublabel: "Completed orders", icon: <CheckCircle size={18} />, count: 648, prev: 1171, target: 810, color: "#4CAF7D", bgColor: "#F0F8F3" },
   ],
   "90 Days": [
-    { id: "visit", label: "Site Visits", sublabel: "Unique sessions", icon: <Users size={18} />, count: 38210, prev: null, target: 45000, color: "#8E6C2F", bgColor: "#FAF6F0" },
+    { id: "visit", label: "Site Visits", sublabel: "Unique sessions", icon: <Users size={18} />, count: 38210, prev: null, target: 45000, color: "#7A6B2A", bgColor: "#FAF6F0" },
     { id: "product_view", label: "Product Views", sublabel: "Catalog & detail pages", icon: <Eye size={18} />, count: 18340, prev: 38210, target: 22500, color: "#7A9E87", bgColor: "#F0F5F1" },
     { id: "add_to_cart", label: "Add to Cart", sublabel: "Items added", icon: <ShoppingCart size={18} />, count: 6874, prev: 18340, target: 8100, color: "#5B8FA8", bgColor: "#F0F4F7" },
     { id: "checkout", label: "Checkout Started", sublabel: "Checkout sessions", icon: <CreditCard size={18} />, count: 3519, prev: 6874, target: 4050, color: "#8B6BB1", bgColor: "#F4F1F8" },
@@ -297,7 +297,7 @@ export default function FunnelDashboardPage() {
       {/* Header */}
       <div style={{ background: "#0A0A0A", padding: "20px 32px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <BarChart2 size={20} color="#C4A265" />
+          <BarChart2 size={20} color="#B8A44C" />
           <span style={{ color: "#FFFFFF", fontFamily: "var(--font-display)", fontSize: "1.1rem", fontWeight: 500, letterSpacing: "0.04em" }}>
             Nexphoria / Conversion Funnel
           </span>
@@ -368,7 +368,7 @@ export default function FunnelDashboardPage() {
             value={avgOrderValue}
             sub="Per completed purchase"
             trend="up"
-            color="#C4A265"
+            color="#B8A44C"
           />
           <StatCard
             label="Cart-to-Checkout"
@@ -490,7 +490,7 @@ export default function FunnelDashboardPage() {
               },
               {
                 icon: "⚡",
-                color: "#8E6C2F",
+                color: "#7A6B2A",
                 bg: "#FAF6F0",
                 title: "Checkout abandonment opportunity",
                 body: `${cartAbandon} of initiated checkouts don't complete. Consider exit-intent + abandoned cart email sequence.`,
