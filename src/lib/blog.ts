@@ -93,6 +93,7 @@ import { article as a89 } from './articles/peptide-storage-mistakes-prevention-g
 import { article as a90 } from './articles/ghrp-desensitization-tachyphylaxis-research-review';
 import { article as a91 } from './articles/peptide-water-retention-electrolyte-research-study-design';
 import { article as a92 } from './articles/peptide-research-skeletal-muscle-hypertrophy-repair-performance-endpoints';
+import { article as a93 } from './articles/peptide-cardiac-protection-research-bpc157-tb500-glp1';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -142,6 +143,7 @@ export const articles: BlogArticle[] = [
   a90,
   a91,
   a92,
+  a93,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

@@ -8,13 +8,13 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   // Repair / Recovery
   "bpc-157": [
     "bpc-157-mechanism-deep-dive-no-vegf-fak-signaling",
-    "peptide-research-skeletal-muscle-hypertrophy-repair-performance-endpoints",
     "bpc-157-tb-500-recovery-stack-deep-dive",
+    "peptide-cardiac-protection-research-bpc157-tb500-glp1",
   ],
   "tb-500": [
     "tb-500-mechanism-deep-dive-g-actin-sequestration-thymosin-beta-4-biology",
-    "peptide-research-skeletal-muscle-hypertrophy-repair-performance-endpoints",
     "tb-500-thymosin-beta-4-researchers-complete-guide",
+    "peptide-cardiac-protection-research-bpc157-tb500-glp1",
   ],
   "follistatin-344": [
     "follistatin-344-igf-1-independent-muscle-research",
@@ -68,7 +68,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "semaglutide": [
     "semaglutide-dosing-timing-protocol-design-researchers-reference",
     "glp1-agonists-neurodegeneration-parkinsons-alzheimers-tbi-research",
-    "peptide-water-retention-electrolyte-research-study-design",
+    "peptide-cardiac-protection-research-bpc157-tb500-glp1",
   ],
   "tirzepatide": [
     "tirzepatide-research-dosing-guide-glp1-gip-dual-agonism-protocols",
@@ -104,8 +104,8 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   ],
   "ss-31": [
     "ss-31-elamipretide-mitochondria-targeted-peptide-research",
-    "peptide-research-anti-aging-longevity-biomarkers-study-design",
     "glutathione-peptides-oxidative-stress-research-overview",
+    "peptide-cardiac-protection-research-bpc157-tb500-glp1",
   ],
 
   // Nootropics / Neuro
