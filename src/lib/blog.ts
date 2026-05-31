@@ -120,6 +120,7 @@ import { article as a116 } from './articles/peptide-research-sleep-circadian-rhy
 import { article as a117 } from './articles/peptide-reconstitution-errors-root-causes-detection-prevention';
 import { article as a118 } from './articles/peptide-research-ocular-health-bpc157-ss31-ghk-cu-eye';
 import { article as a119 } from './articles/peptide-research-skin-health-ghk-cu-snap8-cosmetic-peptides-study-design';
+import { article as a120 } from './articles/peptide-research-pain-inflammation-bpc157-kpv-opioid-nociception';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -196,6 +197,7 @@ export const articles: BlogArticle[] = [
   a117,
   a118,
   a119,
+  a120,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

@@ -9,7 +9,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "bpc-157": [
     "bpc-157-mechanism-deep-dive-no-vegf-fak-signaling",
     "bpc-157-gut-health-research-gi-protection-leaky-gut-intestinal-repair",
-    "peptide-research-ocular-health-bpc157-ss31-ghk-cu-eye",
+    "peptide-research-pain-inflammation-bpc157-kpv-opioid-nociception",
   ],
   "tb-500": [
     "tb-500-mechanism-deep-dive-g-actin-sequestration-thymosin-beta-4-biology",
@@ -145,7 +145,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   ],
   "kpv": [
     "kpv-immunomodulatory-tripeptide-research-guide",
-    "klw-stack-kpv-ll37-thymosin-alpha1-triple-immune-modulation-research-guide",
+    "peptide-research-pain-inflammation-bpc157-kpv-opioid-nociception",
     "peptide-immunology-research-tlr-signaling-cytokine-assays-nfkb-endpoints",
   ],
 
