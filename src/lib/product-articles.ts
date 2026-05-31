@@ -127,9 +127,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "dsip-delta-sleep-inducing-peptide-sleep-research-review",
   ],
   "oxytocin": [
+    "testosterone-hpg-axis-peptide-research-kisspeptin-lh-hormone-endpoints",
     "oxytocin-research-neuropeptide-guide",
     "blood-brain-barrier-peptide-cns-delivery-research",
-    "peptide-research-sex-differences-female-dosing-protocols",
   ],
 
   // Melanocortin
@@ -163,9 +163,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // Reproductive / Hormonal
   "kisspeptin": [
+    "testosterone-hpg-axis-peptide-research-kisspeptin-lh-hormone-endpoints",
     "kisspeptin-10-vs-kisspeptin-54-research-protocol-differences",
     "kisspeptin-lh-surge-reproductive-neuroendocrinology-research",
-    "oxytocin-research-neuropeptide-guide",
   ],
 
   // Cosmetic
