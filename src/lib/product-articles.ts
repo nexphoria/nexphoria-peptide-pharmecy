@@ -179,8 +179,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "ghk-cu-copper-peptide-research-review",
   ],
   "glow-blend": [
+    "glow-stack-ghk-cu-epitalon-nad-longevity-protocol-research-guide",
+    "peptide-stacking-longevity-nad-epitalon-ss31-ghk-cu",
     "ghk-cu-copper-peptide-research-review",
-    "snap-8-anti-wrinkle-peptide-research-guide",
   ],
   "klw-blend": [
     "kisspeptin-lh-surge-reproductive-neuroendocrinology-research",
