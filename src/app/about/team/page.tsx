@@ -120,7 +120,7 @@ export default function TeamPage() {
             Our Team
           </p>
           <h1
-            className="text-5xl md:text-6xl mb-8"
+            className="text-4xl md:text-5xl lg:text-6xl mb-8"
             style={{
               fontWeight: 200,
               color: "#010101",

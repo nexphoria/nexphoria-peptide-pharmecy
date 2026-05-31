@@ -112,7 +112,7 @@ export default function ScienceAdvisorsPage() {
             Scientific Advisory Board
           </p>
           <h1
-            className="text-5xl md:text-6xl mb-8"
+            className="text-4xl md:text-5xl lg:text-6xl mb-8"
             style={{
               fontWeight: 200,
               color: "#010101",
@@ -135,7 +135,7 @@ export default function ScienceAdvisorsPage() {
       <section className="px-6 md:px-12 pb-16">
         <div className="max-w-4xl mx-auto">
           <div
-            className="rounded-2xl p-10"
+            className="rounded-2xl p-6 md:p-10"
             style={{ backgroundColor: "#FFFFFF", border: "1px solid rgba(0,0,0,0.06)" }}
           >
             <p

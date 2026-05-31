@@ -40,7 +40,7 @@ export default function SciencePage() {
             Quality & Standards
           </p>
           <h1
-            className="text-5xl md:text-6xl mb-8"
+            className="text-4xl md:text-5xl lg:text-6xl mb-8"
             style={{ fontWeight: 200, color: "#010101", letterSpacing: "-0.01em", lineHeight: 1.1 }}
           >
             The Standards Behind<br />Every Compound
@@ -193,7 +193,7 @@ export default function SciencePage() {
       <section className="py-16 px-6 md:px-12" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="max-w-5xl mx-auto">
           <div
-            className="flex flex-col md:flex-row items-center justify-between gap-8 p-10 rounded-2xl"
+            className="flex flex-col md:flex-row items-center justify-between gap-8 p-6 md:p-10 rounded-2xl"
             style={{ backgroundColor: "#F7F4F0", border: "1px solid rgba(184,146,58,0.25)" }}
           >
             <div>

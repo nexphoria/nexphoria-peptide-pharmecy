@@ -41,7 +41,7 @@ export default function AboutPage() {
             About
           </p>
           <h1
-            className="text-5xl md:text-6xl mb-8"
+            className="text-4xl md:text-5xl lg:text-6xl mb-8"
             style={{ fontWeight: 200, color: "#010101", letterSpacing: "-0.01em", lineHeight: 1.1 }}
           >
             Built for Researchers<br />Who Read the COA
@@ -56,7 +56,7 @@ export default function AboutPage() {
       {/* Mission */}
       <section className="px-6 md:px-12 pb-24">
         <div className="max-w-4xl mx-auto">
-          <div className="p-10 rounded-lg" style={{ backgroundColor: "#FFFFFF", border: "1px solid rgba(0,0,0,0.06)" }}>
+          <div className="p-6 md:p-10 rounded-lg" style={{ backgroundColor: "#FFFFFF", border: "1px solid rgba(0,0,0,0.06)" }}>
             <p className="text-xs uppercase mb-4" style={{ color: "#B8923A", letterSpacing: "0.2em" }}>
               Our Mission
             </p>
@@ -93,7 +93,7 @@ export default function AboutPage() {
       {/* Team CTA */}
       <section className="py-24 px-6 md:px-12" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="max-w-5xl mx-auto space-y-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8 p-10 rounded-2xl" style={{ backgroundColor: "#010101" }}>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 p-6 md:p-10 rounded-2xl" style={{ backgroundColor: "#010101" }}>
             <div>
               <p className="text-xs uppercase mb-3" style={{ color: "#B8923A", letterSpacing: "0.2em" }}>Our Team</p>
               <h2 className="text-2xl mb-2" style={{ fontWeight: 200, color: "#FFFFFF" }}>The scientists behind the purity</h2>
@@ -101,7 +101,7 @@ export default function AboutPage() {
             </div>
             <Link href="/about/team" className="btn-primary whitespace-nowrap">Meet the Team →</Link>
           </div>
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8 p-10 rounded-2xl" style={{ backgroundColor: "#F7F4F0", border: "1px solid rgba(184,146,58,0.2)" }}>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 p-6 md:p-10 rounded-2xl" style={{ backgroundColor: "#F7F4F0", border: "1px solid rgba(184,146,58,0.2)" }}>
             <div>
               <p className="text-xs uppercase mb-3" style={{ color: "#B8923A", letterSpacing: "0.2em" }}>Scientific Advisory Board</p>
               <h2 className="text-2xl mb-2" style={{ fontWeight: 200, color: "#010101" }}>Independent researchers who hold our standards</h2>
@@ -128,7 +128,7 @@ export default function AboutPage() {
           >
             research@nexphoria.com
           </a>
-          <div className="mt-12 flex justify-center gap-8">
+          <div className="mt-12 flex flex-wrap justify-center gap-4">
             <Link href="/products" className="btn-primary">
               Browse Compounds
             </Link>
