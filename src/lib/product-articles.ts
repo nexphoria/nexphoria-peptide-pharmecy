@@ -67,8 +67,8 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   // GLP-1 / Metabolic
   "semaglutide": [
     "semaglutide-dosing-timing-protocol-design-researchers-reference",
+    "glp1-agonists-neurodegeneration-parkinsons-alzheimers-tbi-research",
     "peptide-ic50-ec50-ki-binding-affinity-research-guide",
-    "adiponectin-leptin-metabolic-hormone-endpoints-peptide-research",
   ],
   "tirzepatide": [
     "tirzepatide-research-dosing-guide-glp1-gip-dual-agonism-protocols",
@@ -95,17 +95,17 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "nad-plus": [
     "nad-precursors-nmn-nr-vs-direct-nad-injection-research",
     "nad-plus-research-protocols-dosing-routes-study-design",
-    "complete-blood-panel-guide-peptide-researchers",
+    "peptide-research-anti-aging-longevity-biomarkers-study-design",
   ],
   "epitalon": [
     "epitalon-pineal-peptide-longevity-research-review",
+    "peptide-research-anti-aging-longevity-biomarkers-study-design",
     "glutathione-peptides-oxidative-stress-research-overview",
-    "nad-plus-cellular-energy-sirtuins-longevity-research",
   ],
   "ss-31": [
     "ss-31-elamipretide-mitochondria-targeted-peptide-research",
+    "peptide-research-anti-aging-longevity-biomarkers-study-design",
     "glutathione-peptides-oxidative-stress-research-overview",
-    "mots-c-mitochondria-derived-peptide-metabolic-research",
   ],
 
   // Nootropics / Neuro
