@@ -30,8 +30,8 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   // GH Axis
   "ipamorelin": [
     "protein-synthesis-skeletal-muscle-mtor-s6k-eif4e-gh-axis-research",
+    "gpcr-pharmacology-biased-agonism-peptide-research",
     "mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research",
-    "ipamorelin-dosing-timing-protocol-design-researchers-reference",
   ],
   "cjc-1295": [
     "protein-synthesis-skeletal-muscle-mtor-s6k-eif4e-gh-axis-research",
@@ -66,9 +66,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // GLP-1 / Metabolic
   "semaglutide": [
+    "gpcr-pharmacology-biased-agonism-peptide-research",
     "semaglutide-dosing-timing-protocol-design-researchers-reference",
     "neuroinflammation-research-microglia-nlrp3-peptide-interventions",
-    "peptide-research-liver-health-nash-hepatic-steatosis-glp1-data",
   ],
   "tirzepatide": [
     "tirzepatide-research-dosing-guide-glp1-gip-dual-agonism-protocols",

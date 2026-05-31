@@ -230,7 +230,17 @@ export default function SearchModal() {
             </div>
 
             {/* Results */}
-            <div className="max-h-96 overflow-y-auto">
+            <div
+              id="search-results"
+              role="listbox"
+              aria-label="Search results"
+              className="max-h-96 overflow-y-auto"
+            >
+              {/* Live region for screen readers */}
+              <div aria-live="polite" aria-atomic="true" className="sr-only">
+                {query && results.length === 0 && "No results found"}
+                {results.length > 0 && `${results.length} result${results.length !== 1 ? "s" : ""} found`}
+              </div>
               {query && results.length === 0 && (
                 <div className="px-4 py-8 text-center text-sm" style={{ color: "#666666" }}>
                   No results found for &quot;{query}&quot;
@@ -241,6 +251,9 @@ export default function SearchModal() {
                   {results.map((result, index) => (
                     <button
                       key={`${result.type}-${result.href}`}
+                      id={`search-result-${index}`}
+                      role="option"
+                      aria-selected={index === selectedIndex}
                       onClick={() => handleNavigate(result.href)}
                       onMouseEnter={() => setSelectedIndex(index)}
                       className="w-full flex items-center gap-3 px-4 py-3 text-left transition-colors"

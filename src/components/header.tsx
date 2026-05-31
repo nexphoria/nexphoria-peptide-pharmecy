@@ -59,6 +59,8 @@ const RESEARCH_TOOLS = [
 const RESEARCH_RESOURCES = [
   { label: "Compound Index", href: "/compounds" },
   { label: "Research Journal", href: "/blog" },
+  { label: "Researcher Reviews", href: "/reviews" },
+  { label: "Submit a Review", href: "/reviews/submit" },
   { label: "Storage Guide", href: "/guides/storage" },
   { label: "Reconstitution Guide", href: "/guides/reconstitution" },
   { label: "Dosing Protocols", href: "/guides/dosing-protocols" },

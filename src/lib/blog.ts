@@ -109,6 +109,7 @@ import { article as a105 } from './articles/autophagy-macroautophagy-nad-mtor-ce
 import { article as a106 } from './articles/protein-synthesis-skeletal-muscle-mtor-s6k-eif4e-gh-axis-research';
 import { article as a107 } from './articles/aging-biomarkers-telomere-epigenetic-clocks-nad-longevity-research';
 import { article as a108 } from './articles/peptide-research-publication-guide-methods-disclosure-open-science';
+import { article as a109 } from './articles/gpcr-pharmacology-biased-agonism-peptide-research';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -174,6 +175,7 @@ export const articles: BlogArticle[] = [
   a106,
   a107,
   a108,
+  a109,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

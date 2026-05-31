@@ -368,6 +368,42 @@ export default function ReviewsPage() {
         </div>
       </section>
 
+      {/* Submit a Review CTA */}
+      <section className="px-6 md:px-12 pb-16">
+        <div className="max-w-5xl mx-auto">
+          <div
+            className="rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6"
+            style={{ backgroundColor: "#FFFFFF", border: "1px solid rgba(0,0,0,0.06)" }}
+          >
+            <div>
+              <p
+                className="text-xs uppercase mb-2"
+                style={{ color: "#B8923A", letterSpacing: "0.2em", fontWeight: 500 }}
+              >
+                Verified Researchers
+              </p>
+              <h2
+                className="text-2xl md:text-3xl mb-2"
+                style={{ fontWeight: 200, color: "#010101", letterSpacing: "-0.01em" }}
+              >
+                Share Your Lab Experience
+              </h2>
+              <p className="text-sm" style={{ color: "#7F7F7D", lineHeight: 1.6, maxWidth: "420px" }}>
+                Ordered from Nexphoria? Submit your research review. All submissions undergo compliance
+                screening and are published with your order verified.
+              </p>
+            </div>
+            <Link
+              href="/reviews/submit"
+              className="shrink-0 inline-block px-8 py-3.5 text-sm font-medium rounded-lg transition-opacity hover:opacity-80 whitespace-nowrap"
+              style={{ backgroundColor: "#010101", color: "#FFFFFF" }}
+            >
+              Submit a Review &rarr;
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* RUO Disclaimer strip */}
       <section className="px-6 md:px-12 pb-16">
         <div className="max-w-5xl mx-auto">
