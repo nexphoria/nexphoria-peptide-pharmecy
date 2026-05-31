@@ -87,12 +87,14 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   ],
   "mots-c": [
     "mots-c-mitochondria-derived-peptide-metabolic-research",
+    "mitophagy-research-ss31-nad-plus-pink1-parkin-pathway",
     "adiponectin-leptin-metabolic-hormone-endpoints-peptide-research",
     "peptide-research-liver-health-nash-hepatic-steatosis-glp1-data",
   ],
 
   // Longevity
   "nad-plus": [
+    "mitophagy-research-ss31-nad-plus-pink1-parkin-pathway",
     "nad-precursors-nmn-nr-vs-direct-nad-injection-research",
     "nad-plus-research-protocols-dosing-routes-study-design",
     "aging-biomarkers-telomere-epigenetic-clocks-nad-longevity-research",
@@ -104,6 +106,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   ],
   "ss-31": [
     "ss-31-elamipretide-mitochondria-targeted-peptide-research",
+    "mitophagy-research-ss31-nad-plus-pink1-parkin-pathway",
     "neuroinflammation-research-microglia-nlrp3-peptide-interventions",
     "peptide-cardiac-protection-research-bpc157-tb500-glp1",
   ],
