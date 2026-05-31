@@ -138,6 +138,7 @@ import { article as a134 } from './articles/peptide-research-respiratory-health-
 import { article as a135 } from './articles/peptide-research-reproductive-fertility-kisspeptin-bpc157-gonadal-axis';
 import { article as a136 } from './articles/bpc-157-joint-tendon-cartilage-repair-musculoskeletal-research';
 import { article as a137 } from './articles/peptide-research-neuroprotection-bdnf-gdnf-neurotrophic-signaling';
+import { article as a138 } from './articles/peptide-research-autoimmune-inflammatory-conditions-kpv-thymosin-ll37-bpc157';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -232,6 +233,7 @@ export const articles: BlogArticle[] = [
   a135,
   a136,
   a137,
+  a138,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

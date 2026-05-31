@@ -146,20 +146,20 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   ],
   "kpv": [
     "kpv-immunomodulatory-tripeptide-research-guide",
+    "peptide-research-autoimmune-inflammatory-conditions-kpv-thymosin-ll37-bpc157",
     "peptide-research-pain-inflammation-bpc157-kpv-opioid-nociception",
-    "peptide-research-immune-senescence-inflammaging-nad-thymosin-alpha1",
   ],
 
   // Immunology
   "thymosin-alpha-1": [
     "thymosin-alpha-1-immune-peptide-research-guide",
-    "peptide-research-immune-senescence-inflammaging-nad-thymosin-alpha1",
+    "peptide-research-autoimmune-inflammatory-conditions-kpv-thymosin-ll37-bpc157",
     "klw-stack-kpv-ll37-thymosin-alpha1-triple-immune-modulation-research-guide",
   ],
   "ll-37": [
+    "peptide-research-autoimmune-inflammatory-conditions-kpv-thymosin-ll37-bpc157",
     "ll-37-antimicrobial-wound-healing-protocols",
     "klw-stack-kpv-ll37-thymosin-alpha1-triple-immune-modulation-research-guide",
-    "ll-37-human-host-defense-peptide-research-guide",
   ],
 
   // Reproductive / Hormonal
