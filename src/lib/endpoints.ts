@@ -16,3 +16,4 @@ export const CHECKOUT_URL = `${WORKER_BASE}/checkout`;
 export const CRYPTO_ORDER_URL = `${WORKER_BASE}/crypto-order`;
 export const CONTACT_URL = `${WORKER_BASE}/contact`;
 export const WAITLIST_URL = `${WORKER_BASE}/waitlist`;
+export const RESTOCK_NOTIFY_URL = `${WORKER_BASE}/restock-notify`;

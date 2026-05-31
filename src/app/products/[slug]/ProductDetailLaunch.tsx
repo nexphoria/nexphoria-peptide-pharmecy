@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -24,8 +24,10 @@ const COA_AVAILABLE_SLUGS = new Set([
 ]);
 
 import type { Product, ProductDosage } from "@/lib/products";
+import { buildItem, trackViewItem } from "@/lib/analytics";
 import { products } from "@/lib/products";
 import BuyBox from "@/components/product/BuyBox";
+import RestockNotifier from "@/components/RestockNotifier";
 import StickyAddToOrderBar from "@/components/product/StickyAddToOrderBar";
 import RecentlyViewedBar from "@/components/product/RecentlyViewedBar";
 import CompleteYourProtocol from "@/components/product/CompleteYourProtocol";
@@ -178,6 +180,16 @@ export default function ProductDetailLaunch({ product, related }: Props) {
     product.dosages?.[0] || undefined
   );
   const buyBoxRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const price = product.dosages?.[0]?.price ?? product.price;
+    trackViewItem(buildItem({
+      slug: product.slug,
+      name: product.name,
+      category: product.category,
+      price,
+    }));
+  }, [product.slug]); // eslint-disable-line react-hooks/exhaustive-deps
   const hasPhoto = hasProductPhoto(product.slug);
   const coa = getProductCOA(product.slug, product.purity);
 
@@ -273,12 +285,20 @@ export default function ProductDetailLaunch({ product, related }: Props) {
               </p>
 
               {/* Buy box (price + toggle + buttons) */}
-              <BuyBox
-                product={product}
-                selectedFormat={selectedFormat}
-                onFormatChange={setSelectedFormat}
-                onDosageChange={setSelectedDosage}
-              />
+              {product.comingSoon ? (
+                <RestockNotifier
+                  productSlug={product.slug}
+                  productName={product.name}
+                  block
+                />
+              ) : (
+                <BuyBox
+                  product={product}
+                  selectedFormat={selectedFormat}
+                  onFormatChange={setSelectedFormat}
+                  onDosageChange={setSelectedDosage}
+                />
+              )}
 
 
               {/* Research Disclaimer */}

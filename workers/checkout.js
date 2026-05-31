@@ -286,6 +286,101 @@ async function handleCryptoOrder(request, env) {
   });
 }
 
+// ---------------------------------------------------------------------------
+// Restock reminder — sign up to be notified when a product is back in stock.
+// POST /restock-notify  { email, productSlug, productName }
+// ---------------------------------------------------------------------------
+async function handleRestockNotify(request, env) {
+  const body = await request.json();
+  const email = (body?.email || '').toString().trim().toLowerCase();
+  const productSlug = (body?.productSlug || '').toString().trim();
+  const productName = (body?.productName || '').toString().trim();
+
+  if (!email || !EMAIL_RE.test(email)) return json({ error: 'invalid_email' }, 400);
+  if (!productSlug) return json({ error: 'missing_product_slug' }, 400);
+
+  const entry = {
+    email,
+    productSlug,
+    productName: productName || productSlug,
+    subscribedAt: new Date().toISOString(),
+  };
+
+  if (env.SUBSCRIBERS) {
+    try {
+      const key = `restock:${productSlug}:${email}`;
+      const existing = await env.SUBSCRIBERS.get(key);
+      if (!existing) {
+        await env.SUBSCRIBERS.put(key, JSON.stringify(entry), {
+          expirationTtl: 60 * 60 * 24 * 180,
+        });
+        const productIndexKey = `index:restock:${productSlug}`;
+        const productIndex = JSON.parse((await env.SUBSCRIBERS.get(productIndexKey)) || '[]');
+        productIndex.push({ email, subscribedAt: entry.subscribedAt });
+        await env.SUBSCRIBERS.put(productIndexKey, JSON.stringify(productIndex));
+        const globalIndexKey = 'index:restock_all';
+        const globalIndex = JSON.parse((await env.SUBSCRIBERS.get(globalIndexKey)) || '[]');
+        globalIndex.push({ email, productSlug, subscribedAt: entry.subscribedAt });
+        await env.SUBSCRIBERS.put(globalIndexKey, JSON.stringify(globalIndex));
+      }
+    } catch {
+      // KV failure must not block the user
+    }
+  }
+
+  await forwardWebhook(env.RESTOCK_WEBHOOK_URL, { type: 'restock_signup', ...entry });
+  return json({ success: true }, 201);
+}
+
+// ---------------------------------------------------------------------------
+// Restock trigger — admin endpoint to fire notifications for a product.
+// POST /restock-trigger  { productSlug, productName, secret }
+// Retrieves all subscriber emails, forwards to RESTOCK_WEBHOOK_URL for
+// downstream email delivery (n8n / Make.com).
+// ---------------------------------------------------------------------------
+async function handleRestockTrigger(request, env) {
+  const body = await request.json();
+  const secret = (body?.secret || '').toString().trim();
+  const productSlug = (body?.productSlug || '').toString().trim();
+  const productName = (body?.productName || productSlug).toString().trim();
+
+  if (!env.RESTOCK_ADMIN_SECRET || secret !== env.RESTOCK_ADMIN_SECRET) {
+    return json({ error: 'unauthorized' }, 401);
+  }
+  if (!productSlug) return json({ error: 'missing_product_slug' }, 400);
+
+  let emails = [];
+
+  if (env.SUBSCRIBERS) {
+    try {
+      const productIndexKey = `index:restock:${productSlug}`;
+      const productIndex = JSON.parse((await env.SUBSCRIBERS.get(productIndexKey)) || '[]');
+      emails = productIndex.map((e) => e.email);
+      if (emails.length > 0) {
+        // Clear per-product index (one-shot notify) so users can re-subscribe
+        await env.SUBSCRIBERS.put(productIndexKey, JSON.stringify([]));
+        await Promise.all(
+          emails.map((email) => env.SUBSCRIBERS.delete(`restock:${productSlug}:${email}`))
+        );
+      }
+    } catch {
+      // Proceed even on partial KV failure
+    }
+  }
+
+  const payload = {
+    type: 'restock_trigger',
+    productSlug,
+    productName,
+    emails,
+    count: emails.length,
+    triggeredAt: new Date().toISOString(),
+  };
+
+  await forwardWebhook(env.RESTOCK_WEBHOOK_URL, payload);
+  return json({ success: true, count: emails.length, emails }, 200);
+}
+
 async function handleSupport(request, env) {
   const body = await request.json();
   const { name, email, question, online, submittedAt } = body || {};
@@ -479,6 +574,8 @@ export default {
       if (path.endsWith('/wholesale')) return await handleWholesale(request, env);
       if (path.endsWith('/support')) return await handleSupport(request, env);
       if (path.endsWith('/crypto-order')) return await handleCryptoOrder(request, env);
+      if (path.endsWith('/restock-notify')) return await handleRestockNotify(request, env);
+      if (path.endsWith('/restock-trigger')) return await handleRestockTrigger(request, env);
       if (path.endsWith('/webhook')) return await handleStripeWebhook(request, env);
       // Default (root or /checkout): Stripe checkout session.
       return await handleCheckout(request, env);
