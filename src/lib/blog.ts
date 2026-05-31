@@ -133,6 +133,7 @@ import { article as a129 } from './articles/peptide-research-metabolic-syndrome-
 import { article as a130 } from './articles/peptide-research-cardiovascular-fibrosis-tgfbeta-bpc157-ghk-cu-myofibroblast';
 import { article as a131 } from './articles/peptide-research-neuroprotection-bpc157-ss31-nad-semax';
 import { article as a132 } from './articles/peptide-research-hair-follicle-ghk-cu-bpc157-wnt-signaling';
+import { article as a133 } from './articles/bpc-157-gut-brain-axis-vagus-nerve-enteric-nervous-system';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -222,6 +223,7 @@ export const articles: BlogArticle[] = [
   a130,
   a131,
   a132,
+  a133,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
