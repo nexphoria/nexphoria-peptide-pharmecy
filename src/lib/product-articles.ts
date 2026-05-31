@@ -9,7 +9,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "bpc-157": [
     "bpc-157-mechanism-deep-dive-no-vegf-fak-signaling",
     "bpc-157-gut-health-research-gi-protection-leaky-gut-intestinal-repair",
-    "peptide-research-pain-inflammation-bpc157-kpv-opioid-nociception",
+    "peptide-biomarkers-monitoring-research-protocols-what-to-track-when",
   ],
   "tb-500": [
     "tb-500-mechanism-deep-dive-g-actin-sequestration-thymosin-beta-4-biology",
@@ -95,10 +95,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // Longevity
   "nad-plus": [
-    "mitophagy-research-ss31-nad-plus-pink1-parkin-pathway",
-    "nad-precursors-nmn-nr-vs-direct-nad-injection-research",
     "nad-plus-research-protocols-dosing-routes-study-design",
-    "peptide-research-immune-senescence-inflammaging-nad-thymosin-alpha1",
+    "nad-precursors-nmn-nr-vs-direct-nad-injection-research",
+    "peptide-biomarkers-monitoring-research-protocols-what-to-track-when",
   ],
   "epitalon": [
     "peptide-research-sleep-circadian-rhythms-dsip-mk677-epitalon",
