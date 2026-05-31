@@ -127,6 +127,7 @@ import { article as a123 } from './articles/nexphoria-vs-core-peptides-vendor-co
 import { article as a124 } from './articles/nexphoria-vs-peptide-sciences-vendor-comparison';
 import { article as a125 } from './articles/nexphoria-vs-limitless-life-vendor-comparison';
 import { article as a126 } from './articles/peptide-research-weight-loss-metabolic-optimization-protocol';
+import { article as a127 } from './articles/sleep-peptides-dsip-gh-axis-circadian-biology-research';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -210,6 +211,7 @@ export const articles: BlogArticle[] = [
   a124,
   a125,
   a126,
+  a127,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

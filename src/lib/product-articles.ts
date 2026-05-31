@@ -100,9 +100,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "peptide-biomarkers-monitoring-research-protocols-what-to-track-when",
   ],
   "epitalon": [
+    "sleep-peptides-dsip-gh-axis-circadian-biology-research",
     "peptide-research-sleep-circadian-rhythms-dsip-mk677-epitalon",
     "epitalon-pineal-peptide-longevity-research-review",
-    "aging-biomarkers-telomere-epigenetic-clocks-nad-longevity-research",
   ],
   "ss-31": [
     "ss-31-elamipretide-mitochondria-targeted-peptide-research",
@@ -122,9 +122,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "cerebrolysin-neurotrophic-peptide-research-review",
   ],
   "dsip": [
+    "sleep-peptides-dsip-gh-axis-circadian-biology-research",
     "peptide-research-sleep-circadian-rhythms-dsip-mk677-epitalon",
     "dsip-delta-sleep-inducing-peptide-sleep-research-review",
-    "selank-semax-nootropic-peptide-research-overview",
   ],
   "oxytocin": [
     "oxytocin-research-neuropeptide-guide",
