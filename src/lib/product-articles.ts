@@ -87,9 +87,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   ],
   "mots-c": [
     "mots-c-mitochondria-derived-peptide-metabolic-research",
+    "humanin-shlp2-mitochondrial-derived-peptides-mots-c",
     "mitophagy-research-ss31-nad-plus-pink1-parkin-pathway",
-    "adiponectin-leptin-metabolic-hormone-endpoints-peptide-research",
-    "peptide-research-liver-health-nash-hepatic-steatosis-glp1-data",
+    "peptide-stacking-longevity-nad-epitalon-ss31-ghk-cu",
   ],
 
   // Longevity
