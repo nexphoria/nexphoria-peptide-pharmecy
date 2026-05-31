@@ -276,6 +276,7 @@ function FooterSection({ title, links }: { title: string; links: { label: string
 export function Footer() {
   return (
     <footer style={{ backgroundColor: "#1A1A18" }}>
+      <div className="footer-gold-top" />
       <div className="container-nex pt-16 pb-10">
 
         {/* Email capture row */}

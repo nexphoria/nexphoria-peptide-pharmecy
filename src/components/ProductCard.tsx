@@ -52,25 +52,17 @@ export default function ProductCard({
   return (
     <div className={`group relative h-full flex flex-col ${className}`}>
       <div
-        className="h-full bg-white overflow-hidden flex flex-col transition-all duration-500"
+        className="product-card-hover h-full bg-white overflow-hidden flex flex-col"
         style={{
           border: "1px solid #E5E5E5",
           borderRadius: "8px",
-        }}
-        onMouseEnter={(e) => {
-          (e.currentTarget as HTMLDivElement).style.transform = "scale(1.02)";
-          (e.currentTarget as HTMLDivElement).style.boxShadow = "0 8px 32px rgba(0,0,0,0.07)";
-        }}
-        onMouseLeave={(e) => {
-          (e.currentTarget as HTMLDivElement).style.transform = "scale(1)";
-          (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
         }}
       >
         {/* Clickable area: image + text */}
         <Link href={`/products/${product.slug}`} className="flex flex-col flex-1 min-h-0">
           {/* Product Image */}
           <div
-            className="w-full h-52 overflow-hidden relative flex-shrink-0 flex items-center justify-center"
+            className="product-card-image w-full h-52 overflow-hidden relative flex-shrink-0 flex items-center justify-center"
             style={{ backgroundColor: "#F7F7F7" }}
           >
             {hasProductPhoto(product.slug) ? (

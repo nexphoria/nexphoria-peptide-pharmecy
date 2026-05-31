@@ -278,7 +278,7 @@ export default function HomePage() {
             <h1
               className="hero-text-animate"
               style={{
-                fontSize: "clamp(4.5rem, 7.25vw, 8.5rem)",
+                fontSize: "clamp(4.5rem, 7.5vw, 8.5rem)",
                 lineHeight: 0.88,
                 letterSpacing: "-0.04em",
                 marginBottom: "2.5rem",
@@ -367,7 +367,7 @@ export default function HomePage() {
             </div>
 
             <div className="hero-cta-animate flex flex-col gap-3">
-              <Link href="/products" className="btn-hero-white">
+              <Link href="/products" className="btn-hero-white cta-pulse">
                 Discover the Collection
                 <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
                   <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />

@@ -655,3 +655,655 @@
   background-color: #1A1A1A;
   color: #F9F9F9;
 }
+
+/* ─── SWEEP 1: Product Page Hero Enhancements ─── */
+.product-hero-image {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.product-hero-container {
+  position: sticky;
+  top: 120px;
+  align-self: flex-start;
+}
+
+@keyframes productFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product-detail-fade {
+  animation: productFadeIn 0.6s ease-out both;
+}
+
+.product-detail-fade-delay {
+  animation: productFadeIn 0.6s ease-out 0.15s both;
+}
+
+/* ─── SWEEP 2: Cart Drawer Enhancements ─── */
+.cart-drawer-overlay {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* cart-backdrop: refined overlay with design-system dark + blur */
+.cart-backdrop {
+  background: rgba(26, 26, 24, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.cart-item-thumbnail {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cart-gold-accent {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #C4A265, transparent);
+}
+
+/* input-luxury: luxury-grade form inputs */
+.input-luxury {
+  width: 100%;
+  padding: 16px 20px;
+  font-size: 15px;
+  border: 1px solid var(--color-card-border);
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  color: var(--color-text-primary);
+  transition: border-color 300ms ease, box-shadow 300ms ease;
+  font-family: var(--font-sans);
+}
+.input-luxury:focus {
+  outline: none;
+  border-color: #C4A265;
+  box-shadow: 0 0 0 3px rgba(196, 162, 101, 0.15);
+}
+.input-luxury::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+/* ─── SWEEP 6: Product Grid Hover Effects ─── */
+.product-card-hover {
+  transition: all 300ms cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+}
+
+.product-card-hover:hover {
+  transform: scale(1.02) translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.product-card-hover .product-card-image {
+  transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.product-card-hover:hover .product-card-image {
+  transform: scale(1.05);
+}
+
+.product-card-quick-view {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 250ms ease;
+  pointer-events: none;
+  background: rgba(26, 26, 24, 0.9);
+  color: #F9F9F9;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  backdrop-filter: blur(4px);
+  z-index: 10;
+}
+
+.product-card-hover:hover .product-card-quick-view {
+  opacity: 1;
+}
+
+/* ─── SWEEP 7: Mobile Nav Full-Screen Overlay ─── */
+@keyframes mobileNavSlideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes mobileNavItemStagger {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: #1A1A18;
+  z-index: 100;
+  animation: mobileNavSlideIn 300ms ease-out both;
+}
+
+.mobile-nav-item {
+  animation: mobileNavItemStagger 400ms ease-out both;
+}
+
+.mobile-nav-item:nth-child(1) { animation-delay: 0.05s; }
+.mobile-nav-item:nth-child(2) { animation-delay: 0.1s; }
+.mobile-nav-item:nth-child(3) { animation-delay: 0.15s; }
+.mobile-nav-item:nth-child(4) { animation-delay: 0.2s; }
+.mobile-nav-item:nth-child(5) { animation-delay: 0.25s; }
+.mobile-nav-item:nth-child(6) { animation-delay: 0.3s; }
+
+/* ─── SWEEP 13: Loading States & Skeleton Screens ─── */
+@keyframes skeletonPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #F0F0F0 25%, #E5E5E5 50%, #F0F0F0 75%);
+  background-size: 200% 100%;
+  animation: skeletonPulse 2s ease-in-out infinite;
+  border-radius: 4px;
+}
+
+@keyframes pageTransitionFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.page-transition {
+  animation: pageTransitionFade 200ms ease-out both;
+}
+
+@keyframes goldSpinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.gold-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #E5E5E5;
+  border-top-color: #C4A265;
+  border-radius: 50%;
+  animation: goldSpinner 0.6s linear infinite;
+}
+
+/* ─── SWEEP 14: Micro-interactions ─── */
+.btn-press-effect:active {
+  transform: scale(0.98);
+}
+
+.card-elevation {
+  transition: box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1), transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-elevation:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.link-underline-slide {
+  position: relative;
+}
+
+.link-underline-slide::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #C4A265;
+  transition: width 300ms ease-out;
+}
+
+.link-underline-slide:hover::after {
+  width: 100%;
+}
+
+.scroll-fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── SWEEP 15: Product Image Gallery ─── */
+.image-gallery-thumbnails {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.image-gallery-thumbnails::-webkit-scrollbar {
+  display: none;
+}
+
+.image-gallery-thumb {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 200ms ease;
+  opacity: 0.6;
+}
+
+.image-gallery-thumb.active {
+  border-color: #C4A265;
+  opacity: 1;
+}
+
+.image-gallery-thumb:hover {
+  opacity: 1;
+}
+
+.image-zoom-container {
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.image-zoom-container img {
+  transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.image-zoom-container:hover img {
+  transform: scale(1.15);
+}
+
+@keyframes imageCrossfade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.image-crossfade {
+  animation: imageCrossfade 300ms ease-out both;
+}
+
+/* ─── SWEEP 16: Dosage Selector Radio Pills ─── */
+.dosage-selector-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dosage-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border: 1px solid #E5E5E5;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 250ms ease;
+  background-color: #FFFFFF;
+  min-width: 140px;
+}
+
+.dosage-pill:hover {
+  border-color: #C4A265;
+  background-color: rgba(196, 162, 101, 0.03);
+}
+
+.dosage-pill.selected {
+  border-color: #C4A265;
+  border-width: 2px;
+  background-color: rgba(196, 162, 101, 0.06);
+}
+
+.dosage-pill-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1A1A1A;
+}
+
+.dosage-pill-price {
+  font-size: 12px;
+  font-weight: 600;
+  color: #C4A265;
+  margin-left: 12px;
+}
+
+/* ─── SWEEP 17: Trust Signal Badges ─── */
+.trust-badges-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #666666;
+  font-weight: 500;
+}
+
+.trust-badge svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 1.5;
+  color: #C4A265;
+}
+
+/* ─── SWEEP 18: Announcement Bar Animation ─── */
+@keyframes announcementSlideUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.announcement-message {
+  animation: announcementSlideUp 400ms ease-out both;
+}
+
+.announcement-dismiss {
+  cursor: pointer;
+  transition: opacity 200ms ease;
+}
+
+.announcement-dismiss:hover {
+  opacity: 0.7;
+}
+
+/* ─── SWEEP 19: Search Modal (Cmd+K) ─── */
+@keyframes searchModalReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.search-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 200;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 15vh;
+}
+
+.search-modal-content {
+  background-color: #F9F9F9;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 640px;
+  max-height: 70vh;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  animation: searchModalReveal 250ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.search-input-wrapper {
+  border-bottom: 1px solid #E5E5E5;
+  padding: 20px 24px;
+}
+
+.search-input-large {
+  width: 100%;
+  font-size: 18px;
+  border: none;
+  background: transparent;
+  color: #1A1A1A;
+  outline: none;
+}
+
+.search-input-large::placeholder {
+  color: #999;
+}
+
+.search-results {
+  max-height: 50vh;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.search-result-item:hover,
+.search-result-item.selected {
+  background-color: rgba(196, 162, 101, 0.08);
+}
+
+.search-kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid #D5D5D5;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  color: #666;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* ─── SWEEP 20: Standardized Spacing & Rhythm ─── */
+.section-padding-desktop {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+@media (min-width: 1024px) {
+  .section-padding-desktop {
+    padding-top: 160px;
+    padding-bottom: 160px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-padding-desktop {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+.card-padding-consistent {
+  padding: 32px;
+}
+
+@media (max-width: 767px) {
+  .card-padding-consistent {
+    padding: 24px;
+  }
+}
+
+.grid-gap-consistent {
+  gap: 24px;
+}
+
+.max-width-content {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.max-width-full-bleed {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ─── VISUAL SWEEPS: Micro-interactions, hover effects, luxury inputs ─── */
+
+/* Sweep 14: Button active press micro-interaction */
+.btn-primary:active, .btn-outline:active, .btn-acid:active, .btn-outline-gold:active {
+  transform: scale(0.97);
+}
+
+/* Sweep 6: Product card hover */
+.product-card-hover {
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 300ms ease;
+}
+.product-card-hover:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0,0,0,0.02);
+}
+.product-card-hover:hover .product-card-image {
+  transform: scale(1.05);
+}
+.product-card-image {
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Sweep 13: Skeleton loading shimmer */
+.skeleton {
+  background: linear-gradient(90deg, #F0F0F0 25%, #E8E8E8 50%, #F0F0F0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Sweep 19: Search modal overlay */
+.search-overlay {
+  background: rgba(26, 26, 24, 0.85);
+  backdrop-filter: blur(20px);
+}
+
+/* Sweep 14: Scroll reveal */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-up.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Sweep 2: Cart drawer backdrop */
+.cart-backdrop {
+  background: rgba(26, 26, 24, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+/* Sweep 18: Announcement bar dismiss */
+.announcement-slide-up {
+  animation: slideUp 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes slideUp {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-100%); opacity: 0; }
+}
+
+/* Sweep 20: Consistent section spacing */
+.section-spacing {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+@media (min-width: 768px) {
+  .section-spacing {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+}
+
+/* Sweep 3: Form inputs luxury feel */
+.input-luxury {
+  width: 100%;
+  padding: 16px 20px;
+  font-size: 15px;
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  background: #FFFFFF;
+  color: #1A1A1A;
+  transition: border-color 300ms ease, box-shadow 300ms ease;
+}
+.input-luxury:focus {
+  outline: none;
+  border-color: #C4A265;
+  box-shadow: 0 0 0 3px rgba(196, 162, 101, 0.1);
+}
+
+/* Sweep 5: Hero CTA pulse */
+@keyframes ctaPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(26, 26, 26, 0.15); }
+  50% { box-shadow: 0 0 0 8px rgba(26, 26, 26, 0); }
+}
+.cta-pulse:hover {
+  animation: ctaPulse 2s ease-in-out infinite;
+  transform: scale(1.03);
+}
+
+/* Sweep 10: Footer gold gradient top line */
+.footer-gold-top {
+  background: linear-gradient(90deg, transparent 0%, #C4A265 30%, #C4A265 70%, transparent 100%);
+  height: 1px;
+}
