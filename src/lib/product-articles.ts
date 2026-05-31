@@ -9,7 +9,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "bpc-157": [
     "peptide-research-neuroprotection-bpc157-ss31-nad-semax",
     "bpc-157-mechanism-deep-dive-no-vegf-fak-signaling",
-    "bpc-157-gut-health-research-gi-protection-leaky-gut-intestinal-repair",
+    "peptide-research-hair-follicle-ghk-cu-bpc157-wnt-signaling",
   ],
   "tb-500": [
     "tb-500-mechanism-deep-dive-g-actin-sequestration-thymosin-beta-4-biology",
@@ -22,7 +22,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "myostatin-inhibition-follistatin-actriiib-protocols",
   ],
   "ghk-cu": [
-    "peptide-research-cardiovascular-fibrosis-tgfbeta-bpc157-ghk-cu-myofibroblast",
+    "peptide-research-hair-follicle-ghk-cu-bpc157-wnt-signaling",
     "collagen-synthesis-research-ghk-cu-tgf-beta-pathway-deep-dive",
     "ghk-cu-wound-healing-research-protocols-study-design",
   ],
