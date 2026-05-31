@@ -7,9 +7,9 @@
 export const PRODUCT_ARTICLES: Record<string, string[]> = {
   // Repair / Recovery
   "bpc-157": [
+    "bpc-157-joint-tendon-cartilage-repair-musculoskeletal-research",
     "bpc-157-gut-brain-axis-vagus-nerve-enteric-nervous-system",
     "bpc-157-mechanism-deep-dive-no-vegf-fak-signaling",
-    "peptide-research-neuroprotection-bpc157-ss31-nad-semax",
   ],
   "tb-500": [
     "tb-500-mechanism-deep-dive-g-actin-sequestration-thymosin-beta-4-biology",
