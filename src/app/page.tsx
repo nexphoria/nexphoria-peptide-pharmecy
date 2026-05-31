@@ -265,7 +265,7 @@ export default function HomePage() {
               top: "50%",
               transform: "translateY(-50%)",
               zIndex: 10,
-              maxWidth: "480px",
+              maxWidth: "520px",
             }}
           >
             <p
@@ -281,7 +281,7 @@ export default function HomePage() {
                 fontSize: "clamp(4.5rem, 7.25vw, 8.5rem)",
                 lineHeight: 0.88,
                 letterSpacing: "-0.04em",
-                marginBottom: "2.75rem",
+                marginBottom: "2.5rem",
               }}
             >
               <span
@@ -293,7 +293,7 @@ export default function HomePage() {
                   color: "#F5F5F0",
                 }}
               >
-                Precision,
+                Compounds
               </span>
               <span
                 style={{
@@ -304,7 +304,18 @@ export default function HomePage() {
                   letterSpacing: "-0.045em",
                 }}
               >
-                delivered.
+                built for
+              </span>
+              <span
+                style={{
+                  display: "block",
+                  fontFamily: "var(--font-display)",
+                  fontStyle: "italic",
+                  fontWeight: 300,
+                  color: "rgba(245,245,240,0.45)",
+                }}
+              >
+                serious researchers.
               </span>
             </h1>
 
@@ -314,13 +325,46 @@ export default function HomePage() {
                 fontSize: "0.9375rem",
                 color: "rgba(245,245,240,0.52)",
                 lineHeight: 1.75,
-                maxWidth: "310px",
-                marginBottom: "2.75rem",
+                maxWidth: "340px",
+                marginBottom: "2.5rem",
               }}
             >
-              Pharmaceutical-grade compounds. 99%+ purity.
-              Cold-chain shipped with Certificate of Analysis.
+              Pharmaceutical-grade synthesis. ≥99% purity verified by independent HPLC-MS.
+              Cold-chain shipped with lot-specific Certificate of Analysis.
             </p>
+
+            {/* Inline featured product mini-cards */}
+            <div
+              className="hero-sub-animate"
+              style={{
+                display: "flex",
+                gap: "0.625rem",
+                marginBottom: "2.5rem",
+                flexWrap: "wrap",
+              }}
+            >
+              {[
+                { slug: "bpc-157", name: "BPC-157", cat: "Recovery", price: 50 },
+                { slug: "tirzepatide", name: "Tirzepatide", cat: "Weight Mgmt", price: 120 },
+                { slug: "ghk-cu", name: "GHK-Cu", cat: "Anti-Aging", price: 66 },
+              ].map((item) => (
+                <Link
+                  key={item.slug}
+                  href={`/products/${item.slug}`}
+                  className="hero-product-card"
+                >
+                  <span style={{ fontSize: "0.5rem", fontWeight: 500, letterSpacing: "0.18em", textTransform: "uppercase", color: "#B8A44C", marginBottom: "0.25rem", display: "block" }}>
+                    {item.cat}
+                  </span>
+                  <span style={{ fontSize: "0.875rem", fontWeight: 400, color: "#F5F5F0", lineHeight: 1.2, marginBottom: "0.375rem", display: "block" }}>
+                    {item.name}
+                  </span>
+                  <span style={{ fontSize: "0.75rem", fontWeight: 500, color: "rgba(245,245,240,0.45)", display: "block" }}>
+                    from ${item.price}
+                  </span>
+                </Link>
+              ))}
+            </div>
 
             <div className="hero-cta-animate flex flex-col gap-3">
               <Link href="/products" className="btn-hero-white">

@@ -280,9 +280,20 @@ export default function ProductDetailLaunch({ product, related }: Props) {
               </h1>
 
               {/* Tagline */}
-              <p className="text-sm mb-5" style={{ color: "#666666", fontStyle: "italic", lineHeight: 1.6 }}>
+              <p className="text-sm mb-3" style={{ color: "#666666", fontStyle: "italic", lineHeight: 1.6 }}>
                 {product.tagline}
               </p>
+
+              {/* RUO pill — always visible */}
+              <div
+                className="mb-5 inline-flex items-center gap-1.5 px-2.5 py-1"
+                style={{ border: "1px solid rgba(184,164,76,0.3)", borderRadius: "999px", backgroundColor: "rgba(184,164,76,0.05)" }}
+              >
+                <FlaskConical className="w-3 h-3" style={{ color: "#7A6B2A", strokeWidth: 1.5 }} />
+                <span style={{ fontSize: "0.625rem", fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", color: "#7A6B2A" }}>
+                  For Research Use Only
+                </span>
+              </div>
 
               {/* Buy box (price + toggle + buttons) */}
               {product.comingSoon ? (
@@ -300,6 +311,20 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                 />
               )}
 
+
+              {/* For Research Use Only badge */}
+              <div
+                className="mt-4 mb-1 inline-flex items-center gap-2 px-3 py-1.5"
+                style={{ border: "1px solid rgba(184,164,76,0.35)", borderRadius: "999px", backgroundColor: "rgba(184,164,76,0.06)" }}
+              >
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2 10V5.5l4-4 4 4V10H8V7H4v3H2z" stroke="#7A6B2A" strokeWidth="1.1" strokeLinejoin="round"/>
+                  <rect x="4.5" y="7" width="3" height="3" rx="0.5" stroke="#7A6B2A" strokeWidth="0.9"/>
+                </svg>
+                <span style={{ fontSize: "0.6875rem", fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", color: "#7A6B2A" }}>
+                  For Research Use Only
+                </span>
+              </div>
 
               {/* Research Disclaimer */}
               <div
@@ -372,11 +397,56 @@ export default function ProductDetailLaunch({ product, related }: Props) {
               </p>
             </AccordionSection>
 
-            <AccordionSection title="How It Works">
-              <p className="text-sm leading-relaxed" style={{ color: "#555", lineHeight: 1.8 }}>
-                {product.mechanism}
-              </p>
+            <AccordionSection title="Mechanism of Action">
+              {product.mechanismOfAction && product.mechanismOfAction.length > 0 ? (
+                <div className="space-y-4">
+                  {product.mechanismOfAction.map((para, i) => (
+                    <p key={i} className="text-sm leading-relaxed" style={{ color: "#555", lineHeight: 1.8 }}>
+                      {para}
+                    </p>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-sm leading-relaxed" style={{ color: "#555", lineHeight: 1.8 }}>
+                  {product.mechanism}
+                </p>
+              )}
             </AccordionSection>
+
+            {product.whatToExpect && product.whatToExpect.length > 0 && (
+              <AccordionSection title="What to Expect">
+                <div className="space-y-0">
+                  {product.whatToExpect.map((item, i) => (
+                    <div
+                      key={i}
+                      className="flex gap-5 py-5"
+                      style={{ borderBottom: i < (product.whatToExpect?.length ?? 0) - 1 ? "1px solid #F0F0F0" : "none" }}
+                    >
+                      <div className="flex-shrink-0 flex flex-col items-center" style={{ paddingTop: "2px" }}>
+                        <div
+                          className="w-2.5 h-2.5 rounded-full flex-shrink-0"
+                          style={{ backgroundColor: "#B8A44C", boxShadow: "0 0 0 3px rgba(184,164,76,0.15)" }}
+                        />
+                        {i < (product.whatToExpect?.length ?? 0) - 1 && (
+                          <div className="w-px flex-1 mt-2" style={{ backgroundColor: "rgba(184,164,76,0.2)", minHeight: "24px" }} />
+                        )}
+                      </div>
+                      <div>
+                        <p
+                          className="text-[11px] uppercase font-medium mb-2"
+                          style={{ letterSpacing: "0.12em", color: "#7A6B2A" }}
+                        >
+                          {item.week}
+                        </p>
+                        <p className="text-sm leading-relaxed" style={{ color: "#555", lineHeight: 1.75 }}>
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </AccordionSection>
+            )}
 
             <AccordionSection title="Research Summary">
               <p className="text-sm leading-relaxed" style={{ color: "#555", lineHeight: 1.8 }}>
@@ -396,7 +466,7 @@ export default function ProductDetailLaunch({ product, related }: Props) {
 
             <AccordionSection title="Dosing Protocol">
               <p className="text-sm leading-relaxed mb-4" style={{ color: "#555", lineHeight: 1.8 }}>
-                {product.dosingProtocol}
+                {product.dosingRecommendations || product.dosingProtocol}
               </p>
               <div
                 className="p-4 text-sm leading-relaxed"
@@ -538,6 +608,11 @@ export default function ProductDetailLaunch({ product, related }: Props) {
             {/* FAQ */}
             <AccordionSection title="Frequently Asked Questions">
               <div>
+                {product.faq && product.faq.length > 0 && (
+                  product.faq.map((faq) => (
+                    <FaqItem key={faq.q} q={faq.q} a={faq.a} />
+                  ))
+                )}
                 {PRODUCT_FAQS.map((faq) => (
                   <FaqItem key={faq.q} q={faq.q} a={faq.a} />
                 ))}

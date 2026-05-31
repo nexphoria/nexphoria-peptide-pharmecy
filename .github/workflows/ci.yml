@@ -25,7 +25,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Type Check
         run: npx tsc --noEmit 2>/dev/null || echo "Type check skipped (no tsconfig or acceptable errors)"

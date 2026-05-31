@@ -330,6 +330,22 @@
   .hero-pill-float {
     animation: heroFadeSlideUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
+
+  .hero-product-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0.625rem 0.875rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(184,164,76,0.22);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: border-color 200ms, background 200ms;
+    min-width: 120px;
+  }
+  .hero-product-card:hover {
+    border-color: rgba(184,164,76,0.55);
+    background: rgba(255,255,255,0.07);
+  }
 }
 
 @keyframes heroImageReveal {
