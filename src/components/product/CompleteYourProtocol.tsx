@@ -37,8 +37,6 @@ export default function CompleteYourProtocol({ currentSlug }: Props) {
   };
 
   const combinedPrice = current.price + companion.price;
-  const stackDiscount = Math.round(combinedPrice * 0.05);
-  const stackPrice = combinedPrice - stackDiscount;
 
   return (
     <section className="py-16 border-t" style={{ borderColor: "#ECEAE4" }}>

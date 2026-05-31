@@ -44,6 +44,10 @@ export type Product = {
   comingSoon?: boolean;
   badge?: "NEW" | "POPULAR";
   researchApplications: string[];
+  mechanismOfAction?: string[];
+  whatToExpect?: { week: string; description: string }[];
+  dosingRecommendations?: string;
+  faq?: { q: string; a: string }[];
 };
 
 export const products: Product[] = [

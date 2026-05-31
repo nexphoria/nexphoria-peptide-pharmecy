@@ -70,9 +70,7 @@ export default function FrequentlyBoughtTogether({ currentSlug }: Props) {
   const totalPrice = selectedItems.reduce((sum, p) => sum + p.price, 0);
   const originalPrice = selectedItems.reduce((sum, p) => sum + p.price, 0);
   // Bundle discount: 5% for 2 items, 8% for 3 items
-  const discountPct = selectedItems.length >= 3 ? 0.08 : selectedItems.length === 2 ? 0.05 : 0;
-  const savings = Math.round(originalPrice * discountPct);
-  const finalPrice = originalPrice - savings;
+
 
   const handleToggle = (slug: string) => {
     // Always keep at least 2 items checked

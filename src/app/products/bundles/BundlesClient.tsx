@@ -120,8 +120,6 @@ function BundleCard({ bundle }: { bundle: (typeof BUNDLES)[number] }) {
   const bundleProducts = bundle.slugs.map(getProduct).filter(Boolean) as NonNullable<ReturnType<typeof getProduct>>[];
 
   const originalTotal = bundleProducts.reduce((sum, p) => sum + p.price, 0);
-  const savings = Math.round(originalTotal * bundle.discountPct / 100);
-  const bundlePrice = originalTotal - savings;
 
   const handleAddAll = () => {
     bundleProducts.forEach((p) => {
@@ -316,18 +314,11 @@ function BundleCard({ bundle }: { bundle: (typeof BUNDLES)[number] }) {
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <div className="flex items-baseline gap-2">
-                    <span className="text-2xl font-bold text-white">${bundlePrice}</span>
-                    <span className="text-sm text-[#666] line-through">${originalTotal}</span>
+                    <span className="text-2xl font-bold text-white">${originalTotal}</span>
                   </div>
-                  <p className="text-xs mt-0.5" style={{ color: "#4ade80" }}>
-                    Save ${savings} ({bundle.discountPct}% bundle discount)
+                  <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.4)" }}>
+                    {bundle.slugs.length} compounds · COA included
                   </p>
-                </div>
-                <div
-                  className="px-3 py-1.5 rounded-full text-xs font-semibold"
-                  style={{ background: "rgba(74, 222, 128, 0.1)", color: "#4ade80", border: "1px solid rgba(74,222,128,0.2)" }}
-                >
-                  {bundle.discountPct}% OFF
                 </div>
               </div>
 
@@ -339,15 +330,7 @@ function BundleCard({ bundle }: { bundle: (typeof BUNDLES)[number] }) {
                     <span className="text-[#888]">${p.price}</span>
                   </div>
                 ))}
-                <div
-                  className="flex justify-between text-xs pt-2 mt-1"
-                  style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
-                >
-                  <span className="text-[#999] font-medium">Bundle discount</span>
-                  <span className="font-semibold" style={{ color: "#4ade80" }}>
-                    −${savings}
-                  </span>
-                </div>
+
               </div>
 
               <button
@@ -363,7 +346,7 @@ function BundleCard({ bundle }: { bundle: (typeof BUNDLES)[number] }) {
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 16 16">
                       <path d="M3 8l3.5 3.5L13 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                     </svg>
-                    Added to Cart
+                    Added to Order
                   </>
                 ) : (
                   <>
@@ -372,7 +355,7 @@ function BundleCard({ bundle }: { bundle: (typeof BUNDLES)[number] }) {
                       <circle cx="7" cy="13" r="1" fill="currentColor" />
                       <circle cx="11" cy="13" r="1" fill="currentColor" />
                     </svg>
-                    Add {bundle.slugs.length} Items to Cart · ${bundlePrice}
+                    Add {bundle.slugs.length} Items to Order · ${originalTotal}
                   </>
                 )}
               </button>
@@ -431,8 +414,7 @@ export default function BundlesClient() {
             </h1>
             <p className="mt-3 text-[#888] text-sm max-w-2xl leading-relaxed">
               Protocol-matched compound pairs and stacks — designed around published research
-              synergies. Each bundle saves {BUNDLES[0].discountPct}% vs individual pricing and
-              ships cold-chain together.
+              synergies. Each bundle ships cold-chain together with full COA documentation.
             </p>
 
             {/* Stats */}
@@ -442,8 +424,8 @@ export default function BundlesClient() {
                 <p className="text-[11px] uppercase tracking-widest text-[#666]">Research stacks</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-white">5–8%</p>
-                <p className="text-[11px] uppercase tracking-widest text-[#666]">Bundle savings</p>
+                <p className="text-2xl font-bold text-white">≥99%</p>
+                <p className="text-[11px] uppercase tracking-widest text-[#666]">Purity verified</p>
               </div>
               <div>
                 <p className="text-2xl font-bold text-white">COA</p>
@@ -580,7 +562,7 @@ export default function BundlesClient() {
             "@type": "CollectionPage",
             name: "Compound Bundles — Nexphoria Research",
             description:
-              "Curated research peptide bundles with protocol-matched compound stacks and 5-8% bundle savings.",
+              "Curated research peptide bundles with protocol-matched compound stacks. Cold-chain shipping. COA included.",
             url: "https://nexphoria.com/products/bundles",
             breadcrumb: {
               "@type": "BreadcrumbList",
