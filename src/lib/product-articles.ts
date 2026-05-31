@@ -23,8 +23,8 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   ],
   "ghk-cu": [
     "collagen-synthesis-research-ghk-cu-tgf-beta-pathway-deep-dive",
+    "peptide-research-skin-health-ghk-cu-snap8-cosmetic-peptides-study-design",
     "ghk-cu-wound-healing-research-protocols-study-design",
-    "peptide-research-ocular-health-bpc157-ss31-ghk-cu-eye",
   ],
 
   // GH Axis
@@ -171,6 +171,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   // Cosmetic
   "snap-8": [
     "snap-8-anti-wrinkle-peptide-research-guide",
+    "peptide-research-skin-health-ghk-cu-snap8-cosmetic-peptides-study-design",
     "ghk-cu-copper-peptide-research-review",
   ],
 

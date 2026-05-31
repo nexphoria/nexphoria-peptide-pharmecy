@@ -119,6 +119,7 @@ import { article as a115 } from './articles/peptide-research-bone-health-bpc157-
 import { article as a116 } from './articles/peptide-research-sleep-circadian-rhythms-dsip-mk677-epitalon';
 import { article as a117 } from './articles/peptide-reconstitution-errors-root-causes-detection-prevention';
 import { article as a118 } from './articles/peptide-research-ocular-health-bpc157-ss31-ghk-cu-eye';
+import { article as a119 } from './articles/peptide-research-skin-health-ghk-cu-snap8-cosmetic-peptides-study-design';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -194,6 +195,7 @@ export const articles: BlogArticle[] = [
   a116,
   a117,
   a118,
+  a119,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
