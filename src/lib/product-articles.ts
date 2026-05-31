@@ -9,7 +9,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "bpc-157": [
     "bpc-157-mechanism-deep-dive-no-vegf-fak-signaling",
     "bpc-157-gut-health-research-gi-protection-leaky-gut-intestinal-repair",
-    "bpc-157-tb-500-recovery-stack-deep-dive",
+    "neuroinflammation-research-microglia-nlrp3-peptide-interventions",
   ],
   "tb-500": [
     "tb-500-mechanism-deep-dive-g-actin-sequestration-thymosin-beta-4-biology",
@@ -67,7 +67,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   // GLP-1 / Metabolic
   "semaglutide": [
     "semaglutide-dosing-timing-protocol-design-researchers-reference",
-    "glp1-agonists-neurodegeneration-parkinsons-alzheimers-tbi-research",
+    "neuroinflammation-research-microglia-nlrp3-peptide-interventions",
     "peptide-research-liver-health-nash-hepatic-steatosis-glp1-data",
   ],
   "tirzepatide": [
@@ -104,20 +104,20 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   ],
   "ss-31": [
     "ss-31-elamipretide-mitochondria-targeted-peptide-research",
-    "glutathione-peptides-oxidative-stress-research-overview",
+    "neuroinflammation-research-microglia-nlrp3-peptide-interventions",
     "peptide-cardiac-protection-research-bpc157-tb500-glp1",
   ],
 
   // Nootropics / Neuro
   "selank": [
     "selank-semax-nootropic-peptide-research-overview",
-    "peptide-synergy-stacking-science-of-combining-research-compounds",
+    "neuroinflammation-research-microglia-nlrp3-peptide-interventions",
     "adamax-dsip-selank-nad-nootropic-stack-protocol-deep-dive",
   ],
   "semax": [
     "selank-semax-nootropic-peptide-research-overview",
+    "neuroinflammation-research-microglia-nlrp3-peptide-interventions",
     "cerebrolysin-neurotrophic-peptide-research-review",
-    "oxytocin-research-neuropeptide-guide",
   ],
   "dsip": [
     "dsip-delta-sleep-inducing-peptide-sleep-research-review",
