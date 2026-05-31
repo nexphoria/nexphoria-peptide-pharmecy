@@ -1,0 +1,94 @@
+name: KV Monthly Restore Test
+
+on:
+  schedule:
+    # Runs on the 1st of every month at 03:00 UTC
+    - cron: '0 3 1 * *'
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: 'GitHub Actions run ID of the backup to test (default: latest)'
+        required: false
+
+concurrency:
+  group: kv-restore-test
+  cancel-in-progress: false
+
+jobs:
+  restore-test:
+    name: Validate KV Backup
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to commit restore-test-log.json back to repo
+      actions: read     # needed to list/download artifacts
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install jq + gh CLI
+        run: |
+          sudo apt-get install -y jq
+          # gh CLI is pre-installed on ubuntu-latest runners
+
+      - name: Find latest backup artifact
+        id: find-backup
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [[ -n "${{ github.event.inputs.run_id }}" ]]; then
+            RUN_ID="${{ github.event.inputs.run_id }}"
+          else
+            # Find the most recent successful kv-backup workflow run
+            RUN_ID=$(gh run list \
+              --workflow kv-backup.yml \
+              --status success \
+              --limit 1 \
+              --json databaseId \
+              --jq '.[0].databaseId')
+          fi
+          echo "Using backup from run: $RUN_ID"
+          echo "run_id=$RUN_ID" >> "$GITHUB_OUTPUT"
+
+      - name: Download backup artifact
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p backup-download
+          gh run download "${{ steps.find-backup.outputs.run_id }}" \
+            --dir backup-download \
+            --pattern "kv-backup-*"
+          # Flatten nested dirs from artifact download
+          find backup-download -name "kv-backup-*.json" -exec mv {} backup-download/ \; 2>/dev/null || true
+
+      - name: Run restore test
+        id: restore-test
+        run: |
+          chmod +x scripts/kv-restore-test.sh
+          BACKUP_FILE=$(find backup-download -name "kv-backup-*.json" | sort | tail -n 1)
+          echo "Testing backup: $BACKUP_FILE"
+          mkdir -p backups
+          bash scripts/kv-restore-test.sh \
+            --backup-file "$BACKUP_FILE" \
+            --log-file backups/restore-test-log.json && echo "result=pass" >> "$GITHUB_OUTPUT" || echo "result=fail" >> "$GITHUB_OUTPUT"
+
+      - name: Commit restore-test-log.json
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add backups/restore-test-log.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: monthly KV restore test — $(date -u +%Y-%m-%d) [${{ steps.restore-test.outputs.result }}]
+
+Co-Authored-By: Paperclip <noreply@paperclip.ing>"
+            git push
+          fi
+
+      - name: Fail job if restore test failed
+        if: steps.restore-test.outputs.result == 'fail'
+        run: |
+          echo "Restore test FAILED. Check backups/restore-test-log.json for details."
+          exit 1

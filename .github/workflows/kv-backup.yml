@@ -1,0 +1,58 @@
+name: KV Daily Backup
+
+on:
+  schedule:
+    # Runs daily at 02:00 UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    inputs:
+      retain_days:
+        description: 'Days to retain backup artifact'
+        required: false
+        default: '30'
+
+concurrency:
+  group: kv-backup
+  cancel-in-progress: false
+
+jobs:
+  backup:
+    name: Export Cloudflare KV
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install wrangler + jq
+        run: |
+          npm install -g wrangler
+          sudo apt-get install -y jq
+
+      - name: Export KV namespace
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          KV_NAMESPACE_ID: '67bb9d9a4fa440fe94b1adcfb977c16c'
+          OUTPUT_DIR: backup-output
+          RETAIN_DAYS: ${{ github.event.inputs.retain_days || '30' }}
+        run: |
+          chmod +x scripts/kv-backup.sh
+          bash scripts/kv-backup.sh --output-dir "$OUTPUT_DIR" --retain-days "$RETAIN_DAYS"
+
+      - name: Upload backup artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kv-backup-${{ github.run_id }}-${{ github.run_attempt }}
+          path: backup-output/
+          retention-days: ${{ github.event.inputs.retain_days || 30 }}
+          if-no-files-found: error
+
+      - name: Print backup summary
+        run: |
+          FILE=$(ls backup-output/kv-backup-*.json | head -n 1)
+          KEY_COUNT=$(jq '.key_count' "$FILE")
+          BACKUP_DATE=$(jq -r '.backup_date' "$FILE")
+          echo "Backup date:  $BACKUP_DATE"
+          echo "Keys backed up: $KEY_COUNT"
+          echo "Artifact retained for: ${{ github.event.inputs.retain_days || 30 }} days"

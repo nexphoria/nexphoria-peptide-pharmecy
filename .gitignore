@@ -64,3 +64,6 @@ brand-assets/Find Your Focus/*.psd
 
 # Root-level screenshots (testing)
 /*.png
+# KV backup data dumps (large, managed as GH artifacts — only the log is tracked)
+backups/kv/
+!backups/restore-test-log.json
