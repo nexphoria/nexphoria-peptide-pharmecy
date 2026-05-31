@@ -68,17 +68,17 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "semaglutide": [
     "semaglutide-dosing-timing-protocol-design-researchers-reference",
     "glp1-agonists-neurodegeneration-parkinsons-alzheimers-tbi-research",
-    "adiponectin-insulin-resistance-glp1-metabolic-peptide-endpoints",
+    "peptide-research-liver-health-nash-hepatic-steatosis-glp1-data",
   ],
   "tirzepatide": [
     "tirzepatide-research-dosing-guide-glp1-gip-dual-agonism-protocols",
     "retatrutide-vs-tirzepatide-triple-vs-dual-agonist-research-comparison",
-    "adiponectin-insulin-resistance-glp1-metabolic-peptide-endpoints",
+    "peptide-research-liver-health-nash-hepatic-steatosis-glp1-data",
   ],
   "retatrutide": [
     "retatrutide-triple-agonist-research-guide",
     "retatrutide-vs-tirzepatide-triple-vs-dual-agonist-research-comparison",
-    "adiponectin-insulin-resistance-glp1-metabolic-peptide-endpoints",
+    "peptide-research-liver-health-nash-hepatic-steatosis-glp1-data",
   ],
   "aod-9604": [
     "aod-9604-lipolytic-fragment-research-guide",
@@ -88,14 +88,14 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "mots-c": [
     "mots-c-mitochondria-derived-peptide-metabolic-research",
     "adiponectin-leptin-metabolic-hormone-endpoints-peptide-research",
-    "ss-31-elamipretide-mitochondria-targeted-peptide-research",
+    "peptide-research-liver-health-nash-hepatic-steatosis-glp1-data",
   ],
 
   // Longevity
   "nad-plus": [
     "nad-precursors-nmn-nr-vs-direct-nad-injection-research",
     "nad-plus-research-protocols-dosing-routes-study-design",
-    "peptide-research-anti-aging-longevity-biomarkers-study-design",
+    "peptide-research-liver-health-nash-hepatic-steatosis-glp1-data",
   ],
   "epitalon": [
     "epitalon-pineal-peptide-longevity-research-review",
