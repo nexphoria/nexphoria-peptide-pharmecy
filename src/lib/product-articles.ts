@@ -25,6 +25,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "collagen-synthesis-research-ghk-cu-tgf-beta-pathway-deep-dive",
     "peptide-research-skin-health-ghk-cu-snap8-cosmetic-peptides-study-design",
     "ghk-cu-wound-healing-research-protocols-study-design",
+    "peptide-research-immune-senescence-inflammaging-nad-thymosin-alpha1",
   ],
 
   // GH Axis
@@ -97,7 +98,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "mitophagy-research-ss31-nad-plus-pink1-parkin-pathway",
     "nad-precursors-nmn-nr-vs-direct-nad-injection-research",
     "nad-plus-research-protocols-dosing-routes-study-design",
-    "aging-biomarkers-telomere-epigenetic-clocks-nad-longevity-research",
+    "peptide-research-immune-senescence-inflammaging-nad-thymosin-alpha1",
   ],
   "epitalon": [
     "peptide-research-sleep-circadian-rhythms-dsip-mk677-epitalon",
@@ -107,7 +108,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "ss-31": [
     "ss-31-elamipretide-mitochondria-targeted-peptide-research",
     "mitophagy-research-ss31-nad-plus-pink1-parkin-pathway",
-    "peptide-research-ocular-health-bpc157-ss31-ghk-cu-eye",
+    "peptide-research-immune-senescence-inflammaging-nad-thymosin-alpha1",
   ],
 
   // Nootropics / Neuro
@@ -146,14 +147,14 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "kpv": [
     "kpv-immunomodulatory-tripeptide-research-guide",
     "peptide-research-pain-inflammation-bpc157-kpv-opioid-nociception",
-    "peptide-immunology-research-tlr-signaling-cytokine-assays-nfkb-endpoints",
+    "peptide-research-immune-senescence-inflammaging-nad-thymosin-alpha1",
   ],
 
   // Immunology
   "thymosin-alpha-1": [
     "thymosin-alpha-1-immune-peptide-research-guide",
+    "peptide-research-immune-senescence-inflammaging-nad-thymosin-alpha1",
     "klw-stack-kpv-ll37-thymosin-alpha1-triple-immune-modulation-research-guide",
-    "peptide-immunology-research-tlr-signaling-cytokine-assays-nfkb-endpoints",
   ],
   "ll-37": [
     "ll-37-antimicrobial-wound-healing-protocols",

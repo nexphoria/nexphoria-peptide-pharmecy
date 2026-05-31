@@ -117,6 +117,7 @@ import { article as a113 } from './articles/blood-brain-barrier-peptide-cns-deli
 import { article as a114 } from './articles/peptide-research-kidney-health-renoprotection-glp1-bpc157';
 import { article as a115 } from './articles/peptide-research-bone-health-bpc157-ghk-cu-ipamorelin-collagen';
 import { article as a116 } from './articles/peptide-research-sleep-circadian-rhythms-dsip-mk677-epitalon';
+import { article as a121 } from './articles/peptide-research-immune-senescence-inflammaging-nad-thymosin-alpha1';
 import { article as a117 } from './articles/peptide-reconstitution-errors-root-causes-detection-prevention';
 import { article as a118 } from './articles/peptide-research-ocular-health-bpc157-ss31-ghk-cu-eye';
 import { article as a119 } from './articles/peptide-research-skin-health-ghk-cu-snap8-cosmetic-peptides-study-design';
@@ -198,6 +199,7 @@ export const articles: BlogArticle[] = [
   a118,
   a119,
   a120,
+  a121,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

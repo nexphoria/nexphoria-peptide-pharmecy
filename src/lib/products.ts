@@ -3,15 +3,16 @@ export type ProductDosage = {
   price: number;
 };
 
-// Monthly Auto-Ship uses a single cadence — same price as one-time.
-// No discounts. No savings messaging. It's convenience, not a promotion.
-export type SubscriptionCadence = 'monthly';
+export type SubscriptionCadence = 'weekly' | 'bi-weekly' | 'monthly' | '6-week';
 
 export const SUBSCRIPTION_CADENCE_CONFIG: Record<
   SubscriptionCadence,
   { label: string; sublabel: string; intervalDays: number; discount: number }
 > = {
-  monthly: { label: 'Monthly Auto-Ship', sublabel: 'Delivered every 30 days', intervalDays: 30, discount: 0 },
+  'weekly':    { label: 'Weekly',       sublabel: 'Every 7 days',  intervalDays: 7,  discount: 0.05 },
+  'bi-weekly': { label: 'Bi-Weekly',    sublabel: 'Every 14 days', intervalDays: 14, discount: 0.08 },
+  'monthly':   { label: 'Monthly',      sublabel: 'Every 30 days', intervalDays: 30, discount: 0.10 },
+  '6-week':    { label: '6-Week Cycle', sublabel: 'Every 42 days', intervalDays: 42, discount: 0.12 },
 };
 
 export type Product = {
@@ -1985,9 +1986,45 @@ export const products: Product[] = [
   },
 ];
 
-// All products support the same Monthly Auto-Ship cadence.
-export function getSubscriptionCadences(_slug: string): SubscriptionCadence[] {
-  return ['monthly'];
+const PRODUCT_CADENCES: Record<string, SubscriptionCadence[]> = {
+  'bpc-157':             ['weekly', 'bi-weekly', 'monthly'],
+  'tb-500':              ['bi-weekly', 'monthly', '6-week'],
+  'ipamorelin':          ['weekly', 'bi-weekly', 'monthly'],
+  'cjc-1295':            ['monthly', '6-week'],
+  'cjc-1295-ipamorelin': ['weekly', 'bi-weekly', 'monthly'],
+  'cjc-1295-no-dac':     ['weekly', 'bi-weekly', 'monthly'],
+  'sermorelin':          ['weekly', 'bi-weekly', 'monthly'],
+  'mk-677':              ['monthly', '6-week'],
+  'tesamorelin':         ['weekly', 'bi-weekly', 'monthly'],
+  'semaglutide':         ['weekly', 'monthly'],
+  'tirzepatide':         ['weekly', 'monthly'],
+  'retatrutide':         ['weekly', 'monthly'],
+  'aod-9604':            ['weekly', 'bi-weekly', 'monthly'],
+  'ghk-cu':              ['bi-weekly', 'monthly', '6-week'],
+  'epitalon':            ['monthly', '6-week'],
+  'mots-c':              ['weekly', 'monthly'],
+  'ss-31':               ['bi-weekly', 'monthly'],
+  'snap-8':              ['monthly', '6-week'],
+  'selank':              ['weekly', 'bi-weekly', 'monthly'],
+  'semax':               ['weekly', 'bi-weekly', 'monthly'],
+  'dsip':                ['bi-weekly', 'monthly', '6-week'],
+  'nad-plus':            ['weekly', 'bi-weekly', 'monthly'],
+  'pt-141':              ['bi-weekly', 'monthly', '6-week'],
+  'melanotan-ii':        ['monthly', '6-week'],
+  'thymosin-alpha-1':    ['bi-weekly', 'monthly'],
+  'll-37':               ['bi-weekly', 'monthly'],
+  'kisspeptin':          ['bi-weekly', 'monthly', '6-week'],
+  'oxytocin':            ['weekly', 'bi-weekly', 'monthly'],
+  'kpv':                 ['weekly', 'bi-weekly', 'monthly'],
+  'wolverine-blend':     ['bi-weekly', 'monthly'],
+  'glow-blend':          ['monthly', '6-week'],
+  'klw-blend':           ['bi-weekly', 'monthly'],
+  'sterile-water-3ml':   ['monthly'],
+  'sterile-water-10ml':  ['monthly'],
+};
+
+export function getSubscriptionCadences(slug: string): SubscriptionCadence[] {
+  return PRODUCT_CADENCES[slug] ?? ['monthly'];
 }
 
 export function getProduct(slug: string): Product | undefined {
