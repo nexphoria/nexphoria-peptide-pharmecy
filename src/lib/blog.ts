@@ -112,6 +112,7 @@ import { article as a108 } from './articles/peptide-research-publication-guide-m
 import { article as a109 } from './articles/gpcr-pharmacology-biased-agonism-peptide-research';
 import { article as a110 } from './articles/mitophagy-research-ss31-nad-plus-pink1-parkin-pathway';
 import { article as a111 } from './articles/humanin-shlp2-mitochondrial-derived-peptides-mots-c';
+import { article as a112 } from './articles/peptide-degradation-proteolysis-dpp4-nep-endopeptidase-resistance';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -180,6 +181,7 @@ export const articles: BlogArticle[] = [
   a109,
   a110,
   a111,
+  a112,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
