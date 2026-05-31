@@ -100,6 +100,7 @@ import { article as a96 } from './articles/peptide-research-funding-nih-grants-i
 import { article as a97 } from './articles/adiponectin-insulin-resistance-glp1-metabolic-peptide-endpoints';
 import { article as a98 } from './articles/ceramide-sphingolipids-peptide-research-lipotoxicity-adiponectin';
 import { article as a99 } from './articles/peptide-research-liver-health-nash-hepatic-steatosis-glp1-data';
+import { article as a100 } from './articles/100-articles-complete-nexphoria-research-library-overview';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -156,6 +157,7 @@ export const articles: BlogArticle[] = [
   a97,
   a98,
   a99,
+  a100,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
