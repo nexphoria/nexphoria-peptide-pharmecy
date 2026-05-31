@@ -89,6 +89,8 @@ import { article as a85 } from './articles/ghrh-biology-pulsatile-gh-secretagogu
 import { article as a86 } from './articles/glp1-agonists-neurodegeneration-parkinsons-alzheimers-tbi-research';
 import { article as a87 } from './articles/peptide-research-anti-aging-longevity-biomarkers-study-design';
 import { article as a88 } from './articles/peptide-immunology-research-tlr-signaling-cytokine-assays-nfkb-endpoints';
+import { article as a89 } from './articles/peptide-storage-mistakes-prevention-guide';
+import { article as a90 } from './articles/ghrp-desensitization-tachyphylaxis-research-review';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -134,6 +136,8 @@ export const articles: BlogArticle[] = [
   a86,
   a87,
   a88,
+  a89,
+  a90,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

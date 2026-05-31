@@ -31,7 +31,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "ipamorelin": [
     "mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research",
     "ipamorelin-dosing-timing-protocol-design-researchers-reference",
-    "peptide-ic50-ec50-ki-binding-affinity-research-guide",
+    "ghrp-desensitization-tachyphylaxis-research-review",
   ],
   "cjc-1295": [
     "ghrh-biology-pulsatile-gh-secretagogues-deep-dive",
