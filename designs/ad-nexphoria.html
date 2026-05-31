@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexphoria Facebook Ad</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #2a2a2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px;
+  }
+
+  .ad-container {
+    width: 1080px;
+    height: 1080px;
+    background: #0d0d0d;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 50px;
+  }
+
+  /* Subtle texture overlay */
+  .ad-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at 50% 40%, rgba(184, 164, 76, 0.03) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* Gold border frame */
+  .frame {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 1px solid rgba(184, 164, 76, 0.3);
+    pointer-events: none;
+  }
+
+  .frame::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border: 0.5px solid rgba(184, 164, 76, 0.15);
+  }
+
+  /* Corner ornaments */
+  .ornament {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+  }
+
+  .ornament::before,
+  .ornament::after {
+    content: '';
+    position: absolute;
+    background: #B8A44C;
+  }
+
+  .ornament-tl { top: 18px; left: 18px; }
+  .ornament-tl::before { top: 0; left: 0; width: 30px; height: 1px; }
+  .ornament-tl::after { top: 0; left: 0; width: 1px; height: 30px; }
+
+  .ornament-tr { top: 18px; right: 18px; }
+  .ornament-tr::before { top: 0; right: 0; width: 30px; height: 1px; }
+  .ornament-tr::after { top: 0; right: 0; width: 1px; height: 30px; }
+
+  .ornament-bl { bottom: 18px; left: 18px; }
+  .ornament-bl::before { bottom: 0; left: 0; width: 30px; height: 1px; }
+  .ornament-bl::after { bottom: 0; left: 0; width: 1px; height: 30px; }
+
+  .ornament-br { bottom: 18px; right: 18px; }
+  .ornament-br::before { bottom: 0; right: 0; width: 30px; height: 1px; }
+  .ornament-br::after { bottom: 0; right: 0; width: 1px; height: 30px; }
+
+  /* Top section - Brand */
+  .top-section {
+    text-align: center;
+    z-index: 1;
+  }
+
+  .brand-mark {
+    width: 50px;
+    height: 50px;
+    border: 1.5px solid #B8A44C;
+    border-radius: 50%;
+    margin: 0 auto 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(184, 164, 76, 0.05);
+  }
+
+  .brand-mark span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #B8A44C;
+  }
+
+  .brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #B8A44C;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
+  .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 2px;
+    line-height: 1.15;
+  }
+
+  .subheadline {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 14px;
+  }
+
+  /* Center section - Vial */
+  .center-section {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .vial {
+    position: relative;
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Vial cap */
+  .vial-cap {
+    width: 36px;
+    height: 16px;
+    background: linear-gradient(to right, #B8A44C, #d4c06a, #B8A44C);
+    border-radius: 3px 3px 0 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .vial-cap::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 42px;
+    height: 5px;
+    background: linear-gradient(to right, #9a8a3e, #B8A44C, #9a8a3e);
+    border-radius: 0 0 2px 2px;
+  }
+
+  /* Vial neck */
+  .vial-neck {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(to right, rgba(255,255,255,0.1), rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+    border-left: 1px solid rgba(255,255,255,0.15);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Vial body */
+  .vial-body {
+    width: 80px;
+    height: 200px;
+    background: linear-gradient(to right, 
+      rgba(255,255,255,0.03) 0%, 
+      rgba(255,255,255,0.08) 20%, 
+      rgba(255,255,255,0.12) 40%, 
+      rgba(255,255,255,0.08) 60%, 
+      rgba(255,255,255,0.04) 80%, 
+      rgba(255,255,255,0.02) 100%
+    );
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 0 0 12px 12px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Liquid in vial */
+  .vial-body::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 3px;
+    right: 3px;
+    height: 70%;
+    background: linear-gradient(to right, 
+      rgba(184, 164, 76, 0.08) 0%, 
+      rgba(184, 164, 76, 0.15) 30%, 
+      rgba(184, 164, 76, 0.12) 60%, 
+      rgba(184, 164, 76, 0.06) 100%
+    );
+    border-radius: 0 0 10px 10px;
+  }
+
+  /* Vial label */
+  .vial-label {
+    position: absolute;
+    top: 30px;
+    left: 8px;
+    right: 8px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 0.5px solid #B8A44C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+  }
+
+  .vial-label-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .vial-label-product {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-top: 2px;
+  }
+
+  .vial-label-dose {
+    font-size: 7px;
+    color: #555;
+    margin-top: 3px;
+    letter-spacing: 0.5px;
+  }
+
+  .vial-label-line {
+    width: 30px;
+    height: 0.5px;
+    background: #B8A44C;
+    margin: 5px 0;
+  }
+
+  .vial-label-vol {
+    font-size: 7px;
+    color: #777;
+    letter-spacing: 1px;
+  }
+
+  /* Reflection/glow */
+  .vial-glow {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 320px;
+    background: radial-gradient(ellipse, rgba(184, 164, 76, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Benefits section */
+  .benefits-section {
+    z-index: 1;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+  }
+
+  .benefit {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .benefit-icon {
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(184, 164, 76, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #B8A44C;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .benefit-text {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .benefit-divider {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, transparent, rgba(184, 164, 76, 0.3), transparent);
+  }
+
+  /* Bottom section */
+  .bottom-section {
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 16px 60px;
+    background: #B8A44C;
+    color: #0d0d0d;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background: #d4c06a;
+  }
+
+  .disclaimer {
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.5px;
+    max-width: 600px;
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+<div class="ad-container">
+  <!-- Frame -->
+  <div class="frame"></div>
+
+  <!-- Corner ornaments -->
+  <div class="ornament ornament-tl"></div>
+  <div class="ornament ornament-tr"></div>
+  <div class="ornament ornament-bl"></div>
+  <div class="ornament ornament-br"></div>
+
+  <!-- Top -->
+  <div class="top-section">
+    <div class="brand-mark"><span>N</span></div>
+    <div class="brand-name">Nexphoria</div>
+    <div class="headline">Premium Research Peptides</div>
+    <div class="subheadline">Pharmaceutical-Grade. Cold-Chain Delivered.</div>
+  </div>
+
+  <!-- Center - Vial -->
+  <div class="center-section">
+    <div class="vial-glow"></div>
+    <div class="vial">
+      <div class="vial-cap"></div>
+      <div class="vial-neck"></div>
+      <div class="vial-body">
+        <div class="vial-label">
+          <div class="vial-label-brand">Nexphoria</div>
+          <div class="vial-label-product">BPC-157</div>
+          <div class="vial-label-dose">10 mg/mL</div>
+          <div class="vial-label-line"></div>
+          <div class="vial-label-vol">5 mL</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Benefits -->
+  <div class="benefits-section">
+    <div class="benefit">
+      <div class="benefit-icon">✓</div>
+      <div class="benefit-text">99%+ Purity</div>
+    </div>
+    <div class="benefit-divider"></div>
+    <div class="benefit">
+      <div class="benefit-icon">◈</div>
+      <div class="benefit-text">Third-Party Tested</div>
+    </div>
+    <div class="benefit-divider"></div>
+    <div class="benefit">
+      <div class="benefit-icon">▸</div>
+      <div class="benefit-text">Same-Day Shipping</div>
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="bottom-section">
+    <a href="#" class="cta-button">Shop Now</a>
+    <div class="disclaimer">These products are intended for research and educational purposes only. Not for human consumption. These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</div>
+  </div>
+</div>
+</body>
+</html>

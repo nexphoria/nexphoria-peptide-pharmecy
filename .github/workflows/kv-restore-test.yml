@@ -1,9 +1,9 @@
 name: KV Monthly Restore Test
 
 on:
-  schedule:
-    # Runs on the 1st of every month at 03:00 UTC
-    - cron: '0 3 1 * *'
+  # DISABLED — no KV backup exists yet, re-enable when kv-backup workflow succeeds
+  # schedule:
+  #   - cron: '0 3 1 * *'
   workflow_dispatch:
     inputs:
       run_id:

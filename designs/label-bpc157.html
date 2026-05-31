@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexphoria BPC-157 Label</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px;
+  }
+
+  .label-container {
+    width: 1200px;
+    height: 600px;
+    background: #ffffff;
+    border: 2px solid #B8A44C;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  /* Decorative inner border */
+  .label-container::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    border: 0.5px solid #B8A44C;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  /* Left panel - Brand & Product */
+  .left-panel {
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid #B8A44C;
+    position: relative;
+  }
+
+  .left-panel::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 0;
+    bottom: 20px;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, #B8A44C 20%, #B8A44C 80%, transparent);
+  }
+
+  .brand-section {
+    text-align: center;
+  }
+
+  .brand-logo {
+    width: 48px;
+    height: 48px;
+    border: 1.5px solid #B8A44C;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #faf8f0, #ffffff);
+  }
+
+  .brand-logo span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #B8A44C;
+    letter-spacing: -1px;
+  }
+
+  .brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+
+  .brand-tagline {
+    font-size: 8px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #B8A44C;
+    font-weight: 500;
+  }
+
+  .product-section {
+    text-align: center;
+  }
+
+  .product-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: 1px;
+    line-height: 1.1;
+  }
+
+  .product-form {
+    font-size: 11px;
+    font-weight: 500;
+    color: #555;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+
+  .concentration-box {
+    margin-top: 12px;
+    padding: 8px 16px;
+    border: 1px solid #B8A44C;
+    display: inline-block;
+    background: linear-gradient(135deg, #fdfcf7, #ffffff);
+  }
+
+  .concentration {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: 1px;
+  }
+
+  .concentration span {
+    font-size: 12px;
+    font-weight: 400;
+    color: #666;
+  }
+
+  .volume-info {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .volume {
+    font-size: 13px;
+    font-weight: 500;
+    color: #333;
+    letter-spacing: 0.5px;
+  }
+
+  .rx-only {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #B8A44C;
+    text-transform: uppercase;
+    margin-top: 8px;
+  }
+
+  /* Right panel - Details */
+  .right-panel {
+    padding: 22px 26px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 10px;
+  }
+
+  .info-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding-bottom: 10px;
+    border-bottom: 0.5px solid #e8e2d0;
+  }
+
+  .info-group label {
+    font-size: 7.5px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #B8A44C;
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .info-group .value {
+    font-size: 11px;
+    font-weight: 500;
+    color: #1a1a1a;
+    letter-spacing: 0.3px;
+  }
+
+  .ingredients-section {
+    padding: 8px 0;
+  }
+
+  .section-title {
+    font-size: 7.5px;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: #B8A44C;
+    margin-bottom: 6px;
+  }
+
+  .ingredients-list {
+    font-size: 9.5px;
+    line-height: 1.6;
+    color: #333;
+    font-weight: 400;
+  }
+
+  .info-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding-top: 10px;
+    border-top: 0.5px solid #e8e2d0;
+    align-items: end;
+  }
+
+  .storage-section {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .storage-item {
+    font-size: 9px;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .storage-icon {
+    width: 14px;
+    height: 14px;
+    border: 0.75px solid #B8A44C;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 7px;
+    color: #B8A44C;
+    flex-shrink: 0;
+  }
+
+  .warnings-section {
+    text-align: right;
+  }
+
+  .warning-text {
+    font-size: 8px;
+    color: #666;
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  /* Gold corner accents */
+  .corner {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-color: #B8A44C;
+    border-style: solid;
+  }
+
+  .corner-tl {
+    top: 12px;
+    left: 12px;
+    border-width: 1px 0 0 1px;
+  }
+
+  .corner-tr {
+    top: 12px;
+    right: 12px;
+    border-width: 1px 1px 0 0;
+  }
+
+  .corner-bl {
+    bottom: 12px;
+    left: 12px;
+    border-width: 0 0 1px 1px;
+  }
+
+  .corner-br {
+    bottom: 12px;
+    right: 12px;
+    border-width: 0 1px 1px 0;
+  }
+</style>
+</head>
+<body>
+<div class="label-container">
+  <!-- Corner accents -->
+  <div class="corner corner-tl"></div>
+  <div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div>
+  <div class="corner corner-br"></div>
+
+  <!-- Left Panel -->
+  <div class="left-panel">
+    <div class="brand-section">
+      <div class="brand-logo"><span>N</span></div>
+      <div class="brand-name">Nexphoria</div>
+      <div class="brand-tagline">Pharmaceutical Sciences</div>
+    </div>
+
+    <div class="product-section">
+      <div class="product-name">BPC-157</div>
+      <div class="product-form">Sterile Injection</div>
+      <div class="concentration-box">
+        <div class="concentration">10 mg/mL</div>
+      </div>
+    </div>
+
+    <div class="volume-info">
+      <div class="volume">5 mL Multi-Dose Vial</div>
+      <div class="rx-only">For Subcutaneous Use</div>
+    </div>
+  </div>
+
+  <!-- Right Panel -->
+  <div class="right-panel">
+    <div class="info-top">
+      <div class="info-group">
+        <label>Batch Number</label>
+        <div class="value">NX-BPC-20260501</div>
+      </div>
+      <div class="info-group">
+        <label>NDC</label>
+        <div class="value">XXXXX-XXX-XX</div>
+      </div>
+      <div class="info-group">
+        <label>Fill Date</label>
+        <div class="value">2026-05-30</div>
+      </div>
+      <div class="info-group">
+        <label>Expiration Date</label>
+        <div class="value">2027-05-30</div>
+      </div>
+    </div>
+
+    <div class="ingredients-section">
+      <div class="section-title">Active & Inactive Ingredients</div>
+      <div class="ingredients-list">
+        <strong>Active:</strong> BPC-157 (Body Protection Compound-157) 10 mg/mL<br>
+        <strong>Inactive:</strong> Glycyl-L-Histidyl-L-Lysine, Edetate Disodium (EDTA),<br>
+        Benzyl Alcohol 0.9% (preservative), Sterile Water for Injection USP q.s.
+      </div>
+    </div>
+
+    <div class="info-bottom">
+      <div class="storage-section">
+        <div class="storage-item">
+          <span class="storage-icon">❄</span>
+          Store at 2–8°C (36–46°F)
+        </div>
+        <div class="storage-item">
+          <span class="storage-icon">◐</span>
+          Protect from light
+        </div>
+        <div class="storage-item">
+          <span class="storage-icon">!</span>
+          Do not freeze
+        </div>
+      </div>
+      <div class="warnings-section">
+        <div class="warning-text">
+          Use as directed by your physician.<br>
+          Keep out of reach of children.<br>
+          For research use only.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
