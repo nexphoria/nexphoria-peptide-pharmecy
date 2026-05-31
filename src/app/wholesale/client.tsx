@@ -302,10 +302,10 @@ export default function WholesaleClient() {
                 <div className="flex items-start gap-4">
                   <Phone className="w-5 h-5 text-acid-green flex-shrink-0 mt-0.5" />
                   <div>
-                    <div className="font-semibold text-primary mb-1">Phone</div>
-                    <a href="tel:+1-555-NEXPHORIA"
+                    <div className="font-semibold text-primary mb-1">Phone / WhatsApp</div>
+                    <a href="mailto:wholesale@nexphoria.com"
                       className="text-sm text-secondary hover:text-acid-green transition-colors">
-                      +1 (555) NEX-PHORIA
+                      Contact by email for direct line
                     </a>
                   </div>
                 </div>
