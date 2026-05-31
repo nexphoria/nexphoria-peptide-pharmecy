@@ -70,6 +70,7 @@ const EXTRA_TAG_ARTICLES: Record<string, string[]> = {
     'ipamorelin-vs-ghrp2-vs-ghrp6-growth-hormone-secretagogue-comparison',
     'igf-1-peptide-research-key-biomarker',
     'mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research',
+    'peptide-water-retention-electrolyte-research-study-design',
   ],
   'ghrp-2': [
     'ipamorelin-vs-ghrp2-vs-ghrp6-growth-hormone-secretagogue-comparison',

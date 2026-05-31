@@ -56,7 +56,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "mk-677": [
     "mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research",
     "mk-677-ibutamoren-oral-gh-secretagogue-guide",
-    "igf-1-vs-growth-hormone-downstream-mediator-explained",
+    "peptide-water-retention-electrolyte-research-study-design",
   ],
   "tesamorelin": [
     "ghrh-biology-pulsatile-gh-secretagogues-deep-dive",
@@ -68,7 +68,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "semaglutide": [
     "semaglutide-dosing-timing-protocol-design-researchers-reference",
     "glp1-agonists-neurodegeneration-parkinsons-alzheimers-tbi-research",
-    "peptide-ic50-ec50-ki-binding-affinity-research-guide",
+    "peptide-water-retention-electrolyte-research-study-design",
   ],
   "tirzepatide": [
     "tirzepatide-research-dosing-guide-glp1-gip-dual-agonism-protocols",
