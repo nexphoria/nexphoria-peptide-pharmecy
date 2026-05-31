@@ -9,7 +9,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "bpc-157": [
     "bpc-157-mechanism-deep-dive-no-vegf-fak-signaling",
     "bpc-157-gut-health-research-gi-protection-leaky-gut-intestinal-repair",
-    "peptide-research-kidney-health-renoprotection-glp1-bpc157",
+    "peptide-research-bone-health-bpc157-ghk-cu-ipamorelin-collagen",
   ],
   "tb-500": [
     "tb-500-mechanism-deep-dive-g-actin-sequestration-thymosin-beta-4-biology",
@@ -24,7 +24,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "ghk-cu": [
     "collagen-synthesis-research-ghk-cu-tgf-beta-pathway-deep-dive",
     "ghk-cu-wound-healing-research-protocols-study-design",
-    "ghk-cu-vs-ghk-copper-complex-chemistry-research-guide",
+    "peptide-research-bone-health-bpc157-ghk-cu-ipamorelin-collagen",
   ],
 
   // GH Axis

@@ -115,6 +115,7 @@ import { article as a111 } from './articles/humanin-shlp2-mitochondrial-derived-
 import { article as a112 } from './articles/peptide-degradation-proteolysis-dpp4-nep-endopeptidase-resistance';
 import { article as a113 } from './articles/blood-brain-barrier-peptide-cns-delivery-research';
 import { article as a114 } from './articles/peptide-research-kidney-health-renoprotection-glp1-bpc157';
+import { article as a115 } from './articles/peptide-research-bone-health-bpc157-ghk-cu-ipamorelin-collagen';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -186,6 +187,7 @@ export const articles: BlogArticle[] = [
   a112,
   a113,
   a114,
+  a115,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
