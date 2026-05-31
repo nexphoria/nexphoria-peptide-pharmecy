@@ -323,6 +323,15 @@ export function Footer() {
               >
                 research@nexphoria.com
               </a>
+              <a
+                href="https://wa.me/15551234567"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs transition-colors hover:text-white block mt-1"
+                style={{ color: "rgba(255,255,255,0.3)" }}
+              >
+                WhatsApp (urgent inquiries)
+              </a>
             </div>
           </div>
 

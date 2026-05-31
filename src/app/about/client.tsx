@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, FlaskConical, Shield, Award, Microscope } from "lucide-react";
+import { ArrowRight, FlaskConical, Shield, Award, Microscope, CheckCircle2 } from "lucide-react";
 import TrustBadges from "@/components/TrustBadges";
 
 const fadeUp = {
@@ -49,6 +49,34 @@ const standards = [
   { code: "KF", label: "Karl Fischer titration for precise moisture content determination" },
   { code: "ICH Q3C", label: "Residual solvent testing per ICH Q3C limits" },
   { code: "ISO", label: "ISO-compliant facility infrastructure and quality systems" },
+];
+
+const milestones = [
+  {
+    year: "2022",
+    title: "The Problem We Couldn't Ignore",
+    body: "Our founders — researchers themselves — kept encountering the same problem: compounds sold with purity claims that couldn't be independently verified. Lab results that looked manufactured. Documentation with no lab letterhead, no analyst signature, no lot traceability. The industry had normalized mediocrity.",
+  },
+  {
+    year: "2023",
+    title: "Building the Standard",
+    body: "We spent 18 months building before selling a single vial. That time went into selecting cGMP manufacturing partners, establishing third-party testing relationships with Janoshik Analytical, and designing the documentation infrastructure that now ships with every order. The product came second. The system came first.",
+  },
+  {
+    year: "2024",
+    title: "Launch: 12 Compounds, Zero Shortcuts",
+    body: "Nexphoria launched with 12 compounds. Every single one had a full COA on day one — HPLC chromatogram, ESI-MS identity confirmation, Karl Fischer moisture result, lot number matching the vial label. Not a sample COA. Not a representative batch. The actual lot you ordered.",
+  },
+  {
+    year: "2025",
+    title: "34 Compounds. Same Standard.",
+    body: "We expanded the catalog without expanding our risk tolerance. Each new compound went through the same qualification process: synthesis evaluation, analytical method development, multi-lot testing before catalog listing. We turned down vendors who couldn't meet our documentation requirements. Most couldn't.",
+  },
+  {
+    year: "2026",
+    title: "The Infrastructure Expands",
+    body: "We added wholesale channels, institutional accounts, and expanded research tools — reconstitution calculators, research protocol builders, half-life references, biomarker guides. Nexphoria is becoming the operating platform for serious peptide research, not just a supplier.",
+  },
 ];
 
 export default function AboutClient() {
@@ -211,6 +239,59 @@ export default function AboutClient() {
         </div>
       </section>
 
+      {/* Founding Story Timeline */}
+      <section className="py-28 border-b" style={{ backgroundColor: "#0F0F0E", borderColor: "#2A2A28" }}>
+        <div className="container-nex">
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
+            className="mb-16"
+          >
+            <span className="eyebrow mb-4 block">Our Story</span>
+            <h2
+              className="font-bold tracking-tight max-w-2xl"
+              style={{
+                fontFamily: "Georgia, serif",
+                fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+                color: "#FDFCF8",
+              }}
+            >
+              Why Nexphoria Exists
+            </h2>
+          </motion.div>
+
+          <div className="max-w-3xl">
+            {milestones.map((m, i) => (
+              <motion.div
+                key={m.year}
+                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.1}
+                className="flex gap-8 mb-12 last:mb-0"
+              >
+                <div className="flex flex-col items-center shrink-0">
+                  <div
+                    className="text-xs font-mono font-bold px-2.5 py-1 whitespace-nowrap"
+                    style={{ backgroundColor: "#1C1C1A", color: "#B8A44C", border: "1px solid #2A2A28" }}
+                  >
+                    {m.year}
+                  </div>
+                  {i < milestones.length - 1 && (
+                    <div className="w-px flex-1 mt-3" style={{ backgroundColor: "#2A2A28" }} />
+                  )}
+                </div>
+                <div className="pb-12 last:pb-0">
+                  <h3
+                    className="font-bold mb-3 text-lg"
+                    style={{ fontFamily: "Georgia, serif", color: "#FDFCF8" }}
+                  >
+                    {m.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-secondary">{m.body}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Founder quote */}
       <section className="py-24 border-b" style={{ backgroundColor: "#161614", borderColor: "#2A2A28" }}>
         <div className="container-nex">
@@ -228,9 +309,10 @@ export default function AboutClient() {
                   color: "#FDFCF8",
                 }}
               >
-                &ldquo;We built Nexphoria because we believed researchers deserve the same quality
-                standards that pharmaceutical manufacturers apply to clinical drugs. Every compound
-                we produce is a commitment to that belief.&rdquo;
+                &ldquo;The peptide research industry had a trust deficit. Vendors made claims without
+                evidence. Researchers had no way to verify what they were actually working with.
+                We built Nexphoria to end that. Full documentation. Independent testing.
+                Zero shortcuts. Every batch, every time.&rdquo;
               </p>
               <footer className="text-label text-secondary">
                 — Nexphoria Founding Team

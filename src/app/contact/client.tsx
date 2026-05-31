@@ -171,8 +171,16 @@ export default function ContactClient() {
                     <MessageCircle className="w-4 h-4 mt-0.5 flex-shrink-0 text-secondary" strokeWidth={1.5} />
                     <div>
                       <div className="text-label mb-1 text-secondary">WhatsApp</div>
-                      <p className="text-sm" style={{ color: "#FDFCF8" }}>Available for urgent inquiries</p>
-                      <p className="text-xs mt-0.5" style={{ color: "rgba(253,252,248,0.4)" }}>Contact us by email for WhatsApp access</p>
+                      <a
+                        href="https://wa.me/15551234567"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm transition-colors hover:text-white"
+                        style={{ color: "#FDFCF8" }}
+                      >
+                        Message us on WhatsApp
+                      </a>
+                      <p className="text-xs mt-0.5" style={{ color: "rgba(253,252,248,0.4)" }}>For urgent inquiries — Mon–Fri 9 AM–5 PM ET</p>
                     </div>
                   </div>
                 </div>
