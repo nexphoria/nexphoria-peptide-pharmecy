@@ -259,6 +259,18 @@ const TOOLS = [
     badge: "Tool",
   },
   {
+    href: "/tools/peptide-safety-checker",
+    title: "Peptide Safety Checker",
+    desc: "Side effect profiles, receptor agonism/antagonism summary, contraindicated co-administration, and special handling warnings for 20+ research peptides. RUO reference tool.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        <path d="M12 8v4M12 16h.01"/>
+      </svg>
+    ),
+    badge: "Tool",
+  },
+  {
     href: "/tools/peptide-stability-checker",
     title: "Peptide Stability Checker",
     desc: "Select a compound and storage condition to get compound-specific shelf life estimates, degradation risk level, key risk factors, and storage container recommendations for 34 research peptides.",

@@ -217,6 +217,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.72,
     },
     {
+      url: `${baseUrl}/tools/peptide-safety-checker`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.72,
+    },
+    {
       url: `${baseUrl}/tools/peptide-stability-checker`,
       lastModified: new Date(),
       changeFrequency: "monthly",
