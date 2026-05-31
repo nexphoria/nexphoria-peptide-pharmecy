@@ -143,20 +143,20 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   ],
   "kpv": [
     "kpv-immunomodulatory-tripeptide-research-guide",
+    "peptide-immunology-research-tlr-signaling-cytokine-assays-nfkb-endpoints",
     "thymosin-alpha-1-immune-peptide-research-guide",
-    "ll-37-human-host-defense-peptide-research-guide",
   ],
 
   // Immunology
   "thymosin-alpha-1": [
     "thymosin-alpha-1-immune-peptide-research-guide",
+    "peptide-immunology-research-tlr-signaling-cytokine-assays-nfkb-endpoints",
     "ll-37-human-host-defense-peptide-research-guide",
-    "kpv-immunomodulatory-tripeptide-research-guide",
   ],
   "ll-37": [
     "ll-37-antimicrobial-wound-healing-protocols",
+    "peptide-immunology-research-tlr-signaling-cytokine-assays-nfkb-endpoints",
     "ll-37-human-host-defense-peptide-research-guide",
-    "thymosin-alpha-1-immune-peptide-research-guide",
   ],
 
   // Reproductive / Hormonal

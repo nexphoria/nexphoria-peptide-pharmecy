@@ -88,6 +88,7 @@ import { article as a84 } from './articles/peptide-ic50-ec50-ki-binding-affinity
 import { article as a85 } from './articles/ghrh-biology-pulsatile-gh-secretagogues-deep-dive';
 import { article as a86 } from './articles/glp1-agonists-neurodegeneration-parkinsons-alzheimers-tbi-research';
 import { article as a87 } from './articles/peptide-research-anti-aging-longevity-biomarkers-study-design';
+import { article as a88 } from './articles/peptide-immunology-research-tlr-signaling-cytokine-assays-nfkb-endpoints';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -132,6 +133,7 @@ export const articles: BlogArticle[] = [
   a85,
   a86,
   a87,
+  a88,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
