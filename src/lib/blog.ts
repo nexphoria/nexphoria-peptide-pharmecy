@@ -96,6 +96,7 @@ import { article as a92 } from './articles/peptide-research-skeletal-muscle-hype
 import { article as a93 } from './articles/peptide-cardiac-protection-research-bpc157-tb500-glp1';
 import { article as a94 } from './articles/peptide-research-sex-differences-female-dosing-protocols';
 import { article as a95 } from './articles/bpc-157-gut-health-research-gi-protection-leaky-gut-intestinal-repair';
+import { article as a96 } from './articles/peptide-research-funding-nih-grants-iacuc-regulatory-frameworks';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -148,6 +149,7 @@ export const articles: BlogArticle[] = [
   a93,
   a94,
   a95,
+  a96,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
