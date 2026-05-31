@@ -123,6 +123,10 @@ import { article as a117 } from './articles/peptide-reconstitution-errors-root-c
 import { article as a118 } from './articles/peptide-research-ocular-health-bpc157-ss31-ghk-cu-eye';
 import { article as a119 } from './articles/peptide-research-skin-health-ghk-cu-snap8-cosmetic-peptides-study-design';
 import { article as a120 } from './articles/peptide-research-pain-inflammation-bpc157-kpv-opioid-nociception';
+import { article as a123 } from './articles/nexphoria-vs-core-peptides-vendor-comparison';
+import { article as a124 } from './articles/nexphoria-vs-peptide-sciences-vendor-comparison';
+import { article as a125 } from './articles/nexphoria-vs-limitless-life-vendor-comparison';
+import { article as a126 } from './articles/peptide-research-weight-loss-metabolic-optimization-protocol';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -202,6 +206,10 @@ export const articles: BlogArticle[] = [
   a120,
   a121,
   a122,
+  a123,
+  a124,
+  a125,
+  a126,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
