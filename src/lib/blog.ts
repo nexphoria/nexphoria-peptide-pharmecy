@@ -106,6 +106,9 @@ import { article as a102 } from './articles/klw-stack-kpv-ll37-thymosin-alpha1-t
 import { article as a103 } from './articles/neuroinflammation-research-microglia-nlrp3-peptide-interventions';
 import { article as a104 } from './articles/collagen-synthesis-research-ghk-cu-tgf-beta-pathway-deep-dive';
 import { article as a105 } from './articles/autophagy-macroautophagy-nad-mtor-cellular-housekeeping-longevity-research';
+import { article as a106 } from './articles/protein-synthesis-skeletal-muscle-mtor-s6k-eif4e-gh-axis-research';
+import { article as a107 } from './articles/aging-biomarkers-telomere-epigenetic-clocks-nad-longevity-research';
+import { article as a108 } from './articles/peptide-research-publication-guide-methods-disclosure-open-science';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -168,6 +171,9 @@ export const articles: BlogArticle[] = [
   a103,
   a104,
   a105,
+  a106,
+  a107,
+  a108,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

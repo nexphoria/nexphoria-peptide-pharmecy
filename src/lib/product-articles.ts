@@ -29,24 +29,24 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // GH Axis
   "ipamorelin": [
+    "protein-synthesis-skeletal-muscle-mtor-s6k-eif4e-gh-axis-research",
     "mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research",
     "ipamorelin-dosing-timing-protocol-design-researchers-reference",
-    "peptide-research-sex-differences-female-dosing-protocols",
   ],
   "cjc-1295": [
+    "protein-synthesis-skeletal-muscle-mtor-s6k-eif4e-gh-axis-research",
     "ghrh-biology-pulsatile-gh-secretagogues-deep-dive",
     "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
-    "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
   ],
   "cjc-1295-no-dac": [
+    "protein-synthesis-skeletal-muscle-mtor-s6k-eif4e-gh-axis-research",
     "ghrh-biology-pulsatile-gh-secretagogues-deep-dive",
     "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
-    "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
   ],
   "cjc-1295-ipamorelin": [
+    "protein-synthesis-skeletal-muscle-mtor-s6k-eif4e-gh-axis-research",
     "mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research",
     "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
-    "ipamorelin-dosing-timing-protocol-design-researchers-reference",
   ],
   "sermorelin": [
     "ghrh-biology-pulsatile-gh-secretagogues-deep-dive",
@@ -54,9 +54,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
   ],
   "mk-677": [
+    "protein-synthesis-skeletal-muscle-mtor-s6k-eif4e-gh-axis-research",
     "mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research",
     "mk-677-ibutamoren-oral-gh-secretagogue-guide",
-    "peptide-water-retention-electrolyte-research-study-design",
   ],
   "tesamorelin": [
     "ghrh-biology-pulsatile-gh-secretagogues-deep-dive",
@@ -95,12 +95,12 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "nad-plus": [
     "nad-precursors-nmn-nr-vs-direct-nad-injection-research",
     "nad-plus-research-protocols-dosing-routes-study-design",
-    "peptide-research-liver-health-nash-hepatic-steatosis-glp1-data",
+    "aging-biomarkers-telomere-epigenetic-clocks-nad-longevity-research",
   ],
   "epitalon": [
     "epitalon-pineal-peptide-longevity-research-review",
+    "aging-biomarkers-telomere-epigenetic-clocks-nad-longevity-research",
     "peptide-research-anti-aging-longevity-biomarkers-study-design",
-    "glutathione-peptides-oxidative-stress-research-overview",
   ],
   "ss-31": [
     "ss-31-elamipretide-mitochondria-targeted-peptide-research",
