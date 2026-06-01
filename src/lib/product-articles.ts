@@ -66,8 +66,8 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // GLP-1 / Metabolic
   "semaglutide": [
+    "pcos-glp1-kisspeptin-androgen-pathway-research-protocols",
     "peptide-research-brown-adipose-tissue-ucp1-thermogenesis-cold-exposure-protocols",
-    "glp1-agonists-fasting-ketone-bodies-metabolic-flexibility-research",
     "semaglutide-weight-loss-plateau-mechanisms-protocol-adjustments",
   ],
   "tirzepatide": [
@@ -161,9 +161,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // Reproductive / Hormonal
   "kisspeptin": [
+    "pcos-glp1-kisspeptin-androgen-pathway-research-protocols",
     "testosterone-hpg-axis-peptide-research-kisspeptin-lh-hormone-endpoints",
     "kisspeptin-10-vs-kisspeptin-54-research-protocol-differences",
-    "kisspeptin-lh-surge-reproductive-neuroendocrinology-research",
   ],
 
   // Cosmetic

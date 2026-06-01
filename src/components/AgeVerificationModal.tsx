@@ -93,6 +93,7 @@ export default function AgeVerificationModal() {
 
           {/* Title */}
           <h2
+            id="age-modal-title"
             className="mb-3 text-center text-2xl font-light tracking-tight"
             style={{
               color: "#1A1A1A",

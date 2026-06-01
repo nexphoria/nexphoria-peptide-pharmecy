@@ -292,7 +292,7 @@ export function Footer() {
           {/* Brand block */}
           <div className="max-w-xs shrink-0">
             <div className="flex items-center gap-2 mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" className="h-6 w-6">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" className="h-6 w-6" role="img" aria-label="Nexphoria">
                 <g>
                   <circle fill="#B8A44C" cx="129.698" cy="380.792" r="71.864" />
                   <path

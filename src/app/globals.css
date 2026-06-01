@@ -32,8 +32,19 @@
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    scroll-behavior: smooth;
     overflow-x: hidden;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
   body {
     font-family: var(--font-sans);
@@ -191,7 +202,8 @@
     transition: border-color 300ms ease;
   }
   .nex-input:focus {
-    outline: none;
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
     border-color: var(--color-gold);
   }
   .nex-input::placeholder {
