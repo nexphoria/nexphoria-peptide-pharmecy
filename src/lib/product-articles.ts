@@ -22,9 +22,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "myostatin-inhibition-follistatin-actriiib-protocols",
   ],
   "ghk-cu": [
+    "epigenetic-aging-clocks-horvath-grimage-peptide-research",
     "peptide-research-muscle-recovery-bpc157-tb500-ghk-cu-complete-protocol",
     "ghk-cu-neuroprotection-brain-health-bdnf-nrf2-cognitive-research-protocols",
-    "collagen-synthesis-research-ghk-cu-tgf-beta-pathway-deep-dive",
   ],
 
   // GH Axis
@@ -86,25 +86,25 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "glp1-receptor-agonists-complete-research-landscape",
   ],
   "mots-c": [
+    "epigenetic-aging-clocks-horvath-grimage-peptide-research",
     "peptide-research-brown-adipose-tissue-ucp1-thermogenesis-cold-exposure-protocols",
     "mots-c-mitochondria-derived-peptide-metabolic-research",
-    "humanin-shlp2-mitochondrial-derived-peptides-mots-c",
   ],
 
   // Longevity
   "nad-plus": [
+    "epigenetic-aging-clocks-horvath-grimage-peptide-research",
     "nad-plus-circadian-biology-nampt-sirt1-clock-genes-research-protocols",
     "nad-plus-research-protocols-dosing-routes-study-design",
-    "nad-precursors-nmn-nr-vs-direct-nad-injection-research",
   ],
   "epitalon": [
-    "sleep-peptides-dsip-gh-axis-circadian-biology-research",
-    "peptide-research-sleep-circadian-rhythms-dsip-mk677-epitalon",
+    "epigenetic-aging-clocks-horvath-grimage-peptide-research",
     "epitalon-pineal-peptide-longevity-research-review",
+    "peptide-research-sleep-circadian-rhythms-dsip-mk677-epitalon",
   ],
   "ss-31": [
+    "epigenetic-aging-clocks-horvath-grimage-peptide-research",
     "ss-31-aging-muscle-sarcopenia-mitochondrial-quality-control-research-protocols",
-    "peptide-research-neuroprotection-bpc157-ss31-nad-semax",
     "ss-31-elamipretide-mitochondria-targeted-peptide-research",
   ],
 
