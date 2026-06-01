@@ -166,6 +166,13 @@ import { article as a162 } from './articles/peptide-research-comprehensive-recov
 import { article as a163 } from './articles/pcos-glp1-kisspeptin-androgen-pathway-research-protocols';
 import { article as a164 } from './articles/nad-plus-dna-repair-parp1-sirtuins-genome-stability-research';
 import { article as a165 } from './articles/peptide-research-inflammation-cox2-nfkb-anti-inflammatory-protocols';
+import { article as a166 } from './articles/oxytocin-social-behavior-autism-spectrum-disorder-research-protocols';
+import { article as a167 } from './articles/epigenetic-aging-clocks-peptide-research-dna-methylation-anti-aging-efficacy';
+import { article as a168 } from './articles/pcos-research-glp1-kisspeptin-androgen-pathway-study-design';
+import { article as a169 } from './articles/peptide-research-metabolic-syndrome-insulin-resistance-visceral-adiposity-protocols';
+import { article as a170 } from './articles/peptide-research-metabolic-syndrome-visceral-adiposity-insulin-resistance-protocol';
+import { article as a171 } from './articles/glp1-agonist-discontinuation-rebound-washout-reinitiation-research';
+import { article as a172 } from './articles/glp1-appetite-regulation-hypothalamic-circuits-ghrelin-hunger-endpoints';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -288,6 +295,13 @@ export const articles: BlogArticle[] = [
   a163,
   a164,
   a165,
+  a166,
+  a167,
+  a168,
+  a169,
+  a170,
+  a171,
+  a172,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

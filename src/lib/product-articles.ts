@@ -66,19 +66,19 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // GLP-1 / Metabolic
   "semaglutide": [
-    "pcos-glp1-kisspeptin-androgen-pathway-research-protocols",
-    "peptide-research-brown-adipose-tissue-ucp1-thermogenesis-cold-exposure-protocols",
+    "glp1-appetite-regulation-hypothalamic-circuits-ghrelin-hunger-endpoints",
     "semaglutide-weight-loss-plateau-mechanisms-protocol-adjustments",
+    "glp1-agonist-discontinuation-rebound-washout-reinitiation-research",
   ],
   "tirzepatide": [
-    "peptide-research-brown-adipose-tissue-ucp1-thermogenesis-cold-exposure-protocols",
-    "glp1-agonists-fasting-ketone-bodies-metabolic-flexibility-research",
+    "glp1-appetite-regulation-hypothalamic-circuits-ghrelin-hunger-endpoints",
     "tirzepatide-lean-mass-preservation-gipr-body-composition-study-design",
+    "glp1-agonist-discontinuation-rebound-washout-reinitiation-research",
   ],
   "retatrutide": [
-    "glp1-agonists-fasting-ketone-bodies-metabolic-flexibility-research",
-    "peptide-research-metabolic-syndrome-insulin-resistance-dyslipidemia-protocol-design",
+    "glp1-appetite-regulation-hypothalamic-circuits-ghrelin-hunger-endpoints",
     "retatrutide-pleiotropic-mechanisms-hepatic-cardiac-cns-beyond-weight-loss",
+    "glp1-agonist-discontinuation-rebound-washout-reinitiation-research",
   ],
   "aod-9604": [
     "aod-9604-lipolytic-fragment-research-guide",
