@@ -141,6 +141,7 @@ import { article as a137 } from './articles/peptide-research-neuroprotection-bdn
 import { article as a138 } from './articles/peptide-research-autoimmune-inflammatory-conditions-kpv-thymosin-ll37-bpc157';
 import { article as a139 } from './articles/peptide-research-gut-microbiome-bpc157-glp1-prebiotics-study-design';
 import { article as a140 } from './articles/glp1-agonists-diabetes-research-t1d-t2d-models-hba1c-glycemic-study-design';
+import { article as a141 } from './articles/semaglutide-weight-loss-plateau-mechanisms-protocol-adjustments';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -238,6 +239,7 @@ export const articles: BlogArticle[] = [
   a138,
   a139,
   a140,
+  a141,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

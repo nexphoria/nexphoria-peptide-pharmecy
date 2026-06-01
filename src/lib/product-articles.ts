@@ -66,7 +66,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // GLP-1 / Metabolic
   "semaglutide": [
-    "peptide-research-gut-microbiome-bpc157-glp1-prebiotics-study-design",
+    "semaglutide-weight-loss-plateau-mechanisms-protocol-adjustments",
     "semaglutide-dosing-timing-protocol-design-researchers-reference",
     "glp1-agonists-diabetes-research-t1d-t2d-models-hba1c-glycemic-study-design",
   ],

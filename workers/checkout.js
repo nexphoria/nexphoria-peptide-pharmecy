@@ -556,17 +556,93 @@ async function verifyStripeWebhook(payload, sigHeader, secret) {
   return JSON.parse(payload);
 }
 
+// ---------------------------------------------------------------------------
+// Order lookup — GET /order?email=...&session_id=cs_live_...
+// Retrieves a Stripe checkout session and verifies the email matches.
+// Used by /account/orders to let customers track their order status.
+// ---------------------------------------------------------------------------
+async function handleOrderLookup(request, env) {
+  const url = new URL(request.url);
+  const email = (url.searchParams.get('email') || '').trim().toLowerCase();
+  const sessionId = (url.searchParams.get('session_id') || '').trim();
+
+  if (!email || !sessionId) {
+    return json({ error: 'missing_params' }, 400);
+  }
+  if (!EMAIL_RE.test(email)) {
+    return json({ error: 'invalid_email' }, 400);
+  }
+  if (!sessionId.startsWith('cs_live_') && !sessionId.startsWith('cs_test_')) {
+    return json({ error: 'invalid_session_id' }, 400);
+  }
+
+  const stripe = await import('stripe');
+  const stripeClient = new stripe.default(env.STRIPE_SECRET_KEY);
+
+  let session;
+  try {
+    session = await stripeClient.checkout.sessions.retrieve(sessionId, {
+      expand: ['line_items'],
+    });
+  } catch (err) {
+    if (err && err.type === 'StripeInvalidRequestError') {
+      return json({ error: 'not_found' }, 404);
+    }
+    throw err;
+  }
+
+  // Verify the email matches the session — prevents session enumeration.
+  const sessionEmail = (
+    session.customer_email ||
+    session.customer_details?.email ||
+    ''
+  ).toLowerCase();
+  if (sessionEmail !== email) {
+    return json({ error: 'not_found' }, 404);
+  }
+
+  const items = (session.line_items?.data || []).map((item) => ({
+    name: item.description || item.price?.product_data?.name || 'Unknown',
+    qty: item.quantity || 1,
+    amount: item.amount_total || 0,
+  }));
+
+  return json({
+    id: session.id,
+    email: sessionEmail,
+    status: session.status,
+    payment_status: session.payment_status,
+    created: session.created,
+    amount_total: session.amount_total,
+    currency: session.currency,
+    shipping: session.shipping_details
+      ? { name: session.shipping_details.name, address: session.shipping_details.address }
+      : null,
+    items,
+  });
+}
+
 export default {
   async fetch(request, env) {
     if (request.method === 'OPTIONS') {
       return new Response(null, { headers: CORS });
     }
 
+    const path = new URL(request.url).pathname.replace(/\/+$/, '');
+
+    // GET routes
+    if (request.method === 'GET') {
+      try {
+        if (path.endsWith('/order')) return await handleOrderLookup(request, env);
+        return json({ error: 'Not found' }, 404);
+      } catch (err) {
+        return json({ error: err && err.message ? err.message : 'server_error' }, 500);
+      }
+    }
+
     if (request.method !== 'POST') {
       return json({ error: 'Method not allowed' }, 405);
     }
-
-    const path = new URL(request.url).pathname.replace(/\/+$/, '');
 
     try {
       if (path.endsWith('/contact')) return await handleContact(request, env);
