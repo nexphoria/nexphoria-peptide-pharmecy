@@ -32,6 +32,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "protein-synthesis-skeletal-muscle-mtor-s6k-eif4e-gh-axis-research",
     "gpcr-pharmacology-biased-agonism-peptide-research",
     "mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research",
+    "tirzepatide-lean-mass-preservation-gipr-body-composition-study-design",
   ],
   "cjc-1295": [
     "protein-synthesis-skeletal-muscle-mtor-s6k-eif4e-gh-axis-research",
@@ -71,9 +72,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "glp1-agonists-diabetes-research-t1d-t2d-models-hba1c-glycemic-study-design",
   ],
   "tirzepatide": [
+    "tirzepatide-lean-mass-preservation-gipr-body-composition-study-design",
     "tirzepatide-research-dosing-guide-glp1-gip-dual-agonism-protocols",
     "retatrutide-vs-tirzepatide-triple-vs-dual-agonist-research-comparison",
-    "glp1-agonists-diabetes-research-t1d-t2d-models-hba1c-glycemic-study-design",
   ],
   "retatrutide": [
     "retatrutide-triple-agonist-research-guide",
