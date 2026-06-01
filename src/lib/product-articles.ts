@@ -7,14 +7,14 @@
 export const PRODUCT_ARTICLES: Record<string, string[]> = {
   // Repair / Recovery
   "bpc-157": [
+    "peptide-research-muscle-recovery-bpc157-tb500-ghk-cu-complete-protocol",
     "bpc-157-angiogenesis-vegf-enos-vascular-research-protocols",
-    "bpc-157-gut-brain-axis-vagus-nerve-enteric-nervous-system",
     "bpc-157-mechanism-deep-dive-no-vegf-fak-signaling",
   ],
   "tb-500": [
+    "peptide-research-muscle-recovery-bpc157-tb500-ghk-cu-complete-protocol",
     "tb-500-mechanism-deep-dive-g-actin-sequestration-thymosin-beta-4-biology",
-    "tb-500-thymosin-beta-4-researchers-complete-guide",
-    "peptide-cardiac-protection-research-bpc157-tb500-glp1",
+    "bpc-157-tb-500-recovery-stack-deep-dive",
   ],
   "follistatin-344": [
     "follistatin-344-igf-1-independent-muscle-research",
@@ -22,8 +22,8 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "myostatin-inhibition-follistatin-actriiib-protocols",
   ],
   "ghk-cu": [
+    "peptide-research-muscle-recovery-bpc157-tb500-ghk-cu-complete-protocol",
     "ghk-cu-neuroprotection-brain-health-bdnf-nrf2-cognitive-research-protocols",
-    "ghk-cu-epigenetic-reprogramming-gene-expression-nrf2-anti-aging-research",
     "collagen-synthesis-research-ghk-cu-tgf-beta-pathway-deep-dive",
   ],
 
@@ -176,10 +176,10 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   ],
 
   // Blends
-  "wolverine-blend": [
+    "wolverine-blend": [
+    "peptide-research-muscle-recovery-bpc157-tb500-ghk-cu-complete-protocol",
     "wolverine-blend-bpc157-tb500-ghk-cu-triple-combination-guide",
     "bpc-157-tb-500-recovery-stack-deep-dive",
-    "ghk-cu-copper-peptide-research-review",
   ],
   "glow-blend": [
     "glow-stack-ghk-cu-epitalon-nad-longevity-protocol-research-guide",
