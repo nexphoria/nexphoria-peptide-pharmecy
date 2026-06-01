@@ -55,7 +55,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
   ],
   "mk-677": [
-    "peptide-research-sleep-circadian-rhythms-dsip-mk677-epitalon",
+    "mk-677-sleep-quality-research-gh-pulse-sws-copinschi-data",
     "mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research",
     "mk-677-ibutamoren-oral-gh-secretagogue-guide",
   ],
