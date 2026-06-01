@@ -164,6 +164,7 @@ import { article as a160 } from './articles/peptide-research-brown-adipose-tissu
 import { article as a161 } from './articles/epigenetic-aging-clocks-horvath-grimage-peptide-research';
 import { article as a162 } from './articles/peptide-research-comprehensive-recovery-stack-bpc157-tb500-ghk-cu-ipamorelin-protocol';
 import { article as a163 } from './articles/pcos-glp1-kisspeptin-androgen-pathway-research-protocols';
+import { article as a164 } from './articles/nad-plus-dna-repair-parp1-sirtuins-genome-stability-research';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -284,6 +285,7 @@ export const articles: BlogArticle[] = [
   a161,
   a162,
   a163,
+  a164,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

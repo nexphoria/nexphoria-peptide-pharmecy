@@ -93,9 +93,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // Longevity
   "nad-plus": [
+    "nad-plus-dna-repair-parp1-sirtuins-genome-stability-research",
     "epigenetic-aging-clocks-horvath-grimage-peptide-research",
     "nad-plus-circadian-biology-nampt-sirt1-clock-genes-research-protocols",
-    "nad-plus-research-protocols-dosing-routes-study-design",
   ],
   "epitalon": [
     "epigenetic-aging-clocks-horvath-grimage-peptide-research",
