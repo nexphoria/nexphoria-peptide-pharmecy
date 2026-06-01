@@ -154,6 +154,7 @@ import { article as a150 } from './articles/sermorelin-vs-cjc-1295-no-dac-vs-cjc
 import { article as a151 } from './articles/peptide-research-metabolic-syndrome-insulin-resistance-dyslipidemia-protocol-design';
 import { article as a152 } from './articles/ghk-cu-neuroprotection-brain-health-bdnf-nrf2-cognitive-research-protocols';
 import { article as a153 } from './articles/peptide-research-muscle-recovery-bpc157-tb500-ghk-cu-complete-protocol';
+import { article as a154 } from './articles/selank-anxiety-stress-research-mechanisms-protocols';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -264,6 +265,7 @@ export const articles: BlogArticle[] = [
   a151,
   a152,
   a153,
+  a154,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
