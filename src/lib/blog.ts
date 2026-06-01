@@ -157,6 +157,7 @@ import { article as a153 } from './articles/peptide-research-muscle-recovery-bpc
 import { article as a154 } from './articles/selank-anxiety-stress-research-mechanisms-protocols';
 import { article as a155 } from './articles/nexphoria-vs-umbrella-labs-vendor-comparison';
 import { article as a156 } from './articles/nexphoria-vs-swiss-chems-vendor-comparison';
+import { article as a157 } from './articles/semax-cognitive-enhancement-neuroprotection-research-protocols';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -266,8 +267,11 @@ export const articles: BlogArticle[] = [
   a150,
   a151,
   a152,
-  a153,
+    a153,
   a154,
+  a155,
+  a156,
+  a157,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
