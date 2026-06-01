@@ -7,12 +7,12 @@
 export const PRODUCT_ARTICLES: Record<string, string[]> = {
   // Repair / Recovery
   "bpc-157": [
-    "peptide-research-muscle-recovery-bpc157-tb500-ghk-cu-complete-protocol",
+    "peptide-research-comprehensive-recovery-stack-bpc157-tb500-ghk-cu-ipamorelin-protocol",
     "bpc-157-angiogenesis-vegf-enos-vascular-research-protocols",
     "bpc-157-mechanism-deep-dive-no-vegf-fak-signaling",
   ],
   "tb-500": [
-    "peptide-research-muscle-recovery-bpc157-tb500-ghk-cu-complete-protocol",
+    "peptide-research-comprehensive-recovery-stack-bpc157-tb500-ghk-cu-ipamorelin-protocol",
     "tb-500-mechanism-deep-dive-g-actin-sequestration-thymosin-beta-4-biology",
     "bpc-157-tb-500-recovery-stack-deep-dive",
   ],
@@ -22,15 +22,15 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "myostatin-inhibition-follistatin-actriiib-protocols",
   ],
   "ghk-cu": [
+    "peptide-research-comprehensive-recovery-stack-bpc157-tb500-ghk-cu-ipamorelin-protocol",
     "epigenetic-aging-clocks-horvath-grimage-peptide-research",
-    "peptide-research-muscle-recovery-bpc157-tb500-ghk-cu-complete-protocol",
     "ghk-cu-neuroprotection-brain-health-bdnf-nrf2-cognitive-research-protocols",
   ],
 
   // GH Axis
   "ipamorelin": [
+    "peptide-research-comprehensive-recovery-stack-bpc157-tb500-ghk-cu-ipamorelin-protocol",
     "ipamorelin-fat-loss-ghsr1a-lipolysis-body-composition-research-protocols",
-    "protein-synthesis-skeletal-muscle-mtor-s6k-eif4e-gh-axis-research",
     "mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research",
   ],
   "cjc-1295": [

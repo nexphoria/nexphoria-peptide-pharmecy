@@ -162,6 +162,7 @@ import { article as a158 } from './articles/pt141-vs-oxytocin-sexual-behavior-ar
 import { article as a159 } from './articles/glp1-agonists-fasting-ketone-bodies-metabolic-flexibility-research';
 import { article as a160 } from './articles/peptide-research-brown-adipose-tissue-ucp1-thermogenesis-cold-exposure-protocols';
 import { article as a161 } from './articles/epigenetic-aging-clocks-horvath-grimage-peptide-research';
+import { article as a162 } from './articles/peptide-research-comprehensive-recovery-stack-bpc157-tb500-ghk-cu-ipamorelin-protocol';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -280,6 +281,7 @@ export const articles: BlogArticle[] = [
   a159,
   a160,
   a161,
+  a162,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
