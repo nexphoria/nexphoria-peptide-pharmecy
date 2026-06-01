@@ -66,19 +66,19 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // GLP-1 / Metabolic
   "semaglutide": [
+    "glp1-agonists-fasting-ketone-bodies-metabolic-flexibility-research",
     "peptide-research-metabolic-syndrome-insulin-resistance-dyslipidemia-protocol-design",
     "semaglutide-weight-loss-plateau-mechanisms-protocol-adjustments",
-    "semaglutide-dosing-timing-protocol-design-researchers-reference",
   ],
   "tirzepatide": [
+    "glp1-agonists-fasting-ketone-bodies-metabolic-flexibility-research",
     "peptide-research-metabolic-syndrome-insulin-resistance-dyslipidemia-protocol-design",
     "tirzepatide-lean-mass-preservation-gipr-body-composition-study-design",
-    "tirzepatide-research-dosing-guide-glp1-gip-dual-agonism-protocols",
   ],
   "retatrutide": [
+    "glp1-agonists-fasting-ketone-bodies-metabolic-flexibility-research",
     "peptide-research-metabolic-syndrome-insulin-resistance-dyslipidemia-protocol-design",
     "retatrutide-pleiotropic-mechanisms-hepatic-cardiac-cns-beyond-weight-loss",
-    "retatrutide-triple-agonist-research-guide",
   ],
   "aod-9604": [
     "aod-9604-lipolytic-fragment-research-guide",
