@@ -31,7 +31,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "ipamorelin": [
     "peptide-research-comprehensive-recovery-stack-bpc157-tb500-ghk-cu-ipamorelin-protocol",
     "ipamorelin-fat-loss-ghsr1a-lipolysis-body-composition-research-protocols",
-    "mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research",
+    "hexarelin-cardiac-research-gh-independent-cardioprotection-cd36",
   ],
   "cjc-1295": [
     "protein-synthesis-skeletal-muscle-mtor-s6k-eif4e-gh-axis-research",
