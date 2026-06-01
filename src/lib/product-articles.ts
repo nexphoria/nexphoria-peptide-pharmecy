@@ -125,16 +125,16 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "dsip-delta-sleep-inducing-peptide-sleep-research-review",
   ],
   "oxytocin": [
+    "pt141-vs-oxytocin-sexual-behavior-arousal-research-protocols",
     "testosterone-hpg-axis-peptide-research-kisspeptin-lh-hormone-endpoints",
     "oxytocin-research-neuropeptide-guide",
-    "blood-brain-barrier-peptide-cns-delivery-research",
   ],
 
   // Melanocortin
   "pt-141": [
+    "pt141-vs-oxytocin-sexual-behavior-arousal-research-protocols",
     "pt-141-bremelanotide-melanocortin-research-review",
     "melanotan-ii-melanocortin-research-review",
-    "oxytocin-research-neuropeptide-guide",
   ],
   "melanotan-ii": [
     "melanotan-ii-melanocortin-research-review",
