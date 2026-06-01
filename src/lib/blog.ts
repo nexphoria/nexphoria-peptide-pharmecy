@@ -147,6 +147,7 @@ import { article as a143 } from './articles/retatrutide-pleiotropic-mechanisms-h
 import { article as a144 } from './articles/ghk-cu-epigenetic-reprogramming-gene-expression-nrf2-anti-aging-research';
 import { article as a145 } from './articles/mk-677-sleep-quality-research-gh-pulse-sws-copinschi-data';
 import { article as a146 } from './articles/bpc-157-angiogenesis-vegf-enos-vascular-research-protocols';
+import { article as a147 } from './articles/nad-plus-circadian-biology-nampt-sirt1-clock-genes-research-protocols';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -250,6 +251,7 @@ export const articles: BlogArticle[] = [
   a144,
   a145,
   a146,
+  a147,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

@@ -95,7 +95,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // Longevity
   "nad-plus": [
-    "peptide-research-neuroprotection-bpc157-ss31-nad-semax",
+    "nad-plus-circadian-biology-nampt-sirt1-clock-genes-research-protocols",
     "nad-plus-research-protocols-dosing-routes-study-design",
     "nad-precursors-nmn-nr-vs-direct-nad-injection-research",
   ],
