@@ -22,7 +22,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "myostatin-inhibition-follistatin-actriiib-protocols",
   ],
   "ghk-cu": [
-    "peptide-research-hair-follicle-ghk-cu-bpc157-wnt-signaling",
+    "ghk-cu-epigenetic-reprogramming-gene-expression-nrf2-anti-aging-research",
     "collagen-synthesis-research-ghk-cu-tgf-beta-pathway-deep-dive",
     "ghk-cu-wound-healing-research-protocols-study-design",
   ],
