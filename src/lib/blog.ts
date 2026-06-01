@@ -146,6 +146,7 @@ import { article as a142 } from './articles/tirzepatide-lean-mass-preservation-g
 import { article as a143 } from './articles/retatrutide-pleiotropic-mechanisms-hepatic-cardiac-cns-beyond-weight-loss';
 import { article as a144 } from './articles/ghk-cu-epigenetic-reprogramming-gene-expression-nrf2-anti-aging-research';
 import { article as a145 } from './articles/mk-677-sleep-quality-research-gh-pulse-sws-copinschi-data';
+import { article as a146 } from './articles/bpc-157-angiogenesis-vegf-enos-vascular-research-protocols';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -248,6 +249,7 @@ export const articles: BlogArticle[] = [
   a143,
   a144,
   a145,
+  a146,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

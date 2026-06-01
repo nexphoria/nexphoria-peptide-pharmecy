@@ -7,7 +7,7 @@
 export const PRODUCT_ARTICLES: Record<string, string[]> = {
   // Repair / Recovery
   "bpc-157": [
-    "peptide-research-gut-microbiome-bpc157-glp1-prebiotics-study-design",
+    "bpc-157-angiogenesis-vegf-enos-vascular-research-protocols",
     "bpc-157-gut-brain-axis-vagus-nerve-enteric-nervous-system",
     "bpc-157-mechanism-deep-dive-no-vegf-fak-signaling",
   ],
