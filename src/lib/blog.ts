@@ -150,6 +150,7 @@ import { article as a146 } from './articles/bpc-157-angiogenesis-vegf-enos-vascu
 import { article as a147 } from './articles/nad-plus-circadian-biology-nampt-sirt1-clock-genes-research-protocols';
 import { article as a148 } from './articles/ss-31-aging-muscle-sarcopenia-mitochondrial-quality-control-research-protocols';
 import { article as a149 } from './articles/ipamorelin-fat-loss-ghsr1a-lipolysis-body-composition-research-protocols';
+import { article as a150 } from './articles/sermorelin-vs-cjc-1295-no-dac-vs-cjc-1295-dac-ghrh-analog-research-guide';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -256,6 +257,7 @@ export const articles: BlogArticle[] = [
   a147,
   a148,
   a149,
+  a150,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

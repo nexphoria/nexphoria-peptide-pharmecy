@@ -39,7 +39,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
   ],
   "cjc-1295-no-dac": [
-    "ipamorelin-fat-loss-ghsr1a-lipolysis-body-composition-research-protocols",
+    "sermorelin-vs-cjc-1295-no-dac-vs-cjc-1295-dac-ghrh-analog-research-guide",
     "ghrh-biology-pulsatile-gh-secretagogues-deep-dive",
     "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
   ],
@@ -49,9 +49,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
   ],
   "sermorelin": [
-    "ghrh-biology-pulsatile-gh-secretagogues-deep-dive",
+    "sermorelin-vs-cjc-1295-no-dac-vs-cjc-1295-dac-ghrh-analog-research-guide",
     "sermorelin-ghrh-analog-anti-aging-research",
-    "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
+    "ghrh-biology-pulsatile-gh-secretagogues-deep-dive",
   ],
   "mk-677": [
     "mk-677-sleep-quality-research-gh-pulse-sws-copinschi-data",
@@ -59,9 +59,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "mk-677-ibutamoren-oral-gh-secretagogue-guide",
   ],
   "tesamorelin": [
-    "ghrh-biology-pulsatile-gh-secretagogues-deep-dive",
+    "sermorelin-vs-cjc-1295-no-dac-vs-cjc-1295-dac-ghrh-analog-research-guide",
     "tesamorelin-ghrh-analog-visceral-fat-research",
-    "cjc-1295-no-dac-vs-cjc-1295-dac-choosing-right-ghrh-analog",
+    "ghrh-biology-pulsatile-gh-secretagogues-deep-dive",
   ],
 
   // GLP-1 / Metabolic
