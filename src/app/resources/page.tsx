@@ -58,6 +58,7 @@ const TOOLS = [
   { href: "/tools/peptide-news-feed", label: "Research News Feed", desc: "Curated landmark PubMed papers — filter by compound, category, or impact level" },
   { href: "/tools/compound-half-life-reference", label: "Half-Life Reference Table", desc: "Fast-load static reference for 35+ compounds: half-life, Tmax, dosing frequency, route" },
   { href: "/tools/molarity-calculator", label: "Molarity Calculator", desc: "Convert molar ↔ mass concentration (nM/μM ↔ mg/mL) for any peptide — 30+ compound MW database, rodent dose → nmol converter" },
+  { href: "/tools/peptide-label-generator", label: "Vial Label Generator", desc: "Generate printable 1\"×2.5\" cryo vial labels with compound, concentration, lot, reconstitution date, and auto-expiry" },
   { href: "/compare", label: "Compare Compounds", desc: "Side-by-side purity, MW, storage, and pricing for up to 3 compounds" },
 ];
 
