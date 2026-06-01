@@ -155,6 +155,8 @@ import { article as a151 } from './articles/peptide-research-metabolic-syndrome-
 import { article as a152 } from './articles/ghk-cu-neuroprotection-brain-health-bdnf-nrf2-cognitive-research-protocols';
 import { article as a153 } from './articles/peptide-research-muscle-recovery-bpc157-tb500-ghk-cu-complete-protocol';
 import { article as a154 } from './articles/selank-anxiety-stress-research-mechanisms-protocols';
+import { article as a155 } from './articles/nexphoria-vs-umbrella-labs-vendor-comparison';
+import { article as a156 } from './articles/nexphoria-vs-swiss-chems-vendor-comparison';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,

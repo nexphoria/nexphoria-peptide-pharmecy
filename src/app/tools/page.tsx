@@ -530,6 +530,18 @@ const TOOLS = [
     ),
     badge: "Tool",
   },
+  {
+    href: "/tools/peptide-roi-calculator",
+    title: "Research ROI Calculator",
+    desc: "Estimate total compound cost for any peptide study design — by study type, subject count, and compound stack. Shows cost per group, cost per endpoint, and comparison vs commercial CRO pricing. Ideal for grant budget planning.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="12" y1="1" x2="12" y2="23"/>
+        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+      </svg>
+    ),
+    badge: "Calculator",
+  },
 ];
 
 export default function ToolsPage() {
