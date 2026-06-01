@@ -148,6 +148,7 @@ import { article as a144 } from './articles/ghk-cu-epigenetic-reprogramming-gene
 import { article as a145 } from './articles/mk-677-sleep-quality-research-gh-pulse-sws-copinschi-data';
 import { article as a146 } from './articles/bpc-157-angiogenesis-vegf-enos-vascular-research-protocols';
 import { article as a147 } from './articles/nad-plus-circadian-biology-nampt-sirt1-clock-genes-research-protocols';
+import { article as a148 } from './articles/ss-31-aging-muscle-sarcopenia-mitochondrial-quality-control-research-protocols';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -252,6 +253,7 @@ export const articles: BlogArticle[] = [
   a145,
   a146,
   a147,
+  a148,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

@@ -105,9 +105,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "epitalon-pineal-peptide-longevity-research-review",
   ],
   "ss-31": [
+    "ss-31-aging-muscle-sarcopenia-mitochondrial-quality-control-research-protocols",
     "peptide-research-neuroprotection-bpc157-ss31-nad-semax",
     "ss-31-elamipretide-mitochondria-targeted-peptide-research",
-    "mitophagy-research-ss31-nad-plus-pink1-parkin-pathway",
   ],
 
   // Nootropics / Neuro
