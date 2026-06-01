@@ -173,6 +173,7 @@ import { article as a169 } from './articles/peptide-research-metabolic-syndrome-
 import { article as a170 } from './articles/peptide-research-metabolic-syndrome-visceral-adiposity-insulin-resistance-protocol';
 import { article as a171 } from './articles/glp1-agonist-discontinuation-rebound-washout-reinitiation-research';
 import { article as a172 } from './articles/glp1-appetite-regulation-hypothalamic-circuits-ghrelin-hunger-endpoints';
+import { article as a173 } from './articles/peptide-research-cognitive-aging-bdnf-mtor-multi-compound-protocol';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -302,6 +303,7 @@ export const articles: BlogArticle[] = [
   a170,
   a171,
   a172,
+  a173,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
