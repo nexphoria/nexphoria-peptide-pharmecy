@@ -22,9 +22,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "myostatin-inhibition-follistatin-actriiib-protocols",
   ],
   "ghk-cu": [
+    "ghk-cu-neuroprotection-brain-health-bdnf-nrf2-cognitive-research-protocols",
     "ghk-cu-epigenetic-reprogramming-gene-expression-nrf2-anti-aging-research",
     "collagen-synthesis-research-ghk-cu-tgf-beta-pathway-deep-dive",
-    "ghk-cu-wound-healing-research-protocols-study-design",
   ],
 
   // GH Axis
