@@ -66,19 +66,19 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // GLP-1 / Metabolic
   "semaglutide": [
+    "peptide-research-metabolic-syndrome-insulin-resistance-dyslipidemia-protocol-design",
     "semaglutide-weight-loss-plateau-mechanisms-protocol-adjustments",
     "semaglutide-dosing-timing-protocol-design-researchers-reference",
-    "glp1-agonists-diabetes-research-t1d-t2d-models-hba1c-glycemic-study-design",
   ],
   "tirzepatide": [
+    "peptide-research-metabolic-syndrome-insulin-resistance-dyslipidemia-protocol-design",
     "tirzepatide-lean-mass-preservation-gipr-body-composition-study-design",
     "tirzepatide-research-dosing-guide-glp1-gip-dual-agonism-protocols",
-    "retatrutide-vs-tirzepatide-triple-vs-dual-agonist-research-comparison",
   ],
   "retatrutide": [
+    "peptide-research-metabolic-syndrome-insulin-resistance-dyslipidemia-protocol-design",
     "retatrutide-pleiotropic-mechanisms-hepatic-cardiac-cns-beyond-weight-loss",
     "retatrutide-triple-agonist-research-guide",
-    "retatrutide-vs-tirzepatide-triple-vs-dual-agonist-research-comparison",
   ],
   "aod-9604": [
     "aod-9604-lipolytic-fragment-research-guide",
@@ -86,10 +86,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "glp1-receptor-agonists-complete-research-landscape",
   ],
   "mots-c": [
+    "peptide-research-metabolic-syndrome-insulin-resistance-dyslipidemia-protocol-design",
     "mots-c-mitochondria-derived-peptide-metabolic-research",
     "humanin-shlp2-mitochondrial-derived-peptides-mots-c",
-    "mitophagy-research-ss31-nad-plus-pink1-parkin-pathway",
-    "peptide-stacking-longevity-nad-epitalon-ss31-ghk-cu",
   ],
 
   // Longevity
