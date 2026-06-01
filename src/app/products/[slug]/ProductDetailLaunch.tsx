@@ -234,22 +234,14 @@ export default function ProductDetailLaunch({ product, related }: Props) {
                   border: "1px solid #E5E5E5",
                   boxShadow: "0 8px 32px rgba(0,0,0,0.08)",
                 }}
-                onMouseMove={(e) => {
-                  const rect = e.currentTarget.getBoundingClientRect();
-                  const x = (e.clientX - rect.left) / rect.width - 0.5;
-                  const y = (e.clientY - rect.top) / rect.height - 0.5;
-                  e.currentTarget.style.transform = `perspective(1000px) rotateY(${x * 2}deg) rotateX(${-y * 2}deg)`;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
-                }}
+                // Removed interactive 3D hover effect for a static display
               >
                 {hasPhoto ? (
                   <img
                     src={getProductImagePath(product.slug)}
                     alt={`${product.name} ${product.size}`}
-                    className="max-w-full max-h-full object-contain product-detail-fade"
-                    style={{ padding: "clamp(2rem, 6vw, 4rem)" }}
+                    className="max-w-full max-h-full object-cover product-detail-fade"
+                    style={{ padding: "clamp(1rem, 4vw, 2rem)" }}
                     loading="eager"
                     fetchPriority="high"
                     width={600}

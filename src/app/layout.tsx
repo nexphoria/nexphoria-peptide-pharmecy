@@ -206,7 +206,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://nexphoria-checkout.chiya-b60.workers.dev" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://nexphoria-checkout.chiya-b60.workers.dev" />
         {/* Preload LCP images — high priority for both breakpoints */}
-        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+        { }
         <link rel="preload" as="image" href="/brand/packaging-unboxing.webp" type="image/webp"
           media="(min-width: 769px)"
           // @ts-ignore fetchpriority is valid HTML attr

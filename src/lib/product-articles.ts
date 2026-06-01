@@ -68,17 +68,17 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "semaglutide": [
     "peptide-research-gut-microbiome-bpc157-glp1-prebiotics-study-design",
     "semaglutide-dosing-timing-protocol-design-researchers-reference",
-    "glp-1-receptor-agonists-complete-research-landscape",
+    "glp1-agonists-diabetes-research-t1d-t2d-models-hba1c-glycemic-study-design",
   ],
   "tirzepatide": [
     "tirzepatide-research-dosing-guide-glp1-gip-dual-agonism-protocols",
     "retatrutide-vs-tirzepatide-triple-vs-dual-agonist-research-comparison",
-    "peptide-research-liver-health-nash-hepatic-steatosis-glp1-data",
+    "glp1-agonists-diabetes-research-t1d-t2d-models-hba1c-glycemic-study-design",
   ],
   "retatrutide": [
     "retatrutide-triple-agonist-research-guide",
     "retatrutide-vs-tirzepatide-triple-vs-dual-agonist-research-comparison",
-    "peptide-research-liver-health-nash-hepatic-steatosis-glp1-data",
+    "glp1-agonists-diabetes-research-t1d-t2d-models-hba1c-glycemic-study-design",
   ],
   "aod-9604": [
     "aod-9604-lipolytic-fragment-research-guide",

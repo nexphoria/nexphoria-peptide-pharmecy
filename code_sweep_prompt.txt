@@ -1,0 +1,35 @@
+You are an expert full-stack developer for the Nexphoria Next.js site. Perform a comprehensive code sweep (10 passes) to address the following critical issues:
+
+1. **Image Zoom & Rendering**
+   - Replace all `<img>` tags that render product images (including hero images, related product grids, product detail pages, bundles, etc.) with Next.js `<Image>` component to enable proper optimization.
+   - Ensure images use `objectFit: "cover"` (or appropriate) and remove any excessive `padding` or `transform` styles that cause zoomed‑in appearance.
+   - Remove the 3D hover/parallax effect on the product hero image (already removed in `ProductDetailLaunch.tsx`). Verify no other hover transforms affect product images.
+   - Update any CSS classes or Tailwind utilities that add large paddings or fixed heights to image containers, aiming for a balanced presentation where the full product is visible.
+
+2. **Checkout Logic & State Handling**
+   - Scan all components/pages that use `useEffect(() => { setMounted(true); }, []);` or similar patterns that synchronously call `setState` inside an effect. Refactor these to either:
+     * Initialise the state to the desired value directly (e.g., `const [mounted, setMounted] = useState(true);`) and remove the effect, **or**
+     * Use an async update (e.g., `useEffect(() => { setTimeout(() => setMounted(true), 0); }, []);`).
+   - Ensure shipping logic correctly applies free‑over thresholds and that subscription pricing displays accurately.
+
+3. **Lint & TypeScript Clean‑up**
+   - Run `eslint --fix` to automatically resolve fixable warnings (unused imports, `@ts-ignore` → `@ts-expect-error`, etc.).
+   - Manually address remaining lint errors:
+     * Unescaped HTML entities in JSX (replace raw quotes with `&quot;` or use JSX escaping).
+     * Replace any remaining `@ts-ignore` comments with `@ts-expect-error` where appropriate.
+     * Fix `Unexpected any` TypeScript errors by adding proper type annotations for `SpecGrid` and `Timeline` components.
+     * Resolve `Cannot access variable before it is declared` in `src/app/products/client.tsx` by moving the `filtered` declaration above its usage or restructuring the logic.
+     * Replace direct `Date.now()` calls inside `useState` initialisers with lazy initialisers: `useState(() => Date.now())`.
+   - Remove any unused variables/imports that cause warnings.
+
+4. **Testing & Build**
+   - After applying changes, run `npm run lint` to ensure no remaining errors (allow warnings).
+   - Run `npm run build` to verify the site compiles without TypeScript or webpack errors.
+   - If the build succeeds, commit the changes with the message:
+     "Fix image zoom, checkout logic, and lint errors (code sweep 10)"
+   - Push to the repository's default branch.
+
+5. **Notify on Completion**
+   - When all steps are finished, use the OpenClaw messaging system to send a concise completion note to the current chat: "Code sweep 10 complete: images fixed, checkout logic cleaned, lint errors resolved, site builds successfully."
+
+**Note:** All modifications must stay within the existing repository structure; do not add new dependencies.
