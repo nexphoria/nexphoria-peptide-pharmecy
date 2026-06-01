@@ -160,6 +160,7 @@ import { article as a156 } from './articles/nexphoria-vs-swiss-chems-vendor-comp
 import { article as a157 } from './articles/semax-cognitive-enhancement-neuroprotection-research-protocols';
 import { article as a158 } from './articles/pt141-vs-oxytocin-sexual-behavior-arousal-research-protocols';
 import { article as a159 } from './articles/glp1-agonists-fasting-ketone-bodies-metabolic-flexibility-research';
+import { article as a160 } from './articles/peptide-research-brown-adipose-tissue-ucp1-thermogenesis-cold-exposure-protocols';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -276,6 +277,7 @@ export const articles: BlogArticle[] = [
   a157,
   a158,
   a159,
+  a160,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

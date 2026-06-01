@@ -66,13 +66,13 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // GLP-1 / Metabolic
   "semaglutide": [
+    "peptide-research-brown-adipose-tissue-ucp1-thermogenesis-cold-exposure-protocols",
     "glp1-agonists-fasting-ketone-bodies-metabolic-flexibility-research",
-    "peptide-research-metabolic-syndrome-insulin-resistance-dyslipidemia-protocol-design",
     "semaglutide-weight-loss-plateau-mechanisms-protocol-adjustments",
   ],
   "tirzepatide": [
+    "peptide-research-brown-adipose-tissue-ucp1-thermogenesis-cold-exposure-protocols",
     "glp1-agonists-fasting-ketone-bodies-metabolic-flexibility-research",
-    "peptide-research-metabolic-syndrome-insulin-resistance-dyslipidemia-protocol-design",
     "tirzepatide-lean-mass-preservation-gipr-body-composition-study-design",
   ],
   "retatrutide": [
@@ -86,7 +86,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "glp1-receptor-agonists-complete-research-landscape",
   ],
   "mots-c": [
-    "peptide-research-metabolic-syndrome-insulin-resistance-dyslipidemia-protocol-design",
+    "peptide-research-brown-adipose-tissue-ucp1-thermogenesis-cold-exposure-protocols",
     "mots-c-mitochondria-derived-peptide-metabolic-research",
     "humanin-shlp2-mitochondrial-derived-peptides-mots-c",
   ],
