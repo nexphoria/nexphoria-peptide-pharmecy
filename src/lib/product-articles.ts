@@ -143,8 +143,8 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   ],
   "kpv": [
     "kpv-immunomodulatory-tripeptide-research-guide",
+    "peptide-research-inflammation-cox2-nfkb-anti-inflammatory-protocols",
     "peptide-research-autoimmune-inflammatory-conditions-kpv-thymosin-ll37-bpc157",
-    "peptide-research-pain-inflammation-bpc157-kpv-opioid-nociception",
   ],
 
   // Immunology
