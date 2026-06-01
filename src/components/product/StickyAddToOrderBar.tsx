@@ -60,7 +60,7 @@ export default function StickyAddToOrderBar({
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -80, opacity: 0 }}
           transition={{ type: "spring", stiffness: 380, damping: 32 }}
-          className="fixed top-0 left-0 right-0 z-50 border-b shadow-lg"
+          className="fixed top-[72px] left-0 right-0 z-40 border-b shadow-lg"
           style={{
             backgroundColor: "#0F0F0E",
             borderColor: "#2A2A28",

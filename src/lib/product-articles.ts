@@ -7,7 +7,7 @@
 export const PRODUCT_ARTICLES: Record<string, string[]> = {
   // Repair / Recovery
   "bpc-157": [
-    "peptide-research-comprehensive-recovery-stack-bpc157-tb500-ghk-cu-ipamorelin-protocol",
+    "peptide-research-arthritis-joint-inflammation-bpc157-kpv-tb500-protocol",
     "bpc-157-angiogenesis-vegf-enos-vascular-research-protocols",
     "bpc-157-mechanism-deep-dive-no-vegf-fak-signaling",
   ],
@@ -144,9 +144,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "kpv-immunomodulatory-tripeptide-research-guide",
   ],
   "kpv": [
+    "peptide-research-arthritis-joint-inflammation-bpc157-kpv-tb500-protocol",
     "kpv-immunomodulatory-tripeptide-research-guide",
     "peptide-research-inflammation-cox2-nfkb-anti-inflammatory-protocols",
-    "peptide-research-autoimmune-inflammatory-conditions-kpv-thymosin-ll37-bpc157",
   ],
 
   // Immunology

@@ -105,9 +105,9 @@ export function Header() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "backdrop-blur-md shadow-sm"
-          : "bg-transparent"
+          : "backdrop-blur-sm"
       }`}
-      style={{ height: "72px", backgroundColor: scrolled ? "rgba(250,248,245,0.95)" : "transparent" }}
+      style={{ height: "72px", backgroundColor: scrolled ? "rgba(250,248,245,0.97)" : "rgba(250,248,245,0.72)" }}
     >
       <div
         className="max-w-7xl mx-auto px-6 md:px-10 h-full flex items-center justify-between"

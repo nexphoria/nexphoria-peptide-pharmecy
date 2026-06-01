@@ -63,9 +63,9 @@ export default function AnnouncementBar() {
         borderBottom: "1px solid #E8E5DF",
       }}
     >
-      <div className="flex items-center justify-center py-2.5 px-10">
+      <div className="flex items-center justify-center py-2.5 px-10 overflow-hidden">
         <p
-          className="text-[10px] uppercase font-medium transition-opacity"
+          className="text-[10px] uppercase font-medium transition-opacity whitespace-nowrap overflow-hidden text-ellipsis"
           style={{
             letterSpacing: "0.15em",
             color: "#666666",
