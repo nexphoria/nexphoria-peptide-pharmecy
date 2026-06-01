@@ -29,10 +29,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // GH Axis
   "ipamorelin": [
+    "ipamorelin-fat-loss-ghsr1a-lipolysis-body-composition-research-protocols",
     "protein-synthesis-skeletal-muscle-mtor-s6k-eif4e-gh-axis-research",
-    "gpcr-pharmacology-biased-agonism-peptide-research",
     "mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research",
-    "tirzepatide-lean-mass-preservation-gipr-body-composition-study-design",
   ],
   "cjc-1295": [
     "protein-synthesis-skeletal-muscle-mtor-s6k-eif4e-gh-axis-research",
@@ -40,12 +39,12 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
   ],
   "cjc-1295-no-dac": [
-    "protein-synthesis-skeletal-muscle-mtor-s6k-eif4e-gh-axis-research",
+    "ipamorelin-fat-loss-ghsr1a-lipolysis-body-composition-research-protocols",
     "ghrh-biology-pulsatile-gh-secretagogues-deep-dive",
     "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
   ],
   "cjc-1295-ipamorelin": [
-    "protein-synthesis-skeletal-muscle-mtor-s6k-eif4e-gh-axis-research",
+    "ipamorelin-fat-loss-ghsr1a-lipolysis-body-composition-research-protocols",
     "mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research",
     "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
   ],
