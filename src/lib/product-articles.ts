@@ -77,9 +77,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "retatrutide-vs-tirzepatide-triple-vs-dual-agonist-research-comparison",
   ],
   "retatrutide": [
+    "retatrutide-pleiotropic-mechanisms-hepatic-cardiac-cns-beyond-weight-loss",
     "retatrutide-triple-agonist-research-guide",
     "retatrutide-vs-tirzepatide-triple-vs-dual-agonist-research-comparison",
-    "glp1-agonists-diabetes-research-t1d-t2d-models-hba1c-glycemic-study-design",
   ],
   "aod-9604": [
     "aod-9604-lipolytic-fragment-research-guide",

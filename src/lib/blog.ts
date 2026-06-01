@@ -143,6 +143,7 @@ import { article as a139 } from './articles/peptide-research-gut-microbiome-bpc1
 import { article as a140 } from './articles/glp1-agonists-diabetes-research-t1d-t2d-models-hba1c-glycemic-study-design';
 import { article as a141 } from './articles/semaglutide-weight-loss-plateau-mechanisms-protocol-adjustments';
 import { article as a142 } from './articles/tirzepatide-lean-mass-preservation-gipr-body-composition-study-design';
+import { article as a143 } from './articles/retatrutide-pleiotropic-mechanisms-hepatic-cardiac-cns-beyond-weight-loss';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -242,6 +243,7 @@ export const articles: BlogArticle[] = [
   a140,
   a141,
   a142,
+  a143,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
