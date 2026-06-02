@@ -7,12 +7,12 @@
 export const PRODUCT_ARTICLES: Record<string, string[]> = {
   // Repair / Recovery
   "bpc-157": [
-    "peptide-research-nervous-system-regeneration-bpc157-ss31-semax-neuropathy-protocols",
+    "peptide-research-athletic-performance-exercise-recovery-bpc157-ipamorelin-tb500",
     "bpc-157-angiogenesis-vegf-enos-vascular-research-protocols",
     "bpc-157-mechanism-deep-dive-no-vegf-fak-signaling",
   ],
   "tb-500": [
-    "peptide-research-cardiac-hypertrophy-heart-failure-bpc157-tb500-ss31-ghkcu",
+    "peptide-research-athletic-performance-exercise-recovery-bpc157-ipamorelin-tb500",
     "tb-500-cardiac-research-thymosin-beta-4-ikk-myocardial-repair-protocols",
     "tb-500-mechanism-deep-dive-g-actin-sequestration-thymosin-beta-4-biology",
   ],
@@ -29,9 +29,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // GH Axis
   "ipamorelin": [
+    "peptide-research-athletic-performance-exercise-recovery-bpc157-ipamorelin-tb500",
     "cjc-1295-ipamorelin-combination-research-guide",
     "ipamorelin-fat-loss-ghsr1a-lipolysis-body-composition-research-protocols",
-    "peptide-research-comprehensive-recovery-stack-bpc157-tb500-ghk-cu-ipamorelin-protocol",
   ],
   "cjc-1295": [
     "protein-synthesis-skeletal-muscle-mtor-s6k-eif4e-gh-axis-research",

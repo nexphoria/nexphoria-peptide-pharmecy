@@ -192,6 +192,7 @@ import { article as a188 } from './articles/peptide-research-longevity-complete-
 import { article as a189 } from './articles/nad-plus-skeletal-muscle-atrophy-metabolism-research-protocols';
 import { article as a190 } from './articles/peptide-research-cardiac-hypertrophy-heart-failure-bpc157-tb500-ss31-ghkcu';
 import { article as a191 } from './articles/peptide-research-nervous-system-regeneration-bpc157-ss31-semax-neuropathy-protocols';
+import { article as a192 } from './articles/peptide-research-athletic-performance-exercise-recovery-bpc157-ipamorelin-tb500';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -340,6 +341,7 @@ export const articles: BlogArticle[] = [
   a189,
   a190,
   a191,
+  a192,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
