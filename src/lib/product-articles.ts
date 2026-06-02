@@ -81,7 +81,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "glp1-agonist-discontinuation-rebound-washout-reinitiation-research",
   ],
   "aod-9604": [
-    "aod-9604-lipolytic-fragment-research-guide",
+    "aod-9604-lipolysis-complete-research-protocol-guide",
     "hgh-fragment-176-191-vs-aod-9604-difference",
     "glp1-receptor-agonists-complete-research-landscape",
   ],
