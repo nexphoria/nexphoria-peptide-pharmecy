@@ -22,9 +22,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "myostatin-inhibition-follistatin-actriiib-protocols",
   ],
   "ghk-cu": [
+    "ghk-cu-skin-aging-collagen-elastin-clinical-research-review",
     "senolytic-peptides-cellular-senescence-epitalon-nad-ghk-cu-research",
     "peptide-research-comprehensive-recovery-stack-bpc157-tb500-ghk-cu-ipamorelin-protocol",
-    "ghk-cu-neuroprotection-brain-health-bdnf-nrf2-cognitive-research-protocols",
   ],
 
   // GH Axis
