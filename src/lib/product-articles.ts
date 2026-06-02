@@ -29,9 +29,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // GH Axis
   "ipamorelin": [
-    "peptide-research-comprehensive-recovery-stack-bpc157-tb500-ghk-cu-ipamorelin-protocol",
+    "cjc-1295-ipamorelin-combination-research-guide",
     "ipamorelin-fat-loss-ghsr1a-lipolysis-body-composition-research-protocols",
-    "hexarelin-cardiac-research-gh-independent-cardioprotection-cd36",
+    "peptide-research-comprehensive-recovery-stack-bpc157-tb500-ghk-cu-ipamorelin-protocol",
   ],
   "cjc-1295": [
     "protein-synthesis-skeletal-muscle-mtor-s6k-eif4e-gh-axis-research",
@@ -39,14 +39,14 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
   ],
   "cjc-1295-no-dac": [
+    "cjc-1295-ipamorelin-combination-research-guide",
     "sermorelin-vs-cjc-1295-no-dac-vs-cjc-1295-dac-ghrh-analog-research-guide",
     "ghrh-biology-pulsatile-gh-secretagogues-deep-dive",
-    "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
   ],
   "cjc-1295-ipamorelin": [
+    "cjc-1295-ipamorelin-combination-research-guide",
     "ipamorelin-fat-loss-ghsr1a-lipolysis-body-composition-research-protocols",
     "mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research",
-    "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
   ],
   "sermorelin": [
     "sermorelin-vs-cjc-1295-no-dac-vs-cjc-1295-dac-ghrh-analog-research-guide",
