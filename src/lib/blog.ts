@@ -181,6 +181,7 @@ import { article as a177 } from './articles/peptide-research-depression-mood-str
 import { article as a178 } from './articles/aod-9604-lipolysis-complete-research-protocol-guide';
 import { article as a179 } from './articles/melanotan-ii-tanning-arousal-mc-receptor-pharmacology-research-review';
 import { article as a180 } from './articles/follistatin-344-vs-myostatin-propeptide-comparative-inhibition-research';
+import { article as a181 } from './articles/senolytic-peptides-cellular-senescence-epitalon-nad-ghk-cu-research';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -318,6 +319,7 @@ export const articles: BlogArticle[] = [
   a178,
   a179,
   a180,
+  a181,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

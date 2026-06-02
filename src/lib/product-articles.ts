@@ -22,8 +22,8 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "myostatin-inhibition-follistatin-actriiib-protocols",
   ],
   "ghk-cu": [
+    "senolytic-peptides-cellular-senescence-epitalon-nad-ghk-cu-research",
     "peptide-research-comprehensive-recovery-stack-bpc157-tb500-ghk-cu-ipamorelin-protocol",
-    "epigenetic-aging-clocks-horvath-grimage-peptide-research",
     "ghk-cu-neuroprotection-brain-health-bdnf-nrf2-cognitive-research-protocols",
   ],
 
@@ -93,19 +93,19 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // Longevity
   "nad-plus": [
+    "senolytic-peptides-cellular-senescence-epitalon-nad-ghk-cu-research",
     "nad-plus-dna-repair-parp1-sirtuins-genome-stability-research",
     "epigenetic-aging-clocks-horvath-grimage-peptide-research",
-    "nad-plus-circadian-biology-nampt-sirt1-clock-genes-research-protocols",
   ],
   "epitalon": [
+    "senolytic-peptides-cellular-senescence-epitalon-nad-ghk-cu-research",
     "epigenetic-aging-clocks-horvath-grimage-peptide-research",
     "epitalon-pineal-peptide-longevity-research-review",
-    "peptide-research-sleep-circadian-rhythms-dsip-mk677-epitalon",
   ],
   "ss-31": [
+    "senolytic-peptides-cellular-senescence-epitalon-nad-ghk-cu-research",
     "epigenetic-aging-clocks-horvath-grimage-peptide-research",
     "ss-31-aging-muscle-sarcopenia-mitochondrial-quality-control-research-protocols",
-    "ss-31-elamipretide-mitochondria-targeted-peptide-research",
   ],
 
   // Nootropics / Neuro
