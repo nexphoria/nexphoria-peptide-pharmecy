@@ -33,6 +33,7 @@ jobs:
       - name: Export KV namespace
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           KV_NAMESPACE_ID: '67bb9d9a4fa440fe94b1adcfb977c16c'
           OUTPUT_DIR: backup-output
           RETAIN_DAYS: ${{ github.event.inputs.retain_days || '30' }}
