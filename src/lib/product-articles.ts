@@ -86,14 +86,14 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "glp1-receptor-agonists-complete-research-landscape",
   ],
   "mots-c": [
-    "peptide-research-metabolic-syndrome-insulin-resistance-hypertension-dyslipidemia",
+    "nad-plus-skeletal-muscle-atrophy-metabolism-research-protocols",
     "mots-c-mitochondria-derived-peptide-metabolic-research",
     "epigenetic-aging-clocks-horvath-grimage-peptide-research",
   ],
 
   // Longevity
   "nad-plus": [
-    "peptide-research-longevity-complete-multi-target-protocol-guide",
+    "nad-plus-skeletal-muscle-atrophy-metabolism-research-protocols",
     "sirt1-sirt3-nad-dependent-sirtuin-research-guide",
     "nad-plus-dna-repair-parp1-sirtuins-genome-stability-research",
   ],
