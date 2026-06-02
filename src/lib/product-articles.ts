@@ -111,13 +111,13 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   // Nootropics / Neuro
   "selank": [
     "selank-anxiety-stress-research-mechanisms-protocols",
-    "peptide-research-cognitive-aging-bdnf-mtor-multi-compound-protocol",
+    "peptide-research-depression-mood-stress-selank-semax-bpc157-nad-protocol",
     "selank-semax-nootropic-peptide-research-overview",
     "adamax-dsip-selank-nad-nootropic-stack-protocol-deep-dive",
   ],
   "semax": [
     "semax-cognitive-enhancement-neuroprotection-research-protocols",
-    "peptide-research-cognitive-aging-bdnf-mtor-multi-compound-protocol",
+    "peptide-research-depression-mood-stress-selank-semax-bpc157-nad-protocol",
     "peptide-research-neuroprotection-bpc157-ss31-nad-semax",
     "selank-semax-nootropic-peptide-research-overview",
   ],
