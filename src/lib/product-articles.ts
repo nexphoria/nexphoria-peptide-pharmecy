@@ -7,14 +7,14 @@
 export const PRODUCT_ARTICLES: Record<string, string[]> = {
   // Repair / Recovery
   "bpc-157": [
-    "peptide-research-arthritis-joint-inflammation-bpc157-kpv-tb500-protocol",
+    "peptide-research-cardiac-hypertrophy-heart-failure-bpc157-tb500-ss31-ghkcu",
     "bpc-157-angiogenesis-vegf-enos-vascular-research-protocols",
     "bpc-157-mechanism-deep-dive-no-vegf-fak-signaling",
   ],
   "tb-500": [
+    "peptide-research-cardiac-hypertrophy-heart-failure-bpc157-tb500-ss31-ghkcu",
     "tb-500-cardiac-research-thymosin-beta-4-ikk-myocardial-repair-protocols",
     "tb-500-mechanism-deep-dive-g-actin-sequestration-thymosin-beta-4-biology",
-    "peptide-research-comprehensive-recovery-stack-bpc157-tb500-ghk-cu-ipamorelin-protocol",
   ],
   "follistatin-344": [
     "follistatin-344-vs-myostatin-propeptide-comparative-inhibition-research",
@@ -22,7 +22,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "myostatin-inhibition-follistatin-actriiib-protocols",
   ],
   "ghk-cu": [
-    "peptide-research-longevity-complete-multi-target-protocol-guide",
+    "peptide-research-cardiac-hypertrophy-heart-failure-bpc157-tb500-ss31-ghkcu",
     "ghk-cu-skin-aging-collagen-elastin-clinical-research-review",
     "senolytic-peptides-cellular-senescence-epitalon-nad-ghk-cu-research",
   ],
@@ -103,7 +103,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "epitalon-pineal-peptide-longevity-research-review",
   ],
   "ss-31": [
-    "peptide-research-longevity-complete-multi-target-protocol-guide",
+    "peptide-research-cardiac-hypertrophy-heart-failure-bpc157-tb500-ss31-ghkcu",
     "ss-31-aging-muscle-sarcopenia-mitochondrial-quality-control-research-protocols",
     "sirt1-sirt3-nad-dependent-sirtuin-research-guide",
   ],
