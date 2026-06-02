@@ -176,6 +176,7 @@ import { article as a172 } from './articles/glp1-appetite-regulation-hypothalami
 import { article as a173 } from './articles/peptide-research-cognitive-aging-bdnf-mtor-multi-compound-protocol';
 import { article as a174 } from './articles/peptide-research-arthritis-joint-inflammation-bpc157-kpv-tb500-protocol';
 import { article as a175 } from './articles/hexarelin-cardiac-research-gh-independent-cardioprotection-cd36';
+import { article as a176 } from './articles/tb-500-cardiac-research-thymosin-beta-4-ikk-myocardial-repair-protocols';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -308,6 +309,7 @@ export const articles: BlogArticle[] = [
   a173,
   a174,
   a175,
+  a176,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

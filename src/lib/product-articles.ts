@@ -12,9 +12,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "bpc-157-mechanism-deep-dive-no-vegf-fak-signaling",
   ],
   "tb-500": [
-    "peptide-research-comprehensive-recovery-stack-bpc157-tb500-ghk-cu-ipamorelin-protocol",
+    "tb-500-cardiac-research-thymosin-beta-4-ikk-myocardial-repair-protocols",
     "tb-500-mechanism-deep-dive-g-actin-sequestration-thymosin-beta-4-biology",
-    "bpc-157-tb-500-recovery-stack-deep-dive",
+    "peptide-research-comprehensive-recovery-stack-bpc157-tb500-ghk-cu-ipamorelin-protocol",
   ],
   "follistatin-344": [
     "follistatin-344-igf-1-independent-muscle-research",
