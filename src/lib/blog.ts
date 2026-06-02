@@ -196,6 +196,7 @@ import { article as a192 } from './articles/peptide-research-athletic-performanc
 import { article as a193 } from './articles/oxytocin-social-behavior-autism-research-otr-pharmacology-circuits-protocol-design';
 import { article as a194 } from './articles/ghrp2-growth-hormone-releasing-peptide-research-guide';
 import { article as a195 } from './articles/peptide-bioavailability-route-administration-sc-ip-intranasal-oral-research-guide';
+import { article as a196 } from './articles/bpc-157-tbi-spinal-cord-injury-neuroprotection-research-protocols';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -348,6 +349,7 @@ export const articles: BlogArticle[] = [
   a193,
   a194,
   a195,
+  a196,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

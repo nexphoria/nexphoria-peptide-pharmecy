@@ -7,9 +7,9 @@
 export const PRODUCT_ARTICLES: Record<string, string[]> = {
   // Repair / Recovery
   "bpc-157": [
-    "peptide-research-athletic-performance-exercise-recovery-bpc157-ipamorelin-tb500",
+    "bpc-157-tbi-spinal-cord-injury-neuroprotection-research-protocols",
     "bpc-157-angiogenesis-vegf-enos-vascular-research-protocols",
-    "peptide-bioavailability-route-administration-sc-ip-intranasal-oral-research-guide",
+    "peptide-research-athletic-performance-exercise-recovery-bpc157-ipamorelin-tb500",
   ],
   "tb-500": [
     "peptide-research-athletic-performance-exercise-recovery-bpc157-ipamorelin-tb500",
