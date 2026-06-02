@@ -187,6 +187,7 @@ import { article as a183 } from './articles/glp1-pancreatic-beta-cell-insulin-se
 import { article as a184 } from './articles/cjc-1295-ipamorelin-combination-research-guide';
 import { article as a185 } from './articles/ghk-cu-skin-aging-collagen-elastin-clinical-research-review';
 import { article as a186 } from './articles/peptide-research-sarcopenia-ss31-nad-mots-c-aging-muscle-protocols';
+import { article as a187 } from './articles/peptide-research-metabolic-syndrome-insulin-resistance-hypertension-dyslipidemia';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -330,6 +331,7 @@ export const articles: BlogArticle[] = [
   a184,
   a185,
   a186,
+  a187,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

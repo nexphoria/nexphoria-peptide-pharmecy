@@ -66,12 +66,12 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // GLP-1 / Metabolic
   "semaglutide": [
-    "glp1-pancreatic-beta-cell-insulin-secretion-research-guide",
+    "peptide-research-metabolic-syndrome-insulin-resistance-hypertension-dyslipidemia",
     "glp1-appetite-regulation-hypothalamic-circuits-ghrelin-hunger-endpoints",
     "semaglutide-weight-loss-plateau-mechanisms-protocol-adjustments",
   ],
   "tirzepatide": [
-    "glp1-pancreatic-beta-cell-insulin-secretion-research-guide",
+    "peptide-research-metabolic-syndrome-insulin-resistance-hypertension-dyslipidemia",
     "glp1-appetite-regulation-hypothalamic-circuits-ghrelin-hunger-endpoints",
     "tirzepatide-lean-mass-preservation-gipr-body-composition-study-design",
   ],
@@ -86,7 +86,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "glp1-receptor-agonists-complete-research-landscape",
   ],
   "mots-c": [
-    "peptide-research-sarcopenia-ss31-nad-mots-c-aging-muscle-protocols",
+    "peptide-research-metabolic-syndrome-insulin-resistance-hypertension-dyslipidemia",
     "mots-c-mitochondria-derived-peptide-metabolic-research",
     "epigenetic-aging-clocks-horvath-grimage-peptide-research",
   ],
