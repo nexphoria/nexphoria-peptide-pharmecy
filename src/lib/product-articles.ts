@@ -22,9 +22,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "myostatin-inhibition-follistatin-actriiib-protocols",
   ],
   "ghk-cu": [
+    "peptide-research-longevity-complete-multi-target-protocol-guide",
     "ghk-cu-skin-aging-collagen-elastin-clinical-research-review",
     "senolytic-peptides-cellular-senescence-epitalon-nad-ghk-cu-research",
-    "peptide-research-comprehensive-recovery-stack-bpc157-tb500-ghk-cu-ipamorelin-protocol",
   ],
 
   // GH Axis
@@ -93,17 +93,17 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // Longevity
   "nad-plus": [
-    "peptide-research-sarcopenia-ss31-nad-mots-c-aging-muscle-protocols",
+    "peptide-research-longevity-complete-multi-target-protocol-guide",
     "sirt1-sirt3-nad-dependent-sirtuin-research-guide",
     "nad-plus-dna-repair-parp1-sirtuins-genome-stability-research",
   ],
   "epitalon": [
-    "sirt1-sirt3-nad-dependent-sirtuin-research-guide",
+    "peptide-research-longevity-complete-multi-target-protocol-guide",
     "epigenetic-aging-clocks-horvath-grimage-peptide-research",
     "epitalon-pineal-peptide-longevity-research-review",
   ],
   "ss-31": [
-    "peptide-research-sarcopenia-ss31-nad-mots-c-aging-muscle-protocols",
+    "peptide-research-longevity-complete-multi-target-protocol-guide",
     "ss-31-aging-muscle-sarcopenia-mitochondrial-quality-control-research-protocols",
     "sirt1-sirt3-nad-dependent-sirtuin-research-guide",
   ],
