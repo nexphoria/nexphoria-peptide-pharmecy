@@ -126,9 +126,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "dsip-delta-sleep-inducing-peptide-sleep-research-review",
   ],
   "oxytocin": [
+    "oxytocin-social-behavior-autism-research-otr-pharmacology-circuits-protocol-design",
     "pt141-vs-oxytocin-sexual-behavior-arousal-research-protocols",
     "testosterone-hpg-axis-peptide-research-kisspeptin-lh-hormone-endpoints",
-    "oxytocin-research-neuropeptide-guide",
   ],
 
   // Melanocortin
