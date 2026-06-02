@@ -179,6 +179,8 @@ import { article as a175 } from './articles/hexarelin-cardiac-research-gh-indepe
 import { article as a176 } from './articles/tb-500-cardiac-research-thymosin-beta-4-ikk-myocardial-repair-protocols';
 import { article as a177 } from './articles/peptide-research-depression-mood-stress-selank-semax-bpc157-nad-protocol';
 import { article as a178 } from './articles/aod-9604-lipolysis-complete-research-protocol-guide';
+import { article as a179 } from './articles/melanotan-ii-tanning-arousal-mc-receptor-pharmacology-research-review';
+import { article as a180 } from './articles/follistatin-344-vs-myostatin-propeptide-comparative-inhibition-research';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -314,6 +316,8 @@ export const articles: BlogArticle[] = [
   a176,
   a177,
   a178,
+  a179,
+  a180,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

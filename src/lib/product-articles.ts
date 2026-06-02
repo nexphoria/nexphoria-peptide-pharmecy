@@ -17,8 +17,8 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "peptide-research-comprehensive-recovery-stack-bpc157-tb500-ghk-cu-ipamorelin-protocol",
   ],
   "follistatin-344": [
+    "follistatin-344-vs-myostatin-propeptide-comparative-inhibition-research",
     "follistatin-344-igf-1-independent-muscle-research",
-    "peptide-research-skeletal-muscle-hypertrophy-repair-performance-endpoints",
     "myostatin-inhibition-follistatin-actriiib-protocols",
   ],
   "ghk-cu": [
