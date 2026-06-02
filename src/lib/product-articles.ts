@@ -86,16 +86,16 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "glp1-receptor-agonists-complete-research-landscape",
   ],
   "mots-c": [
-    "epigenetic-aging-clocks-horvath-grimage-peptide-research",
-    "peptide-research-brown-adipose-tissue-ucp1-thermogenesis-cold-exposure-protocols",
+    "peptide-research-sarcopenia-ss31-nad-mots-c-aging-muscle-protocols",
     "mots-c-mitochondria-derived-peptide-metabolic-research",
+    "epigenetic-aging-clocks-horvath-grimage-peptide-research",
   ],
 
   // Longevity
   "nad-plus": [
+    "peptide-research-sarcopenia-ss31-nad-mots-c-aging-muscle-protocols",
     "sirt1-sirt3-nad-dependent-sirtuin-research-guide",
     "nad-plus-dna-repair-parp1-sirtuins-genome-stability-research",
-    "epigenetic-aging-clocks-horvath-grimage-peptide-research",
   ],
   "epitalon": [
     "sirt1-sirt3-nad-dependent-sirtuin-research-guide",
@@ -103,9 +103,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "epitalon-pineal-peptide-longevity-research-review",
   ],
   "ss-31": [
-    "sirt1-sirt3-nad-dependent-sirtuin-research-guide",
-    "epigenetic-aging-clocks-horvath-grimage-peptide-research",
+    "peptide-research-sarcopenia-ss31-nad-mots-c-aging-muscle-protocols",
     "ss-31-aging-muscle-sarcopenia-mitochondrial-quality-control-research-protocols",
+    "sirt1-sirt3-nad-dependent-sirtuin-research-guide",
   ],
 
   // Nootropics / Neuro
