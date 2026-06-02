@@ -29,7 +29,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // GH Axis
   "ipamorelin": [
-    "peptide-research-athletic-performance-exercise-recovery-bpc157-ipamorelin-tb500",
+    "ghrp2-growth-hormone-releasing-peptide-research-guide",
     "cjc-1295-ipamorelin-combination-research-guide",
     "ipamorelin-fat-loss-ghsr1a-lipolysis-body-composition-research-protocols",
   ],
@@ -39,19 +39,19 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "cjc-1295-ipamorelin-gh-axis-stack-deep-dive",
   ],
   "cjc-1295-no-dac": [
+    "ghrp2-growth-hormone-releasing-peptide-research-guide",
     "cjc-1295-ipamorelin-combination-research-guide",
     "sermorelin-vs-cjc-1295-no-dac-vs-cjc-1295-dac-ghrh-analog-research-guide",
-    "ghrh-biology-pulsatile-gh-secretagogues-deep-dive",
   ],
   "cjc-1295-ipamorelin": [
+    "ghrp2-growth-hormone-releasing-peptide-research-guide",
     "cjc-1295-ipamorelin-combination-research-guide",
     "ipamorelin-fat-loss-ghsr1a-lipolysis-body-composition-research-protocols",
-    "mk-677-vs-ipamorelin-vs-cjc-1295-which-gh-secretagogue-research",
   ],
   "sermorelin": [
+    "ghrp2-growth-hormone-releasing-peptide-research-guide",
     "sermorelin-vs-cjc-1295-no-dac-vs-cjc-1295-dac-ghrh-analog-research-guide",
     "sermorelin-ghrh-analog-anti-aging-research",
-    "ghrh-biology-pulsatile-gh-secretagogues-deep-dive",
   ],
   "mk-677": [
     "mk-677-sleep-quality-research-gh-pulse-sws-copinschi-data",
