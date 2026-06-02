@@ -93,17 +93,17 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // Longevity
   "nad-plus": [
-    "senolytic-peptides-cellular-senescence-epitalon-nad-ghk-cu-research",
+    "sirt1-sirt3-nad-dependent-sirtuin-research-guide",
     "nad-plus-dna-repair-parp1-sirtuins-genome-stability-research",
     "epigenetic-aging-clocks-horvath-grimage-peptide-research",
   ],
   "epitalon": [
-    "senolytic-peptides-cellular-senescence-epitalon-nad-ghk-cu-research",
+    "sirt1-sirt3-nad-dependent-sirtuin-research-guide",
     "epigenetic-aging-clocks-horvath-grimage-peptide-research",
     "epitalon-pineal-peptide-longevity-research-review",
   ],
   "ss-31": [
-    "senolytic-peptides-cellular-senescence-epitalon-nad-ghk-cu-research",
+    "sirt1-sirt3-nad-dependent-sirtuin-research-guide",
     "epigenetic-aging-clocks-horvath-grimage-peptide-research",
     "ss-31-aging-muscle-sarcopenia-mitochondrial-quality-control-research-protocols",
   ],
