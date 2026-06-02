@@ -7,12 +7,12 @@
 export const PRODUCT_ARTICLES: Record<string, string[]> = {
   // Repair / Recovery
   "bpc-157": [
+    "thymosin-beta-4-vs-bpc157-definitive-research-comparison",
     "bpc-157-tbi-spinal-cord-injury-neuroprotection-research-protocols",
     "bpc-157-angiogenesis-vegf-enos-vascular-research-protocols",
-    "peptide-research-athletic-performance-exercise-recovery-bpc157-ipamorelin-tb500",
   ],
   "tb-500": [
-    "peptide-research-athletic-performance-exercise-recovery-bpc157-ipamorelin-tb500",
+    "thymosin-beta-4-vs-bpc157-definitive-research-comparison",
     "tb-500-cardiac-research-thymosin-beta-4-ikk-myocardial-repair-protocols",
     "tb-500-mechanism-deep-dive-g-actin-sequestration-thymosin-beta-4-biology",
   ],

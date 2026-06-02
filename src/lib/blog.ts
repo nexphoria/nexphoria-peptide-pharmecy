@@ -197,6 +197,7 @@ import { article as a193 } from './articles/oxytocin-social-behavior-autism-rese
 import { article as a194 } from './articles/ghrp2-growth-hormone-releasing-peptide-research-guide';
 import { article as a195 } from './articles/peptide-bioavailability-route-administration-sc-ip-intranasal-oral-research-guide';
 import { article as a196 } from './articles/bpc-157-tbi-spinal-cord-injury-neuroprotection-research-protocols';
+import { article as a197 } from './articles/thymosin-beta-4-vs-bpc157-definitive-research-comparison';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -350,6 +351,7 @@ export const articles: BlogArticle[] = [
   a194,
   a195,
   a196,
+  a197,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
