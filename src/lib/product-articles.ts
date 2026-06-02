@@ -9,7 +9,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "bpc-157": [
     "peptide-research-athletic-performance-exercise-recovery-bpc157-ipamorelin-tb500",
     "bpc-157-angiogenesis-vegf-enos-vascular-research-protocols",
-    "bpc-157-mechanism-deep-dive-no-vegf-fak-signaling",
+    "peptide-bioavailability-route-administration-sc-ip-intranasal-oral-research-guide",
   ],
   "tb-500": [
     "peptide-research-athletic-performance-exercise-recovery-bpc157-ipamorelin-tb500",
@@ -31,7 +31,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "ipamorelin": [
     "ghrp2-growth-hormone-releasing-peptide-research-guide",
     "cjc-1295-ipamorelin-combination-research-guide",
-    "ipamorelin-fat-loss-ghsr1a-lipolysis-body-composition-research-protocols",
+    "peptide-bioavailability-route-administration-sc-ip-intranasal-oral-research-guide",
   ],
   "cjc-1295": [
     "protein-synthesis-skeletal-muscle-mtor-s6k-eif4e-gh-axis-research",
@@ -105,7 +105,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
   "ss-31": [
     "peptide-research-nervous-system-regeneration-bpc157-ss31-semax-neuropathy-protocols",
     "ss-31-aging-muscle-sarcopenia-mitochondrial-quality-control-research-protocols",
-    "sirt1-sirt3-nad-dependent-sirtuin-research-guide",
+    "peptide-bioavailability-route-administration-sc-ip-intranasal-oral-research-guide",
   ],
 
   // Nootropics / Neuro
