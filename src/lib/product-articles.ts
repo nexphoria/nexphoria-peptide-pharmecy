@@ -7,7 +7,7 @@
 export const PRODUCT_ARTICLES: Record<string, string[]> = {
   // Repair / Recovery
   "bpc-157": [
-    "peptide-research-cardiac-hypertrophy-heart-failure-bpc157-tb500-ss31-ghkcu",
+    "peptide-research-nervous-system-regeneration-bpc157-ss31-semax-neuropathy-protocols",
     "bpc-157-angiogenesis-vegf-enos-vascular-research-protocols",
     "bpc-157-mechanism-deep-dive-no-vegf-fak-signaling",
   ],
@@ -103,7 +103,7 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "epitalon-pineal-peptide-longevity-research-review",
   ],
   "ss-31": [
-    "peptide-research-cardiac-hypertrophy-heart-failure-bpc157-tb500-ss31-ghkcu",
+    "peptide-research-nervous-system-regeneration-bpc157-ss31-semax-neuropathy-protocols",
     "ss-31-aging-muscle-sarcopenia-mitochondrial-quality-control-research-protocols",
     "sirt1-sirt3-nad-dependent-sirtuin-research-guide",
   ],
@@ -116,10 +116,9 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
     "adamax-dsip-selank-nad-nootropic-stack-protocol-deep-dive",
   ],
   "semax": [
+    "peptide-research-nervous-system-regeneration-bpc157-ss31-semax-neuropathy-protocols",
     "semax-cognitive-enhancement-neuroprotection-research-protocols",
     "peptide-research-depression-mood-stress-selank-semax-bpc157-nad-protocol",
-    "peptide-research-neuroprotection-bpc157-ss31-nad-semax",
-    "selank-semax-nootropic-peptide-research-overview",
   ],
   "dsip": [
     "sleep-peptides-dsip-gh-axis-circadian-biology-research",
