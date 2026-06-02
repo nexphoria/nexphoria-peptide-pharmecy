@@ -66,14 +66,14 @@ export const PRODUCT_ARTICLES: Record<string, string[]> = {
 
   // GLP-1 / Metabolic
   "semaglutide": [
+    "glp1-pancreatic-beta-cell-insulin-secretion-research-guide",
     "glp1-appetite-regulation-hypothalamic-circuits-ghrelin-hunger-endpoints",
     "semaglutide-weight-loss-plateau-mechanisms-protocol-adjustments",
-    "glp1-agonist-discontinuation-rebound-washout-reinitiation-research",
   ],
   "tirzepatide": [
+    "glp1-pancreatic-beta-cell-insulin-secretion-research-guide",
     "glp1-appetite-regulation-hypothalamic-circuits-ghrelin-hunger-endpoints",
     "tirzepatide-lean-mass-preservation-gipr-body-composition-study-design",
-    "glp1-agonist-discontinuation-rebound-washout-reinitiation-research",
   ],
   "retatrutide": [
     "glp1-appetite-regulation-hypothalamic-circuits-ghrelin-hunger-endpoints",
