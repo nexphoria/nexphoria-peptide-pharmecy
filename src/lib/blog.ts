@@ -206,12 +206,12 @@ import { article as a202 } from './articles/peptide-research-glossary-50-essenti
 import { article as a203 } from './articles/peptide-sciences-alternative-supplier-guide-2026';
 import { article as a204 } from './articles/research-peptide-glossary-essential-terms-2026';
 import { article as a205 } from './articles/nexphoria-quality-standards-hplc-lal-coa';
-import { article as a206 } from './articles/longevity-peptide-stack-2026-research-overview';
+import { article as a206 } from './articles/nad-plus-peptide-longevity';
 import { article as a207 } from './articles/selank-anxiety-research';
 import { article as a208 } from './articles/hexarelin-cardioprotection';
 import { article as a209 } from './articles/nad-plus-vs-nmn';
 import { article as a210 } from './articles/bpc-157-complete-research-guide-2026';
-import { article as a211 } from './articles/how-to-source-research-peptides-usa-buyers-guide';
+import { article as a211 } from './articles/peptide-reconstitution-guide';
 import { article as a212 } from './articles/nad-plus-longevity-research-sirtuins-parp-hallmarks-of-aging';
 import { article as a213 } from './articles/cjc-1295-ipamorelin-stack-research-guide';
 import { article as a214 } from './articles/peptide-storage-temperatures-cold-chain-reference';
@@ -226,7 +226,7 @@ import { article as a222 } from './articles/best-peptides-muscle-recovery-resear
 import { article as a223 } from './articles/bpc-157-tb-500-combined-protocol-research-guide';
 import { article as a224 } from './articles/cjc-1295-ipamorelin-growth-hormone-stack-research-guide';
 import { article as a225 } from './articles/hexarelin-cardioprotection-ghs-research-guide';
-import { article as a226 } from './articles/longevity-peptide-stack-2026-research-overview';
+import { article as a226 } from './articles/semaglutide-research-peptide';
 import { article as a227 } from './articles/peptide-sciences-alternative-supplier-guide';
 
 export const articles: BlogArticle[] = [
