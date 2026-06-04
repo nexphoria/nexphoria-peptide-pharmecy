@@ -239,6 +239,9 @@ import { article as a235 } from './articles/longevity-peptide-stack-2026';
 import { article as a236 } from './articles/peptide-cycling-on-off-protocols-research-guide';
 import { article as a237 } from './articles/bpc-157-oral-vs-injectable-bioavailability-research';
 import { article as a238 } from './articles/glp1-agonists-lean-mass-preservation-muscle-research';
+import { article as a239 } from './articles/nexphoria-quality-standards';
+import { article as a240 } from './articles/research-peptide-glossary';
+import { article as a241 } from './articles/thymosin-alpha-1-immune';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -434,6 +437,9 @@ export const articles: BlogArticle[] = [
   a236,
   a237,
   a238,
+  a239,
+  a240,
+  a241,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
