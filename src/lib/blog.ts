@@ -284,8 +284,8 @@ import { article as a280 } from './articles/peptide-research-thyroid-function-bp
 import { article as a281 } from './articles/nexphoria-vs-proven-peptides-vendor-comparison';
 import { article as a282 } from './articles/nexphoria-vs-chemyo-vendor-comparison';
 import { article as a283 } from './articles/vasopressin-avp-neuropeptide-research-guide';
-import { article as a284 } from './articles/longevity-peptide-stack-2026';
-import { article as a285 } from './articles/hexarelin-cardioprotection';
+import { article as a284 } from './articles/cjc-1295-ipamorelin-complete-protocol-guide';
+import { article as a285 } from './articles/peptide-vendor-evaluation-checklist-researchers';
 import { article as a286 } from './articles/peptide-sciences-alternative-2026';
 import { article as a287 } from './articles/bacteriostatic-water-peptide-reconstitution-solvent-guide';
 import { article as a288 } from './articles/are-research-peptides-legal-regulatory-status-guide';
@@ -299,6 +299,7 @@ import { article as a295 } from './articles/thymulin-immune-peptide-research-gui
 import { article as a296 } from './articles/cagrilintide-amylin-analog-glp1-combination-research';
 import { article as a297 } from './articles/cgrp-peptide-migraine-pain-research-guide';
 import { article as a298 } from './articles/peptide-research-stroke-ischemia-neuroprotection-bpc157-ss31-semax';
+import { article as a299 } from './articles/peptide-biofilm-antimicrobial-research-2026';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -554,6 +555,7 @@ export const articles: BlogArticle[] = [
   a296,
   a297,
   a298,
+  a299,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
