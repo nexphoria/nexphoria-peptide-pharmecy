@@ -201,6 +201,9 @@ import { article as a197 } from './articles/thymosin-beta-4-vs-bpc157-definitive
 import { article as a198 } from './articles/longevity-peptide-stack-2026-research-overview';
 import { article as a199 } from './articles/how-to-source-research-peptides-usa-buyers-guide';
 import { article as a200 } from './articles/peptide-purity-hplc-testing-research-guide';
+import { article as a201 } from './articles/best-peptides-muscle-recovery-research-guide';
+import { article as a202 } from './articles/peptide-research-glossary-50-essential-terms';
+import { article as a203 } from './articles/peptide-sciences-alternative-supplier-guide-2026';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -358,6 +361,9 @@ export const articles: BlogArticle[] = [
   a198,
   a199,
   a200,
+  a201,
+  a202,
+  a203,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
