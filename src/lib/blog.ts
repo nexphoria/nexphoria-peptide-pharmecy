@@ -230,6 +230,9 @@ import { article as a226 } from './articles/semaglutide-research-peptide';
 import { article as a227 } from './articles/peptide-sciences-alternative-supplier-guide';
 import { article as a228 } from './articles/research-peptide-beginner-faq';
 import { article as a229 } from './articles/peptide-research-cognitive-performance-overview';
+import { article as a230 } from './articles/research-peptide-regulatory-landscape-2026';
+import { article as a231 } from './articles/emerging-peptides-research-frontier-2027';
+import { article as a232 } from './articles/peptide-solubility-formulation-science-researchers-guide';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -416,6 +419,9 @@ export const articles: BlogArticle[] = [
   a227,
   a228,
   a229,
+  a230,
+  a231,
+  a232,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
