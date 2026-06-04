@@ -269,6 +269,9 @@ import { article as a265 } from './articles/thymosin-alpha-1-vs-ll-37-immune-pep
 import { article as a266 } from './articles/bpc-157-anxiety-depression-dopamine-serotonin-research';
 import { article as a267 } from './articles/semaglutide-muscle-loss-prevention-glp1-lean-mass-research';
 import { article as a268 } from './articles/peptide-research-immune-checkpoint-cancer-biology-overview';
+import { article as a269 } from './articles/pinealon-vilon-thymalin-soviet-peptide-bioregulators-research-guide';
+import { article as a270 } from './articles/oral-peptide-delivery-bioavailability-research-challenges';
+import { article as a271 } from './articles/cagrilintide-amylin-analog-metabolic-research-guide';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -494,6 +497,9 @@ export const articles: BlogArticle[] = [
   a266,
   a267,
   a268,
+  a269,
+  a270,
+  a271,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
