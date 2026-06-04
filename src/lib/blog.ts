@@ -214,7 +214,7 @@ import { article as a210 } from './articles/bpc-157-complete-research-guide-2026
 import { article as a211 } from './articles/peptide-reconstitution-guide';
 import { article as a212 } from './articles/nad-plus-longevity-research-sirtuins-parp-hallmarks-of-aging';
 import { article as a213 } from './articles/cjc-1295-ipamorelin-stack-research-guide';
-import { article as a214 } from './articles/peptide-storage-temperatures-cold-chain-reference';
+import { article as a214 } from './articles/triptorelin-testosterone-axis-research-guide';
 import { article as a215 } from './articles/how-to-buy-research-peptides-usa-sourcing-guide';
 import { article as a216 } from './articles/bpc-157-complete-guide';
 import { article as a217 } from './articles/buy-peptides-usa-guide';
@@ -228,6 +228,8 @@ import { article as a224 } from './articles/cjc-1295-ipamorelin-growth-hormone-s
 import { article as a225 } from './articles/hexarelin-cardioprotection-ghs-research-guide';
 import { article as a226 } from './articles/semaglutide-research-peptide';
 import { article as a227 } from './articles/peptide-sciences-alternative-supplier-guide';
+import { article as a228 } from './articles/research-peptide-beginner-faq';
+import { article as a229 } from './articles/peptide-research-cognitive-performance-overview';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -412,6 +414,8 @@ export const articles: BlogArticle[] = [
   a225,
   a226,
   a227,
+  a228,
+  a229,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
