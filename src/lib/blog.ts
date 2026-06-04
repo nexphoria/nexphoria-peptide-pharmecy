@@ -257,6 +257,9 @@ import { article as a253 } from './articles/tb-500-thymosin-beta-4';
 import { article as a254 } from './articles/dihexa-cognitive-peptide-research-guide';
 import { article as a255 } from './articles/larazotide-intestinal-permeability-tight-junction-peptide-research';
 import { article as a256 } from './articles/peptides-vs-sarms-research-comparison';
+import { article as a257 } from './articles/peg-mgf-mechano-growth-factor-pegylated-igf-research-guide';
+import { article as a258 } from './articles/gonadorelin-gnrh-analog-peptide-research-guide';
+import { article as a259 } from './articles/alpha-msh-melanocortin-1-receptor-peptide-research-guide';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -470,6 +473,9 @@ export const articles: BlogArticle[] = [
   a254,
   a255,
   a256,
+  a257,
+  a258,
+  a259,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
