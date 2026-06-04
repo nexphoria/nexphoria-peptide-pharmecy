@@ -281,6 +281,9 @@ import { article as a277 } from './articles/nexphoria-vs-geo-peptides-vendor-com
 import { article as a278 } from './articles/nexphoria-vs-paradigm-peptides-vendor-comparison';
 import { article as a279 } from './articles/nexphoria-vs-sports-technology-labs-vendor-comparison';
 import { article as a280 } from './articles/peptide-research-thyroid-function-bpc157-nad-tsh-axis';
+import { article as a281 } from './articles/nexphoria-vs-proven-peptides-vendor-comparison';
+import { article as a282 } from './articles/nexphoria-vs-chemyo-vendor-comparison';
+import { article as a283 } from './articles/vasopressin-avp-neuropeptide-research-guide';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -518,6 +521,9 @@ export const articles: BlogArticle[] = [
   a278,
   a279,
   a280,
+  a281,
+  a282,
+  a283,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
