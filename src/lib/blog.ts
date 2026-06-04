@@ -254,6 +254,9 @@ import { article as a250 } from './articles/cold-chain-peptide-shipping';
 import { article as a251 } from './articles/peptide-purity-hplc-testing';
 import { article as a252 } from './articles/peptide-sciences-alternative';
 import { article as a253 } from './articles/tb-500-thymosin-beta-4';
+import { article as a254 } from './articles/dihexa-cognitive-peptide-research-guide';
+import { article as a255 } from './articles/larazotide-intestinal-permeability-tight-junction-peptide-research';
+import { article as a256 } from './articles/peptides-vs-sarms-research-comparison';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -464,6 +467,9 @@ export const articles: BlogArticle[] = [
   a251,
   a252,
   a253,
+  a254,
+  a255,
+  a256,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
