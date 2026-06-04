@@ -233,6 +233,9 @@ import { article as a229 } from './articles/peptide-research-cognitive-performan
 import { article as a230 } from './articles/research-peptide-regulatory-landscape-2026';
 import { article as a231 } from './articles/emerging-peptides-research-frontier-2027';
 import { article as a232 } from './articles/peptide-solubility-formulation-science-researchers-guide';
+import { article as a233 } from './articles/cjc-1295-ipamorelin-growth-hormone-research-stack';
+import { article as a234 } from './articles/peptide-purity-hplc-testing-guide';
+import { article as a235 } from './articles/longevity-peptide-stack-2026';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -422,6 +425,9 @@ export const articles: BlogArticle[] = [
   a230,
   a231,
   a232,
+  a233,
+  a234,
+  a235,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
