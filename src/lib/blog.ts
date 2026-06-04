@@ -260,6 +260,9 @@ import { article as a256 } from './articles/peptides-vs-sarms-research-compariso
 import { article as a257 } from './articles/peg-mgf-mechano-growth-factor-pegylated-igf-research-guide';
 import { article as a258 } from './articles/gonadorelin-gnrh-analog-peptide-research-guide';
 import { article as a259 } from './articles/alpha-msh-melanocortin-1-receptor-peptide-research-guide';
+import { article as a260 } from './articles/ozempic-vs-semaglutide-research-peptide-comparison';
+import { article as a261 } from './articles/best-peptides-fat-loss-research-guide-2026';
+import { article as a262 } from './articles/peptide-fasting-intermittent-fasting-synergy-research';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -476,6 +479,9 @@ export const articles: BlogArticle[] = [
   a257,
   a258,
   a259,
+  a260,
+  a261,
+  a262,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
