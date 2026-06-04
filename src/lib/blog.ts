@@ -207,6 +207,9 @@ import { article as a203 } from './articles/peptide-sciences-alternative-supplie
 import { article as a204 } from './articles/research-peptide-glossary-essential-terms-2026';
 import { article as a205 } from './articles/nexphoria-quality-standards-hplc-lal-coa';
 import { article as a206 } from './articles/longevity-peptide-stack-2026-research-overview';
+import { article as a207 } from './articles/selank-anxiety-research';
+import { article as a208 } from './articles/hexarelin-cardioprotection';
+import { article as a209 } from './articles/nad-plus-vs-nmn';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -370,6 +373,9 @@ export const articles: BlogArticle[] = [
   a204,
   a205,
   a206,
+  a207,
+  a208,
+  a209,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
