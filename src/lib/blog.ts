@@ -287,6 +287,9 @@ import { article as a283 } from './articles/vasopressin-avp-neuropeptide-researc
 import { article as a284 } from './articles/longevity-peptide-stack-2026';
 import { article as a285 } from './articles/hexarelin-cardioprotection';
 import { article as a286 } from './articles/peptide-sciences-alternative-2026';
+import { article as a287 } from './articles/bacteriostatic-water-peptide-reconstitution-solvent-guide';
+import { article as a288 } from './articles/are-research-peptides-legal-regulatory-status-guide';
+import { article as a289 } from './articles/best-peptides-weight-loss-research-glp1-aod9604-semaglutide';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -530,6 +533,9 @@ export const articles: BlogArticle[] = [
   a284,
   a285,
   a286,
+  a287,
+  a288,
+  a289,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
