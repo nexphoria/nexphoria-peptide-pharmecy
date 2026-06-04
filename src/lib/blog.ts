@@ -296,6 +296,9 @@ import { article as a292 } from './articles/peptide-research-traumatic-brain-inj
 import { article as a293 } from './articles/glp1-agonist-side-effects-management-research';
 import { article as a294 } from './articles/carnosine-beta-alanine-peptide-research-guide';
 import { article as a295 } from './articles/thymulin-immune-peptide-research-guide';
+import { article as a296 } from './articles/cagrilintide-amylin-analog-glp1-combination-research';
+import { article as a297 } from './articles/cgrp-peptide-migraine-pain-research-guide';
+import { article as a298 } from './articles/peptide-research-stroke-ischemia-neuroprotection-bpc157-ss31-semax';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -548,6 +551,9 @@ export const articles: BlogArticle[] = [
   a293,
   a294,
   a295,
+  a296,
+  a297,
+  a298,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
