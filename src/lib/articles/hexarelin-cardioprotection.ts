@@ -6,7 +6,7 @@ export const article: BlogArticle = {
   description:
     "A research overview of Hexarelin — a synthetic hexapeptide studied for growth hormone secretagogue activity and cardioprotective effects. What the published science shows.",
   category: "Compound Profiles",
-  readMinutes: 10,
+  readMinutes: 8,
   publishedAt: "2026-06-04",
   ogImage: "/og-image.jpg",
   body: [
@@ -28,7 +28,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Like other GHS compounds (Ipamorelin, GHRP-6, MK-677), Hexarelin binds to and activates the GHS-R1a receptor expressed in the pituitary, hypothalamus, and peripheral tissues. GHS-R1a activation in the pituitary triggers GH release; in peripheral tissues, it mediates several non-GH effects. Hexarelin is among the most potent GHS compounds studied, producing substantial GH release at relatively low concentrations in pre-clinical models. However, unlike some GHSs, Hexarelin shows significant desensitization with continuous administration — a relevant consideration for research protocol design.",
+      text: "Like other GHS compounds (Ipamorelin, GHRP-6, MK-677), Hexarelin binds to and activates the GHS-R1a receptor expressed in the pituitary, hypothalamus, and peripheral tissues. GHS-R1a activation in the pituitary triggers GH release; in peripheral tissues, it mediates several non-GH effects.",
+    },
+    {
+      type: "paragraph",
+      text: "Hexarelin is among the most potent GHS compounds studied, producing substantial GH release at relatively low concentrations in pre-clinical models. However, unlike some GHSs, Hexarelin shows significant desensitization with continuous administration — a relevant consideration for research protocol design.",
     },
     {
       type: "subheading",
@@ -36,7 +40,15 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "A critical and distinguishing feature of Hexarelin research is its interaction with CD36 — a scavenger receptor expressed on cardiac myocytes, endothelial cells, and macrophages. CD36 has multiple roles: fatty acid uptake and utilization in cardiac tissue, oxidized LDL recognition (atherosclerosis relevance), and angiogenesis regulation.",
+      text: "A critical and distinguishing feature of Hexarelin research is its interaction with CD36 — a scavenger receptor expressed on cardiac myocytes, endothelial cells, and macrophages. CD36 has multiple roles:",
+    },
+    {
+      type: "list",
+      items: [
+        "Fatty acid uptake and utilization in cardiac tissue",
+        "Oxidized LDL recognition (atherosclerosis relevance)",
+        "Angiogenesis regulation",
+      ],
     },
     {
       type: "paragraph",
@@ -52,7 +64,15 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "In comparative studies examining GH-releasing potency, Hexarelin produces greater peak GH secretion than GHRP-6 and Ipamorelin in most rodent models. This potency advantage is partially offset by rapid desensitization — repeated Hexarelin administration leads to blunted GH response more rapidly than with Ipamorelin. Co-administration with GHRH analogs (synergistic effect) has been documented for Hexarelin as with other GHSs.",
+      text: "In comparative studies examining GH-releasing potency:",
+    },
+    {
+      type: "list",
+      items: [
+        "Hexarelin produces greater peak GH secretion than GHRP-6 and Ipamorelin in most rodent models",
+        "This potency advantage is partially offset by rapid desensitization — repeated Hexarelin administration leads to blunted GH response more rapidly than with Ipamorelin",
+        "Co-administration with GHRH analogs (synergistic effect) has been documented for Hexarelin as with other GHSs",
+      ],
     },
     {
       type: "subheading",
@@ -76,7 +96,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Studies in isolated heart preparations and in vivo rodent models have documented that Hexarelin reduces ischemia-reperfusion (I/R) injury — the cell death and dysfunction that occurs when blood flow is restored after a period of ischemia. Locatelli et al. (1999) and subsequent work demonstrated that Hexarelin pre-treatment in rats reduced infarct size following coronary occlusion/reperfusion. Critically, these effects were present in hypophysectomized (GH-deficient) animals — confirming the mechanism is not GH-dependent — and were blocked by CD36 antagonism, confirming CD36 as the relevant mediator.",
+      text: "Studies in isolated heart preparations and in vivo rodent models have documented that Hexarelin reduces ischemia-reperfusion (I/R) injury — the cell death and dysfunction that occurs when blood flow is restored after a period of ischemia.",
+    },
+    {
+      type: "paragraph",
+      text: "Locatelli et al. (1999) and subsequent work demonstrated that Hexarelin pre-treatment in rats reduced infarct size following coronary occlusion/reperfusion. Critically, these effects were present in hypophysectomized (GH-deficient) animals — confirming the mechanism is not GH-dependent — and were blocked by CD36 antagonism, confirming CD36 as the relevant mediator.",
     },
     {
       type: "subheading",
@@ -84,7 +108,19 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "GH-deficient patients and animal models consistently show impaired cardiac function — reduced cardiac output, increased vascular resistance, and altered cardiac morphology. Hexarelin treatment in GH-deficient models has shown improved cardiac output and ejection fraction, reduction in left ventricular hypertrophy in some models, and improved ventricular contractility, with inotropic effects documented in isolated heart preparations. Some of these effects are mediated via GH/IGF-1, while others (particularly contractility effects) appear to involve direct cardiac receptor activation.",
+      text: "GH-deficient patients and animal models consistently show impaired cardiac function — reduced cardiac output, increased vascular resistance, and altered cardiac morphology. Hexarelin treatment in GH-deficient models has shown:",
+    },
+    {
+      type: "list",
+      items: [
+        "Improved cardiac output and ejection fraction",
+        "Reduction in left ventricular hypertrophy in some models",
+        "Improved ventricular contractility — inotropic effects documented in isolated heart preparations",
+      ],
+    },
+    {
+      type: "paragraph",
+      text: "Some of these effects are mediated via GH/IGF-1, while others (particularly contractility effects) appear to involve direct cardiac receptor activation.",
     },
     {
       type: "subheading",
@@ -100,7 +136,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "The identification of CD36 as a Hexarelin receptor in cardiac tissue opened a new dimension of GHS research. CD36 had been primarily studied in the context of lipid metabolism and atherosclerosis, but Hexarelin research has implicated it in cardioprotection signaling, anti-inflammatory effects in vascular tissue, and potential relevance to metabolic syndrome research — CD36 is involved in fatty acid uptake dysregulation in obesity. This makes Hexarelin not only a GHS research tool but also a pharmacological probe for CD36 function, a use case of independent scientific value.",
+      text: "The identification of CD36 as a Hexarelin receptor in cardiac tissue opened a new dimension of GHS research. CD36 had been primarily studied in the context of lipid metabolism and atherosclerosis, but Hexarelin research has implicated it in cardioprotection signaling, anti-inflammatory effects in vascular tissue, and potential relevance to metabolic syndrome research (CD36 is involved in fatty acid uptake dysregulation in obesity).",
+    },
+    {
+      type: "paragraph",
+      text: "This makes Hexarelin not only a GHS research tool but also a pharmacological probe for CD36 function — a use case of independent scientific value.",
     },
     {
       type: "heading",

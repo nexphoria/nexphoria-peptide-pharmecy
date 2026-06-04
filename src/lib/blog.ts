@@ -284,6 +284,9 @@ import { article as a280 } from './articles/peptide-research-thyroid-function-bp
 import { article as a281 } from './articles/nexphoria-vs-proven-peptides-vendor-comparison';
 import { article as a282 } from './articles/nexphoria-vs-chemyo-vendor-comparison';
 import { article as a283 } from './articles/vasopressin-avp-neuropeptide-research-guide';
+import { article as a284 } from './articles/longevity-peptide-stack-2026';
+import { article as a285 } from './articles/hexarelin-cardioprotection';
+import { article as a286 } from './articles/peptide-sciences-alternative-2026';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -524,6 +527,9 @@ export const articles: BlogArticle[] = [
   a281,
   a282,
   a283,
+  a284,
+  a285,
+  a286,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
