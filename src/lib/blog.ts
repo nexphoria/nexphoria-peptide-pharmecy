@@ -278,6 +278,9 @@ import { article as a274 } from './articles/peptide-research-wound-healing-compl
 import { article as a275 } from './articles/igf-1-lr3-long-acting-analog-research-guide';
 import { article as a276 } from './articles/liraglutide-vs-semaglutide-vs-tirzepatide-research-comparison';
 import { article as a277 } from './articles/nexphoria-vs-geo-peptides-vendor-comparison';
+import { article as a278 } from './articles/nexphoria-vs-paradigm-peptides-vendor-comparison';
+import { article as a279 } from './articles/nexphoria-vs-sports-technology-labs-vendor-comparison';
+import { article as a280 } from './articles/peptide-research-thyroid-function-bpc157-nad-tsh-axis';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -512,6 +515,9 @@ export const articles: BlogArticle[] = [
   a275,
   a276,
   a277,
+  a278,
+  a279,
+  a280,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
