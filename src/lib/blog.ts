@@ -245,6 +245,10 @@ import { article as a241 } from './articles/thymosin-alpha-1-immune';
 import { article as a242 } from './articles/bpc-157-vs-tb500-stack';
 import { article as a243 } from './articles/epithalon-telomere-research';
 import { article as a244 } from './articles/cjc-1295-ipamorelin-stack';
+import { article as a245 } from './articles/nexphoria-vs-blue-sky-peptide-vendor-comparison';
+import { article as a246 } from './articles/nexphoria-vs-amino-asylum-vendor-comparison';
+import { article as a247 } from './articles/nexphoria-vs-behemoth-labz-vendor-comparison';
+import { article as a248 } from './articles/nexphoria-vs-biotech-peptides-vendor-comparison';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -446,6 +450,10 @@ export const articles: BlogArticle[] = [
   a242,
   a243,
   a244,
+  a245,
+  a246,
+  a247,
+  a248,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
