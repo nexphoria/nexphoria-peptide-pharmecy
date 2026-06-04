@@ -266,6 +266,9 @@ import { article as a262 } from './articles/peptide-fasting-intermittent-fasting
 import { article as a263 } from './articles/peptide-vendor-red-flags-due-diligence-guide';
 import { article as a264 } from './articles/peptide-sciences-shutdown-what-researchers-should-know';
 import { article as a265 } from './articles/thymosin-alpha-1-vs-ll-37-immune-peptide-comparison';
+import { article as a266 } from './articles/bpc-157-anxiety-depression-dopamine-serotonin-research';
+import { article as a267 } from './articles/semaglutide-muscle-loss-prevention-glp1-lean-mass-research';
+import { article as a268 } from './articles/peptide-research-immune-checkpoint-cancer-biology-overview';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -488,6 +491,9 @@ export const articles: BlogArticle[] = [
   a263,
   a264,
   a265,
+  a266,
+  a267,
+  a268,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
