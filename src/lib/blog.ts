@@ -213,6 +213,9 @@ import { article as a209 } from './articles/nad-plus-vs-nmn';
 import { article as a210 } from './articles/bpc-157-complete-research-guide-2026';
 import { article as a211 } from './articles/how-to-source-research-peptides-usa-buyers-guide';
 import { article as a212 } from './articles/nad-plus-longevity-research-sirtuins-parp-hallmarks-of-aging';
+import { article as a213 } from './articles/cjc-1295-ipamorelin-stack-research-guide';
+import { article as a214 } from './articles/peptide-storage-temperatures-cold-chain-reference';
+import { article as a215 } from './articles/how-to-buy-research-peptides-usa-sourcing-guide';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -382,6 +385,9 @@ export const articles: BlogArticle[] = [
   a210,
   a211,
   a212,
+  a213,
+  a214,
+  a215,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
