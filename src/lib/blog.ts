@@ -198,6 +198,9 @@ import { article as a194 } from './articles/ghrp2-growth-hormone-releasing-pepti
 import { article as a195 } from './articles/peptide-bioavailability-route-administration-sc-ip-intranasal-oral-research-guide';
 import { article as a196 } from './articles/bpc-157-tbi-spinal-cord-injury-neuroprotection-research-protocols';
 import { article as a197 } from './articles/thymosin-beta-4-vs-bpc157-definitive-research-comparison';
+import { article as a198 } from './articles/longevity-peptide-stack-2026-research-overview';
+import { article as a199 } from './articles/how-to-source-research-peptides-usa-buyers-guide';
+import { article as a200 } from './articles/peptide-purity-hplc-testing-research-guide';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -352,6 +355,9 @@ export const articles: BlogArticle[] = [
   a195,
   a196,
   a197,
+  a198,
+  a199,
+  a200,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
