@@ -210,6 +210,9 @@ import { article as a206 } from './articles/longevity-peptide-stack-2026-researc
 import { article as a207 } from './articles/selank-anxiety-research';
 import { article as a208 } from './articles/hexarelin-cardioprotection';
 import { article as a209 } from './articles/nad-plus-vs-nmn';
+import { article as a210 } from './articles/bpc-157-complete-research-guide-2026';
+import { article as a211 } from './articles/how-to-source-research-peptides-usa-buyers-guide';
+import { article as a212 } from './articles/nad-plus-longevity-research-sirtuins-parp-hallmarks-of-aging';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -376,6 +379,9 @@ export const articles: BlogArticle[] = [
   a207,
   a208,
   a209,
+  a210,
+  a211,
+  a212,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
