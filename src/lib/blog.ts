@@ -275,6 +275,9 @@ import { article as a271 } from './articles/cagrilintide-amylin-analog-metabolic
 import { article as a272 } from './articles/mk-677-appetite-ghrelin-hunger-research';
 import { article as a273 } from './articles/bpc-157-nrf2-antioxidant-pathway-cytoprotection-research';
 import { article as a274 } from './articles/peptide-research-wound-healing-complete-protocol-guide';
+import { article as a275 } from './articles/igf-1-lr3-long-acting-analog-research-guide';
+import { article as a276 } from './articles/liraglutide-vs-semaglutide-vs-tirzepatide-research-comparison';
+import { article as a277 } from './articles/nexphoria-vs-geo-peptides-vendor-comparison';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -506,6 +509,9 @@ export const articles: BlogArticle[] = [
   a272,
   a273,
   a274,
+  a275,
+  a276,
+  a277,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
