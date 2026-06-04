@@ -242,6 +242,9 @@ import { article as a238 } from './articles/glp1-agonists-lean-mass-preservation
 import { article as a239 } from './articles/nexphoria-quality-standards';
 import { article as a240 } from './articles/research-peptide-glossary';
 import { article as a241 } from './articles/thymosin-alpha-1-immune';
+import { article as a242 } from './articles/bpc-157-vs-tb500-stack';
+import { article as a243 } from './articles/epithalon-telomere-research';
+import { article as a244 } from './articles/cjc-1295-ipamorelin-stack';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -440,6 +443,9 @@ export const articles: BlogArticle[] = [
   a239,
   a240,
   a241,
+  a242,
+  a243,
+  a244,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
