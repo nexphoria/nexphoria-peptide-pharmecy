@@ -225,6 +225,9 @@ import { article as a221 } from './articles/epithalon-telomere-research-what-stu
 import { article as a222 } from './articles/best-peptides-muscle-recovery-research-guide-2026';
 import { article as a223 } from './articles/bpc-157-tb-500-combined-protocol-research-guide';
 import { article as a224 } from './articles/cjc-1295-ipamorelin-growth-hormone-stack-research-guide';
+import { article as a225 } from './articles/hexarelin-cardioprotection-ghs-research-guide';
+import { article as a226 } from './articles/longevity-peptide-stack-2026-research-overview';
+import { article as a227 } from './articles/peptide-sciences-alternative-supplier-guide';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -406,6 +409,9 @@ export const articles: BlogArticle[] = [
   a222,
   a223,
   a224,
+  a225,
+  a226,
+  a227,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
