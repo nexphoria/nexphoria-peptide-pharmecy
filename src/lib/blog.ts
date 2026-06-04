@@ -263,6 +263,9 @@ import { article as a259 } from './articles/alpha-msh-melanocortin-1-receptor-pe
 import { article as a260 } from './articles/ozempic-vs-semaglutide-research-peptide-comparison';
 import { article as a261 } from './articles/best-peptides-fat-loss-research-guide-2026';
 import { article as a262 } from './articles/peptide-fasting-intermittent-fasting-synergy-research';
+import { article as a263 } from './articles/peptide-vendor-red-flags-due-diligence-guide';
+import { article as a264 } from './articles/peptide-sciences-shutdown-what-researchers-should-know';
+import { article as a265 } from './articles/thymosin-alpha-1-vs-ll-37-immune-peptide-comparison';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -482,6 +485,9 @@ export const articles: BlogArticle[] = [
   a260,
   a261,
   a262,
+  a263,
+  a264,
+  a265,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
