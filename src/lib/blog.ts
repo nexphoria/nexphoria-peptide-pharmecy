@@ -293,6 +293,9 @@ import { article as a289 } from './articles/best-peptides-weight-loss-research-g
 import { article as a290 } from './articles/peptide-research-menopause-perimenopause-kisspeptin-ghk-cu-nad-protocols';
 import { article as a291 } from './articles/glp1-agonists-addiction-alcohol-substance-use-research';
 import { article as a292 } from './articles/peptide-research-traumatic-brain-injury-tbi-concussion-bpc157-ss31-nad';
+import { article as a293 } from './articles/glp1-agonist-side-effects-management-research';
+import { article as a294 } from './articles/carnosine-beta-alanine-peptide-research-guide';
+import { article as a295 } from './articles/thymulin-immune-peptide-research-guide';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -542,6 +545,9 @@ export const articles: BlogArticle[] = [
   a290,
   a291,
   a292,
+  a293,
+  a294,
+  a295,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
