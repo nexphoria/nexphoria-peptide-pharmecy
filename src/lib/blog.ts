@@ -357,6 +357,9 @@ import { article as a353 } from './articles/bdnf-trkb-neurotrophin-peptide-resea
 import { article as a354 } from './articles/osteocalcin-bone-hormone-metabolic-cognitive-research-guide';
 import { article as a355 } from './articles/relaxin-peptide-fibrosis-cardiovascular-research-guide';
 import { article as a356 } from './articles/peptide-compounding-gmp-quality-standards-research';
+import { article as a357 } from './articles/peptide-injection-sites-guide';
+import { article as a358 } from './articles/ipamorelin-vs-sermorelin-research-comparison';
+import { article as a359 } from './articles/peptide-side-effects-research-guide';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -670,6 +673,9 @@ export const articles: BlogArticle[] = [
   a354,
   a355,
   a356,
+  a357,
+  a358,
+  a359,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
