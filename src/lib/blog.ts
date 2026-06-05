@@ -413,6 +413,9 @@ import { article as a412 } from './articles/gdf11-parabiosis-young-blood-peptide
 import { article as a413 } from './articles/best-peptides-wound-healing-tissue-repair-research-2026';
 import { article as a414 } from './articles/peptide-research-thyroid-tsh-tpo-regulation-guide';
 import { article as a415 } from './articles/peptide-research-neuropathy-pain-bpc157-tb500-selank-protocols';
+import { article as a416 } from './articles/bpc-157-dosing-protocols-research-guide';
+import { article as a417 } from './articles/peptide-research-cycle-duration-on-off-protocols';
+import { article as a418 } from './articles/how-to-evaluate-research-peptide-vendor-quality';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -782,6 +785,9 @@ export const articles: BlogArticle[] = [
   a413,
   a414,
   a415,
+  a416,
+  a417,
+  a418,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
