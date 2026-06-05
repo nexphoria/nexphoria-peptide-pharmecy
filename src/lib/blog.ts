@@ -352,6 +352,9 @@ import { article as a348 } from './articles/bpc-157-vs-semaglutide-research-comp
 import { article as a349 } from './articles/peptide-reconstitution-concentration-calculator-guide';
 import { article as a350 } from './articles/ghrh-vs-ghrp-peptides-practical-research-comparison';
 import { article as a351 } from './articles/nad-plus-vs-peptides-mitochondrial-health-comparison';
+import { article as a352 } from './articles/ghrelin-peptide-hunger-metabolism-research-guide';
+import { article as a353 } from './articles/bdnf-trkb-neurotrophin-peptide-research-guide';
+import { article as a354 } from './articles/osteocalcin-bone-hormone-metabolic-cognitive-research-guide';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -660,6 +663,9 @@ export const articles: BlogArticle[] = [
   a349,
   a350,
   a351,
+  a352,
+  a353,
+  a354,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
