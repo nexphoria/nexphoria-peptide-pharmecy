@@ -374,6 +374,9 @@ import { article as a370 } from './articles/peptide-storage-guide-temperature-li
 import { article as a371 } from './articles/research-peptide-supplier-comparison-2026';
 import { article as a372 } from './articles/cjc-1295-ipamorelin-complete-guide-2026';
 import { article as a373 } from './articles/research-peptide-dosing-calculator-guide';
+import { article as a374 } from './articles/nexphoria-vs-iron-gorilla-vendor-comparison';
+import { article as a375 } from './articles/nexphoria-vs-american-peptide-vendor-comparison';
+import { article as a376 } from './articles/nexphoria-vs-cayman-chemical-vendor-comparison';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -704,6 +707,9 @@ export const articles: BlogArticle[] = [
   a371,
   a372,
   a373,
+  a374,
+  a375,
+  a376,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
