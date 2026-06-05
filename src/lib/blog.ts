@@ -337,6 +337,9 @@ import { article as a333 } from './articles/peptide-research-insulin-resistance-
 import { article as a334 } from './articles/nexphoria-vs-domestic-supply-vendor-comparison';
 import { article as a335 } from './articles/gipr-gip-receptor-metabolic-research-guide';
 import { article as a336 } from './articles/pituitary-peptides-complete-research-guide';
+import { article as a337 } from './articles/ipamorelin-complete-guide';
+import { article as a338 } from './articles/best-peptides-anti-aging-research-2026';
+import { article as a339 } from './articles/peptide-research-protocols-2026';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -630,6 +633,9 @@ export const articles: BlogArticle[] = [
   a334,
   a335,
   a336,
+  a337,
+  a338,
+  a339,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
