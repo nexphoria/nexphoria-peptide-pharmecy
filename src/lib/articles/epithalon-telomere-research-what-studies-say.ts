@@ -4,10 +4,10 @@ export const article: BlogArticle = {
   slug: "epithalon-telomere-research-what-studies-say",
   title: "Epithalon and Telomere Research: What Studies Say",
   description:
-    "An evidence-based review of Epithalon (Epitalon), the tetrapeptide studied for telomere elongation and longevity applications. What peer-reviewed research actually shows — and what it doesn't yet establish.",
-  category: "Compound Profiles",
-  readMinutes: 10,
-  publishedAt: "2026-06-04",
+    "An evidence-based review of Epithalon (Epitalon), the tetrapeptide studied for telomere elongation and longevity applications. What peer-reviewed research actually shows.",
+  category: "Longevity Research",
+  readMinutes: 9,
+  publishedAt: "2026-06-05",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -24,7 +24,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Telomeres are repetitive DNA sequences (TTAGGG in humans) that cap the ends of chromosomes, protecting them from degradation and end-to-end fusion. With each cell division, telomeres shorten due to the 'end replication problem.' When telomeres reach a critically short length, cells enter replicative senescence (the Hayflick limit), undergo apoptosis, or in some pathological contexts become genomically unstable.",
+      text: "Telomeres are repetitive DNA sequences (TTAGGG in humans) that cap the ends of chromosomes, protecting them from degradation and end-to-end fusion. With each cell division, telomeres shorten due to the 'end replication problem.' When telomeres reach a critically short length, cells enter replicative senescence (Hayflick limit), undergo apoptosis, or in some pathological contexts become genomically unstable.",
     },
     {
       type: "paragraph",
@@ -36,16 +36,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Epithalon is proposed to act primarily through telomerase activation. The hypothesized mechanism involves:",
-    },
-    {
-      type: "list",
-      items: [
-        "Interaction with the promoter region of the TERT gene (telomerase reverse transcriptase)",
-        "Upregulation of telomerase expression, leading to increased enzymatic activity",
-        "Consequent telomere elongation in dividing cells",
-        "Downstream effects on gene expression — potentially influencing cell cycle regulation, oxidative stress response, and circadian gene expression",
-      ],
+      text: "Epithalon is proposed to act primarily through telomerase activation. The hypothesized mechanism involves: interaction with the promoter region of the TERT gene (telomerase reverse transcriptase); upregulation of telomerase expression, leading to increased enzymatic activity; consequent telomere elongation in dividing cells; and downstream effects on gene expression — potentially influencing cell cycle regulation, oxidative stress response, and circadian gene expression.",
     },
     {
       type: "paragraph",
@@ -61,7 +52,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Khavinson et al. (2003) — published in Bulletin of Experimental Biology and Medicine — reported that Epithalon increased telomerase activity in human fetal fibroblast cultures. Cells treated with Epithalon showed telomere elongation and extended replicative lifespan compared to untreated controls. This study has been cited extensively, though it has not been independently replicated in peer-reviewed literature outside the originating institution — a significant caveat.",
+      text: "Khavinson et al. (2003) — published in Bulletin of Experimental Biology and Medicine — reported that Epithalon increased telomerase activity in human fetal fibroblast cultures. Cells treated with Epithalon showed telomere elongation and extended replicative lifespan compared to untreated controls.",
+    },
+    {
+      type: "paragraph",
+      text: "This study has been cited extensively, though it has not been independently replicated in peer-reviewed literature outside the originating institution — a significant caveat.",
     },
     {
       type: "subheading",
@@ -69,17 +64,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Multiple rodent studies from the St. Petersburg group have documented:",
+      text: "Multiple rodent studies from the St. Petersburg group have documented extended mean and maximum lifespan in aging mice treated with Epithalon versus controls, reduced incidence of spontaneous tumors in older rodents, improved circadian rhythm regulation (melatonin secretion patterns normalized in aged animals treated with Epithalon), and antioxidant marker improvements (reduced lipid peroxidation markers in treated animals).",
     },
     {
-      type: "list",
-      items: [
-        "Extended mean and maximum lifespan in aging mice treated with Epithalon versus controls",
-        "Reduced incidence of spontaneous tumors in older rodents",
-        "Improved circadian rhythm regulation — melatonin secretion patterns normalized in aged animals",
-        "Antioxidant marker improvements — reduced lipid peroxidation markers in treated animals",
-        "Lifespan extension in Drosophila melanogaster populations, consistent with the rodent data",
-      ],
+      type: "paragraph",
+      text: "A study in fruit flies (Drosophila melanogaster) found lifespan extension in Epithalon-treated populations, consistent with the broader rodent data.",
     },
     {
       type: "subheading",
@@ -87,7 +76,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Khavinson's clinical research program administered Epithalon to elderly human subjects over multi-year periods. Reported outcomes included improved immune function markers (NK cell activity, lymphocyte counts), hormonal regulation improvements (particularly melatonin and cortisol profiles), and reduced cardiovascular mortality in longer-term observational follow-up relative to control groups. These findings are reported in Russian-language journals and a subset of English-language publications. The studies lack the design rigor of randomized controlled trials and have not been replicated by independent research groups.",
+      text: "Khavinson's clinical research program administered Epithalon to elderly human subjects over multi-year periods. Reported outcomes included improved immune function markers (NK cell activity, lymphocyte counts), hormonal regulation improvements (particularly in melatonin and cortisol profiles), and reduced cardiovascular mortality in longer-term observational follow-up relative to control groups.",
+    },
+    {
+      type: "paragraph",
+      text: "These findings are reported in Russian-language journals and a subset of English-language publications. The studies lack the design rigor of randomized controlled trials and have not been replicated by independent research groups.",
     },
     {
       type: "heading",
@@ -138,16 +131,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "For researchers studying Epithalon, several methodological considerations are relevant:",
-    },
-    {
-      type: "list",
-      items: [
-        "Solubility: Epithalon is water-soluble; bacteriostatic water is an appropriate reconstitution diluent",
-        "Stability: Reconstituted solutions should be stored at 2–8°C and used within 4 weeks",
-        "Purity requirements: As a tetrapeptide, Epithalon is relatively straightforward to synthesize, but sequence fidelity and purity verification (HPLC ≥98%) remain critical",
-        "Mass spectrometry: MW confirmation (390.35 g/mol) should be available in supplier COA documentation",
-      ],
+      text: "For researchers studying Epithalon, several methodological considerations are relevant. Solubility: Epithalon is water-soluble; bacteriostatic water is an appropriate reconstitution diluent. Stability: Reconstituted solutions should be stored at 2–8°C and used within 4 weeks. Purity requirements: As a tetrapeptide, Epithalon is relatively straightforward to synthesize, but sequence fidelity and purity verification (HPLC ≥98%) remain critical. Mass spectrometry: MW confirmation (390.35 g/mol) should be available in supplier COA documentation.",
     },
     {
       type: "heading",

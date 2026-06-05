@@ -328,6 +328,9 @@ import { article as a324 } from './articles/peptide-research-glossary-50-terms-c
 import { article as a325 } from './articles/peptide-storage-complete-guide';
 import { article as a326 } from './articles/nad-plus-longevity-researchers-guide';
 import { article as a327 } from './articles/how-to-source-research-peptides-usa-complete-guide';
+import { article as a328 } from './articles/longevity-peptide-stack-2026-researchers-guide';
+import { article as a329 } from './articles/hexarelin-cardioprotection-gh-research-guide';
+import { article as a330 } from './articles/epithalon-telomere-research-what-studies-say';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -612,6 +615,9 @@ export const articles: BlogArticle[] = [
   a325,
   a326,
   a327,
+  a328,
+  a329,
+  a330,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
