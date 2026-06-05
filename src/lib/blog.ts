@@ -346,6 +346,9 @@ import { article as a342 } from './articles/best-peptides-skin-hair-research-gui
 import { article as a343 } from './articles/peptide-research-longevity-rapamycin-vs-peptides';
 import { article as a344 } from './articles/weight-loss-peptide-stack-2026-complete-guide';
 import { article as a345 } from './articles/first-time-researcher-peptide-checklist';
+import { article as a346 } from './articles/best-peptides-longevity-2026-research-guide';
+import { article as a347 } from './articles/peptide-research-women-female-health-guide';
+import { article as a348 } from './articles/bpc-157-vs-semaglutide-research-comparison';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -648,6 +651,9 @@ export const articles: BlogArticle[] = [
   a343,
   a344,
   a345,
+  a346,
+  a347,
+  a348,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
