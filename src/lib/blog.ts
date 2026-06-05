@@ -410,6 +410,9 @@ import { article as a409 } from './articles/peptide-stacking-protocols-beginner-
 import { article as a410 } from './articles/glp-2-teduglutide-glepaglutide-gut-peptide-research-guide';
 import { article as a411 } from './articles/bpc-157-tb-500-sports-injury-acl-rotator-cuff-research-protocols';
 import { article as a412 } from './articles/gdf11-parabiosis-young-blood-peptide-aging-research';
+import { article as a413 } from './articles/best-peptides-wound-healing-tissue-repair-research-2026';
+import { article as a414 } from './articles/peptide-research-thyroid-tsh-tpo-regulation-guide';
+import { article as a415 } from './articles/peptide-research-neuropathy-pain-bpc157-tb500-selank-protocols';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -776,6 +779,9 @@ export const articles: BlogArticle[] = [
   a410,
   a411,
   a412,
+  a413,
+  a414,
+  a415,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
