@@ -319,6 +319,9 @@ import { article as a315 } from './articles/angiotensin-peptides-raas-cardiovasc
 import { article as a316 } from './articles/klotho-longevity-peptide-research-guide';
 import { article as a317 } from './articles/fgf21-fibroblast-growth-factor-21-metabolic-peptide-research';
 import { article as a318 } from './articles/vip-vasoactive-intestinal-peptide-immune-neuro-research-guide';
+import { article as a319 } from './articles/5-amino-1mq-nnmt-inhibitor-metabolic-research-guide';
+import { article as a320 } from './articles/spermidine-polyamine-autophagy-longevity-research';
+import { article as a321 } from './articles/rapamycin-rapalogs-mtor-inhibition-longevity-research-guide';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -594,6 +597,9 @@ export const articles: BlogArticle[] = [
   a316,
   a317,
   a318,
+  a319,
+  a320,
+  a321,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
