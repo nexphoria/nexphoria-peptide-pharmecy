@@ -383,6 +383,9 @@ import { article as a382 } from './articles/peptide-yy-gut-hormone-appetite-rese
 import { article as a383 } from './articles/nexphoria-vs-maxim-peptides-vendor-comparison';
 import { article as a384 } from './articles/nexphoria-vs-evolve-peptides-vendor-comparison';
 import { article as a385 } from './articles/nexphoria-vs-direct-peptides-vendor-comparison';
+import { article as a386 } from './articles/dihexa-nootropic-peptide-cognitive-research-guide';
+import { article as a387 } from './articles/apc-1-antimicrobial-peptide-wound-healing-research';
+import { article as a388 } from './articles/cortagen-pineal-peptide-neuroprotection-research';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -722,6 +725,9 @@ export const articles: BlogArticle[] = [
   a383,
   a384,
   a385,
+  a386,
+  a387,
+  a388,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
