@@ -331,6 +331,9 @@ import { article as a327 } from './articles/how-to-source-research-peptides-usa-
 import { article as a328 } from './articles/longevity-peptide-stack-2026-researchers-guide';
 import { article as a329 } from './articles/hexarelin-cardioprotection-gh-research-guide';
 import { article as a330 } from './articles/epithalon-telomere-research-what-studies-say';
+import { article as a331 } from './articles/best-peptides-weight-loss-stack-research-guide';
+import { article as a332 } from './articles/peptide-research-cardiovascular-heart-health';
+import { article as a333 } from './articles/peptide-research-insulin-resistance-blood-sugar';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -618,6 +621,9 @@ export const articles: BlogArticle[] = [
   a328,
   a329,
   a330,
+  a331,
+  a332,
+  a333,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
