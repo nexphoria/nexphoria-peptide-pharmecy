@@ -300,6 +300,9 @@ import { article as a296 } from './articles/cagrilintide-amylin-analog-glp1-comb
 import { article as a297 } from './articles/cgrp-peptide-migraine-pain-research-guide';
 import { article as a298 } from './articles/peptide-research-stroke-ischemia-neuroprotection-bpc157-ss31-semax';
 import { article as a299 } from './articles/peptide-biofilm-antimicrobial-research-2026';
+import { article as a300 } from './articles/best-peptides-muscle-recovery-research-guide';
+import { article as a301 } from './articles/nad-plus-vs-nmn-longevity-research';
+import { article as a302 } from './articles/selank-anxiety-research-peptide-guide';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -556,6 +559,9 @@ export const articles: BlogArticle[] = [
   a297,
   a298,
   a299,
+  a300,
+  a301,
+  a302,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
