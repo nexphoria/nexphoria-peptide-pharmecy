@@ -407,6 +407,9 @@ import { article as a406 } from './articles/fertility-peptides-research-kisspept
 import { article as a407 } from './articles/nexphoria-research-peptide-vendor-review';
 import { article as a408 } from './articles/research-peptide-purchasing-guide-2026';
 import { article as a409 } from './articles/peptide-stacking-protocols-beginner-to-advanced-2026';
+import { article as a410 } from './articles/glp-2-teduglutide-glepaglutide-gut-peptide-research-guide';
+import { article as a411 } from './articles/bpc-157-tb-500-sports-injury-acl-rotator-cuff-research-protocols';
+import { article as a412 } from './articles/gdf11-parabiosis-young-blood-peptide-aging-research';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -770,6 +773,9 @@ export const articles: BlogArticle[] = [
   a407,
   a408,
   a409,
+  a410,
+  a411,
+  a412,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
