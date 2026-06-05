@@ -330,7 +330,7 @@ import { article as a326 } from './articles/nad-plus-longevity-researchers-guide
 import { article as a327 } from './articles/how-to-source-research-peptides-usa-complete-guide';
 import { article as a328 } from './articles/longevity-peptide-stack-2026-researchers-guide';
 import { article as a329 } from './articles/hexarelin-cardioprotection-gh-research-guide';
-import { article as a330 } from './articles/epithalon-telomere-research-what-studies-say';
+import { article as a330 } from './articles/orexin-hypocretin-peptide-sleep-wake-research-guide';
 import { article as a331 } from './articles/best-peptides-weight-loss-stack-research-guide';
 import { article as a332 } from './articles/peptide-research-cardiovascular-heart-health';
 import { article as a333 } from './articles/peptide-research-insulin-resistance-blood-sugar';
@@ -355,6 +355,8 @@ import { article as a351 } from './articles/nad-plus-vs-peptides-mitochondrial-h
 import { article as a352 } from './articles/ghrelin-peptide-hunger-metabolism-research-guide';
 import { article as a353 } from './articles/bdnf-trkb-neurotrophin-peptide-research-guide';
 import { article as a354 } from './articles/osteocalcin-bone-hormone-metabolic-cognitive-research-guide';
+import { article as a355 } from './articles/relaxin-peptide-fibrosis-cardiovascular-research-guide';
+import { article as a356 } from './articles/peptide-compounding-gmp-quality-standards-research';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -666,6 +668,8 @@ export const articles: BlogArticle[] = [
   a352,
   a353,
   a354,
+  a355,
+  a356,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
