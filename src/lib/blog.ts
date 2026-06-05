@@ -377,6 +377,9 @@ import { article as a373 } from './articles/research-peptide-dosing-calculator-g
 import { article as a374 } from './articles/nexphoria-vs-iron-gorilla-vendor-comparison';
 import { article as a375 } from './articles/nexphoria-vs-american-peptide-vendor-comparison';
 import { article as a376 } from './articles/nexphoria-vs-cayman-chemical-vendor-comparison';
+import { article as a377 } from './articles/longevity-peptide-stack-2026';
+import { article as a378 } from './articles/nad-plus-vs-nmn';
+import { article as a379 } from './articles/peptide-sciences-alternative';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -710,6 +713,9 @@ export const articles: BlogArticle[] = [
   a374,
   a375,
   a376,
+  a377,
+  a378,
+  a379,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
