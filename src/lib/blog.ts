@@ -316,6 +316,9 @@ import { article as a312 } from './articles/irisin-fndc5-exercise-peptide-metabo
 import { article as a313 } from './articles/cortistatin-somatostatin-analog-neuropeptide-research-guide';
 import { article as a314 } from './articles/neuropeptide-y-npy-appetite-stress-research-guide';
 import { article as a315 } from './articles/angiotensin-peptides-raas-cardiovascular-research-guide';
+import { article as a316 } from './articles/klotho-longevity-peptide-research-guide';
+import { article as a317 } from './articles/fgf21-fibroblast-growth-factor-21-metabolic-peptide-research';
+import { article as a318 } from './articles/vip-vasoactive-intestinal-peptide-immune-neuro-research-guide';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -588,6 +591,9 @@ export const articles: BlogArticle[] = [
   a313,
   a314,
   a315,
+  a316,
+  a317,
+  a318,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
