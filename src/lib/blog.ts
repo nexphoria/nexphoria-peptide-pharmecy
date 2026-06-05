@@ -371,7 +371,9 @@ import { article as a367 } from './articles/longevity-peptide-stack-2026-hallmar
 import { article as a368 } from './articles/thymosin-alpha-1-immune-modulation-clinical-research';
 import { article as a369 } from './articles/selank-anxiety-research-overview';
 import { article as a370 } from './articles/peptide-storage-guide-temperature-light-shelf-life';
-import { article as a371 } from './articles/bpc-157-complete-research-guide-2026';
+import { article as a371 } from './articles/research-peptide-supplier-comparison-2026';
+import { article as a372 } from './articles/cjc-1295-ipamorelin-complete-guide-2026';
+import { article as a373 } from './articles/research-peptide-dosing-calculator-guide';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -700,6 +702,8 @@ export const articles: BlogArticle[] = [
   a369,
   a370,
   a371,
+  a372,
+  a373,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
