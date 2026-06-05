@@ -366,6 +366,9 @@ import { article as a362 } from './articles/bpc-157-oral-vs-injectable-research-
 import { article as a363 } from './articles/peptide-therapy-what-researchers-need-to-know';
 import { article as a364 } from './articles/biohacking-peptides-research-guide-2026';
 import { article as a365 } from './articles/peptide-therapy-benefits-research-overview';
+import { article as a366 } from './articles/hexarelin-cd36-cardiac-research-deep-dive';
+import { article as a367 } from './articles/longevity-peptide-stack-2026-hallmarks-research-guide';
+import { article as a368 } from './articles/thymosin-alpha-1-immune-modulation-clinical-research';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -688,6 +691,9 @@ export const articles: BlogArticle[] = [
   a363,
   a364,
   a365,
+  a366,
+  a367,
+  a368,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
