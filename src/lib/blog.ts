@@ -300,7 +300,7 @@ import { article as a296 } from './articles/cagrilintide-amylin-analog-glp1-comb
 import { article as a297 } from './articles/cgrp-peptide-migraine-pain-research-guide';
 import { article as a298 } from './articles/peptide-research-stroke-ischemia-neuroprotection-bpc157-ss31-semax';
 import { article as a299 } from './articles/peptide-biofilm-antimicrobial-research-2026';
-import { article as a300 } from './articles/best-peptides-muscle-recovery-research-guide';
+import { article as a300 } from './articles/macimorelin-oral-ghs-gh-stimulation-test-research';
 import { article as a301 } from './articles/nad-plus-vs-nmn-longevity-research';
 import { article as a302 } from './articles/selank-anxiety-research-peptide-guide';
 import { article as a303 } from './articles/sterile-technique-peptide-research-injection-safety-guide';
@@ -311,6 +311,8 @@ import { article as a307 } from './articles/tb-500-dosing-protocol-research-guid
 import { article as a308 } from './articles/peptide-needle-gauge-syringe-selection-guide';
 import { article as a309 } from './articles/ace-031-myostatin-inhibitor-research-peptide-guide';
 import { article as a310 } from './articles/peptide-vendor-red-flags-how-to-evaluate-research-peptide-suppliers';
+import { article as a311 } from './articles/n-acetyl-semax-amidate-nootropic-peptide-research';
+import { article as a312 } from './articles/irisin-fndc5-exercise-peptide-metabolic-research';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -578,6 +580,8 @@ export const articles: BlogArticle[] = [
   a308,
   a309,
   a310,
+  a311,
+  a312,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
