@@ -363,6 +363,9 @@ import { article as a359 } from './articles/peptide-side-effects-research-guide'
 import { article as a360 } from './articles/pe-22-28-antidepressant-peptide-research-guide';
 import { article as a361 } from './articles/humanin-mitochondria-peptide-neuroprotection-research';
 import { article as a362 } from './articles/bpc-157-oral-vs-injectable-research-comparison';
+import { article as a363 } from './articles/peptide-therapy-what-researchers-need-to-know';
+import { article as a364 } from './articles/biohacking-peptides-research-guide-2026';
+import { article as a365 } from './articles/peptide-therapy-benefits-research-overview';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -682,6 +685,9 @@ export const articles: BlogArticle[] = [
   a360,
   a361,
   a362,
+  a363,
+  a364,
+  a365,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
