@@ -395,6 +395,9 @@ import { article as a394 } from './articles/ghk-cu-topical-vs-injectable-researc
 import { article as a395 } from './articles/pure-rawz-vs-nexphoria-vendor-comparison';
 import { article as a396 } from './articles/peptide-timing-fasting-circadian-research-protocols';
 import { article as a397 } from './articles/research-semaglutide-vs-ozempic-wegovy-comparison';
+import { article as a398 } from './articles/nexphoria-vs-nootropics-depot-vendor-comparison';
+import { article as a399 } from './articles/nexphoria-vs-science-bio-vendor-comparison';
+import { article as a400 } from './articles/nexphoria-vs-peptide-warehouse-vendor-comparison';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -746,6 +749,9 @@ export const articles: BlogArticle[] = [
   a395,
   a396,
   a397,
+  a398,
+  a399,
+  a400,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
