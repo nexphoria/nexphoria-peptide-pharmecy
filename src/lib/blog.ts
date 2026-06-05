@@ -303,6 +303,8 @@ import { article as a299 } from './articles/peptide-biofilm-antimicrobial-resear
 import { article as a300 } from './articles/best-peptides-muscle-recovery-research-guide';
 import { article as a301 } from './articles/nad-plus-vs-nmn-longevity-research';
 import { article as a302 } from './articles/selank-anxiety-research-peptide-guide';
+import { article as a303 } from './articles/sterile-technique-peptide-research-injection-safety-guide';
+import { article as a304 } from './articles/ozempic-mounjaro-wegovy-research-peptide-comparison';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -562,6 +564,8 @@ export const articles: BlogArticle[] = [
   a300,
   a301,
   a302,
+  a303,
+  a304,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
