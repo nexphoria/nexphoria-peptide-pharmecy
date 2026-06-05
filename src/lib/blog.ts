@@ -389,6 +389,9 @@ import { article as a388 } from './articles/cortagen-pineal-peptide-neuroprotect
 import { article as a389 } from './articles/semaglutide-vs-tirzepatide-vs-retatrutide-complete-comparison-2026';
 import { article as a390 } from './articles/growth-hormone-peptides-complete-research-guide';
 import { article as a391 } from './articles/best-peptides-immune-system-research-2026';
+import { article as a392 } from './articles/peptide-dosing-mistakes-researchers-make';
+import { article as a393 } from './articles/tirzepatide-vs-semaglutide-weight-loss-2026';
+import { article as a394 } from './articles/ghk-cu-topical-vs-injectable-research';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -734,6 +737,9 @@ export const articles: BlogArticle[] = [
   a389,
   a390,
   a391,
+  a392,
+  a393,
+  a394,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
