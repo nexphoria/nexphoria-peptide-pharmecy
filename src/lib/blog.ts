@@ -305,6 +305,9 @@ import { article as a301 } from './articles/nad-plus-vs-nmn-longevity-research';
 import { article as a302 } from './articles/selank-anxiety-research-peptide-guide';
 import { article as a303 } from './articles/sterile-technique-peptide-research-injection-safety-guide';
 import { article as a304 } from './articles/ozempic-mounjaro-wegovy-research-peptide-comparison';
+import { article as a305 } from './articles/nexphoria-vs-pure-rawz-vendor-comparison';
+import { article as a306 } from './articles/research-peptides-beginners-guide-2026';
+import { article as a307 } from './articles/tb-500-dosing-protocol-research-guide';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -566,6 +569,9 @@ export const articles: BlogArticle[] = [
   a302,
   a303,
   a304,
+  a305,
+  a306,
+  a307,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
