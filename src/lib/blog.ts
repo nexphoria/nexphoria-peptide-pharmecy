@@ -422,6 +422,9 @@ import { article as a421 } from './articles/cortisol-hpa-axis-peptides-stress-re
 import { article as a422 } from './articles/tesamorelin-visceral-fat-hiv-research-guide';
 import { article as a423 } from './articles/kisspeptin-54-vs-kisspeptin-10-clinical-research';
 import { article as a424 } from './articles/peptide-research-liver-fibrosis-nash-bpc157-glp1-ss31';
+import { article as a425 } from './articles/peptide-research-wada-anti-doping-sports-compliance-guide';
+import { article as a426 } from './articles/hair-follicle-peptide-research-alopecia-ghk-cu-thymosin';
+import { article as a427 } from './articles/bone-density-peptide-research-bpc157-ipamorelin-cjc1295-osteoporosis';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -800,6 +803,9 @@ export const articles: BlogArticle[] = [
   a422,
   a423,
   a424,
+  a425,
+  a426,
+  a427,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
