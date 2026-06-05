@@ -340,6 +340,9 @@ import { article as a336 } from './articles/pituitary-peptides-complete-research
 import { article as a337 } from './articles/ipamorelin-complete-guide';
 import { article as a338 } from './articles/best-peptides-anti-aging-research-2026';
 import { article as a339 } from './articles/peptide-research-protocols-2026';
+import { article as a340 } from './articles/best-peptides-sleep-research-guide-2026';
+import { article as a341 } from './articles/best-peptides-cognitive-performance-research-2026';
+import { article as a342 } from './articles/best-peptides-skin-hair-research-guide-2026';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -636,6 +639,9 @@ export const articles: BlogArticle[] = [
   a337,
   a338,
   a339,
+  a340,
+  a341,
+  a342,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
