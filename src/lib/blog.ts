@@ -398,6 +398,9 @@ import { article as a397 } from './articles/research-semaglutide-vs-ozempic-wego
 import { article as a398 } from './articles/nexphoria-vs-nootropics-depot-vendor-comparison';
 import { article as a399 } from './articles/nexphoria-vs-science-bio-vendor-comparison';
 import { article as a400 } from './articles/nexphoria-vs-peptide-warehouse-vendor-comparison';
+import { article as a401 } from './articles/best-peptides-gut-health-research-2026';
+import { article as a402 } from './articles/best-peptides-joint-tendon-research-2026';
+import { article as a403 } from './articles/best-peptides-hormone-optimization-research-2026';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -752,6 +755,9 @@ export const articles: BlogArticle[] = [
   a398,
   a399,
   a400,
+  a401,
+  a402,
+  a403,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
