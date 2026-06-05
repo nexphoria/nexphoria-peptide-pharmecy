@@ -386,6 +386,9 @@ import { article as a385 } from './articles/nexphoria-vs-direct-peptides-vendor-
 import { article as a386 } from './articles/dihexa-nootropic-peptide-cognitive-research-guide';
 import { article as a387 } from './articles/apc-1-antimicrobial-peptide-wound-healing-research';
 import { article as a388 } from './articles/cortagen-pineal-peptide-neuroprotection-research';
+import { article as a389 } from './articles/semaglutide-vs-tirzepatide-vs-retatrutide-complete-comparison-2026';
+import { article as a390 } from './articles/growth-hormone-peptides-complete-research-guide';
+import { article as a391 } from './articles/best-peptides-immune-system-research-2026';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -728,6 +731,9 @@ export const articles: BlogArticle[] = [
   a386,
   a387,
   a388,
+  a389,
+  a390,
+  a391,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
