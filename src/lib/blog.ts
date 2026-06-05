@@ -380,6 +380,9 @@ import { article as a376 } from './articles/nexphoria-vs-cayman-chemical-vendor-
 import { article as a380 } from './articles/ptd-dbm-hair-follicle-wnt-peptide-research-guide';
 import { article as a381 } from './articles/zinc-thymulin-thymic-immune-peptide-research-guide';
 import { article as a382 } from './articles/peptide-yy-gut-hormone-appetite-research-guide';
+import { article as a383 } from './articles/nexphoria-vs-maxim-peptides-vendor-comparison';
+import { article as a384 } from './articles/nexphoria-vs-evolve-peptides-vendor-comparison';
+import { article as a385 } from './articles/nexphoria-vs-direct-peptides-vendor-comparison';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -716,6 +719,9 @@ export const articles: BlogArticle[] = [
   a380,
   a381,
   a382,
+  a383,
+  a384,
+  a385,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
