@@ -419,6 +419,9 @@ import { article as a418 } from './articles/how-to-evaluate-research-peptide-ven
 import { article as a419 } from './articles/glp1-microdosing-research-protocols-low-dose-titration-guide';
 import { article as a420 } from './articles/peptide-starter-kit-first-research-order-complete-guide';
 import { article as a421 } from './articles/cortisol-hpa-axis-peptides-stress-research-guide';
+import { article as a422 } from './articles/tesamorelin-visceral-fat-hiv-research-guide';
+import { article as a423 } from './articles/kisspeptin-54-vs-kisspeptin-10-clinical-research';
+import { article as a424 } from './articles/peptide-research-liver-fibrosis-nash-bpc157-glp1-ss31';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -794,6 +797,9 @@ export const articles: BlogArticle[] = [
   a419,
   a420,
   a421,
+  a422,
+  a423,
+  a424,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
