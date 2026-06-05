@@ -404,6 +404,9 @@ import { article as a403 } from './articles/best-peptides-hormone-optimization-r
 import { article as a404 } from './articles/ozempic-alternative-research-peptides-2026';
 import { article as a405 } from './articles/sermorelin-vs-tesamorelin-ghrh-analog-comparison';
 import { article as a406 } from './articles/fertility-peptides-research-kisspeptin-lh-fsh-axis';
+import { article as a407 } from './articles/nexphoria-research-peptide-vendor-review';
+import { article as a408 } from './articles/research-peptide-purchasing-guide-2026';
+import { article as a409 } from './articles/peptide-stacking-protocols-beginner-to-advanced-2026';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -764,6 +767,9 @@ export const articles: BlogArticle[] = [
   a404,
   a405,
   a406,
+  a407,
+  a408,
+  a409,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
