@@ -313,6 +313,9 @@ import { article as a309 } from './articles/ace-031-myostatin-inhibitor-research
 import { article as a310 } from './articles/peptide-vendor-red-flags-how-to-evaluate-research-peptide-suppliers';
 import { article as a311 } from './articles/n-acetyl-semax-amidate-nootropic-peptide-research';
 import { article as a312 } from './articles/irisin-fndc5-exercise-peptide-metabolic-research';
+import { article as a313 } from './articles/cortistatin-somatostatin-analog-neuropeptide-research-guide';
+import { article as a314 } from './articles/neuropeptide-y-npy-appetite-stress-research-guide';
+import { article as a315 } from './articles/angiotensin-peptides-raas-cardiovascular-research-guide';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -582,6 +585,9 @@ export const articles: BlogArticle[] = [
   a310,
   a311,
   a312,
+  a313,
+  a314,
+  a315,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
