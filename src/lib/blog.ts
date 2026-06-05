@@ -360,6 +360,9 @@ import { article as a356 } from './articles/peptide-compounding-gmp-quality-stan
 import { article as a357 } from './articles/peptide-injection-sites-guide';
 import { article as a358 } from './articles/ipamorelin-vs-sermorelin-research-comparison';
 import { article as a359 } from './articles/peptide-side-effects-research-guide';
+import { article as a360 } from './articles/pe-22-28-antidepressant-peptide-research-guide';
+import { article as a361 } from './articles/humanin-mitochondria-peptide-neuroprotection-research';
+import { article as a362 } from './articles/bpc-157-oral-vs-injectable-research-comparison';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -676,6 +679,9 @@ export const articles: BlogArticle[] = [
   a357,
   a358,
   a359,
+  a360,
+  a361,
+  a362,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
