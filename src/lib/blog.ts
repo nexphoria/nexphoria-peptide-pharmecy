@@ -343,6 +343,9 @@ import { article as a339 } from './articles/peptide-research-protocols-2026';
 import { article as a340 } from './articles/best-peptides-sleep-research-guide-2026';
 import { article as a341 } from './articles/best-peptides-cognitive-performance-research-2026';
 import { article as a342 } from './articles/best-peptides-skin-hair-research-guide-2026';
+import { article as a343 } from './articles/peptide-research-longevity-rapamycin-vs-peptides';
+import { article as a344 } from './articles/weight-loss-peptide-stack-2026-complete-guide';
+import { article as a345 } from './articles/first-time-researcher-peptide-checklist';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -642,6 +645,9 @@ export const articles: BlogArticle[] = [
   a340,
   a341,
   a342,
+  a343,
+  a344,
+  a345,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
