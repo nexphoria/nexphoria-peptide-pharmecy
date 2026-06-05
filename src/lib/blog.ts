@@ -392,6 +392,9 @@ import { article as a391 } from './articles/best-peptides-immune-system-research
 import { article as a392 } from './articles/peptide-dosing-mistakes-researchers-make';
 import { article as a393 } from './articles/tirzepatide-vs-semaglutide-weight-loss-2026';
 import { article as a394 } from './articles/ghk-cu-topical-vs-injectable-research';
+import { article as a395 } from './articles/pure-rawz-vs-nexphoria-vendor-comparison';
+import { article as a396 } from './articles/peptide-timing-fasting-circadian-research-protocols';
+import { article as a397 } from './articles/research-semaglutide-vs-ozempic-wegovy-comparison';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -740,6 +743,9 @@ export const articles: BlogArticle[] = [
   a392,
   a393,
   a394,
+  a395,
+  a396,
+  a397,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
