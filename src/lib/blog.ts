@@ -349,6 +349,9 @@ import { article as a345 } from './articles/first-time-researcher-peptide-checkl
 import { article as a346 } from './articles/best-peptides-longevity-2026-research-guide';
 import { article as a347 } from './articles/peptide-research-women-female-health-guide';
 import { article as a348 } from './articles/bpc-157-vs-semaglutide-research-comparison';
+import { article as a349 } from './articles/peptide-reconstitution-concentration-calculator-guide';
+import { article as a350 } from './articles/ghrh-vs-ghrp-peptides-practical-research-comparison';
+import { article as a351 } from './articles/nad-plus-vs-peptides-mitochondrial-health-comparison';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -654,6 +657,9 @@ export const articles: BlogArticle[] = [
   a346,
   a347,
   a348,
+  a349,
+  a350,
+  a351,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
