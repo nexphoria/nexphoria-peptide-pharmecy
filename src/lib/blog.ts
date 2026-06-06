@@ -486,6 +486,9 @@ import { article as a504 } from './articles/nexphoria-vs-peptide-clinic-vendor-c
 import { article as a505 } from './articles/nexphoria-discount-code-buyers-guide';
 import { article as a506 } from './articles/where-to-buy-semaglutide-research-guide';
 import { article as a507 } from './articles/research-peptides-europe-buying-guide-2026';
+import { article as a508 } from './articles/bpc-157-arginate-pda-stable-form-research-guide';
+import { article as a509 } from './articles/peptides-rheumatoid-arthritis-research-guide';
+import { article as a510 } from './articles/peptides-chronic-fatigue-syndrome-mecfs-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -929,6 +932,9 @@ export const articles: BlogArticle[] = [
   a505,
   a506,
   a507,
+  a508,
+  a509,
+  a510,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
