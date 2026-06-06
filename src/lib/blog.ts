@@ -452,6 +452,9 @@ import { article as a448 } from './articles/mt-2-melanotan-ii-melanocortin-resea
 import { article as a449 } from './articles/peptide-research-gut-brain-microbiome-axis-2026';
 import { article as a450 } from './articles/peptide-research-longevity-blue-zones-lifestyle-protocols';
 import { article as a451 } from './articles/peptide-vendor-third-party-testing-due-diligence-guide';
+import { article as a452 } from './articles/best-peptides-energy-mitochondrial-health-research-2026';
+import { article as a453 } from './articles/ampk-mtor-peptide-research-signaling-crossroads';
+import { article as a454 } from './articles/nexphoria-vs-purity-solutions-vendor-comparison';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -860,6 +863,9 @@ export const articles: BlogArticle[] = [
   a449,
   a450,
   a451,
+  a452,
+  a453,
+  a454,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
