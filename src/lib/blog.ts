@@ -458,6 +458,9 @@ import { article as a454 } from './articles/nexphoria-vs-purity-solutions-vendor
 import { article as a455 } from './articles/amyloid-beta-peptide-alzheimers-research-guide';
 import { article as a456 } from './articles/alpha-synuclein-peptide-parkinsons-aggregation-research';
 import { article as a457 } from './articles/peptide-research-als-motor-neuron-disease-sod1-tdp43-fus';
+import { article as a458 } from './articles/peptide-research-gut-motility-prokinetic-bpc157-ghrelin';
+import { article as a459 } from './articles/nad-plus-tryptophan-kynurenine-inflammation-research';
+import { article as a460 } from './articles/peptide-research-parkinsons-glp1-alpha-synuclein-neuroprotection';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -872,6 +875,9 @@ export const articles: BlogArticle[] = [
   a455,
   a456,
   a457,
+  a458,
+  a459,
+  a460,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
