@@ -468,6 +468,9 @@ import { article as a457 } from './articles/peptide-research-als-motor-neuron-di
 import { article as a458 } from './articles/peptide-research-gut-motility-prokinetic-bpc157-ghrelin';
 import { article as a459 } from './articles/nad-plus-tryptophan-kynurenine-inflammation-research';
 import { article as a460 } from './articles/peptide-research-parkinsons-glp1-alpha-synuclein-neuroprotection';
+import { article as a490 } from './articles/peptide-research-dental-oral-health-bpc157-ghk-cu-periodontal';
+import { article as a491 } from './articles/peptide-research-hearing-loss-auditory-cochlear-bpc157-ss31';
+import { article as a492 } from './articles/peptide-research-lymphatic-system-immune-drainage-bpc157-thymosin';
 
 
 export const articles: BlogArticle[] = [
@@ -884,6 +887,9 @@ export const articles: BlogArticle[] = [
   a458,
   a459,
   a460,
+  a490,
+  a491,
+  a492,
   a481,
   a482,
   a483,
