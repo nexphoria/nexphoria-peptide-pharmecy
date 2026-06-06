@@ -425,6 +425,9 @@ import { article as a424 } from './articles/peptide-research-liver-fibrosis-nash
 import { article as a425 } from './articles/peptide-research-wada-anti-doping-sports-compliance-guide';
 import { article as a426 } from './articles/hair-follicle-peptide-research-alopecia-ghk-cu-thymosin';
 import { article as a427 } from './articles/bone-density-peptide-research-bpc157-ipamorelin-cjc1295-osteoporosis';
+import { article as a428 } from './articles/longevity-peptide-stack-2026-researchers-guide';
+import { article as a429 } from './articles/peptide-sciences-alternative-2026';
+import { article as a430 } from './articles/buy-research-peptides-usa-sourcing-guide';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -806,6 +809,9 @@ export const articles: BlogArticle[] = [
   a425,
   a426,
   a427,
+  a428,
+  a429,
+  a430,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

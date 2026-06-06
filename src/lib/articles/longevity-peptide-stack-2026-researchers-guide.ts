@@ -4,7 +4,7 @@ export const article: BlogArticle = {
   slug: "longevity-peptide-stack-2026-researchers-guide",
   title: "The 2026 Longevity Peptide Stack Researchers Are Studying",
   description:
-    "A research-oriented overview of the peptide combinations longevity scientists are investigating in 2026. Covers GH axis, telomere biology, tissue repair, and mitochondrial targets.",
+    "A research-oriented overview of the peptide combinations longevity scientists are investigating in 2026. Covers GH axis restoration, telomere biology, tissue repair, mitochondrial targets, and neuroprotection.",
   category: "Longevity Research",
   readMinutes: 10,
   publishedAt: "2026-06-05",
@@ -44,7 +44,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Rather than administering exogenous GH (which suppresses endogenous production and carries IGF-1 overshoot risks), CJC-1295 + Ipamorelin targets the upstream regulatory system — preserving pulsatility while amplifying GH output.",
+      text: "Rather than administering exogenous GH — which suppresses endogenous production and carries IGF-1 overshoot risks — CJC-1295 + Ipamorelin targets the upstream regulatory system, preserving pulsatility while amplifying GH output.",
     },
     {
       type: "paragraph",
@@ -76,11 +76,15 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "BPC-157 (Body Protection Compound-157) is a pentadecapeptide derived from a gastric juice protein, studied extensively for tissue repair, angiogenesis, and neuroprotection. Its proposed mechanisms include nitric oxide system modulation (promoting vascular healing), tendon and ligament repair via upregulation of growth factor expression, GI tract cytoprotective effects, and dopamine system normalization in animal neurological models.",
+      text: "BPC-157 (Body Protection Compound-157) is a pentadecapeptide derived from a gastric juice protein, studied extensively for tissue repair, angiogenesis, and neuroprotection. Its proposed mechanisms include nitric oxide system modulation promoting vascular healing, tendon and ligament repair via upregulation of growth factor expression, GI tract cytoprotection, and dopamine system normalization in animal models.",
     },
     {
       type: "paragraph",
-      text: "In a longevity context, BPC-157's tissue maintenance effects are relevant as scaffolding: preserving structural integrity while other interventions address cellular and molecular aging. Research focus in 2026: interaction with GH axis compounds; neuroprotective synergy with nootropic peptides; gut-brain axis implications.",
+      text: "In a longevity context, BPC-157's tissue maintenance effects are relevant as scaffolding: preserving structural integrity while other interventions address cellular and molecular aging.",
+    },
+    {
+      type: "paragraph",
+      text: "Research focus in 2026: Interaction with GH axis compounds; neuroprotective synergy with nootropic peptides; gut-brain axis implications.",
     },
     {
       type: "subheading",
@@ -92,7 +96,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "TB-500 and BPC-157 are frequently studied in combination for their complementary tissue repair profiles — BPC-157 primarily vascular and gastrointestinal; TB-500 primarily musculoskeletal and cardiac.",
+      text: "TB-500 and BPC-157 are frequently studied in combination for their complementary tissue repair profiles — BPC-157 primarily vascular/gastrointestinal; TB-500 primarily musculoskeletal/cardiac.",
     },
     {
       type: "heading",
@@ -104,7 +108,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "MOTS-c is a mitochondria-derived peptide (MDP) encoded within the mitochondrial 12S rRNA. It represents a newer class of research targets: peptides produced by mitochondria that regulate nuclear gene expression. Research findings include insulin sensitization (reversal of diet-induced insulin resistance in mouse models), exercise-mimetic effects via activation of AMPK and related metabolic sensors, lifespan extension demonstrated in C. elegans, and age-dependent decline in circulating MOTS-c levels that suggests it as both a biomarker and potential intervention target.",
+      text: "MOTS-c is a mitochondria-derived peptide (MDP) encoded within the mitochondrial 12S rRNA. It represents a newer class of research targets: peptides produced by mitochondria that regulate nuclear gene expression. Research findings include insulin sensitization (reversal of diet-induced insulin resistance in mouse models), exercise-mimetic effects via AMPK activation, lifespan extension demonstrated in C. elegans, and age-dependent decline in circulating levels.",
     },
     {
       type: "paragraph",
@@ -116,7 +120,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Humanin is another MDP — one of the first identified — with documented roles in neuroprotection (originally identified in Alzheimer's disease context), cardiovascular protection, metabolic regulation, and age-related decline in circulating levels. Humanin and MOTS-c are increasingly studied together as a mitochondria-derived peptide combination targeting multiple aspects of mitochondrial decline.",
+      text: "Humanin is another mitochondria-derived peptide — one of the first identified — with documented roles in neuroprotection (originally characterized in an Alzheimer's disease context), cardiovascular protection, and metabolic regulation, with age-related decline in circulating levels. Humanin and MOTS-c are increasingly studied together as a mitochondria-derived peptide combination targeting multiple aspects of mitochondrial decline.",
     },
     {
       type: "heading",
@@ -128,7 +132,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Russia's two most studied nootropic peptides represent CNS-focused longevity components. Semax (ACTH 4-7 analog) has been studied for BDNF upregulation, neuroprotection, and cognitive enhancement. Selank (tuftsin analog) has been studied for anxiolytic effects, BDNF upregulation, and immune modulation.",
+      text: "Russia's two most studied nootropic peptides represent CNS-focused longevity components. Semax (ACTH 4-7 analog) has documented BDNF upregulation, neuroprotection, and cognitive enhancement effects. Selank (tuftsin analog) demonstrates anxiolytic activity, BDNF upregulation, and immune modulation.",
     },
     {
       type: "paragraph",

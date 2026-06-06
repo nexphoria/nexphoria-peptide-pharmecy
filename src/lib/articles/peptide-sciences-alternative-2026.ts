@@ -1,13 +1,13 @@
 import type { BlogArticle } from '../blog-types';
 
 export const article: BlogArticle = {
-  slug: "peptide-sciences-alternative",
+  slug: "peptide-sciences-alternative-2026",
   title: "Looking for a Peptide Sciences Alternative? Here's What to Know",
   description:
-    "Peptide Sciences shut down in March 2026, leaving thousands of researchers without a supplier. Here's what to look for in a replacement and why Nexphoria meets the standard.",
-  category: "Quality & Testing",
-  readMinutes: 7,
-  publishedAt: "2026-06-04",
+    "Peptide Sciences shut down in March 2026, leaving thousands of researchers without a trusted supplier. Here's what rigorous researchers should require from any replacement and how to evaluate your options.",
+  category: "Industry",
+  readMinutes: 9,
+  publishedAt: "2026-06-05",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -28,15 +28,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "The reasons have not been officially confirmed, but patterns like this in the research peptide space often trace back to one of a few causes:",
-    },
-    {
-      type: "list",
-      items: [
-        "Regulatory pressure from the FDA or DEA targeting online peptide distribution",
-        "Supply chain failures at the synthesis or raw-material level",
-        "Operational insolvency from thin margins in a competitive, commoditized market",
-      ],
+      text: "The reasons have not been officially confirmed, but patterns like this in the research peptide space often trace back to regulatory pressure from the FDA or DEA targeting online peptide distribution, supply chain failures at the synthesis or raw-material level, or operational insolvency from thin margins in a competitive, commoditized market.",
     },
     {
       type: "paragraph",
@@ -56,15 +48,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "High-Performance Liquid Chromatography (HPLC) is the gold standard for verifying peptide purity. Any credible supplier should provide HPLC chromatograms for each batch of product — not just a stated percentage on a label.",
-    },
-    {
-      type: "list",
-      items: [
-        "≥98% purity on HPLC reports",
-        "Batch-specific certificates, not generic template documents",
-        "Third-party lab testing, not in-house only",
-      ],
+      text: "High-Performance Liquid Chromatography (HPLC) is the gold standard for verifying peptide purity. Any credible supplier should provide HPLC chromatograms for each batch of product — not just a stated percentage on a label. Look for ≥98% purity on HPLC reports, batch-specific certificates (not generic template documents), and third-party lab testing rather than in-house only.",
     },
     {
       type: "subheading",
@@ -88,15 +72,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Peptides are sensitive to temperature fluctuation, moisture, and UV exposure. A supplier's logistics chain should reflect this.",
-    },
-    {
-      type: "list",
-      items: [
-        "Products shipped with dry ice or cold packs when appropriate",
-        "Lyophilized (freeze-dried) form for longer shelf stability",
-        "Clear storage guidance provided with every shipment",
-      ],
+      text: "Peptides are sensitive to temperature fluctuation, moisture, and UV exposure. A supplier's logistics chain should reflect this. Key indicators include products shipped with dry ice or cold packs when appropriate, lyophilized (freeze-dried) form for longer shelf stability, and clear storage guidance provided with every shipment.",
     },
     {
       type: "subheading",
@@ -104,7 +80,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Research peptides must be labeled \"For Research Use Only. Not for human use.\" Suppliers who obscure this or who market products for unapproved human applications create regulatory and liability risk for the researchers who use them.",
+      text: "Research peptides must be labeled 'For Research Use Only. Not for human use.' Suppliers who obscure this or who market products for unapproved human applications create regulatory and liability risk for the researchers who use them.",
     },
     {
       type: "heading",
@@ -116,7 +92,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "A 2022 analysis of commercial peptide products found measurable discrepancies in a substantial portion of samples tested. Misidentified sequences, purity gaps, and contamination from unreacted reagents are documented problems. When a large supplier like Peptide Sciences exits the market, it creates demand that is quickly filled by lower-quality operators.",
+      text: "A 2022 analysis of commercial peptide products found measurable discrepancies in a substantial portion of samples tested. Misidentified sequences, purity gaps, and contamination from unreacted reagents are documented problems. When a large supplier like Peptide Sciences exits the market, it creates demand that is quickly filled by lower-quality operators. Researchers who don't apply rigorous supplier evaluation risk compromising their work.",
     },
     {
       type: "heading",
@@ -124,21 +100,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Nexphoria was designed with the standards that serious researchers were clearly not getting from commodity suppliers. Every Nexphoria product includes:",
-    },
-    {
-      type: "list",
-      items: [
-        "HPLC and mass spectrometry verification — batch-specific, third-party confirmed",
-        "Full COA transparency — accessible at point of purchase, not on request",
-        "LAL (Limulus Amebocyte Lysate) endotoxin testing — ensuring products are free of bacterial endotoxins that could compromise experimental integrity",
-        "Lyophilized format with proper cold-chain logistics — from synthesis to delivery",
-        "Strict research-only positioning — no clinical language, no wellness marketing",
-      ],
-    },
-    {
-      type: "paragraph",
-      text: "Nexphoria does not sell peptides for human use. The catalog is for in-vitro and pre-clinical research contexts, and every product is labeled and documented accordingly.",
+      text: "Nexphoria was designed with the standards that serious researchers were clearly not getting from commodity suppliers. Every Nexphoria product includes HPLC and mass spectrometry verification (batch-specific, third-party confirmed), full COA transparency accessible at point of purchase, LAL (Limulus Amebocyte Lysate) endotoxin testing ensuring products are free of bacterial endotoxins that could compromise experimental integrity, lyophilized format with proper cold-chain logistics from synthesis to delivery, and strict research-only positioning with no clinical language or wellness marketing.",
     },
     {
       type: "heading",
@@ -146,7 +108,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "If you are currently mid-study or have established reconstitution and storage protocols, transitioning suppliers requires care.",
+      text: "If you are currently mid-study or have established reconstitution and storage protocols, transitioning suppliers requires care. Here is a practical transition checklist.",
     },
     {
       type: "subheading",
