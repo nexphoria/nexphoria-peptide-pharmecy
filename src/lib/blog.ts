@@ -483,6 +483,9 @@ import { article as a501 } from './articles/peptide-research-cortisol-stress-axi
 import { article as a502 } from './articles/nexphoria-vs-peptide-pros-vendor-comparison';
 import { article as a503 } from './articles/nexphoria-vs-loti-labs-vendor-comparison';
 import { article as a504 } from './articles/nexphoria-vs-peptide-clinic-vendor-comparison';
+import { article as a505 } from './articles/nexphoria-discount-code-buyers-guide';
+import { article as a506 } from './articles/where-to-buy-semaglutide-research-guide';
+import { article as a507 } from './articles/research-peptides-europe-buying-guide-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -923,6 +926,9 @@ export const articles: BlogArticle[] = [
   a502,
   a503,
   a504,
+  a505,
+  a506,
+  a507,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
