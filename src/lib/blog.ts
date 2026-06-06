@@ -480,6 +480,9 @@ import { article as a498 } from './articles/research-peptide-buying-guide-2026-c
 import { article as a499 } from './articles/how-long-does-bpc-157-take-to-work-research-timeline';
 import { article as a500 } from './articles/peptide-research-mast-cell-histamine-bpc157-kpv-mcas-protocol';
 import { article as a501 } from './articles/peptide-research-cortisol-stress-axis-selank-bpc157-semax-nad-protocols';
+import { article as a502 } from './articles/nexphoria-vs-peptide-pros-vendor-comparison';
+import { article as a503 } from './articles/nexphoria-vs-loti-labs-vendor-comparison';
+import { article as a504 } from './articles/nexphoria-vs-peptide-clinic-vendor-comparison';
 
 
 export const articles: BlogArticle[] = [
@@ -917,6 +920,9 @@ export const articles: BlogArticle[] = [
   a499,
   a500,
   a501,
+  a502,
+  a503,
+  a504,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
