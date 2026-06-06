@@ -377,6 +377,9 @@ import { article as a373 } from './articles/research-peptide-dosing-calculator-g
 import { article as a374 } from './articles/nexphoria-vs-iron-gorilla-vendor-comparison';
 import { article as a375 } from './articles/nexphoria-vs-american-peptide-vendor-comparison';
 import { article as a376 } from './articles/nexphoria-vs-cayman-chemical-vendor-comparison';
+import { article as a377 } from './articles/peptide-research-diabetes-type2-glp1-bpc157-protocol-guide';
+import { article as a378 } from './articles/peptide-research-crohns-ibd-gut-inflammation-bpc157-kpv-ll37';
+import { article as a379 } from './articles/peptide-research-thymus-regeneration-thymosin-ta1-thymulin-epitalon';
 import { article as a380 } from './articles/ptd-dbm-hair-follicle-wnt-peptide-research-guide';
 import { article as a381 } from './articles/zinc-thymulin-thymic-immune-peptide-research-guide';
 import { article as a382 } from './articles/peptide-yy-gut-hormone-appetite-research-guide';
@@ -764,6 +767,9 @@ export const articles: BlogArticle[] = [
   a374,
   a375,
   a376,
+  a377,
+  a378,
+  a379,
   a380,
   a381,
   a382,
