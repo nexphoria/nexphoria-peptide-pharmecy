@@ -531,6 +531,9 @@ import { article as a549 } from './articles/peptide-research-endometriosis-femal
 import { article as a461 } from './articles/traveling-with-research-peptides-tsa-cold-chain-guide';
 import { article as a462 } from './articles/peptide-research-exercise-timing-pre-post-workout-protocols';
 import { article as a463 } from './articles/peptide-research-alcohol-ethanol-interaction-study-design';
+import { article as a550 } from './articles/best-peptides-anxiety-stress-research-2026';
+import { article as a551 } from './articles/best-peptides-libido-sexual-health-research-2026';
+import { article as a552 } from './articles/best-peptides-inflammation-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1019,6 +1022,9 @@ export const articles: BlogArticle[] = [
   a461,
   a462,
   a463,
+  a550,
+  a551,
+  a552,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
