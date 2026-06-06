@@ -461,6 +461,26 @@ import { article as a457 } from './articles/peptide-research-als-motor-neuron-di
 import { article as a458 } from './articles/peptide-research-gut-motility-prokinetic-bpc157-ghrelin';
 import { article as a459 } from './articles/nad-plus-tryptophan-kynurenine-inflammation-research';
 import { article as a460 } from './articles/peptide-research-parkinsons-glp1-alpha-synuclein-neuroprotection';
+import { article as a461 } from './articles/selank-anxiety-research-overview';
+import { article as a462 } from './articles/research-peptide-beginner-faq';
+import { article as a463 } from './articles/where-to-buy-bpc-157-research-guide';
+import { article as a464 } from './articles/peptide-starter-kit-first-research-order-complete-guide';
+import { article as a465 } from './articles/peptide-vendor-evaluation-checklist-researchers';
+import { article as a466 } from './articles/best-peptides-anti-aging-research-2026';
+import { article as a467 } from './articles/best-peptides-cognitive-performance-research-2026';
+import { article as a468 } from './articles/best-peptides-fat-loss-research-guide-2026';
+import { article as a469 } from './articles/best-peptides-longevity-2026-research-guide';
+import { article as a470 } from './articles/how-to-read-hplc-certificate-of-analysis';
+import { article as a471 } from './articles/peptide-side-effects-research-guide';
+import { article as a472 } from './articles/peptide-cycling-on-off-protocols-research-guide';
+import { article as a473 } from './articles/peptide-dosing-mistakes-researchers-make';
+import { article as a474 } from './articles/research-peptides-beginners-guide-2026';
+import { article as a475 } from './articles/best-peptide-supplier-2026';
+import { article as a476 } from './articles/weight-loss-peptide-stack-2026-complete-guide';
+import { article as a477 } from './articles/ipamorelin-complete-guide';
+import { article as a478 } from './articles/dihexa-nootropic-peptide-cognitive-research-guide';
+import { article as a479 } from './articles/ozempic-alternative-research-peptides-2026';
+import { article as a480 } from './articles/first-time-researcher-peptide-checklist';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -878,6 +898,26 @@ export const articles: BlogArticle[] = [
   a458,
   a459,
   a460,
+  a461,
+  a462,
+  a463,
+  a464,
+  a465,
+  a466,
+  a467,
+  a468,
+  a469,
+  a470,
+  a471,
+  a472,
+  a473,
+  a474,
+  a475,
+  a476,
+  a477,
+  a478,
+  a479,
+  a480,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
