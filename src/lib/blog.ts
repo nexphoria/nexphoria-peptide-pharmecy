@@ -440,6 +440,9 @@ import { article as a436 } from './articles/enkephalins-endorphins-opioid-peptid
 import { article as a437 } from './articles/peptide-therapy-side-effects-research-guide';
 import { article as a438 } from './articles/bpc-157-benefits-research-overview';
 import { article as a439 } from './articles/collagen-peptides-research-guide-2026';
+import { article as a440 } from './articles/nad-plus-vs-nmn-longevity-precursors-research-guide';
+import { article as a441 } from './articles/hexarelin-ghs-cardioprotection-cd36-research-guide';
+import { article as a442 } from './articles/semaglutide-glp1-receptor-agonist-metabolic-research-guide';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -836,6 +839,9 @@ export const articles: BlogArticle[] = [
   a437,
   a438,
   a439,
+  a440,
+  a441,
+  a442,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
