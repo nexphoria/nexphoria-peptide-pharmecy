@@ -477,6 +477,9 @@ import { article as a495 } from './articles/semaglutide-research-dosing-titratio
 import { article as a496 } from './articles/peptide-research-endocannabinoid-system-interactions';
 import { article as a497 } from './articles/peptide-research-fibromyalgia-chronic-pain-bpc157-ss31-nad';
 import { article as a498 } from './articles/research-peptide-buying-guide-2026-complete-checklist';
+import { article as a499 } from './articles/how-long-does-bpc-157-take-to-work-research-timeline';
+import { article as a500 } from './articles/peptide-research-mast-cell-histamine-bpc157-kpv-mcas-protocol';
+import { article as a501 } from './articles/peptide-research-cortisol-stress-axis-selank-bpc157-semax-nad-protocols';
 
 
 export const articles: BlogArticle[] = [
@@ -911,6 +914,9 @@ export const articles: BlogArticle[] = [
   a496,
   a497,
   a498,
+  a499,
+  a500,
+  a501,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
