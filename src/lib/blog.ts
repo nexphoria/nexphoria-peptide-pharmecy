@@ -489,6 +489,9 @@ import { article as a507 } from './articles/research-peptides-europe-buying-guid
 import { article as a508 } from './articles/bpc-157-arginate-pda-stable-form-research-guide';
 import { article as a509 } from './articles/peptides-rheumatoid-arthritis-research-guide';
 import { article as a510 } from './articles/peptides-chronic-fatigue-syndrome-mecfs-research-guide';
+import { article as a511 } from './articles/where-to-buy-tirzepatide-research-guide';
+import { article as a512 } from './articles/where-to-buy-mk-677-research-guide';
+import { article as a513 } from './articles/where-to-buy-tb-500-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -935,6 +938,9 @@ export const articles: BlogArticle[] = [
   a508,
   a509,
   a510,
+  a511,
+  a512,
+  a513,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
