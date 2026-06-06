@@ -504,6 +504,9 @@ import { article as a522 } from './articles/where-to-buy-selank-research-guide';
 import { article as a523 } from './articles/where-to-buy-hexarelin-research-guide';
 import { article as a524 } from './articles/where-to-buy-thymosin-alpha-1-research-guide';
 import { article as a525 } from './articles/where-to-buy-aod-9604-research-guide';
+import { article as a526 } from './articles/where-to-buy-semax-research-guide';
+import { article as a527 } from './articles/where-to-buy-ghrp-2-research-guide';
+import { article as a528 } from './articles/where-to-buy-melanotan-2-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -965,6 +968,9 @@ export const articles: BlogArticle[] = [
   a523,
   a524,
   a525,
+  a526,
+  a527,
+  a528,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
