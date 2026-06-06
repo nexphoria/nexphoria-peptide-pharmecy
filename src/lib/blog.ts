@@ -443,6 +443,9 @@ import { article as a439 } from './articles/collagen-peptides-research-guide-202
 import { article as a440 } from './articles/nad-plus-vs-nmn-longevity-precursors-research-guide';
 import { article as a441 } from './articles/hexarelin-ghs-cardioprotection-cd36-research-guide';
 import { article as a442 } from './articles/semaglutide-glp1-receptor-agonist-metabolic-research-guide';
+import { article as a443 } from './articles/best-peptide-supplier-2026';
+import { article as a444 } from './articles/weight-loss-peptides-comparison-2026';
+import { article as a445 } from './articles/where-to-buy-bpc-157-research-guide';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -842,6 +845,9 @@ export const articles: BlogArticle[] = [
   a440,
   a441,
   a442,
+  a443,
+  a444,
+  a445,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
