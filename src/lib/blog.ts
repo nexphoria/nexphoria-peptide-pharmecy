@@ -434,6 +434,9 @@ import { article as a483 } from './articles/acth-cortisol-hpa-peptide-research-g
 import { article as a484 } from './articles/topical-transdermal-peptide-delivery-skin-absorption-research-guide';
 import { article as a485 } from './articles/peptide-research-photoaging-uv-induced-skin-damage-ghk-cu-collagen-restoration';
 import { article as a486 } from './articles/peptide-research-scar-tissue-remodeling-keloid-hypertrophic-bpc157-ghk-cu';
+import { article as a487 } from './articles/how-to-spot-fake-underdosed-peptides-quality-red-flags';
+import { article as a488 } from './articles/research-peptide-cost-per-mg-price-guide-2026';
+import { article as a489 } from './articles/peptides-vs-supplements-what-researchers-need-to-know';
 import { article as a430 } from './articles/buy-research-peptides-usa-sourcing-guide';
 import { article as a431 } from './articles/nexphoria-peptide-brand-story-why-we-exist';
 import { article as a432 } from './articles/how-to-read-hplc-certificate-of-analysis';
@@ -887,6 +890,9 @@ export const articles: BlogArticle[] = [
   a484,
   a485,
   a486,
+  a487,
+  a488,
+  a489,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
