@@ -437,6 +437,9 @@ import { article as a433 } from './articles/research-peptide-cold-chain-why-most
 import { article as a434 } from './articles/cholecystokinin-cck-satiety-peptide-appetite-research-guide';
 import { article as a435 } from './articles/bnp-anp-natriuretic-peptides-cardiovascular-research-guide';
 import { article as a436 } from './articles/enkephalins-endorphins-opioid-peptide-research-guide';
+import { article as a437 } from './articles/peptide-therapy-side-effects-research-guide';
+import { article as a438 } from './articles/bpc-157-benefits-research-overview';
+import { article as a439 } from './articles/collagen-peptides-research-guide-2026';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -830,6 +833,9 @@ export const articles: BlogArticle[] = [
   a434,
   a435,
   a436,
+  a437,
+  a438,
+  a439,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
