@@ -492,6 +492,9 @@ import { article as a510 } from './articles/peptides-chronic-fatigue-syndrome-me
 import { article as a511 } from './articles/where-to-buy-tirzepatide-research-guide';
 import { article as a512 } from './articles/where-to-buy-mk-677-research-guide';
 import { article as a513 } from './articles/where-to-buy-tb-500-research-guide';
+import { article as a514 } from './articles/where-to-buy-ipamorelin-research-guide';
+import { article as a515 } from './articles/where-to-buy-nad-plus-research-guide';
+import { article as a516 } from './articles/where-to-buy-sermorelin-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -941,6 +944,9 @@ export const articles: BlogArticle[] = [
   a511,
   a512,
   a513,
+  a514,
+  a515,
+  a516,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
