@@ -474,6 +474,9 @@ import { article as a492 } from './articles/peptide-research-lymphatic-system-im
 import { article as a493 } from './articles/peptide-dosing-guide-beginners-research';
 import { article as a494 } from './articles/mk-677-dosing-protocols-research-guide';
 import { article as a495 } from './articles/semaglutide-research-dosing-titration-guide';
+import { article as a496 } from './articles/peptide-research-endocannabinoid-system-interactions';
+import { article as a497 } from './articles/peptide-research-fibromyalgia-chronic-pain-bpc157-ss31-nad';
+import { article as a498 } from './articles/research-peptide-buying-guide-2026-complete-checklist';
 
 
 export const articles: BlogArticle[] = [
@@ -905,6 +908,9 @@ export const articles: BlogArticle[] = [
   a487,
   a488,
   a489,
+  a496,
+  a497,
+  a498,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
