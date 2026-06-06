@@ -449,6 +449,9 @@ import { article as a445 } from './articles/where-to-buy-bpc-157-research-guide'
 import { article as a446 } from './articles/ghk-cu-copper-peptide-hair-growth-research-guide';
 import { article as a447 } from './articles/pt-141-bremelanotide-research-protocol-guide';
 import { article as a448 } from './articles/mt-2-melanotan-ii-melanocortin-research-review';
+import { article as a449 } from './articles/peptide-research-gut-brain-microbiome-axis-2026';
+import { article as a450 } from './articles/peptide-research-longevity-blue-zones-lifestyle-protocols';
+import { article as a451 } from './articles/peptide-vendor-third-party-testing-due-diligence-guide';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -854,6 +857,9 @@ export const articles: BlogArticle[] = [
   a446,
   a447,
   a448,
+  a449,
+  a450,
+  a451,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
