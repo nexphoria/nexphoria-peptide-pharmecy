@@ -434,6 +434,9 @@ import { article as a430 } from './articles/buy-research-peptides-usa-sourcing-g
 import { article as a431 } from './articles/nexphoria-peptide-brand-story-why-we-exist';
 import { article as a432 } from './articles/how-to-read-hplc-certificate-of-analysis';
 import { article as a433 } from './articles/research-peptide-cold-chain-why-most-vendors-fail';
+import { article as a434 } from './articles/cholecystokinin-cck-satiety-peptide-appetite-research-guide';
+import { article as a435 } from './articles/bnp-anp-natriuretic-peptides-cardiovascular-research-guide';
+import { article as a436 } from './articles/enkephalins-endorphins-opioid-peptide-research-guide';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -824,6 +827,9 @@ export const articles: BlogArticle[] = [
   a431,
   a432,
   a433,
+  a434,
+  a435,
+  a436,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
