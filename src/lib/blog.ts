@@ -455,6 +455,9 @@ import { article as a451 } from './articles/peptide-vendor-third-party-testing-d
 import { article as a452 } from './articles/best-peptides-energy-mitochondrial-health-research-2026';
 import { article as a453 } from './articles/ampk-mtor-peptide-research-signaling-crossroads';
 import { article as a454 } from './articles/nexphoria-vs-purity-solutions-vendor-comparison';
+import { article as a455 } from './articles/amyloid-beta-peptide-alzheimers-research-guide';
+import { article as a456 } from './articles/alpha-synuclein-peptide-parkinsons-aggregation-research';
+import { article as a457 } from './articles/peptide-research-als-motor-neuron-disease-sod1-tdp43-fus';
 
 export const articles: BlogArticle[] = [
   a01, a02, a03, a04, a05, a06, a07, a08, a09, a10,
@@ -866,6 +869,9 @@ export const articles: BlogArticle[] = [
   a452,
   a453,
   a454,
+  a455,
+  a456,
+  a457,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
