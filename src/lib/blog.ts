@@ -431,6 +431,9 @@ import { article as a427 } from './articles/bone-density-peptide-research-bpc157
 import { article as a481 } from './articles/substance-p-nociception-neuroinflammation-peptide-research';
 import { article as a482 } from './articles/neurotensin-dopamine-gut-peptide-research-guide';
 import { article as a483 } from './articles/acth-cortisol-hpa-peptide-research-guide';
+import { article as a484 } from './articles/topical-transdermal-peptide-delivery-skin-absorption-research-guide';
+import { article as a485 } from './articles/peptide-research-photoaging-uv-induced-skin-damage-ghk-cu-collagen-restoration';
+import { article as a486 } from './articles/peptide-research-scar-tissue-remodeling-keloid-hypertrophic-bpc157-ghk-cu';
 import { article as a430 } from './articles/buy-research-peptides-usa-sourcing-guide';
 import { article as a431 } from './articles/nexphoria-peptide-brand-story-why-we-exist';
 import { article as a432 } from './articles/how-to-read-hplc-certificate-of-analysis';
@@ -881,6 +884,9 @@ export const articles: BlogArticle[] = [
   a481,
   a482,
   a483,
+  a484,
+  a485,
+  a486,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
