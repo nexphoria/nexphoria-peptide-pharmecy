@@ -534,6 +534,9 @@ import { article as a463 } from './articles/peptide-research-alcohol-ethanol-int
 import { article as a550 } from './articles/best-peptides-anxiety-stress-research-2026';
 import { article as a551 } from './articles/best-peptides-libido-sexual-health-research-2026';
 import { article as a552 } from './articles/best-peptides-inflammation-research-2026';
+import { article as a553 } from './articles/best-peptides-cardiovascular-health-research-2026';
+import { article as a554 } from './articles/best-peptides-focus-concentration-research-2026';
+import { article as a555 } from './articles/best-peptides-liver-health-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1025,6 +1028,9 @@ export const articles: BlogArticle[] = [
   a550,
   a551,
   a552,
+  a553,
+  a554,
+  a555,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
