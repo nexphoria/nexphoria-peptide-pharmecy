@@ -516,6 +516,9 @@ import { article as a534 } from './articles/where-to-buy-igf-1-lr3-research-guid
 import { article as a535 } from './articles/where-to-buy-oxytocin-research-guide';
 import { article as a536 } from './articles/where-to-buy-dsip-research-guide';
 import { article as a537 } from './articles/where-to-buy-snap-8-research-guide';
+import { article as a538 } from './articles/where-to-buy-kpv-research-guide';
+import { article as a539 } from './articles/where-to-buy-ss-31-elamipretide-research-guide';
+import { article as a540 } from './articles/where-to-buy-follistatin-344-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -989,6 +992,9 @@ export const articles: BlogArticle[] = [
   a535,
   a536,
   a537,
+  a538,
+  a539,
+  a540,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
