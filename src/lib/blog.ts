@@ -471,6 +471,9 @@ import { article as a460 } from './articles/peptide-research-parkinsons-glp1-alp
 import { article as a490 } from './articles/peptide-research-dental-oral-health-bpc157-ghk-cu-periodontal';
 import { article as a491 } from './articles/peptide-research-hearing-loss-auditory-cochlear-bpc157-ss31';
 import { article as a492 } from './articles/peptide-research-lymphatic-system-immune-drainage-bpc157-thymosin';
+import { article as a493 } from './articles/peptide-dosing-guide-beginners-research';
+import { article as a494 } from './articles/mk-677-dosing-protocols-research-guide';
+import { article as a495 } from './articles/semaglutide-research-dosing-titration-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -890,6 +893,9 @@ export const articles: BlogArticle[] = [
   a490,
   a491,
   a492,
+  a493,
+  a494,
+  a495,
   a481,
   a482,
   a483,
