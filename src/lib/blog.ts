@@ -641,6 +641,9 @@ import { article as a657 } from './articles/peptide-pen-devices-research-dosing-
 import { article as a658 } from './articles/vesugen-vascular-peptide-bioregulator-research-guide';
 import { article as a659 } from './articles/cartalax-cartilage-peptide-bioregulator-research-guide';
 import { article as a660 } from './articles/cortexin-cortagen-neuropeptide-bioregulator-research-guide';
+import { article as a661 } from './articles/bpc-157-tb-500-combined-protocol-research-guide';
+import { article as a662 } from './articles/longevity-peptide-stack-2026-research-guide';
+import { article as a663 } from './articles/why-hplc-purity-testing-matters-peptide-sourcing';
 
 
 export const articles: BlogArticle[] = [
@@ -1285,6 +1288,9 @@ export const articles: BlogArticle[] = [
   a658,
   a659,
   a660,
+  a661,
+  a662,
+  a663,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
