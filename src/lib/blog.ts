@@ -101,6 +101,9 @@ import { article as a97 } from './articles/adiponectin-insulin-resistance-glp1-m
 import { article as a583 } from './articles/where-to-buy-glp-2-teduglutide-research-guide';
 import { article as a584 } from './articles/where-to-buy-cagrilintide-research-guide';
 import { article as a585 } from './articles/where-to-buy-pemziviptide-ac253-research-guide';
+import { article as a586 } from './articles/gut-microbiome-peptide-research-bpc157-dysbiosis-intestinal-permeability';
+import { article as a587 } from './articles/argireline-acetyl-hexapeptide-cosmetic-peptide-research-guide';
+import { article as a588 } from './articles/anti-inflammatory-peptide-research-il6-nfkb-resolution-pathways';
 import { article as a98 } from './articles/ceramide-sphingolipids-peptide-research-lipotoxicity-adiponectin';
 import { article as a99 } from './articles/peptide-research-liver-health-nash-hepatic-steatosis-glp1-data';
 import { article as a100 } from './articles/100-articles-complete-nexphoria-research-library-overview';
@@ -1091,6 +1094,9 @@ export const articles: BlogArticle[] = [
   a583,
   a584,
   a585,
+  a586,
+  a587,
+  a588,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
