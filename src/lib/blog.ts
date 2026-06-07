@@ -656,6 +656,9 @@ import { article as a663 } from './articles/why-hplc-purity-testing-matters-pept
 import { article as a673 } from './articles/peptide-half-life-comparison-research-guide';
 import { article as a674 } from './articles/gh-axis-aging-somatopause-research-guide';
 import { article as a675 } from './articles/intranasal-peptide-delivery-research-guide';
+import { article as a676 } from './articles/peptide-research-altitude-hypoxia-hif-epo-bpc157';
+import { article as a677 } from './articles/bpc-157-esophageal-reflux-gerd-gi-research';
+import { article as a678 } from './articles/peptide-shelf-life-real-world-stability-opened-vials';
 
 
 export const articles: BlogArticle[] = [
@@ -1315,6 +1318,9 @@ export const articles: BlogArticle[] = [
   a673,
   a674,
   a675,
+  a676,
+  a677,
+  a678,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
