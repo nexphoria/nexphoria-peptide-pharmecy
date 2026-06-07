@@ -667,6 +667,9 @@ import { article as a691 } from './articles/nexphoria-shipping-policy-cold-chain
 import { article as a692 } from './articles/best-peptides-for-beginners-research-2026';
 import { article as a693 } from './articles/how-peptides-work-mechanism-guide';
 import { article as a694 } from './articles/peptide-weight-loss-complete-guide-2026';
+import { article as a695 } from './articles/sermorelin-complete-guide';
+import { article as a696 } from './articles/ipamorelin-growth-hormone-complete-guide';
+import { article as a697 } from './articles/best-peptides-recovery-stack-2026';
 import { article as a662 } from './articles/longevity-peptide-stack-2026-research-guide';
 import { article as a663 } from './articles/why-hplc-purity-testing-matters-peptide-sourcing';
 import { article as a673 } from './articles/peptide-half-life-comparison-research-guide';
@@ -1353,6 +1356,9 @@ export const articles: BlogArticle[] = [
   a692,
   a693,
   a694,
+  a695,
+  a696,
+  a697,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
