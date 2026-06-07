@@ -593,6 +593,9 @@ import { article as a609 } from './articles/bpc-157-mental-health-research-guide
 import { article as a610 } from './articles/survodutide-gcgr-glp1-dual-agonist-research-guide';
 import { article as a611 } from './articles/oral-glp1-peptides-danuglipron-research-guide';
 import { article as a612 } from './articles/bimagrumab-myostatin-activin-muscle-research-guide';
+import { article as a613 } from './articles/research-peptides-australia-guide';
+import { article as a614 } from './articles/best-peptides-brain-health-research-2026';
+import { article as a615 } from './articles/where-to-buy-cjc-1295-dac-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1189,6 +1192,9 @@ export const articles: BlogArticle[] = [
   a610,
   a611,
   a612,
+  a613,
+  a614,
+  a615,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
