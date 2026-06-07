@@ -599,6 +599,9 @@ import { article as a615 } from './articles/where-to-buy-cjc-1295-dac-research-g
 import { article as a616 } from './articles/where-to-buy-foxo4-dri-research-guide';
 import { article as a617 } from './articles/where-to-buy-irisin-research-guide';
 import { article as a618 } from './articles/where-to-buy-compounded-semaglutide-research-guide';
+import { article as a619 } from './articles/semaglutide-glp1-metabolic-obesity-research-overview';
+import { article as a620 } from './articles/thymosin-alpha-1-immune-modulation-t-cell-research-guide';
+import { article as a621 } from './articles/nad-plus-longevity-sirtuins-parp-aging-biology-research';
 
 
 export const articles: BlogArticle[] = [
@@ -1201,6 +1204,9 @@ export const articles: BlogArticle[] = [
   a616,
   a617,
   a618,
+  a619,
+  a620,
+  a621,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
