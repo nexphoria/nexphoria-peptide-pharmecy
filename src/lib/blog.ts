@@ -614,6 +614,9 @@ import { article as a630 } from './articles/best-peptides-skin-conditions-acne-e
 import { article as a631 } from './articles/best-peptides-for-women-research-2026';
 import { article as a632 } from './articles/best-peptides-over-50-longevity-research-2026';
 import { article as a633 } from './articles/best-peptides-fertility-research-2026';
+import { article as a634 } from './articles/best-peptides-menopause-research-2026';
+import { article as a635 } from './articles/best-peptides-tendon-ligament-research-2026';
+import { article as a636 } from './articles/best-peptides-chronic-pain-neuropathy-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1231,6 +1234,9 @@ export const articles: BlogArticle[] = [
   a631,
   a632,
   a633,
+  a634,
+  a635,
+  a636,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
