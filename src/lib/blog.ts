@@ -584,6 +584,9 @@ import { article as a600 } from './articles/how-to-source-research-peptides-usa-
 import { article as a601 } from './articles/where-to-buy-glutathione-research-guide';
 import { article as a602 } from './articles/where-to-buy-carnosine-research-guide';
 import { article as a603 } from './articles/where-to-buy-cjc-1295-ipamorelin-stack-research-guide';
+import { article as a604 } from './articles/how-we-source-cold-chain-synthesis-to-doorstep';
+import { article as a605 } from './articles/coa-hplc-mass-spec-what-to-look-for';
+import { article as a606 } from './articles/protocol-design-101-dose-cycle-recovery-window';
 
 
 export const articles: BlogArticle[] = [
@@ -1171,6 +1174,9 @@ export const articles: BlogArticle[] = [
   a601,
   a602,
   a603,
+  a604,
+  a605,
+  a606,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
