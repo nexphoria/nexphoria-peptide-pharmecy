@@ -107,6 +107,9 @@ import { article as a588 } from './articles/anti-inflammatory-peptide-research-i
 import { article as a589 } from './articles/leuprolide-gnrh-agonist-research-guide';
 import { article as a590 } from './articles/cjc-1295-with-dac-long-acting-ghrh-analog-research-guide';
 import { article as a591 } from './articles/research-peptide-vendor-guide-2026';
+import { article as a592 } from './articles/research-peptides-canada-guide';
+import { article as a593 } from './articles/research-peptides-uk-guide';
+import { article as a594 } from './articles/best-peptides-for-men-research-2026';
 import { article as a98 } from './articles/ceramide-sphingolipids-peptide-research-lipotoxicity-adiponectin';
 import { article as a99 } from './articles/peptide-research-liver-health-nash-hepatic-steatosis-glp1-data';
 import { article as a100 } from './articles/100-articles-complete-nexphoria-research-library-overview';
@@ -1149,6 +1152,9 @@ export const articles: BlogArticle[] = [
   a52,
   a54,
   a56,
+  a592,
+  a593,
+  a594,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
