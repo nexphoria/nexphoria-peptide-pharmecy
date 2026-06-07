@@ -578,6 +578,9 @@ import { article as a579 } from './articles/best-peptides-autoimmune-research-20
 import { article as a580 } from './articles/where-to-buy-pinealon-research-guide';
 import { article as a581 } from './articles/where-to-buy-vilon-research-guide';
 import { article as a582 } from './articles/where-to-buy-thymalin-research-guide';
+import { article as a598 } from './articles/nad-plus-vs-nmn-longevity-researchers-guide-2026';
+import { article as a599 } from './articles/peptide-sciences-alternative-supplier-guide-post-shutdown';
+import { article as a600 } from './articles/how-to-source-research-peptides-usa-hplc-coa-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1159,6 +1162,9 @@ export const articles: BlogArticle[] = [
   a595,
   a596,
   a597,
+  a598,
+  a599,
+  a600,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
