@@ -635,6 +635,9 @@ import { article as a651 } from './articles/peptide-administration-timing-window
 import { article as a652 } from './articles/peptide-research-gut-permeability-leaky-gut-bpc157-kpv-ll37';
 import { article as a653 } from './articles/semaglutide-weight-loss-plateau-research-protocol-strategies';
 import { article as a654 } from './articles/glp1-peptides-joint-inflammation-arthritis-research-2026';
+import { article as a655 } from './articles/where-to-buy-glow-stack-research-guide';
+import { article as a656 } from './articles/where-to-buy-klw-stack-research-guide';
+import { article as a657 } from './articles/peptide-pen-devices-research-dosing-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1273,6 +1276,9 @@ export const articles: BlogArticle[] = [
   a652,
   a653,
   a654,
+  a655,
+  a656,
+  a657,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
