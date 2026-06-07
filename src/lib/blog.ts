@@ -557,7 +557,9 @@ import { article as a560 } from './articles/where-to-buy-tb4-frag-research-guide
 import { article as a561 } from './articles/where-to-buy-5-amino-1mq-research-guide';
 import { article as a562 } from './articles/peptide-research-long-covid-bpc157-ss31-nad-thymosin';
 import { article as a563 } from './articles/glp1-agonists-fertility-pcos-reproductive-research';
-import { article as a564 } from './articles/nexphoria-vs-biotech-peptides-vendor-comparison';
+import { article as a595 } from './articles/des-igf-1-truncated-analog-research-guide';
+import { article as a596 } from './articles/best-peptides-testosterone-research-2026';
+import { article as a597 } from './articles/glp1-agonists-cancer-oncology-research';
 import { article as a565 } from './articles/where-to-buy-triptorelin-research-guide';
 import { article as a566 } from './articles/where-to-buy-klotho-research-guide';
 import { article as a567 } from './articles/where-to-buy-vasopressin-research-guide';
@@ -1078,7 +1080,6 @@ export const articles: BlogArticle[] = [
   a561,
   a562,
   a563,
-  a564,
   a565,
   a566,
   a567,
@@ -1155,6 +1156,9 @@ export const articles: BlogArticle[] = [
   a592,
   a593,
   a594,
+  a595,
+  a596,
+  a597,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
