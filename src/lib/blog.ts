@@ -104,6 +104,9 @@ import { article as a585 } from './articles/where-to-buy-pemziviptide-ac253-rese
 import { article as a586 } from './articles/gut-microbiome-peptide-research-bpc157-dysbiosis-intestinal-permeability';
 import { article as a587 } from './articles/argireline-acetyl-hexapeptide-cosmetic-peptide-research-guide';
 import { article as a588 } from './articles/anti-inflammatory-peptide-research-il6-nfkb-resolution-pathways';
+import { article as a589 } from './articles/leuprolide-gnrh-agonist-research-guide';
+import { article as a590 } from './articles/cjc-1295-with-dac-long-acting-ghrh-analog-research-guide';
+import { article as a591 } from './articles/research-peptide-vendor-guide-2026';
 import { article as a98 } from './articles/ceramide-sphingolipids-peptide-research-lipotoxicity-adiponectin';
 import { article as a99 } from './articles/peptide-research-liver-health-nash-hepatic-steatosis-glp1-data';
 import { article as a100 } from './articles/100-articles-complete-nexphoria-research-library-overview';
@@ -1097,6 +1100,9 @@ export const articles: BlogArticle[] = [
   a586,
   a587,
   a588,
+  a589,
+  a590,
+  a591,
   // Articles imported but previously missing from array
   a02,
   a03,
