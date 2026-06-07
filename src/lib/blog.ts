@@ -587,6 +587,9 @@ import { article as a603 } from './articles/where-to-buy-cjc-1295-ipamorelin-sta
 import { article as a604 } from './articles/how-we-source-cold-chain-synthesis-to-doorstep';
 import { article as a605 } from './articles/coa-hplc-mass-spec-what-to-look-for';
 import { article as a606 } from './articles/protocol-design-101-dose-cycle-recovery-window';
+import { article as a607 } from './articles/peptide-research-longevity-hallmarks-2026';
+import { article as a608 } from './articles/glp1-vs-peptides-complete-comparison-2026';
+import { article as a609 } from './articles/bpc-157-mental-health-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1177,6 +1180,9 @@ export const articles: BlogArticle[] = [
   a604,
   a605,
   a606,
+  a607,
+  a608,
+  a609,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
