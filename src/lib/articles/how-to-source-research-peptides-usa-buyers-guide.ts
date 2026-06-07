@@ -4,10 +4,10 @@ export const article: BlogArticle = {
   slug: "how-to-source-research-peptides-usa-buyers-guide",
   title: "How to Source Research Peptides in the USA: A Buyer's Guide",
   description:
-    "A practical guide to sourcing research peptides in the USA — what HPLC certificates mean, why COAs matter, cold-chain requirements, red flags to avoid, and what sets premium suppliers apart.",
+    "A practical guide to sourcing research peptides in the United States — what HPLC certificates mean, why COAs matter, cold-chain requirements, red flags to avoid, and what sets premium suppliers apart.",
   category: "Quality & Testing",
-  readMinutes: 12,
-  publishedAt: "2026-06-04",
+  readMinutes: 10,
+  publishedAt: "2026-06-05",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -24,7 +24,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Unlike small-molecule compounds, peptides are structurally sensitive. A 99% pure peptide and a 95% pure peptide are not interchangeable in research.",
+      text: "Unlike small-molecule compounds, peptides are structurally sensitive. A 99% pure peptide and a 95% pure peptide are not interchangeable in research:",
     },
     {
       type: "list",
@@ -83,27 +83,36 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "A Certificate of Analysis (COA) is the primary documentation artifact accompanying a research peptide. A comprehensive COA should include peptide identity confirmed by mass spectrometry, HPLC purity with accompanying chromatogram or chromatogram reference, molecular weight (observed vs. theoretical with method specified), appearance description, solubility confirmation, endotoxin level via LAL test result, lot/batch number traceable to your specific shipment, and testing date.",
+      text: "A Certificate of Analysis (COA) is the primary documentation artifact accompanying a research peptide. A comprehensive COA should include:",
     },
     {
-      type: "subheading",
-      text: "Third-Party vs. In-House Testing",
+      type: "list",
+      items: [
+        "Peptide identity — confirmed by mass spectrometry, not just name",
+        "HPLC purity — with accompanying chromatogram or chromatogram reference",
+        "Molecular weight — observed vs. theoretical, with method specified",
+        "Appearance — lyophilized powder description",
+        "Solubility — confirmed in appropriate solvent (water, acetonitrile, DMSO)",
+        "Endotoxin level — LAL test result in EU/mg or EU/mL",
+        "Lot/batch number — traceable to your specific shipment",
+        "Testing date — recency matters; peptides degrade; old COAs may not reflect current lot",
+      ],
     },
     {
       type: "paragraph",
-      text: "In-house COAs (performed by the seller's own lab) are less credible than third-party COAs from independent analytical laboratories. Suppliers who publish third-party COAs — and make them accessible without requiring a purchase — signal greater transparency and accountability.",
+      text: "Third-party COAs (performed by independent analytical laboratories) are more credible than in-house COAs. Suppliers who publish third-party COAs — and make them accessible without requiring a purchase — signal greater transparency and accountability.",
     },
     {
       type: "heading",
       text: "Mass Spectrometry Confirmation",
     },
     {
-      type: "callout",
-      text: "HPLC tells you how pure a compound is. Mass spectrometry tells you what the compound actually is.",
+      type: "paragraph",
+      text: "HPLC tells you how pure a compound is. Mass spectrometry tells you what the compound actually is. ESI-MS (Electrospray Ionization Mass Spectrometry) and MALDI-TOF are the standard methods for peptide identity confirmation. The observed molecular weight should match the theoretical molecular weight of the target sequence within ±0.1–0.5 Da (instrument-dependent).",
     },
     {
       type: "paragraph",
-      text: "ESI-MS (Electrospray Ionization Mass Spectrometry) and MALDI-TOF are the standard methods for peptide identity confirmation. The observed molecular weight should match the theoretical molecular weight of the target sequence within ±0.1–0.5 Da (instrument-dependent). For longer peptides (>20 amino acids), or peptides with modifications (fatty acid chains, PEG linkers, arginine substitutions), MS confirmation becomes especially important.",
+      text: "For longer peptides (>20 amino acids), or peptides with modifications (fatty acid chains, PEG linkers, arginine substitutions), MS confirmation becomes especially important — these modifications can be omitted in synthesis without immediately obvious visual changes to the product.",
     },
     {
       type: "heading",
@@ -111,19 +120,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Limulus Amebocyte Lysate (LAL) testing measures endotoxin contamination — bacterial lipopolysaccharide (LPS) and related pyrogens that can elicit severe inflammatory responses in in vivo models.",
-    },
-    {
-      type: "list",
-      items: [
-        "Even small amounts of endotoxin (<1 EU/mL) can confound in vivo inflammatory studies",
-        "Endotoxin-contaminated peptides may produce results attributable to LPS rather than the peptide",
-        "IV or IP administration routes carry greater risk than SC for endotoxin-related artifacts",
-      ],
-    },
-    {
-      type: "paragraph",
-      text: "Most research-grade suppliers should certify <1 EU/mg. Suppliers offering injectable-grade protocols should target <0.1 EU/mg.",
+      text: "Limulus Amebocyte Lysate (LAL) testing measures endotoxin contamination — bacterial lipopolysaccharide (LPS) and related pyrogens that can elicit severe inflammatory responses in in vivo models. Even small amounts of endotoxin (<1 EU/mL) can confound in vivo inflammatory studies. Endotoxin-contaminated peptides may produce results attributable to LPS rather than the peptide. Most research-grade suppliers should certify <1 EU/mg; suppliers offering injectable-grade protocols should target <0.1 EU/mg.",
     },
     {
       type: "heading",
@@ -156,10 +153,6 @@ export const article: BlogArticle = {
         "Dry ice is required for extended transit or reconstituted peptide shipments",
         "Summer shipping in uninsulated packaging represents a serious quality risk",
       ],
-    },
-    {
-      type: "paragraph",
-      text: "Ask suppliers directly how they ship during warm months. A supplier without a seasonal cold-chain protocol is not a research-grade supplier.",
     },
     {
       type: "heading",
