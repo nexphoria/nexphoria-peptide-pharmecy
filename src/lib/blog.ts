@@ -201,6 +201,9 @@ import { article as a185 } from './articles/ghk-cu-skin-aging-collagen-elastin-c
 import { article as a664 } from './articles/ghrp-2-pralmorelin-research-sourcing-guide';
 import { article as a665 } from './articles/peptide-solubility-guide-complete-reference';
 import { article as a666 } from './articles/peptide-research-women-female-physiology-dosing';
+import { article as a667 } from './articles/where-to-buy-gdf11-research-guide';
+import { article as a668 } from './articles/where-to-buy-urolithin-a-research-guide';
+import { article as a669 } from './articles/where-to-buy-nmn-research-guide';
 import { article as a186 } from './articles/peptide-research-sarcopenia-ss31-nad-mots-c-aging-muscle-protocols';
 import { article as a187 } from './articles/peptide-research-metabolic-syndrome-insulin-resistance-hypertension-dyslipidemia';
 import { article as a188 } from './articles/peptide-research-longevity-complete-multi-target-protocol-guide';
@@ -1297,6 +1300,9 @@ export const articles: BlogArticle[] = [
   a664,
   a665,
   a666,
+  a667,
+  a668,
+  a669,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
