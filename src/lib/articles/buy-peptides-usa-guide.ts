@@ -4,10 +4,10 @@ export const article: BlogArticle = {
   slug: "buy-peptides-usa-guide",
   title: "How to Source Research Peptides in the USA: A Buyer's Guide",
   description:
-    "A practical buyer's guide to sourcing research peptides in the United States — what HPLC certificates mean, why COAs matter, cold-chain requirements, red flags to avoid, and what sets premium suppliers apart.",
+    "A practical guide to sourcing research peptides in the USA — what HPLC certificates mean, why COAs matter, cold-chain requirements, red flags to avoid, and what sets premium suppliers apart.",
   category: "Sourcing & Quality",
-  readMinutes: 10,
-  publishedAt: "2026-06-04",
+  readMinutes: 11,
+  publishedAt: "2026-06-07",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -24,7 +24,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Unlike small-molecule compounds, peptides are structurally sensitive. A 99% pure peptide and a 95% pure peptide are not interchangeable in research:",
+      text: "Unlike small-molecule compounds, peptides are structurally sensitive. A 99% pure peptide and a 95% pure peptide are not interchangeable in research.",
     },
     {
       type: "list",
@@ -49,7 +49,7 @@ export const article: BlogArticle = {
     },
     {
       type: "subheading",
-      text: "What a legitimate HPLC certificate includes:",
+      text: "What a Legitimate HPLC Certificate Includes",
     },
     {
       type: "list",
@@ -63,7 +63,7 @@ export const article: BlogArticle = {
     },
     {
       type: "subheading",
-      text: "What to be skeptical of:",
+      text: "What to Be Skeptical Of",
     },
     {
       type: "list",
@@ -74,7 +74,7 @@ export const article: BlogArticle = {
       ],
     },
     {
-      type: "callout",
+      type: "paragraph",
       text: "The 99% standard: For research-grade peptides, ≥99% HPLC purity is the accepted minimum. Anything below 98% should be considered unsuitable for controlled research use.",
     },
     {
@@ -83,24 +83,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "A Certificate of Analysis (COA) is the primary documentation artifact accompanying a research peptide. A comprehensive COA should include:",
-    },
-    {
-      type: "list",
-      items: [
-        "Peptide identity — confirmed by mass spectrometry, not just name",
-        "HPLC purity — with accompanying chromatogram or chromatogram reference",
-        "Molecular weight — observed vs. theoretical, with method specified",
-        "Appearance — lyophilized powder description",
-        "Solubility — confirmed in appropriate solvent (water, acetonitrile, DMSO)",
-        "Endotoxin level — LAL test result in EU/mg or EU/mL",
-        "Lot/batch number — traceable to your specific shipment",
-        "Testing date — recency matters; peptides degrade; old COAs may not reflect current lot",
-      ],
+      text: "A Certificate of Analysis (COA) is the primary documentation artifact accompanying a research peptide. A comprehensive COA should include peptide identity confirmed by mass spectrometry, HPLC purity with accompanying chromatogram, molecular weight (observed vs. theoretical), appearance and solubility confirmation, endotoxin level from LAL test, lot/batch number traceable to your shipment, and testing date.",
     },
     {
       type: "paragraph",
-      text: "In-house COAs (performed by the seller's own lab) are less credible than third-party COAs from independent analytical laboratories. Suppliers who publish third-party COAs — and make them accessible without requiring a purchase — signal greater transparency and accountability.",
+      text: "Third-party vs. in-house testing: In-house COAs performed by the seller's own lab are less credible than third-party COAs from independent analytical laboratories. Suppliers who publish third-party COAs — and make them accessible without requiring a purchase — signal greater transparency and accountability.",
     },
     {
       type: "heading",
@@ -108,11 +95,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "HPLC tells you how pure a compound is. Mass spectrometry tells you what the compound actually is. ESI-MS (Electrospray Ionization Mass Spectrometry) and MALDI-TOF are the standard methods for peptide identity confirmation. The observed molecular weight should match the theoretical molecular weight of the target sequence within ±0.1–0.5 Da (instrument-dependent).",
+      text: "HPLC tells you how pure a compound is. Mass spectrometry tells you what the compound actually is.",
     },
     {
       type: "paragraph",
-      text: "For longer peptides (>20 amino acids), or peptides with modifications (fatty acid chains, PEG linkers, arginine substitutions), MS confirmation becomes especially important — these modifications can be omitted in synthesis without immediately obvious visual changes to the product.",
+      text: "ESI-MS (Electrospray Ionization Mass Spectrometry) and MALDI-TOF are the standard methods for peptide identity confirmation. The observed molecular weight should match the theoretical molecular weight of the target sequence within ±0.1–0.5 Da (instrument-dependent). For longer peptides (>20 amino acids) or peptides with modifications, MS confirmation becomes especially important — these modifications can be omitted in synthesis without immediately obvious visual changes to the product.",
     },
     {
       type: "heading",
@@ -131,7 +118,7 @@ export const article: BlogArticle = {
       ],
     },
     {
-      type: "callout",
+      type: "paragraph",
       text: "Acceptable standards: Most research-grade suppliers should certify <1 EU/mg. Suppliers offering injectable-grade protocols should target <0.1 EU/mg.",
     },
     {
@@ -143,13 +130,27 @@ export const article: BlogArticle = {
       text: "Peptides are temperature-sensitive. Improper shipping conditions are one of the most common causes of reduced potency in received peptides — and one of the least visible.",
     },
     {
+      type: "subheading",
+      text: "Storage Standards",
+    },
+    {
       type: "list",
       items: [
-        "Lyophilized peptides: stable at room temperature for days, but best stored at -20°C long-term",
+        "Lyophilized peptides: stable at room temperature for days, but best stored at -20°C for long-term",
         "Reconstituted peptides: store at 4°C; use within 28–30 days; avoid repeated freeze-thaw",
         "Extended storage: -80°C for research stocks held >6 months",
-        "Ice packs (4°C) are acceptable for lyophilized peptides during transit of 2–3 days",
-        "Dry ice is required for extended transit or reconstituted peptide shipments",
+      ],
+    },
+    {
+      type: "subheading",
+      text: "Shipping Standards",
+    },
+    {
+      type: "list",
+      items: [
+        "Ice packs (4°C) acceptable for lyophilized peptides during transit of 2–3 days",
+        "Dry ice required for extended transit or reconstituted peptide shipments",
+        "Summer shipping in uninsulated packaging represents a serious quality risk",
       ],
     },
     {
@@ -180,7 +181,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "At Nexphoria, every peptide is synthesized to ≥99% HPLC purity verified by reverse-phase chromatography, confirmed by ESI mass spectrometry for sequence identity, tested for endotoxins via LAL assay with results included on every COA, shipped via validated cold-chain protocols with temperature-controlled packaging, and accompanied by a third-party verified COA accessible on our website by lot number.",
+      text: "At Nexphoria, every peptide is synthesized to ≥99% HPLC purity verified by reverse-phase chromatography, confirmed by ESI mass spectrometry for sequence identity, tested for endotoxins via LAL assay with results included on every COA, shipped via validated cold-chain protocols with temperature-controlled packaging, and accompanied by a third-party verified COA accessible on the website by lot number.",
+    },
+    {
+      type: "paragraph",
+      text: "COAs are published proactively. If a supplier makes you ask twice, that tells you something.",
     },
     {
       type: "heading",

@@ -673,6 +673,9 @@ import { article as a697 } from './articles/best-peptides-recovery-stack-2026';
 import { article as a698 } from './articles/glp1-agonists-mental-health-depression-anxiety';
 import { article as a699 } from './articles/peptide-microdosing-protocols-research-guide';
 import { article as a700 } from './articles/where-to-buy-glp1-peptides-research-guide';
+import { article as a701 } from './articles/longevity-peptide-stack-2026';
+import { article as a702 } from './articles/peptide-sciences-alternative';
+import { article as a703 } from './articles/buy-peptides-usa-guide';
 import { article as a662 } from './articles/longevity-peptide-stack-2026-research-guide';
 import { article as a663 } from './articles/why-hplc-purity-testing-matters-peptide-sourcing';
 import { article as a673 } from './articles/peptide-half-life-comparison-research-guide';
@@ -1365,6 +1368,9 @@ export const articles: BlogArticle[] = [
   a698,
   a699,
   a700,
+  a701,
+  a702,
+  a703,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
