@@ -204,6 +204,9 @@ import { article as a666 } from './articles/peptide-research-women-female-physio
 import { article as a667 } from './articles/where-to-buy-gdf11-research-guide';
 import { article as a668 } from './articles/where-to-buy-urolithin-a-research-guide';
 import { article as a669 } from './articles/where-to-buy-nmn-research-guide';
+import { article as a670 } from './articles/where-to-buy-bpc-157-research-guide-2026';
+import { article as a671 } from './articles/peptide-dosing-calculator-guide-research';
+import { article as a672 } from './articles/glp1-vs-peptides-for-weight-loss-research-comparison';
 import { article as a186 } from './articles/peptide-research-sarcopenia-ss31-nad-mots-c-aging-muscle-protocols';
 import { article as a187 } from './articles/peptide-research-metabolic-syndrome-insulin-resistance-hypertension-dyslipidemia';
 import { article as a188 } from './articles/peptide-research-longevity-complete-multi-target-protocol-guide';
@@ -1303,6 +1306,9 @@ export const articles: BlogArticle[] = [
   a667,
   a668,
   a669,
+  a670,
+  a671,
+  a672,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
