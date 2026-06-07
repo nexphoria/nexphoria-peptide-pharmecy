@@ -596,6 +596,9 @@ import { article as a612 } from './articles/bimagrumab-myostatin-activin-muscle-
 import { article as a613 } from './articles/research-peptides-australia-guide';
 import { article as a614 } from './articles/best-peptides-brain-health-research-2026';
 import { article as a615 } from './articles/where-to-buy-cjc-1295-dac-research-guide';
+import { article as a616 } from './articles/where-to-buy-foxo4-dri-research-guide';
+import { article as a617 } from './articles/where-to-buy-irisin-research-guide';
+import { article as a618 } from './articles/where-to-buy-compounded-semaglutide-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1195,6 +1198,9 @@ export const articles: BlogArticle[] = [
   a613,
   a614,
   a615,
+  a616,
+  a617,
+  a618,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
