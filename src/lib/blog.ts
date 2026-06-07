@@ -632,6 +632,9 @@ import { article as a648 } from './articles/senolytic-peptide-stack-foxo4-dri-gh
 import { article as a649 } from './articles/hexarelin-desensitization-cycling-protocol-design-research-guide';
 import { article as a650 } from './articles/nad-plus-mots-c-humanin-mitopeptide-combination-research';
 import { article as a651 } from './articles/peptide-administration-timing-windows-exercise-research-protocols';
+import { article as a652 } from './articles/peptide-research-gut-permeability-leaky-gut-bpc157-kpv-ll37';
+import { article as a653 } from './articles/semaglutide-weight-loss-plateau-research-protocol-strategies';
+import { article as a654 } from './articles/glp1-peptides-joint-inflammation-arthritis-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1267,6 +1270,9 @@ export const articles: BlogArticle[] = [
   a649,
   a650,
   a651,
+  a652,
+  a653,
+  a654,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
