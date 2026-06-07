@@ -605,6 +605,9 @@ import { article as a621 } from './articles/nad-plus-longevity-sirtuins-parp-agi
 import { article as a622 } from './articles/where-to-buy-bpc-157-tb-500-stack-research-guide';
 import { article as a623 } from './articles/where-to-buy-wolverine-stack-research-guide';
 import { article as a624 } from './articles/where-to-buy-cjc-1295-with-dac-research-guide';
+import { article as a625 } from './articles/peptide-research-type-2-diabetes-complete-protocol';
+import { article as a626 } from './articles/best-peptides-athletes-complete-guide-2026';
+import { article as a627 } from './articles/khavinson-peptide-bioregulators-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1213,6 +1216,9 @@ export const articles: BlogArticle[] = [
   a622,
   a623,
   a624,
+  a625,
+  a626,
+  a627,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
