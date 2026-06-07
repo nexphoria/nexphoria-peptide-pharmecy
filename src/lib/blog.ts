@@ -653,6 +653,9 @@ import { article as a660 } from './articles/cortexin-cortagen-neuropeptide-biore
 import { article as a661 } from './articles/bpc-157-tb-500-combined-protocol-research-guide';
 import { article as a662 } from './articles/longevity-peptide-stack-2026-research-guide';
 import { article as a663 } from './articles/why-hplc-purity-testing-matters-peptide-sourcing';
+import { article as a673 } from './articles/peptide-half-life-comparison-research-guide';
+import { article as a674 } from './articles/gh-axis-aging-somatopause-research-guide';
+import { article as a675 } from './articles/intranasal-peptide-delivery-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1309,6 +1312,9 @@ export const articles: BlogArticle[] = [
   a670,
   a671,
   a672,
+  a673,
+  a674,
+  a675,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
