@@ -664,6 +664,9 @@ import { article as a688 } from './articles/dose-response-curve-design-peptide-r
 import { article as a689 } from './articles/bpc-157-hair-growth-alopecia-research-guide';
 import { article as a690 } from './articles/peptide-research-sleep-disorders-insomnia-dsip-delta-wave';
 import { article as a691 } from './articles/nexphoria-shipping-policy-cold-chain-explained';
+import { article as a692 } from './articles/best-peptides-for-beginners-research-2026';
+import { article as a693 } from './articles/how-peptides-work-mechanism-guide';
+import { article as a694 } from './articles/peptide-weight-loss-complete-guide-2026';
 import { article as a662 } from './articles/longevity-peptide-stack-2026-research-guide';
 import { article as a663 } from './articles/why-hplc-purity-testing-matters-peptide-sourcing';
 import { article as a673 } from './articles/peptide-half-life-comparison-research-guide';
@@ -1347,6 +1350,9 @@ export const articles: BlogArticle[] = [
   a689,
   a690,
   a691,
+  a692,
+  a693,
+  a694,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
