@@ -558,6 +558,9 @@ import { article as a573 } from './articles/best-peptides-joint-health-research-
 import { article as a574 } from './articles/where-to-buy-melanotan-1-research-guide';
 import { article as a575 } from './articles/best-peptides-eye-health-research-2026';
 import { article as a576 } from './articles/where-to-buy-adipotide-research-guide';
+import { article as a577 } from './articles/best-peptides-thyroid-research-2026';
+import { article as a578 } from './articles/best-peptides-diabetes-metabolic-research-2026';
+import { article as a579 } from './articles/best-peptides-autoimmune-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1073,6 +1076,9 @@ export const articles: BlogArticle[] = [
   a574,
   a575,
   a576,
+  a577,
+  a578,
+  a579,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
