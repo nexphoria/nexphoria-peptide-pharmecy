@@ -638,6 +638,9 @@ import { article as a654 } from './articles/glp1-peptides-joint-inflammation-art
 import { article as a655 } from './articles/where-to-buy-glow-stack-research-guide';
 import { article as a656 } from './articles/where-to-buy-klw-stack-research-guide';
 import { article as a657 } from './articles/peptide-pen-devices-research-dosing-guide';
+import { article as a658 } from './articles/vesugen-vascular-peptide-bioregulator-research-guide';
+import { article as a659 } from './articles/cartalax-cartilage-peptide-bioregulator-research-guide';
+import { article as a660 } from './articles/cortexin-cortagen-neuropeptide-bioregulator-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1279,6 +1282,9 @@ export const articles: BlogArticle[] = [
   a655,
   a656,
   a657,
+  a658,
+  a659,
+  a660,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
