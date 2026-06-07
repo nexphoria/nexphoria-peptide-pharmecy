@@ -590,6 +590,9 @@ import { article as a606 } from './articles/protocol-design-101-dose-cycle-recov
 import { article as a607 } from './articles/peptide-research-longevity-hallmarks-2026';
 import { article as a608 } from './articles/glp1-vs-peptides-complete-comparison-2026';
 import { article as a609 } from './articles/bpc-157-mental-health-research-guide';
+import { article as a610 } from './articles/survodutide-gcgr-glp1-dual-agonist-research-guide';
+import { article as a611 } from './articles/oral-glp1-peptides-danuglipron-research-guide';
+import { article as a612 } from './articles/bimagrumab-myostatin-activin-muscle-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1183,6 +1186,9 @@ export const articles: BlogArticle[] = [
   a607,
   a608,
   a609,
+  a610,
+  a611,
+  a612,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
