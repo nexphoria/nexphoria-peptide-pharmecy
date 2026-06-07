@@ -7,12 +7,16 @@ export const article: BlogArticle = {
     "An evidence-based review of Epithalon (Epitalon), the tetrapeptide studied for telomere elongation and longevity applications. What peer-reviewed research actually shows.",
   category: "Longevity Research",
   readMinutes: 10,
-  publishedAt: "2026-06-04",
+  publishedAt: "2026-06-07",
   ogImage: "/og-image.jpg",
   body: [
     {
       type: "paragraph",
-      text: "Epithalon (also spelled Epitalon; sequence: Ala-Glu-Asp-Gly) is a synthetic tetrapeptide developed by the St. Petersburg Institute of Bioregulation and Gerontology in Russia. It has been under investigation since the 1980s, primarily through the work of Vladimir Khavinson and colleagues, with a focus on telomere biology, epigenetic modulation, and longevity. The research base is unusual in structure — most studies originate from a single institutional group in Russia — but the mechanistic claims have attracted significant interest from the broader longevity research community.",
+      text: "Epithalon (also spelled Epitalon; sequence: Ala-Glu-Asp-Gly) is a synthetic tetrapeptide developed by the St. Petersburg Institute of Bioregulation and Gerontology in Russia. It has been under investigation since the 1980s, primarily through the work of Vladimir Khavinson and colleagues, with a focus on telomere biology, epigenetic modulation, and longevity.",
+    },
+    {
+      type: "paragraph",
+      text: "The research base is unusual in structure — most studies originate from a single institutional group in Russia — but the mechanistic claims have attracted significant interest from the broader longevity research community. This article examines what the published data actually shows.",
     },
     {
       type: "heading",
@@ -20,7 +24,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Telomeres are repetitive DNA sequences (TTAGGG in humans) that cap the ends of chromosomes, protecting them from degradation and end-to-end fusion. With each cell division, telomeres shorten due to the 'end replication problem.' When telomeres reach a critically short length, cells enter replicative senescence (Hayflick limit), undergo apoptosis, or in some pathological contexts, become genomically unstable.",
+      text: "Telomeres are repetitive DNA sequences (TTAGGG in humans) that cap the ends of chromosomes, protecting them from degradation and end-to-end fusion. With each cell division, telomeres shorten due to the end replication problem. When telomeres reach a critically short length, cells enter replicative senescence (Hayflick limit), undergo apoptosis, or in some pathological contexts become genomically unstable.",
     },
     {
       type: "paragraph",
@@ -32,16 +36,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Epithalon is proposed to act primarily through telomerase activation. The hypothesized mechanism involves:",
-    },
-    {
-      type: "list",
-      items: [
-        "Interaction with the promoter region of the TERT gene (telomerase reverse transcriptase)",
-        "Upregulation of telomerase expression, leading to increased enzymatic activity",
-        "Consequent telomere elongation in dividing cells",
-        "Downstream effects on gene expression — potentially influencing cell cycle regulation, oxidative stress response, and circadian gene expression",
-      ],
+      text: "Epithalon is proposed to act primarily through telomerase activation. The hypothesized mechanism involves interaction with the promoter region of the TERT gene (telomerase reverse transcriptase), upregulation of telomerase expression leading to increased enzymatic activity, consequent telomere elongation in dividing cells, and downstream effects on gene expression — potentially influencing cell cycle regulation, oxidative stress response, and circadian gene expression.",
     },
     {
       type: "paragraph",
@@ -57,28 +52,21 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Khavinson et al. (2003) — published in Bulletin of Experimental Biology and Medicine — reported that Epithalon increased telomerase activity in human fetal fibroblast cultures. Cells treated with Epithalon showed telomere elongation and extended replicative lifespan compared to untreated controls. This study has been cited extensively, though it has not been independently replicated in peer-reviewed literature outside the originating institution — a significant caveat.",
+      text: "Khavinson et al. (2003), published in Bulletin of Experimental Biology and Medicine, reported that Epithalon increased telomerase activity in human fetal fibroblast cultures. Cells treated with Epithalon showed telomere elongation and extended replicative lifespan compared to untreated controls. This study has been cited extensively, though it has not been independently replicated in peer-reviewed literature outside the originating institution — a significant caveat.",
     },
     {
       type: "subheading",
       text: "Animal Studies",
     },
     {
-      type: "paragraph",
-      text: "Multiple rodent studies from the St. Petersburg group have documented:",
-    },
-    {
       type: "list",
       items: [
         "Extended mean and maximum lifespan in aging mice treated with Epithalon versus controls",
         "Reduced incidence of spontaneous tumors in older rodents",
-        "Improved circadian rhythm regulation — melatonin secretion patterns normalized in aged animals treated with Epithalon",
+        "Improved circadian rhythm regulation — melatonin secretion patterns normalized in aged animals",
         "Antioxidant marker improvements — reduced lipid peroxidation markers in treated animals",
+        "Lifespan extension in Drosophila melanogaster populations, consistent with rodent data",
       ],
-    },
-    {
-      type: "paragraph",
-      text: "A study in fruit flies (Drosophila melanogaster) found lifespan extension in Epithalon-treated populations, consistent with the broader rodent data.",
     },
     {
       type: "subheading",
@@ -86,7 +74,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Khavinson's clinical research program administered Epithalon to elderly human subjects over multi-year periods. Reported outcomes included improved immune function markers (NK cell activity, lymphocyte counts), hormonal regulation improvements — particularly in melatonin and cortisol profiles — and reduced cardiovascular mortality in longer-term observational follow-up (relative to control groups). These findings are reported in Russian-language journals and a subset of English-language publications. The studies lack the design rigor of randomized controlled trials and have not been replicated by independent research groups.",
+      text: "Khavinson's clinical research program administered Epithalon to elderly human subjects over multi-year periods. Reported outcomes included improved immune function markers (NK cell activity, lymphocyte counts), hormonal regulation improvements particularly in melatonin and cortisol profiles, and reduced cardiovascular mortality in longer-term observational follow-up. These findings are reported in Russian-language journals and a subset of English-language publications. The studies lack the design rigor of randomized controlled trials and have not been replicated by independent research groups.",
     },
     {
       type: "heading",
@@ -94,7 +82,7 @@ export const article: BlogArticle = {
     },
     {
       type: "subheading",
-      text: "Supported by current data:",
+      text: "Supported by current data",
     },
     {
       type: "list",
@@ -106,7 +94,7 @@ export const article: BlogArticle = {
     },
     {
       type: "subheading",
-      text: "Not yet established:",
+      text: "Not yet established",
     },
     {
       type: "list",
@@ -136,15 +124,11 @@ export const article: BlogArticle = {
       text: "Research Considerations",
     },
     {
-      type: "paragraph",
-      text: "For researchers studying Epithalon, several methodological considerations are relevant:",
-    },
-    {
       type: "list",
       items: [
         "Solubility: Epithalon is water-soluble; bacteriostatic water is an appropriate reconstitution diluent",
         "Stability: Reconstituted solutions should be stored at 2–8°C and used within 4 weeks",
-        "Purity requirements: As a tetrapeptide, Epithalon is relatively straightforward to synthesize, but sequence fidelity and purity verification (HPLC ≥98%) remain critical",
+        "Purity requirements: As a tetrapeptide, Epithalon is relatively straightforward to synthesize, but sequence fidelity and HPLC purity ≥98% remain critical",
         "Mass spectrometry: MW confirmation (390.35 g/mol) should be available in supplier COA documentation",
       ],
     },
@@ -154,7 +138,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Epithalon represents one of the more extensively documented peptides in the longevity/telomere research space, but the evidence base has significant limitations. The telomerase activation mechanism is biologically plausible and documented in cell culture. Animal longevity data is consistent across multiple model organisms. However, the absence of independent replication and the limited rigor of human studies means Epithalon remains an investigational compound requiring substantially more controlled research before definitive conclusions can be drawn.",
+      text: "Epithalon represents one of the more extensively documented peptides in the longevity and telomere research space, but the evidence base has significant limitations. The telomerase activation mechanism is biologically plausible and documented in cell culture. Animal longevity data is consistent across multiple model organisms. However, the absence of independent replication and the limited rigor of human studies means Epithalon remains an investigational compound requiring substantially more controlled research before definitive conclusions can be drawn.",
     },
     {
       type: "disclaimer",

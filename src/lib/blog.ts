@@ -676,6 +676,8 @@ import { article as a700 } from './articles/where-to-buy-glp1-peptides-research-
 import { article as a701 } from './articles/longevity-peptide-stack-2026';
 import { article as a702 } from './articles/peptide-sciences-alternative';
 import { article as a703 } from './articles/buy-peptides-usa-guide';
+import { article as a704 } from './articles/nad-plus-vs-nmn';
+import { article as a705 } from './articles/epithalon-telomere-research';
 import { article as a662 } from './articles/longevity-peptide-stack-2026-research-guide';
 import { article as a663 } from './articles/why-hplc-purity-testing-matters-peptide-sourcing';
 import { article as a673 } from './articles/peptide-half-life-comparison-research-guide';
@@ -1371,6 +1373,8 @@ export const articles: BlogArticle[] = [
   a701,
   a702,
   a703,
+  a704,
+  a705,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

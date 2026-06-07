@@ -4,10 +4,10 @@ export const article: BlogArticle = {
   slug: "peptide-reconstitution-guide",
   title: "How to Reconstitute Peptides: A Research Protocol Guide",
   description:
-    "Step-by-step protocol for reconstituting lyophilized research peptides. Covers diluent selection (bacteriostatic water, acetic acid), concentration math, aseptic technique, and post-reconstitution storage best practices.",
+    "Step-by-step research protocol for reconstituting lyophilized peptides. Covers bacteriostatic water, acetic acid, dilution math, aseptic technique, and storage best practices.",
   category: "Research Protocols",
   readMinutes: 8,
-  publishedAt: "2026-06-04",
+  publishedAt: "2026-06-07",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -20,7 +20,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Peptides in lyophilized form are stable at controlled temperatures for extended periods. Once reconstituted in aqueous solution, they become significantly more vulnerable to hydrolysis (water-mediated peptide bond cleavage), aggregation (formation of non-bioactive molecular clusters), and bacterial contamination — particularly relevant in multi-use vials.",
+      text: "Peptides in lyophilized form are stable at controlled temperatures for extended periods. Once reconstituted in aqueous solution, they become significantly more vulnerable to hydrolysis (water-mediated peptide bond cleavage), aggregation (formation of non-bioactive molecular clusters), and bacterial contamination — particularly relevant in multi-use vials. Getting reconstitution right means choosing the correct diluent, calculating concentration accurately, and following aseptic technique.",
     },
     {
       type: "heading",
@@ -32,7 +32,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Bacteriostatic water — sterile water containing 0.9% benzyl alcohol — is the most commonly used diluent for research peptides. Benzyl alcohol acts as a preservative, inhibiting bacterial growth in multi-use vials. Recommended for most GHRH analogs and GH secretagogues (CJC-1295, Ipamorelin, Sermorelin), BPC-157, TB-500, PT-141, and any peptide that will be used from a single vial over multiple research sessions.",
+      text: "Bacteriostatic water — sterile water containing 0.9% benzyl alcohol — is the most commonly used diluent for research peptides. Benzyl alcohol acts as a preservative, inhibiting bacterial growth in multi-use vials. Recommended for most GHRH analogs and GHSs (CJC-1295, Ipamorelin, Sermorelin), BPC-157, TB-500, PT-141, and any peptide that will be used from a single vial over multiple sessions.",
     },
     {
       type: "subheading",
@@ -48,7 +48,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Some peptides — particularly hydrophobic sequences or those with poor aqueous solubility — require an acidic diluent for initial dissolution. IGF-1 and some variants of GH-releasing peptides may dissolve more completely in dilute acetic acid. Protocol: dissolve initially in acetic acid, then dilute to final concentration with bacteriostatic water or phosphate-buffered saline (PBS).",
+      text: "Some peptides, particularly hydrophobic sequences or those with poor aqueous solubility, require an acidic diluent for initial dissolution. IGF-1 and some variants of GH-releasing peptides may dissolve more completely in dilute acetic acid. Protocol: dissolve initially in acetic acid, then dilute to final concentration with bacteriostatic water or phosphate-buffered saline (PBS).",
     },
     {
       type: "heading",
@@ -83,23 +83,31 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Determine the concentration needed for your research protocol before adding any liquid. The standard formula: Concentration (mcg/mL) = Peptide mass (mcg) ÷ Volume of diluent (mL). Example: for a 5 mg (5,000 mcg) vial targeting 2 mg/mL, add 2.5 mL of diluent (5,000 ÷ 2,000 = 2.5 mL).",
+      text: "Determine the concentration needed before adding any liquid. Formula: Concentration (mcg/mL) = Peptide mass (mcg) ÷ Volume of diluent (mL). Example: 5 mg (5,000 mcg) vial at target 2 mg/mL = 5,000 ÷ 2,000 = 2.5 mL diluent. For 1 mg/mL from the same vial, add 5 mL of diluent.",
     },
     {
       type: "subheading",
-      text: "Step 3–4: Swab, Pierce, and Draw Diluent",
+      text: "Step 3: Swab and Pierce",
     },
     {
       type: "paragraph",
-      text: "Wipe both the peptide vial and diluent vial septums with a fresh alcohol swab. Allow to air-dry for 10–15 seconds. Draw the calculated volume of diluent into the syringe and confirm the volume visually.",
+      text: "Wipe both the peptide vial and diluent vial septums with a fresh alcohol swab. Allow to air-dry for 10–15 seconds.",
+    },
+    {
+      type: "subheading",
+      text: "Step 4: Draw Diluent",
+    },
+    {
+      type: "paragraph",
+      text: "Draw the calculated volume of diluent into the syringe. Confirm the volume visually.",
     },
     {
       type: "subheading",
       text: "Step 5: Inject Diluent — Gently",
     },
     {
-      type: "callout",
-      text: "Critical: direct the diluent stream down the side of the vial — not directly onto the peptide powder. Forceful contact can damage peptide structure. Allow the solution to run down and contact the lyophilized cake gradually.",
+      type: "paragraph",
+      text: "Critical: Direct the diluent stream down the side of the vial — not directly onto the peptide powder. Forceful contact can damage peptide structure. Allow the solution to run down and contact the lyophilized cake gradually.",
     },
     {
       type: "subheading",
@@ -115,7 +123,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Examine the reconstituted solution. It should be clear and colorless (some peptides may have a very slight tint), with no visible particles or cloudiness, and no undissolved residue. Cloudiness or particulates may indicate incomplete dissolution, aggregation, or contamination — evaluate before proceeding.",
+      text: "Examine the reconstituted solution. It should be clear and colorless (some peptides may have a very slight tint), with no visible particles or cloudiness and no undissolved residue. Cloudiness or particulates may indicate incomplete dissolution, aggregation, or contamination — evaluate before proceeding.",
     },
     {
       type: "heading",
@@ -140,7 +148,7 @@ export const article: BlogArticle = {
     {
       type: "list",
       items: [
-        "Short-term (up to 4 weeks): store in refrigerator at 2–8°C, away from light",
+        "Short-term (up to 4 weeks): Store in refrigerator at 2–8°C, away from light",
         "Minimize freeze-thaw cycles — each cycle degrades peptide integrity; pre-aliquot if needed",
         "Label each vial with compound name, concentration, reconstitution date, and lot number",
         "Discard if solution becomes cloudy, discolored, or shows visible particulates",
@@ -171,7 +179,7 @@ export const article: BlogArticle = {
     },
     {
       type: "disclaimer",
-      text: "All content on this page is for educational and research purposes only. Nexphoria compounds are sold exclusively for qualified research use. Not intended for human consumption, therapeutic use, or diagnostic purposes.",
+      text: "For research purposes only. Not intended for human use.",
     },
   ],
 };
