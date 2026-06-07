@@ -655,6 +655,9 @@ import { article as a679 } from './articles/bpc-157-arginate-vs-acetate-research
 import { article as a680 } from './articles/urolithin-a-mitophagy-longevity-research-guide';
 import { article as a681 } from './articles/fisetin-senolytic-flavonoid-research-guide';
 import { article as a682 } from './articles/quercetin-senolytic-flavonoid-research-guide';
+import { article as a683 } from './articles/nexphoria-vs-blue-sky-peptide-comparison';
+import { article as a684 } from './articles/nexphoria-vs-amino-asylum-peptide-comparison';
+import { article as a685 } from './articles/best-peptide-vendors-2026-research-guide';
 import { article as a662 } from './articles/longevity-peptide-stack-2026-research-guide';
 import { article as a663 } from './articles/why-hplc-purity-testing-matters-peptide-sourcing';
 import { article as a673 } from './articles/peptide-half-life-comparison-research-guide';
@@ -1329,6 +1332,9 @@ export const articles: BlogArticle[] = [
   a680,
   a681,
   a682,
+  a683,
+  a684,
+  a685,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
