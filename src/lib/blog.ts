@@ -608,6 +608,9 @@ import { article as a624 } from './articles/where-to-buy-cjc-1295-with-dac-resea
 import { article as a625 } from './articles/peptide-research-type-2-diabetes-complete-protocol';
 import { article as a626 } from './articles/best-peptides-athletes-complete-guide-2026';
 import { article as a627 } from './articles/khavinson-peptide-bioregulators-research-guide';
+import { article as a628 } from './articles/best-peptides-lung-respiratory-research-2026';
+import { article as a629 } from './articles/best-peptides-adhd-focus-attention-research-2026';
+import { article as a630 } from './articles/best-peptides-skin-conditions-acne-eczema-psoriasis-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1219,6 +1222,9 @@ export const articles: BlogArticle[] = [
   a625,
   a626,
   a627,
+  a628,
+  a629,
+  a630,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
