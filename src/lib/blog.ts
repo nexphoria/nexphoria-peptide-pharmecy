@@ -623,6 +623,9 @@ import { article as a639 } from './articles/ghrp-comparison-complete-research-gu
 import { article as a640 } from './articles/nexphoria-quality-assurance-hplc-ms-lal-coa';
 import { article as a641 } from './articles/peptide-reconstitution-diluent-guide';
 import { article as a642 } from './articles/nad-plus-cd38-parp-aging-research-guide';
+import { article as a643 } from './articles/foxo4-dri-senolytic-peptide-research-guide';
+import { article as a644 } from './articles/liraglutide-obesity-research-guide-2026';
+import { article as a645 } from './articles/peptide-research-thymus-aging-ta1-thymulin-khavinson';
 
 
 export const articles: BlogArticle[] = [
@@ -1249,6 +1252,9 @@ export const articles: BlogArticle[] = [
   a640,
   a641,
   a642,
+  a643,
+  a644,
+  a645,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
