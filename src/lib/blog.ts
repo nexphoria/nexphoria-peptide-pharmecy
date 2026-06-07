@@ -652,6 +652,9 @@ import { article as a659 } from './articles/cartalax-cartilage-peptide-bioregula
 import { article as a660 } from './articles/cortexin-cortagen-neuropeptide-bioregulator-research-guide';
 import { article as a661 } from './articles/peptide-research-faq-2026';
 import { article as a679 } from './articles/bpc-157-arginate-vs-acetate-research-comparison';
+import { article as a680 } from './articles/urolithin-a-mitophagy-longevity-research-guide';
+import { article as a681 } from './articles/fisetin-senolytic-flavonoid-research-guide';
+import { article as a682 } from './articles/quercetin-senolytic-flavonoid-research-guide';
 import { article as a662 } from './articles/longevity-peptide-stack-2026-research-guide';
 import { article as a663 } from './articles/why-hplc-purity-testing-matters-peptide-sourcing';
 import { article as a673 } from './articles/peptide-half-life-comparison-research-guide';
@@ -1323,6 +1326,9 @@ export const articles: BlogArticle[] = [
   a677,
   a678,
   a679,
+  a680,
+  a681,
+  a682,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
