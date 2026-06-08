@@ -791,6 +791,9 @@ import { article as a808 } from './articles/peptide-research-hair-loss-androgene
 import { article as a809 } from './articles/peptide-freeze-thaw-cycles-degradation-research-guide';
 import { article as a810 } from './articles/insulin-syringe-guide-peptide-research';
 import { article as a811 } from './articles/aseptic-technique-peptide-reconstitution-sterile-research';
+import { article as a812 } from './articles/best-peptides-mens-health-research-2026';
+import { article as a813 } from './articles/glp1-agonists-immune-system-research';
+import { article as a814 } from './articles/peptide-research-gut-brain-axis-complete-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1598,6 +1601,9 @@ export const articles: BlogArticle[] = [
   a809,
   a810,
   a811,
+  a812,
+  a813,
+  a814,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
