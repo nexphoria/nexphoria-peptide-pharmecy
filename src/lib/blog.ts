@@ -706,6 +706,9 @@ import { article as a724 } from './articles/peptide-reconstitution-volume-concen
 import { article as a725 } from './articles/nexphoria-vs-direct-sarms-vendor-comparison';
 import { article as a726 } from './articles/peptide-research-eczema-atopic-dermatitis';
 import { article as a727 } from './articles/glp1-agonists-renal-protection-kidney-research';
+import { article as a728 } from './articles/peptides-and-trt-testosterone-combination-research-guide';
+import { article as a729 } from './articles/synthetic-hgh-vs-peptide-secretagogues-research-comparison';
+import { article as a730 } from './articles/peptide-research-data-tracking-documentation-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1415,6 +1418,9 @@ export const articles: BlogArticle[] = [
   a725,
   a726,
   a727,
+  a728,
+  a729,
+  a730,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
