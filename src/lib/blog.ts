@@ -677,6 +677,9 @@ import { article as a701 } from './articles/nexphoria-customer-personas-research
 import { article as a702 } from './articles/nexphoria-launch-week-checklist';
 import { article as a703 } from './articles/research-peptide-vendor-crisis-communications-guide';
 import { article as a706 } from './articles/peptides-muscle-recovery-research-overview';
+import { article as a707 } from './articles/how-peptide-vendors-handle-crises-what-researchers-need-to-know';
+import { article as a708 } from './articles/peptide-research-content-guide-social-media-education';
+import { article as a709 } from './articles/nexphoria-vs-competitors-quality-standards-comparison-2026';
 import { article as a662 } from './articles/longevity-peptide-stack-2026-research-guide';
 import { article as a663 } from './articles/why-hplc-purity-testing-matters-peptide-sourcing';
 import { article as a673 } from './articles/peptide-half-life-comparison-research-guide';
@@ -1373,6 +1376,9 @@ export const articles: BlogArticle[] = [
   a702,
   a703,
   a706,
+  a707,
+  a708,
+  a709,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
