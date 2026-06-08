@@ -725,6 +725,9 @@ import { article as a745 } from './articles/goal-mapping-framework-matching-pept
 import { article as a746 } from './articles/peptide-timing-sleep-optimization-circadian-protocols';
 import { article as a747 } from './articles/bpc-157-vs-glp1-metabolic-health-research-comparison';
 import { article as a748 } from './articles/peptide-research-connective-tissue-tendons-fascia-ligaments';
+import { article as a749 } from './articles/nad-plus-vs-nmn-longevity-research-comparison';
+import { article as a750 } from './articles/selank-anxiety-nootropic-peptide-research';
+import { article as a751 } from './articles/bpc-157-2026-research-guide-mechanisms-sourcing';
 
 
 export const articles: BlogArticle[] = [
@@ -1453,6 +1456,9 @@ export const articles: BlogArticle[] = [
   a746,
   a747,
   a748,
+  a749,
+  a750,
+  a751,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
