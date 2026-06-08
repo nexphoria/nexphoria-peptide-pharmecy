@@ -800,6 +800,9 @@ import { article as a817 } from './articles/epithalon-tetrapeptide-telomere-long
 import { article as a818 } from './articles/peptide-research-legal-regulatory-fda-guide-2026';
 import { article as a819 } from './articles/cosmetic-peptides-argireline-matrixyl-snap8-research-guide';
 import { article as a820 } from './articles/how-to-evaluate-peptide-supplier-quality-sourcing-guide';
+import { article as a821 } from './articles/how-long-does-tb-500-take-to-work-research-timeline';
+import { article as a822 } from './articles/how-long-does-semaglutide-take-to-work-research-timeline';
+import { article as a823 } from './articles/how-long-does-mk-677-take-to-work-research-timeline';
 
 
 export const articles: BlogArticle[] = [
@@ -1616,6 +1619,9 @@ export const articles: BlogArticle[] = [
   a818,
   a819,
   a820,
+  a821,
+  a822,
+  a823,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
