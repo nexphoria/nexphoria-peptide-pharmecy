@@ -785,6 +785,9 @@ import { article as a802 } from './articles/best-peptides-2026-complete-guide';
 import { article as a803 } from './articles/peptide-research-cognitive-enhancement-nootropic-compounds-2026';
 import { article as a804 } from './articles/where-to-buy-epithalon-research-guide-2026';
 import { article as a805 } from './articles/peptide-research-gut-health-microbiome-2026';
+import { article as a806 } from './articles/bpc-157-neurological-research-brain-spine-cns';
+import { article as a807 } from './articles/best-peptides-runners-endurance-research-2026';
+import { article as a808 } from './articles/peptide-research-hair-loss-androgenetic-alopecia';
 
 
 export const articles: BlogArticle[] = [
@@ -1586,6 +1589,9 @@ export const articles: BlogArticle[] = [
   a803,
   a804,
   a805,
+  a806,
+  a807,
+  a808,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
