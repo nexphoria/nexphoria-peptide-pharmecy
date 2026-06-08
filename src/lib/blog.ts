@@ -686,6 +686,9 @@ import { article as a712 } from './articles/stapled-peptides-p53-mdm2-cancer-res
 import { article as a713 } from './articles/octreotide-somatostatin-analogs-research-guide';
 import { article as a714 } from './articles/bradykinin-kinin-system-peptide-research-guide';
 import { article as a715 } from './articles/apelin-apj-receptor-cardiovascular-peptide-research-guide';
+import { article as a716 } from './articles/peptide-hepatoprotection-liver-research-bpc157-nad-ghk-cu';
+import { article as a717 } from './articles/counterfeit-peptide-detection-quality-verification-guide';
+import { article as a718 } from './articles/glp1-renal-protection-research-semaglutide-kidney-endpoints';
 import { article as a662 } from './articles/longevity-peptide-stack-2026-research-guide';
 import { article as a663 } from './articles/why-hplc-purity-testing-matters-peptide-sourcing';
 import { article as a673 } from './articles/peptide-half-life-comparison-research-guide';
@@ -1391,6 +1394,9 @@ export const articles: BlogArticle[] = [
   a713,
   a714,
   a715,
+  a716,
+  a717,
+  a718,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
