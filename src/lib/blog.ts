@@ -734,6 +734,9 @@ import { article as a754 } from './articles/angiotensin-peptide-system-blood-pre
 import { article as a755 } from './articles/wada-peptide-detection-anti-doping-research-guide';
 import { article as a756 } from './articles/sarms-vs-peptides-research-comparison-guide';
 import { article as a757 } from './articles/peptide-mass-spectrometry-lc-ms-analysis-research-guide';
+import { article as a758 } from './articles/peptide-research-in-vitro-cell-culture-models-guide';
+import { article as a759 } from './articles/peptide-research-zebrafish-danio-rerio-model-guide';
+import { article as a760 } from './articles/peptide-research-equine-veterinary-models-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1471,6 +1474,9 @@ export const articles: BlogArticle[] = [
   a755,
   a756,
   a757,
+  a758,
+  a759,
+  a760,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
