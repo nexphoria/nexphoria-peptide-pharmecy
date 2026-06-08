@@ -818,6 +818,9 @@ import { article as a835 } from './articles/peptides-vs-minoxidil-hair-loss-rese
 import { article as a836 } from './articles/hexarelin-vs-ipamorelin-ghs-comparison-research-guide';
 import { article as a837 } from './articles/thymosin-alpha-1-sepsis-immune-paralysis-research';
 import { article as a838 } from './articles/nad-plus-iv-vs-oral-bioavailability-research-guide';
+import { article as a839 } from './articles/n-of-1-self-experimentation-peptide-research-ethical-framework';
+import { article as a840 } from './articles/peptide-research-budget-cost-guide-2026';
+import { article as a841 } from './articles/how-to-read-peptide-research-papers-pubmed-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1652,6 +1655,9 @@ export const articles: BlogArticle[] = [
   a836,
   a837,
   a838,
+  a839,
+  a840,
+  a841,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
