@@ -782,6 +782,9 @@ import { article as a799 } from './articles/selank-anxiety-research-peptide-over
 import { article as a800 } from './articles/tirzepatide-complete-guide-2026';
 import { article as a801 } from './articles/glp1-agonists-sleep-apnea-research';
 import { article as a802 } from './articles/best-peptides-2026-complete-guide';
+import { article as a803 } from './articles/peptide-research-cognitive-enhancement-nootropic-compounds-2026';
+import { article as a804 } from './articles/where-to-buy-epithalon-research-guide-2026';
+import { article as a805 } from './articles/peptide-research-gut-health-microbiome-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1580,6 +1583,9 @@ export const articles: BlogArticle[] = [
   a800,
   a801,
   a802,
+  a803,
+  a804,
+  a805,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
