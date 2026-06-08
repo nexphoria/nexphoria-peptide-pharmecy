@@ -773,6 +773,9 @@ import { article as a790 } from './articles/semaglutide-vs-tirzepatide-vs-retatr
 import { article as a791 } from './articles/peptide-water-solubility-reconstitution-troubleshooting-guide';
 import { article as a792 } from './articles/peptide-research-thyroid-axis-tsh-t3-t4-endpoints';
 import { article as a793 } from './articles/where-to-buy-bpc-157-research-2026';
+import { article as a794 } from './articles/mk-677-complete-guide-2026';
+import { article as a795 } from './articles/peptide-therapy-101-complete-beginners-guide';
+import { article as a796 } from './articles/how-to-start-peptide-research-complete-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1562,6 +1565,9 @@ export const articles: BlogArticle[] = [
   a791,
   a792,
   a793,
+  a794,
+  a795,
+  a796,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
