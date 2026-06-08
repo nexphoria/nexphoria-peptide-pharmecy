@@ -752,6 +752,9 @@ import { article as a769 } from './articles/best-peptides-parkinsons-research-20
 import { article as a770 } from './articles/peptide-research-hair-loss-alopecia';
 import { article as a771 } from './articles/where-to-buy-tirzepatide-research-guide-2026';
 import { article as a772 } from './articles/peptide-research-joint-pain-osteoarthritis';
+import { article as a773 } from './articles/nad-plus-vs-nmn-nr-direct-comparison-2026';
+import { article as a774 } from './articles/peptide-sciences-shutdown-supplier-transition-guide';
+import { article as a775 } from './articles/hplc-mass-spec-lal-complete-peptide-coa-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1520,6 +1523,9 @@ export const articles: BlogArticle[] = [
   a770,
   a771,
   a772,
+  a773,
+  a774,
+  a775,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
