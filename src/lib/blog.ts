@@ -803,6 +803,9 @@ import { article as a820 } from './articles/how-to-evaluate-peptide-supplier-qua
 import { article as a821 } from './articles/how-long-does-tb-500-take-to-work-research-timeline';
 import { article as a822 } from './articles/how-long-does-semaglutide-take-to-work-research-timeline';
 import { article as a823 } from './articles/how-long-does-mk-677-take-to-work-research-timeline';
+import { article as a824 } from './articles/long-covid-peptide-research-guide';
+import { article as a825 } from './articles/peptide-dosage-calculator-weight-based-guide';
+import { article as a826 } from './articles/peptide-research-autoimmune-conditions-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1622,6 +1625,9 @@ export const articles: BlogArticle[] = [
   a821,
   a822,
   a823,
+  a824,
+  a825,
+  a826,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
