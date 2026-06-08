@@ -703,6 +703,9 @@ import { article as a678 } from './articles/peptide-shelf-life-real-world-stabil
 import { article as a722 } from './articles/nexphoria-vs-creative-peptides-vendor-comparison';
 import { article as a723 } from './articles/nexphoria-vs-peptide-zone-vendor-comparison';
 import { article as a724 } from './articles/peptide-reconstitution-volume-concentration-guide';
+import { article as a725 } from './articles/nexphoria-vs-direct-sarms-vendor-comparison';
+import { article as a726 } from './articles/peptide-research-eczema-atopic-dermatitis';
+import { article as a727 } from './articles/glp1-agonists-renal-protection-kidney-research';
 
 
 export const articles: BlogArticle[] = [
@@ -1409,6 +1412,9 @@ export const articles: BlogArticle[] = [
   a722,
   a723,
   a724,
+  a725,
+  a726,
+  a727,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
