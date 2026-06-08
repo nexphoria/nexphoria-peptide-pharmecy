@@ -709,6 +709,9 @@ import { article as a727 } from './articles/glp1-agonists-renal-protection-kidne
 import { article as a728 } from './articles/peptides-and-trt-testosterone-combination-research-guide';
 import { article as a729 } from './articles/synthetic-hgh-vs-peptide-secretagogues-research-comparison';
 import { article as a730 } from './articles/peptide-research-data-tracking-documentation-guide';
+import { article as a731 } from './articles/where-to-buy-kisspeptin-54-research-guide';
+import { article as a732 } from './articles/research-peptide-faq-beginners-2026';
+import { article as a733 } from './articles/peptide-research-blood-pressure-hypertension-bpc157-ghk-cu-ace2';
 
 
 export const articles: BlogArticle[] = [
@@ -1421,6 +1424,9 @@ export const articles: BlogArticle[] = [
   a728,
   a729,
   a730,
+  a731,
+  a732,
+  a733,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
