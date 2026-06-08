@@ -676,6 +676,8 @@ import { article as a700 } from './articles/where-to-buy-glp1-peptides-research-
 import { article as a701 } from './articles/nexphoria-customer-personas-research-buyer-profiles';
 import { article as a702 } from './articles/nexphoria-launch-week-checklist';
 import { article as a703 } from './articles/research-peptide-vendor-crisis-communications-guide';
+import { article as a704 } from './articles/peptide-research-immune-gut-axis-bpc157-microbiome-2026';
+import { article as a705 } from './articles/peptide-research-mitochondrial-biogenesis-pgc1a-nad-ss31-protocols';
 import { article as a706 } from './articles/peptides-muscle-recovery-research-overview';
 import { article as a707 } from './articles/how-peptide-vendors-handle-crises-what-researchers-need-to-know';
 import { article as a708 } from './articles/peptide-research-content-guide-social-media-education';
@@ -712,6 +714,7 @@ import { article as a730 } from './articles/peptide-research-data-tracking-docum
 import { article as a731 } from './articles/where-to-buy-kisspeptin-54-research-guide';
 import { article as a732 } from './articles/research-peptide-faq-beginners-2026';
 import { article as a733 } from './articles/peptide-research-blood-pressure-hypertension-bpc157-ghk-cu-ace2';
+import { article as a734 } from './articles/peptide-research-thyroid-gut-connection-bpc157-ta1-metabolic-protocols';
 import { article as a735 } from './articles/bpc-157-vs-aod-9604-fat-loss-research-comparison';
 import { article as a737 } from './articles/dynorphin-kappa-opioid-receptor-peptide-research-guide';
 import { article as a738 } from './articles/nociceptin-orphanin-fq-nop-receptor-peptide-research-guide';
@@ -1424,6 +1427,8 @@ export const articles: BlogArticle[] = [
   a701,
   a702,
   a703,
+  a704,
+  a705,
   a706,
   a707,
   a708,
@@ -1452,6 +1457,7 @@ export const articles: BlogArticle[] = [
   a731,
   a732,
   a733,
+  a734,
   a735,
   a737,
   a738,
