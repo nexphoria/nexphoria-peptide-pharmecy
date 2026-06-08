@@ -809,6 +809,9 @@ import { article as a826 } from './articles/peptide-research-autoimmune-conditio
 import { article as a827 } from './articles/tb-500-thymosin-beta-4-actin-tissue-repair-research-2026';
 import { article as a828 } from './articles/hexarelin-cd36-cardioprotection-gh-secretagogue-research-2026';
 import { article as a829 } from './articles/nad-plus-vs-nmn-longevity-researchers-complete-2026';
+import { article as a830 } from './articles/melanotan-1-afamelanotide-mc1r-melanocortin-research-guide';
+import { article as a831 } from './articles/ace2-peptide-fragments-cardiovascular-research-guide';
+import { article as a832 } from './articles/cjc-1295-ghrp-6-stack-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1634,6 +1637,9 @@ export const articles: BlogArticle[] = [
   a827,
   a828,
   a829,
+  a830,
+  a831,
+  a832,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
