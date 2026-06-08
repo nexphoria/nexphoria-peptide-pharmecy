@@ -743,6 +743,9 @@ import { article as a760 } from './articles/peptide-research-equine-veterinary-m
 import { article as a761 } from './articles/bpc-157-vs-sermorelin-research-comparison';
 import { article as a762 } from './articles/retatrutide-vs-semaglutide-research-comparison-2026';
 import { article as a763 } from './articles/peptide-research-gut-health-leaky-gut-2026';
+import { article as a764 } from './articles/peptide-research-eye-vision-ghk-cu-ss31-bpc157';
+import { article as a765 } from './articles/where-to-buy-melanotan-2-peptide-research-guide-2026';
+import { article as a766 } from './articles/bpc-157-acne-skin-inflammation-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1489,6 +1492,22 @@ export const articles: BlogArticle[] = [
   a761,
   a762,
   a763,
+  a764,
+  a765,
+  a766,
+  // Fix missing from array
+  a01,
+  a11,
+  a21,
+  a31,
+  a40,
+  a44,
+  a47,
+  a49,
+  a51,
+  a53,
+  a55,
+  a153,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
