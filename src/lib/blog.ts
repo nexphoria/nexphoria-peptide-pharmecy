@@ -749,6 +749,9 @@ import { article as a766 } from './articles/bpc-157-acne-skin-inflammation-resea
 import { article as a767 } from './articles/where-to-buy-liraglutide-research-guide';
 import { article as a768 } from './articles/bpc-157-ptsd-trauma-research-guide';
 import { article as a769 } from './articles/best-peptides-parkinsons-research-2026';
+import { article as a770 } from './articles/peptide-research-hair-loss-alopecia';
+import { article as a771 } from './articles/where-to-buy-tirzepatide-research-guide-2026';
+import { article as a772 } from './articles/peptide-research-joint-pain-osteoarthritis';
 
 
 export const articles: BlogArticle[] = [
@@ -1514,6 +1517,9 @@ export const articles: BlogArticle[] = [
   a767,
   a768,
   a769,
+  a770,
+  a771,
+  a772,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
