@@ -806,6 +806,9 @@ import { article as a823 } from './articles/how-long-does-mk-677-take-to-work-re
 import { article as a824 } from './articles/long-covid-peptide-research-guide';
 import { article as a825 } from './articles/peptide-dosage-calculator-weight-based-guide';
 import { article as a826 } from './articles/peptide-research-autoimmune-conditions-guide';
+import { article as a827 } from './articles/tb-500-thymosin-beta-4-actin-tissue-repair-research-2026';
+import { article as a828 } from './articles/hexarelin-cd36-cardioprotection-gh-secretagogue-research-2026';
+import { article as a829 } from './articles/nad-plus-vs-nmn-longevity-researchers-complete-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1628,6 +1631,9 @@ export const articles: BlogArticle[] = [
   a824,
   a825,
   a826,
+  a827,
+  a828,
+  a829,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
