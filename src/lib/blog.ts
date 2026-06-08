@@ -731,6 +731,9 @@ import { article as a751 } from './articles/bpc-157-2026-research-guide-mechanis
 import { article as a752 } from './articles/humanin-mitochondrial-peptide-longevity-research';
 import { article as a753 } from './articles/peptide-research-sleep-architecture-dsip-cjc1295-ghrp';
 import { article as a754 } from './articles/angiotensin-peptide-system-blood-pressure-kidney-research';
+import { article as a755 } from './articles/wada-peptide-detection-anti-doping-research-guide';
+import { article as a756 } from './articles/sarms-vs-peptides-research-comparison-guide';
+import { article as a757 } from './articles/peptide-mass-spectrometry-lc-ms-analysis-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1465,6 +1468,9 @@ export const articles: BlogArticle[] = [
   a752,
   a753,
   a754,
+  a755,
+  a756,
+  a757,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
