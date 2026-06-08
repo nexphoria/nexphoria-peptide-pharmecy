@@ -758,6 +758,9 @@ import { article as a775 } from './articles/hplc-mass-spec-lal-complete-peptide-
 import { article as a776 } from './articles/selank-anxiety-nootropic-gaba-bdnf-research-2026';
 import { article as a777 } from './articles/hexarelin-cd36-cardiac-protection-ischemia-research-2026';
 import { article as a778 } from './articles/peptide-research-glossary-50-essential-terms-2026';
+import { article as a779 } from './articles/longevity-peptide-stack-2026-research-guide';
+import { article as a780 } from './articles/why-hplc-purity-testing-matters-peptide-sourcing';
+import { article as a781 } from './articles/peptide-reconstitution-protocol-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1532,6 +1535,9 @@ export const articles: BlogArticle[] = [
   a776,
   a777,
   a778,
+  a779,
+  a780,
+  a781,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
