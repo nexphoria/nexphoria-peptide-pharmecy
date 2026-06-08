@@ -812,6 +812,9 @@ import { article as a829 } from './articles/nad-plus-vs-nmn-longevity-researcher
 import { article as a830 } from './articles/melanotan-1-afamelanotide-mc1r-melanocortin-research-guide';
 import { article as a831 } from './articles/ace2-peptide-fragments-cardiovascular-research-guide';
 import { article as a832 } from './articles/cjc-1295-ghrp-6-stack-research-guide';
+import { article as a833 } from './articles/zinc-carnosine-gut-health-gastric-mucosal-research-guide';
+import { article as a834 } from './articles/triptorelin-post-cycle-hpg-axis-restart-research-guide';
+import { article as a835 } from './articles/peptides-vs-minoxidil-hair-loss-research-comparison';
 
 
 export const articles: BlogArticle[] = [
@@ -1640,6 +1643,9 @@ export const articles: BlogArticle[] = [
   a830,
   a831,
   a832,
+  a833,
+  a834,
+  a835,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
