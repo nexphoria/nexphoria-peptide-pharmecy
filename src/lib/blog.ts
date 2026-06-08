@@ -712,9 +712,7 @@ import { article as a730 } from './articles/peptide-research-data-tracking-docum
 import { article as a731 } from './articles/where-to-buy-kisspeptin-54-research-guide';
 import { article as a732 } from './articles/research-peptide-faq-beginners-2026';
 import { article as a733 } from './articles/peptide-research-blood-pressure-hypertension-bpc157-ghk-cu-ace2';
-import { article as a734 } from './articles/research-peptides-beginners-guide-2026';
 import { article as a735 } from './articles/bpc-157-vs-aod-9604-fat-loss-research-comparison';
-import { article as a736 } from './articles/nexphoria-vs-amino-asylum-vendor-comparison';
 import { article as a737 } from './articles/dynorphin-kappa-opioid-receptor-peptide-research-guide';
 import { article as a738 } from './articles/nociceptin-orphanin-fq-nop-receptor-peptide-research-guide';
 import { article as a739 } from './articles/adrenomedullin-cardiovascular-peptide-research-guide';
@@ -1442,9 +1440,7 @@ export const articles: BlogArticle[] = [
   a731,
   a732,
   a733,
-  a734,
   a735,
-  a736,
   a737,
   a738,
   a739,

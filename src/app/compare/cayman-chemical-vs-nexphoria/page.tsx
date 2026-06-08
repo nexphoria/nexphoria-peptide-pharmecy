@@ -79,7 +79,7 @@ function StatusCell({ label, status }: { label: string; status: RowStatus }) {
   const color = STATUS_COLORS[status];
   return (
     <div className="flex items-start gap-2">
-      <Icon size={{16}} style={{ color, flexShrink: 0, marginTop: 2 }} />
+      <Icon size={16} style={{ color, flexShrink: 0, marginTop: 2 }} />
       <span className="text-sm" style={{ color: "#2a2a2a", fontWeight: 300, lineHeight: 1.5 }}>{label}</span>
     </div>
   );
@@ -115,7 +115,7 @@ export default function CaymanChemicalVsNexphoriaPage() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/coa" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-medium transition-opacity hover:opacity-90" style={{ backgroundColor: "#B8A44C", color: "#010101" }}>
-                Verify Our COAs <ArrowRight size={{16}} />
+                Verify Our COAs <ArrowRight size={16} />
               </Link>
               <Link href="/products" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm" style={{ backgroundColor: "transparent", border: "1px solid rgba(255,255,255,0.15)", color: "#A0A0A0" }}>
                 Browse Catalog

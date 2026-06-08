@@ -77,7 +77,7 @@ export const article: BlogArticle = {
         'Vehicle: isotonic saline, hyaluronic acid base (1–2% HA), or phosphate buffer pH 6.5–7.0',
         'Application timing: apply within 5–10 minutes post-microneedling while channels remain open',
         'Incubation: 20–30 minutes occlusion with film dressing to prevent evaporation',
-        'Endpoints: hydroxyproline content, procollagen I ELISA, skin elasticity (cutometry), collagen fiber density (Masson's trichrome histology)',
+        'Endpoints: hydroxyproline content, procollagen I ELISA, skin elasticity (cutometry), collagen fiber density (Masson\'s trichrome histology)',
       ],
     },
     {
