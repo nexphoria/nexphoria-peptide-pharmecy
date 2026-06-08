@@ -815,6 +815,9 @@ import { article as a832 } from './articles/cjc-1295-ghrp-6-stack-research-guide
 import { article as a833 } from './articles/zinc-carnosine-gut-health-gastric-mucosal-research-guide';
 import { article as a834 } from './articles/triptorelin-post-cycle-hpg-axis-restart-research-guide';
 import { article as a835 } from './articles/peptides-vs-minoxidil-hair-loss-research-comparison';
+import { article as a836 } from './articles/hexarelin-vs-ipamorelin-ghs-comparison-research-guide';
+import { article as a837 } from './articles/thymosin-alpha-1-sepsis-immune-paralysis-research';
+import { article as a838 } from './articles/nad-plus-iv-vs-oral-bioavailability-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1646,6 +1649,9 @@ export const articles: BlogArticle[] = [
   a833,
   a834,
   a835,
+  a836,
+  a837,
+  a838,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
