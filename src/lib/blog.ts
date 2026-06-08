@@ -673,14 +673,10 @@ import { article as a697 } from './articles/best-peptides-recovery-stack-2026';
 import { article as a698 } from './articles/glp1-agonists-mental-health-depression-anxiety';
 import { article as a699 } from './articles/peptide-microdosing-protocols-research-guide';
 import { article as a700 } from './articles/where-to-buy-glp1-peptides-research-guide';
-import { article as a701 } from './articles/longevity-peptide-stack-2026';
-import { article as a702 } from './articles/peptide-sciences-alternative';
-import { article as a703 } from './articles/buy-peptides-usa-guide';
-import { article as a704 } from './articles/nad-plus-vs-nmn';
-import { article as a705 } from './articles/epithalon-telomere-research';
+import { article as a701 } from './articles/nexphoria-customer-personas-research-buyer-profiles';
+import { article as a702 } from './articles/nexphoria-launch-week-checklist';
+import { article as a703 } from './articles/research-peptide-vendor-crisis-communications-guide';
 import { article as a706 } from './articles/peptides-muscle-recovery-research-overview';
-import { article as a707 } from './articles/how-to-source-research-peptides-usa-buyers-guide';
-import { article as a708 } from './articles/peptide-research-glossary-50-essential-terms';
 import { article as a662 } from './articles/longevity-peptide-stack-2026-research-guide';
 import { article as a663 } from './articles/why-hplc-purity-testing-matters-peptide-sourcing';
 import { article as a673 } from './articles/peptide-half-life-comparison-research-guide';
@@ -1376,11 +1372,7 @@ export const articles: BlogArticle[] = [
   a701,
   a702,
   a703,
-  a704,
-  a705,
   a706,
-  a707,
-  a708,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
