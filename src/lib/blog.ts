@@ -761,6 +761,9 @@ import { article as a778 } from './articles/peptide-research-glossary-50-essenti
 import { article as a779 } from './articles/longevity-peptide-stack-2026-research-guide';
 import { article as a780 } from './articles/why-hplc-purity-testing-matters-peptide-sourcing';
 import { article as a781 } from './articles/peptide-reconstitution-protocol-research-guide';
+import { article as a782 } from './articles/peptide-research-starter-kit-complete-shopping-guide-2026';
+import { article as a783 } from './articles/best-peptides-stress-hpa-axis-cortisol-research-2026';
+import { article as a784 } from './articles/where-to-buy-retatrutide-research-guide-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1538,6 +1541,9 @@ export const articles: BlogArticle[] = [
   a779,
   a780,
   a781,
+  a782,
+  a783,
+  a784,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
