@@ -740,6 +740,9 @@ import { article as a757 } from './articles/peptide-mass-spectrometry-lc-ms-anal
 import { article as a758 } from './articles/peptide-research-in-vitro-cell-culture-models-guide';
 import { article as a759 } from './articles/peptide-research-zebrafish-danio-rerio-model-guide';
 import { article as a760 } from './articles/peptide-research-equine-veterinary-models-guide';
+import { article as a761 } from './articles/bpc-157-vs-sermorelin-research-comparison';
+import { article as a762 } from './articles/retatrutide-vs-semaglutide-research-comparison-2026';
+import { article as a763 } from './articles/peptide-research-gut-health-leaky-gut-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1483,6 +1486,9 @@ export const articles: BlogArticle[] = [
   a758,
   a759,
   a760,
+  a761,
+  a762,
+  a763,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
