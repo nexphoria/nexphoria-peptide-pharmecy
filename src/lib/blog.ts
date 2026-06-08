@@ -728,6 +728,9 @@ import { article as a748 } from './articles/peptide-research-connective-tissue-t
 import { article as a749 } from './articles/nad-plus-vs-nmn-longevity-research-comparison';
 import { article as a750 } from './articles/selank-anxiety-nootropic-peptide-research';
 import { article as a751 } from './articles/bpc-157-2026-research-guide-mechanisms-sourcing';
+import { article as a752 } from './articles/humanin-mitochondrial-peptide-longevity-research';
+import { article as a753 } from './articles/peptide-research-sleep-architecture-dsip-cjc1295-ghrp';
+import { article as a754 } from './articles/angiotensin-peptide-system-blood-pressure-kidney-research';
 
 
 export const articles: BlogArticle[] = [
@@ -1459,6 +1462,9 @@ export const articles: BlogArticle[] = [
   a749,
   a750,
   a751,
+  a752,
+  a753,
+  a754,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
