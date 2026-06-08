@@ -764,6 +764,9 @@ import { article as a781 } from './articles/peptide-reconstitution-protocol-rese
 import { article as a782 } from './articles/peptide-research-starter-kit-complete-shopping-guide-2026';
 import { article as a783 } from './articles/best-peptides-stress-hpa-axis-cortisol-research-2026';
 import { article as a784 } from './articles/where-to-buy-retatrutide-research-guide-2026';
+import { article as a785 } from './articles/peptide-research-circadian-timing-complete-guide';
+import { article as a786 } from './articles/best-peptides-longevity-over-60-research-2026';
+import { article as a787 } from './articles/peptide-research-mold-mycotoxin-detox-protocols';
 
 
 export const articles: BlogArticle[] = [
@@ -1544,6 +1547,9 @@ export const articles: BlogArticle[] = [
   a782,
   a783,
   a784,
+  a785,
+  a786,
+  a787,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
