@@ -718,6 +718,9 @@ import { article as a736 } from './articles/nexphoria-vs-amino-asylum-vendor-com
 import { article as a737 } from './articles/dynorphin-kappa-opioid-receptor-peptide-research-guide';
 import { article as a738 } from './articles/nociceptin-orphanin-fq-nop-receptor-peptide-research-guide';
 import { article as a739 } from './articles/adrenomedullin-cardiovascular-peptide-research-guide';
+import { article as a740 } from './articles/peptide-microneedling-transdermal-delivery-ghk-cu-snap8-research-guide';
+import { article as a741 } from './articles/peptide-research-alzheimers-prevention-amyloid-tau-neuroprotection-protocols';
+import { article as a742 } from './articles/bpc-157-vs-tb-500-which-to-choose-researchers-decision-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1439,6 +1442,9 @@ export const articles: BlogArticle[] = [
   a737,
   a738,
   a739,
+  a740,
+  a741,
+  a742,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
