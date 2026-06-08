@@ -776,6 +776,9 @@ import { article as a793 } from './articles/where-to-buy-bpc-157-research-2026';
 import { article as a794 } from './articles/mk-677-complete-guide-2026';
 import { article as a795 } from './articles/peptide-therapy-101-complete-beginners-guide';
 import { article as a796 } from './articles/how-to-start-peptide-research-complete-guide';
+import { article as a797 } from './articles/semaglutide-research-peptide-glp1-overview';
+import { article as a798 } from './articles/why-hplc-purity-testing-matters-peptide-research';
+import { article as a799 } from './articles/selank-anxiety-research-peptide-overview';
 
 
 export const articles: BlogArticle[] = [
@@ -1568,6 +1571,9 @@ export const articles: BlogArticle[] = [
   a794,
   a795,
   a796,
+  a797,
+  a798,
+  a799,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
