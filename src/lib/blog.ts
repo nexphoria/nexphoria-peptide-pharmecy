@@ -755,6 +755,9 @@ import { article as a772 } from './articles/peptide-research-joint-pain-osteoart
 import { article as a773 } from './articles/nad-plus-vs-nmn-nr-direct-comparison-2026';
 import { article as a774 } from './articles/peptide-sciences-shutdown-supplier-transition-guide';
 import { article as a775 } from './articles/hplc-mass-spec-lal-complete-peptide-coa-guide';
+import { article as a776 } from './articles/selank-anxiety-nootropic-gaba-bdnf-research-2026';
+import { article as a777 } from './articles/hexarelin-cd36-cardiac-protection-ischemia-research-2026';
+import { article as a778 } from './articles/peptide-research-glossary-50-essential-terms-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1526,6 +1529,9 @@ export const articles: BlogArticle[] = [
   a773,
   a774,
   a775,
+  a776,
+  a777,
+  a778,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
