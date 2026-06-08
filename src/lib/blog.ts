@@ -746,6 +746,9 @@ import { article as a763 } from './articles/peptide-research-gut-health-leaky-gu
 import { article as a764 } from './articles/peptide-research-eye-vision-ghk-cu-ss31-bpc157';
 import { article as a765 } from './articles/where-to-buy-melanotan-2-peptide-research-guide-2026';
 import { article as a766 } from './articles/bpc-157-acne-skin-inflammation-research-guide';
+import { article as a767 } from './articles/where-to-buy-liraglutide-research-guide';
+import { article as a768 } from './articles/bpc-157-ptsd-trauma-research-guide';
+import { article as a769 } from './articles/best-peptides-parkinsons-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1508,6 +1511,9 @@ export const articles: BlogArticle[] = [
   a53,
   a55,
   a153,
+  a767,
+  a768,
+  a769,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
