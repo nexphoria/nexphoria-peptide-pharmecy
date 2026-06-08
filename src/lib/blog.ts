@@ -797,6 +797,9 @@ import { article as a814 } from './articles/peptide-research-gut-brain-axis-comp
 import { article as a815 } from './articles/hexarelin-research-cardiac-gh-applications-2026';
 import { article as a816 } from './articles/nad-plus-nmn-longevity-precursor-comparison-2026';
 import { article as a817 } from './articles/epithalon-tetrapeptide-telomere-longevity-research-2026';
+import { article as a818 } from './articles/peptide-research-legal-regulatory-fda-guide-2026';
+import { article as a819 } from './articles/cosmetic-peptides-argireline-matrixyl-snap8-research-guide';
+import { article as a820 } from './articles/how-to-evaluate-peptide-supplier-quality-sourcing-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1610,6 +1613,9 @@ export const articles: BlogArticle[] = [
   a815,
   a816,
   a817,
+  a818,
+  a819,
+  a820,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
