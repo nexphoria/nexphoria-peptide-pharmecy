@@ -767,6 +767,9 @@ import { article as a784 } from './articles/where-to-buy-retatrutide-research-gu
 import { article as a785 } from './articles/peptide-research-circadian-timing-complete-guide';
 import { article as a786 } from './articles/best-peptides-longevity-over-60-research-2026';
 import { article as a787 } from './articles/peptide-research-mold-mycotoxin-detox-protocols';
+import { article as a788 } from './articles/best-peptides-over-40-2026';
+import { article as a789 } from './articles/ss-31-elamipretide-complete-research-guide-2026';
+import { article as a790 } from './articles/semaglutide-vs-tirzepatide-vs-retatrutide-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1550,6 +1553,9 @@ export const articles: BlogArticle[] = [
   a785,
   a786,
   a787,
+  a788,
+  a789,
+  a790,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
