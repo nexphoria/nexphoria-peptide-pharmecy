@@ -724,6 +724,9 @@ import { article as a742 } from './articles/bpc-157-vs-tb-500-which-to-choose-re
 import { article as a743 } from './articles/inside-the-lab-cold-chain-qc-day-in-review';
 import { article as a744 } from './articles/receptor-atlas-peptide-families-biological-systems';
 import { article as a745 } from './articles/goal-mapping-framework-matching-peptide-to-outcome';
+import { article as a746 } from './articles/peptide-timing-sleep-optimization-circadian-protocols';
+import { article as a747 } from './articles/bpc-157-vs-glp1-metabolic-health-research-comparison';
+import { article as a748 } from './articles/peptide-research-connective-tissue-tendons-fascia-ligaments';
 
 
 export const articles: BlogArticle[] = [
@@ -1451,6 +1454,9 @@ export const articles: BlogArticle[] = [
   a743,
   a744,
   a745,
+  a746,
+  a747,
+  a748,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
