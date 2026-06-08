@@ -721,6 +721,9 @@ import { article as a739 } from './articles/adrenomedullin-cardiovascular-peptid
 import { article as a740 } from './articles/peptide-microneedling-transdermal-delivery-ghk-cu-snap8-research-guide';
 import { article as a741 } from './articles/peptide-research-alzheimers-prevention-amyloid-tau-neuroprotection-protocols';
 import { article as a742 } from './articles/bpc-157-vs-tb-500-which-to-choose-researchers-decision-guide';
+import { article as a743 } from './articles/inside-the-lab-cold-chain-qc-day-in-review';
+import { article as a744 } from './articles/receptor-atlas-peptide-families-biological-systems';
+import { article as a745 } from './articles/goal-mapping-framework-matching-peptide-to-outcome';
 
 
 export const articles: BlogArticle[] = [
@@ -1445,6 +1448,9 @@ export const articles: BlogArticle[] = [
   a740,
   a741,
   a742,
+  a743,
+  a744,
+  a745,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
