@@ -887,6 +887,9 @@ import { article as a907 } from './articles/nexphoria-lab-testing-standards-hplc
 import { article as a908 } from './articles/bpc-157-inflammation-anti-inflammatory-research-guide';
 import { article as a909 } from './articles/peptide-injection-guide-routes-sites-technique';
 import { article as a910 } from './articles/bpc-157-tendon-repair-musculoskeletal-research-2026';
+import { article as a911 } from './articles/peptide-research-metabolomics-guide';
+import { article as a912 } from './articles/peptide-research-telomere-length-guide';
+import { article as a913 } from './articles/best-peptides-for-crossfit-athletes-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1790,6 +1793,9 @@ export const articles: BlogArticle[] = [
   a908,
   a909,
   a910,
+  a911,
+  a912,
+  a913,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
