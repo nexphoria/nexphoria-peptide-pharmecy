@@ -872,6 +872,9 @@ import { article as a892 } from './articles/where-to-buy-peptides-for-athletes-2
 import { article as a893 } from './articles/spexin-metabolic-suppressor-peptide-research-guide';
 import { article as a894 } from './articles/nesfatin-1-satiety-peptide-research-guide';
 import { article as a895 } from './articles/phoenixin-neuropeptide-reproductive-anxiety-research-guide';
+import { article as a896 } from './articles/best-peptides-for-muscle-recovery';
+import { article as a897 } from './articles/thymosin-alpha-1-immune-research-2026';
+import { article as a898 } from './articles/research-peptide-glossary-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1760,6 +1763,9 @@ export const articles: BlogArticle[] = [
   a893,
   a894,
   a895,
+  a896,
+  a897,
+  a898,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
