@@ -833,6 +833,9 @@ import { article as a850 } from './articles/semaglutide-benefits-glp1-research-o
 import { article as a851 } from './articles/bpc-157-anti-aging-longevity-research-guide';
 import { article as a852 } from './articles/ghk-cu-longevity-research-2026';
 import { article as a853 } from './articles/peptide-research-rapamycin-comparison-2026';
+import { article as a854 } from './articles/research-peptides-germany-guide';
+import { article as a855 } from './articles/research-peptides-new-zealand-guide';
+import { article as a856 } from './articles/research-peptides-mexico-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1682,6 +1685,9 @@ export const articles: BlogArticle[] = [
   a851,
   a852,
   a853,
+  a854,
+  a855,
+  a856,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
