@@ -875,6 +875,9 @@ import { article as a895 } from './articles/phoenixin-neuropeptide-reproductive-
 import { article as a896 } from './articles/best-peptides-for-muscle-recovery';
 import { article as a897 } from './articles/thymosin-alpha-1-immune-research-2026';
 import { article as a898 } from './articles/research-peptide-glossary-2026';
+import { article as a899 } from './articles/peptide-dosing-beginners-guide';
+import { article as a900 } from './articles/best-peptides-for-sleep-research-2026';
+import { article as a901 } from './articles/peptide-stacking-for-fat-loss-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1766,6 +1769,9 @@ export const articles: BlogArticle[] = [
   a896,
   a897,
   a898,
+  a899,
+  a900,
+  a901,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
