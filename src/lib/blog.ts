@@ -923,6 +923,9 @@ import { article as a943 } from './articles/peptide-research-metabolic-health-in
 import { article as a944 } from './articles/where-to-buy-hgh-fragment-176-191-research-guide';
 import { article as a945 } from './articles/where-to-buy-ace-031-research-guide';
 import { article as a946 } from './articles/peptide-research-gut-permeability-intestinal-barrier-bpc157-kpv-ll37';
+import { article as a947 } from './articles/fgl-peptide-ncam-synaptic-plasticity-memory-research-guide';
+import { article as a948 } from './articles/where-to-buy-dsip-delta-sleep-inducing-peptide-research-guide';
+import { article as a949 } from './articles/galanin-neuropeptide-research-guide-pain-memory-appetite';
 
 
 export const articles: BlogArticle[] = [
@@ -1862,6 +1865,9 @@ export const articles: BlogArticle[] = [
   a944,
   a945,
   a946,
+  a947,
+  a948,
+  a949,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
