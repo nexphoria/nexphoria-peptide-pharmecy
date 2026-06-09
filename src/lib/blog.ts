@@ -902,6 +902,9 @@ import { article as a922 } from './articles/peptide-research-surgical-recovery-p
 import { article as a923 } from './articles/longevity-peptide-stack-2026-research-guide';
 import { article as a924 } from './articles/nad-plus-vs-nmn-longevity-researchers-guide-2026';
 import { article as a925 } from './articles/peptide-sciences-alternative-supplier-guide-post-shutdown';
+import { article as a926 } from './articles/where-to-buy-cortexin-research-guide';
+import { article as a927 } from './articles/peptide-research-lyme-disease-bpc157-thymosin-alpha1-ll37';
+import { article as a928 } from './articles/where-to-buy-actovegin-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1820,6 +1823,9 @@ export const articles: BlogArticle[] = [
   a923,
   a924,
   a925,
+  a926,
+  a927,
+  a928,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
