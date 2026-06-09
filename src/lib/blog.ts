@@ -932,6 +932,11 @@ import { article as a952 } from './articles/glp1-next-generation-pipeline-peptid
 import { article as a953 } from './articles/peptide-research-hormesis-stress-response-longevity-protocols';
 import { article as a954 } from './articles/where-to-buy-mots-c-humanin-research-peptides-2026';
 import { article as a955 } from './articles/peptide-research-inflammation-resolution-pro-resolving-mediators';
+import { article as a956 } from './articles/semaglutide-weight-loss-research-overview-2026';
+import { article as a957 } from './articles/bpc-157-vs-semaglutide-gut-health-comparison';
+import { article as a958 } from './articles/peptide-therapy-cost-guide-2026';
+import { article as a959 } from './articles/cjc-1295-vs-sermorelin-ghrh-analog-comparison';
+import { article as a960 } from './articles/ghk-cu-skin-anti-aging-research-guide-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1880,6 +1885,11 @@ export const articles: BlogArticle[] = [
   a953,
   a954,
   a955,
+  a956,
+  a957,
+  a958,
+  a959,
+  a960,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
