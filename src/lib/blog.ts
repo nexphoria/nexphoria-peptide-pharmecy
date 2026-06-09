@@ -851,6 +851,9 @@ import { article as a871 } from './articles/leuphasyl-syn-ake-cosmetic-neuropept
 import { article as a872 } from './articles/nexphoria-quality-standards-coa-explained';
 import { article as a873 } from './articles/semaglutide-research-guide-2026';
 import { article as a874 } from './articles/peptide-storage-complete-2026';
+import { article as a875 } from './articles/peptides-for-weight-loss-beginners-guide';
+import { article as a876 } from './articles/bpc-157-healing-timeline-research';
+import { article as a877 } from './articles/semaglutide-vs-peptides-weight-loss-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1718,6 +1721,9 @@ export const articles: BlogArticle[] = [
   a872,
   a873,
   a874,
+  a875,
+  a876,
+  a877,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
