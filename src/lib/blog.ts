@@ -863,6 +863,9 @@ import { article as a883 } from './articles/compounding-pharmacy-vs-research-pep
 import { article as a884 } from './articles/bpc-157-benefits-research-overview';
 import { article as a885 } from './articles/bpc-157-dosing-protocols-research-guide';
 import { article as a886 } from './articles/are-research-peptides-legal-regulatory-status-guide';
+import { article as a887 } from './articles/peptide-sciences-alternative-sourcing-guide';
+import { article as a888 } from './articles/best-peptides-muscle-recovery-research';
+import { article as a889 } from './articles/longevity-peptide-stack-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1742,6 +1745,9 @@ export const articles: BlogArticle[] = [
   a884,
   a885,
   a886,
+  a887,
+  a888,
+  a889,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

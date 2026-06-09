@@ -6,8 +6,8 @@ export const article: BlogArticle = {
   description:
     "A research-oriented overview of the peptide combinations longevity scientists are investigating in 2026. Covers GH axis, telomere biology, tissue repair, and mitochondrial targets.",
   category: "Longevity Research",
-  readMinutes: 12,
-  publishedAt: "2026-06-05",
+  readMinutes: 9,
+  publishedAt: "2026-06-09",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -32,11 +32,7 @@ export const article: BlogArticle = {
     },
     {
       type: "heading",
-      text: "Tier 1: GH Axis Optimization",
-    },
-    {
-      type: "subheading",
-      text: "CJC-1295 + Ipamorelin",
+      text: "Tier 1: GH Axis Optimization — CJC-1295 + Ipamorelin",
     },
     {
       type: "paragraph",
@@ -44,27 +40,23 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Rather than administering exogenous GH — which suppresses endogenous production and carries IGF-1 overshoot risks — CJC-1295 + Ipamorelin targets the upstream regulatory system, preserving pulsatility while amplifying GH output.",
+      text: "Rather than administering exogenous GH (which suppresses endogenous production and carries IGF-1 overshoot risks), CJC-1295 + Ipamorelin targets the upstream regulatory system — preserving pulsatility while amplifying GH output.",
     },
     {
-      type: "paragraph",
-      text: "Research focus in 2026: Tissue-specific effects of GH pulse restoration; interaction with IGF-1 axis in aged models; potential synergy with senolytic compounds.",
+      type: "callout",
+      text: "2026 Research Focus: Tissue-specific effects of GH pulse restoration; interaction with IGF-1 axis in aged models; potential synergy with senolytic compounds.",
     },
     {
       type: "heading",
-      text: "Tier 2: Telomere and Epigenetic Biology",
-    },
-    {
-      type: "subheading",
-      text: "Epithalon",
+      text: "Tier 2: Telomere and Epigenetic Biology — Epithalon",
     },
     {
       type: "paragraph",
       text: "The tetrapeptide Epithalon (Ala-Glu-Asp-Gly) has been studied since the 1980s for telomerase activation and longevity extension in multiple model organisms. It represents the most investigated peptide tool for direct telomere biology research.",
     },
     {
-      type: "paragraph",
-      text: "Research focus in 2026: Combination with NAD+ precursors (NMN, NR) to address both telomere attrition and mitochondrial dysfunction hallmarks simultaneously; comparative studies against TA-65 (cycloastragenol); epigenetic clock analysis in treated vs. untreated populations.",
+      type: "callout",
+      text: "2026 Research Focus: Combination with NAD+ precursors (NMN, NR) to address both telomere attrition and mitochondrial dysfunction hallmarks simultaneously; comparative studies against TA-65 (cycloastragenol); epigenetic clock analysis in treated vs. untreated populations.",
     },
     {
       type: "heading",
@@ -76,11 +68,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "BPC-157 (Body Protection Compound-157) is a pentadecapeptide derived from a gastric juice protein, studied extensively for tissue repair, angiogenesis, and neuroprotection. Its proposed mechanisms include nitric oxide system modulation, tendon and ligament repair via growth factor upregulation, GI tract cytoprotection, and dopamine system normalization in animal models.",
+      text: "BPC-157 (Body Protection Compound-157) is a pentadecapeptide derived from a gastric juice protein, studied extensively for tissue repair, angiogenesis, and neuroprotection. Its proposed mechanisms include nitric oxide system modulation promoting vascular healing, tendon and ligament repair via upregulation of growth factor expression in connective tissue, GI tract cytoprotective effects, and neurological healing through dopamine system normalization in animal models.",
     },
     {
       type: "paragraph",
-      text: "In a longevity context, BPC-157's tissue maintenance effects are relevant as scaffolding — preserving structural integrity while other interventions address cellular and molecular aging. Research focus in 2026: Interaction with GH axis compounds; neuroprotective synergy with nootropic peptides; gut-brain axis implications.",
+      text: "In a longevity context, BPC-157's tissue maintenance effects are relevant as scaffolding: preserving structural integrity while other interventions address cellular and molecular aging.",
     },
     {
       type: "subheading",
@@ -88,7 +80,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "TB-500 is a synthetic analog of Thymosin β4, a ubiquitous intracellular peptide involved in actin regulation, wound healing, and cardiac protection. Research has documented accelerated wound healing across multiple tissue types, cardioprotective effects following ischemic injury, and stem cell migration facilitation to sites of injury.",
+      text: "TB-500 is a synthetic analog of Thymosin β4, a ubiquitous intracellular peptide involved in actin regulation, wound healing, and cardiac protection. Research has documented accelerated wound healing in multiple tissue types, cardioprotective effects following ischemic injury, and stem cell migration facilitation to sites of injury.",
     },
     {
       type: "paragraph",
@@ -104,16 +96,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "MOTS-c is a mitochondria-derived peptide (MDP) encoded within the mitochondrial 12S rRNA. It represents a newer class of research targets: peptides produced by mitochondria that regulate nuclear gene expression.",
-    },
-    {
-      type: "list",
-      items: [
-        "Insulin sensitization — reversal of diet-induced insulin resistance in mouse models",
-        "Exercise-mimetic effects — activation of AMPK and related metabolic sensors",
-        "Lifespan extension — demonstrated in C. elegans and explored in mammalian models",
-        "Age-dependent decline in MOTS-c levels suggests it as both a biomarker and potential intervention target",
-      ],
+      text: "MOTS-c is a mitochondria-derived peptide (MDP) encoded within the mitochondrial 12S rRNA. It represents a newer class of research targets: peptides produced by mitochondria that regulate nuclear gene expression. Research findings include insulin sensitization (reversal of diet-induced insulin resistance in mouse models), exercise-mimetic effects via activation of AMPK and related metabolic sensors, lifespan extension demonstrated in C. elegans and explored in mammalian models, and age-dependent decline in MOTS-c levels — suggesting it as both a biomarker and potential intervention target.",
     },
     {
       type: "subheading",
@@ -128,12 +111,8 @@ export const article: BlogArticle = {
       text: "Tier 5: Neurological and Cognitive Maintenance",
     },
     {
-      type: "subheading",
-      text: "Semax and Selank",
-    },
-    {
       type: "paragraph",
-      text: "Russia's two most studied nootropic peptides represent CNS-focused longevity components. Semax (ACTH 4-7 analog) has been documented for BDNF upregulation, neuroprotection, and cognitive enhancement. Selank (tuftsin analog) demonstrates anxiolytic effects, BDNF upregulation, and immune modulation.",
+      text: "Russia's two most studied nootropic peptides represent CNS-focused longevity components. Semax (ACTH 4-7 analog) produces BDNF upregulation, neuroprotection, and cognitive enhancement. Selank (tuftsin analog) provides anxiolytic effects, BDNF upregulation, and immune modulation.",
     },
     {
       type: "paragraph",
@@ -163,7 +142,7 @@ export const article: BlogArticle = {
       items: [
         "Most longevity data remains in animal models. Human longevity trials are long-duration by necessity; reliable human data for most peptides is limited.",
         "Combination effects are largely unstudied. Most compounds have been researched individually; interaction effects in stacks are not well characterized.",
-        "IGF-1 elevation has a complex relationship with longevity. Higher IGF-1 is associated with improved function in some contexts and increased cancer risk in others.",
+        "IGF-1 elevation has a complex relationship with longevity. Higher IGF-1 is associated with improved function in some contexts and increased cancer risk in others; this tension is a live area of research.",
         "Regulatory status varies by jurisdiction. Researchers must operate within applicable regulatory frameworks.",
       ],
     },
