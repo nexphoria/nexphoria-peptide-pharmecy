@@ -878,6 +878,9 @@ import { article as a898 } from './articles/research-peptide-glossary-2026';
 import { article as a899 } from './articles/peptide-dosing-beginners-guide';
 import { article as a900 } from './articles/best-peptides-for-sleep-research-2026';
 import { article as a901 } from './articles/peptide-stacking-for-fat-loss-research-2026';
+import { article as a902 } from './articles/how-to-choose-peptide-supplier-2026';
+import { article as a903 } from './articles/peptide-research-complete-beginners-roadmap-2026';
+import { article as a904 } from './articles/how-to-interpret-peptide-coa-complete-guide-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1772,6 +1775,9 @@ export const articles: BlogArticle[] = [
   a899,
   a900,
   a901,
+  a902,
+  a903,
+  a904,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
