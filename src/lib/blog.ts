@@ -975,6 +975,9 @@ import { article as a995 } from './articles/cjc-1295-ipamorelin-optimized-gh-axi
 import { article as a996 } from './articles/peptide-research-lyme-disease-mold-illness-cirs-bpc157-ta1-ll37';
 import { article as a997 } from './articles/how-to-spot-counterfeit-underdosed-peptides-quality-verification-guide';
 import { article as a998 } from './articles/peptide-research-antiviral-post-viral-recovery-ll37-thymosin-bpc157-nad';
+import { article as a999 } from './articles/peptide-research-tinnitus-auditory-bpc157-ss31-ghk-cu';
+import { article as a1000 } from './articles/peptide-research-overtraining-syndrome-recovery-bpc157-tb500-ipamorelin';
+import { article as a1001 } from './articles/peptide-research-acl-mcl-ligament-reconstruction-bpc157-tb500-ghk-cu';
 
 
 export const articles: BlogArticle[] = [
@@ -1966,6 +1969,9 @@ export const articles: BlogArticle[] = [
   a996,
   a997,
   a998,
+  a999,
+  a1000,
+  a1001,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
