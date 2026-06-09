@@ -824,6 +824,9 @@ import { article as a841 } from './articles/how-to-read-peptide-research-papers-
 import { article as a842 } from './articles/peptide-research-aging-skin-microbiome';
 import { article as a843 } from './articles/best-peptides-metabolism-weight-2026';
 import { article as a844 } from './articles/peptide-exercise-recovery-timing';
+import { article as a845 } from './articles/peptide-research-google-ads-campaign-structure';
+import { article as a846 } from './articles/nexphoria-researcher-personas-who-buys-peptides';
+import { article as a847 } from './articles/peptide-research-cold-chain-what-happens-without-it';
 
 
 export const articles: BlogArticle[] = [
@@ -1664,6 +1667,9 @@ export const articles: BlogArticle[] = [
   a842,
   a843,
   a844,
+  a845,
+  a846,
+  a847,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
