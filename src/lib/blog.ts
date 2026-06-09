@@ -866,6 +866,9 @@ import { article as a886 } from './articles/are-research-peptides-legal-regulato
 import { article as a887 } from './articles/peptide-sciences-alternative-sourcing-guide';
 import { article as a888 } from './articles/best-peptides-muscle-recovery-research';
 import { article as a889 } from './articles/longevity-peptide-stack-2026';
+import { article as a890 } from './articles/ipamorelin-vs-mk677-growth-hormone-comparison-2026';
+import { article as a891 } from './articles/tb500-complete-guide-2026-healing-tissue-repair';
+import { article as a892 } from './articles/where-to-buy-peptides-for-athletes-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1748,6 +1751,9 @@ export const articles: BlogArticle[] = [
   a887,
   a888,
   a889,
+  a890,
+  a891,
+  a892,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
