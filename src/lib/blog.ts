@@ -908,6 +908,9 @@ import { article as a928 } from './articles/where-to-buy-actovegin-research-guid
 import { article as a929 } from './articles/best-research-peptide-brands-2026';
 import { article as a930 } from './articles/where-to-buy-research-peptides-safely-2026';
 import { article as a931 } from './articles/peptide-research-blood-work-monitoring-guide';
+import { article as a932 } from './articles/semax-acth-analog-complete-researchers-guide';
+import { article as a933 } from './articles/peptide-cancer-research-overview-2026';
+import { article as a934 } from './articles/peptide-research-data-interpretation-common-errors';
 
 
 export const articles: BlogArticle[] = [
@@ -1832,6 +1835,9 @@ export const articles: BlogArticle[] = [
   a929,
   a930,
   a931,
+  a932,
+  a933,
+  a934,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
