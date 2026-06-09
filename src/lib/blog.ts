@@ -940,6 +940,9 @@ import { article as a960 } from './articles/ghk-cu-skin-anti-aging-research-guid
 import { article as a961 } from './articles/peptide-blood-test-monitoring-guide';
 import { article as a962 } from './articles/peptide-travel-guide-flying-cold-chain';
 import { article as a963 } from './articles/peptide-athletic-performance-research-guide';
+import { article as a964 } from './articles/peptide-research-inflammation-joint-pain-complete-guide';
+import { article as a965 } from './articles/peptide-research-circadian-clock-biology-nad-epitalon-dsip';
+import { article as a966 } from './articles/glp1-agonists-liver-disease-nafld-nash-research';
 
 
 export const articles: BlogArticle[] = [
@@ -1896,6 +1899,9 @@ export const articles: BlogArticle[] = [
   a961,
   a962,
   a963,
+  a964,
+  a965,
+  a966,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
