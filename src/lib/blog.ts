@@ -860,6 +860,9 @@ import { article as a880 } from './articles/peptide-water-retention-research-gui
 import { article as a881 } from './articles/best-peptides-for-women-research-2026';
 import { article as a882 } from './articles/peptides-for-sleep-research-dsip-ghrp-delta';
 import { article as a883 } from './articles/compounding-pharmacy-vs-research-peptide-supplier';
+import { article as a884 } from './articles/bpc-157-benefits-research-overview';
+import { article as a885 } from './articles/bpc-157-dosing-protocols-research-guide';
+import { article as a886 } from './articles/are-research-peptides-legal-regulatory-status-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1736,6 +1739,9 @@ export const articles: BlogArticle[] = [
   a881,
   a882,
   a883,
+  a884,
+  a885,
+  a886,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
