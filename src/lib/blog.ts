@@ -884,6 +884,9 @@ import { article as a904 } from './articles/how-to-interpret-peptide-coa-complet
 import { article as a905 } from './articles/retatrutide-dosing-titration-protocol-research-guide';
 import { article as a906 } from './articles/peptide-research-neurogenesis-bdnf-semax-selank-cerebrolysin';
 import { article as a907 } from './articles/nexphoria-lab-testing-standards-hplc-ms-lal-explained';
+import { article as a908 } from './articles/bpc-157-inflammation-anti-inflammatory-research-guide';
+import { article as a909 } from './articles/peptide-injection-guide-routes-sites-technique';
+import { article as a910 } from './articles/bpc-157-tendon-repair-musculoskeletal-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1784,6 +1787,9 @@ export const articles: BlogArticle[] = [
   a905,
   a906,
   a907,
+  a908,
+  a909,
+  a910,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
