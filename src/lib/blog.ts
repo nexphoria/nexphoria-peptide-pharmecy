@@ -890,6 +890,9 @@ import { article as a910 } from './articles/bpc-157-tendon-repair-musculoskeleta
 import { article as a911 } from './articles/peptide-research-metabolomics-guide';
 import { article as a912 } from './articles/peptide-research-telomere-length-guide';
 import { article as a913 } from './articles/best-peptides-for-crossfit-athletes-research-2026';
+import { article as a914 } from './articles/peptide-research-male-fertility-testosterone-hpta-restoration';
+import { article as a915 } from './articles/peptide-research-endurance-sports-vo2-aerobic-capacity';
+import { article as a916 } from './articles/antimicrobial-peptide-research-infection-immune-defense-ll37-ta1';
 
 
 export const articles: BlogArticle[] = [
@@ -1796,6 +1799,9 @@ export const articles: BlogArticle[] = [
   a911,
   a912,
   a913,
+  a914,
+  a915,
+  a916,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
