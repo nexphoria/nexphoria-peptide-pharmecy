@@ -899,6 +899,9 @@ import { article as a919 } from './articles/peptide-research-hair-regrowth-compl
 import { article as a920 } from './articles/peptide-research-jet-lag-circadian-rhythm-disruption-travel-protocols';
 import { article as a921 } from './articles/peptide-research-sauna-cold-plunge-heat-cold-hormesis-protocols';
 import { article as a922 } from './articles/peptide-research-surgical-recovery-post-operative-tissue-repair-protocols';
+import { article as a923 } from './articles/longevity-peptide-stack-2026-research-guide';
+import { article as a924 } from './articles/nad-plus-vs-nmn-longevity-researchers-guide-2026';
+import { article as a925 } from './articles/peptide-sciences-alternative-supplier-guide-post-shutdown';
 
 
 export const articles: BlogArticle[] = [
@@ -1814,6 +1817,9 @@ export const articles: BlogArticle[] = [
   a920,
   a921,
   a922,
+  a923,
+  a924,
+  a925,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
