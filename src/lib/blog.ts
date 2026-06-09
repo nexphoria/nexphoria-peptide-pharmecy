@@ -836,6 +836,9 @@ import { article as a853 } from './articles/peptide-research-rapamycin-compariso
 import { article as a854 } from './articles/research-peptides-germany-guide';
 import { article as a855 } from './articles/research-peptides-new-zealand-guide';
 import { article as a856 } from './articles/research-peptides-mexico-guide';
+import { article as a857 } from './articles/longevity-peptide-stack-2026-guide';
+import { article as a858 } from './articles/best-peptides-muscle-recovery-research';
+import { article as a859 } from './articles/peptide-sciences-alternative-supplier-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1688,6 +1691,9 @@ export const articles: BlogArticle[] = [
   a854,
   a855,
   a856,
+  a857,
+  a858,
+  a859,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

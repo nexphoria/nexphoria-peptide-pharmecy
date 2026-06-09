@@ -7,7 +7,7 @@ export const article: BlogArticle = {
     "Peptide Sciences shut down in March 2026, leaving thousands of researchers without a supplier. Here's what to look for in a replacement and why Nexphoria meets the standard.",
   category: "Industry",
   readMinutes: 8,
-  publishedAt: "2026-06-04",
+  publishedAt: "2026-06-07",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -28,7 +28,15 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "The reasons have not been officially confirmed, but patterns like this in the research peptide space often trace back to one of a few causes: regulatory pressure from the FDA or DEA targeting online peptide distribution, supply chain failures at the synthesis or raw-material level, or operational insolvency from thin margins in a competitive, commoditized market.",
+      text: "The reasons have not been officially confirmed, but patterns like this in the research peptide space often trace back to one of a few causes:",
+    },
+    {
+      type: "list",
+      items: [
+        "Regulatory pressure from the FDA or DEA targeting online peptide distribution",
+        "Supply chain failures at the synthesis or raw-material level",
+        "Operational insolvency from thin margins in a competitive, commoditized market",
+      ],
     },
     {
       type: "paragraph",
@@ -48,7 +56,15 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "High-Performance Liquid Chromatography (HPLC) is the gold standard for verifying peptide purity. Any credible supplier should provide HPLC chromatograms for each batch of product — not just a stated percentage on a label. Look for ≥98% purity on HPLC reports, batch-specific certificates (not generic template documents), and third-party lab testing rather than in-house only.",
+      text: "High-Performance Liquid Chromatography (HPLC) is the gold standard for verifying peptide purity. Any credible supplier should provide HPLC chromatograms for each batch of product — not just a stated percentage on a label.",
+    },
+    {
+      type: "list",
+      items: [
+        "≥98% purity on HPLC reports",
+        "Batch-specific certificates, not generic template documents",
+        "Third-party lab testing, not in-house only",
+      ],
     },
     {
       type: "subheading",
@@ -80,7 +96,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Research peptides must be labeled \"For Research Use Only. Not for human use.\" Suppliers who obscure this or who market products for unapproved human applications create regulatory and liability risk for the researchers who use them.",
+      text: "Research peptides must be labeled 'For Research Use Only. Not for human use.' Suppliers who obscure this or who market products for unapproved human applications create regulatory and liability risk for the researchers who use them.",
     },
     {
       type: "heading",
@@ -100,17 +116,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Nexphoria was designed with the post-Peptide Sciences market in mind — not in terms of timing, but in terms of the standards that serious researchers were clearly not getting from commodity suppliers.",
-    },
-    {
-      type: "list",
-      items: [
-        "HPLC and mass spectrometry verification — batch-specific, third-party confirmed",
-        "Full COA transparency — accessible at point of purchase, not on request",
-        "LAL (Limulus Amebocyte Lysate) endotoxin testing — ensuring products are free of bacterial endotoxins that could compromise experimental integrity",
-        "Lyophilized format with proper cold-chain logistics — from synthesis to delivery",
-        "Strict research-only positioning — no clinical language, no wellness marketing",
-      ],
+      text: "Nexphoria was designed with the standards that serious researchers were clearly not getting from commodity suppliers. Every Nexphoria product includes HPLC and mass spectrometry verification (batch-specific, third-party confirmed), full COA transparency accessible at point of purchase, LAL (Limulus Amebocyte Lysate) endotoxin testing, lyophilized format with proper cold-chain logistics from synthesis to delivery, and strict research-only positioning with no clinical language or wellness marketing.",
     },
     {
       type: "paragraph",
@@ -122,11 +128,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "If you are currently mid-study or have established reconstitution and storage protocols, transitioning suppliers requires care.",
+      text: "If you are currently mid-study or have established reconstitution and storage protocols, transitioning suppliers requires care. Here is a practical transition checklist:",
     },
     {
       type: "subheading",
-      text: "Before ordering:",
+      text: "Before Ordering",
     },
     {
       type: "list",
@@ -139,7 +145,7 @@ export const article: BlogArticle = {
     },
     {
       type: "subheading",
-      text: "Upon receipt:",
+      text: "Upon Receipt",
     },
     {
       type: "list",
@@ -151,7 +157,7 @@ export const article: BlogArticle = {
     },
     {
       type: "subheading",
-      text: "For ongoing sourcing:",
+      text: "For Ongoing Sourcing",
     },
     {
       type: "list",
