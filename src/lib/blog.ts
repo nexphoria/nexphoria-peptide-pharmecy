@@ -821,6 +821,9 @@ import { article as a838 } from './articles/nad-plus-iv-vs-oral-bioavailability-
 import { article as a839 } from './articles/n-of-1-self-experimentation-peptide-research-ethical-framework';
 import { article as a840 } from './articles/peptide-research-budget-cost-guide-2026';
 import { article as a841 } from './articles/how-to-read-peptide-research-papers-pubmed-guide';
+import { article as a842 } from './articles/peptide-research-aging-skin-microbiome';
+import { article as a843 } from './articles/best-peptides-metabolism-weight-2026';
+import { article as a844 } from './articles/peptide-exercise-recovery-timing';
 
 
 export const articles: BlogArticle[] = [
@@ -1658,6 +1661,9 @@ export const articles: BlogArticle[] = [
   a839,
   a840,
   a841,
+  a842,
+  a843,
+  a844,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
