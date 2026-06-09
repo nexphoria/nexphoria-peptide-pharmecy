@@ -857,6 +857,9 @@ import { article as a877 } from './articles/semaglutide-vs-peptides-weight-loss-
 import { article as a878 } from './articles/peptide-research-fasting-metabolic-protocols-2026';
 import { article as a879 } from './articles/peptide-research-budget-guide-2026';
 import { article as a880 } from './articles/peptide-water-retention-research-guide';
+import { article as a881 } from './articles/best-peptides-for-women-research-2026';
+import { article as a882 } from './articles/peptides-for-sleep-research-dsip-ghrp-delta';
+import { article as a883 } from './articles/compounding-pharmacy-vs-research-peptide-supplier';
 
 
 export const articles: BlogArticle[] = [
@@ -1730,6 +1733,9 @@ export const articles: BlogArticle[] = [
   a878,
   a879,
   a880,
+  a881,
+  a882,
+  a883,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
