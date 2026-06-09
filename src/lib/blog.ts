@@ -830,6 +830,9 @@ import { article as a847 } from './articles/peptide-research-cold-chain-what-hap
 import { article as a848 } from './articles/tb-500-benefits-tissue-repair-research';
 import { article as a849 } from './articles/ipamorelin-benefits-research-overview';
 import { article as a850 } from './articles/semaglutide-benefits-glp1-research-overview';
+import { article as a851 } from './articles/bpc-157-anti-aging-longevity-research-guide';
+import { article as a852 } from './articles/ghk-cu-longevity-research-2026';
+import { article as a853 } from './articles/peptide-research-rapamycin-comparison-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1676,6 +1679,9 @@ export const articles: BlogArticle[] = [
   a848,
   a849,
   a850,
+  a851,
+  a852,
+  a853,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
