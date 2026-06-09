@@ -920,6 +920,9 @@ import { article as a940 } from './articles/where-to-buy-n-acetyl-semax-research
 import { article as a941 } from './articles/peptide-research-inflammation-cytokines-complete-guide';
 import { article as a942 } from './articles/where-to-buy-bpc-157-tb-500-combined-stack-2026';
 import { article as a943 } from './articles/peptide-research-metabolic-health-insulin-sensitivity-complete-guide';
+import { article as a944 } from './articles/where-to-buy-hgh-fragment-176-191-research-guide';
+import { article as a945 } from './articles/where-to-buy-ace-031-research-guide';
+import { article as a946 } from './articles/peptide-research-gut-permeability-intestinal-barrier-bpc157-kpv-ll37';
 
 
 export const articles: BlogArticle[] = [
@@ -1856,6 +1859,9 @@ export const articles: BlogArticle[] = [
   a941,
   a942,
   a943,
+  a944,
+  a945,
+  a946,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
