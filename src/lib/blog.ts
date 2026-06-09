@@ -848,6 +848,9 @@ import { article as a865 } from './articles/best-peptides-for-over-70-longevity-
 import { article as a866 } from './articles/best-peptides-hashimotos-thyroid-autoimmune-research-2026';
 import { article as a867 } from './articles/best-peptides-multiple-sclerosis-neuroinflammation-research-2026';
 import { article as a868 } from './articles/where-to-buy-nad-plus-nmn-research-guide-2026';
+import { article as a869 } from './articles/actovegin-deproteinized-hemodialysate-peptide-research-guide';
+import { article as a870 } from './articles/pentosan-polysulfate-sodium-research-guide';
+import { article as a871 } from './articles/leuphasyl-syn-ake-cosmetic-neuropeptide-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1712,6 +1715,9 @@ export const articles: BlogArticle[] = [
   a866,
   a867,
   a868,
+  a869,
+  a870,
+  a871,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
