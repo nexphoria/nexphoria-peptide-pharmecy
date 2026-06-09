@@ -827,6 +827,9 @@ import { article as a844 } from './articles/peptide-exercise-recovery-timing';
 import { article as a845 } from './articles/peptide-research-google-ads-campaign-structure';
 import { article as a846 } from './articles/nexphoria-researcher-personas-who-buys-peptides';
 import { article as a847 } from './articles/peptide-research-cold-chain-what-happens-without-it';
+import { article as a848 } from './articles/tb-500-benefits-tissue-repair-research';
+import { article as a849 } from './articles/ipamorelin-benefits-research-overview';
+import { article as a850 } from './articles/semaglutide-benefits-glp1-research-overview';
 
 
 export const articles: BlogArticle[] = [
@@ -1670,6 +1673,9 @@ export const articles: BlogArticle[] = [
   a845,
   a846,
   a847,
+  a848,
+  a849,
+  a850,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
