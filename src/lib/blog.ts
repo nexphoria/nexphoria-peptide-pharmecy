@@ -893,6 +893,9 @@ import { article as a913 } from './articles/best-peptides-for-crossfit-athletes-
 import { article as a914 } from './articles/peptide-research-male-fertility-testosterone-hpta-restoration';
 import { article as a915 } from './articles/peptide-research-endurance-sports-vo2-aerobic-capacity';
 import { article as a916 } from './articles/antimicrobial-peptide-research-infection-immune-defense-ll37-ta1';
+import { article as a917 } from './articles/tirzepatide-mounjaro-complete-guide-2026';
+import { article as a918 } from './articles/peptide-research-fasting-autophagy-mtor-protocols';
+import { article as a919 } from './articles/peptide-research-hair-regrowth-complete-protocol-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1802,6 +1805,9 @@ export const articles: BlogArticle[] = [
   a914,
   a915,
   a916,
+  a917,
+  a918,
+  a919,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
