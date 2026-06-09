@@ -851,6 +851,9 @@ import { article as a868 } from './articles/where-to-buy-nad-plus-nmn-research-g
 import { article as a869 } from './articles/actovegin-deproteinized-hemodialysate-peptide-research-guide';
 import { article as a870 } from './articles/pentosan-polysulfate-sodium-research-guide';
 import { article as a871 } from './articles/leuphasyl-syn-ake-cosmetic-neuropeptide-research-guide';
+import { article as a872 } from './articles/aging-biomarkers-telomere-epigenetic-clocks-nad-longevity-research';
+import { article as a873 } from './articles/5-amino-1mq-nnmt-inhibitor-metabolic-research-guide';
+import { article as a874 } from './articles/bacteriostatic-water-peptide-reconstitution-solvent-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1718,6 +1721,9 @@ export const articles: BlogArticle[] = [
   a869,
   a870,
   a871,
+  a872,
+  a873,
+  a874,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
