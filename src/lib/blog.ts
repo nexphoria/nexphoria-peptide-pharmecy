@@ -972,6 +972,9 @@ import { article as a992 } from './articles/where-to-buy-tirzepatide-research-gu
 import { article as a993 } from './articles/peptide-quality-sourcing-checklist-2026';
 import { article as a994 } from './articles/nad-plus-sirtuins-dna-repair-aging-mechanisms';
 import { article as a995 } from './articles/cjc-1295-ipamorelin-optimized-gh-axis-research';
+import { article as a996 } from './articles/peptide-research-lyme-disease-mold-illness-cirs-bpc157-ta1-ll37';
+import { article as a997 } from './articles/how-to-spot-counterfeit-underdosed-peptides-quality-verification-guide';
+import { article as a998 } from './articles/peptide-research-antiviral-post-viral-recovery-ll37-thymosin-bpc157-nad';
 
 
 export const articles: BlogArticle[] = [
@@ -1960,6 +1963,9 @@ export const articles: BlogArticle[] = [
   a993,
   a994,
   a995,
+  a996,
+  a997,
+  a998,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
