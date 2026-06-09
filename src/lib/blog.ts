@@ -881,6 +881,9 @@ import { article as a901 } from './articles/peptide-stacking-for-fat-loss-resear
 import { article as a902 } from './articles/how-to-choose-peptide-supplier-2026';
 import { article as a903 } from './articles/peptide-research-complete-beginners-roadmap-2026';
 import { article as a904 } from './articles/how-to-interpret-peptide-coa-complete-guide-2026';
+import { article as a905 } from './articles/retatrutide-dosing-titration-protocol-research-guide';
+import { article as a906 } from './articles/peptide-research-neurogenesis-bdnf-semax-selank-cerebrolysin';
+import { article as a907 } from './articles/nexphoria-lab-testing-standards-hplc-ms-lal-explained';
 
 
 export const articles: BlogArticle[] = [
@@ -1778,6 +1781,9 @@ export const articles: BlogArticle[] = [
   a902,
   a903,
   a904,
+  a905,
+  a906,
+  a907,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
