@@ -842,6 +842,9 @@ import { article as a859 } from './articles/peptide-sciences-alternative-supplie
 import { article as a860 } from './articles/retatrutide-complete-guide-2026';
 import { article as a861 } from './articles/best-peptides-thymus-2026';
 import { article as a862 } from './articles/peptide-microdosing-guide-2026';
+import { article as a863 } from './articles/best-peptides-for-bodybuilders-research-2026';
+import { article as a864 } from './articles/best-peptides-for-biohackers-research-2026';
+import { article as a865 } from './articles/best-peptides-for-over-70-longevity-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1700,6 +1703,9 @@ export const articles: BlogArticle[] = [
   a860,
   a861,
   a862,
+  a863,
+  a864,
+  a865,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
