@@ -758,8 +758,6 @@ import { article as a775 } from './articles/hplc-mass-spec-lal-complete-peptide-
 import { article as a776 } from './articles/selank-anxiety-nootropic-gaba-bdnf-research-2026';
 import { article as a777 } from './articles/hexarelin-cd36-cardiac-protection-ischemia-research-2026';
 import { article as a778 } from './articles/peptide-research-glossary-50-essential-terms-2026';
-import { article as a779 } from './articles/longevity-peptide-stack-2026-research-guide';
-import { article as a780 } from './articles/why-hplc-purity-testing-matters-peptide-sourcing';
 import { article as a781 } from './articles/peptide-reconstitution-protocol-research-guide';
 import { article as a782 } from './articles/peptide-research-starter-kit-complete-shopping-guide-2026';
 import { article as a783 } from './articles/best-peptides-stress-hpa-axis-cortisol-research-2026';
@@ -838,7 +836,6 @@ import { article as a855 } from './articles/research-peptides-new-zealand-guide'
 import { article as a856 } from './articles/research-peptides-mexico-guide';
 import { article as a857 } from './articles/longevity-peptide-stack-2026-guide';
 import { article as a858 } from './articles/best-peptides-muscle-recovery-research';
-import { article as a859 } from './articles/peptide-sciences-alternative-supplier-guide';
 import { article as a860 } from './articles/retatrutide-complete-guide-2026';
 import { article as a861 } from './articles/best-peptides-thymus-2026';
 import { article as a862 } from './articles/peptide-microdosing-guide-2026';
@@ -851,9 +848,6 @@ import { article as a868 } from './articles/where-to-buy-nad-plus-nmn-research-g
 import { article as a869 } from './articles/actovegin-deproteinized-hemodialysate-peptide-research-guide';
 import { article as a870 } from './articles/pentosan-polysulfate-sodium-research-guide';
 import { article as a871 } from './articles/leuphasyl-syn-ake-cosmetic-neuropeptide-research-guide';
-import { article as a872 } from './articles/aging-biomarkers-telomere-epigenetic-clocks-nad-longevity-research';
-import { article as a873 } from './articles/5-amino-1mq-nnmt-inhibitor-metabolic-research-guide';
-import { article as a874 } from './articles/bacteriostatic-water-peptide-reconstitution-solvent-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1628,8 +1622,6 @@ export const articles: BlogArticle[] = [
   a776,
   a777,
   a778,
-  a779,
-  a780,
   a781,
   a782,
   a783,
@@ -1708,7 +1700,6 @@ export const articles: BlogArticle[] = [
   a856,
   a857,
   a858,
-  a859,
   a860,
   a861,
   a862,
@@ -1721,9 +1712,6 @@ export const articles: BlogArticle[] = [
   a869,
   a870,
   a871,
-  a872,
-  a873,
-  a874,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
