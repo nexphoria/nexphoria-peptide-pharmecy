@@ -929,6 +929,9 @@ import { article as a949 } from './articles/galanin-neuropeptide-research-guide-
 import { article as a950 } from './articles/semaglutide-bpc157-combination-gut-repair-research-guide';
 import { article as a951 } from './articles/trh-thyrotropin-releasing-hormone-peptide-research-guide';
 import { article as a952 } from './articles/glp1-next-generation-pipeline-peptides-2026-research-guide';
+import { article as a953 } from './articles/peptide-research-hormesis-stress-response-longevity-protocols';
+import { article as a954 } from './articles/where-to-buy-mots-c-humanin-research-peptides-2026';
+import { article as a955 } from './articles/peptide-research-inflammation-resolution-pro-resolving-mediators';
 
 
 export const articles: BlogArticle[] = [
@@ -1874,6 +1877,9 @@ export const articles: BlogArticle[] = [
   a950,
   a951,
   a952,
+  a953,
+  a954,
+  a955,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
