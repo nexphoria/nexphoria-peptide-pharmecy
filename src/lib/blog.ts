@@ -896,6 +896,9 @@ import { article as a916 } from './articles/antimicrobial-peptide-research-infec
 import { article as a917 } from './articles/tirzepatide-mounjaro-complete-guide-2026';
 import { article as a918 } from './articles/peptide-research-fasting-autophagy-mtor-protocols';
 import { article as a919 } from './articles/peptide-research-hair-regrowth-complete-protocol-2026';
+import { article as a920 } from './articles/peptide-research-jet-lag-circadian-rhythm-disruption-travel-protocols';
+import { article as a921 } from './articles/peptide-research-sauna-cold-plunge-heat-cold-hormesis-protocols';
+import { article as a922 } from './articles/peptide-research-surgical-recovery-post-operative-tissue-repair-protocols';
 
 
 export const articles: BlogArticle[] = [
@@ -1808,6 +1811,9 @@ export const articles: BlogArticle[] = [
   a917,
   a918,
   a919,
+  a920,
+  a921,
+  a922,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
