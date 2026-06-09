@@ -969,6 +969,9 @@ import { article as a989 } from './articles/where-to-buy-bpc-157-research-guide'
 import { article as a990 } from './articles/where-to-buy-epithalon-research-guide';
 import { article as a991 } from './articles/where-to-buy-retatrutide-research-guide';
 import { article as a992 } from './articles/where-to-buy-tirzepatide-research-guide';
+import { article as a993 } from './articles/peptide-quality-sourcing-checklist-2026';
+import { article as a994 } from './articles/nad-plus-sirtuins-dna-repair-aging-mechanisms';
+import { article as a995 } from './articles/cjc-1295-ipamorelin-optimized-gh-axis-research';
 
 
 export const articles: BlogArticle[] = [
@@ -1954,6 +1957,9 @@ export const articles: BlogArticle[] = [
   a990,
   a991,
   a992,
+  a993,
+  a994,
+  a995,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
