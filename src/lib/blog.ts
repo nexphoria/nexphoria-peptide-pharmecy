@@ -914,6 +914,9 @@ import { article as a934 } from './articles/peptide-research-data-interpretation
 import { article as a935 } from './articles/amycretin-glp1-amylin-dual-agonist-research-guide';
 import { article as a936 } from './articles/peptide-research-chronic-wound-healing-diabetic-ulcer-bpc157-ghk-cu-ll37';
 import { article as a937 } from './articles/mast-cell-peptide-research-compound-48-80-substance-p-ll37-immune';
+import { article as a938 } from './articles/bpc-157-vs-ipamorelin-research-comparison';
+import { article as a939 } from './articles/best-peptides-post-surgery-recovery-2026';
+import { article as a940 } from './articles/where-to-buy-n-acetyl-semax-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1844,6 +1847,9 @@ export const articles: BlogArticle[] = [
   a935,
   a936,
   a937,
+  a938,
+  a939,
+  a940,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
