@@ -869,6 +869,9 @@ import { article as a889 } from './articles/longevity-peptide-stack-2026';
 import { article as a890 } from './articles/ipamorelin-vs-mk677-growth-hormone-comparison-2026';
 import { article as a891 } from './articles/tb500-complete-guide-2026-healing-tissue-repair';
 import { article as a892 } from './articles/where-to-buy-peptides-for-athletes-2026';
+import { article as a893 } from './articles/spexin-metabolic-suppressor-peptide-research-guide';
+import { article as a894 } from './articles/nesfatin-1-satiety-peptide-research-guide';
+import { article as a895 } from './articles/phoenixin-neuropeptide-reproductive-anxiety-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1754,6 +1757,9 @@ export const articles: BlogArticle[] = [
   a890,
   a891,
   a892,
+  a893,
+  a894,
+  a895,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
