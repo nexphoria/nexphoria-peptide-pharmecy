@@ -996,6 +996,9 @@ import { article as a1043 } from './articles/bpc-157-systemic-inflammation-resea
 import { article as a1044 } from './articles/longevity-peptide-stack-research-guide-2026';
 import { article as a1045 } from './articles/peptide-storage-temperature-light-shelf-life-guide';
 import { article as a1046 } from './articles/nad-plus-vs-nmn-longevity-research-comparison';
+import { article as a1047 } from './articles/peptide-research-powerlifting-strength-protocols-2026';
+import { article as a1048 } from './articles/peptide-research-marathon-endurance-protocols-2026';
+import { article as a1049 } from './articles/peptide-research-eye-vision-retinal-neuroprotection-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2008,6 +2011,9 @@ export const articles: BlogArticle[] = [
   a1044,
   a1045,
   a1046,
+  a1047,
+  a1048,
+  a1049,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
