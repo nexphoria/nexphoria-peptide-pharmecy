@@ -984,6 +984,9 @@ import { article as a1004 } from './articles/peptides-vs-anabolic-steroids-resea
 import { article as a1005 } from './articles/best-peptides-muscle-recovery-research-guide';
 import { article as a1006 } from './articles/nad-plus-vs-nmn-longevity-precursors-2026-comparison';
 import { article as a1007 } from './articles/peptide-reconstitution-research-protocol-2026';
+import { article as a1008 } from './articles/bpc-157-oral-bioavailability-research-2026';
+import { article as a1009 } from './articles/tb-500-reconstitution-protocol-step-by-step';
+import { article as a1010 } from './articles/nexphoria-vs-benchmark-peptides-vendor-comparison';
 
 
 export const articles: BlogArticle[] = [
@@ -1984,6 +1987,9 @@ export const articles: BlogArticle[] = [
   a1005,
   a1006,
   a1007,
+  a1008,
+  a1009,
+  a1010,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
