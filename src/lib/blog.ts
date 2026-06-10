@@ -1048,6 +1048,9 @@ import { article as a1095 } from './articles/peptide-reconstitution-protocol-res
 import { article as a1096 } from './articles/peptide-sciences-alternative-nexphoria-supplier-guide';
 import { article as a1097 } from './articles/nexphoria-quality-standards-hplc-lal-coa-transparency';
 import { article as a1098 } from './articles/peptide-research-glossary-50-essential-terms';
+import { article as a1099 } from './articles/mazdutide-research-guide';
+import { article as a1100 } from './articles/ecnoglutide-research-guide';
+import { article as a1101 } from './articles/where-to-buy-zinc-carnosine-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2112,6 +2115,9 @@ export const articles: BlogArticle[] = [
   a1096,
   a1097,
   a1098,
+  a1099,
+  a1100,
+  a1101,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
