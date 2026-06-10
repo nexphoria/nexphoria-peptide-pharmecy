@@ -978,6 +978,9 @@ import { article as a1028 } from './articles/what-are-research-peptides-beginner
 import { article as a1029 } from './articles/peptide-research-womens-health-complete-guide-2026';
 import { article as a1030 } from './articles/peptide-research-mitochondrial-health-complete-guide-2026';
 import { article as a1031 } from './articles/bpc-157-gut-health-complete-research-guide-2026';
+import { article as a1032 } from './articles/pemvidutide-glp1-gcg-dual-agonist-research-guide-2026';
+import { article as a1033 } from './articles/orforglipron-oral-glp1-small-molecule-research-guide-2026';
+import { article as a1034 } from './articles/cotadutide-glp1-gcg-dual-agonist-mash-nash-research-guide-2026';
 import { article as a967 } from './articles/peptide-research-basics-complete-guide-2026';
 import { article as a968 } from './articles/ghk-cu-skin-aging-complete-guide-2026';
 import { article as a969 } from './articles/bpc-157-muscle-recovery-research-2026';
@@ -1978,6 +1981,9 @@ export const articles: BlogArticle[] = [
   a1029,
   a1030,
   a1031,
+  a1032,
+  a1033,
+  a1034,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
