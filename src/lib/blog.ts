@@ -978,6 +978,9 @@ import { article as a998 } from './articles/peptide-research-antiviral-post-vira
 import { article as a999 } from './articles/peptide-research-tinnitus-auditory-bpc157-ss31-ghk-cu';
 import { article as a1000 } from './articles/peptide-research-overtraining-syndrome-recovery-bpc157-tb500-ipamorelin';
 import { article as a1001 } from './articles/peptide-research-acl-mcl-ligament-reconstruction-bpc157-tb500-ghk-cu';
+import { article as a1002 } from './articles/gdf-15-stress-peptide-metabolic-research-guide';
+import { article as a1003 } from './articles/peptide-research-pots-dysautonomia-autonomic-nervous-system';
+import { article as a1004 } from './articles/peptides-vs-anabolic-steroids-research-comparison-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1972,6 +1975,9 @@ export const articles: BlogArticle[] = [
   a999,
   a1000,
   a1001,
+  a1002,
+  a1003,
+  a1004,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
