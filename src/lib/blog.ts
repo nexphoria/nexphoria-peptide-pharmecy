@@ -990,6 +990,9 @@ import { article as a1037 } from './articles/peptide-research-exercise-performan
 import { article as a1038 } from './articles/peptide-research-ibs-irritable-bowel-syndrome-gut-motility-bpc157-kpv';
 import { article as a1039 } from './articles/peptide-research-erectile-dysfunction-sexual-function-pt141-bpc157-oxytocin';
 import { article as a1040 } from './articles/peptide-research-recovery-overtraining-syndrome-bpc157-tb500-cjc1295-athlete-models';
+import { article as a1041 } from './articles/peptide-research-skin-aging-prevention-protocol';
+import { article as a1042 } from './articles/best-peptides-for-crossfit-recovery-2026';
+import { article as a1043 } from './articles/bpc-157-systemic-inflammation-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1996,6 +1999,9 @@ export const articles: BlogArticle[] = [
   a1038,
   a1039,
   a1040,
+  a1041,
+  a1042,
+  a1043,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
