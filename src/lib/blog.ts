@@ -1060,6 +1060,9 @@ import { article as a1107 } from './articles/nad-plus-sublingual-vs-iv-research-
 import { article as a1108 } from './articles/longevity-peptide-stack-2026';
 import { article as a1109 } from './articles/cjc-1295-ipamorelin-stack';
 import { article as a1110 } from './articles/why-hplc-purity-testing-matters-peptide-sourcing-2026';
+import { article as a1111 } from './articles/peptide-muscle-recovery-five-compounds-research';
+import { article as a1112 } from './articles/hexarelin-cd36-cardiac-research';
+import { article as a1113 } from './articles/peptide-stack-longevity-hallmarks-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2136,6 +2139,9 @@ export const articles: BlogArticle[] = [
   a1108,
   a1109,
   a1110,
+  a1111,
+  a1112,
+  a1113,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
