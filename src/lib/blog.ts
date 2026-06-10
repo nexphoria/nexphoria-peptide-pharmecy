@@ -1045,6 +1045,9 @@ import { article as a1092 } from './articles/cjc-1295-side-effects-research-guid
 import { article as a1093 } from './articles/bpc-157-tb-500-combined-protocol-research-guide';
 import { article as a1094 } from './articles/longevity-peptide-stack-2026-research-guide';
 import { article as a1095 } from './articles/peptide-reconstitution-protocol-research-guide';
+import { article as a1096 } from './articles/peptide-sciences-alternative-nexphoria-supplier-guide';
+import { article as a1097 } from './articles/nexphoria-quality-standards-hplc-lal-coa-transparency';
+import { article as a1098 } from './articles/peptide-research-glossary-50-essential-terms';
 
 
 export const articles: BlogArticle[] = [
@@ -2106,6 +2109,9 @@ export const articles: BlogArticle[] = [
   a1093,
   a1094,
   a1095,
+  a1096,
+  a1097,
+  a1098,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
