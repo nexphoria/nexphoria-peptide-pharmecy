@@ -1078,6 +1078,9 @@ import { article as a1122 } from './articles/selank-intranasal-vs-subcutaneous-r
 import { article as a1126 } from './articles/glp1-weight-regain-rebound-research-guide';
 import { article as a1127 } from './articles/best-peptides-over-65-longevity-research-2026';
 import { article as a1128 } from './articles/bpc-157-weight-loss-fat-loss-research-guide';
+import { article as a1129 } from './articles/nexphoria-vs-pharmagrade-store-vendor-comparison';
+import { article as a1130 } from './articles/nexphoria-vs-prestige-peptides-vendor-comparison';
+import { article as a1131 } from './articles/best-peptides-healing-tissue-repair-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2172,6 +2175,9 @@ export const articles: BlogArticle[] = [
   a1126,
   a1127,
   a1128,
+  a1129,
+  a1130,
+  a1131,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
