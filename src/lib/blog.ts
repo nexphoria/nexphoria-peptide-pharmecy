@@ -1002,6 +1002,9 @@ import { article as a1049 } from './articles/peptide-research-eye-vision-retinal
 import { article as a1050 } from './articles/bpc-157-vs-mk-677-research-comparison';
 import { article as a1051 } from './articles/peptide-research-injury-recovery-complete-guide-2026';
 import { article as a1052 } from './articles/where-to-buy-cjc-1295-ipamorelin-blend-research-guide';
+import { article as a1053 } from './articles/how-peptides-are-made-synthesis-lyophilization-quality-control';
+import { article as a1054 } from './articles/peptide-research-mental-health-depression-anxiety-ptsd-selank-semax-bpc157';
+import { article as a1055 } from './articles/peptide-research-heart-failure-cardiac-remodeling-bpc157-tb500-ss31';
 
 
 export const articles: BlogArticle[] = [
@@ -2020,6 +2023,9 @@ export const articles: BlogArticle[] = [
   a1050,
   a1051,
   a1052,
+  a1053,
+  a1054,
+  a1055,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
