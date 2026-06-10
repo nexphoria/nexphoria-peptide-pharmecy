@@ -1017,6 +1017,9 @@ import { article as a1064 } from './articles/peptide-summer-heat-storage-stabili
 import { article as a1065 } from './articles/allometric-dosing-weight-based-peptide-research-protocols';
 import { article as a1066 } from './articles/peptide-diluent-selection-bac-water-saline-acetic-acid-guide';
 import { article as a1067 } from './articles/high-altitude-hypoxia-peptide-research-epo-hif-erythropoiesis';
+import { article as a1068 } from './articles/peptide-research-summer-2026-seasonal-considerations';
+import { article as a1069 } from './articles/peptide-research-placebo-controlled-design-fundamentals';
+import { article as a1070 } from './articles/peptide-vial-inspection-quality-checklist';
 
 
 export const articles: BlogArticle[] = [
@@ -2050,6 +2053,9 @@ export const articles: BlogArticle[] = [
   a1065,
   a1066,
   a1067,
+  a1068,
+  a1069,
+  a1070,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
