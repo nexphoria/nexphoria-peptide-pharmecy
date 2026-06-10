@@ -987,6 +987,9 @@ import { article as a1007 } from './articles/peptide-reconstitution-research-pro
 import { article as a1008 } from './articles/bpc-157-oral-bioavailability-research-2026';
 import { article as a1009 } from './articles/tb-500-reconstitution-protocol-step-by-step';
 import { article as a1010 } from './articles/nexphoria-vs-benchmark-peptides-vendor-comparison';
+import { article as a1011 } from './articles/cognitive-peptide-stack-semax-selank-dihexa-cerebrolysin-research-guide';
+import { article as a1012 } from './articles/post-surgical-recovery-peptide-research-protocol-guide-2026';
+import { article as a1013 } from './articles/elite-athletic-performance-peptide-research-gh-axis-repair-endurance-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1990,6 +1993,9 @@ export const articles: BlogArticle[] = [
   a1008,
   a1009,
   a1010,
+  a1011,
+  a1012,
+  a1013,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
