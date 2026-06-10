@@ -1057,6 +1057,9 @@ import { article as a1104 } from './articles/bpc-157-tb-500-wolverine-blend-rese
 import { article as a1105 } from './articles/best-peptides-for-cyclists-research-2026';
 import { article as a1106 } from './articles/how-to-stack-peptides-beginners-guide-2026';
 import { article as a1107 } from './articles/nad-plus-sublingual-vs-iv-research-guide';
+import { article as a1108 } from './articles/longevity-peptide-stack-2026';
+import { article as a1109 } from './articles/cjc-1295-ipamorelin-stack';
+import { article as a1110 } from './articles/why-hplc-purity-testing-matters-peptide-sourcing-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2130,6 +2133,9 @@ export const articles: BlogArticle[] = [
   a1105,
   a1106,
   a1107,
+  a1108,
+  a1109,
+  a1110,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
