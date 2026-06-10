@@ -1081,6 +1081,9 @@ import { article as a1128 } from './articles/bpc-157-weight-loss-fat-loss-resear
 import { article as a1129 } from './articles/nexphoria-vs-pharmagrade-store-vendor-comparison';
 import { article as a1130 } from './articles/nexphoria-vs-prestige-peptides-vendor-comparison';
 import { article as a1131 } from './articles/best-peptides-healing-tissue-repair-research-2026';
+import { article as a1132 } from './articles/peptide-research-fall-recovery-protocols-2026';
+import { article as a1133 } from './articles/best-peptides-for-swimmers-research-2026';
+import { article as a1134 } from './articles/peptide-research-perimenopause-hormone-optimization-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2178,6 +2181,9 @@ export const articles: BlogArticle[] = [
   a1129,
   a1130,
   a1131,
+  a1132,
+  a1133,
+  a1134,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
