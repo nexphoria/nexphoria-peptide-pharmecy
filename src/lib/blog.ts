@@ -899,9 +899,6 @@ import { article as a919 } from './articles/peptide-research-hair-regrowth-compl
 import { article as a920 } from './articles/peptide-research-jet-lag-circadian-rhythm-disruption-travel-protocols';
 import { article as a921 } from './articles/peptide-research-sauna-cold-plunge-heat-cold-hormesis-protocols';
 import { article as a922 } from './articles/peptide-research-surgical-recovery-post-operative-tissue-repair-protocols';
-import { article as a923 } from './articles/longevity-peptide-stack-2026-research-guide';
-import { article as a924 } from './articles/nad-plus-vs-nmn-longevity-researchers-guide-2026';
-import { article as a925 } from './articles/peptide-sciences-alternative-supplier-guide-post-shutdown';
 import { article as a926 } from './articles/where-to-buy-cortexin-research-guide';
 import { article as a927 } from './articles/peptide-research-lyme-disease-bpc157-thymosin-alpha1-ll37';
 import { article as a928 } from './articles/where-to-buy-actovegin-research-guide';
@@ -943,32 +940,6 @@ import { article as a963 } from './articles/peptide-athletic-performance-researc
 import { article as a964 } from './articles/peptide-research-inflammation-joint-pain-complete-guide';
 import { article as a965 } from './articles/peptide-research-circadian-clock-biology-nad-epitalon-dsip';
 import { article as a966 } from './articles/glp1-agonists-liver-disease-nafld-nash-research';
-import { article as a967 } from './articles/best-peptides-muscle-recovery-research-guide';
-import { article as a968 } from './articles/best-peptides-muscle-recovery-research';
-import { article as a969 } from './articles/best-peptides-muscle-recovery';
-import { article as a970 } from './articles/bpc-157-vs-tb500-stack';
-import { article as a971 } from './articles/cjc-1295-ipamorelin-stack';
-import { article as a972 } from './articles/cold-chain-peptide-shipping';
-import { article as a973 } from './articles/epithalon-telomere-research';
-import { article as a974 } from './articles/hexarelin-cardioprotection';
-import { article as a975 } from './articles/longevity-peptide-stack-2026';
-import { article as a976 } from './articles/nad-plus-vs-nmn-longevity-research';
-import { article as a977 } from './articles/nad-plus-vs-nmn';
-import { article as a978 } from './articles/nexphoria-quality-standards';
-import { article as a979 } from './articles/peptide-purity-hplc-testing';
-import { article as a980 } from './articles/peptide-research-glossary-50-essential-terms';
-import { article as a981 } from './articles/peptide-sciences-alternative-supplier-guide';
-import { article as a982 } from './articles/peptide-sciences-alternative';
-import { article as a983 } from './articles/peptide-storage-guide';
-import { article as a984 } from './articles/research-peptide-glossary';
-import { article as a985 } from './articles/selank-anxiety-research';
-import { article as a986 } from './articles/semaglutide-research-peptide';
-import { article as a987 } from './articles/tb-500-thymosin-beta-4';
-import { article as a988 } from './articles/thymosin-alpha-1-immune';
-import { article as a989 } from './articles/where-to-buy-bpc-157-research-guide';
-import { article as a990 } from './articles/where-to-buy-epithalon-research-guide';
-import { article as a991 } from './articles/where-to-buy-retatrutide-research-guide';
-import { article as a992 } from './articles/where-to-buy-tirzepatide-research-guide';
 import { article as a993 } from './articles/peptide-quality-sourcing-checklist-2026';
 import { article as a994 } from './articles/nad-plus-sirtuins-dna-repair-aging-mechanisms';
 import { article as a995 } from './articles/cjc-1295-ipamorelin-optimized-gh-axis-research';
@@ -981,7 +952,6 @@ import { article as a1001 } from './articles/peptide-research-acl-mcl-ligament-r
 import { article as a1002 } from './articles/gdf-15-stress-peptide-metabolic-research-guide';
 import { article as a1003 } from './articles/peptide-research-pots-dysautonomia-autonomic-nervous-system';
 import { article as a1004 } from './articles/peptides-vs-anabolic-steroids-research-comparison-2026';
-import { article as a1005 } from './articles/best-peptides-muscle-recovery-research-guide';
 import { article as a1006 } from './articles/nad-plus-vs-nmn-longevity-precursors-2026-comparison';
 import { article as a1007 } from './articles/peptide-reconstitution-research-protocol-2026';
 import { article as a1008 } from './articles/bpc-157-oral-bioavailability-research-2026';
@@ -990,6 +960,9 @@ import { article as a1010 } from './articles/nexphoria-vs-benchmark-peptides-ven
 import { article as a1011 } from './articles/cognitive-peptide-stack-semax-selank-dihexa-cerebrolysin-research-guide';
 import { article as a1012 } from './articles/post-surgical-recovery-peptide-research-protocol-guide-2026';
 import { article as a1013 } from './articles/elite-athletic-performance-peptide-research-gh-axis-repair-endurance-2026';
+import { article as a1014 } from './articles/bpc-157-side-effects-research-guide';
+import { article as a1015 } from './articles/semaglutide-side-effects-research-overview';
+import { article as a1016 } from './articles/ipamorelin-cjc-1295-side-effects-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -1905,9 +1878,6 @@ export const articles: BlogArticle[] = [
   a920,
   a921,
   a922,
-  a923,
-  a924,
-  a925,
   a926,
   a927,
   a928,
@@ -1949,32 +1919,6 @@ export const articles: BlogArticle[] = [
   a964,
   a965,
   a966,
-  a967,
-  a968,
-  a969,
-  a970,
-  a971,
-  a972,
-  a973,
-  a974,
-  a975,
-  a976,
-  a977,
-  a978,
-  a979,
-  a980,
-  a981,
-  a982,
-  a983,
-  a984,
-  a985,
-  a986,
-  a987,
-  a988,
-  a989,
-  a990,
-  a991,
-  a992,
   a993,
   a994,
   a995,
@@ -1987,7 +1931,6 @@ export const articles: BlogArticle[] = [
   a1002,
   a1003,
   a1004,
-  a1005,
   a1006,
   a1007,
   a1008,
@@ -1996,6 +1939,9 @@ export const articles: BlogArticle[] = [
   a1011,
   a1012,
   a1013,
+  a1014,
+  a1015,
+  a1016,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
