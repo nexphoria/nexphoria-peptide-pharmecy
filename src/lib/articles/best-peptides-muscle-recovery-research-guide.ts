@@ -4,15 +4,15 @@ export const article: BlogArticle = {
   slug: "best-peptides-muscle-recovery-research-guide",
   title: "5 Research Peptides Used in Muscle Recovery Studies",
   description:
-    "Five research peptides — BPC-157, TB-500, IGF-1 LR3, Follistatin-344, and Ipamorelin — have been examined in muscle recovery and regeneration studies. This article summarizes the preclinical evidence for each.",
+    "BPC-157, TB-500, IGF-1 LR3, Follistatin-344, and Ipamorelin have all been examined in skeletal muscle repair models. A summary of the preclinical evidence, mechanisms, and research context for each.",
   category: "Compound Profiles",
-  readMinutes: 9,
-  publishedAt: "2026-06-05",
+  readMinutes: 10,
+  publishedAt: "2026-06-09",
   ogImage: "/og-image.jpg",
   body: [
     {
       type: "paragraph",
-      text: "Skeletal muscle repair is a complex, multi-phase biological process involving satellite cell activation, myoblast proliferation, ECM remodeling, and re-innervation. Several peptide compounds have been studied in preclinical models to better understand — and potentially modulate — these processes. Below is an evidence-based overview of five peptides that appear frequently in the muscle recovery research literature.",
+      text: "Skeletal muscle repair is a complex, multi-phase biological process involving satellite cell activation, myoblast proliferation, extracellular matrix remodeling, and re-innervation. Several peptide compounds have been studied in preclinical models to better understand — and potentially modulate — these processes. Below is an evidence-based overview of five peptides that appear frequently in the muscle recovery research literature.",
     },
     {
       type: "heading",
@@ -24,7 +24,7 @@ export const article: BlogArticle = {
     },
     {
       type: "subheading",
-      text: "Key Findings in Muscle Research",
+      text: "Key findings in muscle research",
     },
     {
       type: "list",
@@ -37,7 +37,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Mechanism: BPC-157 is thought to act via nitric oxide modulation and FAK-paxillin signaling, enhancing cell migration and angiogenesis critical to repair. Study references include Sikiric et al. (multiple publications, University of Zagreb) and Gwyer et al. systematic review (2019).",
+      text: "BPC-157 is thought to act via nitric oxide modulation and FAK-paxillin signaling, enhancing cell migration and angiogenesis critical to repair. Study references: Sikiric et al. (multiple publications, University of Zagreb); Gwyer et al. systematic review (2019).",
     },
     {
       type: "heading",
@@ -49,7 +49,7 @@ export const article: BlogArticle = {
     },
     {
       type: "subheading",
-      text: "Key Findings in Muscle Research",
+      text: "Key findings in muscle research",
     },
     {
       type: "list",
@@ -62,7 +62,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Mechanism: TB-500's LKKTET actin-binding domain drives cytoskeletal remodeling, enabling faster cell migration and wound response. Downstream VEGF signaling supports revascularization of damaged tissue. TB-500 and BPC-157 are frequently studied together due to their mechanistically complementary profiles — actin-level cell movement (TB-500) paired with vascular and signaling pathway activation (BPC-157).",
+      text: "TB-500's LKKTET actin-binding domain drives cytoskeletal remodeling, enabling faster cell migration and wound response. Downstream VEGF signaling supports revascularization of damaged tissue. TB-500 and BPC-157 are frequently studied together due to their mechanistically complementary profiles — actin-level cell movement (TB-500) paired with vascular and signaling pathway activation (BPC-157).",
     },
     {
       type: "heading",
@@ -74,7 +74,7 @@ export const article: BlogArticle = {
     },
     {
       type: "subheading",
-      text: "Key Findings in Muscle Research",
+      text: "Key findings in muscle research",
     },
     {
       type: "list",
@@ -87,11 +87,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Mechanism: IGF-1 LR3 binds the IGF-1 receptor (a receptor tyrosine kinase) and activates downstream anabolic signaling cascades. Its extended half-life compared to native IGF-1 makes it useful for studying sustained IGF-1R activation effects.",
-    },
-    {
-      type: "callout",
-      text: "Important: IGF-1 signaling is pleiotropic and intersects with multiple oncological pathways. Research protocols involving IGF-1 LR3 require careful experimental design and appropriate controls.",
+      text: "IGF-1 LR3 binds the IGF-1 receptor (a receptor tyrosine kinase) and activates downstream anabolic signaling cascades. Its extended half-life compared to native IGF-1 makes it useful for studying sustained IGF-1R activation effects. Note: IGF-1 signaling is pleiotropic and intersects with multiple oncological pathways. Research protocols involving IGF-1 LR3 require careful experimental design and appropriate controls.",
     },
     {
       type: "heading",
@@ -103,7 +99,7 @@ export const article: BlogArticle = {
     },
     {
       type: "subheading",
-      text: "Key Findings in Muscle Research",
+      text: "Key findings in muscle research",
     },
     {
       type: "list",
@@ -116,7 +112,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Mechanism: By binding myostatin with high affinity, follistatin prevents myostatin from activating its receptor (ActRIIB), thereby disinhibiting muscle growth pathways including Akt/mTOR and satellite cell activation. Follistatin-344 research has clinical relevance to conditions involving muscle wasting (sarcopenia, Duchenne muscular dystrophy), making it an active area of gene therapy and peptide research.",
+      text: "By binding myostatin with high affinity, follistatin prevents myostatin from activating its receptor (ActRIIB), thereby disinhibiting muscle growth pathways including Akt/mTOR and satellite cell activation. Follistatin-344 research has clinical relevance to conditions involving muscle wasting (sarcopenia, Duchenne muscular dystrophy), making it an active area of gene therapy and peptide research.",
     },
     {
       type: "heading",
@@ -128,7 +124,7 @@ export const article: BlogArticle = {
     },
     {
       type: "subheading",
-      text: "Key Findings in Muscle Research",
+      text: "Key findings in muscle research",
     },
     {
       type: "list",
@@ -141,7 +137,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Mechanism: Ipamorelin mimics ghrelin's action at the GHSR-1a receptor in the hypothalamus and pituitary, triggering GH secretion. Its selectivity profile makes it particularly useful for isolated study of GH pulse effects without the confound of elevated stress hormones.",
+      text: "Ipamorelin mimics ghrelin's action at the GHSR-1a receptor in the hypothalamus and pituitary, triggering GH secretion. Its selectivity profile makes it particularly useful for isolated study of GH pulse effects without the confound of elevated stress hormones.",
     },
     {
       type: "heading",
@@ -159,33 +155,8 @@ export const article: BlogArticle = {
       ],
     },
     {
-      type: "heading",
-      text: "Sourcing for Research",
-    },
-    {
-      type: "paragraph",
-      text: "All five peptides require rigorous quality verification for valid research use.",
-    },
-    {
-      type: "list",
-      items: [
-        "HPLC purity ≥99%",
-        "Mass spectrometry identity confirmation",
-        "Endotoxin-free certification (LAL testing)",
-        "Cold-chain shipping and storage protocols",
-      ],
-    },
-    {
-      type: "heading",
-      text: "Summary",
-    },
-    {
-      type: "paragraph",
-      text: "The five peptides reviewed here — BPC-157, TB-500, IGF-1 LR3, Follistatin-344, and Ipamorelin — represent distinct mechanistic approaches to studying muscle recovery and regeneration. From cytoskeletal dynamics to myostatin inhibition to GH axis modulation, the literature on these compounds provides a layered view of the biological processes underlying skeletal muscle repair.",
-    },
-    {
       type: "disclaimer",
-      text: "For research purposes only. Not intended for human use.",
+      text: "For research purposes only. Not for human use. All compound descriptions reference preclinical models. No clinical efficacy is implied.",
     },
   ],
 };
