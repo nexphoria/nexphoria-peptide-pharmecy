@@ -1039,6 +1039,9 @@ import { article as a1086 } from './articles/best-peptides-muscle-recovery-resea
 import { article as a1087 } from './articles/photobiomodulation-peptide-research-synergy-red-light-therapy';
 import { article as a1088 } from './articles/exosomes-extracellular-vesicles-peptide-research-interface';
 import { article as a1089 } from './articles/igf-binding-proteins-igfbp-peptide-research-implications';
+import { article as a1090 } from './articles/retatrutide-side-effects-research-guide';
+import { article as a1091 } from './articles/ghk-cu-side-effects-research-guide';
+import { article as a1092 } from './articles/cjc-1295-side-effects-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2094,6 +2097,9 @@ export const articles: BlogArticle[] = [
   a1087,
   a1088,
   a1089,
+  a1090,
+  a1091,
+  a1092,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
