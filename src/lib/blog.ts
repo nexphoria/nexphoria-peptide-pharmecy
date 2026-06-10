@@ -1070,6 +1070,9 @@ import { article as a1117 } from './articles/glp1-agonist-ozempic-face-research-
 import { article as a1118 } from './articles/cagrilintide-semaglutide-cagrima-combination-research-guide';
 import { article as a1119 } from './articles/tb4-frag-503-thymosin-beta-4-fragment-503-research-guide';
 import { article as a1120 } from './articles/thymosin-alpha-1-immune-research-clinical-evidence-2026';
+import { article as a1123 } from './articles/longevity-peptide-stack-2026-researchers-study';
+import { article as a1124 } from './articles/peptide-sciences-alternative-what-researchers-need-to-know';
+import { article as a1125 } from './articles/how-to-source-research-peptides-usa-buyers-guide';
 import { article as a1121 } from './articles/peptide-dosing-math-mcg-iu-syringe-calculations-research-guide';
 import { article as a1122 } from './articles/selank-intranasal-vs-subcutaneous-research-delivery-comparison';
 
@@ -2160,6 +2163,9 @@ export const articles: BlogArticle[] = [
   a1120,
   a1121,
   a1122,
+  a1123,
+  a1124,
+  a1125,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
