@@ -1066,6 +1066,9 @@ import { article as a1113 } from './articles/peptide-stack-longevity-hallmarks-2
 import { article as a1114 } from './articles/vasoactive-intestinal-peptide-vip-research-guide';
 import { article as a1115 } from './articles/ghrelin-vs-des-acyl-ghrelin-research-comparison';
 import { article as a1116 } from './articles/obestatin-ghrelin-derived-peptide-research-guide';
+import { article as a1117 } from './articles/glp1-agonist-ozempic-face-research-guide';
+import { article as a1118 } from './articles/cagrilintide-semaglutide-cagrima-combination-research-guide';
+import { article as a1119 } from './articles/tb4-frag-503-thymosin-beta-4-fragment-503-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2148,6 +2151,9 @@ export const articles: BlogArticle[] = [
   a1114,
   a1115,
   a1116,
+  a1117,
+  a1118,
+  a1119,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
