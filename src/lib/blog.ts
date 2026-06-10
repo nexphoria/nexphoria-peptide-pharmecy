@@ -1008,6 +1008,9 @@ import { article as a1055 } from './articles/peptide-research-heart-failure-card
 import { article as a1056 } from './articles/best-peptides-muscle-recovery-research-2026';
 import { article as a1057 } from './articles/nad-plus-precursors-research-guide-nmn-nr-2026';
 import { article as a1058 } from './articles/peptide-sciences-shutdown-what-researchers-need-2026';
+import { article as a1059 } from './articles/peptide-muscle-recovery-five-compound-research-overview';
+import { article as a1060 } from './articles/cjc-1295-ipamorelin-dual-pathway-gh-research-stack';
+import { article as a1061 } from './articles/nad-plus-longevity-research-sirtuins-parp-hallmarks-aging';
 
 
 export const articles: BlogArticle[] = [
@@ -2032,6 +2035,9 @@ export const articles: BlogArticle[] = [
   a1056,
   a1057,
   a1058,
+  a1059,
+  a1060,
+  a1061,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
