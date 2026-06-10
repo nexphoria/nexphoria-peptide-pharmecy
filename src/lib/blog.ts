@@ -1075,6 +1075,9 @@ import { article as a1124 } from './articles/peptide-sciences-alternative-what-r
 import { article as a1125 } from './articles/how-to-source-research-peptides-usa-buyers-guide';
 import { article as a1121 } from './articles/peptide-dosing-math-mcg-iu-syringe-calculations-research-guide';
 import { article as a1122 } from './articles/selank-intranasal-vs-subcutaneous-research-delivery-comparison';
+import { article as a1126 } from './articles/glp1-weight-regain-rebound-research-guide';
+import { article as a1127 } from './articles/best-peptides-over-65-longevity-research-2026';
+import { article as a1128 } from './articles/bpc-157-weight-loss-fat-loss-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2166,6 +2169,9 @@ export const articles: BlogArticle[] = [
   a1123,
   a1124,
   a1125,
+  a1126,
+  a1127,
+  a1128,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
