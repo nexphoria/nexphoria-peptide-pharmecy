@@ -1032,6 +1032,9 @@ import { article as a1079 } from './articles/unacylated-ghrelin-des-acyl-ghrelin
 import { article as a1080 } from './articles/pthrp-parathyroid-hormone-related-peptide-bone-cancer-research-guide';
 import { article as a1081 } from './articles/pacap-pituitary-adenylate-cyclase-activating-polypeptide-research-guide';
 import { article as a1082 } from './articles/defensins-antimicrobial-host-defense-peptides-research-guide';
+import { article as a1083 } from './articles/muscle-recovery-peptides-five-compound-research-overview';
+import { article as a1084 } from './articles/hexarelin-cardiac-gh-research-overview';
+import { article as a1085 } from './articles/selank-anxiolytic-nootropic-peptide-research-review';
 
 
 export const articles: BlogArticle[] = [
@@ -2080,6 +2083,9 @@ export const articles: BlogArticle[] = [
   a1080,
   a1081,
   a1082,
+  a1083,
+  a1084,
+  a1085,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
