@@ -1014,6 +1014,9 @@ import { article as a1061 } from './articles/nad-plus-longevity-research-sirtuin
 import { article as a1062 } from './articles/adult-gh-deficiency-peptide-secretagogue-research-guide';
 import { article as a1063 } from './articles/peptide-research-severe-obesity-class-iii-glp1-protocols';
 import { article as a1064 } from './articles/peptide-summer-heat-storage-stability-research-protocols';
+import { article as a1065 } from './articles/allometric-dosing-weight-based-peptide-research-protocols';
+import { article as a1066 } from './articles/peptide-diluent-selection-bac-water-saline-acetic-acid-guide';
+import { article as a1067 } from './articles/high-altitude-hypoxia-peptide-research-epo-hif-erythropoiesis';
 
 
 export const articles: BlogArticle[] = [
@@ -2044,6 +2047,9 @@ export const articles: BlogArticle[] = [
   a1062,
   a1063,
   a1064,
+  a1065,
+  a1066,
+  a1067,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
