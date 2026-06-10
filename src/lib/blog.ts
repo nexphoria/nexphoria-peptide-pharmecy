@@ -993,6 +993,9 @@ import { article as a1040 } from './articles/peptide-research-recovery-overtrain
 import { article as a1041 } from './articles/peptide-research-skin-aging-prevention-protocol';
 import { article as a1042 } from './articles/best-peptides-for-crossfit-recovery-2026';
 import { article as a1043 } from './articles/bpc-157-systemic-inflammation-research-guide';
+import { article as a1044 } from './articles/longevity-peptide-stack-research-guide-2026';
+import { article as a1045 } from './articles/peptide-storage-temperature-light-shelf-life-guide';
+import { article as a1046 } from './articles/nad-plus-vs-nmn-longevity-research-comparison';
 
 
 export const articles: BlogArticle[] = [
@@ -2002,6 +2005,9 @@ export const articles: BlogArticle[] = [
   a1041,
   a1042,
   a1043,
+  a1044,
+  a1045,
+  a1046,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
