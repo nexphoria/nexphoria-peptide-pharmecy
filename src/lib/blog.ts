@@ -1063,6 +1063,9 @@ import { article as a1110 } from './articles/why-hplc-purity-testing-matters-pep
 import { article as a1111 } from './articles/peptide-muscle-recovery-five-compounds-research';
 import { article as a1112 } from './articles/hexarelin-cd36-cardiac-research';
 import { article as a1113 } from './articles/peptide-stack-longevity-hallmarks-2026';
+import { article as a1114 } from './articles/vasoactive-intestinal-peptide-vip-research-guide';
+import { article as a1115 } from './articles/ghrelin-vs-des-acyl-ghrelin-research-comparison';
+import { article as a1116 } from './articles/obestatin-ghrelin-derived-peptide-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2142,6 +2145,9 @@ export const articles: BlogArticle[] = [
   a1111,
   a1112,
   a1113,
+  a1114,
+  a1115,
+  a1116,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
