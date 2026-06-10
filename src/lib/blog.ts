@@ -969,6 +969,9 @@ import { article as a1019 } from './articles/peptide-research-inflammation-resol
 import { article as a1020 } from './articles/peptides-muscle-recovery-bpc157-tb500-igf1-follistatin-ipamorelin';
 import { article as a1021 } from './articles/bpc-157-tb-500-combined-protocol-mechanistic-rationale-research';
 import { article as a1022 } from './articles/peptide-research-glossary-50-essential-terms';
+import { article as a1023 } from './articles/peptide-research-burn-injury-wound-healing-tissue-repair';
+import { article as a1024 } from './articles/peptide-research-infertility-reproductive-axis-gonadotropin';
+import { article as a1025 } from './articles/peptide-cancer-immunotherapy-checkpoint-tumor-microenvironment';
 
 
 export const articles: BlogArticle[] = [
@@ -1954,6 +1957,9 @@ export const articles: BlogArticle[] = [
   a1020,
   a1021,
   a1022,
+  a1023,
+  a1024,
+  a1025,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
