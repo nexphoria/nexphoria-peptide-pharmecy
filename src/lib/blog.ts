@@ -1036,6 +1036,9 @@ import { article as a1083 } from './articles/muscle-recovery-peptides-five-compo
 import { article as a1084 } from './articles/hexarelin-cardiac-gh-research-overview';
 import { article as a1085 } from './articles/selank-anxiolytic-nootropic-peptide-research-review';
 import { article as a1086 } from './articles/best-peptides-muscle-recovery-research-overview';
+import { article as a1087 } from './articles/photobiomodulation-peptide-research-synergy-red-light-therapy';
+import { article as a1088 } from './articles/exosomes-extracellular-vesicles-peptide-research-interface';
+import { article as a1089 } from './articles/igf-binding-proteins-igfbp-peptide-research-implications';
 
 
 export const articles: BlogArticle[] = [
@@ -2088,6 +2091,9 @@ export const articles: BlogArticle[] = [
   a1084,
   a1085,
   a1086,
+  a1087,
+  a1088,
+  a1089,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
