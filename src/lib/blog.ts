@@ -1054,6 +1054,9 @@ import { article as a1101 } from './articles/where-to-buy-zinc-carnosine-researc
 import { article as a1102 } from './articles/peptide-stack-for-beginners-2026';
 import { article as a1103 } from './articles/glp1-weight-loss-plateau-peptide-combinations-research';
 import { article as a1104 } from './articles/bpc-157-tb-500-wolverine-blend-research-guide';
+import { article as a1105 } from './articles/best-peptides-for-cyclists-research-2026';
+import { article as a1106 } from './articles/how-to-stack-peptides-beginners-guide-2026';
+import { article as a1107 } from './articles/nad-plus-sublingual-vs-iv-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2124,6 +2127,9 @@ export const articles: BlogArticle[] = [
   a1102,
   a1103,
   a1104,
+  a1105,
+  a1106,
+  a1107,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
