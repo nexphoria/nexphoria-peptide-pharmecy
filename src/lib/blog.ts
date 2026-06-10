@@ -1051,6 +1051,9 @@ import { article as a1098 } from './articles/peptide-research-glossary-50-essent
 import { article as a1099 } from './articles/mazdutide-research-guide';
 import { article as a1100 } from './articles/ecnoglutide-research-guide';
 import { article as a1101 } from './articles/where-to-buy-zinc-carnosine-research-guide';
+import { article as a1102 } from './articles/peptide-stack-for-beginners-2026';
+import { article as a1103 } from './articles/glp1-weight-loss-plateau-peptide-combinations-research';
+import { article as a1104 } from './articles/bpc-157-tb-500-wolverine-blend-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2118,6 +2121,9 @@ export const articles: BlogArticle[] = [
   a1099,
   a1100,
   a1101,
+  a1102,
+  a1103,
+  a1104,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
