@@ -966,6 +966,9 @@ import { article as a1016 } from './articles/ipamorelin-cjc-1295-side-effects-re
 import { article as a1017 } from './articles/peptide-research-mtor-ampk-energy-sensing-longevity-deep-dive';
 import { article as a1018 } from './articles/best-peptides-for-longevity-stack-protocol-2026';
 import { article as a1019 } from './articles/peptide-research-inflammation-resolution-specialist-guide';
+import { article as a1020 } from './articles/peptides-muscle-recovery-bpc157-tb500-igf1-follistatin-ipamorelin';
+import { article as a1021 } from './articles/bpc-157-tb-500-combined-protocol-mechanistic-rationale-research';
+import { article as a1022 } from './articles/peptide-research-glossary-50-essential-terms';
 
 
 export const articles: BlogArticle[] = [
@@ -1948,6 +1951,9 @@ export const articles: BlogArticle[] = [
   a1017,
   a1018,
   a1019,
+  a1020,
+  a1021,
+  a1022,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
