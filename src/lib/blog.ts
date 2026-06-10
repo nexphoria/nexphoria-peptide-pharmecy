@@ -1023,6 +1023,9 @@ import { article as a1070 } from './articles/peptide-vial-inspection-quality-che
 import { article as a1071 } from './articles/tirzepatide-side-effects-research-guide';
 import { article as a1072 } from './articles/tb-500-side-effects-research-guide';
 import { article as a1073 } from './articles/mk-677-side-effects-research-guide';
+import { article as a1074 } from './articles/nad-plus-vs-nmn-longevity-research';
+import { article as a1075 } from './articles/longevity-peptide-stack-2026';
+import { article as a1076 } from './articles/peptide-purity-hplc-testing-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2062,6 +2065,9 @@ export const articles: BlogArticle[] = [
   a1071,
   a1072,
   a1073,
+  a1074,
+  a1075,
+  a1076,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
