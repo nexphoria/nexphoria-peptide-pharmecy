@@ -1029,6 +1029,9 @@ import { article as a1076 } from './articles/peptide-purity-hplc-testing-guide';
 import { article as a1077 } from './articles/ara-290-erythropoietin-derived-neuroprotective-peptide-research';
 import { article as a1078 } from './articles/colivelin-s14g-humanin-potent-neuroprotective-peptide-research';
 import { article as a1079 } from './articles/unacylated-ghrelin-des-acyl-ghrelin-metabolic-research-guide';
+import { article as a1080 } from './articles/pthrp-parathyroid-hormone-related-peptide-bone-cancer-research-guide';
+import { article as a1081 } from './articles/pacap-pituitary-adenylate-cyclase-activating-polypeptide-research-guide';
+import { article as a1082 } from './articles/defensins-antimicrobial-host-defense-peptides-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2074,6 +2077,9 @@ export const articles: BlogArticle[] = [
   a1077,
   a1078,
   a1079,
+  a1080,
+  a1081,
+  a1082,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
