@@ -1035,6 +1035,7 @@ import { article as a1082 } from './articles/defensins-antimicrobial-host-defens
 import { article as a1083 } from './articles/muscle-recovery-peptides-five-compound-research-overview';
 import { article as a1084 } from './articles/hexarelin-cardiac-gh-research-overview';
 import { article as a1085 } from './articles/selank-anxiolytic-nootropic-peptide-research-review';
+import { article as a1086 } from './articles/best-peptides-muscle-recovery-research-overview';
 
 
 export const articles: BlogArticle[] = [
@@ -2086,6 +2087,7 @@ export const articles: BlogArticle[] = [
   a1083,
   a1084,
   a1085,
+  a1086,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
