@@ -1011,6 +1011,9 @@ import { article as a1058 } from './articles/peptide-sciences-shutdown-what-rese
 import { article as a1059 } from './articles/peptide-muscle-recovery-five-compound-research-overview';
 import { article as a1060 } from './articles/cjc-1295-ipamorelin-dual-pathway-gh-research-stack';
 import { article as a1061 } from './articles/nad-plus-longevity-research-sirtuins-parp-hallmarks-aging';
+import { article as a1062 } from './articles/adult-gh-deficiency-peptide-secretagogue-research-guide';
+import { article as a1063 } from './articles/peptide-research-severe-obesity-class-iii-glp1-protocols';
+import { article as a1064 } from './articles/peptide-summer-heat-storage-stability-research-protocols';
 
 
 export const articles: BlogArticle[] = [
@@ -2038,6 +2041,9 @@ export const articles: BlogArticle[] = [
   a1059,
   a1060,
   a1061,
+  a1062,
+  a1063,
+  a1064,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
