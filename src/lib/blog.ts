@@ -987,6 +987,9 @@ import { article as a969 } from './articles/bpc-157-muscle-recovery-research-202
 import { article as a1035 } from './articles/peptide-research-type-1-diabetes-autoimmune-protocols';
 import { article as a1036 } from './articles/glp1-agonists-hair-loss-research-guide';
 import { article as a1037 } from './articles/peptide-research-exercise-performance-strength-endurance-2026';
+import { article as a1038 } from './articles/peptide-research-ibs-irritable-bowel-syndrome-gut-motility-bpc157-kpv';
+import { article as a1039 } from './articles/peptide-research-erectile-dysfunction-sexual-function-pt141-bpc157-oxytocin';
+import { article as a1040 } from './articles/peptide-research-recovery-overtraining-syndrome-bpc157-tb500-cjc1295-athlete-models';
 
 
 export const articles: BlogArticle[] = [
@@ -1990,6 +1993,9 @@ export const articles: BlogArticle[] = [
   a1035,
   a1036,
   a1037,
+  a1038,
+  a1039,
+  a1040,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
