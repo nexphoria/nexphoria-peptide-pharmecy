@@ -1020,6 +1020,9 @@ import { article as a1067 } from './articles/high-altitude-hypoxia-peptide-resea
 import { article as a1068 } from './articles/peptide-research-summer-2026-seasonal-considerations';
 import { article as a1069 } from './articles/peptide-research-placebo-controlled-design-fundamentals';
 import { article as a1070 } from './articles/peptide-vial-inspection-quality-checklist';
+import { article as a1071 } from './articles/tirzepatide-side-effects-research-guide';
+import { article as a1072 } from './articles/tb-500-side-effects-research-guide';
+import { article as a1073 } from './articles/mk-677-side-effects-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2056,6 +2059,9 @@ export const articles: BlogArticle[] = [
   a1068,
   a1069,
   a1070,
+  a1071,
+  a1072,
+  a1073,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
