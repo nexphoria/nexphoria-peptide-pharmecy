@@ -999,6 +999,9 @@ import { article as a1046 } from './articles/nad-plus-vs-nmn-longevity-research-
 import { article as a1047 } from './articles/peptide-research-powerlifting-strength-protocols-2026';
 import { article as a1048 } from './articles/peptide-research-marathon-endurance-protocols-2026';
 import { article as a1049 } from './articles/peptide-research-eye-vision-retinal-neuroprotection-2026';
+import { article as a1050 } from './articles/bpc-157-vs-mk-677-research-comparison';
+import { article as a1051 } from './articles/peptide-research-injury-recovery-complete-guide-2026';
+import { article as a1052 } from './articles/where-to-buy-cjc-1295-ipamorelin-blend-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2014,6 +2017,9 @@ export const articles: BlogArticle[] = [
   a1047,
   a1048,
   a1049,
+  a1050,
+  a1051,
+  a1052,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
