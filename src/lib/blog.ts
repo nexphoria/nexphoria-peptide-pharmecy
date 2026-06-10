@@ -1026,6 +1026,9 @@ import { article as a1073 } from './articles/mk-677-side-effects-research-guide'
 import { article as a1074 } from './articles/nad-plus-vs-nmn-longevity-research';
 import { article as a1075 } from './articles/longevity-peptide-stack-2026';
 import { article as a1076 } from './articles/peptide-purity-hplc-testing-guide';
+import { article as a1077 } from './articles/ara-290-erythropoietin-derived-neuroprotective-peptide-research';
+import { article as a1078 } from './articles/colivelin-s14g-humanin-potent-neuroprotective-peptide-research';
+import { article as a1079 } from './articles/unacylated-ghrelin-des-acyl-ghrelin-metabolic-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2068,6 +2071,9 @@ export const articles: BlogArticle[] = [
   a1074,
   a1075,
   a1076,
+  a1077,
+  a1078,
+  a1079,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
