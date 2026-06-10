@@ -984,6 +984,9 @@ import { article as a1034 } from './articles/cotadutide-glp1-gcg-dual-agonist-ma
 import { article as a967 } from './articles/peptide-research-basics-complete-guide-2026';
 import { article as a968 } from './articles/ghk-cu-skin-aging-complete-guide-2026';
 import { article as a969 } from './articles/bpc-157-muscle-recovery-research-2026';
+import { article as a1035 } from './articles/peptide-research-type-1-diabetes-autoimmune-protocols';
+import { article as a1036 } from './articles/glp1-agonists-hair-loss-research-guide';
+import { article as a1037 } from './articles/peptide-research-exercise-performance-strength-endurance-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -1984,6 +1987,9 @@ export const articles: BlogArticle[] = [
   a1032,
   a1033,
   a1034,
+  a1035,
+  a1036,
+  a1037,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
