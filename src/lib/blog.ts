@@ -1177,6 +1177,9 @@ import { article as a1236 } from './articles/how-long-does-nad-plus-take-to-work
 import { article as a1237 } from './articles/peptide-immunogenicity-ada-anti-drug-antibody-research-guide';
 import { article as a1238 } from './articles/peptide-in-silico-computational-design-research-guide';
 import { article as a1239 } from './articles/semax-dosing-timing-protocol-design-researchers-reference';
+import { article as a1240 } from './articles/best-peptides-triathletes-research-2026';
+import { article as a1241 } from './articles/peptide-research-postpartum-recovery-guide';
+import { article as a1242 } from './articles/best-peptides-desk-workers-remote-work-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2370,6 +2373,9 @@ export const articles: BlogArticle[] = [
   a1237,
   a1238,
   a1239,
+  a1240,
+  a1241,
+  a1242,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
