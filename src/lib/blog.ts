@@ -1203,6 +1203,9 @@ import { article as a1259 } from './articles/how-long-does-pt-141-take-to-work-r
 import { article as a1260 } from './articles/best-peptides-muscle-recovery-five-studies';
 import { article as a1261 } from './articles/nad-plus-longevity-coenzyme-research-why-it-matters';
 import { article as a1262 } from './articles/semaglutide-glp1-research-peptide-mechanisms-2026';
+import { article as a1263 } from './articles/cjc-1295-ipamorelin-stack-synergy-research-guide';
+import { article as a1264 } from './articles/hexarelin-cardioprotection-ghs-r1a-cardiac-research';
+import { article as a1265 } from './articles/nad-plus-vs-nmn-vs-nr-precursor-comparison-research';
 
 
 export const articles: BlogArticle[] = [
@@ -2422,6 +2425,9 @@ export const articles: BlogArticle[] = [
   a1260,
   a1261,
   a1262,
+  a1263,
+  a1264,
+  a1265,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
