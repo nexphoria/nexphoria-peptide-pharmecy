@@ -1099,6 +1099,9 @@ import { article as a1158 } from './articles/peptide-sourcing-quality-checklist-
 import { article as a1159 } from './articles/igf-1-lr3-vs-igf-1-des-research-comparison';
 import { article as a1160 } from './articles/peg-mgf-mechano-growth-factor-muscle-research-guide';
 import { article as a1161 } from './articles/peptide-research-chronic-fatigue-syndrome-cfs-me-bpc157-nad-tb500';
+import { article as a1162 } from './articles/anti-aging-peptide-stack';
+import { article as a1163 } from './articles/muscle-building-peptide-protocol';
+import { article as a1164 } from './articles/peptide-cycling-protocols';
 
 
 export const articles: BlogArticle[] = [
@@ -2214,6 +2217,9 @@ export const articles: BlogArticle[] = [
   a1159,
   a1160,
   a1161,
+  a1162,
+  a1163,
+  a1164,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
