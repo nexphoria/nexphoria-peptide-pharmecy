@@ -1215,6 +1215,9 @@ import { article as a1271 } from './articles/where-to-buy-bradykinin-research-gu
 import { article as a1272 } from './articles/how-long-does-selank-take-to-work-research-timeline';
 import { article as a1273 } from './articles/how-long-does-retatrutide-take-to-work-research-timeline';
 import { article as a1274 } from './articles/how-long-does-thymosin-alpha-1-take-to-work-research-timeline';
+import { article as a1275 } from './articles/peptide-tolerance-tachyphylaxis-research-guide';
+import { article as a1276 } from './articles/peptides-women-hormonal-metabolic-research-guide';
+import { article as a1277 } from './articles/peptide-contamination-risks-research-sourcing-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2446,6 +2449,9 @@ export const articles: BlogArticle[] = [
   a1272,
   a1273,
   a1274,
+  a1275,
+  a1276,
+  a1277,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
