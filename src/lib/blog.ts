@@ -1162,6 +1162,9 @@ import { article as a1221 } from './articles/where-to-buy-spadin-research-guide'
 import { article as a1222 } from './articles/nexphoria-instagram-reels-content-strategy';
 import { article as a1223 } from './articles/peptide-research-youtube-content-strategy';
 import { article as a1224 } from './articles/research-peptide-reddit-community-engagement-guide';
+import { article as a1225 } from './articles/prolactin-peptide-neuroendocrine-research-guide';
+import { article as a1226 } from './articles/endothelin-1-cardiovascular-peptide-research-guide';
+import { article as a1227 } from './articles/dermorphin-deltorphin-opioid-peptides-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2340,6 +2343,9 @@ export const articles: BlogArticle[] = [
   a1222,
   a1223,
   a1224,
+  a1225,
+  a1226,
+  a1227,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
