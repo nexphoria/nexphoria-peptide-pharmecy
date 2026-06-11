@@ -1209,6 +1209,9 @@ import { article as a1265 } from './articles/nad-plus-vs-nmn-vs-nr-precursor-com
 import { article as a1266 } from './articles/where-to-buy-argireline-research-guide';
 import { article as a1267 } from './articles/where-to-buy-leuprolide-research-guide';
 import { article as a1268 } from './articles/where-to-buy-ace2-peptide-fragments-research-guide';
+import { article as a1269 } from './articles/where-to-buy-orexin-hypocretin-research-guide';
+import { article as a1270 } from './articles/where-to-buy-galanin-neuropeptide-research-guide';
+import { article as a1271 } from './articles/where-to-buy-bradykinin-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2434,6 +2437,9 @@ export const articles: BlogArticle[] = [
   a1266,
   a1267,
   a1268,
+  a1269,
+  a1270,
+  a1271,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
