@@ -1102,6 +1102,9 @@ import { article as a1161 } from './articles/peptide-research-chronic-fatigue-sy
 import { article as a1162 } from './articles/anti-aging-peptide-stack';
 import { article as a1163 } from './articles/muscle-building-peptide-protocol';
 import { article as a1164 } from './articles/peptide-cycling-protocols';
+import { article as a1165 } from './articles/peptide-research-tendons-ligaments-protocol-2026';
+import { article as a1166 } from './articles/peptide-research-gut-health-complete-guide-2026';
+import { article as a1167 } from './articles/best-peptides-crossfit-athletes-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2220,6 +2223,9 @@ export const articles: BlogArticle[] = [
   a1162,
   a1163,
   a1164,
+  a1165,
+  a1166,
+  a1167,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
