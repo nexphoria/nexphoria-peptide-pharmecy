@@ -1138,6 +1138,9 @@ import { article as a1197 } from './articles/cognitive-nootropic-peptide-researc
 import { article as a1198 } from './articles/peptide-sourcing-red-flags-guide-2026';
 import { article as a1199 } from './articles/cold-chain-failures-peptide-degradation-mechanisms-2026';
 import { article as a1200 } from './articles/hexarelin-cd36-cardiac-mechanism-research-deep-dive';
+import { article as a1201 } from './articles/selank-vs-semax-anxiolytic-nootropic-comparison-2026';
+import { article as a1202 } from './articles/nad-plus-nmn-nr-precursor-comparison-researchers-2026';
+import { article as a1203 } from './articles/bpc-157-sourcing-verification-checklist-researchers-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2292,6 +2295,9 @@ export const articles: BlogArticle[] = [
   a1198,
   a1199,
   a1200,
+  a1201,
+  a1202,
+  a1203,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
