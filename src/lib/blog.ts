@@ -1180,6 +1180,9 @@ import { article as a1239 } from './articles/semax-dosing-timing-protocol-design
 import { article as a1240 } from './articles/best-peptides-triathletes-research-2026';
 import { article as a1241 } from './articles/peptide-research-postpartum-recovery-guide';
 import { article as a1242 } from './articles/best-peptides-desk-workers-remote-work-research-2026';
+import { article as a1243 } from './articles/cardiogen-cardiac-peptide-bioregulator-research-guide';
+import { article as a1244 } from './articles/bronchogen-pulmonary-peptide-bioregulator-research-guide';
+import { article as a1245 } from './articles/livagen-hepatic-peptide-bioregulator-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2376,6 +2379,9 @@ export const articles: BlogArticle[] = [
   a1240,
   a1241,
   a1242,
+  a1243,
+  a1244,
+  a1245,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
