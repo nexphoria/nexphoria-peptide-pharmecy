@@ -1093,6 +1093,9 @@ import { article as a1152 } from './articles/best-peptides-triathlon-research-20
 import { article as a1153 } from './articles/peptides-for-aging-joints-research-guide-2026';
 import { article as a1154 } from './articles/glp1-agonists-2027-pipeline-research-guide';
 import { article as a1155 } from './articles/peptide-research-post-covid-long-haul-recovery-guide';
+import { article as a1156 } from './articles/peptide-cycling-on-off-protocols-receptor-sensitivity-research-guide';
+import { article as a1157 } from './articles/getting-started-peptide-research-beginners-complete-guide';
+import { article as a1158 } from './articles/peptide-sourcing-quality-checklist-supplier-vetting-researchers-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2202,6 +2205,9 @@ export const articles: BlogArticle[] = [
   a1153,
   a1154,
   a1155,
+  a1156,
+  a1157,
+  a1158,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
