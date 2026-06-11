@@ -1126,6 +1126,9 @@ import { article as a1185 } from './articles/peptide-reconstitution-beginners-20
 import { article as a1186 } from './articles/nad-plus-vs-nmn-direct-injection-comparison-2026';
 import { article as a1187 } from './articles/peptide-reconstitution-acetic-acid-vs-bacteriostatic-water-guide';
 import { article as a1188 } from './articles/longevity-peptide-stack-hallmarks-aging-2026-protocols';
+import { article as a1189 } from './articles/peptide-research-heat-shock-proteins-hsp70-hsp90-stress-biology';
+import { article as a1190 } from './articles/best-peptides-rock-climbing-research-2026';
+import { article as a1191 } from './articles/glp1-agonists-polycystic-ovary-syndrome-pcos-metabolic-research';
 
 
 export const articles: BlogArticle[] = [
@@ -2268,6 +2271,9 @@ export const articles: BlogArticle[] = [
   a1186,
   a1187,
   a1188,
+  a1189,
+  a1190,
+  a1191,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
