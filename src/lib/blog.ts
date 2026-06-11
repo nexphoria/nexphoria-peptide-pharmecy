@@ -1147,6 +1147,9 @@ import { article as a1206 } from './articles/longevity-peptide-stack-hallmarks-o
 import { article as a1207 } from './articles/how-long-does-ipamorelin-take-to-work-research-timeline';
 import { article as a1208 } from './articles/how-long-does-cjc-1295-take-to-work-research-timeline';
 import { article as a1209 } from './articles/best-peptides-hikers-outdoor-athletes-research-2026';
+import { article as a1210 } from './articles/hyperbaric-oxygen-therapy-hbot-peptide-research-synergy';
+import { article as a1211 } from './articles/prp-platelet-rich-plasma-peptide-research-synergy';
+import { article as a1212 } from './articles/best-peptides-bjj-grappling-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2310,6 +2313,9 @@ export const articles: BlogArticle[] = [
   a1207,
   a1208,
   a1209,
+  a1210,
+  a1211,
+  a1212,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
