@@ -1168,6 +1168,9 @@ import { article as a1227 } from './articles/dermorphin-deltorphin-opioid-peptid
 import { article as a1228 } from './articles/nexphoria-vs-rats-army-vendor-comparison';
 import { article as a1229 } from './articles/peptide-research-summer-travel-heat-guide-2026';
 import { article as a1230 } from './articles/how-to-maximize-peptide-research-results-guide';
+import { article as a1231 } from './articles/best-peptides-for-runners-research-2026';
+import { article as a1232 } from './articles/best-peptides-for-weight-loss-research-2026';
+import { article as a1233 } from './articles/best-peptides-for-anxiety-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2352,6 +2355,9 @@ export const articles: BlogArticle[] = [
   a1228,
   a1229,
   a1230,
+  a1231,
+  a1232,
+  a1233,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
