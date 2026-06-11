@@ -1165,6 +1165,9 @@ import { article as a1224 } from './articles/research-peptide-reddit-community-e
 import { article as a1225 } from './articles/prolactin-peptide-neuroendocrine-research-guide';
 import { article as a1226 } from './articles/endothelin-1-cardiovascular-peptide-research-guide';
 import { article as a1227 } from './articles/dermorphin-deltorphin-opioid-peptides-research-guide';
+import { article as a1228 } from './articles/nexphoria-vs-rats-army-vendor-comparison';
+import { article as a1229 } from './articles/peptide-research-summer-travel-heat-guide-2026';
+import { article as a1230 } from './articles/how-to-maximize-peptide-research-results-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2346,6 +2349,9 @@ export const articles: BlogArticle[] = [
   a1225,
   a1226,
   a1227,
+  a1228,
+  a1229,
+  a1230,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
