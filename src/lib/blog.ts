@@ -1150,6 +1150,9 @@ import { article as a1209 } from './articles/best-peptides-hikers-outdoor-athlet
 import { article as a1210 } from './articles/hyperbaric-oxygen-therapy-hbot-peptide-research-synergy';
 import { article as a1211 } from './articles/prp-platelet-rich-plasma-peptide-research-synergy';
 import { article as a1212 } from './articles/best-peptides-bjj-grappling-research-2026';
+import { article as a1213 } from './articles/longevity-peptide-stack-2026-research-overview';
+import { article as a1214 } from './articles/hexarelin-cardiac-gh-research-guide';
+import { article as a1215 } from './articles/nad-plus-longevity-sirtuins-parp-research';
 
 
 export const articles: BlogArticle[] = [
@@ -2316,6 +2319,9 @@ export const articles: BlogArticle[] = [
   a1210,
   a1211,
   a1212,
+  a1213,
+  a1214,
+  a1215,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
