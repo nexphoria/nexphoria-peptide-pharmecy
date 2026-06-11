@@ -1087,6 +1087,9 @@ import { article as a1146 } from './articles/best-peptides-pickleball-players-re
 import { article as a1147 } from './articles/what-real-coa-looks-like-fakes-miss';
 import { article as a1148 } from './articles/peptides-vs-hormones-key-differences';
 import { article as a1149 } from './articles/twelve-week-recomposition-stack-literature-protocol';
+import { article as a1150 } from './articles/best-peptides-football-players-research-2026';
+import { article as a1151 } from './articles/best-peptides-mma-martial-arts-research-2026';
+import { article as a1152 } from './articles/best-peptides-triathlon-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2190,6 +2193,9 @@ export const articles: BlogArticle[] = [
   a1147,
   a1148,
   a1149,
+  a1150,
+  a1151,
+  a1152,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
