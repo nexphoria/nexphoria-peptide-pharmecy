@@ -1144,6 +1144,9 @@ import { article as a1203 } from './articles/bpc-157-sourcing-verification-check
 import { article as a1204 } from './articles/nad-plus-vs-nmn-what-longevity-researchers-prefer-2026';
 import { article as a1205 } from './articles/how-to-reconstitute-peptides-research-protocol-guide-2026';
 import { article as a1206 } from './articles/longevity-peptide-stack-hallmarks-of-aging-researchers-2026';
+import { article as a1207 } from './articles/how-long-does-ipamorelin-take-to-work-research-timeline';
+import { article as a1208 } from './articles/how-long-does-cjc-1295-take-to-work-research-timeline';
+import { article as a1209 } from './articles/best-peptides-hikers-outdoor-athletes-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2304,6 +2307,9 @@ export const articles: BlogArticle[] = [
   a1204,
   a1205,
   a1206,
+  a1207,
+  a1208,
+  a1209,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
