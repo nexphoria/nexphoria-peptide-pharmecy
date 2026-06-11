@@ -1189,6 +1189,9 @@ import { article as a1248 } from './articles/selank-anxiolytic-nootropic-peptide
 import { article as a1249 } from './articles/sdf-1-cxcl12-stromal-derived-factor-peptide-research-guide';
 import { article as a1250 } from './articles/cyclic-constrained-peptides-research-chemistry-guide';
 import { article as a1251 } from './articles/thrombopoietin-tpo-hematopoietic-peptide-research-guide';
+import { article as a1252 } from './articles/nexphoria-quality-standards-coa-batch-hplc-ms-lal-2026';
+import { article as a1253 } from './articles/bpc-157-tb500-combined-research-protocol-design-2026';
+import { article as a1254 } from './articles/nad-plus-sirtuins-aging-hallmarks-longevity-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2394,6 +2397,9 @@ export const articles: BlogArticle[] = [
   a1249,
   a1250,
   a1251,
+  a1252,
+  a1253,
+  a1254,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
