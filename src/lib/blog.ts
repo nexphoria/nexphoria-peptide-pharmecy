@@ -1200,6 +1200,9 @@ import { article as a1046 } from './articles/peptide-research-insulin-resistance
 import { article as a1257 } from './articles/how-long-does-tirzepatide-take-to-work-research-timeline';
 import { article as a1258 } from './articles/how-long-does-epithalon-take-to-work-research-timeline';
 import { article as a1259 } from './articles/how-long-does-pt-141-take-to-work-research-timeline';
+import { article as a1260 } from './articles/best-peptides-muscle-recovery-five-studies';
+import { article as a1261 } from './articles/nad-plus-longevity-coenzyme-research-why-it-matters';
+import { article as a1262 } from './articles/semaglutide-glp1-research-peptide-mechanisms-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2416,6 +2419,9 @@ export const articles: BlogArticle[] = [
   a1257,
   a1258,
   a1259,
+  a1260,
+  a1261,
+  a1262,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
