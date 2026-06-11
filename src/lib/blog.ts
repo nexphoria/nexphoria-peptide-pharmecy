@@ -1212,6 +1212,9 @@ import { article as a1268 } from './articles/where-to-buy-ace2-peptide-fragments
 import { article as a1269 } from './articles/where-to-buy-orexin-hypocretin-research-guide';
 import { article as a1270 } from './articles/where-to-buy-galanin-neuropeptide-research-guide';
 import { article as a1271 } from './articles/where-to-buy-bradykinin-research-guide';
+import { article as a1272 } from './articles/how-long-does-selank-take-to-work-research-timeline';
+import { article as a1273 } from './articles/how-long-does-retatrutide-take-to-work-research-timeline';
+import { article as a1274 } from './articles/how-long-does-thymosin-alpha-1-take-to-work-research-timeline';
 
 
 export const articles: BlogArticle[] = [
@@ -2440,6 +2443,9 @@ export const articles: BlogArticle[] = [
   a1269,
   a1270,
   a1271,
+  a1272,
+  a1273,
+  a1274,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
