@@ -1153,6 +1153,9 @@ import { article as a1212 } from './articles/best-peptides-bjj-grappling-researc
 import { article as a1213 } from './articles/longevity-peptide-stack-2026-research-overview';
 import { article as a1214 } from './articles/hexarelin-cardiac-gh-research-guide';
 import { article as a1215 } from './articles/nad-plus-longevity-sirtuins-parp-research';
+import { article as a1216 } from './articles/longevity-peptide-stack-2026-research-overview';
+import { article as a1217 } from './articles/peptide-purity-hplc-testing-guide';
+import { article as a1218 } from './articles/selank-anxiety-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2322,6 +2325,9 @@ export const articles: BlogArticle[] = [
   a1213,
   a1214,
   a1215,
+  a1216,
+  a1217,
+  a1218,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

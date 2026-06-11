@@ -2,9 +2,8 @@ import type { BlogArticle } from '../blog-types';
 
 export const article: BlogArticle = {
   slug: "peptide-purity-hplc-testing-guide",
-  title: "Why HPLC Purity Testing Matters When Sourcing Peptides",
-  description:
-    "Why HPLC purity testing is the gold standard for research peptides — what the method measures, why ≥99% purity matters for experimental validity, and how it compares to mass spectrometry and LAL endotoxin testing.",
+  title: "Why HPLC Purity Testing Matters When Sourcing Research Peptides",
+  description: "Why HPLC purity testing is the gold standard for research peptides — what the method measures, why ≥99% purity matters for experimental validity, and how it compares to mass spectrometry and LAL endotoxin testing.",
   category: "Quality & Testing",
   readMinutes: 10,
   publishedAt: "2026-06-10",
@@ -20,11 +19,15 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "High-Performance Liquid Chromatography (HPLC) is an analytical technique that separates, identifies, and quantifies individual components within a mixture by passing the sample through a pressurized column packed with a stationary phase material. In the context of peptide analysis, reverse-phase HPLC (RP-HPLC) is the standard method. The stationary phase is a nonpolar material (typically C18-bonded silica), and peptide components separate based on their relative hydrophobicity. More hydrophobic peptides bind more strongly to the stationary phase and elute later, while less hydrophobic impurities (truncated sequences, deletion products) elute earlier. Each distinct molecular species produces a peak on the chromatogram. The relative area of each peak corresponds to the relative abundance of that component in the sample.",
+      text: "High-Performance Liquid Chromatography (HPLC) is an analytical technique that separates, identifies, and quantifies individual components within a mixture by passing the sample through a pressurized column packed with a stationary phase material.",
+    },
+    {
+      type: "paragraph",
+      text: "In the context of peptide analysis, reverse-phase HPLC (RP-HPLC) is the standard method. The stationary phase is a nonpolar material (typically C18-bonded silica), and peptide components separate based on their relative hydrophobicity. More hydrophobic peptides bind more strongly and elute later; less hydrophobic impurities (truncated sequences, deletion products) elute earlier. Each distinct molecular species produces a peak on the chromatogram. The relative area of each peak corresponds to the relative abundance of that component in the sample.",
     },
     {
       type: "heading",
-      text: "What Does ≥99% Pure Actually Mean?",
+      text: "What Does '≥99% Pure' Actually Mean?",
     },
     {
       type: "paragraph",
@@ -32,7 +35,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Consider why this level matters for research: a 10 mg/mL peptide solution at 95% HPLC purity contains 0.5 mg/mL of unknown impurities — potentially including biologically active fragments with different receptor binding profiles. For mechanistic research, this represents a significant confound. The 99% threshold exists specifically to reduce this variability to a level that is unlikely to materially affect experimental outcomes.",
+      text: "Consider a 10 mg/mL peptide solution at 95% HPLC purity. That preparation contains 0.5 mg/mL of unknown impurities — potentially including biologically active fragments with different receptor binding profiles. For mechanistic research, this represents a significant confound. The 99% threshold exists specifically to reduce this variability to a level that is unlikely to materially affect experimental outcomes.",
     },
     {
       type: "heading",
@@ -86,31 +89,36 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Electrospray Ionization Mass Spectrometry (ESI-MS) measures the mass-to-charge ratio (m/z) of ionized molecules. For peptide identity confirmation, the observed molecular weight is compared to the theoretical molecular weight of the target sequence — accurate mass confirmation requires a match within ±0.1–0.5 Da (instrument-dependent). MS can detect oxidation (+16 Da per oxygen), deamidation (+0.98 Da), and other common modifications. For modified peptides — those with fatty acid chains (semaglutide), unnatural amino acids, or PEG linkers — MS confirmation is non-negotiable. HPLC + MS together provide the complete picture: purity (how much) and identity (what it is).",
-    },
-    {
-      type: "heading",
-      text: "LAL Endotoxin Testing",
+      text: "Electrospray Ionization Mass Spectrometry (ESI-MS) measures the mass-to-charge ratio (m/z) of ionized molecules. For peptide identity confirmation, the observed molecular weight is compared to the theoretical molecular weight of the target sequence. Accurate mass confirmation requires a match within ±0.1–0.5 Da (instrument-dependent). MS can detect oxidation (+16 Da per oxygen), deamidation (+0.98 Da), and other common modifications.",
     },
     {
       type: "paragraph",
-      text: "Limulus Amebocyte Lysate (LAL) testing is the pharmacopoeial standard for detecting bacterial endotoxins in pharmaceutical and research compounds. Endotoxins (LPS from gram-negative bacteria) are potent immunostimulants — even trace contamination below 1 EU/mL can trigger inflammatory responses in in vivo models that mimic the compound's target effects, producing false-positive results in inflammatory studies. Accepted thresholds for research peptides are less than 1 EU/mg for standard research-grade material, and less than 0.1 EU/mg for preparations intended for IV or IP administration protocols.",
+      text: "HPLC tells you how pure the sample is. MS tells you what the dominant compound actually is. Both are required for a complete analytical picture.",
     },
     {
       type: "heading",
-      text: "How to Read a Peptide COA",
+      text: "LAL Endotoxin Testing: The Third Pillar",
     },
     {
-      type: "table",
-      headers: ["Field", "What to Check"],
-      rows: [
-        ["HPLC purity", "≥99%; includes chromatogram"],
-        ["Retention time", "Listed; consistent with peptide properties"],
-        ["MS data", "Observed MW matches theoretical ±0.5 Da"],
-        ["Endotoxin (LAL)", "Result in EU/mg; not just 'pass'"],
-        ["Lot number", "Matches your shipment"],
-        ["Test date", "Recent; within 6 months"],
-        ["Testing lab", "Third-party preferred over in-house"],
+      type: "paragraph",
+      text: "Limulus Amebocyte Lysate (LAL) testing detects bacterial endotoxins (lipopolysaccharide, LPS) using the clotting cascade of horseshoe crab blood. LAL is the pharmaceutical industry standard for endotoxin detection because it is exquisitely sensitive — detecting endotoxin at nanogram-per-mL concentrations.",
+    },
+    {
+      type: "paragraph",
+      text: "For research applications, endotoxin contamination is a critical confound: LPS activates Toll-like receptor 4 (TLR4), triggering inflammatory responses that can mask or exaggerate the effects of the compound being studied. A peptide that appears to produce a strong inflammatory response may simply be contaminated with LPS. This is especially important for in vitro cell culture work and in vivo immunological research.",
+    },
+    {
+      type: "heading",
+      text: "What a Complete COA Should Include",
+    },
+    {
+      type: "list",
+      items: [
+        "HPLC purity result with actual chromatogram (not just a number)",
+        "Mass spectrometry identity confirmation with observed vs. theoretical molecular weight",
+        "LAL endotoxin result with EU/mg figure and pass/fail specification",
+        "Lot/batch number traceable to production records",
+        "Storage and handling recommendations specific to the compound",
       ],
     },
     {
@@ -119,7 +127,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "HPLC purity testing is the foundation of research-grade peptide quality assessment, but it functions best as part of a complete analytical package: reverse-phase HPLC for purity, mass spectrometry for identity confirmation, and LAL testing for endotoxin safety. Understanding what each test measures — and what it cannot — allows researchers to evaluate supplier documentation critically rather than accepting headline numbers at face value. A certificate with a chromatogram, a matched molecular weight, and a LAL result is the minimum standard for credible research-grade peptides.",
+      text: "HPLC purity is the primary quantitative indicator of research peptide quality, but it is one component of a complete analytical profile. HPLC confirms that the preparation is predominantly a single compound; mass spectrometry confirms that compound is the correct sequence; LAL testing confirms it is free of endotoxin contamination. Researchers sourcing peptides should require all three data points before accepting material for experimental use.",
     },
     {
       type: "disclaimer",
