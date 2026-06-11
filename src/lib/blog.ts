@@ -1141,6 +1141,9 @@ import { article as a1200 } from './articles/hexarelin-cd36-cardiac-mechanism-re
 import { article as a1201 } from './articles/selank-vs-semax-anxiolytic-nootropic-comparison-2026';
 import { article as a1202 } from './articles/nad-plus-nmn-nr-precursor-comparison-researchers-2026';
 import { article as a1203 } from './articles/bpc-157-sourcing-verification-checklist-researchers-2026';
+import { article as a1204 } from './articles/nad-plus-vs-nmn-what-longevity-researchers-prefer-2026';
+import { article as a1205 } from './articles/how-to-reconstitute-peptides-research-protocol-guide-2026';
+import { article as a1206 } from './articles/longevity-peptide-stack-hallmarks-of-aging-researchers-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2298,6 +2301,9 @@ export const articles: BlogArticle[] = [
   a1201,
   a1202,
   a1203,
+  a1204,
+  a1205,
+  a1206,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
