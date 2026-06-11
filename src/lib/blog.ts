@@ -1132,6 +1132,9 @@ import { article as a1191 } from './articles/glp1-agonists-polycystic-ovary-synd
 import { article as a1192 } from './articles/best-peptides-esports-gaming-cognitive-research-2026';
 import { article as a1193 } from './articles/peptide-research-executive-productivity-cognitive-performance';
 import { article as a1194 } from './articles/best-peptides-scuba-diving-freediving-research-2026';
+import { article as a1195 } from './articles/nad-nmn-nr-forms-comparison-longevity-research-2026';
+import { article as a1196 } from './articles/ghs-r1a-receptor-biology-growth-hormone-secretagogue-research-2026';
+import { article as a1197 } from './articles/cognitive-nootropic-peptide-research-stack-guide-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2280,6 +2283,9 @@ export const articles: BlogArticle[] = [
   a1192,
   a1193,
   a1194,
+  a1195,
+  a1196,
+  a1197,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
