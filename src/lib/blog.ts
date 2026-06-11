@@ -1171,6 +1171,9 @@ import { article as a1230 } from './articles/how-to-maximize-peptide-research-re
 import { article as a1231 } from './articles/best-peptides-for-runners-research-2026';
 import { article as a1232 } from './articles/best-peptides-for-weight-loss-research-2026';
 import { article as a1233 } from './articles/best-peptides-for-anxiety-research-2026';
+import { article as a1234 } from './articles/how-long-does-sermorelin-take-to-work-research-timeline';
+import { article as a1235 } from './articles/how-long-does-ghk-cu-take-to-work-research-timeline';
+import { article as a1236 } from './articles/how-long-does-nad-plus-take-to-work-research-timeline';
 
 
 export const articles: BlogArticle[] = [
@@ -2358,6 +2361,9 @@ export const articles: BlogArticle[] = [
   a1231,
   a1232,
   a1233,
+  a1234,
+  a1235,
+  a1236,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
