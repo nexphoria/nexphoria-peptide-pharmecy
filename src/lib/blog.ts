@@ -1197,6 +1197,9 @@ import { article as a1256 } from './articles/best-peptide-vendor-2026-review';
 import { article as a1005 } from './articles/peptide-research-vo2max-aerobic-capacity-protocols-2026';
 import { article as a1022 } from './articles/where-to-buy-cagrilintide-semaglutide-cagrima-research-guide';
 import { article as a1046 } from './articles/peptide-research-insulin-resistance-complete-protocol-2026';
+import { article as a1257 } from './articles/how-long-does-tirzepatide-take-to-work-research-timeline';
+import { article as a1258 } from './articles/how-long-does-epithalon-take-to-work-research-timeline';
+import { article as a1259 } from './articles/how-long-does-pt-141-take-to-work-research-timeline';
 
 
 export const articles: BlogArticle[] = [
@@ -2410,6 +2413,9 @@ export const articles: BlogArticle[] = [
   a1005,
   a1022,
   a1046,
+  a1257,
+  a1258,
+  a1259,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
