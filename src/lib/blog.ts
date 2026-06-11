@@ -1135,6 +1135,9 @@ import { article as a1194 } from './articles/best-peptides-scuba-diving-freedivi
 import { article as a1195 } from './articles/nad-nmn-nr-forms-comparison-longevity-research-2026';
 import { article as a1196 } from './articles/ghs-r1a-receptor-biology-growth-hormone-secretagogue-research-2026';
 import { article as a1197 } from './articles/cognitive-nootropic-peptide-research-stack-guide-2026';
+import { article as a1198 } from './articles/peptide-sourcing-red-flags-guide-2026';
+import { article as a1199 } from './articles/cold-chain-failures-peptide-degradation-mechanisms-2026';
+import { article as a1200 } from './articles/hexarelin-cd36-cardiac-mechanism-research-deep-dive';
 
 
 export const articles: BlogArticle[] = [
@@ -2286,6 +2289,9 @@ export const articles: BlogArticle[] = [
   a1195,
   a1196,
   a1197,
+  a1198,
+  a1199,
+  a1200,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
