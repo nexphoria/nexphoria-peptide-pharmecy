@@ -1183,6 +1183,9 @@ import { article as a1242 } from './articles/best-peptides-desk-workers-remote-w
 import { article as a1243 } from './articles/cardiogen-cardiac-peptide-bioregulator-research-guide';
 import { article as a1244 } from './articles/bronchogen-pulmonary-peptide-bioregulator-research-guide';
 import { article as a1245 } from './articles/livagen-hepatic-peptide-bioregulator-research-guide';
+import { article as a1246 } from './articles/bpc-157-tb-500-combined-research-protocol-guide';
+import { article as a1247 } from './articles/peptide-purity-hplc-testing-researchers-guide';
+import { article as a1248 } from './articles/selank-anxiolytic-nootropic-peptide-research-review';
 
 
 export const articles: BlogArticle[] = [
@@ -2382,6 +2385,9 @@ export const articles: BlogArticle[] = [
   a1243,
   a1244,
   a1245,
+  a1246,
+  a1247,
+  a1248,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
