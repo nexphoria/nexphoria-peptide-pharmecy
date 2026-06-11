@@ -1081,6 +1081,9 @@ import { article as a1140 } from './articles/best-peptides-basketball-performanc
 import { article as a1141 } from './articles/peptide-research-summer-heat-stability-guide-2026';
 import { article as a1142 } from './articles/bpc-157-vs-nad-plus-research-comparison-2026';
 import { article as a1143 } from './articles/peptide-research-weight-training-hypertrophy-protocols-2026';
+import { article as a1144 } from './articles/best-peptides-tennis-players-research-2026';
+import { article as a1145 } from './articles/best-peptides-soccer-players-research-2026';
+import { article as a1146 } from './articles/best-peptides-pickleball-players-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2178,6 +2181,9 @@ export const articles: BlogArticle[] = [
   a1141,
   a1142,
   a1143,
+  a1144,
+  a1145,
+  a1146,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
