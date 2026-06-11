@@ -1194,6 +1194,9 @@ import { article as a1253 } from './articles/bpc-157-tb500-combined-research-pro
 import { article as a1254 } from './articles/nad-plus-sirtuins-aging-hallmarks-longevity-2026';
 import { article as a1255 } from './articles/are-peptides-legal-usa-2026';
 import { article as a1256 } from './articles/best-peptide-vendor-2026-review';
+import { article as a1005 } from './articles/peptide-research-vo2max-aerobic-capacity-protocols-2026';
+import { article as a1022 } from './articles/where-to-buy-cagrilintide-semaglutide-cagrima-research-guide';
+import { article as a1046 } from './articles/peptide-research-insulin-resistance-complete-protocol-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2404,6 +2407,9 @@ export const articles: BlogArticle[] = [
   a1254,
   a1255,
   a1256,
+  a1005,
+  a1022,
+  a1046,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
