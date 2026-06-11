@@ -1123,6 +1123,9 @@ import { article as a1182 } from './articles/peptide-research-high-altitude-moun
 import { article as a1183 } from './articles/peptide-buyer-guide-usa-2026';
 import { article as a1184 } from './articles/peptide-storage-best-practices-2026';
 import { article as a1185 } from './articles/peptide-reconstitution-beginners-2026';
+import { article as a1186 } from './articles/nad-plus-vs-nmn-direct-injection-comparison-2026';
+import { article as a1187 } from './articles/peptide-reconstitution-acetic-acid-vs-bacteriostatic-water-guide';
+import { article as a1188 } from './articles/longevity-peptide-stack-hallmarks-aging-2026-protocols';
 
 
 export const articles: BlogArticle[] = [
@@ -2262,6 +2265,9 @@ export const articles: BlogArticle[] = [
   a1183,
   a1184,
   a1185,
+  a1186,
+  a1187,
+  a1188,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
