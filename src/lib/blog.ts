@@ -1192,6 +1192,8 @@ import { article as a1251 } from './articles/thrombopoietin-tpo-hematopoietic-pe
 import { article as a1252 } from './articles/nexphoria-quality-standards-coa-batch-hplc-ms-lal-2026';
 import { article as a1253 } from './articles/bpc-157-tb500-combined-research-protocol-design-2026';
 import { article as a1254 } from './articles/nad-plus-sirtuins-aging-hallmarks-longevity-2026';
+import { article as a1255 } from './articles/are-peptides-legal-usa-2026';
+import { article as a1256 } from './articles/best-peptide-vendor-2026-review';
 
 
 export const articles: BlogArticle[] = [
@@ -2400,6 +2402,8 @@ export const articles: BlogArticle[] = [
   a1252,
   a1253,
   a1254,
+  a1255,
+  a1256,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
