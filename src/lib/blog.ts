@@ -1111,6 +1111,9 @@ import { article as a1170 } from './articles/peptide-research-diabetes-type2-glp
 import { article as a1171 } from './articles/best-peptides-baseball-players-research-2026';
 import { article as a1172 } from './articles/best-peptides-volleyball-players-research-2026';
 import { article as a1173 } from './articles/best-peptides-track-field-athletes-research-2026';
+import { article as a1174 } from './articles/best-peptides-hockey-players-research-2026';
+import { article as a1175 } from './articles/best-peptides-boxing-performance-research-2026';
+import { article as a1176 } from './articles/best-peptides-wrestling-performance-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2238,6 +2241,9 @@ export const articles: BlogArticle[] = [
   a1171,
   a1172,
   a1173,
+  a1174,
+  a1175,
+  a1176,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
