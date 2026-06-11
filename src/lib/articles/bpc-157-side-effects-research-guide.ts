@@ -67,23 +67,23 @@ export const article: BlogArticle = {
       text: "Across the available literature, the following adverse findings have not been consistently documented in BPC-157 animal studies:",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "Hepatotoxicity: Liver enzyme markers (ALT, AST) have not shown significant elevation in published BPC-157 studies at therapeutic doses",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "Nephrotoxicity: Renal function markers have been stable across studies",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "Hormonal disruption: Unlike peptides acting on the GH/IGF-1 axis, BPC-157 does not appear to directly modulate hypothalamic-pituitary hormones",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "Immunosuppression: Studies examining immune markers have generally shown neutral to beneficial effects on immune function",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "Mutagenicity or oncogenicity: No studies have documented tumor formation or DNA damage associated with BPC-157 exposure",
     },
     {
@@ -95,19 +95,19 @@ export const article: BlogArticle = {
       text: "The BPC-157 safety literature has important limitations researchers should understand:",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "Most published studies originate from a single research group (Sikiric, University of Zagreb). Independent replication is improving but remains limited for safety-specific endpoints",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "No peer-reviewed human clinical trials examining BPC-157 safety have been completed and published as of 2026",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "Long-term exposure studies in animals (>3 months) are limited in number",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "Most safety data comes from healthy rodent models; data in compromised physiological states (immunocompromised, metabolic disease models) is sparse",
     },
     {

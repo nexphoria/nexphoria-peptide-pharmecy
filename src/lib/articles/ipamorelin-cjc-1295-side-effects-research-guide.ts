@@ -43,19 +43,19 @@ export const article: BlogArticle = {
       text: "Documented Adverse Events with Ipamorelin",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "Water retention: GH elevation drives IGF-1 production, which in turn promotes sodium and water retention. In human studies with GH secretagogues, this manifests as facial puffiness and peripheral edema in some subjects. For animal research, this represents a confound for body composition measurements.",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "Hunger stimulation: Ipamorelin binds the ghrelin receptor (GHSR-1a), which is centrally involved in hunger signaling. Appetite stimulation is a documented pharmacological effect that may represent an adverse effect in certain research contexts.",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "Injection site reactions: As with most subcutaneously administered peptides, mild local reactions (transient redness, swelling, itching at injection site) have been documented. These are typically attributed to the injection itself and are minimized with proper sterile technique.",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "Transient flushing: Some research subjects and clinical program participants report transient warmth or flushing shortly after administration, consistent with vasodilatory effects of GH signaling.",
     },
     {
@@ -71,19 +71,19 @@ export const article: BlogArticle = {
       text: "Documented Effects in Research Context",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "Sustained GH elevation with CJC-1295 DAC: Unlike pulsatile GH secretagogues, the DAC formulation produces prolonged basal GH elevation. Research suggests this differs qualitatively from physiological pulsatile GH secretion, potentially affecting IGF-1 dynamics differently.",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "IGF-1 elevation: CJC-1295 consistently elevates IGF-1 in clinical and pre-clinical studies. At high doses or prolonged use, researchers should monitor IGF-1 as an endpoint and potential adverse biomarker.",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "Antibody formation: CJC-1295 studies have noted low-level anti-drug antibody formation in some subjects, consistent with exogenous peptide administration. This has not produced clinical adverse events in published studies but represents a variable for researchers.",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "Headache: Reported in a subset of human participants in early phase CJC-1295 studies, likely related to changes in cerebral vasodilation associated with GH signaling.",
     },
     {
@@ -107,19 +107,19 @@ export const article: BlogArticle = {
       text: "What Has Not Been Documented",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "No hepatotoxicity has been documented with either compound in published studies",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "No renal toxicity markers have been significantly elevated in research protocols",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "No cardiovascular adverse events have been attributed to ipamorelin or CJC-1295 specifically (as distinct from GH effects)",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "No oncogenic signal has been established in available literature, though researchers note the theoretical concern with sustained IGF-1 elevation and should monitor appropriately",
     },
     {

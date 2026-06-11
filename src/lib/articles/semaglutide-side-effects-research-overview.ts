@@ -27,23 +27,23 @@ export const article: BlogArticle = {
       text: "GI Adverse Event Frequency (STEP 1, Ozempic 2.4mg)",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "Nausea: 44% semaglutide vs 16% placebo — the most common adverse event across trials",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "Diarrhea: 30% semaglutide vs 16% placebo",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "Vomiting: 24% semaglutide vs 6% placebo",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "Constipation: 24% semaglutide vs 11% placebo",
     },
     {
-      type: "bullet",
+      type: "list",
       text: "Abdominal pain: 20% semaglutide vs 10% placebo",
     },
     {
