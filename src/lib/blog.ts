@@ -1129,6 +1129,9 @@ import { article as a1188 } from './articles/longevity-peptide-stack-hallmarks-a
 import { article as a1189 } from './articles/peptide-research-heat-shock-proteins-hsp70-hsp90-stress-biology';
 import { article as a1190 } from './articles/best-peptides-rock-climbing-research-2026';
 import { article as a1191 } from './articles/glp1-agonists-polycystic-ovary-syndrome-pcos-metabolic-research';
+import { article as a1192 } from './articles/best-peptides-esports-gaming-cognitive-research-2026';
+import { article as a1193 } from './articles/peptide-research-executive-productivity-cognitive-performance';
+import { article as a1194 } from './articles/best-peptides-scuba-diving-freediving-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2274,6 +2277,9 @@ export const articles: BlogArticle[] = [
   a1189,
   a1190,
   a1191,
+  a1192,
+  a1193,
+  a1194,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
