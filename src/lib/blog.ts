@@ -1251,6 +1251,9 @@ import { article as a1307 } from './articles/how-long-does-kpv-take-to-work-rese
 import { article as a1308 } from './articles/how-long-does-ghrp-6-take-to-work-research-timeline';
 import { article as a1309 } from './articles/how-long-does-follistatin-344-take-to-work-research-timeline';
 import { article as a1310 } from './articles/best-peptides-night-shift-workers-research-2026';
+import { article as a1311 } from './articles/glp1-agonists-nonalcoholic-steatohepatitis-nash-complete-guide';
+import { article as a1312 } from './articles/how-long-does-tb4-frag-take-to-work-research-timeline';
+import { article as a1313 } from './articles/best-peptides-for-surfers-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2518,6 +2521,9 @@ export const articles: BlogArticle[] = [
   a1308,
   a1309,
   a1310,
+  a1311,
+  a1312,
+  a1313,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
