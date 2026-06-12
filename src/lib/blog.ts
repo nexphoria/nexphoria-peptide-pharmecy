@@ -1248,6 +1248,9 @@ import { article as a1304 } from './articles/cjc-1295-aging-research-guide';
 import { article as a1305 } from './articles/how-long-does-ghrp-2-take-to-work-research-timeline';
 import { article as a1306 } from './articles/how-long-does-tesamorelin-take-to-work-research-timeline';
 import { article as a1307 } from './articles/how-long-does-kpv-take-to-work-research-timeline';
+import { article as a1308 } from './articles/how-long-does-ghrp-6-take-to-work-research-timeline';
+import { article as a1309 } from './articles/how-long-does-follistatin-344-take-to-work-research-timeline';
+import { article as a1310 } from './articles/best-peptides-night-shift-workers-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2512,6 +2515,9 @@ export const articles: BlogArticle[] = [
   a1305,
   a1306,
   a1307,
+  a1308,
+  a1309,
+  a1310,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
