@@ -1218,6 +1218,9 @@ import { article as a1274 } from './articles/how-long-does-thymosin-alpha-1-take
 import { article as a1275 } from './articles/peptide-tolerance-tachyphylaxis-research-guide';
 import { article as a1276 } from './articles/peptides-women-hormonal-metabolic-research-guide';
 import { article as a1277 } from './articles/peptide-contamination-risks-research-sourcing-guide';
+import { article as a1278 } from './articles/peptide-reconstitution-dosage-calculator-guide';
+import { article as a1279 } from './articles/bpc-157-vs-ghk-cu-peptide-comparison-research';
+import { article as a1280 } from './articles/peptide-fertility-reproductive-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2452,6 +2455,9 @@ export const articles: BlogArticle[] = [
   a1275,
   a1276,
   a1277,
+  a1278,
+  a1279,
+  a1280,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
