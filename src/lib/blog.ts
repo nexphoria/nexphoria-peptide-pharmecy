@@ -1335,6 +1335,9 @@ import { article as a1391 } from './articles/peptide-reconstitution-complete-pro
 import { article as a1392 } from './articles/how-long-does-melanotan-ii-take-to-work-research-timeline';
 import { article as a1393 } from './articles/how-long-does-mazdutide-take-to-work-research-timeline';
 import { article as a1394 } from './articles/where-to-buy-mazdutide-research-guide';
+import { article as a1395 } from './articles/peptide-research-gut-skin-axis';
+import { article as a1396 } from './articles/peptide-research-artificial-intelligence-drug-discovery';
+import { article as a1397 } from './articles/peptide-research-ozempic-face-body-recomposition';
 
 
 export const articles: BlogArticle[] = [
@@ -2686,6 +2689,9 @@ export const articles: BlogArticle[] = [
   a1392,
   a1393,
   a1394,
+  a1395,
+  a1396,
+  a1397,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
