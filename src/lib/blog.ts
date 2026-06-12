@@ -1257,6 +1257,9 @@ import { article as a1313 } from './articles/best-peptides-for-surfers-research-
 import { article as a1314 } from './articles/bpc-157-acne-rosacea-skin-inflammation-research';
 import { article as a1315 } from './articles/nexphoria-vs-peptide-depot-vendor-comparison';
 import { article as a1316 } from './articles/peptide-research-cold-plunge-ice-bath-synergy';
+import { article as a1317 } from './articles/how-long-does-ss-31-take-to-work-research-timeline';
+import { article as a1318 } from './articles/how-long-does-oxytocin-take-to-work-research-timeline';
+import { article as a1319 } from './articles/best-peptides-healthcare-workers-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2530,6 +2533,9 @@ export const articles: BlogArticle[] = [
   a1314,
   a1315,
   a1316,
+  a1317,
+  a1318,
+  a1319,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
