@@ -1269,6 +1269,9 @@ import { article as a1325 } from './articles/where-to-buy-bpc-157-arginate-pda-r
 import { article as a1326 } from './articles/how-long-does-melanotan-2-take-to-work-research-timeline';
 import { article as a1327 } from './articles/how-long-does-mots-c-take-to-work-research-timeline';
 import { article as a1328 } from './articles/how-long-does-snap-8-take-to-work-research-timeline';
+import { article as a1329 } from './articles/longevity-peptide-stack-2026-research-guide';
+import { article as a1330 } from './articles/hplc-purity-testing-research-peptides-guide';
+import { article as a1331 } from './articles/peptide-reconstitution-protocol-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2554,6 +2557,9 @@ export const articles: BlogArticle[] = [
   a1326,
   a1327,
   a1328,
+  a1329,
+  a1330,
+  a1331,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
