@@ -1236,6 +1236,9 @@ import { article as a1292 } from './articles/peptide-chemistry-fundamentals-mole
 import { article as a1293 } from './articles/how-long-does-hexarelin-take-to-work-research-timeline';
 import { article as a1294 } from './articles/how-long-does-ll-37-take-to-work-research-timeline';
 import { article as a1295 } from './articles/how-long-does-kisspeptin-take-to-work-research-timeline';
+import { article as a1296 } from './articles/peptide-research-menopause-complete-guide-2026';
+import { article as a1297 } from './articles/semax-vs-selank-research-comparison-2026';
+import { article as a1298 } from './articles/glp1-agonists-cognitive-decline-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2488,6 +2491,9 @@ export const articles: BlogArticle[] = [
   a1293,
   a1294,
   a1295,
+  a1296,
+  a1297,
+  a1298,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
