@@ -1230,6 +1230,9 @@ import { article as a1286 } from './articles/how-to-read-peptide-coa-2026-guide'
 import { article as a1287 } from './articles/peptide-toxicity-safety-profiles-research-guide';
 import { article as a1288 } from './articles/peptide-photodegradation-uv-light-oxidation-research-guide';
 import { article as a1289 } from './articles/peptide-aggregation-cloudy-vial-troubleshooting-guide';
+import { article as a1290 } from './articles/peptide-combination-safety-interactions-contraindications-research-guide';
+import { article as a1291 } from './articles/research-peptide-market-landscape-2026';
+import { article as a1292 } from './articles/peptide-chemistry-fundamentals-molecular-weight-structure-researchers-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2476,6 +2479,9 @@ export const articles: BlogArticle[] = [
   a1287,
   a1288,
   a1289,
+  a1290,
+  a1291,
+  a1292,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
