@@ -1293,6 +1293,9 @@ import { article as a1349 } from './articles/how-long-does-triptorelin-take-to-w
 import { article as a1350 } from './articles/bioactive-food-derived-peptides-lactoferrin-casein-research-guide';
 import { article as a1351 } from './articles/klotho-beta-fgf21-liver-metabolic-longevity-axis-research';
 import { article as a1352 } from './articles/peptide-research-vs-anabolic-steroids-mechanism-comparison-2026';
+import { article as a1353 } from './articles/peptide-research-busy-professional-guide-2026';
+import { article as a1354 } from './articles/how-to-choose-peptide-stack-goal-based-guide-2026';
+import { article as a1355 } from './articles/nexphoria-vs-peptide-bay-vendor-comparison';
 
 
 export const articles: BlogArticle[] = [
@@ -2602,6 +2605,9 @@ export const articles: BlogArticle[] = [
   a1350,
   a1351,
   a1352,
+  a1353,
+  a1354,
+  a1355,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
