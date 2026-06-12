@@ -1245,6 +1245,9 @@ import { article as a1301 } from './articles/selank-enkephalin-bdnf-anxiolytic-m
 import { article as a1302 } from './articles/nad-plus-fasting-synergy-research';
 import { article as a1303 } from './articles/ghk-cu-wound-healing-complete-guide';
 import { article as a1304 } from './articles/cjc-1295-aging-research-guide';
+import { article as a1305 } from './articles/how-long-does-ghrp-2-take-to-work-research-timeline';
+import { article as a1306 } from './articles/how-long-does-tesamorelin-take-to-work-research-timeline';
+import { article as a1307 } from './articles/how-long-does-kpv-take-to-work-research-timeline';
 
 
 export const articles: BlogArticle[] = [
@@ -2506,6 +2509,9 @@ export const articles: BlogArticle[] = [
   a1302,
   a1303,
   a1304,
+  a1305,
+  a1306,
+  a1307,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
