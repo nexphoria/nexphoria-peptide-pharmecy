@@ -1221,6 +1221,9 @@ import { article as a1277 } from './articles/peptide-contamination-risks-researc
 import { article as a1278 } from './articles/peptide-reconstitution-dosage-calculator-guide';
 import { article as a1279 } from './articles/bpc-157-vs-ghk-cu-peptide-comparison-research';
 import { article as a1280 } from './articles/peptide-fertility-reproductive-research-guide';
+import { article as a1281 } from './articles/how-long-does-semax-take-to-work-research-timeline';
+import { article as a1282 } from './articles/how-long-does-aod-9604-take-to-work-research-timeline';
+import { article as a1283 } from './articles/how-long-does-dsip-take-to-work-research-timeline';
 
 
 export const articles: BlogArticle[] = [
@@ -2458,6 +2461,9 @@ export const articles: BlogArticle[] = [
   a1278,
   a1279,
   a1280,
+  a1281,
+  a1282,
+  a1283,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
