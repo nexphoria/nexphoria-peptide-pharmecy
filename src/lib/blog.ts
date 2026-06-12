@@ -1260,6 +1260,9 @@ import { article as a1316 } from './articles/peptide-research-cold-plunge-ice-ba
 import { article as a1317 } from './articles/how-long-does-ss-31-take-to-work-research-timeline';
 import { article as a1318 } from './articles/how-long-does-oxytocin-take-to-work-research-timeline';
 import { article as a1319 } from './articles/best-peptides-healthcare-workers-research-2026';
+import { article as a1320 } from './articles/selank-anxiety-vs-phenibut-gaba-peptide-research-comparison';
+import { article as a1321 } from './articles/thymosin-alpha-1-covid-sepsis-immune-paralysis-research-2026';
+import { article as a1322 } from './articles/nexphoria-vs-peptide-sciences-quality-standards-post-shutdown';
 
 
 export const articles: BlogArticle[] = [
@@ -2536,6 +2539,9 @@ export const articles: BlogArticle[] = [
   a1317,
   a1318,
   a1319,
+  a1320,
+  a1321,
+  a1322,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
