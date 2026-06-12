@@ -1344,6 +1344,9 @@ import { article as a1400 } from './articles/peptide-research-testosterone-optim
 import { article as a1401 } from './articles/peptide-research-june-2026-seasonal-update';
 import { article as a1402 } from './articles/ghk-cu-bpc-157-longevity-stack-research-guide';
 import { article as a1403 } from './articles/best-peptides-summer-2026-heat-resilience-research';
+import { article as a1404 } from './articles/how-long-does-argireline-take-to-work-research-timeline';
+import { article as a1405 } from './articles/how-long-does-hgh-fragment-176-191-take-to-work-research-timeline';
+import { article as a1406 } from './articles/how-long-does-cjc-1295-dac-take-to-work-research-timeline';
 
 
 export const articles: BlogArticle[] = [
@@ -2704,6 +2707,9 @@ export const articles: BlogArticle[] = [
   a1401,
   a1402,
   a1403,
+  a1404,
+  a1405,
+  a1406,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
