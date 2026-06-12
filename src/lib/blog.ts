@@ -1242,6 +1242,9 @@ import { article as a1298 } from './articles/glp1-agonists-cognitive-decline-res
 import { article as a1299 } from './articles/epithalon-khavinson-telomerase-longevity-research';
 import { article as a1300 } from './articles/hexarelin-ischemia-reperfusion-cd36-cardiac-research';
 import { article as a1301 } from './articles/selank-enkephalin-bdnf-anxiolytic-mechanisms-research';
+import { article as a1302 } from './articles/nad-plus-fasting-synergy-research';
+import { article as a1303 } from './articles/ghk-cu-wound-healing-complete-guide';
+import { article as a1304 } from './articles/cjc-1295-aging-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2500,6 +2503,9 @@ export const articles: BlogArticle[] = [
   a1299,
   a1300,
   a1301,
+  a1302,
+  a1303,
+  a1304,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
