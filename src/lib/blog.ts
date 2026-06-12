@@ -1275,6 +1275,9 @@ import { article as a1331 } from './articles/peptide-reconstitution-protocol-res
 import { article as a1332 } from './articles/peptide-research-summer-heat-stability-2026';
 import { article as a1333 } from './articles/semaglutide-brain-health-research-2026';
 import { article as a1334 } from './articles/peptide-research-skin-anti-aging-protocol-2026';
+import { article as a1335 } from './articles/how-long-does-igf-1-take-to-work-research-timeline';
+import { article as a1336 } from './articles/best-peptides-for-women-over-40-research-2026';
+import { article as a1337 } from './articles/best-peptides-for-gut-health-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2566,6 +2569,9 @@ export const articles: BlogArticle[] = [
   a1332,
   a1333,
   a1334,
+  a1335,
+  a1336,
+  a1337,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
