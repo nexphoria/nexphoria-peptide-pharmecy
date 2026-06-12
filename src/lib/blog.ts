@@ -1359,6 +1359,9 @@ import { article as a1415 } from './articles/peptide-research-inflammation-resol
 import { article as a1416 } from './articles/bpc-157-tb500-combined-protocol-research';
 import { article as a1417 } from './articles/longevity-peptide-stack-2026';
 import { article as a1418 } from './articles/semaglutide-research-peptide-glp1-studies';
+import { article as a1419 } from './articles/peptide-injection-technique-guide-researchers-2026';
+import { article as a1420 } from './articles/peptide-research-inflammation-anti-inflammatory-complete-guide-2026';
+import { article as a1421 } from './articles/how-to-read-peptide-certificate-of-analysis-complete-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2734,6 +2737,9 @@ export const articles: BlogArticle[] = [
   a1416,
   a1417,
   a1418,
+  a1419,
+  a1420,
+  a1421,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
