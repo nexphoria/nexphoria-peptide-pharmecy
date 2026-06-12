@@ -1272,6 +1272,9 @@ import { article as a1328 } from './articles/how-long-does-snap-8-take-to-work-r
 import { article as a1329 } from './articles/longevity-peptide-stack-2026-research-guide';
 import { article as a1330 } from './articles/hplc-purity-testing-research-peptides-guide';
 import { article as a1331 } from './articles/peptide-reconstitution-protocol-research-guide';
+import { article as a1332 } from './articles/peptide-research-summer-heat-stability-2026';
+import { article as a1333 } from './articles/semaglutide-brain-health-research-2026';
+import { article as a1334 } from './articles/peptide-research-skin-anti-aging-protocol-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2560,6 +2563,9 @@ export const articles: BlogArticle[] = [
   a1329,
   a1330,
   a1331,
+  a1332,
+  a1333,
+  a1334,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
