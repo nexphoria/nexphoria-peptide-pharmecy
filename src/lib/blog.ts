@@ -1347,6 +1347,9 @@ import { article as a1403 } from './articles/best-peptides-summer-2026-heat-resi
 import { article as a1404 } from './articles/how-long-does-argireline-take-to-work-research-timeline';
 import { article as a1405 } from './articles/how-long-does-hgh-fragment-176-191-take-to-work-research-timeline';
 import { article as a1406 } from './articles/how-long-does-cjc-1295-dac-take-to-work-research-timeline';
+import { article as a1407 } from './articles/how-long-does-thymalin-take-to-work-research-timeline';
+import { article as a1408 } from './articles/how-long-does-vilon-take-to-work-research-timeline';
+import { article as a1409 } from './articles/how-long-does-wolverine-blend-take-to-work-research-timeline';
 
 
 export const articles: BlogArticle[] = [
@@ -2710,6 +2713,9 @@ export const articles: BlogArticle[] = [
   a1404,
   a1405,
   a1406,
+  a1407,
+  a1408,
+  a1409,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
