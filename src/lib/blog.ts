@@ -1263,6 +1263,9 @@ import { article as a1319 } from './articles/best-peptides-healthcare-workers-re
 import { article as a1320 } from './articles/selank-anxiety-vs-phenibut-gaba-peptide-research-comparison';
 import { article as a1321 } from './articles/thymosin-alpha-1-covid-sepsis-immune-paralysis-research-2026';
 import { article as a1322 } from './articles/nexphoria-vs-peptide-sciences-quality-standards-post-shutdown';
+import { article as a1323 } from './articles/peptide-research-summer-2026-heat-storage-outdoor-guide';
+import { article as a1324 } from './articles/best-peptides-stress-burnout-adrenal-research-2026';
+import { article as a1325 } from './articles/where-to-buy-bpc-157-arginate-pda-research-guide-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2542,6 +2545,9 @@ export const articles: BlogArticle[] = [
   a1320,
   a1321,
   a1322,
+  a1323,
+  a1324,
+  a1325,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
