@@ -1356,6 +1356,9 @@ import { article as a1412 } from './articles/how-long-does-urolithin-a-take-to-w
 import { article as a1413 } from './articles/peptide-research-sleep-optimization-dsip-ghrp-melatonin-guide';
 import { article as a1414 } from './articles/peptide-research-female-reproductive-axis-kisspeptin-gnrh-oxytocin';
 import { article as a1415 } from './articles/peptide-research-inflammation-resolution-annexin-ac2-26-bpc157-glp1';
+import { article as a1416 } from './articles/bpc-157-tb500-combined-protocol-research';
+import { article as a1417 } from './articles/longevity-peptide-stack-2026';
+import { article as a1418 } from './articles/semaglutide-research-peptide-glp1-studies';
 
 
 export const articles: BlogArticle[] = [
@@ -2728,6 +2731,9 @@ export const articles: BlogArticle[] = [
   a1413,
   a1414,
   a1415,
+  a1416,
+  a1417,
+  a1418,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
