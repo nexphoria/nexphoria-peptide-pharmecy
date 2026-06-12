@@ -1287,6 +1287,9 @@ import { article as a1343 } from './articles/where-to-buy-cjc-1295-ipamorelin-co
 import { article as a1344 } from './articles/how-long-does-cerebrolysin-take-to-work-research-timeline';
 import { article as a1345 } from './articles/how-long-does-dihexa-take-to-work-research-timeline';
 import { article as a1346 } from './articles/how-long-does-klotho-take-to-work-research-timeline';
+import { article as a1347 } from './articles/how-long-does-peg-mgf-take-to-work-research-timeline';
+import { article as a1348 } from './articles/how-long-does-igf-1-lr3-take-to-work-research-timeline';
+import { article as a1349 } from './articles/how-long-does-triptorelin-take-to-work-research-timeline';
 
 
 export const articles: BlogArticle[] = [
@@ -2590,6 +2593,9 @@ export const articles: BlogArticle[] = [
   a1344,
   a1345,
   a1346,
+  a1347,
+  a1348,
+  a1349,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
