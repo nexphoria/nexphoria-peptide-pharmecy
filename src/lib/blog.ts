@@ -1326,6 +1326,9 @@ import { article as a1382 } from './articles/peptide-dosing-calculator-reference
 import { article as a1383 } from './articles/bpc-157-rotator-cuff-shoulder-injury-research';
 import { article as a1384 } from './articles/semaglutide-vs-ozempic-vs-wegovy-complete-guide-2026';
 import { article as a1385 } from './articles/peptide-research-summer-heat-cooling-strategies-2026';
+import { article as a1386 } from './articles/top-10-peptides-beginners-2026';
+import { article as a1387 } from './articles/ghk-cu-anti-aging-longevity-complete-2026';
+import { article as a1388 } from './articles/peptide-research-emerging-2027-pipeline';
 
 
 export const articles: BlogArticle[] = [
@@ -2668,6 +2671,9 @@ export const articles: BlogArticle[] = [
   a1383,
   a1384,
   a1385,
+  a1386,
+  a1387,
+  a1388,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
