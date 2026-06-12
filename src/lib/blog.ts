@@ -1299,6 +1299,9 @@ import { article as a1355 } from './articles/nexphoria-vs-peptide-bay-vendor-com
 import { article as a1356 } from './articles/best-peptides-mma-fighters-research-2026';
 import { article as a1357 } from './articles/best-peptides-veterans-military-ptsd-recovery-research-2026';
 import { article as a1358 } from './articles/nexphoria-vs-alpha-helix-peptides-vendor-comparison';
+import { article as a1359 } from './articles/where-to-buy-amycretin-research-guide';
+import { article as a1360 } from './articles/where-to-buy-orforglipron-research-guide';
+import { article as a1361 } from './articles/where-to-buy-pemvidutide-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2614,6 +2617,9 @@ export const articles: BlogArticle[] = [
   a1356,
   a1357,
   a1358,
+  a1359,
+  a1360,
+  a1361,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
