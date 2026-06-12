@@ -1323,6 +1323,9 @@ import { article as a1379 } from './articles/thymosin-alpha-1-immune';
 import { article as a1380 } from './articles/peptide-faq-complete-researchers-guide-2026';
 import { article as a1381 } from './articles/research-peptides-legal-status-regulatory-guide-2026';
 import { article as a1382 } from './articles/peptide-dosing-calculator-reference-guide-researchers-2026';
+import { article as a1383 } from './articles/bpc-157-rotator-cuff-shoulder-injury-research';
+import { article as a1384 } from './articles/semaglutide-vs-ozempic-vs-wegovy-complete-guide-2026';
+import { article as a1385 } from './articles/peptide-research-summer-heat-cooling-strategies-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2662,6 +2665,9 @@ export const articles: BlogArticle[] = [
   a1380,
   a1381,
   a1382,
+  a1383,
+  a1384,
+  a1385,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
