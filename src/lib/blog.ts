@@ -1302,6 +1302,9 @@ import { article as a1358 } from './articles/nexphoria-vs-alpha-helix-peptides-v
 import { article as a1359 } from './articles/where-to-buy-amycretin-research-guide';
 import { article as a1360 } from './articles/where-to-buy-orforglipron-research-guide';
 import { article as a1361 } from './articles/where-to-buy-pemvidutide-research-guide';
+import { article as a1362 } from './articles/how-long-does-noopept-take-to-work-research-timeline';
+import { article as a1363 } from './articles/how-long-does-cagrilintide-take-to-work-research-timeline';
+import { article as a1364 } from './articles/how-long-does-melanotan-1-take-to-work-research-timeline';
 
 
 export const articles: BlogArticle[] = [
@@ -2620,6 +2623,9 @@ export const articles: BlogArticle[] = [
   a1359,
   a1360,
   a1361,
+  a1362,
+  a1363,
+  a1364,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
