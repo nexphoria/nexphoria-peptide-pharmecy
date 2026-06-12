@@ -1266,6 +1266,9 @@ import { article as a1322 } from './articles/nexphoria-vs-peptide-sciences-quali
 import { article as a1323 } from './articles/peptide-research-summer-2026-heat-storage-outdoor-guide';
 import { article as a1324 } from './articles/best-peptides-stress-burnout-adrenal-research-2026';
 import { article as a1325 } from './articles/where-to-buy-bpc-157-arginate-pda-research-guide-2026';
+import { article as a1326 } from './articles/how-long-does-melanotan-2-take-to-work-research-timeline';
+import { article as a1327 } from './articles/how-long-does-mots-c-take-to-work-research-timeline';
+import { article as a1328 } from './articles/how-long-does-snap-8-take-to-work-research-timeline';
 
 
 export const articles: BlogArticle[] = [
@@ -2548,6 +2551,9 @@ export const articles: BlogArticle[] = [
   a1323,
   a1324,
   a1325,
+  a1326,
+  a1327,
+  a1328,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
