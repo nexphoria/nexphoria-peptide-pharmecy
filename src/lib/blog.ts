@@ -1290,6 +1290,9 @@ import { article as a1346 } from './articles/how-long-does-klotho-take-to-work-r
 import { article as a1347 } from './articles/how-long-does-peg-mgf-take-to-work-research-timeline';
 import { article as a1348 } from './articles/how-long-does-igf-1-lr3-take-to-work-research-timeline';
 import { article as a1349 } from './articles/how-long-does-triptorelin-take-to-work-research-timeline';
+import { article as a1350 } from './articles/bioactive-food-derived-peptides-lactoferrin-casein-research-guide';
+import { article as a1351 } from './articles/klotho-beta-fgf21-liver-metabolic-longevity-axis-research';
+import { article as a1352 } from './articles/peptide-research-vs-anabolic-steroids-mechanism-comparison-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2596,6 +2599,9 @@ export const articles: BlogArticle[] = [
   a1347,
   a1348,
   a1349,
+  a1350,
+  a1351,
+  a1352,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
