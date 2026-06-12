@@ -1353,6 +1353,9 @@ import { article as a1409 } from './articles/how-long-does-wolverine-blend-take-
 import { article as a1410 } from './articles/how-long-does-thymosin-beta-4-take-to-work-research-timeline';
 import { article as a1411 } from './articles/how-long-does-gdf11-take-to-work-research-timeline';
 import { article as a1412 } from './articles/how-long-does-urolithin-a-take-to-work-research-timeline';
+import { article as a1413 } from './articles/peptide-research-sleep-optimization-dsip-ghrp-melatonin-guide';
+import { article as a1414 } from './articles/peptide-research-female-reproductive-axis-kisspeptin-gnrh-oxytocin';
+import { article as a1415 } from './articles/peptide-research-inflammation-resolution-annexin-ac2-26-bpc157-glp1';
 
 
 export const articles: BlogArticle[] = [
@@ -2722,6 +2725,9 @@ export const articles: BlogArticle[] = [
   a1410,
   a1411,
   a1412,
+  a1413,
+  a1414,
+  a1415,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
