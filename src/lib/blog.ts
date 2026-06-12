@@ -1233,6 +1233,9 @@ import { article as a1289 } from './articles/peptide-aggregation-cloudy-vial-tro
 import { article as a1290 } from './articles/peptide-combination-safety-interactions-contraindications-research-guide';
 import { article as a1291 } from './articles/research-peptide-market-landscape-2026';
 import { article as a1292 } from './articles/peptide-chemistry-fundamentals-molecular-weight-structure-researchers-guide';
+import { article as a1293 } from './articles/how-long-does-hexarelin-take-to-work-research-timeline';
+import { article as a1294 } from './articles/how-long-does-ll-37-take-to-work-research-timeline';
+import { article as a1295 } from './articles/how-long-does-kisspeptin-take-to-work-research-timeline';
 
 
 export const articles: BlogArticle[] = [
@@ -2482,6 +2485,9 @@ export const articles: BlogArticle[] = [
   a1290,
   a1291,
   a1292,
+  a1293,
+  a1294,
+  a1295,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
