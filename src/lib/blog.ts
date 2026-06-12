@@ -1278,6 +1278,9 @@ import { article as a1334 } from './articles/peptide-research-skin-anti-aging-pr
 import { article as a1335 } from './articles/how-long-does-igf-1-take-to-work-research-timeline';
 import { article as a1336 } from './articles/best-peptides-for-women-over-40-research-2026';
 import { article as a1337 } from './articles/best-peptides-for-gut-health-research-2026';
+import { article as a1338 } from './articles/best-nootropic-peptides-2026-cognitive-research-guide';
+import { article as a1339 } from './articles/peptide-research-fall-2026-seasonal-protocol-guide';
+import { article as a1340 } from './articles/peptide-research-documentation-lab-notebook-best-practices';
 
 
 export const articles: BlogArticle[] = [
@@ -2572,6 +2575,9 @@ export const articles: BlogArticle[] = [
   a1335,
   a1336,
   a1337,
+  a1338,
+  a1339,
+  a1340,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
