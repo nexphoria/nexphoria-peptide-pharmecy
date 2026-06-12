@@ -1329,6 +1329,9 @@ import { article as a1385 } from './articles/peptide-research-summer-heat-coolin
 import { article as a1386 } from './articles/top-10-peptides-beginners-2026';
 import { article as a1387 } from './articles/ghk-cu-anti-aging-longevity-complete-2026';
 import { article as a1388 } from './articles/peptide-research-emerging-2027-pipeline';
+import { article as a1389 } from './articles/peptide-sciences-alternative-supplier-2026-complete';
+import { article as a1390 } from './articles/longevity-peptide-stack-2026-complete-research-framework';
+import { article as a1391 } from './articles/peptide-reconstitution-complete-protocol-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2674,6 +2677,9 @@ export const articles: BlogArticle[] = [
   a1386,
   a1387,
   a1388,
+  a1389,
+  a1390,
+  a1391,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
