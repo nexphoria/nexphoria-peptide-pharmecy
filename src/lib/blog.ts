@@ -1284,6 +1284,9 @@ import { article as a1340 } from './articles/peptide-research-documentation-lab-
 import { article as a1341 } from './articles/best-peptides-for-yoga-practitioners-research-2026';
 import { article as a1342 } from './articles/peptide-research-strength-training-hypertrophy-2026';
 import { article as a1343 } from './articles/where-to-buy-cjc-1295-ipamorelin-combined-research-guide';
+import { article as a1344 } from './articles/how-long-does-cerebrolysin-take-to-work-research-timeline';
+import { article as a1345 } from './articles/how-long-does-dihexa-take-to-work-research-timeline';
+import { article as a1346 } from './articles/how-long-does-klotho-take-to-work-research-timeline';
 
 
 export const articles: BlogArticle[] = [
@@ -2584,6 +2587,9 @@ export const articles: BlogArticle[] = [
   a1341,
   a1342,
   a1343,
+  a1344,
+  a1345,
+  a1346,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
