@@ -1314,6 +1314,9 @@ import { article as a1370 } from './articles/hexarelin-cardioprotection';
 import { article as a1371 } from './articles/how-long-does-5-amino-1mq-take-to-work-research-timeline';
 import { article as a1372 } from './articles/how-long-does-ace-031-take-to-work-research-timeline';
 import { article as a1373 } from './articles/how-long-does-pe-22-28-take-to-work-research-timeline';
+import { article as a1374 } from './articles/dihexa-nootropic-peptide-research';
+import { article as a1375 } from './articles/vilon-peptide-immune-research';
+import { article as a1376 } from './articles/thymalin-vs-thymosin-alpha-1';
 
 
 export const articles: BlogArticle[] = [
@@ -2644,6 +2647,9 @@ export const articles: BlogArticle[] = [
   a1371,
   a1372,
   a1373,
+  a1374,
+  a1375,
+  a1376,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
