@@ -1350,6 +1350,9 @@ import { article as a1406 } from './articles/how-long-does-cjc-1295-dac-take-to-
 import { article as a1407 } from './articles/how-long-does-thymalin-take-to-work-research-timeline';
 import { article as a1408 } from './articles/how-long-does-vilon-take-to-work-research-timeline';
 import { article as a1409 } from './articles/how-long-does-wolverine-blend-take-to-work-research-timeline';
+import { article as a1410 } from './articles/how-long-does-thymosin-beta-4-take-to-work-research-timeline';
+import { article as a1411 } from './articles/how-long-does-gdf11-take-to-work-research-timeline';
+import { article as a1412 } from './articles/how-long-does-urolithin-a-take-to-work-research-timeline';
 
 
 export const articles: BlogArticle[] = [
@@ -2716,6 +2719,9 @@ export const articles: BlogArticle[] = [
   a1407,
   a1408,
   a1409,
+  a1410,
+  a1411,
+  a1412,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
