@@ -6,7 +6,7 @@ export const article: BlogArticle = {
   description:
     "Thymosin Alpha-1 is a 28-amino acid peptide studied extensively for T-cell modulation, immune regulation, and clinical applications in infectious disease and oncology. An evidence-based research overview.",
   category: "Compound Profiles",
-  readMinutes: 10,
+  readMinutes: 9,
   publishedAt: "2026-06-12",
   ogImage: "/og-image.jpg",
   body: [
@@ -20,11 +20,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Thymosin Alpha-1 was first isolated and characterized by Allan Goldstein and colleagues at George Washington University in the early 1970s. The thymosin research program was originally focused on identifying thymic factors that could reconstitute immune function in athymic (nude) mice lacking a functional thymus.",
+      text: "Thymosin Alpha-1 was first isolated and characterized by Allan Goldstein and colleagues at George Washington University in the early 1970s. The thymosin research program was originally focused on identifying thymic factors that could reconstitute immune function in athymic (nude) mice lacking a functional thymus. Tα1 emerged as one of the most biologically active fractions, with detectable effects on T-cell maturation in preclinical models. Its synthetic form — identical in sequence to the naturally occurring peptide — has since been studied in hundreds of clinical and preclinical contexts.",
     },
     {
-      type: "paragraph",
-      text: "Tα1 emerged as one of the most biologically active fractions, with detectable effects on T-cell maturation in preclinical models. Its synthetic form — identical in sequence to the naturally occurring peptide — has since been studied in hundreds of clinical and preclinical contexts.",
+      type: "subheading",
+      text: "Basic properties:",
     },
     {
       type: "list",
@@ -32,7 +32,7 @@ export const article: BlogArticle = {
         "Molecular formula: C129H215N33O55S",
         "Molecular weight: ~3,108 Da",
         "Sequence: Ac-Ser-Asp-Ala-Ala-Val-Asp-Thr-Ser-Ser-Glu-Ile-Thr-Thr-Lys-Asp-Leu-Lys-Glu-Lys-Lys-Glu-Val-Val-Glu-Glu-Ala-Glu-Asn-OH",
-        "N-terminally acetylated; this modification is essential for biological activity",
+        "N-terminally acetylated — this modification is essential for biological activity",
         "Administered subcutaneously in research settings",
       ],
     },
@@ -78,7 +78,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Thymosin Alpha-1 has one of the longest and most extensive research records of any immunomodulatory peptide.",
+      text: "Thymosin Alpha-1 has one of the longest and most extensive research records of any immunomodulatory peptide. Key areas include:",
     },
     {
       type: "subheading",
@@ -86,7 +86,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Multiple randomized controlled trials in the 1990s–2000s examined Tα1 as an adjunct therapy for chronic viral hepatitis. In Hepatitis B, combination of Tα1 + interferon-α showed significantly higher rates of viral clearance compared to interferon alone in several RCTs (Cheng et al., Mutchnick et al.). Similar adjunct studies in Hepatitis C showed Tα1 appearing to enhance interferon response in some patient subgroups. Tα1 is approved as a pharmaceutical agent in over 35 countries (marketed as Zadaxin by SciClone Pharmaceuticals) for the treatment of hepatitis B and as an immune adjuvant in various contexts.",
+      text: "Multiple randomized controlled trials in the 1990s–2000s examined Tα1 as an adjunct therapy for chronic viral hepatitis. For Hepatitis B, combination of Tα1 + interferon-α showed significantly higher rates of viral clearance compared to interferon alone in several RCTs (Cheng et al., Mutchnick et al.). Similar adjunct studies in Hepatitis C showed Tα1 appearing to enhance interferon response in some patient subgroups. Tα1 is approved as a pharmaceutical agent in over 35 countries (marketed as Zadaxin by SciClone Pharmaceuticals) for the treatment of hepatitis B and as an immune adjuvant in various contexts.",
     },
     {
       type: "subheading",
@@ -102,7 +102,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "An important area of more recent research involves thymosin alpha-1 in sepsis models. Preclinical data and several clinical trials have examined whether Tα1 can reverse the immune paralysis characteristic of late-stage sepsis, including restoration of HLA-DR expression on monocytes (a marker of immune competence), reduced rates of secondary infection in some trial populations, and investigation via the ATHOS trial and related efforts specifically in sepsis-induced immunosuppression.",
+      text: "An important area of more recent research involves Thymosin Alpha-1 in sepsis models. Preclinical data and several clinical trials have examined whether Tα1 can reverse the immune paralysis characteristic of late-stage sepsis, including restoration of HLA-DR expression on monocytes (a marker of immune competence), reduced rates of secondary infection in some trial populations, and findings from the ATHOS trial and related efforts that investigated Tα1 specifically in sepsis-induced immunosuppression.",
     },
     {
       type: "subheading",
@@ -118,7 +118,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "In research settings, Tα1 is studied across a range of established model systems.",
+      text: "In research settings, Tα1 is studied in:",
     },
     {
       type: "list",
@@ -144,7 +144,17 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Key quality requirements for research-grade Tα1 include N-terminal acetylation confirmed by MS (unacetylated Tα1 lacks the biological activity of the native peptide), HPLC purity ≥99%, mass spectrometry verification of MW ~3,108 Da, LAL endotoxin testing (essential for in vivo immunology research where endotoxin artifacts are especially confounding), and cold-chain shipping with lyophilized form stored at -20°C.",
+      text: "Key quality requirements for research-grade Tα1:",
+    },
+    {
+      type: "list",
+      items: [
+        "N-terminal acetylation confirmed — unacetylated Tα1 lacks the biological activity of the native peptide; this must be confirmed by MS",
+        "HPLC purity ≥99% — standard purity threshold",
+        "Mass spectrometry verification — MW ~3,108 Da; acetylation adds ~42 Da vs. free N-terminal form",
+        "LAL endotoxin testing — essential for in vivo immunology research, where endotoxin artifacts are especially confounding",
+        "Cold-chain shipping — lyophilized form preferred; store at -20°C",
+      ],
     },
     {
       type: "heading",

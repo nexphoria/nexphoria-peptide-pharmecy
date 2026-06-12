@@ -1317,6 +1317,9 @@ import { article as a1373 } from './articles/how-long-does-pe-22-28-take-to-work
 import { article as a1374 } from './articles/dihexa-nootropic-peptide-research';
 import { article as a1375 } from './articles/vilon-peptide-immune-research';
 import { article as a1376 } from './articles/thymalin-vs-thymosin-alpha-1';
+import { article as a1377 } from './articles/best-peptides-muscle-recovery';
+import { article as a1378 } from './articles/buy-peptides-usa-guide';
+import { article as a1379 } from './articles/thymosin-alpha-1-immune';
 
 
 export const articles: BlogArticle[] = [
@@ -2650,6 +2653,9 @@ export const articles: BlogArticle[] = [
   a1374,
   a1375,
   a1376,
+  a1377,
+  a1378,
+  a1379,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
