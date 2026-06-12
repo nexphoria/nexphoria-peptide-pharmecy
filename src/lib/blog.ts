@@ -1224,6 +1224,9 @@ import { article as a1280 } from './articles/peptide-fertility-reproductive-rese
 import { article as a1281 } from './articles/how-long-does-semax-take-to-work-research-timeline';
 import { article as a1282 } from './articles/how-long-does-aod-9604-take-to-work-research-timeline';
 import { article as a1283 } from './articles/how-long-does-dsip-take-to-work-research-timeline';
+import { article as a1284 } from './articles/peptide-research-summer-2026-heat-storage-guide';
+import { article as a1285 } from './articles/glp1-agonists-2027-pipeline-what-researchers-need';
+import { article as a1286 } from './articles/how-to-read-peptide-coa-2026-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2464,6 +2467,9 @@ export const articles: BlogArticle[] = [
   a1281,
   a1282,
   a1283,
+  a1284,
+  a1285,
+  a1286,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
