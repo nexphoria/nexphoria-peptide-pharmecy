@@ -1305,6 +1305,9 @@ import { article as a1361 } from './articles/where-to-buy-pemvidutide-research-g
 import { article as a1362 } from './articles/how-long-does-noopept-take-to-work-research-timeline';
 import { article as a1363 } from './articles/how-long-does-cagrilintide-take-to-work-research-timeline';
 import { article as a1364 } from './articles/how-long-does-melanotan-1-take-to-work-research-timeline';
+import { article as a1365 } from './articles/how-long-does-gonadorelin-take-to-work-research-timeline';
+import { article as a1366 } from './articles/how-long-does-humanin-take-to-work-research-timeline';
+import { article as a1367 } from './articles/how-long-does-foxo4-dri-take-to-work-research-timeline';
 
 
 export const articles: BlogArticle[] = [
@@ -2626,6 +2629,9 @@ export const articles: BlogArticle[] = [
   a1362,
   a1363,
   a1364,
+  a1365,
+  a1366,
+  a1367,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
