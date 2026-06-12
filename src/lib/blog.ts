@@ -1308,6 +1308,9 @@ import { article as a1364 } from './articles/how-long-does-melanotan-1-take-to-w
 import { article as a1365 } from './articles/how-long-does-gonadorelin-take-to-work-research-timeline';
 import { article as a1366 } from './articles/how-long-does-humanin-take-to-work-research-timeline';
 import { article as a1367 } from './articles/how-long-does-foxo4-dri-take-to-work-research-timeline';
+import { article as a1368 } from './articles/thymosin-alpha-1-immune';
+import { article as a1369 } from './articles/selank-anxiety-research';
+import { article as a1370 } from './articles/hexarelin-cardioprotection';
 
 
 export const articles: BlogArticle[] = [
@@ -2632,6 +2635,9 @@ export const articles: BlogArticle[] = [
   a1365,
   a1366,
   a1367,
+  a1368,
+  a1369,
+  a1370,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

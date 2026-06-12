@@ -7,16 +7,12 @@ export const article: BlogArticle = {
     "An evidence-based overview of Selank, the heptapeptide developed in Russia and studied for anxiolytic and nootropic effects. Research findings, mechanism of action, and what the data shows.",
   category: "Compound Profiles",
   readMinutes: 9,
-  publishedAt: "2026-06-04",
+  publishedAt: "2026-06-12",
   ogImage: "/og-image.jpg",
   body: [
     {
       type: "paragraph",
-      text: "Selank is a synthetic heptapeptide (sequence: Thr-Lys-Pro-Arg-Pro-Gly-Pro) developed by the Institute of Molecular Genetics of the Russian Academy of Sciences in collaboration with the V.V. Zakusov Institute of Pharmacology. Structurally, it is a synthetic analog of tuftsin — a naturally occurring tetrapeptide with immunomodulatory properties — with an additional tripeptide sequence that confers CNS stability.",
-    },
-    {
-      type: "paragraph",
-      text: "Selank has been approved as a pharmaceutical in Russia and several post-Soviet states for the treatment of anxiety and asthenia, and it has been the subject of a substantial body of peer-reviewed research. This article examines what that research says.",
+      text: "Selank is a synthetic heptapeptide (sequence: Thr-Lys-Pro-Arg-Pro-Gly-Pro) developed by the Institute of Molecular Genetics of the Russian Academy of Sciences in collaboration with the V.V. Zakusov Institute of Pharmacology. Structurally, it is a synthetic analog of tuftsin — a naturally occurring tetrapeptide with immunomodulatory properties — with an additional tripeptide sequence that confers CNS stability. Selank has been approved as a pharmaceutical in Russia and several post-Soviet states for the treatment of anxiety and asthenia, and it has been the subject of a substantial body of peer-reviewed research.",
     },
     {
       type: "heading",
@@ -24,7 +20,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Anxiety disorders represent a significant area of unmet pharmacological research need. Current first-line pharmacological approaches — primarily SSRIs, SNRIs, and benzodiazepines — are associated with well-documented limitations: benzodiazepines carry dependency risk, tolerance development, and cognitive impairment concerns; SSRIs and SNRIs have delayed onset (2–6 weeks), incomplete responder rates, and discontinuation syndrome.",
+      text: "Anxiety disorders represent a significant area of unmet pharmacological research need. Current first-line pharmacological approaches — primarily SSRIs, SNRIs, and benzodiazepines — are associated with well-documented limitations. Benzodiazepines are efficacious short-term but carry dependency risk, tolerance development, and cognitive impairment concerns. SSRIs and SNRIs have delayed onset (2–6 weeks), incomplete responder rates, and discontinuation syndrome.",
     },
     {
       type: "paragraph",
@@ -76,11 +72,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Multiple studies in rodent models have documented dose-dependent anxiolytic effects using validated anxiety paradigms (elevated plus maze, open field test, Vogel conflict test). Semenova et al. documented that Selank reduced anxiety-related behavior in animals exposed to chronic mild stress, with effects comparable to diazepam in some measures but without the sedation observed with benzodiazepine treatment.",
-    },
-    {
-      type: "paragraph",
-      text: "Uchakina et al. (2008) reported in a human clinical context that Selank reduced anxiety symptoms in patients with generalized anxiety disorder with a faster onset than conventional pharmacological treatment, and without the sedating side effects typical of benzodiazepines.",
+      text: "Multiple studies in rodent models have documented dose-dependent anxiolytic effects using validated anxiety paradigms (elevated plus maze, open field test, Vogel conflict test). Semenova et al. documented that Selank reduced anxiety-related behavior in animals exposed to chronic mild stress, with effects comparable to diazepam in some measures but without the sedation observed with benzodiazepine treatment. Uchakina et al. (2008) reported in a human clinical context that Selank reduced anxiety symptoms in patients with generalized anxiety disorder with a faster onset than conventional pharmacological treatment, and without the sedating side effects typical of benzodiazepines.",
     },
     {
       type: "subheading",
@@ -88,7 +80,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Beyond anxiolytic activity, Selank has been studied for cognitive enhancement properties. Animal studies report improved performance on learning and memory tasks. Clinical observations in Russian studies describe reduced cognitive fatigue without stimulant-like effects. Some research documents neuroprotective properties — protection against oxidative stress-induced neuronal damage in cell culture models.",
+      text: "Beyond anxiolytic activity, Selank has been studied for cognitive enhancement properties: improved performance on learning and memory tasks in animal studies, reduced cognitive fatigue without stimulant-like effects in clinical observations from Russian studies, and neuroprotective properties against oxidative stress-induced neuronal damage in cell culture models.",
     },
     {
       type: "subheading",
@@ -114,7 +106,7 @@ export const article: BlogArticle = {
     },
     {
       type: "heading",
-      text: "Research Protocol Considerations",
+      text: "Research Considerations",
     },
     {
       type: "subheading",
@@ -126,11 +118,16 @@ export const article: BlogArticle = {
     },
     {
       type: "subheading",
-      text: "Stability and Storage",
+      text: "Stability",
     },
     {
-      type: "paragraph",
-      text: "Selank is a heptapeptide with moderate stability in solution. Lyophilized form is preferred for storage. Reconstituted solutions should be stored at 2–8°C and used within 2–4 weeks. The compound is sensitive to enzymatic degradation at elevated temperatures.",
+      type: "list",
+      items: [
+        "Selank is a heptapeptide with moderate stability in solution",
+        "Lyophilized form is preferred for storage",
+        "Reconstituted solutions: store at 2–8°C, use within 2–4 weeks",
+        "Sensitive to enzymatic degradation at elevated temperatures",
+      ],
     },
     {
       type: "subheading",
