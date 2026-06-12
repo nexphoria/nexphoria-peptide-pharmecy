@@ -1227,6 +1227,9 @@ import { article as a1283 } from './articles/how-long-does-dsip-take-to-work-res
 import { article as a1284 } from './articles/peptide-research-summer-2026-heat-storage-guide';
 import { article as a1285 } from './articles/glp1-agonists-2027-pipeline-what-researchers-need';
 import { article as a1286 } from './articles/how-to-read-peptide-coa-2026-guide';
+import { article as a1287 } from './articles/peptide-toxicity-safety-profiles-research-guide';
+import { article as a1288 } from './articles/peptide-photodegradation-uv-light-oxidation-research-guide';
+import { article as a1289 } from './articles/peptide-aggregation-cloudy-vial-troubleshooting-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2470,6 +2473,9 @@ export const articles: BlogArticle[] = [
   a1284,
   a1285,
   a1286,
+  a1287,
+  a1288,
+  a1289,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
