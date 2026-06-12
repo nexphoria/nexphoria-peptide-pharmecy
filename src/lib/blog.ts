@@ -1281,6 +1281,9 @@ import { article as a1337 } from './articles/best-peptides-for-gut-health-resear
 import { article as a1338 } from './articles/best-nootropic-peptides-2026-cognitive-research-guide';
 import { article as a1339 } from './articles/peptide-research-fall-2026-seasonal-protocol-guide';
 import { article as a1340 } from './articles/peptide-research-documentation-lab-notebook-best-practices';
+import { article as a1341 } from './articles/best-peptides-for-yoga-practitioners-research-2026';
+import { article as a1342 } from './articles/peptide-research-strength-training-hypertrophy-2026';
+import { article as a1343 } from './articles/where-to-buy-cjc-1295-ipamorelin-combined-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2578,6 +2581,9 @@ export const articles: BlogArticle[] = [
   a1338,
   a1339,
   a1340,
+  a1341,
+  a1342,
+  a1343,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
