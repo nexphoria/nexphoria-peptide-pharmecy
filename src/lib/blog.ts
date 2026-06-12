@@ -1341,6 +1341,9 @@ import { article as a1397 } from './articles/peptide-research-ozempic-face-body-
 import { article as a1398 } from './articles/best-peptides-lean-muscle-research-2026';
 import { article as a1399 } from './articles/bpc-157-vs-nad-plus-comparison';
 import { article as a1400 } from './articles/peptide-research-testosterone-optimization';
+import { article as a1401 } from './articles/peptide-research-june-2026-seasonal-update';
+import { article as a1402 } from './articles/ghk-cu-bpc-157-longevity-stack-research-guide';
+import { article as a1403 } from './articles/best-peptides-summer-2026-heat-resilience-research';
 
 
 export const articles: BlogArticle[] = [
@@ -2698,6 +2701,9 @@ export const articles: BlogArticle[] = [
   a1398,
   a1399,
   a1400,
+  a1401,
+  a1402,
+  a1403,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
