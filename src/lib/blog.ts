@@ -1296,6 +1296,9 @@ import { article as a1352 } from './articles/peptide-research-vs-anabolic-steroi
 import { article as a1353 } from './articles/peptide-research-busy-professional-guide-2026';
 import { article as a1354 } from './articles/how-to-choose-peptide-stack-goal-based-guide-2026';
 import { article as a1355 } from './articles/nexphoria-vs-peptide-bay-vendor-comparison';
+import { article as a1356 } from './articles/best-peptides-mma-fighters-research-2026';
+import { article as a1357 } from './articles/best-peptides-veterans-military-ptsd-recovery-research-2026';
+import { article as a1358 } from './articles/nexphoria-vs-alpha-helix-peptides-vendor-comparison';
 
 
 export const articles: BlogArticle[] = [
@@ -2608,6 +2611,9 @@ export const articles: BlogArticle[] = [
   a1353,
   a1354,
   a1355,
+  a1356,
+  a1357,
+  a1358,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
