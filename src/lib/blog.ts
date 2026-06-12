@@ -1320,6 +1320,9 @@ import { article as a1376 } from './articles/thymalin-vs-thymosin-alpha-1';
 import { article as a1377 } from './articles/best-peptides-muscle-recovery';
 import { article as a1378 } from './articles/buy-peptides-usa-guide';
 import { article as a1379 } from './articles/thymosin-alpha-1-immune';
+import { article as a1380 } from './articles/peptide-faq-complete-researchers-guide-2026';
+import { article as a1381 } from './articles/research-peptides-legal-status-regulatory-guide-2026';
+import { article as a1382 } from './articles/peptide-dosing-calculator-reference-guide-researchers-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2656,6 +2659,9 @@ export const articles: BlogArticle[] = [
   a1377,
   a1378,
   a1379,
+  a1380,
+  a1381,
+  a1382,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
