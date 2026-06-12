@@ -1338,6 +1338,9 @@ import { article as a1394 } from './articles/where-to-buy-mazdutide-research-gui
 import { article as a1395 } from './articles/peptide-research-gut-skin-axis';
 import { article as a1396 } from './articles/peptide-research-artificial-intelligence-drug-discovery';
 import { article as a1397 } from './articles/peptide-research-ozempic-face-body-recomposition';
+import { article as a1398 } from './articles/best-peptides-lean-muscle-research-2026';
+import { article as a1399 } from './articles/bpc-157-vs-nad-plus-comparison';
+import { article as a1400 } from './articles/peptide-research-testosterone-optimization';
 
 
 export const articles: BlogArticle[] = [
@@ -2692,6 +2695,9 @@ export const articles: BlogArticle[] = [
   a1395,
   a1396,
   a1397,
+  a1398,
+  a1399,
+  a1400,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
