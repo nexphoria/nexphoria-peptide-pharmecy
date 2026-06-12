@@ -1254,6 +1254,9 @@ import { article as a1310 } from './articles/best-peptides-night-shift-workers-r
 import { article as a1311 } from './articles/glp1-agonists-nonalcoholic-steatohepatitis-nash-complete-guide';
 import { article as a1312 } from './articles/how-long-does-tb4-frag-take-to-work-research-timeline';
 import { article as a1313 } from './articles/best-peptides-for-surfers-research-2026';
+import { article as a1314 } from './articles/bpc-157-acne-rosacea-skin-inflammation-research';
+import { article as a1315 } from './articles/nexphoria-vs-peptide-depot-vendor-comparison';
+import { article as a1316 } from './articles/peptide-research-cold-plunge-ice-bath-synergy';
 
 
 export const articles: BlogArticle[] = [
@@ -2524,6 +2527,9 @@ export const articles: BlogArticle[] = [
   a1311,
   a1312,
   a1313,
+  a1314,
+  a1315,
+  a1316,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
