@@ -1332,6 +1332,9 @@ import { article as a1388 } from './articles/peptide-research-emerging-2027-pipe
 import { article as a1389 } from './articles/peptide-sciences-alternative-supplier-2026-complete';
 import { article as a1390 } from './articles/longevity-peptide-stack-2026-complete-research-framework';
 import { article as a1391 } from './articles/peptide-reconstitution-complete-protocol-2026';
+import { article as a1392 } from './articles/how-long-does-melanotan-ii-take-to-work-research-timeline';
+import { article as a1393 } from './articles/how-long-does-mazdutide-take-to-work-research-timeline';
+import { article as a1394 } from './articles/where-to-buy-mazdutide-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2680,6 +2683,9 @@ export const articles: BlogArticle[] = [
   a1389,
   a1390,
   a1391,
+  a1392,
+  a1393,
+  a1394,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
