@@ -1239,6 +1239,9 @@ import { article as a1295 } from './articles/how-long-does-kisspeptin-take-to-wo
 import { article as a1296 } from './articles/peptide-research-menopause-complete-guide-2026';
 import { article as a1297 } from './articles/semax-vs-selank-research-comparison-2026';
 import { article as a1298 } from './articles/glp1-agonists-cognitive-decline-research-2026';
+import { article as a1299 } from './articles/epithalon-khavinson-telomerase-longevity-research';
+import { article as a1300 } from './articles/hexarelin-ischemia-reperfusion-cd36-cardiac-research';
+import { article as a1301 } from './articles/selank-enkephalin-bdnf-anxiolytic-mechanisms-research';
 
 
 export const articles: BlogArticle[] = [
@@ -2494,6 +2497,9 @@ export const articles: BlogArticle[] = [
   a1296,
   a1297,
   a1298,
+  a1299,
+  a1300,
+  a1301,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
