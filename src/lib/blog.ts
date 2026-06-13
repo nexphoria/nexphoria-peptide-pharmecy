@@ -1452,6 +1452,9 @@ import { article as aPR12 } from './articles/how-much-does-aod-9604-cost-researc
 import { article as aPR13 } from './articles/how-much-does-retatrutide-cost-research-pricing-guide';
 import { article as aPR14 } from './articles/how-much-does-selank-cost-research-pricing-guide';
 import { article as aPR15 } from './articles/how-much-does-pt-141-cost-research-pricing-guide';
+import { article as aPR16 } from './articles/how-much-does-thymosin-alpha-1-cost-research-pricing-guide';
+import { article as aPR17 } from './articles/how-much-does-ss-31-cost-research-pricing-guide';
+import { article as aPR18 } from './articles/how-much-does-hexarelin-cost-research-pricing-guide';
 import { article as aIG1 } from './articles/nexphoria-instagram-reels-education-awareness-scripts';
 import { article as aIG2 } from './articles/nexphoria-instagram-reels-trust-proof-scripts';
 import { article as aIG3 } from './articles/nexphoria-instagram-reels-compounds-thought-leadership-scripts';
@@ -2926,6 +2929,9 @@ export const articles: BlogArticle[] = [
   aPR13,
   aPR14,
   aPR15,
+  aPR16,
+  aPR17,
+  aPR18,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
