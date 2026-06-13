@@ -1440,6 +1440,9 @@ import { article as aNX3 } from './articles/why-hplc-purity-testing-matters-pept
 import { article as a1491 } from './articles/where-to-buy-pe-22-28-research-guide';
 import { article as a1492 } from './articles/lotiglipron-oral-glp1-research-guide';
 import { article as a1493 } from './articles/efocipegtrutide-triple-agonist-research-overview';
+import { article as aPR4 } from './articles/how-much-does-ipamorelin-cost-research-pricing-guide';
+import { article as aPR5 } from './articles/how-much-does-mk-677-cost-research-pricing-guide';
+import { article as aPR6 } from './articles/how-much-does-ghk-cu-cost-research-pricing-guide';
 import { article as aIG1 } from './articles/nexphoria-instagram-reels-education-awareness-scripts';
 import { article as aIG2 } from './articles/nexphoria-instagram-reels-trust-proof-scripts';
 import { article as aIG3 } from './articles/nexphoria-instagram-reels-compounds-thought-leadership-scripts';
@@ -2902,6 +2905,9 @@ export const articles: BlogArticle[] = [
   a1491,
   a1492,
   a1493,
+  aPR4,
+  aPR5,
+  aPR6,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
