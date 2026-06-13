@@ -1494,6 +1494,9 @@ import { article as aJUL3 } from './articles/peptide-purity-hplc-testing-researc
 import { article as aAUG1 } from './articles/bpc-157-vs-ghk-cu-skin-anti-aging-comparison-2026';
 import { article as aAUG2 } from './articles/where-to-buy-glp1-peptides-2026-sourcing-guide';
 import { article as aAUG3 } from './articles/peptide-research-fall-recovery-guide-2026';
+import { article as aPRX1 } from './articles/how-much-does-ll-37-cost-research-pricing-guide';
+import { article as aPRX2 } from './articles/how-much-does-kpv-cost-research-pricing-guide';
+import { article as aPRX3 } from './articles/how-much-does-tesamorelin-cost-research-pricing-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3004,6 +3007,9 @@ export const articles: BlogArticle[] = [
   aAUG1,
   aAUG2,
   aAUG3,
+  aPRX1,
+  aPRX2,
+  aPRX3,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
