@@ -4,10 +4,10 @@ export const article: BlogArticle = {
   slug: 'bpc-157-complete-research-guide-2026',
   title: 'BPC-157: The Complete Research Guide (2026)',
   description:
-    'A comprehensive 2026 research guide for BPC-157 (Body Protection Compound-157): mechanism of action, key PubMed studies, preclinical dosing protocols, sourcing standards, and storage guidelines.',
+    'A comprehensive 2026 research guide to BPC-157 (Body Protection Compound-157): mechanism of action, key PubMed studies, preclinical dosing protocols, sourcing quality standards, and storage considerations for researchers.',
   category: 'Compound Profiles',
   readMinutes: 10,
-  publishedAt: '2026-06-05',
+  publishedAt: '2026-06-13',
   ogImage: '/og-image.jpg',
   body: [
     {
@@ -34,6 +34,10 @@ export const article: BlogArticle = {
     {
       type: 'heading',
       text: 'Mechanism of Action',
+    },
+    {
+      type: 'paragraph',
+      text: 'Research suggests BPC-157 operates through several distinct pathways that collectively account for the broad tissue-protective effects observed in preclinical models.',
     },
     {
       type: 'subheading',
@@ -73,7 +77,7 @@ export const article: BlogArticle = {
     },
     {
       type: 'paragraph',
-      text: 'Research on BPC-157 is largely preclinical, but the volume of published work is notable. Key studies include:',
+      text: 'Research on BPC-157 is largely preclinical, but the volume of published work is notable. The following studies represent landmark findings in the field.',
     },
     {
       type: 'list',
@@ -93,7 +97,7 @@ export const article: BlogArticle = {
       text: 'Dosing Protocols Studied in Research',
     },
     {
-      type: 'paragraph',
+      type: 'callout',
       text: 'The following reflects dosing protocols used in preclinical animal research only. These figures are not clinical recommendations.',
     },
     {
@@ -158,7 +162,7 @@ export const article: BlogArticle = {
     },
     {
       type: 'paragraph',
-      text: 'BPC-157 remains one of the most actively studied peptides in preclinical regenerative research. Its multi-pathway mechanism, stability profile, and volume of published literature make it a compound of significant interest to researchers across gastroenterology, musculoskeletal biology, and neuroscience. For researchers building a protocol, the foundation starts with verified purity, proper cold-chain handling, and a clear understanding of the available preclinical evidence.',
+      text: 'BPC-157 remains one of the most actively studied peptides in preclinical regenerative research. Its multi-pathway mechanism, stability profile, and volume of published literature make it a compound of significant interest to researchers across gastroenterology, musculoskeletal biology, and neuroscience. For researchers building a protocol around BPC-157 research peptides, the foundation starts with verified purity, proper cold-chain handling, and a clear understanding of the available preclinical evidence.',
     },
     {
       type: 'disclaimer',
