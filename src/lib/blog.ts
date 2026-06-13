@@ -1473,6 +1473,9 @@ import { article as aIG3 } from './articles/nexphoria-instagram-reels-compounds-
 import { article as aNEW1 } from './articles/selank-anxiety-research-mechanisms-deep-dive';
 import { article as aNEW2 } from './articles/tb-500-thymosin-beta-4-mechanism-research-complete';
 import { article as aNEW3 } from './articles/peptide-reconstitution-protocol-step-by-step-2026';
+import { article as aJUN1 } from './articles/buy-peptides-online-usa-complete-guide';
+import { article as aJUN2 } from './articles/bpc-157-knee-injury-research-guide';
+import { article as aJUN3 } from './articles/bpc-157-vendor-review-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2962,6 +2965,9 @@ export const articles: BlogArticle[] = [
   aX07,
   aPR22,
   aX08,
+  aJUN1,
+  aJUN2,
+  aJUN3,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
