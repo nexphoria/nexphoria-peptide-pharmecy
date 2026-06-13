@@ -1476,6 +1476,9 @@ import { article as aNEW3 } from './articles/peptide-reconstitution-protocol-ste
 import { article as aJUN1 } from './articles/buy-peptides-online-usa-complete-guide';
 import { article as aJUN2 } from './articles/bpc-157-knee-injury-research-guide';
 import { article as aJUN3 } from './articles/bpc-157-vendor-review-2026';
+import { article as aJUN4 } from './articles/tb-500-shoulder-rotator-cuff-research-guide';
+import { article as aJUN5 } from './articles/peptide-dosing-frequency-interval-research-guide';
+import { article as aJUN6 } from './articles/semaglutide-vs-retatrutide-2026-comparison';
 
 
 export const articles: BlogArticle[] = [
@@ -2968,6 +2971,9 @@ export const articles: BlogArticle[] = [
   aJUN1,
   aJUN2,
   aJUN3,
+  aJUN4,
+  aJUN5,
+  aJUN6,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
