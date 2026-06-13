@@ -1431,6 +1431,9 @@ import { article as a1487 } from './articles/best-peptides-muscle-recovery-resea
 import { article as a1488 } from './articles/best-peptides-swimmers-research-2026';
 import { article as a1489 } from './articles/peptide-research-myths-vs-science-guide';
 import { article as a1490 } from './articles/peptide-research-news-june-2026';
+import { article as aPR1 } from './articles/how-much-does-bpc-157-cost-research-pricing-guide';
+import { article as aPR2 } from './articles/how-much-does-semaglutide-cost-research-pricing-guide';
+import { article as aPR3 } from './articles/how-much-does-tirzepatide-cost-research-pricing-guide';
 import { article as aNX1 } from './articles/peptide-reconstitution-complete-protocol-research-guide';
 import { article as aNX2 } from './articles/peptide-storage-temperature-light-shelf-life-guide';
 import { article as aNX3 } from './articles/why-hplc-purity-testing-matters-peptide-sourcing-2026';
@@ -2887,6 +2890,9 @@ export const articles: BlogArticle[] = [
   aIG1,
   aIG2,
   aIG3,
+  aPR1,
+  aPR2,
+  aPR3,
   aNX1,
   aNX2,
   aNX3,
