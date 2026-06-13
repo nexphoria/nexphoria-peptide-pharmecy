@@ -1404,6 +1404,9 @@ import { article as a1460 } from './articles/peptide-research-neuroinflammation-
 import { article as a1461 } from './articles/where-to-buy-research-peptides-israel-guide';
 import { article as a1462 } from './articles/peptide-research-carnivore-diet-synergy-protocols';
 import { article as a1463 } from './articles/where-to-buy-research-peptides-singapore-southeast-asia';
+import { article as a1464 } from './articles/peptide-research-obesity-glp1-mechanisms-complete-2026';
+import { article as a1465 } from './articles/peptide-research-vagus-nerve-gut-brain-bpc157-glp1';
+import { article as a1466 } from './articles/glp1-agonists-bone-density-osteoporosis-research';
 
 
 export const articles: BlogArticle[] = [
@@ -2824,6 +2827,9 @@ export const articles: BlogArticle[] = [
   a1461,
   a1462,
   a1463,
+  a1464,
+  a1465,
+  a1466,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
