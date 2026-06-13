@@ -1491,6 +1491,9 @@ import { article as aJUN15 } from './articles/best-peptides-physical-therapists-
 import { article as aJUL1 } from './articles/bpc-157-complete-research-guide-2026';
 import { article as aJUL2 } from './articles/longevity-peptide-stack-2026';
 import { article as aJUL3 } from './articles/peptide-purity-hplc-testing-researchers-guide';
+import { article as aAUG1 } from './articles/bpc-157-vs-ghk-cu-skin-anti-aging-comparison-2026';
+import { article as aAUG2 } from './articles/where-to-buy-glp1-peptides-2026-sourcing-guide';
+import { article as aAUG3 } from './articles/peptide-research-fall-recovery-guide-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2998,6 +3001,9 @@ export const articles: BlogArticle[] = [
   aJUL1,
   aJUL2,
   aJUL3,
+  aAUG1,
+  aAUG2,
+  aAUG3,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
