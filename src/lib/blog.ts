@@ -1407,6 +1407,9 @@ import { article as a1463 } from './articles/where-to-buy-research-peptides-sing
 import { article as a1464 } from './articles/peptide-research-obesity-glp1-mechanisms-complete-2026';
 import { article as a1465 } from './articles/peptide-research-vagus-nerve-gut-brain-bpc157-glp1';
 import { article as a1466 } from './articles/glp1-agonists-bone-density-osteoporosis-research';
+import { article as a1467 } from './articles/peptide-research-ptsd-trauma-semax-selank-bpc157-oxytocin-protocols';
+import { article as a1468 } from './articles/peptide-research-anhedonia-reward-dopamine-semax-bpc157-selank';
+import { article as a1469 } from './articles/peptide-research-bipolar-mood-disorder-mood-cycling-circadian-protocols';
 
 
 export const articles: BlogArticle[] = [
@@ -2830,6 +2833,9 @@ export const articles: BlogArticle[] = [
   a1464,
   a1465,
   a1466,
+  a1467,
+  a1468,
+  a1469,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
