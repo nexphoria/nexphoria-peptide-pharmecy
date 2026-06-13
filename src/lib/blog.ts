@@ -1386,6 +1386,9 @@ import { article as a1442 } from './articles/peptide-research-collagen-synthesis
 import { article as a1443 } from './articles/longevity-peptide-stack-2026-researchers-guide';
 import { article as a1444 } from './articles/nad-plus-vs-nmn-longevity-research-comparison';
 import { article as a1445 } from './articles/hexarelin-cardiac-gh-research-overview';
+import { article as a1446 } from './articles/peptide-research-october-november-2026';
+import { article as a1447 } from './articles/how-to-start-peptide-research-2026';
+import { article as a1448 } from './articles/nexphoria-brand-story-research-peptides';
 
 
 export const articles: BlogArticle[] = [
@@ -2788,6 +2791,9 @@ export const articles: BlogArticle[] = [
   a1443,
   a1444,
   a1445,
+  a1446,
+  a1447,
+  a1448,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
