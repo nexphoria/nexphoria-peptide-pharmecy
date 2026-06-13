@@ -1449,6 +1449,9 @@ import { article as aPR9 } from './articles/how-much-does-sermorelin-cost-resear
 import { article as aPR10 } from './articles/how-much-does-cjc-1295-cost-research-pricing-guide';
 import { article as aPR11 } from './articles/how-much-does-epithalon-cost-research-pricing-guide';
 import { article as aPR12 } from './articles/how-much-does-aod-9604-cost-research-pricing-guide';
+import { article as aPR13 } from './articles/how-much-does-retatrutide-cost-research-pricing-guide';
+import { article as aPR14 } from './articles/how-much-does-selank-cost-research-pricing-guide';
+import { article as aPR15 } from './articles/how-much-does-pt-141-cost-research-pricing-guide';
 import { article as aIG1 } from './articles/nexphoria-instagram-reels-education-awareness-scripts';
 import { article as aIG2 } from './articles/nexphoria-instagram-reels-trust-proof-scripts';
 import { article as aIG3 } from './articles/nexphoria-instagram-reels-compounds-thought-leadership-scripts';
@@ -2920,6 +2923,9 @@ export const articles: BlogArticle[] = [
   aPR10,
   aPR11,
   aPR12,
+  aPR13,
+  aPR14,
+  aPR15,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
