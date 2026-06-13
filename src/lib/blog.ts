@@ -1497,6 +1497,9 @@ import { article as aAUG3 } from './articles/peptide-research-fall-recovery-guid
 import { article as aPRX1 } from './articles/how-much-does-ll-37-cost-research-pricing-guide';
 import { article as aPRX2 } from './articles/how-much-does-kpv-cost-research-pricing-guide';
 import { article as aPRX3 } from './articles/how-much-does-tesamorelin-cost-research-pricing-guide';
+import { article as aPRX4 } from './articles/how-much-does-bpc-157-cost-research-pricing-guide';
+import { article as aPRX5 } from './articles/how-much-does-semaglutide-cost-research-pricing-guide';
+import { article as aPRX6 } from './articles/how-much-does-ipamorelin-cost-research-pricing-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3010,6 +3013,9 @@ export const articles: BlogArticle[] = [
   aPRX1,
   aPRX2,
   aPRX3,
+  aPRX4,
+  aPRX5,
+  aPRX6,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
