@@ -1413,6 +1413,9 @@ import { article as a1469 } from './articles/peptide-research-bipolar-mood-disor
 import { article as a1470 } from './articles/nexphoria-vs-rui-products-vendor-comparison';
 import { article as a1471 } from './articles/research-peptide-legal-status-fda-regulations-2026';
 import { article as a1472 } from './articles/peptide-international-shipping-customs-travel-guide';
+import { article as a1473 } from './articles/where-to-buy-research-peptides-2026-complete-guide';
+import { article as a1474 } from './articles/cjc-1295-ipamorelin-stack-dosing-protocol-2026';
+import { article as a1475 } from './articles/thymosin-alpha-1-immune-modulation-research-guide-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2842,6 +2845,9 @@ export const articles: BlogArticle[] = [
   a1470,
   a1471,
   a1472,
+  a1473,
+  a1474,
+  a1475,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
