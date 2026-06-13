@@ -1425,6 +1425,9 @@ import { article as a1481 } from './articles/peptide-research-autoimmune-conditi
 import { article as a1482 } from './articles/does-semaglutide-cause-hair-loss-research-guide';
 import { article as a1483 } from './articles/peptide-research-pcos-weight-loss-glp1-kisspeptin';
 import { article as a1484 } from './articles/semaglutide-vs-peptides-complete-comparison-guide';
+import { article as a1485 } from './articles/longevity-peptide-stack-2026-research-guide';
+import { article as a1486 } from './articles/peptide-sciences-alternative-supplier-guide';
+import { article as a1487 } from './articles/best-peptides-muscle-recovery-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2866,6 +2869,9 @@ export const articles: BlogArticle[] = [
   a1482,
   a1483,
   a1484,
+  a1485,
+  a1486,
+  a1487,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
