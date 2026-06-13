@@ -1401,6 +1401,9 @@ import { article as a1457 } from './articles/where-to-buy-cjc-1295-ghrp-2-stack-
 import { article as a1458 } from './articles/peptide-research-sleep-architecture-dsip-delta-wave-optimization-2026';
 import { article as a1459 } from './articles/where-to-buy-bpc-157-tb-500-wolverine-stack-2026';
 import { article as a1460 } from './articles/peptide-research-neuroinflammation-brain-injury-tbi-models-2026';
+import { article as a1461 } from './articles/where-to-buy-research-peptides-israel-guide';
+import { article as a1462 } from './articles/peptide-research-carnivore-diet-synergy-protocols';
+import { article as a1463 } from './articles/where-to-buy-research-peptides-singapore-southeast-asia';
 
 
 export const articles: BlogArticle[] = [
@@ -2818,6 +2821,9 @@ export const articles: BlogArticle[] = [
   a1458,
   a1459,
   a1460,
+  a1461,
+  a1462,
+  a1463,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
