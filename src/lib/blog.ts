@@ -1362,6 +1362,9 @@ import { article as a1418 } from './articles/semaglutide-research-peptide-glp1-s
 import { article as a1419 } from './articles/peptide-injection-technique-guide-researchers-2026';
 import { article as a1420 } from './articles/peptide-research-inflammation-anti-inflammatory-complete-guide-2026';
 import { article as a1421 } from './articles/how-to-read-peptide-certificate-of-analysis-complete-guide';
+import { article as a1422 } from './articles/best-peptides-for-weightlifters-research-2026';
+import { article as a1423 } from './articles/best-peptides-for-rock-climbers-research-2026';
+import { article as a1424 } from './articles/best-peptides-for-combat-sports-boxing-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2740,6 +2743,9 @@ export const articles: BlogArticle[] = [
   a1419,
   a1420,
   a1421,
+  a1422,
+  a1423,
+  a1424,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
