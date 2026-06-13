@@ -1443,6 +1443,9 @@ import { article as a1493 } from './articles/efocipegtrutide-triple-agonist-rese
 import { article as aX01 } from './articles/does-tirzepatide-cause-hair-loss-research-guide';
 import { article as aX02 } from './articles/peptide-expiration-shelf-life-opened-vials-research-guide';
 import { article as aX03 } from './articles/peptide-research-news-july-2026';
+import { article as aX04 } from './articles/peptide-research-news-august-2026';
+import { article as aX05 } from './articles/best-peptides-first-responders-firefighters-research-2026';
+import { article as aX06 } from './articles/how-much-does-bpc-157-cost-per-vial-research-pricing';
 import { article as aPR4 } from './articles/how-much-does-ipamorelin-cost-research-pricing-guide';
 import { article as aPR5 } from './articles/how-much-does-mk-677-cost-research-pricing-guide';
 import { article as aPR6 } from './articles/how-much-does-ghk-cu-cost-research-pricing-guide';
@@ -2938,6 +2941,9 @@ export const articles: BlogArticle[] = [
   aX01,
   aX02,
   aX03,
+  aX04,
+  aX05,
+  aX06,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
