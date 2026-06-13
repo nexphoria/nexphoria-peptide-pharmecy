@@ -1410,6 +1410,9 @@ import { article as a1466 } from './articles/glp1-agonists-bone-density-osteopor
 import { article as a1467 } from './articles/peptide-research-ptsd-trauma-semax-selank-bpc157-oxytocin-protocols';
 import { article as a1468 } from './articles/peptide-research-anhedonia-reward-dopamine-semax-bpc157-selank';
 import { article as a1469 } from './articles/peptide-research-bipolar-mood-disorder-mood-cycling-circadian-protocols';
+import { article as a1470 } from './articles/nexphoria-vs-rui-products-vendor-comparison';
+import { article as a1471 } from './articles/research-peptide-legal-status-fda-regulations-2026';
+import { article as a1472 } from './articles/peptide-international-shipping-customs-travel-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2836,6 +2839,9 @@ export const articles: BlogArticle[] = [
   a1467,
   a1468,
   a1469,
+  a1470,
+  a1471,
+  a1472,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
