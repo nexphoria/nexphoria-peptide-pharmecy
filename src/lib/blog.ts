@@ -1479,6 +1479,9 @@ import { article as aJUN3 } from './articles/bpc-157-vendor-review-2026';
 import { article as aJUN4 } from './articles/tb-500-shoulder-rotator-cuff-research-guide';
 import { article as aJUN5 } from './articles/peptide-dosing-frequency-interval-research-guide';
 import { article as aJUN6 } from './articles/semaglutide-vs-retatrutide-2026-comparison';
+import { article as aJUN7 } from './articles/bpc-157-achilles-tendon-research-guide';
+import { article as aJUN8 } from './articles/bpc-157-lower-back-lumbar-spine-research-guide';
+import { article as aJUN9 } from './articles/bpc-157-ankle-injury-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2974,6 +2977,9 @@ export const articles: BlogArticle[] = [
   aJUN4,
   aJUN5,
   aJUN6,
+  aJUN7,
+  aJUN8,
+  aJUN9,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
