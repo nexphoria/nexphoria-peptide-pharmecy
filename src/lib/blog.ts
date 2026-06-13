@@ -1422,6 +1422,9 @@ import { article as a1478 } from './articles/nad-plus-summer-stability-exercise-
 import { article as a1479 } from './articles/peptide-storage-humid-tropical-climate-guide';
 import { article as a1480 } from './articles/research-peptides-europe-uk-sourcing-regulations-guide';
 import { article as a1481 } from './articles/peptide-research-autoimmune-conditions-ta1-bpc157-ll37-protocols';
+import { article as a1482 } from './articles/does-semaglutide-cause-hair-loss-research-guide';
+import { article as a1483 } from './articles/peptide-research-pcos-weight-loss-glp1-kisspeptin';
+import { article as a1484 } from './articles/semaglutide-vs-peptides-complete-comparison-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2860,6 +2863,9 @@ export const articles: BlogArticle[] = [
   a1479,
   a1480,
   a1481,
+  a1482,
+  a1483,
+  a1484,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
