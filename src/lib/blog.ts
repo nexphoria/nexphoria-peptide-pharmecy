@@ -1464,6 +1464,9 @@ import { article as aPR18 } from './articles/how-much-does-hexarelin-cost-resear
 import { article as aPR19 } from './articles/how-much-does-semax-cost-research-pricing-guide';
 import { article as aPR20 } from './articles/how-much-does-ghrp-6-cost-research-pricing-guide';
 import { article as aPR21 } from './articles/how-much-does-ghrp-2-cost-research-pricing-guide';
+import { article as aX07 } from './articles/peptide-research-summer-heat-storage-2026';
+import { article as aPR22 } from './articles/how-much-does-follistatin-344-cost-research-pricing-guide';
+import { article as aX08 } from './articles/best-peptides-veterans-military-research-2026';
 import { article as aIG1 } from './articles/nexphoria-instagram-reels-education-awareness-scripts';
 import { article as aIG2 } from './articles/nexphoria-instagram-reels-trust-proof-scripts';
 import { article as aIG3 } from './articles/nexphoria-instagram-reels-compounds-thought-leadership-scripts';
@@ -2950,6 +2953,9 @@ export const articles: BlogArticle[] = [
   aX04,
   aX05,
   aX06,
+  aX07,
+  aPR22,
+  aX08,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
