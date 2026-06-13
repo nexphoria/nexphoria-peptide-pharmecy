@@ -1389,6 +1389,9 @@ import { article as a1445 } from './articles/hexarelin-cardiac-gh-research-overv
 import { article as a1446 } from './articles/peptide-research-october-november-2026';
 import { article as a1447 } from './articles/how-to-start-peptide-research-2026';
 import { article as a1448 } from './articles/nexphoria-brand-story-research-peptides';
+import { article as a1449 } from './articles/retatrutide-obesity-research-2026';
+import { article as a1450 } from './articles/best-peptides-for-men-over-50-2026';
+import { article as a1451 } from './articles/peptide-research-cellular-senescence-senolytics';
 
 
 export const articles: BlogArticle[] = [
@@ -2794,6 +2797,9 @@ export const articles: BlogArticle[] = [
   a1446,
   a1447,
   a1448,
+  a1449,
+  a1450,
+  a1451,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
