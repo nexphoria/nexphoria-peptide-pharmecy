@@ -1365,6 +1365,9 @@ import { article as a1421 } from './articles/how-to-read-peptide-certificate-of-
 import { article as a1422 } from './articles/best-peptides-for-weightlifters-research-2026';
 import { article as a1423 } from './articles/best-peptides-for-rock-climbers-research-2026';
 import { article as a1424 } from './articles/best-peptides-for-combat-sports-boxing-research-2026';
+import { article as a1425 } from './articles/best-peptides-for-mma-fighters-research-2026';
+import { article as a1426 } from './articles/best-peptides-for-triathletes-research-2026';
+import { article as a1427 } from './articles/peptide-research-tendon-healing-timeline-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2746,6 +2749,9 @@ export const articles: BlogArticle[] = [
   a1422,
   a1423,
   a1424,
+  a1425,
+  a1426,
+  a1427,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
