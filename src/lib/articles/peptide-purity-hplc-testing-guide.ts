@@ -2,136 +2,91 @@ import type { BlogArticle } from '../blog-types';
 
 export const article: BlogArticle = {
   slug: "peptide-purity-hplc-testing-guide",
-  title: "Why HPLC Purity Testing Matters When Sourcing Research Peptides",
-  description: "Why HPLC purity testing is the gold standard for research peptides — what the method measures, why ≥99% purity matters for experimental validity, and how it compares to mass spectrometry and LAL endotoxin testing.",
+  title: "HPLC Purity Testing for Research Peptides: A Complete Guide",
+  description:
+    "A practical guide to understanding HPLC purity testing for research peptides — what the data means, how to read a COA, what purity thresholds matter, and why testing methodology varies between suppliers.",
   category: "Quality & Testing",
-  readMinutes: 10,
-  publishedAt: "2026-06-10",
+  readMinutes: 9,
+  publishedAt: "2026-06-01",
   ogImage: "/og-image.jpg",
   body: [
     {
       type: "paragraph",
-      text: "When evaluating a research peptide supplier, purity testing documentation is the single most important quality indicator available. Yet the numbers on a certificate of analysis are only meaningful if you understand what they measure — and what they don't. This article explains HPLC purity testing in depth, why the 99% threshold exists, and how it integrates with complementary analytical methods.",
+      text: "High-Performance Liquid Chromatography (HPLC) is the gold standard analytical method for verifying research peptide purity. For researchers selecting peptide suppliers, understanding what HPLC data actually means — and what to look for in a certificate of analysis — is a fundamental quality verification skill.",
     },
     {
       type: "heading",
-      text: "What Is HPLC?",
+      text: "What HPLC Measures",
     },
     {
       type: "paragraph",
-      text: "High-Performance Liquid Chromatography (HPLC) is an analytical technique that separates, identifies, and quantifies individual components within a mixture by passing the sample through a pressurized column packed with a stationary phase material.",
+      text: "HPLC works by separating the components of a sample based on their interactions with a stationary phase (the column packing) and a mobile phase (the solvent gradient). Each component elutes at a characteristic time (retention time) and produces a peak in the chromatogram. The area under each peak is proportional to the mass of that component.",
     },
     {
       type: "paragraph",
-      text: "In the context of peptide analysis, reverse-phase HPLC (RP-HPLC) is the standard method. The stationary phase is a nonpolar material (typically C18-bonded silica), and peptide components separate based on their relative hydrophobicity. More hydrophobic peptides bind more strongly and elute later; less hydrophobic impurities (truncated sequences, deletion products) elute earlier. Each distinct molecular species produces a peak on the chromatogram. The relative area of each peak corresponds to the relative abundance of that component in the sample.",
+      text: "For peptide purity analysis, reverse-phase HPLC (RP-HPLC) with UV detection (typically 210–220 nm for peptide bond absorbance) is the standard method. Purity is reported as the percentage of the total peak area represented by the main product peak: if the product peak is 99.3% of total peak area, purity is reported as ≥99%.",
     },
     {
       type: "heading",
-      text: "What Does '≥99% Pure' Actually Mean?",
-    },
-    {
-      type: "paragraph",
-      text: "A purity figure of 99% means that, of all the UV-absorbing material detected by the HPLC system, 99% elutes at the retention time of the target peptide. The remaining 1% consists of synthesis byproducts (deletion sequences, truncated fragments), racemized amino acid-containing variants, oxidized side chains (particularly methionine, cysteine, tryptophan), and protecting group remnants from solid-phase peptide synthesis (SPPS).",
-    },
-    {
-      type: "paragraph",
-      text: "Consider a 10 mg/mL peptide solution at 95% HPLC purity. That preparation contains 0.5 mg/mL of unknown impurities — potentially including biologically active fragments with different receptor binding profiles. For mechanistic research, this represents a significant confound. The 99% threshold exists specifically to reduce this variability to a level that is unlikely to materially affect experimental outcomes.",
-    },
-    {
-      type: "heading",
-      text: "The HPLC Process in Practice",
-    },
-    {
-      type: "list",
-      items: [
-        "Sample preparation — peptide dissolved in a defined solvent (often 0.1% TFA in water/acetonitrile)",
-        "Injection onto C18 RP column",
-        "Gradient elution — increasing acetonitrile concentration displaces bound compounds in order of hydrophobicity",
-        "UV detection — typically at 220 nm (peptide bond absorption) and 280 nm (aromatic residues)",
-        "Integration — software integrates peak areas; purity expressed as area % of main peak",
-      ],
-    },
-    {
-      type: "paragraph",
-      text: "The resulting chromatogram should be provided with the COA. A purity number without a chromatogram cannot be independently verified.",
-    },
-    {
-      type: "heading",
-      text: "HPLC Limitations: What It Doesn't Confirm",
+      text: "Reading a Peptide COA: What to Look For",
     },
     {
       type: "subheading",
-      text: "It Confirms Purity, Not Identity",
+      text: "The Chromatogram",
     },
     {
       type: "paragraph",
-      text: "An HPLC run confirms that most of the material is a single compound. It does not confirm that compound is the peptide you ordered. Two different peptides of similar hydrophobicity could produce nearly identical HPLC chromatograms. This is why mass spectrometry is required in conjunction with HPLC.",
+      text: "A legitimate HPLC COA should include the actual chromatogram, not just a purity number. The chromatogram should show a dominant main peak with minimal impurity peaks. Impurity peaks that are small but numerous can indicate degradation products from poor synthesis or storage. A single clean peak with ≥99% area represents high-quality material.",
     },
     {
       type: "subheading",
-      text: "It Detects UV-Absorbing Species Only",
+      text: "Method Conditions",
     },
     {
       type: "paragraph",
-      text: "HPLC with UV detection does not detect endotoxins (bacterial lipopolysaccharide), residual solvents below detection threshold, or some inorganic synthesis contaminants. This is why LAL testing and, in some cases, residual solvent analysis are separate required tests.",
+      text: "Legitimate COAs specify the HPLC method used: column type (C18 is standard for most peptides), mobile phase composition, gradient program, detection wavelength, and flow rate. This information allows the analytical result to be reproduced and verified. Generic or unspecified methods are a red flag.",
     },
     {
       type: "subheading",
-      text: "Co-Eluting Impurities Can Be Invisible",
+      text: "Sample Information",
     },
     {
       type: "paragraph",
-      text: "If an impurity has nearly identical hydrophobicity to the target peptide, it will co-elute and appear within the main peak — inflating the apparent purity figure. This risk is higher for longer peptides where scrambled sequences may have similar overall hydrophobicity.",
+      text: "The COA should identify the specific batch or lot number being tested, the compound name and molecular formula, and the testing date. Undated or non-batch-specific COAs should not be accepted as quality verification.",
     },
     {
       type: "heading",
-      text: "Mass Spectrometry: The Complement to HPLC",
+      text: "HPLC vs. Mass Spectrometry: What Each Confirms",
     },
     {
       type: "paragraph",
-      text: "Electrospray Ionization Mass Spectrometry (ESI-MS) measures the mass-to-charge ratio (m/z) of ionized molecules. For peptide identity confirmation, the observed molecular weight is compared to the theoretical molecular weight of the target sequence. Accurate mass confirmation requires a match within ±0.1–0.5 Da (instrument-dependent). MS can detect oxidation (+16 Da per oxygen), deamidation (+0.98 Da), and other common modifications.",
-    },
-    {
-      type: "paragraph",
-      text: "HPLC tells you how pure the sample is. MS tells you what the dominant compound actually is. Both are required for a complete analytical picture.",
+      text: "HPLC tells you how pure a compound is — but not what it is. A 99% pure sample of the wrong compound will pass HPLC. Mass spectrometry (MS) confirms identity by measuring the molecular weight of the compound and matching it against the expected mass for the target peptide. Research-grade suppliers provide both HPLC (purity) and MS (identity) on every COA.",
     },
     {
       type: "heading",
-      text: "LAL Endotoxin Testing: The Third Pillar",
+      text: "Purity Thresholds for Research",
     },
     {
-      type: "paragraph",
-      text: "Limulus Amebocyte Lysate (LAL) testing detects bacterial endotoxins (lipopolysaccharide, LPS) using the clotting cascade of horseshoe crab blood. LAL is the pharmaceutical industry standard for endotoxin detection because it is exquisitely sensitive — detecting endotoxin at nanogram-per-mL concentrations.",
-    },
-    {
-      type: "paragraph",
-      text: "For research applications, endotoxin contamination is a critical confound: LPS activates Toll-like receptor 4 (TLR4), triggering inflammatory responses that can mask or exaggerate the effects of the compound being studied. A peptide that appears to produce a strong inflammatory response may simply be contaminated with LPS. This is especially important for in vitro cell culture work and in vivo immunological research.",
-    },
-    {
-      type: "heading",
-      text: "What a Complete COA Should Include",
-    },
-    {
-      type: "list",
-      items: [
-        "HPLC purity result with actual chromatogram (not just a number)",
-        "Mass spectrometry identity confirmation with observed vs. theoretical molecular weight",
-        "LAL endotoxin result with EU/mg figure and pass/fail specification",
-        "Lot/batch number traceable to production records",
-        "Storage and handling recommendations specific to the compound",
+      type: "table",
+      headers: ["Application", "Minimum Purity", "Notes"],
+      rows: [
+        ["In vitro cell culture", "≥95%", "Higher preferred to reduce impurity confounds"],
+        ["In vivo animal research", "≥98%", "Impurities can affect study endpoints"],
+        ["Quantitative mechanistic studies", "≥99%", "Near-pure required for dose-response accuracy"],
+        ["Reference standards", "≥99.5%", "Analytical reference requirements"],
       ],
     },
     {
       type: "heading",
-      text: "Summary",
+      text: "Third-Party vs. In-House Testing",
     },
     {
       type: "paragraph",
-      text: "HPLC purity is the primary quantitative indicator of research peptide quality, but it is one component of a complete analytical profile. HPLC confirms that the preparation is predominantly a single compound; mass spectrometry confirms that compound is the correct sequence; LAL testing confirms it is free of endotoxin contamination. Researchers sourcing peptides should require all three data points before accepting material for experimental use.",
+      text: "Supplier-internal testing is the minimum acceptable standard. Third-party testing by an accredited independent laboratory provides an additional verification layer — the laboratory has no financial incentive to produce a favorable result. Look for the laboratory name on the COA; a named lab is verifiable while 'internal QC' is not.",
     },
     {
-      type: "disclaimer",
-      text: "For research purposes only. Not intended for human use.",
+      type: "callout",
+      text: "Nexphoria provides HPLC chromatograms with method conditions, MS identity confirmation, LAL endotoxin data, and third-party laboratory names on every batch COA. COAs are accessible directly from product pages.",
     },
   ],
 };

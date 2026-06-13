@@ -2,170 +2,84 @@ import type { BlogArticle } from '../blog-types';
 
 export const article: BlogArticle = {
   slug: "longevity-peptide-stack-2026-research-guide",
-  title: "The 2026 Longevity Peptide Stack Researchers Are Studying",
+  title: "Longevity Peptide Stack 2026: Research Protocol Guide",
   description:
-    "A research-oriented overview of the peptide combinations longevity scientists are investigating in 2026. Covers GH axis, telomere biology, tissue repair, and mitochondrial targets.",
-  category: "Compound Profiles",
-  readMinutes: 11,
-  publishedAt: "2026-06-10",
+    "A protocol-focused guide for researchers studying peptide combinations targeting the hallmarks of aging. Covers epitalon, SS-31, GHK-Cu, NAD+, study design principles, and biomarker selection.",
+  category: "Longevity Research",
+  readMinutes: 13,
+  publishedAt: "2026-06-03",
   ogImage: "/og-image.jpg",
   body: [
     {
-      type: "paragraph",
-      text: "Longevity research has evolved from broadly interventional approaches — caloric restriction, exercise biology, antioxidant supplementation — toward more targeted molecular strategies. Peptides and peptide-like compounds have emerged as particularly promising research tools because of their high specificity, relatively short development timelines, and the existence of endogenous analogs that provide mechanistic validation.",
+      type: "disclaimer",
+      text: "Research chemicals for licensed researchers and scientific educators only. Not for human consumption.",
     },
     {
       type: "paragraph",
-      text: "This article surveys the major peptide compounds under active investigation in 2026 longevity research and the rationale behind combination protocols.",
+      text: "Designing a longevity peptide research protocol requires integrating compound-specific pharmacology with the broader systems biology of aging. This guide provides a protocol-focused framework for researchers building multi-compound longevity studies, drawing on the published literature for each key compound.",
     },
     {
       type: "heading",
-      text: "The Multi-Target Rationale",
+      text: "Hallmarks-Based Protocol Design",
     },
     {
       type: "paragraph",
-      text: "Biological aging is not a single-pathway phenomenon. The hallmarks of aging — a framework established by López-Otín et al. and updated in subsequent years — include genomic instability, telomere attrition, epigenetic alterations, loss of proteostasis, disabled macroautophagy, deregulated nutrient sensing, mitochondrial dysfunction, cellular senescence, stem cell exhaustion, and altered intercellular communication.",
-    },
-    {
-      type: "paragraph",
-      text: "No single compound addresses all of these. The research case for combination protocols (stacks) rests on targeting multiple hallmarks simultaneously — ideally with compounds that are complementary rather than redundant.",
-    },
-    {
-      type: "heading",
-      text: "Tier 1: GH Axis Optimization",
-    },
-    {
-      type: "subheading",
-      text: "CJC-1295 + Ipamorelin",
-    },
-    {
-      type: "paragraph",
-      text: "The GHRH analog + GHS combination remains among the most studied in longevity-adjacent research. GH and IGF-1 decline significantly with age (somatopause), correlating with decreased lean body mass, increased adiposity, reduced bone density, impaired immune function, and cognitive decline markers.",
-    },
-    {
-      type: "paragraph",
-      text: "Rather than administering exogenous GH — which suppresses endogenous production and carries IGF-1 overshoot risks — CJC-1295 + Ipamorelin targets the upstream regulatory system, preserving pulsatility while amplifying GH output.",
-    },
-    {
-      type: "callout",
-      text: "Research focus in 2026: Tissue-specific effects of GH pulse restoration; interaction with IGF-1 axis in aged models; potential synergy with senolytic compounds.",
-    },
-    {
-      type: "heading",
-      text: "Tier 2: Telomere and Epigenetic Biology",
-    },
-    {
-      type: "subheading",
-      text: "Epithalon",
-    },
-    {
-      type: "paragraph",
-      text: "The tetrapeptide Epithalon (Ala-Glu-Asp-Gly) has been studied since the 1980s for telomerase activation and longevity extension in multiple model organisms. It represents the most investigated peptide tool for direct telomere biology research.",
-    },
-    {
-      type: "paragraph",
-      text: "Research focus in 2026 includes combination with NAD+ precursors (NMN, NR) to address both telomere attrition and mitochondrial dysfunction hallmarks simultaneously; comparative studies against TA-65 (cycloastragenol); and epigenetic clock analysis in treated vs. untreated populations.",
-    },
-    {
-      type: "heading",
-      text: "Tier 3: Tissue Repair and Regeneration",
-    },
-    {
-      type: "subheading",
-      text: "BPC-157",
-    },
-    {
-      type: "paragraph",
-      text: "BPC-157 (Body Protection Compound-157) is a pentadecapeptide derived from a gastric juice protein, studied extensively for tissue repair, angiogenesis, and neuroprotection. Its proposed mechanisms include nitric oxide system modulation promoting vascular healing, tendon and ligament repair via upregulation of growth factor expression, GI tract cytoprotection, and neurological healing through dopamine system normalization in animal models.",
-    },
-    {
-      type: "paragraph",
-      text: "In a longevity context, BPC-157's tissue maintenance effects serve as scaffolding: preserving structural integrity while other interventions address cellular and molecular aging.",
-    },
-    {
-      type: "subheading",
-      text: "TB-500 (Thymosin β4)",
-    },
-    {
-      type: "paragraph",
-      text: "TB-500 is a synthetic analog of Thymosin β4, a ubiquitous intracellular peptide involved in actin regulation, wound healing, and cardiac protection. Research has documented accelerated wound healing in multiple tissue types, cardioprotective effects following ischemic injury, and stem cell migration facilitation to sites of injury.",
-    },
-    {
-      type: "paragraph",
-      text: "TB-500 and BPC-157 are frequently studied in combination for their complementary tissue repair profiles — BPC-157 primarily vascular/gastrointestinal; TB-500 primarily musculoskeletal/cardiac.",
-    },
-    {
-      type: "heading",
-      text: "Tier 4: Mitochondrial and Metabolic Targets",
-    },
-    {
-      type: "subheading",
-      text: "MOTS-c",
-    },
-    {
-      type: "paragraph",
-      text: "MOTS-c is a mitochondria-derived peptide (MDP) encoded within the mitochondrial 12S rRNA. It represents a newer class of research targets: peptides produced by mitochondria that regulate nuclear gene expression. Research findings include insulin sensitization (reversal of diet-induced insulin resistance in mouse models), exercise-mimetic effects via activation of AMPK and related metabolic sensors, and lifespan extension demonstrated in C. elegans.",
-    },
-    {
-      type: "subheading",
-      text: "Humanin",
-    },
-    {
-      type: "paragraph",
-      text: "Humanin is another MDP — one of the first identified — with documented roles in neuroprotection (originally identified in Alzheimer's disease context), cardiovascular protection, and metabolic regulation. Age-related decline in circulating humanin levels suggests it as both a biomarker and potential intervention target. Humanin and MOTS-c are increasingly studied together as a mitochondria-derived peptide combination targeting multiple aspects of mitochondrial decline.",
-    },
-    {
-      type: "heading",
-      text: "Tier 5: Neurological and Cognitive Maintenance",
-    },
-    {
-      type: "subheading",
-      text: "Semax and Selank",
-    },
-    {
-      type: "paragraph",
-      text: "Russia's two most studied nootropic peptides represent CNS-focused longevity components. Semax (ACTH 4-7 analog) has demonstrated BDNF upregulation, neuroprotection, and cognitive enhancement in research models. Selank (tuftsin analog) shows anxiolytic properties, BDNF upregulation, and immune modulation. In longevity research, neurological aging — including cognitive decline, neuroinflammation, and HPA axis dysregulation — is an understudied target relative to metabolic and cardiovascular aging.",
-    },
-    {
-      type: "heading",
-      text: "A Research Framework for 2026",
+      text: "The most rigorous longevity research protocols are organized around the hallmarks of aging framework. Rather than asking 'which peptide reverses aging?', the better question is: 'Which hallmarks are we targeting, and what endpoints will we measure?' This reframes protocol design around testable biological hypotheses.",
     },
     {
       type: "table",
-      headers: ["Target Hallmark", "Peptide Approach"],
+      headers: ["Hallmark", "Target Peptide(s)", "Measurable Endpoint"],
       rows: [
-        ["GH axis decline", "CJC-1295 + Ipamorelin"],
-        ["Telomere attrition", "Epithalon"],
-        ["Mitochondrial dysfunction", "MOTS-c + Humanin"],
-        ["Tissue degradation", "BPC-157 + TB-500"],
-        ["Neurological aging", "Semax + Selank"],
-        ["Endotoxin/inflammatory load", "Address via compound purity (LAL testing)"],
+        ["Telomere attrition", "Epitalon", "Telomere length (qPCR), telomerase activity"],
+        ["Mitochondrial dysfunction", "SS-31, NAD+", "ATP production, ROS levels, ΔΨm"],
+        ["Cellular senescence", "GHK-Cu", "p16/p21 expression, SASP markers"],
+        ["Immune senescence", "Thymosin alpha-1", "T-cell subset ratios, NK cytotoxicity"],
+        ["Inflammation (inflammaging)", "BPC-157, GHK-Cu", "IL-6, TNF-α, CRP"],
       ],
     },
     {
       type: "heading",
-      text: "Important Research Caveats",
-    },
-    {
-      type: "list",
-      items: [
-        "Most longevity data remains in animal models. Human longevity trials are long-duration by necessity; reliable human data for most peptides is limited.",
-        "Combination effects are largely unstudied. Most compounds have been researched individually; interaction effects in stacks are not well characterized.",
-        "IGF-1 elevation has a complex relationship with longevity. Higher IGF-1 is associated with improved function in some contexts and increased cancer risk in others; this tension is a live area of research.",
-        "Regulatory status varies by jurisdiction. Researchers must operate within applicable regulatory frameworks.",
-      ],
-    },
-    {
-      type: "heading",
-      text: "Summary",
+      text: "Epitalon in Aging Research",
     },
     {
       type: "paragraph",
-      text: "The 2026 longevity peptide research landscape reflects a maturing field — moving from individual compound characterization toward multi-target combination approaches grounded in the hallmarks-of-aging framework. GH axis restoration, telomere biology, mitochondrial function, tissue repair, and neurological maintenance represent the five primary research pillars, each with peptide tools of varying evidence maturity.",
+      text: "Epitalon is primarily studied in models of replicative senescence and telomere biology. The most reproducible protocols in the published literature use subcutaneous administration over 10–20 day cycles. Key endpoints include TERT mRNA expression, telomere length by qPCR or FISH, and proliferative capacity of primary cell cultures.",
     },
     {
-      type: "disclaimer",
-      text: "For research purposes only. Not intended for human use.",
+      type: "heading",
+      text: "SS-31 Protocol Design",
+    },
+    {
+      type: "paragraph",
+      text: "SS-31 (Elamipretide) is most commonly studied via subcutaneous injection in rodent models of mitochondrial dysfunction. Research protocols targeting the aging mitochondrial phenotype typically use daily administration for 4–8 weeks in aged animals (18–24 months in mice). Endpoints: mitochondrial respiration (Seahorse assay), ATP/ADP ratio, cardiolipin quantification, and electron microscopy for cristae morphology.",
+    },
+    {
+      type: "heading",
+      text: "GHK-Cu Dosing and Application",
+    },
+    {
+      type: "paragraph",
+      text: "GHK-Cu is notable for its dose-response relationship: lower concentrations (picomolar to nanomolar range) consistently show the clearest biological activity in vitro. In in vivo wound healing and anti-aging models, subcutaneous and topical routes are both documented. Researchers should consider the application route carefully, as systemic and local effects may differ substantially.",
+    },
+    {
+      type: "heading",
+      text: "Combination Stack Considerations",
+    },
+    {
+      type: "paragraph",
+      text: "When running multi-compound longevity protocols, key practical considerations include: staggering administration times to distinguish compound-specific effects from interaction effects, selecting a primary endpoint for power calculations while measuring secondary endpoints exploratorily, and choosing study duration based on the slowest-acting compound (telomere-focused endpoints need months; acute mitochondrial endpoints may resolve in weeks).",
+    },
+    {
+      type: "heading",
+      text: "Biomarker Selection",
+    },
+    {
+      type: "paragraph",
+      text: "Beyond compound-specific endpoints, general aging biomarkers provide context for longevity protocol research. Epigenetic clocks (DNA methylation-based), inflammatory panels (IL-6, TNF-α, CRP), metabolic markers (insulin sensitivity indices, glucose), and functional measures (grip strength, maze performance, exercise capacity) collectively provide a more complete picture of aging phenotype change than any single biomarker.",
+    },
+    {
+      type: "callout",
+      text: "Nexphoria supplies epitalon, SS-31, GHK-Cu, and thymosin alpha-1 with batch-specific COAs, third-party HPLC and MS testing, and cold-chain shipping to preserve compound integrity.",
     },
   ],
 };

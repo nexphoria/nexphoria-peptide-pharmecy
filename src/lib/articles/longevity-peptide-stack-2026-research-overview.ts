@@ -2,173 +2,77 @@ import type { BlogArticle } from '../blog-types';
 
 export const article: BlogArticle = {
   slug: "longevity-peptide-stack-2026-research-overview",
-  title: "The 2026 Longevity Peptide Stack Researchers Are Studying",
-  description: "A research-oriented overview of the peptide combinations longevity scientists are investigating in 2026. Covers GH axis, telomere biology, tissue repair, and mitochondrial targets.",
+  title: "Longevity Peptide Research 2026: Compounds and Mechanisms Overview",
+  description:
+    "An overview of the leading peptide compounds studied in longevity research as of 2026 — including epitalon, SS-31, NAD+, GHK-Cu, and thymosin alpha-1 — with mechanism summaries and the aging biology framework.",
   category: "Longevity Research",
-  readMinutes: 12,
-  publishedAt: "2026-06-10",
+  readMinutes: 11,
+  publishedAt: "2026-06-05",
   ogImage: "/og-image.jpg",
   body: [
     {
-      type: "paragraph",
-      text: "Longevity research has evolved from broadly interventional approaches — caloric restriction, exercise biology, antioxidant supplementation — toward more targeted molecular strategies. Peptides and peptide-like compounds have emerged as particularly promising research tools because of their high specificity, relatively short development timelines, and the existence of endogenous analogs that provide mechanistic validation.",
-    },
-    {
-      type: "paragraph",
-      text: "This article surveys the major peptide compounds under active investigation in 2026 longevity research and the rationale behind combination protocols.",
-    },
-    {
-      type: "heading",
-      text: "The Multi-Target Rationale",
-    },
-    {
-      type: "paragraph",
-      text: "Biological aging is not a single-pathway phenomenon. The hallmarks of aging — a framework established by López-Otín et al. and updated in subsequent years — include genomic instability, telomere attrition, epigenetic alterations, loss of proteostasis, disabled macroautophagy, deregulated nutrient sensing, mitochondrial dysfunction, cellular senescence, stem cell exhaustion, and altered intercellular communication.",
-    },
-    {
-      type: "paragraph",
-      text: "No single compound addresses all of these. The research case for combination protocols (stacks) rests on targeting multiple hallmarks simultaneously — ideally with compounds that are complementary rather than redundant.",
-    },
-    {
-      type: "heading",
-      text: "Tier 1: GH Axis Optimization",
-    },
-    {
-      type: "subheading",
-      text: "CJC-1295 + Ipamorelin",
-    },
-    {
-      type: "paragraph",
-      text: "The GHRH analog + GHS combination remains among the most studied in longevity-adjacent research. GH and IGF-1 decline significantly with age (somatopause), correlating with decreased lean body mass, increased adiposity, reduced bone density, impaired immune function, and cognitive decline markers.",
-    },
-    {
-      type: "paragraph",
-      text: "Rather than administering exogenous GH — which suppresses endogenous production and carries IGF-1 overshoot risks — CJC-1295 + Ipamorelin targets the upstream regulatory system, preserving pulsatility while amplifying GH output.",
-    },
-    {
-      type: "paragraph",
-      text: "Research focus in 2026: Tissue-specific effects of GH pulse restoration; interaction with IGF-1 axis in aged models; potential synergy with senolytic compounds.",
-    },
-    {
-      type: "heading",
-      text: "Tier 2: Telomere and Epigenetic Biology",
-    },
-    {
-      type: "subheading",
-      text: "Epithalon",
-    },
-    {
-      type: "paragraph",
-      text: "The tetrapeptide Epithalon (Ala-Glu-Asp-Gly) has been studied since the 1980s for telomerase activation and longevity extension in multiple model organisms. It represents the most investigated peptide tool for direct telomere biology research.",
-    },
-    {
-      type: "paragraph",
-      text: "Research focus in 2026: Combination with NAD+ precursors (NMN, NR) to address both telomere attrition and mitochondrial dysfunction hallmarks simultaneously; comparative studies against TA-65 (cycloastragenol); epigenetic clock analysis in treated vs. untreated populations.",
-    },
-    {
-      type: "heading",
-      text: "Tier 3: Tissue Repair and Regeneration",
-    },
-    {
-      type: "subheading",
-      text: "BPC-157",
-    },
-    {
-      type: "paragraph",
-      text: "BPC-157 (Body Protection Compound-157) is a pentadecapeptide derived from a gastric juice protein, studied extensively for tissue repair, angiogenesis, and neuroprotection. Its proposed mechanisms include nitric oxide system modulation promoting vascular healing, tendon and ligament repair via upregulation of growth factor expression in connective tissue, GI tract cytoprotective effects in gut mucosa, and neurological healing through dopamine system normalization in animal models.",
-    },
-    {
-      type: "paragraph",
-      text: "In a longevity context, BPC-157's tissue maintenance effects are relevant as scaffolding: preserving structural integrity while other interventions address cellular and molecular aging.",
-    },
-    {
-      type: "subheading",
-      text: "TB-500 (Thymosin β4)",
-    },
-    {
-      type: "paragraph",
-      text: "TB-500 is a synthetic analog of Thymosin β4, a ubiquitous intracellular peptide involved in actin regulation, wound healing, and cardiac protection. Research has documented accelerated wound healing in multiple tissue types, cardioprotective effects following ischemic injury, and stem cell migration facilitation to sites of injury.",
-    },
-    {
-      type: "paragraph",
-      text: "TB-500 and BPC-157 are frequently studied in combination for their complementary tissue repair profiles — BPC-157 primarily vascular/gastrointestinal; TB-500 primarily musculoskeletal/cardiac.",
-    },
-    {
-      type: "heading",
-      text: "Tier 4: Mitochondrial and Metabolic Targets",
-    },
-    {
-      type: "subheading",
-      text: "MOTS-c",
-    },
-    {
-      type: "paragraph",
-      text: "MOTS-c is a mitochondria-derived peptide (MDP) encoded within the mitochondrial 12S rRNA. It represents a newer class of research targets: peptides produced by mitochondria that regulate nuclear gene expression. Research findings include insulin sensitization via reversal of diet-induced insulin resistance in mouse models, exercise-mimetic effects through activation of AMPK and related metabolic sensors, and lifespan extension demonstrated in C. elegans and explored in mammalian models.",
-    },
-    {
-      type: "subheading",
-      text: "Humanin",
-    },
-    {
-      type: "paragraph",
-      text: "Humanin is another MDP — one of the first identified — with documented roles in neuroprotection (originally identified in Alzheimer's disease context), cardiovascular protection, metabolic regulation, and age-related decline in circulating levels. Humanin and MOTS-c are increasingly studied together as a mitochondria-derived peptide combination targeting multiple aspects of mitochondrial decline.",
-    },
-    {
-      type: "heading",
-      text: "Tier 5: Neurological and Cognitive Maintenance",
-    },
-    {
-      type: "subheading",
-      text: "Semax and Selank",
-    },
-    {
-      type: "paragraph",
-      text: "Russia's two most studied nootropic peptides represent CNS-focused longevity components. Semax (ACTH 4-7 analog) is studied for BDNF upregulation, neuroprotection, and cognitive enhancement. Selank (tuftsin analog) is studied for anxiolytic properties, BDNF upregulation, and immune modulation.",
-    },
-    {
-      type: "paragraph",
-      text: "In longevity research, neurological aging — including cognitive decline, neuroinflammation, and HPA axis dysregulation — is an understudied target relative to metabolic and cardiovascular aging. Neuropeptide research addresses this gap.",
-    },
-    {
-      type: "heading",
-      text: "A Research Framework for 2026",
-    },
-    {
-      type: "table",
-      headers: ["Target Hallmark", "Peptide Approach"],
-      rows: [
-        ["GH axis decline", "CJC-1295 + Ipamorelin"],
-        ["Telomere attrition", "Epithalon"],
-        ["Mitochondrial dysfunction", "MOTS-c + Humanin"],
-        ["Tissue degradation", "BPC-157 + TB-500"],
-        ["Neurological aging", "Semax + Selank"],
-        ["Endotoxin/inflammatory load", "Address via compound purity (LAL testing)"],
-      ],
-    },
-    {
-      type: "heading",
-      text: "Important Research Caveats",
-    },
-    {
-      type: "list",
-      items: [
-        "Most longevity data remains in animal models. Human longevity trials are long-duration by necessity; reliable human data for most peptides is limited.",
-        "Combination effects are largely unstudied. Most compounds have been researched individually; interaction effects in stacks are not well characterized.",
-        "IGF-1 elevation has a complex relationship with longevity. Higher IGF-1 is associated with improved function in some contexts and increased cancer risk in others; this tension is a live area of research.",
-        "Regulatory status varies by jurisdiction. Researchers must operate within applicable regulatory frameworks.",
-      ],
-    },
-    {
-      type: "heading",
-      text: "Summary",
-    },
-    {
-      type: "paragraph",
-      text: "The 2026 longevity peptide research landscape reflects a maturing field — moving from individual compound characterization toward multi-target combination approaches grounded in the hallmarks-of-aging framework. GH axis restoration, telomere biology, mitochondrial function, tissue repair, and neurological maintenance represent the five primary research pillars, each with peptide tools of varying evidence maturity.",
-    },
-    {
       type: "disclaimer",
-      text: "For research purposes only. Not intended for human use.",
+      text: "All compounds discussed are research chemicals for use by licensed researchers and scientific educators only.",
+    },
+    {
+      type: "paragraph",
+      text: "Longevity peptide research is now one of the most active areas of preclinical investigation. The convergence of aging biology theory (hallmarks frameworks) with practical peptide pharmacology has produced a set of compounds with increasingly well-characterized mechanisms — moving the field beyond anecdote toward testable hypotheses and reproducible preclinical data.",
+    },
+    {
+      type: "paragraph",
+      text: "This overview summarizes the leading compounds as of 2026, their proposed mechanisms, and the current state of the evidence.",
+    },
+    {
+      type: "heading",
+      text: "The Aging Biology Framework",
+    },
+    {
+      type: "paragraph",
+      text: "Modern longevity research is organized around the hallmarks of aging — interconnected biological processes that drive aging phenotypes across species. The original 9-hallmark framework (Lopez-Otin et al., 2013) was expanded to 12 hallmarks in 2023, adding dysbiosis, chronic inflammation, and compromised autophagy as primary categories. Peptide compounds have established research profiles for at least 7 of these 12 hallmarks.",
+    },
+    {
+      type: "heading",
+      text: "Epitalon",
+    },
+    {
+      type: "paragraph",
+      text: "Epitalon (Ala-Glu-Asp-Gly) is a synthetic tetrapeptide developed from thymalin, a polypeptide fraction of the thymus. Research from the Khavinson group documents effects on telomerase activation in aging human cells, melatonin regulation via pineal gland modulation, and lifespan extension in multiple animal models. It is the most extensively published peptide compound specifically positioned for telomere-related aging biology.",
+    },
+    {
+      type: "heading",
+      text: "SS-31 (Elamipretide)",
+    },
+    {
+      type: "paragraph",
+      text: "SS-31 is a cardiolipin-binding tetrapeptide that concentrates in the inner mitochondrial membrane. By stabilizing cardiolipin, it preserves cristae architecture and electron transport chain efficiency — both of which deteriorate with age. Research in aged animal models shows improved mitochondrial respiration, reduced oxidative stress markers, and recovery of functional deficits consistent with aging phenotype reversal.",
+    },
+    {
+      type: "heading",
+      text: "GHK-Cu",
+    },
+    {
+      type: "paragraph",
+      text: "GHK-Cu (glycyl-L-histidyl-L-lysine copper complex) is a naturally occurring plasma tripeptide. Plasma levels decline significantly with age — from ~200 ng/mL in young adults to near zero in elderly individuals — suggesting a role in physiological decline. Research has documented GHK-Cu's effects on gene expression (modulating >700 genes in some studies), wound healing, organ fibrosis prevention, and skin regeneration.",
+    },
+    {
+      type: "heading",
+      text: "NAD+ and Precursors",
+    },
+    {
+      type: "paragraph",
+      text: "NAD+ (nicotinamide adenine dinucleotide) levels decline with age in most tissues. As a cofactor for sirtuins (SIRT1-7) and PARPs — key regulators of DNA repair, mitochondrial biogenesis, and cellular stress responses — NAD+ restoration is one of the most studied anti-aging strategies. Research evaluates both precursor supplementation (NMN, NR) and direct NAD+ administration, with ongoing work on the relative merits of each approach.",
+    },
+    {
+      type: "heading",
+      text: "Thymosin Alpha-1",
+    },
+    {
+      type: "paragraph",
+      text: "Immunosenescence — progressive immune decline with aging — drives both increased infection susceptibility and paradoxical inflammaging (chronic low-grade inflammation). Thymosin alpha-1, a 28 amino acid thymic peptide, has demonstrated effects on T-cell maturation, dendritic cell function, and NK cell activity in aging models. It has regulatory approval in over 35 countries for immune modulation, providing an unusually strong translational evidence base.",
+    },
+    {
+      type: "callout",
+      text: "Nexphoria supplies all major longevity research peptides — epitalon, SS-31, GHK-Cu, thymosin alpha-1, and NAD+ — with full COA documentation and cold-chain shipping.",
     },
   ],
 };
