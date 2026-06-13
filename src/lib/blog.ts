@@ -1398,6 +1398,9 @@ import { article as a1454 } from './articles/peptide-research-summer-heat-stabil
 import { article as a1455 } from './articles/peptide-research-winter-athletes-cold-weather-performance-2026';
 import { article as a1456 } from './articles/nad-plus-exercise-performance-research-2026';
 import { article as a1457 } from './articles/where-to-buy-cjc-1295-ghrp-2-stack-research-guide';
+import { article as a1458 } from './articles/peptide-research-sleep-architecture-dsip-delta-wave-optimization-2026';
+import { article as a1459 } from './articles/where-to-buy-bpc-157-tb-500-wolverine-stack-2026';
+import { article as a1460 } from './articles/peptide-research-neuroinflammation-brain-injury-tbi-models-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2812,6 +2815,9 @@ export const articles: BlogArticle[] = [
   a1455,
   a1456,
   a1457,
+  a1458,
+  a1459,
+  a1460,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
