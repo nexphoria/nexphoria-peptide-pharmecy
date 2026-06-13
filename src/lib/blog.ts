@@ -1440,6 +1440,9 @@ import { article as aNX3 } from './articles/why-hplc-purity-testing-matters-pept
 import { article as a1491 } from './articles/where-to-buy-pe-22-28-research-guide';
 import { article as a1492 } from './articles/lotiglipron-oral-glp1-research-guide';
 import { article as a1493 } from './articles/efocipegtrutide-triple-agonist-research-overview';
+import { article as aX01 } from './articles/does-tirzepatide-cause-hair-loss-research-guide';
+import { article as aX02 } from './articles/peptide-expiration-shelf-life-opened-vials-research-guide';
+import { article as aX03 } from './articles/peptide-research-news-july-2026';
 import { article as aPR4 } from './articles/how-much-does-ipamorelin-cost-research-pricing-guide';
 import { article as aPR5 } from './articles/how-much-does-mk-677-cost-research-pricing-guide';
 import { article as aPR6 } from './articles/how-much-does-ghk-cu-cost-research-pricing-guide';
@@ -2932,6 +2935,9 @@ export const articles: BlogArticle[] = [
   aPR16,
   aPR17,
   aPR18,
+  aX01,
+  aX02,
+  aX03,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
