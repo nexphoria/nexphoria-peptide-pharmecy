@@ -1377,6 +1377,9 @@ import { article as a1433 } from './articles/where-to-buy-cjc-1295-ghrp-6-stack-
 import { article as a1434 } from './articles/best-peptides-for-golfers-research-2026';
 import { article as a1435 } from './articles/best-peptides-for-basketball-players-research-2026';
 import { article as a1436 } from './articles/best-peptides-for-hiit-athletes-research-2026';
+import { article as a1437 } from './articles/best-peptides-for-swimmers-research-2026';
+import { article as a1438 } from './articles/best-peptides-for-cyclists-research-2026';
+import { article as a1439 } from './articles/peptide-research-august-2026-seasonal-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -2770,6 +2773,9 @@ export const articles: BlogArticle[] = [
   a1434,
   a1435,
   a1436,
+  a1437,
+  a1438,
+  a1439,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
