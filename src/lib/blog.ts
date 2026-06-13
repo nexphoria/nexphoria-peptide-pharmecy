@@ -1419,6 +1419,9 @@ import { article as a1475 } from './articles/thymosin-alpha-1-immune-modulation-
 import { article as a1476 } from './articles/peptide-research-june-2026-heat-travel-guide';
 import { article as a1477 } from './articles/bpc-157-tb500-summer-recovery-protocol-2026';
 import { article as a1478 } from './articles/nad-plus-summer-stability-exercise-research-2026';
+import { article as a1479 } from './articles/peptide-storage-humid-tropical-climate-guide';
+import { article as a1480 } from './articles/research-peptides-europe-uk-sourcing-regulations-guide';
+import { article as a1481 } from './articles/peptide-research-autoimmune-conditions-ta1-bpc157-ll37-protocols';
 
 
 export const articles: BlogArticle[] = [
@@ -2854,6 +2857,9 @@ export const articles: BlogArticle[] = [
   a1476,
   a1477,
   a1478,
+  a1479,
+  a1480,
+  a1481,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
