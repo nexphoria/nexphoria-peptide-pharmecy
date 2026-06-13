@@ -1416,6 +1416,9 @@ import { article as a1472 } from './articles/peptide-international-shipping-cust
 import { article as a1473 } from './articles/where-to-buy-research-peptides-2026-complete-guide';
 import { article as a1474 } from './articles/cjc-1295-ipamorelin-stack-dosing-protocol-2026';
 import { article as a1475 } from './articles/thymosin-alpha-1-immune-modulation-research-guide-2026';
+import { article as a1476 } from './articles/peptide-research-june-2026-heat-travel-guide';
+import { article as a1477 } from './articles/bpc-157-tb500-summer-recovery-protocol-2026';
+import { article as a1478 } from './articles/nad-plus-summer-stability-exercise-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2848,6 +2851,9 @@ export const articles: BlogArticle[] = [
   a1473,
   a1474,
   a1475,
+  a1476,
+  a1477,
+  a1478,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
