@@ -1428,6 +1428,9 @@ import { article as a1484 } from './articles/semaglutide-vs-peptides-complete-co
 import { article as a1485 } from './articles/longevity-peptide-stack-2026-research-guide';
 import { article as a1486 } from './articles/peptide-sciences-alternative-supplier-guide';
 import { article as a1487 } from './articles/best-peptides-muscle-recovery-research-2026';
+import { article as a1488 } from './articles/best-peptides-swimmers-research-2026';
+import { article as a1489 } from './articles/peptide-research-myths-vs-science-guide';
+import { article as a1490 } from './articles/peptide-research-news-june-2026';
 import { article as aIG1 } from './articles/nexphoria-instagram-reels-education-awareness-scripts';
 import { article as aIG2 } from './articles/nexphoria-instagram-reels-trust-proof-scripts';
 import { article as aIG3 } from './articles/nexphoria-instagram-reels-compounds-thought-leadership-scripts';
@@ -2875,6 +2878,9 @@ export const articles: BlogArticle[] = [
   a1485,
   a1486,
   a1487,
+  a1488,
+  a1489,
+  a1490,
   aIG1,
   aIG2,
   aIG3,

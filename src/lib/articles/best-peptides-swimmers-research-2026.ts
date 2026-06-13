@@ -2,200 +2,187 @@ import type { BlogArticle } from '../blog-types';
 
 export const article: BlogArticle = {
   slug: "best-peptides-swimmers-research-2026",
-  title: "Best Peptides for Swimmers: Research Overview 2026",
+  title: "Best Peptides for Swimmers: Research Overview (2026)",
   description:
-    "Competitive swimming demands aerobic capacity, shoulder joint resilience, and rapid recovery between sessions. This research overview covers the peptides most studied for endurance performance, rotator cuff repair, and recovery protocols relevant to swimmers.",
-  category: "Athletic Performance",
-  readMinutes: 10,
-  publishedAt: "2026-06-11",
+    "A research-focused guide to peptide compounds studied in contexts directly relevant to competitive swimming — shoulder joint repair, pulmonary function, endurance metabolism, immune resilience under high training load, and cold-water adaptation from preclinical literature.",
+  category: "Research Protocols",
+  readMinutes: 12,
+  publishedAt: "2026-06-13",
   ogImage: "/og-image.jpg",
   body: [
     {
       type: "paragraph",
-      text: "Swimming is unique among endurance sports: it is non-weight-bearing, full-body, and places extreme repetitive stress on the shoulder complex. Elite swimmers can complete 60,000–80,000 meters of training per week, generating cumulative rotator cuff, bicipital tendon, and glenohumeral joint stress that leads to high rates of shoulder pain and soft tissue injury. Recovery capacity — not raw fitness — is often the limiting factor in high-volume swim programs.",
+      text: "Competitive swimming places a highly specific physiological burden on the body. Elite swimmers may complete 60,000–80,000 meters per week in training, generating repetitive overhead stress on the glenohumeral and acromioclavicular joints, sustained respiratory demand on the pulmonary system, and prolonged aerobic load on mitochondrial machinery. The result is a distinctive injury and recovery profile — one where shoulder pathology, upper respiratory illness, overtraining syndrome, and mitochondrial depletion are consistently documented across the performance literature.",
     },
     {
       type: "paragraph",
-      text: "Peptide research has produced a growing body of preclinical evidence relevant to aquatic athletes. This article surveys the compounds most studied in contexts applicable to swimming: growth hormone axis peptides, shoulder and rotator cuff repair compounds, mitochondrial support, and anti-inflammatory agents.",
-    },
-    {
-      type: "disclaimer",
-      text: "This article is for informational and educational purposes only. All peptides discussed are research compounds sold strictly for laboratory use. They are not approved for human use, diagnosis, or treatment. Consult a licensed healthcare provider for medical advice.",
+      text: "This article reviews peptide compounds studied in research contexts directly relevant to swimmer physiology — rotator cuff and shoulder joint repair, respiratory epithelium maintenance, aerobic capacity and mitochondrial biogenesis, and immune resilience under heavy training load. All compounds discussed are research chemicals sold for laboratory use only; this is not medical advice and these substances are not approved for human use.",
     },
     {
       type: "heading",
-      text: "The Swimmer's Recovery Profile",
+      text: "Shoulder and Upper Extremity Repair Research",
     },
     {
       type: "paragraph",
-      text: "Unlike running athletes, swimmers do not experience joint impact loading — but they accumulate enormous rotational shoulder stress. The overhead pulling motion repeated thousands of times per session creates microtrauma to the supraspinatus, infraspinatus, and biceps tendons. Shoulder impingement syndrome and rotator cuff tendinopathy are the most common overuse injuries in competitive swimming.",
+      text: "Swimmer's shoulder — a catch-all for rotator cuff tendinopathy, subacromial impingement, and glenohumeral instability — represents the most common musculoskeletal complaint in competitive aquatic athletes. The repetitive overhead stroke mechanic creates chronic microtrauma in the supraspinatus, infraspinatus, and biceps long-head tendons. Several peptide compounds have been studied in preclinical tendon and joint repair models with relevance to this injury profile.",
+    },
+    {
+      type: "subheading",
+      text: "BPC-157: Tendon and Joint Repair Pathways",
     },
     {
       type: "paragraph",
-      text: "Peptide research in the swimming context addresses three primary questions: Can GH-axis stimulation improve overnight tissue repair? Can connective tissue peptides reduce rotator cuff injury risk? And can mitochondrial support compounds improve aerobic capacity endpoints relevant to sustained aquatic performance?",
+      text: "BPC-157 (Body Protection Compound-157) is a synthetic pentadecapeptide that has accumulated one of the most extensive preclinical tendon-repair datasets of any research peptide. In rotator cuff injury models, BPC-157 has been shown to accelerate tendon-to-bone healing through upregulation of the FAK-paxillin pathway, which governs focal adhesion remodeling and cell migration at the injury interface. Studies in rat Achilles transection models — a commonly used proxy for rotator cuff tissue mechanics — demonstrate enhanced collagen fibril organization and increased load-to-failure force in BPC-157-treated subjects compared to vehicle controls.",
+    },
+    {
+      type: "paragraph",
+      text: "BPC-157 also demonstrates activity in the VEGF pathway, promoting angiogenesis at repair sites. This vascular component is particularly relevant for rotator cuff research: the critical zone of the supraspinatus tendon has limited vascularization, which is thought to contribute to the chronicity of tendon injury in overhead athletes. Preclinical data suggests BPC-157 may partially counteract this ischemic microenvironment.",
+    },
+    {
+      type: "subheading",
+      text: "TB-500 (Thymosin Beta-4): Actin-Mediated Repair and Anti-Inflammatory Activity",
+    },
+    {
+      type: "paragraph",
+      text: "Thymosin Beta-4 is an actin-sequestering protein with a well-documented role in cell migration and tissue remodeling. Its synthetic fragment, TB-500, has been studied in soft-tissue injury models including ligament, tendon, and muscle damage. In rat supraspinatus injury models, TB-500 demonstrated accelerated cellular infiltration and extracellular matrix remodeling at the repair site, suggesting a role in the early inflammatory-to-proliferative transition that governs healing quality.",
+    },
+    {
+      type: "paragraph",
+      text: "For shoulder-dominant athletes, the anti-inflammatory properties of Thymosin Beta-4 are of particular interest. Chronic impingement produces a persistent low-grade inflammatory state in peritendinous tissue; TB-500's documented ability to modulate NF-κB signaling and reduce pro-inflammatory cytokine expression in injured tissue makes it a relevant research target in this context.",
     },
     {
       type: "heading",
-      text: "Growth Hormone Axis Peptides",
+      text: "Respiratory Health and Pulmonary Function Research",
+    },
+    {
+      type: "paragraph",
+      text: "Elite swimmers are exposed to chlorine byproducts — particularly trichloramine — at levels that have been documented to cause airway epithelial damage, increase bronchial hyperresponsiveness, and predispose athletes to exercise-induced bronchoconstriction and atopy. Longitudinal data suggests competitive swimmers have elevated rates of asthma and airway inflammation compared to non-aquatic athletes. Several peptide compounds have been studied in airway epithelium maintenance and pulmonary repair contexts.",
     },
     {
       type: "subheading",
-      text: "CJC-1295 / Ipamorelin Stack",
+      text: "BPC-157 and Respiratory Epithelium Protection",
     },
     {
       type: "paragraph",
-      text: "CJC-1295 (no-DAC) combined with Ipamorelin represents the most studied GH secretagogue pairing in athletic recovery research. CJC-1295 is a GHRH analog that stimulates pituitary GH release; Ipamorelin is a selective ghrelin mimetic (GHSR-1a agonist) that amplifies GH pulse amplitude without significantly raising cortisol — a critical consideration for athletes managing chronic stress hormone load from high-volume training.",
-    },
-    {
-      type: "paragraph",
-      text: "The proposed recovery mechanism for swimmers involves GH-dependent protein synthesis and connective tissue collagen turnover — both directly relevant to the rotator cuff tendons subjected to high repetitive loading. IGF-1, the downstream mediator of GH action, is a key driver of satellite cell activation and muscle protein synthesis during overnight repair windows.",
+      text: "BPC-157's cytoprotective effects extend beyond the gastrointestinal tract where it was originally characterized. In preclinical models of respiratory oxidative stress and chemical irritant exposure, BPC-157 has shown activity in maintaining epithelial barrier function and attenuating inflammatory cytokine profiles in bronchoalveolar tissue. Its mechanism in these models appears to involve NO-mediated cytoprotection and upregulation of antioxidant defenses via the Nrf2 pathway.",
     },
     {
       type: "subheading",
-      text: "Sermorelin",
+      text: "LL-37: Antimicrobial Defense in the Respiratory Tract",
     },
     {
       type: "paragraph",
-      text: "Sermorelin (GHRH 1-29) stimulates endogenous GH release in a pulsatile, physiologically normal pattern. Sleep-quality improvements are a documented secondary endpoint in sermorelin research, highly relevant to swimmers given that GH secretion is predominantly nocturnal and dependent on slow-wave sleep depth. High training volume is known to impair sleep architecture, and compounds that restore deep sleep quality have indirect recovery benefits.",
-    },
-    {
-      type: "subheading",
-      text: "MK-677 (Ibutamoren)",
+      text: "Swimmers in high-volume training consistently show depressed secretory IgA levels and upper respiratory tract infection rates two to three times higher than the general population. LL-37 is the only human cathelicidin antimicrobial peptide, expressed abundantly in respiratory epithelium and capable of direct pathogen neutralization across bacteria, viruses, and fungi. In preclinical models of respiratory infection, LL-37 demonstrates both direct antimicrobial activity and immunomodulatory effects that prime the innate airway defense without generating excessive inflammatory tissue damage.",
     },
     {
       type: "paragraph",
-      text: "MK-677 is an oral GH secretagogue with a 24-hour half-life that sustains elevated GH and IGF-1 throughout the day. Research in older adults shows lean mass preservation and improved nitrogen balance — relevant for swimmers in caloric restriction phases managing body composition. Water retention is a notable side effect monitored in research protocols, a factor that requires consideration in weight-classified or performance-focused swimming contexts.",
+      text: "Research on Thymosin Alpha-1 (TA-1) is also relevant here. TA-1 has been studied in the context of respiratory immune priming, particularly in models of post-viral immunosuppression. For high-volume swimmers whose immune competence is regularly compromised by training load, TA-1's T-cell and dendritic cell activating properties make it a subject of ongoing investigative interest.",
     },
     {
       type: "heading",
-      text: "Shoulder and Rotator Cuff Repair Compounds",
+      text: "Mitochondrial Function and Aerobic Capacity Research",
+    },
+    {
+      type: "paragraph",
+      text: "Swimming is among the most aerobically demanding of competitive sports. Mitochondrial density, respiratory chain efficiency, and oxidative phosphorylation capacity are primary determinants of sustained performance. Several peptide research areas intersect with mitochondrial biogenesis and function in ways directly applicable to endurance sport physiology.",
     },
     {
       type: "subheading",
-      text: "BPC-157",
+      text: "NAD+ and Sirtuin Activation",
     },
     {
       type: "paragraph",
-      text: "BPC-157 (Body Protection Compound-157) is among the most-studied compounds for tendon, ligament, and musculoskeletal repair in preclinical models. Mechanism studies document VEGF upregulation at injury sites, accelerated tendon-to-bone healing, and collagen scaffold organization improvements. For swimmers, rotator cuff tendon health is the primary relevant application: supraspinatus and infraspinatus tendon integrity directly determines shoulder durability across high-volume training blocks.",
+      text: "NAD+ (nicotinamide adenine dinucleotide) occupies a central position in cellular bioenergetics, functioning as a coenzyme in oxidative phosphorylation and as a substrate for SIRT1/SIRT3 sirtuins and PARP enzymes. In rodent endurance exercise models, NAD+ supplementation via precursors has been shown to increase skeletal muscle mitochondrial biogenesis, improve oxygen utilization efficiency, and delay onset of fatigue markers. SIRT1 activation, in particular, drives PGC-1α upregulation — the master regulator of mitochondrial biogenesis — with direct relevance to aerobic capacity.",
     },
     {
       type: "paragraph",
-      text: "Animal model studies using surgical supraspinatus tendon transection models have demonstrated statistically significant improvements in biomechanical tendon properties and histological organization in BPC-157 treated groups versus controls. These findings have driven considerable research interest in BPC-157 as a tendon repair research tool.",
+      text: "For swimmer-relevant research, the high ATP turnover rate of continuous stroke biomechanics and the metabolic demand of maintaining body temperature in cool water make NAD+ pathway research particularly pertinent.",
     },
     {
       type: "subheading",
-      text: "TB-500 (Thymosin Beta-4 Fragment)",
+      text: "SS-31 (Elamipretide): Mitochondrial Membrane Integrity",
     },
     {
       type: "paragraph",
-      text: "TB-500 acts via G-actin sequestration — it binds G-actin, regulating cytoskeletal dynamics essential for cell migration and tissue remodeling. Research in animal models documents acceleration of wound closure, skeletal muscle recovery, and extracellular matrix remodeling. The BPC-157 + TB-500 combination is frequently studied as a 'stack' with proposed complementary mechanisms: BPC-157 driving angiogenesis and growth factor signaling while TB-500 supports cellular migration into damaged tissue.",
-    },
-    {
-      type: "paragraph",
-      text: "For swimmers, both compounds are relevant to the shoulder complex: tendons, peritendinous tissue, labral structure, and the subacromial space all respond to injury through cell migration and extracellular matrix remodeling — the pathways TB-500 most directly influences.",
+      text: "SS-31 is a mitochondria-targeted tetrapeptide that concentrates in the inner mitochondrial membrane and protects cardiolipin from peroxidation. Cardiolipin integrity is critical for the stability of the electron transport chain supercomplexes that govern oxidative phosphorylation efficiency. In rodent models of exercise-induced mitochondrial stress, SS-31 has been shown to reduce reactive oxygen species production, preserve mitochondrial membrane potential, and maintain ATP output under sustained aerobic load.",
     },
     {
       type: "subheading",
-      text: "GHK-Cu (Copper Peptide)",
+      text: "MOTS-c: Metabolic Flexibility Under Exercise Stress",
     },
     {
       type: "paragraph",
-      text: "GHK-Cu is a naturally occurring copper-binding tripeptide with research documenting collagen synthesis promotion, wound healing, and anti-inflammatory gene expression changes. For swimmers, systemic GHK-Cu research is relevant to the collagen turnover required for rotator cuff tendon and glenohumeral joint capsule resilience. GHK-Cu also activates Nrf2 — the master antioxidant transcription factor — potentially relevant to the oxidative stress generated by high-volume aerobic training.",
+      text: "MOTS-c is a mitochondrial-derived peptide encoded within the 12S rRNA sequence of the mitochondrial genome. In skeletal muscle, it activates AMPK signaling to promote glucose uptake, fatty acid oxidation, and mitochondrial quality control. Animal studies demonstrate that MOTS-c administration increases running endurance, improves insulin sensitivity in exercise models, and protects against metabolic decline under high-caloric or high-stress conditions. The AMPK pathway it activates also upregulates mitophagy — the clearance of damaged mitochondria — relevant to maintaining mitochondrial quality in athletes accumulating chronic training stress.",
     },
     {
       type: "heading",
-      text: "Mitochondrial and Aerobic Capacity Compounds",
-    },
-    {
-      type: "subheading",
-      text: "SS-31 (Elamipretide)",
+      text: "Immune Resilience and Overtraining Syndrome Research",
     },
     {
       type: "paragraph",
-      text: "SS-31 is a mitochondria-targeted tetrapeptide that localizes to the inner mitochondrial membrane and reduces oxidative stress by stabilizing cardiolipin. In aging rodent models, SS-31 has been shown to reverse mitochondrial dysfunction, improve exercise tolerance, and restore cristae morphology. Swimming is an aerobic-dominant sport where mitochondrial density and function directly limits performance — making SS-31 one of the more intriguing compounds in endurance-relevant peptide research.",
+      text: "Overtraining syndrome (OTS) — also called overreaching — is documented at higher rates in swimmers than in many other elite sports, driven partly by year-round training cycles without adequate seasonal periodization. OTS presents with performance decline, persistent fatigue, mood disturbance, and immune suppression. The neuroendocrine-immune axis, particularly cortisol-driven immunosuppression and HPA dysregulation, is central to its pathophysiology.",
     },
     {
       type: "subheading",
-      text: "MOTS-c",
+      text: "BPC-157 and HPA Axis Modulation",
     },
     {
       type: "paragraph",
-      text: "MOTS-c is a mitochondrial-derived peptide encoded in mitochondrial rRNA. Research documents its role in AMPK activation, glucose metabolism, and metabolic flexibility. In mouse models, MOTS-c administration improved exercise performance and skeletal muscle mitochondrial function. It is considered an 'exercise mimetic' in early research — activating some pathways engaged by aerobic training — and has attracted attention in swimming research contexts for its potential to support aerobic capacity between training cycles.",
+      text: "Multiple preclinical studies have examined BPC-157's effects on the HPA axis under chronic stress conditions. In rodent models of stress-induced cortisol excess and behavioral dysregulation, BPC-157 has demonstrated normalizing effects on dopamine and serotonin turnover, GABAergic signaling, and HPA feedback sensitivity. For OTS research models, these properties position BPC-157 as a compound of interest in studying recovery from neuroendocrine disruption — though human data remains absent.",
     },
     {
       type: "subheading",
-      text: "Humanin and SHLP2",
+      text: "Thymosin Alpha-1 and Immune Competence Under Training Load",
     },
     {
       type: "paragraph",
-      text: "Humanin and the small humanin-like peptide family (SHLPs) are mitochondrial-derived peptides with emerging research on metabolic regulation, oxidative stress protection, and muscle function. Humanin has been studied in models of exercise-induced oxidative damage, with results suggesting mitochondrial protection under high metabolic demand. This remains early-stage research but is increasingly relevant to high-volume athletic contexts.",
+      text: "Thymosin Alpha-1 is a 28-amino-acid peptide originally isolated from thymosin fraction 5, with well-characterized activity in T-cell maturation, NK cell activation, and dendritic cell function. In models of immunosuppression — chemotherapy, chronic infection, and aging-associated immunosenescence — TA-1 has consistently demonstrated the capacity to restore immune cell populations and function. In the overtraining context, where T-cell and NK cell depression is a documented marker of immune compromise, TA-1 represents a research compound of direct relevance.",
     },
     {
       type: "heading",
-      text: "Anti-Inflammatory and Immune Support",
-    },
-    {
-      type: "subheading",
-      text: "Thymosin Alpha-1",
-    },
-      {
-        type: "paragraph",
-        text: "Thymosin Alpha-1 (Tα1) is a 28-amino acid peptide with documented immunomodulatory effects. High-volume swimmers are susceptible to upper respiratory tract infections during peak training phases — a consequence of transient immune suppression from heavy training load. Research on Tα1 documents T-cell upregulation and dendritic cell activation, potentially supporting immune resilience during competition preparation when training load is highest.",
-      },
-    {
-      type: "subheading",
-      text: "KPV",
+      text: "Cold Water Adaptation and Thermal Stress Research",
     },
     {
       type: "paragraph",
-      text: "KPV (Lys-Pro-Val) is a C-terminal tripeptide fragment of alpha-MSH with anti-inflammatory properties via NF-κB pathway modulation. For swimmers managing chronic shoulder inflammation and low-grade systemic inflammation from sustained high-volume training, KPV represents a candidate anti-inflammatory compound with a different mechanism profile from traditional NSAIDs — relevant to researchers avoiding cyclooxygenase pathway inhibition.",
+      text: "Open-water swimmers and masters competitors often train and compete in waters below 20°C. Cold water immersion triggers a systemic thermogenic response involving brown adipose tissue activation, shivering thermogenesis, and elevated norepinephrine. At the cellular level, repeated cold exposure induces heat shock protein upregulation, mitochondrial uncoupling, and activation of cold-shock proteins. Several peptide research areas intersect with cold stress adaptation.",
+    },
+    {
+      type: "subheading",
+      text: "GHK-Cu and Cellular Stress Response",
+    },
+    {
+      type: "paragraph",
+      text: "GHK-Cu (copper peptide GHK) has been shown in preclinical models to upregulate over 30 genes involved in stress response, including heat shock proteins, antioxidant enzymes, and DNA repair machinery. In the context of cold-thermal hormesis research, GHK-Cu's documented Nrf2-activating effects make it a relevant compound for studying cellular adaptation to environmental stress. Its wound-healing and collagen-stimulating properties are also relevant to skin barrier maintenance in athletes experiencing prolonged water exposure.",
     },
     {
       type: "heading",
-      text: "Research Considerations for Swimmers",
+      text: "Sourcing and Quality Considerations for Researchers",
     },
     {
       type: "paragraph",
-      text: "Most peptide research directly relevant to swimming performance is conducted in rodent models. Translating animal model findings to elite trained swimmers requires caution — training volume, baseline GH levels, age, and nutritional status all significantly modulate peptide response. The overrepresentation of sedentary or aged animal models in the literature means that trained-athlete applicability is an open research question.",
+      text: "Research with these compounds requires verified purity documentation. For protocols studying recovery or performance endpoints, any contamination in the study compound introduces confounding variables that compromise data integrity. When sourcing research peptides, the minimum quality bar includes HPLC purity ≥99%, mass spectrometry identity confirmation, LAL endotoxin testing, and lot-specific COAs from third-party laboratories.",
     },
     {
       type: "list",
       items: [
-        "WADA compliance: GH secretagogues, IGF-1, and several peptide hormones appear on the WADA prohibited list. Competitive swimmers must verify prohibited list status before any research application.",
-        "Shoulder-specific protocols: Localized vs. systemic administration has different research implications for rotator cuff repair. Subcutaneous administration near the shoulder complex is documented in some preclinical tendon repair studies.",
-        "Baseline biomarkers: GH axis research tracks IGF-1, fasting glucose, and lean mass. Shoulder-specific research may incorporate MRI-based tendon morphology endpoints.",
-        "Vendor quality: Research into swimming performance peptides requires HPLC-verified purity above 98% and mass spectrometry confirmation to ensure compound identity and avoid experimental confounders.",
+        "HPLC purity certificate — minimum ≥99% for research-grade material",
+        "Mass spectrometry (MS) confirmation — verifies molecular identity, not just purity",
+        "Limulus Amebocyte Lysate (LAL) testing — confirms endotoxin-free status",
+        "Cold-chain shipping — all peptides require temperature-controlled transit",
+        "Third-party verified COA — supplier-internal testing alone is insufficient",
       ],
     },
     {
       type: "heading",
-      text: "Summary: Compounds by Research Priority",
-    },
-    {
-      type: "table",
-      headers: ["Compound", "Primary Research Application", "Relevant Swimming Context"],
-      rows: [
-        ["CJC-1295 / Ipamorelin", "GH axis stimulation, lean mass, recovery", "Overnight repair, connective tissue collagen turnover"],
-        ["BPC-157", "Tendon/ligament repair, angiogenesis, VEGF", "Rotator cuff, bicipital tendon, supraspinatus repair"],
-        ["TB-500", "Tissue remodeling, cellular migration", "Soft tissue repair, combined with BPC-157"],
-        ["GHK-Cu", "Collagen synthesis, Nrf2 activation", "Tendon resilience, oxidative stress from aerobic load"],
-        ["SS-31", "Mitochondrial function, cardiolipin stabilization", "Aerobic capacity, exercise tolerance"],
-        ["MOTS-c", "AMPK activation, metabolic flexibility", "Endurance performance, aerobic adaptation"],
-        ["Sermorelin", "GHRH analog, pulsatile GH, sleep quality", "Overnight recovery, deep sleep restoration"],
-        ["Thymosin Alpha-1", "T-cell upregulation, immune modulation", "Overtraining-related immune suppression"],
-      ],
-    },
-    {
-      type: "heading",
-      text: "Sourcing Research-Grade Compounds",
+      text: "Summary",
     },
     {
       type: "paragraph",
-      text: "Valid preclinical research into swimming performance peptides requires confirmed purity compounds. HPLC purity above 98% and third-party mass spectrometry verification are standard requirements for publishable research. Nexphoria provides third-party tested peptides with published Certificates of Analysis for all research compounds.",
+      text: "Swimming's unique physiological demands — overhead joint stress, chlorine-induced airway irritation, extreme aerobic load, and immune suppression under training volume — map directly onto several active areas of peptide research. BPC-157 and TB-500 address the connective tissue and joint repair dimensions; LL-37 and Thymosin Alpha-1 cover the immune and respiratory defense pathways; NAD+, SS-31, and MOTS-c serve the mitochondrial and metabolic research domains. For researchers building protocols around elite aquatic athlete models, these compounds represent a well-characterized and mechanistically coherent toolkit.",
     },
     {
-      type: "callout",
-      text: "All peptides referenced in this article are research compounds intended for laboratory use only. They are not approved for human administration, diagnosis, or treatment of any condition. WADA-registered competitive swimmers and aquatic athletes should review the current prohibited substance list before conducting any research.",
+      type: "disclaimer",
+      text: "For research purposes only. Not intended for human use.",
     },
   ],
 };
