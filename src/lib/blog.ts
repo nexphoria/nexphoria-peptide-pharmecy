@@ -1380,6 +1380,9 @@ import { article as a1436 } from './articles/best-peptides-for-hiit-athletes-res
 import { article as a1437 } from './articles/best-peptides-for-swimmers-research-2026';
 import { article as a1438 } from './articles/best-peptides-for-cyclists-research-2026';
 import { article as a1439 } from './articles/peptide-research-august-2026-seasonal-guide';
+import { article as a1440 } from './articles/peptide-research-september-2026-seasonal-guide';
+import { article as a1441 } from './articles/best-peptides-for-seniors-research-2026';
+import { article as a1442 } from './articles/peptide-research-collagen-synthesis-skin-aging-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2776,6 +2779,9 @@ export const articles: BlogArticle[] = [
   a1437,
   a1438,
   a1439,
+  a1440,
+  a1441,
+  a1442,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
