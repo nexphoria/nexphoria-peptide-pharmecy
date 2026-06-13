@@ -1443,6 +1443,9 @@ import { article as a1493 } from './articles/efocipegtrutide-triple-agonist-rese
 import { article as aPR4 } from './articles/how-much-does-ipamorelin-cost-research-pricing-guide';
 import { article as aPR5 } from './articles/how-much-does-mk-677-cost-research-pricing-guide';
 import { article as aPR6 } from './articles/how-much-does-ghk-cu-cost-research-pricing-guide';
+import { article as aPR7 } from './articles/how-much-does-tb-500-cost-research-pricing-guide';
+import { article as aPR8 } from './articles/how-much-does-nad-plus-cost-research-pricing-guide';
+import { article as aPR9 } from './articles/how-much-does-sermorelin-cost-research-pricing-guide';
 import { article as aIG1 } from './articles/nexphoria-instagram-reels-education-awareness-scripts';
 import { article as aIG2 } from './articles/nexphoria-instagram-reels-trust-proof-scripts';
 import { article as aIG3 } from './articles/nexphoria-instagram-reels-compounds-thought-leadership-scripts';
@@ -2908,6 +2911,9 @@ export const articles: BlogArticle[] = [
   aPR4,
   aPR5,
   aPR6,
+  aPR7,
+  aPR8,
+  aPR9,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
