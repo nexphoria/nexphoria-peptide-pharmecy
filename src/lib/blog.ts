@@ -1470,6 +1470,9 @@ import { article as aX08 } from './articles/best-peptides-veterans-military-rese
 import { article as aIG1 } from './articles/nexphoria-instagram-reels-education-awareness-scripts';
 import { article as aIG2 } from './articles/nexphoria-instagram-reels-trust-proof-scripts';
 import { article as aIG3 } from './articles/nexphoria-instagram-reels-compounds-thought-leadership-scripts';
+import { article as aNEW1 } from './articles/selank-anxiety-research-mechanisms-deep-dive';
+import { article as aNEW2 } from './articles/tb-500-thymosin-beta-4-mechanism-research-complete';
+import { article as aNEW3 } from './articles/peptide-reconstitution-protocol-step-by-step-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2920,6 +2923,9 @@ export const articles: BlogArticle[] = [
   aIG1,
   aIG2,
   aIG3,
+  aNEW1,
+  aNEW2,
+  aNEW3,
   aPR1,
   aPR2,
   aPR3,
