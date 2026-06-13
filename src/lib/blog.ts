@@ -1485,6 +1485,9 @@ import { article as aJUN9 } from './articles/bpc-157-ankle-injury-research-guide
 import { article as aJUN10 } from './articles/research-peptide-glossary-researchers-reference';
 import { article as aJUN11 } from './articles/cold-chain-peptide-shipping-integrity-guide';
 import { article as aJUN12 } from './articles/nexphoria-quality-standards-hplc-lal-coa-explained';
+import { article as aJUN13 } from './articles/how-much-does-cjc-1295-ipamorelin-stack-cost-research-pricing-guide';
+import { article as aJUN14 } from './articles/peptide-research-hip-mobility-joint-health-bpc157-tb500-protocols';
+import { article as aJUN15 } from './articles/best-peptides-physical-therapists-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2986,6 +2989,9 @@ export const articles: BlogArticle[] = [
   aJUN10,
   aJUN11,
   aJUN12,
+  aJUN13,
+  aJUN14,
+  aJUN15,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
