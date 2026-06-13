@@ -1392,6 +1392,9 @@ import { article as a1448 } from './articles/nexphoria-brand-story-research-pept
 import { article as a1449 } from './articles/retatrutide-obesity-research-2026';
 import { article as a1450 } from './articles/best-peptides-for-men-over-50-2026';
 import { article as a1451 } from './articles/peptide-research-cellular-senescence-senolytics';
+import { article as a1452 } from './articles/peptide-research-female-athletes-2026';
+import { article as a1453 } from './articles/retatrutide-vs-semaglutide-research-comparison-2026';
+import { article as a1454 } from './articles/peptide-research-summer-heat-stability-protocols-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -2800,6 +2803,9 @@ export const articles: BlogArticle[] = [
   a1449,
   a1450,
   a1451,
+  a1452,
+  a1453,
+  a1454,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
