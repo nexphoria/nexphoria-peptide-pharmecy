@@ -1545,6 +1545,9 @@ import { article as aOVN9 } from './articles/peptide-research-news-october-2026'
 import { article as aBNS1 } from './articles/peptide-research-cognitive-enhancement-nootropic-2026';
 import { article as aBNS2 } from './articles/best-peptides-athletes-sports-performance-research-2026';
 import { article as aBNS3 } from './articles/peptide-cycling-protocols-on-off-research-guide';
+import { article as aOVN13 } from './articles/cjc-1295-ipamorelin-fat-loss-research-guide';
+import { article as aOVN14 } from './articles/bpc-157-tb500-athletic-performance-research-2026';
+import { article as aOVN15 } from './articles/verified-research-peptide-sourcing-guide-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3106,6 +3109,9 @@ export const articles: BlogArticle[] = [
   aBNS1,
   aBNS2,
   aBNS3,
+  aOVN13,
+  aOVN14,
+  aOVN15,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
