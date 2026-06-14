@@ -1608,6 +1608,9 @@ import { article as aJUN54 } from './articles/how-to-source-research-peptides-us
 import { article as aJUN55 } from './articles/peptide-research-summer-heat-cold-chain-survival-guide-2026';
 import { article as aJUN56 } from './articles/peptide-research-weight-loss-plateau-breaking-protocols-2026';
 import { article as aJUN57 } from './articles/peptide-research-beginners-first-order-complete-checklist-2026';
+import { article as aJUN58 } from './articles/peptide-sciences-alternative-nexphoria-research-guide';
+import { article as aJUN59 } from './articles/longevity-peptide-stack-2026-researchers-guide';
+import { article as aJUN60 } from './articles/nad-plus-vs-nmn-longevity-research-comparison';
 
 
 export const articles: BlogArticle[] = [
@@ -3232,6 +3235,9 @@ export const articles: BlogArticle[] = [
   aJUN55,
   aJUN56,
   aJUN57,
+  aJUN58,
+  aJUN59,
+  aJUN60,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
