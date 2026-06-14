@@ -1590,6 +1590,9 @@ import { article as aOVN27 } from './articles/best-peptides-muscle-recovery-five
 import { article as aJUN37 } from './articles/peptide-research-spinal-cord-injury-bpc157-ss31-nad-protocols-2026';
 import { article as aJUN38 } from './articles/peptide-research-june-july-2026-seasonal-guide';
 import { article as aJUN39 } from './articles/peptide-research-peptide-sciences-shutdown-sourcing-alternatives-2026';
+import { article as aJUN40 } from './articles/bpc-157-complete-research-guide-mechanisms-studies-2026';
+import { article as aJUN41 } from './articles/cold-chain-peptide-shipping-temperature-degradation-guide-2026';
+import { article as aJUN42 } from './articles/nad-plus-longevity-research-sirtuins-parp-hallmarks-aging-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3196,6 +3199,9 @@ export const articles: BlogArticle[] = [
   aJUN37,
   aJUN38,
   aJUN39,
+  aJUN40,
+  aJUN41,
+  aJUN42,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
