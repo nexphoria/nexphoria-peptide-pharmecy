@@ -1518,6 +1518,9 @@ import { article as aNGT6 } from './articles/peptide-longevity-stack-men-over-40
 import { article as aSEP1 } from './articles/bpc-157-plantar-fasciitis-heel-pain-research-guide';
 import { article as aSEP2 } from './articles/peptide-research-carpal-tunnel-peripheral-nerve-compression';
 import { article as aSEP3 } from './articles/peptide-research-news-september-2026';
+import { article as aOCT1 } from './articles/hexarelin-cd36-cardiac-research-mechanisms-2026';
+import { article as aOCT2 } from './articles/research-peptide-sourcing-usa-coa-hplc-guide-2026';
+import { article as aOCT3 } from './articles/peptide-storage-freeze-thaw-lyophilized-guide-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3052,6 +3055,9 @@ export const articles: BlogArticle[] = [
   aSEP1,
   aSEP2,
   aSEP3,
+  aOCT1,
+  aOCT2,
+  aOCT3,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
