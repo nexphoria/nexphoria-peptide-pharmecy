@@ -1599,6 +1599,9 @@ import { article as aJUN45 } from './articles/bpc-157-topical-application-wound-
 import { article as aJUN46 } from './articles/peptide-research-q2-2026-quarterly-highlights';
 import { article as aJUN47 } from './articles/semaglutide-vs-metformin-mechanism-comparison-research';
 import { article as aJUN48 } from './articles/bpc-157-vs-nsaids-mechanisms-gut-tissue-research';
+import { article as aJUN49 } from './articles/tirzepatide-beginner-guide-2026';
+import { article as aJUN50 } from './articles/peptide-research-news-mid-june-2026';
+import { article as aJUN51 } from './articles/peptide-research-kidney-renal-health-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3214,6 +3217,9 @@ export const articles: BlogArticle[] = [
   aJUN46,
   aJUN47,
   aJUN48,
+  aJUN49,
+  aJUN50,
+  aJUN51,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
