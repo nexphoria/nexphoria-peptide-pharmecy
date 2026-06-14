@@ -1623,6 +1623,9 @@ import { article as aJUN14N3 } from './articles/peptide-research-mid-summer-2026
 import { article as aJUN15N1 } from './articles/peptide-research-creatine-synergy-muscle-recovery-2026';
 import { article as aJUN15N2 } from './articles/intranasal-peptide-formulation-diy-research-guide-2026';
 import { article as aJUN15N3 } from './articles/skin-microbiome-antimicrobial-peptides-ll37-defensin-research-2026';
+import { article as aJUN16N1 } from './articles/how-long-does-lotiglipron-take-to-work-research-timeline';
+import { article as aJUN16N2 } from './articles/how-long-does-efocipegtrutide-take-to-work-research-timeline';
+import { article as aJUN16N3 } from './articles/where-to-buy-lotiglipron-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3262,6 +3265,9 @@ export const articles: BlogArticle[] = [
   aJUN15N1,
   aJUN15N2,
   aJUN15N3,
+  aJUN16N1,
+  aJUN16N2,
+  aJUN16N3,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
