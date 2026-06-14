@@ -1581,6 +1581,9 @@ import { article as aOVN21 } from './articles/does-semaglutide-suppress-appetite
 import { article as aOVN22 } from './articles/bpc-157-complete-research-guide-overnight';
 import { article as aOVN23 } from './articles/proper-peptide-storage-temperature-light-shelf-life';
 import { article as aOVN24 } from './articles/longevity-peptide-stack-2026-research-overview';
+import { article as aJUN34 } from './articles/how-long-does-orforglipron-take-to-work-research-timeline';
+import { article as aJUN35 } from './articles/where-to-buy-cotadutide-research-guide';
+import { article as aJUN36 } from './articles/how-long-does-amycretin-take-to-work-research-timeline';
 
 
 export const articles: BlogArticle[] = [
@@ -3178,6 +3181,9 @@ export const articles: BlogArticle[] = [
   aOVN22,
   aOVN23,
   aOVN24,
+  aJUN34,
+  aJUN35,
+  aJUN36,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
