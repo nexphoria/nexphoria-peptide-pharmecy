@@ -1534,6 +1534,9 @@ import { article as aNGT7 } from './articles/peptide-research-sleep-circadian-rh
 import { article as aNGT8 } from './articles/nad-plus-vs-nmn-longevity-precursors-researchers-2026';
 import { article as aNGT9 } from './articles/longevity-peptide-stack-multi-target-2026';
 import { article as aOVN7 } from './articles/bpc-157-wrist-injury-research-guide';
+import { article as aOVN10 } from './articles/best-peptides-joint-pain-cartilage-research-2026';
+import { article as aOVN11 } from './articles/peptide-research-anxiety-stress-response-2026';
+import { article as aOVN12 } from './articles/peptide-research-hair-loss-follicle-research-2026';
 import { article as aOVN8 } from './articles/best-peptides-shin-splints-stress-fractures-research-2026';
 import { article as aOVN9 } from './articles/peptide-research-news-october-2026';
 
@@ -3088,6 +3091,9 @@ export const articles: BlogArticle[] = [
   aOVN7,
   aOVN8,
   aOVN9,
+  aOVN10,
+  aOVN11,
+  aOVN12,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
