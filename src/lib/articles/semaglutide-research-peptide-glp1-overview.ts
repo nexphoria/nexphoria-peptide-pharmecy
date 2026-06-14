@@ -4,10 +4,10 @@ export const article: BlogArticle = {
   slug: "semaglutide-research-peptide-glp1-overview",
   title: "Semaglutide as a Research Peptide: What the Studies Show",
   description:
-    "An evidence-based overview of semaglutide as a research tool — covering GLP-1 receptor agonism, the STEP trials, metabolic and cardiovascular findings, and CNS research interest. For researchers studying energy homeostasis and obesity models.",
+    "Semaglutide as a research peptide: what the published studies show on GLP-1 receptor agonism, metabolic regulation, and obesity models. An evidence-based overview for researchers and longevity scientists.",
   category: "Compound Profiles",
-  readMinutes: 9,
-  publishedAt: "2026-06-08",
+  readMinutes: 10,
+  publishedAt: "2026-06-14",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -32,7 +32,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Semaglutide binds with high affinity to the GLP-1 receptor (GLP-1R), a G-protein coupled receptor (GPCR) expressed throughout the body. Key expression sites include the pancreas (insulin secretion, beta-cell preservation), hypothalamus (satiety signaling), liver (suppression of hepatic glucose output), GI tract (gastric emptying), and cardiovascular system (anti-inflammatory and cardioprotective effects under study). The receptor binding triggers cAMP-dependent signaling cascades, ultimately increasing insulin secretion in a glucose-dependent manner — an important safety profile consideration compared to older insulin secretagogues.",
+      text: "Semaglutide binds with high affinity to the GLP-1 receptor (GLP-1R), a G-protein coupled receptor (GPCR) expressed throughout the body. Key expression sites include the pancreas (insulin secretion, beta-cell preservation), hypothalamus (satiety signaling, reduced caloric intake), liver (suppression of hepatic glucose output), GI tract (slowed gastric emptying), and the cardiovascular system (anti-inflammatory and cardioprotective effects under study).",
+    },
+    {
+      type: "paragraph",
+      text: "The receptor binding triggers cAMP-dependent signaling cascades, ultimately increasing insulin secretion in a glucose-dependent manner — an important safety profile consideration compared to older insulin secretagogues.",
     },
     {
       type: "heading",
@@ -44,15 +48,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "The most widely cited human clinical research on semaglutide is the STEP (Semaglutide Treatment Effect in People with Obesity) trial program, published in The New England Journal of Medicine:",
-    },
-    {
-      type: "list",
-      items: [
-        "STEP 1 (Wilding et al., 2021) — In a 68-week double-blind RCT, participants receiving semaglutide 2.4 mg weekly achieved a mean body weight reduction of 14.9% versus 2.4% in the placebo group.",
-        "STEP 3 (Wadden et al., 2021) — Combined semaglutide with intensive behavioral intervention; average weight reduction of 16%.",
-        "STEP 4 (Rubino et al., 2021) — Withdrawal study showing weight regain upon cessation, confirming that metabolic effects are pharmacodynamically sustained only during active treatment.",
-      ],
+      text: "The most widely cited human clinical research on semaglutide is the STEP (Semaglutide Treatment Effect in People with Obesity) trial program, published in The New England Journal of Medicine. STEP 1 (Wilding et al., 2021) — a 68-week double-blind RCT — showed participants receiving semaglutide 2.4 mg weekly achieved a mean body weight reduction of 14.9% versus 2.4% in the placebo group. STEP 3 (Wadden et al., 2021) combined semaglutide with intensive behavioral intervention, averaging 16% weight reduction. STEP 4 (Rubino et al., 2021) was a withdrawal study demonstrating weight regain upon cessation, confirming metabolic effects are pharmacodynamically sustained only during active treatment.",
     },
     {
       type: "subheading",
@@ -87,8 +83,17 @@ export const article: BlogArticle = {
       text: "In research settings, semaglutide is studied to interrogate energy homeostasis mechanisms in high-fat diet and genetic obesity models, beta-cell preservation in type 1 and type 2 diabetes models, hepatic lipid metabolism in NAFLD/NASH research, and gut-brain axis signaling and the role of peripheral GLP-1R in appetite modulation.",
     },
     {
-      type: "callout",
-      text: "Important sourcing considerations: Sequence verification via mass spectrometry is essential — semaglutide's modified backbone requires confirmation of the C18 fatty acid chain integrity. HPLC purity ≥99% should be verified from a COA. Endotoxin testing (LAL) is required for in vivo administration protocols. Proper cold-chain storage (2–8°C) is critical for maintaining biological activity.",
+      type: "heading",
+      text: "Sourcing Considerations",
+    },
+    {
+      type: "list",
+      items: [
+        "Sequence verification via mass spectrometry is essential — semaglutide's modified backbone requires confirmation of the C18 fatty acid chain integrity",
+        "HPLC purity ≥99% should be verified from a COA",
+        "Endotoxin testing (LAL) is required for in vivo administration protocols",
+        "Proper cold-chain storage (2–8°C) is critical for maintaining biological activity",
+      ],
     },
     {
       type: "heading",

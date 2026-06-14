@@ -1521,6 +1521,9 @@ import { article as aSEP3 } from './articles/peptide-research-news-september-202
 import { article as aOCT1 } from './articles/hexarelin-cd36-cardiac-research-mechanisms-2026';
 import { article as aOCT2 } from './articles/research-peptide-sourcing-usa-coa-hplc-guide-2026';
 import { article as aOCT3 } from './articles/peptide-storage-freeze-thaw-lyophilized-guide-2026';
+import { article as aJUN16 } from './articles/longevity-peptide-stack-2026-research-overview';
+import { article as aJUN17 } from './articles/semaglutide-research-peptide-glp1-overview';
+import { article as aJUN18 } from './articles/hexarelin-cardioprotection-cd36-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3058,6 +3061,9 @@ export const articles: BlogArticle[] = [
   aOCT1,
   aOCT2,
   aOCT3,
+  aJUN16,
+  aJUN17,
+  aJUN18,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
