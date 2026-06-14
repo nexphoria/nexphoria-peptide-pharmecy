@@ -1575,6 +1575,9 @@ import { article as aJUN30 } from './articles/bpc-157-complete-research-guide-20
 import { article as aJUN31 } from './articles/best-peptides-for-injury-recovery-2026';
 import { article as aJUN32 } from './articles/where-to-buy-research-peptides-usa-2026';
 import { article as aJUN33 } from './articles/peptide-research-female-athletes-hormones-2026';
+import { article as aOVN19 } from './articles/bpc-157-elbow-injury-research-guide';
+import { article as aOVN20 } from './articles/mk-677-vs-sermorelin-research-comparison';
+import { article as aOVN21 } from './articles/does-semaglutide-suppress-appetite-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3166,6 +3169,9 @@ export const articles: BlogArticle[] = [
   aOVNSUM4,
   aOVNSUM5,
   aOVNSUM6,
+  aOVN19,
+  aOVN20,
+  aOVN21,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
