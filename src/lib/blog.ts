@@ -1584,6 +1584,9 @@ import { article as aOVN24 } from './articles/longevity-peptide-stack-2026-resea
 import { article as aJUN34 } from './articles/how-long-does-orforglipron-take-to-work-research-timeline';
 import { article as aJUN35 } from './articles/where-to-buy-cotadutide-research-guide';
 import { article as aJUN36 } from './articles/how-long-does-amycretin-take-to-work-research-timeline';
+import { article as aOVN25 } from './articles/semaglutide-glp1-receptor-research-overview';
+import { article as aOVN26 } from './articles/thymosin-alpha-1-immune-modulation-research';
+import { article as aOVN27 } from './articles/best-peptides-muscle-recovery-five-compounds';
 
 
 export const articles: BlogArticle[] = [
@@ -3184,6 +3187,9 @@ export const articles: BlogArticle[] = [
   aJUN34,
   aJUN35,
   aJUN36,
+  aOVN25,
+  aOVN26,
+  aOVN27,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
