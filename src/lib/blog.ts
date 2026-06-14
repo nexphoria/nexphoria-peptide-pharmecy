@@ -1537,6 +1537,9 @@ import { article as aOVN7 } from './articles/bpc-157-wrist-injury-research-guide
 import { article as aOVN10 } from './articles/best-peptides-joint-pain-cartilage-research-2026';
 import { article as aOVN11 } from './articles/peptide-research-anxiety-stress-response-2026';
 import { article as aOVN12 } from './articles/peptide-research-hair-loss-follicle-research-2026';
+import { article as aNGT10 } from './articles/does-mk-677-cause-water-retention-research-guide';
+import { article as aNGT11 } from './articles/does-bpc-157-cause-cancer-safety-research-guide';
+import { article as aNGT12 } from './articles/peptides-vs-hormone-replacement-therapy-research-comparison';
 import { article as aOVN8 } from './articles/best-peptides-shin-splints-stress-fractures-research-2026';
 import { article as aOVN9 } from './articles/peptide-research-news-october-2026';
 
@@ -3094,6 +3097,9 @@ export const articles: BlogArticle[] = [
   aOVN10,
   aOVN11,
   aOVN12,
+  aNGT10,
+  aNGT11,
+  aNGT12,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
