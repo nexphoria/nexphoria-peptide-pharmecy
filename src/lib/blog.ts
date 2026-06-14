@@ -1596,6 +1596,9 @@ import { article as aJUN42 } from './articles/nad-plus-longevity-research-sirtui
 import { article as aJUN43 } from './articles/peptide-regulation-fda-research-use-only-legal-guide';
 import { article as aJUN44 } from './articles/collagen-peptides-vs-research-peptides-difference';
 import { article as aJUN45 } from './articles/bpc-157-topical-application-wound-healing-research';
+import { article as aJUN46 } from './articles/peptide-research-q2-2026-quarterly-highlights';
+import { article as aJUN47 } from './articles/semaglutide-vs-metformin-mechanism-comparison-research';
+import { article as aJUN48 } from './articles/bpc-157-vs-nsaids-mechanisms-gut-tissue-research';
 
 
 export const articles: BlogArticle[] = [
@@ -3208,6 +3211,9 @@ export const articles: BlogArticle[] = [
   aJUN43,
   aJUN44,
   aJUN45,
+  aJUN46,
+  aJUN47,
+  aJUN48,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
