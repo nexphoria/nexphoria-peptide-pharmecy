@@ -1554,6 +1554,9 @@ import { article as aNOV3 } from './articles/glp1-agonists-osteoporosis-bone-den
 import { article as aOVN16 } from './articles/peptide-purity-hplc-testing';
 import { article as aOVN17 } from './articles/cold-chain-peptide-shipping';
 import { article as aOVN18 } from './articles/nexphoria-quality-standards';
+import { article as aJUN25 } from './articles/hexarelin-cardioprotection-research-guide';
+import { article as aJUN26 } from './articles/peptide-sciences-alternative-what-researchers-need-2026';
+import { article as aJUN27 } from './articles/buy-research-peptides-usa-sourcing-guide-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3124,6 +3127,9 @@ export const articles: BlogArticle[] = [
   aOVN16,
   aOVN17,
   aOVN18,
+  aJUN25,
+  aJUN26,
+  aJUN27,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
