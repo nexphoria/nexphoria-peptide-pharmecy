@@ -1509,6 +1509,9 @@ import { article as aOVN3 } from './articles/peptide-research-glossary-50-essent
 import { article as aOVN4 } from './articles/nad-plus-vs-nmn-longevity-precursors-complete-guide';
 import { article as aOVN5 } from './articles/peptide-storage-temperature-stability-research-guide';
 import { article as aOVN6 } from './articles/peptide-reconstitution-protocol-step-by-step-research-guide';
+import { article as aNGT1 } from './articles/peptide-research-heat-stroke-summer-hydration-electrolytes-2026';
+import { article as aNGT2 } from './articles/best-peptides-for-nurses-healthcare-workers-research-2026';
+import { article as aNGT3 } from './articles/glp1-agonists-heart-failure-hvpef-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3034,6 +3037,9 @@ export const articles: BlogArticle[] = [
   aOVN4,
   aOVN5,
   aOVN6,
+  aNGT1,
+  aNGT2,
+  aNGT3,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
