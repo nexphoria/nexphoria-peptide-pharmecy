@@ -1548,6 +1548,9 @@ import { article as aBNS3 } from './articles/peptide-cycling-protocols-on-off-re
 import { article as aOVN13 } from './articles/cjc-1295-ipamorelin-fat-loss-research-guide';
 import { article as aOVN14 } from './articles/bpc-157-tb500-athletic-performance-research-2026';
 import { article as aOVN15 } from './articles/verified-research-peptide-sourcing-guide-2026';
+import { article as aNOV1 } from './articles/cjc-1295-vs-ipamorelin-which-is-better-research';
+import { article as aNOV2 } from './articles/nad-plus-mitochondrial-health-aging-2026';
+import { article as aNOV3 } from './articles/glp1-agonists-osteoporosis-bone-density-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3112,6 +3115,9 @@ export const articles: BlogArticle[] = [
   aOVN13,
   aOVN14,
   aOVN15,
+  aNOV1,
+  aNOV2,
+  aNOV3,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
