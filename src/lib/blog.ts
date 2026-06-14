@@ -1542,6 +1542,9 @@ import { article as aNGT11 } from './articles/does-bpc-157-cause-cancer-safety-r
 import { article as aNGT12 } from './articles/peptides-vs-hormone-replacement-therapy-research-comparison';
 import { article as aOVN8 } from './articles/best-peptides-shin-splints-stress-fractures-research-2026';
 import { article as aOVN9 } from './articles/peptide-research-news-october-2026';
+import { article as aBNS1 } from './articles/peptide-research-cognitive-enhancement-nootropic-2026';
+import { article as aBNS2 } from './articles/best-peptides-athletes-sports-performance-research-2026';
+import { article as aBNS3 } from './articles/peptide-cycling-protocols-on-off-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3100,6 +3103,9 @@ export const articles: BlogArticle[] = [
   aNGT10,
   aNGT11,
   aNGT12,
+  aBNS1,
+  aBNS2,
+  aBNS3,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
