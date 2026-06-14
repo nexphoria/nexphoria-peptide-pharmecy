@@ -1611,6 +1611,9 @@ import { article as aJUN57 } from './articles/peptide-research-beginners-first-o
 import { article as aJUN58 } from './articles/peptide-sciences-alternative-nexphoria-research-guide';
 import { article as aJUN59 } from './articles/longevity-peptide-stack-2026-researchers-guide';
 import { article as aJUN60 } from './articles/nad-plus-vs-nmn-longevity-research-comparison';
+import { article as aSUM1 } from './articles/peptide-research-dehydration-summer-hydration-protocols';
+import { article as aSUM2 } from './articles/nexphoria-vs-total-peptide-vendor-comparison';
+import { article as aSUM3 } from './articles/peptide-research-circadian-feeding-time-restricted-eating';
 
 
 export const articles: BlogArticle[] = [
@@ -3238,6 +3241,9 @@ export const articles: BlogArticle[] = [
   aJUN58,
   aJUN59,
   aJUN60,
+  aSUM1,
+  aSUM2,
+  aSUM3,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
