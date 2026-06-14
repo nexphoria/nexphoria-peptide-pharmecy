@@ -1527,6 +1527,9 @@ import { article as aJUN18 } from './articles/hexarelin-cardioprotection-cd36-re
 import { article as aJUN19 } from './articles/research-peptide-glossary-essential-terms-june-2026';
 import { article as aJUN20 } from './articles/buy-research-peptides-usa-sourcing-guide-summer-2026';
 import { article as aJUN21 } from './articles/peptide-storage-complete-guide-summer-2026';
+import { article as aJUN22 } from './articles/bpc-157-safety-side-effects-preclinical-data';
+import { article as aJUN23 } from './articles/tb-500-safety-side-effects-research-guide';
+import { article as aJUN24 } from './articles/ipamorelin-safety-side-effects-research-review';
 
 
 export const articles: BlogArticle[] = [
@@ -3070,6 +3073,9 @@ export const articles: BlogArticle[] = [
   aJUN19,
   aJUN20,
   aJUN21,
+  aJUN22,
+  aJUN23,
+  aJUN24,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
