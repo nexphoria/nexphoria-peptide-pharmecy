@@ -1533,6 +1533,9 @@ import { article as aJUN24 } from './articles/ipamorelin-safety-side-effects-res
 import { article as aNGT7 } from './articles/peptide-research-sleep-circadian-rhythm-2026';
 import { article as aNGT8 } from './articles/nad-plus-vs-nmn-longevity-precursors-researchers-2026';
 import { article as aNGT9 } from './articles/longevity-peptide-stack-multi-target-2026';
+import { article as aOVN7 } from './articles/bpc-157-wrist-injury-research-guide';
+import { article as aOVN8 } from './articles/best-peptides-shin-splints-stress-fractures-research-2026';
+import { article as aOVN9 } from './articles/peptide-research-news-october-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3082,6 +3085,9 @@ export const articles: BlogArticle[] = [
   aNGT7,
   aNGT8,
   aNGT9,
+  aOVN7,
+  aOVN8,
+  aOVN9,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
