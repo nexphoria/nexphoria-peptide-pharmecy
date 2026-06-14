@@ -1515,6 +1515,9 @@ import { article as aNGT3 } from './articles/glp1-agonists-heart-failure-hvpef-r
 import { article as aNGT4 } from './articles/best-peptides-fat-loss-2026';
 import { article as aNGT5 } from './articles/peptide-research-women-hormones-fertility-2026';
 import { article as aNGT6 } from './articles/peptide-longevity-stack-men-over-40';
+import { article as aSEP1 } from './articles/bpc-157-plantar-fasciitis-heel-pain-research-guide';
+import { article as aSEP2 } from './articles/peptide-research-carpal-tunnel-peripheral-nerve-compression';
+import { article as aSEP3 } from './articles/peptide-research-news-september-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3046,6 +3049,9 @@ export const articles: BlogArticle[] = [
   aNGT4,
   aNGT5,
   aNGT6,
+  aSEP1,
+  aSEP2,
+  aSEP3,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
