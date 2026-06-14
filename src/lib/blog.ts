@@ -1567,6 +1567,9 @@ import { article as aJUN28 } from './articles/longevity-peptide-stack-2026-resea
 import { article as aOVNSUM1 } from './articles/how-long-does-wolverine-stack-take-to-work-research-timeline';
 import { article as aOVNSUM2 } from './articles/how-long-does-bpc-157-arginate-take-to-work-research-timeline';
 import { article as aOVNSUM3 } from './articles/peptide-research-summer-2026-buying-guide';
+import { article as aOVNSUM4 } from './articles/oxyntomodulin-research-guide';
+import { article as aOVNSUM5 } from './articles/where-to-buy-leptin-research-guide';
+import { article as aOVNSUM6 } from './articles/peptide-research-cognitive-enhancement-2026';
 import { article as aJUN29 } from './articles/peptide-reconstitution-step-by-step-protocol';
 import { article as aJUN30 } from './articles/bpc-157-complete-research-guide-2026';
 import { article as aJUN31 } from './articles/best-peptides-for-injury-recovery-2026';
@@ -3160,6 +3163,9 @@ export const articles: BlogArticle[] = [
   aOVNSUM1,
   aOVNSUM2,
   aOVNSUM3,
+  aOVNSUM4,
+  aOVNSUM5,
+  aOVNSUM6,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
