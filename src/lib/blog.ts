@@ -1557,6 +1557,9 @@ import { article as aOVN18 } from './articles/nexphoria-quality-standards';
 import { article as aJUN25 } from './articles/hexarelin-cardioprotection-research-guide';
 import { article as aJUN26 } from './articles/peptide-sciences-alternative-what-researchers-need-2026';
 import { article as aJUN27 } from './articles/buy-research-peptides-usa-sourcing-guide-2026';
+import { article as aOVNX1 } from './articles/tb-500-thymosin-beta-4-cardioprotection-research-2026';
+import { article as aOVNX2 } from './articles/peptide-research-gut-skin-axis-2026';
+import { article as aOVNX3 } from './articles/glp1-agonists-type-1-diabetes-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3130,6 +3133,9 @@ export const articles: BlogArticle[] = [
   aJUN25,
   aJUN26,
   aJUN27,
+  aOVNX1,
+  aOVNX2,
+  aOVNX3,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
