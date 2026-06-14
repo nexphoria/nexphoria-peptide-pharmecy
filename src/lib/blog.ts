@@ -1587,6 +1587,9 @@ import { article as aJUN36 } from './articles/how-long-does-amycretin-take-to-wo
 import { article as aOVN25 } from './articles/semaglutide-glp1-receptor-research-overview';
 import { article as aOVN26 } from './articles/thymosin-alpha-1-immune-modulation-research';
 import { article as aOVN27 } from './articles/best-peptides-muscle-recovery-five-compounds';
+import { article as aJUN37 } from './articles/peptide-research-spinal-cord-injury-bpc157-ss31-nad-protocols-2026';
+import { article as aJUN38 } from './articles/peptide-research-june-july-2026-seasonal-guide';
+import { article as aJUN39 } from './articles/peptide-research-peptide-sciences-shutdown-sourcing-alternatives-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3190,6 +3193,9 @@ export const articles: BlogArticle[] = [
   aOVN25,
   aOVN26,
   aOVN27,
+  aJUN37,
+  aJUN38,
+  aJUN39,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
