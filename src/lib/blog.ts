@@ -1503,6 +1503,9 @@ import { article as aPRX6 } from './articles/how-much-does-ipamorelin-cost-resea
 import { article as aSFX1 } from './articles/sermorelin-side-effects-research-guide';
 import { article as aSFX2 } from './articles/thymosin-alpha-1-side-effects-research-guide';
 import { article as aSFX3 } from './articles/nad-plus-side-effects-research-guide';
+import { article as aOVN1 } from './articles/best-peptides-muscle-recovery-five-compounds-research-guide';
+import { article as aOVN2 } from './articles/tb-500-thymosin-beta-4-mechanism-research-sourcing-guide';
+import { article as aOVN3 } from './articles/peptide-research-glossary-50-essential-terms-2026-reference';
 
 
 export const articles: BlogArticle[] = [
@@ -3022,6 +3025,9 @@ export const articles: BlogArticle[] = [
   aSFX1,
   aSFX2,
   aSFX3,
+  aOVN1,
+  aOVN2,
+  aOVN3,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
