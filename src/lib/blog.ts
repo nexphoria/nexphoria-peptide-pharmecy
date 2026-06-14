@@ -1563,6 +1563,9 @@ import { article as aOVNX3 } from './articles/glp1-agonists-type-1-diabetes-rese
 import { article as aNOV4 } from './articles/peptide-research-news-november-2026';
 import { article as aNOV5 } from './articles/where-to-buy-spexin-research-guide';
 import { article as aNOV6 } from './articles/peptide-research-beginners-protocol-guide-2026';
+import { article as aJUN28 } from './articles/longevity-peptide-stack-2026-research-guide';
+import { article as aJUN29 } from './articles/peptide-reconstitution-step-by-step-protocol';
+import { article as aJUN30 } from './articles/bpc-157-complete-research-guide-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3142,6 +3145,9 @@ export const articles: BlogArticle[] = [
   aNOV4,
   aNOV5,
   aNOV6,
+  aJUN28,
+  aJUN29,
+  aJUN30,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
