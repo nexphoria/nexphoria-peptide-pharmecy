@@ -1500,6 +1500,9 @@ import { article as aPRX3 } from './articles/how-much-does-tesamorelin-cost-rese
 import { article as aPRX4 } from './articles/how-much-does-bpc-157-cost-research-pricing-guide';
 import { article as aPRX5 } from './articles/how-much-does-semaglutide-cost-research-pricing-guide';
 import { article as aPRX6 } from './articles/how-much-does-ipamorelin-cost-research-pricing-guide';
+import { article as aSFX1 } from './articles/sermorelin-side-effects-research-guide';
+import { article as aSFX2 } from './articles/thymosin-alpha-1-side-effects-research-guide';
+import { article as aSFX3 } from './articles/nad-plus-side-effects-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3016,6 +3019,9 @@ export const articles: BlogArticle[] = [
   aPRX4,
   aPRX5,
   aPRX6,
+  aSFX1,
+  aSFX2,
+  aSFX3,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
