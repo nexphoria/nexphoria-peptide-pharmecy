@@ -1512,6 +1512,9 @@ import { article as aOVN6 } from './articles/peptide-reconstitution-protocol-ste
 import { article as aNGT1 } from './articles/peptide-research-heat-stroke-summer-hydration-electrolytes-2026';
 import { article as aNGT2 } from './articles/best-peptides-for-nurses-healthcare-workers-research-2026';
 import { article as aNGT3 } from './articles/glp1-agonists-heart-failure-hvpef-research-2026';
+import { article as aNGT4 } from './articles/best-peptides-fat-loss-2026';
+import { article as aNGT5 } from './articles/peptide-research-women-hormones-fertility-2026';
+import { article as aNGT6 } from './articles/peptide-longevity-stack-men-over-40';
 
 
 export const articles: BlogArticle[] = [
@@ -3040,6 +3043,9 @@ export const articles: BlogArticle[] = [
   aNGT1,
   aNGT2,
   aNGT3,
+  aNGT4,
+  aNGT5,
+  aNGT6,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
