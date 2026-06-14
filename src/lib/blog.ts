@@ -1560,6 +1560,9 @@ import { article as aJUN27 } from './articles/buy-research-peptides-usa-sourcing
 import { article as aOVNX1 } from './articles/tb-500-thymosin-beta-4-cardioprotection-research-2026';
 import { article as aOVNX2 } from './articles/peptide-research-gut-skin-axis-2026';
 import { article as aOVNX3 } from './articles/glp1-agonists-type-1-diabetes-research-2026';
+import { article as aNOV4 } from './articles/peptide-research-news-november-2026';
+import { article as aNOV5 } from './articles/where-to-buy-spexin-research-guide';
+import { article as aNOV6 } from './articles/peptide-research-beginners-protocol-guide-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3136,6 +3139,9 @@ export const articles: BlogArticle[] = [
   aOVNX1,
   aOVNX2,
   aOVNX3,
+  aNOV4,
+  aNOV5,
+  aNOV6,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
