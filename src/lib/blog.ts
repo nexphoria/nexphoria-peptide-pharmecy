@@ -1617,6 +1617,9 @@ import { article as aSUM3 } from './articles/peptide-research-circadian-feeding-
 import { article as aDEC1 } from './articles/peptide-research-news-december-2026';
 import { article as aDEC2 } from './articles/peptide-research-2027-outlook';
 import { article as aDEC3 } from './articles/peptide-research-holiday-storage-guide-2026';
+import { article as aJUN14N1 } from './articles/ipamorelin-vs-tesamorelin-ghs-comparison-research-guide';
+import { article as aJUN14N2 } from './articles/bpc-157-ip-vs-sc-injection-route-research-comparison';
+import { article as aJUN14N3 } from './articles/peptide-research-mid-summer-2026-heat-stability-protocols';
 
 
 export const articles: BlogArticle[] = [
@@ -3250,6 +3253,9 @@ export const articles: BlogArticle[] = [
   aDEC1,
   aDEC2,
   aDEC3,
+  aJUN14N1,
+  aJUN14N2,
+  aJUN14N3,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
