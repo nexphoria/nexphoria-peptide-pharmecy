@@ -1602,6 +1602,9 @@ import { article as aJUN48 } from './articles/bpc-157-vs-nsaids-mechanisms-gut-t
 import { article as aJUN49 } from './articles/tirzepatide-beginner-guide-2026';
 import { article as aJUN50 } from './articles/peptide-research-news-mid-june-2026';
 import { article as aJUN51 } from './articles/peptide-research-kidney-renal-health-2026';
+import { article as aJUN52 } from './articles/longevity-peptide-stack-2026-researchers-guide';
+import { article as aJUN53 } from './articles/why-hplc-purity-testing-matters-peptide-sourcing-2026';
+import { article as aJUN54 } from './articles/how-to-source-research-peptides-usa-buyers-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3220,6 +3223,9 @@ export const articles: BlogArticle[] = [
   aJUN49,
   aJUN50,
   aJUN51,
+  aJUN52,
+  aJUN53,
+  aJUN54,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

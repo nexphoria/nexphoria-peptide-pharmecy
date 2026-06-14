@@ -3,10 +3,11 @@ import type { BlogArticle } from '../blog-types';
 export const article: BlogArticle = {
   slug: "how-to-source-research-peptides-usa-buyers-guide",
   title: "How to Source Research Peptides in the USA: A Buyer's Guide",
-  description: "A practical buyer's guide to sourcing research peptides in the USA — what HPLC certificates mean, why COAs matter, cold-chain requirements, red flags to avoid, and what sets premium suppliers apart.",
-  category: "Research Guides",
+  description:
+    "A practical buyer's guide to sourcing research peptides in the USA — what HPLC certificates mean, why COAs matter, cold-chain requirements, red flags to avoid, and what sets premium suppliers apart.",
+  category: "Quality & Sourcing",
   readMinutes: 10,
-  publishedAt: "2026-06-10",
+  publishedAt: "2026-06-14",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -14,20 +15,25 @@ export const article: BlogArticle = {
       text: "Sourcing research peptides in the United States has become more accessible — but not more straightforward. The proliferation of domestic and international suppliers has created significant variability in product quality, documentation standards, and supply chain integrity. For researchers who depend on peptide purity and identity for valid experimental results, supplier selection is a scientific decision, not just a logistical one.",
     },
     {
-      type: "paragraph",
-      text: "This guide covers what to look for, what to avoid, and how to evaluate the documentation that separates a credible research supplier from one that merely looks legitimate.",
-    },
-    {
       type: "heading",
       text: "Why Peptide Quality Matters for Research",
     },
     {
       type: "paragraph",
-      text: "Unlike small-molecule compounds, peptides are structurally sensitive. A 99% pure peptide and a 95% pure peptide are not interchangeable in research. Truncated sequences (common synthesis artifacts) may have partial or antagonistic activity. Racemization at individual amino acids can alter receptor binding profiles. Endotoxin contamination confounds in vivo results and may independently trigger inflammatory responses. Oxidized methionine residues reduce bioactivity of methionine-containing peptides.",
+      text: "Unlike small-molecule compounds, peptides are structurally sensitive. A 99% pure peptide and a 95% pure peptide are not interchangeable in research:",
     },
     {
-      type: "callout",
-      text: "The compound you administer in your protocol needs to be the compound you think you're administering. That verification happens through documentation, not trust.",
+      type: "list",
+      items: [
+        "Truncated sequences (common synthesis artifacts) may have partial or antagonistic activity",
+        "Racemization at individual amino acids can alter receptor binding profiles",
+        "Endotoxin contamination confounds in vivo results and may independently trigger inflammatory responses",
+        "Oxidized methionine residues reduce bioactivity of methionine-containing peptides",
+      ],
+    },
+    {
+      type: "paragraph",
+      text: "In short: the compound you administer in your protocol needs to be the compound you think you're administering. That verification happens through documentation, not trust.",
     },
     {
       type: "heading",
@@ -39,7 +45,7 @@ export const article: BlogArticle = {
     },
     {
       type: "subheading",
-      text: "What a Legitimate HPLC Certificate Includes",
+      text: "What a legitimate HPLC certificate includes:",
     },
     {
       type: "list",
@@ -53,12 +59,12 @@ export const article: BlogArticle = {
     },
     {
       type: "subheading",
-      text: "What to Be Skeptical Of",
+      text: "What to be skeptical of:",
     },
     {
       type: "list",
       items: [
-        "A COA that states a purity percentage with no chromatogram",
+        "A COA that states 'HPLC: 99.5%' with no chromatogram",
         "Generic chromatograms that look identical across different peptides or lots",
         "Chromatograms with single peaks only — some impurities may co-elute; MS is needed to confirm identity",
       ],
@@ -73,11 +79,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "A Certificate of Analysis (COA) is the primary documentation artifact accompanying a research peptide. A comprehensive COA should include peptide identity (confirmed by mass spectrometry, not just name), HPLC purity with accompanying chromatogram, molecular weight (observed vs. theoretical, with method specified), appearance description, solubility confirmation in appropriate solvent, endotoxin level (LAL test result in EU/mg or EU/mL), a lot or batch number traceable to your specific shipment, and testing date — recency matters since peptides degrade and old COAs may not reflect current lot.",
+      text: "A Certificate of Analysis (COA) is the primary documentation artifact accompanying a research peptide. A comprehensive COA should include peptide identity confirmed by mass spectrometry, HPLC purity with accompanying chromatogram, molecular weight (observed vs. theoretical with method specified), appearance description, solubility confirmation, endotoxin level (LAL test result in EU/mg or EU/mL), lot/batch number traceable to your specific shipment, and testing date.",
     },
     {
-      type: "paragraph",
-      text: "Third-party COAs (performed by independent analytical laboratories) are more credible than in-house COAs (performed by the seller's own lab). Suppliers who publish third-party COAs — and make them accessible without requiring a purchase — signal greater transparency and accountability.",
+      type: "callout",
+      text: "Third-party vs. in-house testing: In-house COAs performed by the seller's own lab are less credible than third-party COAs from independent analytical laboratories. Suppliers who publish third-party COAs — accessible without requiring a purchase — signal greater transparency.",
     },
     {
       type: "heading",
@@ -85,11 +91,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "HPLC tells you how pure a compound is. Mass spectrometry tells you what the compound actually is.",
+      text: "HPLC tells you how pure a compound is. Mass spectrometry tells you what the compound actually is. ESI-MS (Electrospray Ionization Mass Spectrometry) and MALDI-TOF are the standard methods for peptide identity confirmation. The observed molecular weight should match the theoretical molecular weight of the target sequence within ±0.1–0.5 Da.",
     },
     {
       type: "paragraph",
-      text: "ESI-MS (Electrospray Ionization Mass Spectrometry) and MALDI-TOF are the standard methods for peptide identity confirmation. The observed molecular weight should match the theoretical molecular weight of the target sequence within ±0.1–0.5 Da (instrument-dependent). For longer peptides (>20 amino acids), or peptides with modifications (fatty acid chains, PEG linkers, arginine substitutions), MS confirmation becomes especially important — these modifications can be omitted in synthesis without immediately obvious visual changes to the product.",
+      text: "For longer peptides (>20 amino acids), or peptides with modifications (fatty acid chains, PEG linkers, arginine substitutions), MS confirmation becomes especially important — these modifications can be omitted in synthesis without immediately obvious visual changes to the product.",
     },
     {
       type: "heading",
@@ -97,19 +103,14 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Limulus Amebocyte Lysate (LAL) testing measures endotoxin contamination — bacterial lipopolysaccharide (LPS) and related pyrogens that can elicit severe inflammatory responses in in vivo models.",
+      text: "Limulus Amebocyte Lysate (LAL) testing measures endotoxin contamination — bacterial lipopolysaccharide (LPS) and related pyrogens that can elicit severe inflammatory responses in in vivo models. Even small amounts of endotoxin (<1 EU/mL) can confound in vivo inflammatory studies, producing results attributable to LPS rather than the peptide under investigation.",
     },
     {
       type: "list",
       items: [
-        "Even small amounts of endotoxin (<1 EU/mL) can confound in vivo inflammatory studies",
-        "Endotoxin-contaminated peptides may produce results attributable to LPS rather than the peptide",
-        "IV or IP administration routes carry greater risk than SC for endotoxin-related artifacts",
+        "Acceptable standard for research-grade peptides: <1 EU/mg",
+        "Injectable-grade protocols (IV, IP) should target: <0.1 EU/mg",
       ],
-    },
-    {
-      type: "callout",
-      text: "Acceptable standards: Most research-grade suppliers should certify <1 EU/mg. Suppliers offering injectable-grade protocols should target <0.1 EU/mg.",
     },
     {
       type: "heading",
@@ -121,7 +122,7 @@ export const article: BlogArticle = {
     },
     {
       type: "subheading",
-      text: "Storage Standards",
+      text: "Storage standards:",
     },
     {
       type: "list",
@@ -133,7 +134,7 @@ export const article: BlogArticle = {
     },
     {
       type: "subheading",
-      text: "Shipping Standards",
+      text: "Shipping standards:",
     },
     {
       type: "list",
@@ -175,7 +176,7 @@ export const article: BlogArticle = {
     },
     {
       type: "callout",
-      text: "We publish COAs proactively. If a supplier makes you ask twice, that tells you something.",
+      text: "COAs are published proactively. If a supplier makes you ask twice, that tells you something.",
     },
     {
       type: "heading",
