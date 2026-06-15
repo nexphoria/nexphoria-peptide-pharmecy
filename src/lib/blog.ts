@@ -1656,6 +1656,9 @@ import { article as aOVNSUM9 } from './articles/peptide-research-dehydration-hea
 import { article as aJUN15A1 } from './articles/cjc-1295-ipamorelin-stack';
 import { article as aJUN15A2 } from './articles/epithalon-telomere-research';
 import { article as aJUN15A3 } from './articles/hexarelin-cardioprotection';
+import { article as aJUN17OVN1 } from './articles/how-long-does-efinopegdutide-take-to-work-research-timeline';
+import { article as aJUN17OVN2 } from './articles/how-long-does-maritide-take-to-work-research-timeline';
+import { article as aJUN17OVN3 } from './articles/where-to-buy-pegozafermin-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3328,6 +3331,9 @@ export const articles: BlogArticle[] = [
   aJUN15A1,
   aJUN15A2,
   aJUN15A3,
+  aJUN17OVN1,
+  aJUN17OVN2,
+  aJUN17OVN3,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
