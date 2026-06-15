@@ -2,17 +2,17 @@ import type { BlogArticle } from '../blog-types';
 
 export const article: BlogArticle = {
   slug: "peptide-storage-temperature-light-shelf-life-guide",
-  title: "Peptide Storage Guide: Temperature, Light, and Shelf Life",
+  title: "Proper Peptide Storage: Temperature, Light, and Shelf Life",
   description:
-    "Research-grade storage protocols for lyophilized and reconstituted peptides. Covers temperature requirements, light sensitivity, freeze-thaw cycles, and compound-specific shelf life guidelines.",
+    "Research-grade guidelines for storing lyophilized and reconstituted peptides. Covers temperature requirements, light sensitivity, freeze-thaw cycles, and shelf life by compound category.",
   category: "Handling & Storage",
-  readMinutes: 8,
-  publishedAt: "2026-06-13",
+  readMinutes: 9,
+  publishedAt: "2026-06-15",
   ogImage: "/og-image.jpg",
   body: [
     {
       type: "paragraph",
-      text: "Peptide stability is not guaranteed by purity alone. A research-grade compound that leaves a manufacturer at ≥99% purity can degrade significantly before reaching experimental use if stored improperly. Temperature, light exposure, moisture, and repeated freeze-thaw cycles are the four primary degradation vectors — and all four are controllable with appropriate protocols.",
+      text: "Peptide stability is not guaranteed by purity alone. A research-grade peptide that leaves a manufacturer at ≥98% purity can degrade significantly before it reaches experimental use if stored improperly. Temperature, light exposure, moisture, and repeated freeze-thaw cycles are the four primary degradation vectors. This guide covers evidence-based storage protocols for both lyophilized and reconstituted peptides.",
     },
     {
       type: "heading",
@@ -20,21 +20,17 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Peptides are chains of amino acids linked by peptide bonds. These bonds — and the specific three-dimensional conformations that determine biological activity — are vulnerable to multiple degradation pathways that operate simultaneously under suboptimal storage conditions.",
+      text: "Peptides are chains of amino acids linked by peptide bonds. These bonds — and the specific three-dimensional conformations that determine biological activity — are vulnerable to multiple degradation pathways. Understanding which mechanisms are most relevant to a given peptide helps determine the appropriate storage approach.",
     },
     {
       type: "list",
       items: [
-        "Hydrolysis: Water molecules cleave peptide bonds; rate accelerates with temperature and extremes of pH",
-        "Oxidation: Reactive oxygen species attack sensitive residues (methionine, cysteine, tryptophan, histidine)",
-        "Aggregation: Misfolded or partially denatured peptide chains cluster together, reducing solubility and activity",
-        "Photodegradation: UV and visible light break aromatic amino acid bonds (tyrosine, phenylalanine, tryptophan)",
-        "Microbial degradation: Proteolytic enzymes from contaminating microorganisms cleave peptide sequences",
+        "Hydrolysis: water molecules cleave peptide bonds; rate accelerates with temperature and extremes of pH",
+        "Oxidation: reactive oxygen species attack sensitive residues (methionine, cysteine, tryptophan, histidine)",
+        "Aggregation: misfolded or partially denatured peptide chains cluster together, reducing solubility and activity",
+        "Photodegradation: UV and visible light can break aromatic amino acid bonds (tyrosine, phenylalanine, tryptophan)",
+        "Microbial degradation: proteolytic enzymes from contaminating microorganisms cleave peptide sequences",
       ],
-    },
-    {
-      type: "paragraph",
-      text: "Understanding which mechanisms are most relevant to a given compound helps determine the appropriate storage approach. A cysteine-containing peptide requires more aggressive oxidation protection than one without reactive residues; a tryptophan-rich GHRP requires strict light exclusion.",
     },
     {
       type: "heading",
@@ -42,16 +38,16 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Lyophilization (freeze-drying) dramatically extends peptide shelf life by removing the water required for hydrolytic degradation. Properly lyophilized peptides are the most stable form for storage and shipping, and represent the baseline state for all peptides received from a quality supplier.",
+      text: "Lyophilization (freeze-drying) dramatically extends peptide shelf life by removing the water required for hydrolytic degradation. Properly lyophilized peptides are the most stable form for storage and shipping.",
     },
     {
       type: "table",
       headers: ["Temperature", "Expected Shelf Life", "Use Case"],
       rows: [
-        ["Room temperature (15–25°C)", "2–4 weeks", "Short-term transit only"],
-        ["Refrigerator (2–8°C)", "3–6 months", "Medium-term active inventory"],
+        ["Room temperature (15–25°C)", "2–4 weeks", "Short-term/transit only"],
+        ["Refrigerator (2–8°C)", "3–6 months", "Medium-term storage"],
         ["Freezer (−20°C)", "12–24 months", "Standard long-term storage"],
-        ["Ultra-low freezer (−80°C)", "24–36+ months", "Extended archival storage"],
+        ["Ultra-low freezer (−80°C)", "24–36+ months", "Extended long-term storage"],
       ],
     },
     {
@@ -61,24 +57,19 @@ export const article: BlogArticle = {
     {
       type: "list",
       items: [
-        "Store in original sealed vial until use — do not open until ready to reconstitute",
-        "Keep desiccant (silica gel) in storage containers if vials are in a frequently accessed refrigerator",
-        "Allow frozen vials to equilibrate fully to room temperature before opening — prevents condensation moisture from entering the vial",
-        "Label vials with receipt date and compound identity immediately on receipt",
-        "Store away from the refrigerator door — temperature fluctuations at the door are greater than the interior",
+        "Store in original sealed vial until use",
+        "Keep desiccant (silica gel) in storage container if vials are frequently accessed",
+        "Allow frozen vials to equilibrate to room temperature before opening — prevents condensation moisture entry",
+        "Label with receipt date and compound identity",
       ],
     },
     {
-      type: "heading",
-      text: "Light Sensitivity: Which Compounds Need Extra Protection",
+      type: "subheading",
+      text: "Light Sensitivity",
     },
     {
       type: "paragraph",
-      text: "Most peptides are sensitive to UV light, but compounds containing tryptophan (Trp/W) residues are particularly vulnerable. Tryptophan absorbs UV strongly and undergoes photolytic cleavage under direct light exposure, generating oxidized products and free radicals that can further degrade the preparation.",
-    },
-    {
-      type: "paragraph",
-      text: "Compounds requiring strict light protection include GHRP-2, GHRP-6, and Hexarelin (all contain Trp), as well as any peptide with phenylalanine or tyrosine residues in functionally critical positions. Best practices: store in original amber or opaque vials, keep in a dark drawer or wrapped in foil, and minimize bench time outside the refrigerator.",
+      text: "Most peptides are sensitive to UV light. Vials should be stored in original amber or opaque vials where possible, in dark storage areas (refrigerator drawer, wrapped in foil), and away from laboratory UV lamps. Peptides containing tryptophan (Trp/W) residues are particularly photosensitive — this includes compounds like GHRP-2, GHRP-6, and Hexarelin. Extra light protection is warranted for these compounds.",
     },
     {
       type: "heading",
@@ -86,74 +77,76 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Once a peptide is reconstituted in aqueous solution, stability decreases substantially regardless of storage conditions. Hydrolysis and oxidation both require water to proceed, and reconstitution provides it. The goal of reconstituted storage protocols is to slow these processes, not eliminate them.",
+      text: "Once a peptide is reconstituted in aqueous solution, stability decreases substantially regardless of storage conditions. Three core rules govern post-reconstitution handling.",
     },
     {
       type: "subheading",
-      text: "Refrigerate Immediately",
+      text: "Rule 1: Refrigerate Immediately",
     },
     {
       type: "paragraph",
-      text: "Reconstituted peptides should be moved to 2–8°C storage as soon as reconstitution is complete and the solution has been verified (clear, no particulate). Room temperature storage of aqueous peptide solutions accelerates every degradation pathway simultaneously. There is no research context in which leaving a reconstituted peptide at bench temperature overnight is appropriate.",
+      text: "Reconstituted peptides should be moved to 2–8°C storage as soon as reconstitution is complete. Room temperature storage of aqueous peptide solutions accelerates every degradation pathway simultaneously. Even brief periods at room temperature (>30 minutes) can reduce effective activity in sensitive compounds.",
     },
     {
       type: "subheading",
-      text: "Minimize Freeze-Thaw Cycles",
+      text: "Rule 2: Minimize Freeze-Thaw Cycles",
     },
     {
       type: "paragraph",
-      text: "Freezing a reconstituted peptide and then thawing it is a significant degradation event. Ice crystal formation can mechanically disrupt peptide tertiary structure; each cycle adds cumulative damage that compounds logarithmically rather than linearly.",
-    },
-    {
-      type: "paragraph",
-      text: "Practical implication: if a reconstituted vial will be used over multiple sessions, do not refreeze — refrigerate and use within the recommended timeframe. If long-term storage of a reconstituted solution is genuinely necessary, aliquot into single-use volumes before the first freeze, so each aliquot is thawed only once.",
+      text: "Freezing a reconstituted peptide and then thawing it is a significant degradation event. Ice crystal formation can mechanically disrupt peptide structure; each cycle adds cumulative damage. If a reconstituted vial will be used over multiple sessions, do not refreeze — refrigerate and use within the recommended timeframe. If long-term storage of reconstituted peptide is required, aliquot before freezing: divide into single-use volumes to eliminate repeated freeze-thaw.",
     },
     {
       type: "subheading",
-      text: "Compound-Specific Reconstituted Stability",
+      text: "Rule 3: Protect from Light",
+    },
+    {
+      type: "paragraph",
+      text: "Wrap reconstituted vials in foil or store in opaque containers. Minimize bench time outside the refrigerator. For photosensitive compounds (those containing tryptophan or tyrosine), work under reduced lighting or amber-filtered conditions when practical.",
+    },
+    {
+      type: "heading",
+      text: "Shelf Life by Compound Category",
     },
     {
       type: "table",
-      headers: ["Compound / Class", "Refrigerated Stability", "Key Considerations"],
+      headers: ["Compound Type", "Refrigerated Shelf Life", "Notes"],
       rows: [
-        ["BPC-157", "2–4 weeks at 4°C", "Protect from light; do not refreeze after reconstitution"],
-        ["TB-500 (Thymosin β4)", "2–4 weeks at 4°C", "Stable in bacteriostatic water; light-sensitive"],
-        ["CJC-1295 (no DAC)", "2–3 weeks at 4°C", "Standard bacteriostatic water; monitor for turbidity"],
-        ["Ipamorelin", "2–3 weeks at 4°C", "Tryptophan residue — strict light protection"],
-        ["GHRP-2 / GHRP-6", "2 weeks at 4°C", "Highest light sensitivity of common GHSs"],
-        ["Semaglutide", "4 weeks at 4°C", "High chemical stability; consistent cold chain required"],
-        ["Tirzepatide", "4 weeks at 4°C", "Stable dual agonist; same cold chain principles"],
-        ["Epithalon", "2–3 weeks at 4°C", "Short tetrapeptide; vulnerable to hydrolysis"],
-        ["PT-141 (Bremelanotide)", "2–3 weeks at 4°C", "Bacteriostatic water standard"],
-        ["NAD+", "1–2 weeks at 4°C", "Highly unstable in solution; aliquot and minimize freezing"],
+        ["Short peptides (2–5 AA)", "4–8 weeks", "Generally more stable"],
+        ["GHRH analogs (CJC-1295, Sermorelin)", "4–6 weeks", "Moderate stability"],
+        ["GHSs (Ipamorelin, GHRP-6)", "3–4 weeks", "Use bacteriostatic water"],
+        ["BPC-157", "4–6 weeks", "Stable; bacteriostatic water"],
+        ["TB-500 (Thymosin β4)", "4–6 weeks", "Moderately stable"],
+        ["IGF-1 variants", "2–3 weeks", "Particularly labile; handle carefully"],
+        ["Epithalon", "4–6 weeks", "High stability for a tetrapeptide"],
       ],
     },
     {
-      type: "heading",
-      text: "Shipping and Cold Chain Integrity",
-    },
-    {
       type: "paragraph",
-      text: "Research peptides should arrive in insulated packaging with ice packs or dry ice depending on transit time and season. Upon receipt, inspect for signs of thermal excursion: condensation inside packaging, ice packs fully melted with warm interior, or visible signs of vial damage.",
-    },
-    {
-      type: "paragraph",
-      text: "A lyophilized peptide that has experienced a brief temperature excursion during shipping is generally still usable — the absence of water limits most degradation pathways. A reconstituted peptide that has been warm for hours is a different matter and should be discarded. This is one reason why peptides should always ship lyophilized and should never be reconstituted before shipping to a research site.",
+      text: "These are general estimates. Actual stability depends on reconstitution technique, diluent choice, storage conditions, and peptide purity. When in doubt, use earlier in the recommended window.",
     },
     {
       type: "heading",
-      text: "Practical Storage Checklist",
+      text: "Signs of Peptide Degradation",
     },
     {
-      type: "list",
-      items: [
-        "Assign a dedicated storage space — not a general lab refrigerator shared with food",
-        "Include desiccant packets in storage containers",
-        "Maintain a log: compound name, lot number, receipt date, reconstitution date, expected expiry",
-        "Inspect reconstituted solutions before each use — discard if cloudy or particulate",
-        "Never store open vials without a clean septum or cap",
-        "If in doubt about a preparation's integrity, do not use it in a critical in vivo model",
-      ],
+      type: "paragraph",
+      text: "Before using any stored peptide, inspect the solution. Discard if you observe cloudiness (indicates aggregation or contamination), visible particles (precipitation or contamination), unusual color change (oxidation or chemical modification), or strong/unusual odor (potential contamination). A very slight tint in solution and tiny air bubbles immediately after drawing are acceptable — these do not indicate stability concerns. When in doubt, discard. The cost of compromised experimental results significantly exceeds the cost of the peptide.",
+    },
+    {
+      type: "heading",
+      text: "Shipping and Cold-Chain Integrity",
+    },
+    {
+      type: "paragraph",
+      text: "When receiving peptides, evaluate cold-chain integrity immediately. Lyophilized products should arrive sealed with no evidence of moisture entry — condensation inside a vial indicates thermal compromise. Cold-pack shipments should arrive with packs still partially frozen or cold to the touch. Inspect packaging for damage or tampering before use. If cold-chain integrity is in question, contact the supplier before using the product in critical experiments.",
+    },
+    {
+      type: "heading",
+      text: "Labeling Protocol",
+    },
+    {
+      type: "paragraph",
+      text: "Every stored peptide vial should be labeled with: compound name and sequence/catalog ID, lot or batch number, date received, date reconstituted (if applicable), concentration (if reconstituted), and initials of the researcher responsible. Consistent labeling prevents costly mix-ups and enables traceability when reviewing experimental data.",
     },
     {
       type: "heading",
@@ -161,11 +154,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Proper peptide storage requires matching temperature and light conditions to compound class, treating reconstituted solutions as perishables, and designing storage and usage workflows that minimize freeze-thaw cycles. The investment in high-purity peptides is only realized when handling protocols preserve that purity through to the point of experimental use.",
+      text: "Proper storage is a non-negotiable element of peptide research integrity. Lyophilized peptides are stable for 12–24+ months at −20°C; reconstituted peptides require refrigeration and use within weeks. Minimizing freeze-thaw cycles, protecting from light, and maintaining strict labeling protocols are the foundations of reliable peptide handling.",
     },
     {
       type: "disclaimer",
-      text: "All content on Nexphoria is intended for educational and informational purposes related to research. Nexphoria products are for laboratory research use only and are not intended for human consumption, therapeutic use, or veterinary application. Nothing on this site constitutes medical advice.",
+      text: "For research purposes only. Not intended for human use or consumption.",
     },
   ],
 };

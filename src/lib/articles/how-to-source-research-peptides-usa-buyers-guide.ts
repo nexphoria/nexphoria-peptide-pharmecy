@@ -4,10 +4,10 @@ export const article: BlogArticle = {
   slug: "how-to-source-research-peptides-usa-buyers-guide",
   title: "How to Source Research Peptides in the USA: A Buyer's Guide",
   description:
-    "A practical buyer's guide to sourcing research peptides in the USA — what HPLC certificates mean, why COAs matter, cold-chain requirements, red flags to avoid, and what sets premium suppliers apart.",
-  category: "Quality & Sourcing",
+    "What HPLC certificates actually mean, how to interpret COAs, why mass spectrometry matters, cold-chain requirements, and the red flags that separate credible research suppliers from the rest.",
+  category: "Quality & Testing",
   readMinutes: 10,
-  publishedAt: "2026-06-14",
+  publishedAt: "2026-06-15",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -20,7 +20,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Unlike small-molecule compounds, peptides are structurally sensitive. A 99% pure peptide and a 95% pure peptide are not interchangeable in research:",
+      text: "Unlike small-molecule compounds, peptides are structurally sensitive. A 99% pure peptide and a 95% pure peptide are not interchangeable in a research context. The differences have real consequences for experimental validity.",
     },
     {
       type: "list",
@@ -33,7 +33,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "In short: the compound you administer in your protocol needs to be the compound you think you're administering. That verification happens through documentation, not trust.",
+      text: "The compound administered in your protocol needs to be the compound you think you're administering. That verification happens through documentation, not trust.",
     },
     {
       type: "heading",
@@ -45,7 +45,7 @@ export const article: BlogArticle = {
     },
     {
       type: "subheading",
-      text: "What a legitimate HPLC certificate includes:",
+      text: "What a Legitimate HPLC Certificate Includes",
     },
     {
       type: "list",
@@ -59,7 +59,7 @@ export const article: BlogArticle = {
     },
     {
       type: "subheading",
-      text: "What to be skeptical of:",
+      text: "What to Be Skeptical Of",
     },
     {
       type: "list",
@@ -70,20 +70,28 @@ export const article: BlogArticle = {
       ],
     },
     {
-      type: "callout",
-      text: "The 99% standard: For research-grade peptides, ≥99% HPLC purity is the accepted minimum. Anything below 98% should be considered unsuitable for controlled research use.",
+      type: "paragraph",
+      text: "For research-grade peptides, ≥99% HPLC purity is the accepted minimum. Anything below 98% should be considered unsuitable for controlled research use.",
     },
     {
       type: "heading",
-      text: "Certificates of Analysis (COAs): Interpreting Them Correctly",
+      text: "Certificates of Analysis: Interpreting Them Correctly",
     },
     {
       type: "paragraph",
-      text: "A Certificate of Analysis (COA) is the primary documentation artifact accompanying a research peptide. A comprehensive COA should include peptide identity confirmed by mass spectrometry, HPLC purity with accompanying chromatogram, molecular weight (observed vs. theoretical with method specified), appearance description, solubility confirmation, endotoxin level (LAL test result in EU/mg or EU/mL), lot/batch number traceable to your specific shipment, and testing date.",
+      text: "A Certificate of Analysis (COA) is the primary documentation artifact accompanying a research peptide. A comprehensive COA should include: peptide identity confirmed by mass spectrometry (not just name), HPLC purity with accompanying chromatogram, observed vs. theoretical molecular weight, appearance description, solubility confirmation in appropriate solvent, endotoxin level via LAL test, lot/batch number traceable to your specific shipment, and testing date.",
     },
     {
-      type: "callout",
-      text: "Third-party vs. in-house testing: In-house COAs performed by the seller's own lab are less credible than third-party COAs from independent analytical laboratories. Suppliers who publish third-party COAs — accessible without requiring a purchase — signal greater transparency.",
+      type: "paragraph",
+      text: "Testing date is often overlooked but matters. Peptides degrade; an old COA may not reflect the current lot condition. COAs older than 12 months on a product you've just received warrant follow-up with the supplier.",
+    },
+    {
+      type: "subheading",
+      text: "Third-Party vs. In-House Testing",
+    },
+    {
+      type: "paragraph",
+      text: "In-house COAs performed by the seller's own lab are less credible than third-party COAs from independent analytical laboratories. Suppliers who publish third-party COAs — and make them accessible without requiring a purchase — signal greater transparency and accountability. If a supplier makes you ask twice for documentation, that asymmetry of transparency is informative.",
     },
     {
       type: "heading",
@@ -91,26 +99,19 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "HPLC tells you how pure a compound is. Mass spectrometry tells you what the compound actually is. ESI-MS (Electrospray Ionization Mass Spectrometry) and MALDI-TOF are the standard methods for peptide identity confirmation. The observed molecular weight should match the theoretical molecular weight of the target sequence within ±0.1–0.5 Da.",
+      text: "HPLC tells you how pure a compound is. Mass spectrometry tells you what the compound actually is. ESI-MS (Electrospray Ionization Mass Spectrometry) and MALDI-TOF are the standard methods for peptide identity confirmation. The observed molecular weight should match the theoretical molecular weight of the target sequence within ±0.1–0.5 Da (instrument-dependent).",
     },
     {
       type: "paragraph",
-      text: "For longer peptides (>20 amino acids), or peptides with modifications (fatty acid chains, PEG linkers, arginine substitutions), MS confirmation becomes especially important — these modifications can be omitted in synthesis without immediately obvious visual changes to the product.",
+      text: "For longer peptides (>20 amino acids) or peptides with modifications (fatty acid chains, PEG linkers, arginine substitutions), MS confirmation becomes especially important. These modifications can be omitted in synthesis without immediately obvious visual changes to the product. HPLC alone cannot detect a missing modification.",
     },
     {
       type: "heading",
-      text: "Endotoxin Testing (LAL)",
+      text: "Endotoxin Testing",
     },
     {
       type: "paragraph",
-      text: "Limulus Amebocyte Lysate (LAL) testing measures endotoxin contamination — bacterial lipopolysaccharide (LPS) and related pyrogens that can elicit severe inflammatory responses in in vivo models. Even small amounts of endotoxin (<1 EU/mL) can confound in vivo inflammatory studies, producing results attributable to LPS rather than the peptide under investigation.",
-    },
-    {
-      type: "list",
-      items: [
-        "Acceptable standard for research-grade peptides: <1 EU/mg",
-        "Injectable-grade protocols (IV, IP) should target: <0.1 EU/mg",
-      ],
+      text: "Limulus Amebocyte Lysate (LAL) testing measures endotoxin contamination — bacterial lipopolysaccharide (LPS) and related pyrogens that can elicit severe inflammatory responses in in vivo models. Even small amounts of endotoxin (<1 EU/mL) can confound in vivo inflammatory studies, producing results attributable to LPS rather than the peptide. IV or IP administration routes carry greater risk than SC for endotoxin-related artifacts. Most research-grade suppliers should certify <1 EU/mg; suppliers offering injectable-grade protocols should target <0.1 EU/mg.",
     },
     {
       type: "heading",
@@ -118,35 +119,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Peptides are temperature-sensitive. Improper shipping conditions are one of the most common causes of reduced potency in received peptides — and one of the least visible.",
-    },
-    {
-      type: "subheading",
-      text: "Storage standards:",
-    },
-    {
-      type: "list",
-      items: [
-        "Lyophilized peptides: stable at room temperature for days, but best stored at -20°C for long-term",
-        "Reconstituted peptides: store at 4°C; use within 28–30 days; avoid repeated freeze-thaw",
-        "Extended storage: -80°C for research stocks held >6 months",
-      ],
-    },
-    {
-      type: "subheading",
-      text: "Shipping standards:",
-    },
-    {
-      type: "list",
-      items: [
-        "Ice packs (4°C) are acceptable for lyophilized peptides during transit of 2–3 days",
-        "Dry ice is required for extended transit or reconstituted peptide shipments",
-        "Summer shipping in uninsulated packaging represents a serious quality risk",
-      ],
+      text: "Peptides are temperature-sensitive. Improper shipping conditions are one of the most common causes of reduced potency in received peptides — and one of the least visible problems, since degraded peptide looks identical to intact peptide. Lyophilized peptides are stable at room temperature for days but should be stored at −20°C long-term. Reconstituted peptides should be stored at 4°C and used within 28–30 days, avoiding repeated freeze-thaw.",
     },
     {
       type: "paragraph",
-      text: "Ask suppliers directly how they ship during warm months. A supplier without a seasonal cold-chain protocol is not a research-grade supplier.",
+      text: "Ice packs (4°C) are acceptable for lyophilized peptides during transit of 2–3 days. Dry ice is required for extended transit or reconstituted peptide shipments. Summer shipping in uninsulated packaging represents a serious quality risk. Ask suppliers directly how they ship during warm months — a supplier without a seasonal cold-chain protocol is not operating to research-grade standards.",
     },
     {
       type: "heading",
@@ -157,26 +134,14 @@ export const article: BlogArticle = {
       headers: ["Red Flag", "Why It Matters"],
       rows: [
         ["No COA available pre-purchase", "Transparency is non-negotiable"],
-        ["COA on request only", "Suggests inconsistency across lots"],
+        ["COA available on request only", "Suggests inconsistency across lots"],
         ["HPLC purity listed as <98%", "Below research-grade threshold"],
         ["No mass spectrometry data", "Identity unconfirmed"],
-        ["No endotoxin testing", "In vivo results may be confounded"],
-        ["Ambient-temperature shipping", "Peptide degradation likely"],
+        ["No endotoxin testing reported", "In vivo results may be confounded"],
+        ["Ambient-temperature shipping", "Peptide degradation likely in transit"],
         ["No lot/batch number on COA", "Cannot verify your specific product"],
-        ["Unusually low prices", "Synthesis corners being cut"],
+        ["Unusually low prices", "Synthesis corners likely being cut"],
       ],
-    },
-    {
-      type: "heading",
-      text: "What Nexphoria Does Differently",
-    },
-    {
-      type: "paragraph",
-      text: "At Nexphoria, every peptide is synthesized to ≥99% HPLC purity verified by reverse-phase chromatography, confirmed by ESI mass spectrometry for sequence identity, tested for endotoxins via LAL assay with results included on every COA, shipped via validated cold-chain protocols with temperature-controlled packaging, and accompanied by a third-party verified COA accessible on the website by lot number.",
-    },
-    {
-      type: "callout",
-      text: "COAs are published proactively. If a supplier makes you ask twice, that tells you something.",
     },
     {
       type: "heading",
@@ -184,11 +149,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Sourcing research peptides in the USA requires the same rigor as any other component of experimental design. HPLC purity, mass spectrometry identity confirmation, endotoxin testing, and cold-chain compliance are not optional extras — they are the baseline for research-grade material. Evaluate suppliers on documentation, not price or marketing language.",
+      text: "Sourcing research peptides in the USA requires the same rigor as any other component of experimental design. HPLC purity, mass spectrometry identity confirmation, endotoxin testing, and cold-chain compliance are not optional extras — they are the baseline for research-grade material. Evaluate suppliers on documentation depth, testing transparency, and cold-chain protocols. Price is the last variable to optimize, not the first.",
     },
     {
       type: "disclaimer",
-      text: "For research purposes only. Not intended for human use.",
+      text: "For research purposes only. Not intended for human use or consumption.",
     },
   ],
 };
