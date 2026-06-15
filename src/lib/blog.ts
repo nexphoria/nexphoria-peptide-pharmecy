@@ -1644,6 +1644,9 @@ import { article as aOVN30 } from './articles/peptide-research-q3-2026-quarterly
 import { article as aOVN31 } from './articles/hexarelin-cardiac-gh-research-guide';
 import { article as aOVN32 } from './articles/longevity-peptide-stack-2026';
 import { article as aOVN33 } from './articles/nad-plus-vs-nmn-longevity-research';
+import { article as aOVN34 } from './articles/peptide-research-gut-permeability-tight-junctions-bpc157-kpv';
+import { article as aOVN35 } from './articles/mots-c-research-guide-mitochondrial-metabolic-peptide';
+import { article as aOVN36 } from './articles/cortistatin-neuropeptide-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3304,6 +3307,9 @@ export const articles: BlogArticle[] = [
   aOVN31,
   aOVN32,
   aOVN33,
+  aOVN34,
+  aOVN35,
+  aOVN36,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
