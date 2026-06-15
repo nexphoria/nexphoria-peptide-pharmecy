@@ -1719,6 +1719,9 @@ import { article as aJUN15OVN_SEMA_NAD } from './articles/how-to-combine-semaglu
 import { article as aJUN15_CAGRISEMA } from './articles/cagrisema-cagrilintide-semaglutide-combination-research-guide';
 import { article as aJUN15_BPC157_STORAGE } from './articles/does-bpc-157-need-refrigeration-storage-guide';
 import { article as aJUN15_DULAGLUTIDE } from './articles/dulaglutide-trulicity-glp1-research-guide';
+import { article as aJUN16_NEXPHORIA_REVIEW } from './articles/nexphoria-review-2026';
+import { article as aJUN16_SUMMER_STACK } from './articles/best-peptide-stack-summer-2026';
+import { article as aJUN16_BEGINNER_GUIDE } from './articles/peptide-beginner-guide-june-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3454,6 +3457,9 @@ export const articles: BlogArticle[] = [
   aJUN15_CAGRISEMA,
   aJUN15_BPC157_STORAGE,
   aJUN15_DULAGLUTIDE,
+  aJUN16_NEXPHORIA_REVIEW,
+  aJUN16_SUMMER_STACK,
+  aJUN16_BEGINNER_GUIDE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
