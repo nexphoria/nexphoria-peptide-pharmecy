@@ -1762,6 +1762,9 @@ import { article as aOVN_GLP1_MAINTENANCE } from './articles/glp1-weight-mainten
 import { article as aOVN_TZ_PCOS } from './articles/tirzepatide-pcos-research-2026';
 import { article as aOVN_LUPUS_SLE } from './articles/peptide-research-lupus-sle-autoimmune-2026';
 import { article as aGADS1 } from './articles/nexphoria-google-ads-campaign-structure';
+import { article as aOVN_ACTIRII } from './articles/actirii-myostatin-inhibition-peptide-research-2026';
+import { article as aOVN_HPA } from './articles/cortisol-stress-peptides-hpa-axis-recovery-research-2026';
+import { article as aOVN_DOSERESP } from './articles/peptide-dose-response-curves-ec50-research-design-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3543,6 +3546,9 @@ export const articles: BlogArticle[] = [
   aOVN_TZ_PCOS,
   aOVN_LUPUS_SLE,
   aGADS1,
+  aOVN_ACTIRII,
+  aOVN_HPA,
+  aOVN_DOSERESP,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
