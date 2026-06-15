@@ -1761,6 +1761,7 @@ import { article as aJUN15_SUMMER_PROTO } from './articles/peptide-research-summ
 import { article as aOVN_GLP1_MAINTENANCE } from './articles/glp1-weight-maintenance-long-term-research-2026';
 import { article as aOVN_TZ_PCOS } from './articles/tirzepatide-pcos-research-2026';
 import { article as aOVN_LUPUS_SLE } from './articles/peptide-research-lupus-sle-autoimmune-2026';
+import { article as aGADS1 } from './articles/nexphoria-google-ads-campaign-structure';
 
 
 export const articles: BlogArticle[] = [
@@ -3541,6 +3542,7 @@ export const articles: BlogArticle[] = [
   aOVN_GLP1_MAINTENANCE,
   aOVN_TZ_PCOS,
   aOVN_LUPUS_SLE,
+  aGADS1,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
