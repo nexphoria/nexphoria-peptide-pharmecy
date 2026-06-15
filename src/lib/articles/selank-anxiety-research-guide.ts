@@ -3,10 +3,11 @@ import type { BlogArticle } from '../blog-types';
 export const article: BlogArticle = {
   slug: "selank-anxiety-research-guide",
   title: "Selank: The Russian Peptide Studied for Anxiety",
-  description: "An evidence-based overview of Selank, the heptapeptide developed in Russia and studied for anxiolytic and nootropic effects. Research findings, mechanism of action, and what the data shows.",
+  description:
+    "An evidence-based overview of Selank, the heptapeptide developed in Russia and studied for anxiolytic and nootropic effects. Research findings, mechanism of action, and what the published data shows.",
   category: "Compound Profiles",
-  readMinutes: 9,
-  publishedAt: "2026-06-11",
+  readMinutes: 10,
+  publishedAt: "2026-06-15",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -23,7 +24,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Anxiety disorders represent a significant area of unmet pharmacological research need. Current first-line pharmacological approaches — primarily SSRIs, SNRIs, and benzodiazepines — are associated with well-documented limitations. Benzodiazepines are efficacious short-term but carry dependency risk, tolerance development, and cognitive impairment concerns. SSRIs and SNRIs have delayed onset (2–6 weeks), incomplete responder rates, and discontinuation syndrome.",
+      text: "Anxiety disorders represent a significant area of unmet pharmacological research need. Current first-line pharmacological approaches — primarily SSRIs, SNRIs, and benzodiazepines — are associated with well-documented limitations. Benzodiazepines are efficacious short-term but carry dependency risk, tolerance development, and cognitive impairment concerns. SSRIs/SNRIs have delayed onset (2–6 weeks), incomplete responder rates, and discontinuation syndrome.",
     },
     {
       type: "paragraph",
@@ -32,6 +33,10 @@ export const article: BlogArticle = {
     {
       type: "heading",
       text: "Mechanism of Action",
+    },
+    {
+      type: "paragraph",
+      text: "Selank's anxiolytic effects are thought to involve several intersecting mechanisms.",
     },
     {
       type: "subheading",
@@ -83,11 +88,11 @@ export const article: BlogArticle = {
     },
     {
       type: "subheading",
-      text: "Nootropic / Cognitive Effects",
+      text: "Nootropic and Cognitive Effects",
     },
     {
       type: "paragraph",
-      text: "Beyond anxiolytic activity, Selank has been studied for cognitive enhancement properties including improved performance on learning and memory tasks in animal studies, reduced cognitive fatigue without stimulant-like effects in clinical observations, and neuroprotective properties against oxidative stress-induced neuronal damage in cell culture models.",
+      text: "Beyond anxiolytic activity, Selank has been studied for cognitive enhancement properties. Animal studies report improved performance on learning and memory tasks. Clinical observations in Russian studies describe reduced cognitive fatigue without stimulant-like effects. Some research documents protection against oxidative stress-induced neuronal damage in cell culture models.",
     },
     {
       type: "subheading",
@@ -121,7 +126,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Selank has been studied primarily via intranasal administration in clinical applications. Animal studies have also used subcutaneous and intraperitoneal routes. Intranasal delivery allows direct entry to CNS via the olfactory pathway, bypassing first-pass metabolism.",
+      text: "Selank has been studied primarily via intranasal administration in clinical applications. Animal studies have also used subcutaneous and intraperitoneal routes. Intranasal delivery allows direct entry to the CNS via the olfactory pathway, bypassing first-pass metabolism.",
     },
     {
       type: "subheading",
@@ -150,11 +155,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "The primary limitation of Selank research is geographic concentration. The majority of published studies originate from Russian institutions, with limited independent replication in Western academic settings. Many key studies are published in Russian-language journals with limited English availability.",
-    },
-    {
-      type: "paragraph",
-      text: "This does not invalidate the research, but it does mean the evidence has not been subjected to the degree of independent scrutiny standard in globally-replicated pharmacological research. Selank remains a research-stage compound for Western investigators.",
+      text: "The primary limitation of Selank research is geographic concentration. The majority of published studies originate from Russian institutions, with limited independent replication in Western academic settings. Many key studies are published in Russian-language journals with limited English availability. This does not invalidate the research, but it does mean the evidence has not been subjected to the degree of independent scrutiny standard in globally-replicated pharmacological research. Selank remains a research-stage compound for Western investigators.",
     },
     {
       type: "heading",

@@ -1692,6 +1692,9 @@ import { article as aJUN16OVN6 } from './articles/chonluten-lung-peptide-bioregu
 import { article as aJUN15OVN16 } from './articles/svetinorm-vascular-peptide-bioregulator-research-guide';
 import { article as aJUN15OVN17 } from './articles/suprefort-pancreatic-peptide-bioregulator-research-guide';
 import { article as aJUN15OVN18 } from './articles/cerluten-brain-peptide-bioregulator-research-guide';
+import { article as aJUN15OVN19 } from './articles/hexarelin-cardioprotection-research-guide';
+import { article as aJUN15OVN20 } from './articles/longevity-peptide-stack-2026';
+import { article as aJUN15OVN21 } from './articles/selank-anxiety-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3400,6 +3403,9 @@ export const articles: BlogArticle[] = [
   aJUN15OVN16,
   aJUN15OVN17,
   aJUN15OVN18,
+  aJUN15OVN19,
+  aJUN15OVN20,
+  aJUN15OVN21,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
