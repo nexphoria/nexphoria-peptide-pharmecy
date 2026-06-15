@@ -1653,6 +1653,9 @@ import { article as aOVN39 } from './articles/peptide-cycling-protocols-toleranc
 import { article as aOVNSUM7 } from './articles/bpc-157-summer-2026-heat-recovery-guide';
 import { article as aOVNSUM8 } from './articles/best-peptides-for-summer-2026-research-guide';
 import { article as aOVNSUM9 } from './articles/peptide-research-dehydration-heat-stress-summer-protocols-2026';
+import { article as aJUN15A1 } from './articles/cjc-1295-ipamorelin-stack';
+import { article as aJUN15A2 } from './articles/epithalon-telomere-research';
+import { article as aJUN15A3 } from './articles/hexarelin-cardioprotection';
 
 
 export const articles: BlogArticle[] = [
@@ -3322,6 +3325,9 @@ export const articles: BlogArticle[] = [
   aOVNSUM7,
   aOVNSUM8,
   aOVNSUM9,
+  aJUN15A1,
+  aJUN15A2,
+  aJUN15A3,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
