@@ -1695,6 +1695,9 @@ import { article as aJUN15OVN18 } from './articles/cerluten-brain-peptide-bioreg
 import { article as aJUN15OVN19 } from './articles/hexarelin-cardioprotection-research-guide';
 import { article as aJUN15OVN20 } from './articles/longevity-peptide-stack-2026';
 import { article as aJUN15OVN21 } from './articles/selank-anxiety-research-guide';
+import { article as aJUN15OVN22 } from './articles/pt-141-vs-melanotan-ii-melanocortin-comparison-guide';
+import { article as aJUN15OVN23 } from './articles/water-soluble-vs-lipophilic-peptides-solubility-research-guide';
+import { article as aJUN15OVN24 } from './articles/dsip-vs-melatonin-sleep-research-comparison';
 
 
 export const articles: BlogArticle[] = [
@@ -3406,6 +3409,9 @@ export const articles: BlogArticle[] = [
   aJUN15OVN19,
   aJUN15OVN20,
   aJUN15OVN21,
+  aJUN15OVN22,
+  aJUN15OVN23,
+  aJUN15OVN24,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
