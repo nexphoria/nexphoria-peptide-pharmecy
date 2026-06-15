@@ -1650,6 +1650,9 @@ import { article as aOVN36 } from './articles/cortistatin-neuropeptide-research-
 import { article as aOVN37 } from './articles/peptide-third-party-testing-verification-guide';
 import { article as aOVN38 } from './articles/ghrp-2-vs-ghrp-6-comparison-research-guide';
 import { article as aOVN39 } from './articles/peptide-cycling-protocols-tolerance-breaks-research';
+import { article as aOVNSUM7 } from './articles/bpc-157-summer-2026-heat-recovery-guide';
+import { article as aOVNSUM8 } from './articles/best-peptides-for-summer-2026-research-guide';
+import { article as aOVNSUM9 } from './articles/peptide-research-dehydration-heat-stress-summer-protocols-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3316,6 +3319,9 @@ export const articles: BlogArticle[] = [
   aOVN37,
   aOVN38,
   aOVN39,
+  aOVNSUM7,
+  aOVNSUM8,
+  aOVNSUM9,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
