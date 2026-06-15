@@ -1746,6 +1746,9 @@ import { article as aJUN16_NAD_HEAT } from './articles/nad-plus-heat-stability-s
 import { article as aJUN15OVN_GDF11 } from './articles/gdf-11-rejuvenation-peptide-research-guide';
 import { article as aJUN15OVN_DESMO } from './articles/desmopressin-ddavp-vasopressin-analog-research-guide';
 import { article as aJUN15OVN_TERLIP } from './articles/terlipressin-vasopressin-analog-portal-hypertension-research-guide';
+import { article as aJUN16_BPC157_NERVE } from './articles/bpc-157-nerve-regeneration-research-guide';
+import { article as aJUN16_GLP1_OZEMPIC } from './articles/glp1-vs-ozempic-complete-comparison-2026';
+import { article as aJUN16_PEPTIDE_SAFETY } from './articles/how-to-use-research-peptides-safely-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3511,6 +3514,9 @@ export const articles: BlogArticle[] = [
   aJUN15OVN_GDF11,
   aJUN15OVN_DESMO,
   aJUN15OVN_TERLIP,
+  aJUN16_BPC157_NERVE,
+  aJUN16_GLP1_OZEMPIC,
+  aJUN16_PEPTIDE_SAFETY,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
