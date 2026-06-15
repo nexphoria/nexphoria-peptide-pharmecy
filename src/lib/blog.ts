@@ -1641,6 +1641,9 @@ import { article as aJUN14EV3 } from './articles/hplc-ms-lal-peptide-purity-test
 import { article as aOVN28 } from './articles/semaglutide-faq-researchers-guide';
 import { article as aOVN29 } from './articles/bpc-157-faq-researchers-guide';
 import { article as aOVN30 } from './articles/peptide-research-q3-2026-quarterly-highlights';
+import { article as aOVN31 } from './articles/hexarelin-cardiac-gh-research-guide';
+import { article as aOVN32 } from './articles/longevity-peptide-stack-2026';
+import { article as aOVN33 } from './articles/nad-plus-vs-nmn-longevity-research';
 
 
 export const articles: BlogArticle[] = [
@@ -3298,6 +3301,9 @@ export const articles: BlogArticle[] = [
   aOVN28,
   aOVN29,
   aOVN30,
+  aOVN31,
+  aOVN32,
+  aOVN33,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
