@@ -1749,6 +1749,9 @@ import { article as aJUN15OVN_TERLIP } from './articles/terlipressin-vasopressin
 import { article as aJUN16_BPC157_NERVE } from './articles/bpc-157-nerve-regeneration-research-guide';
 import { article as aJUN16_GLP1_OZEMPIC } from './articles/glp1-vs-ozempic-complete-comparison-2026';
 import { article as aJUN16_PEPTIDE_SAFETY } from './articles/how-to-use-research-peptides-safely-2026';
+import { article as aJUN15OVN_DANUGLIPRON_BUY } from './articles/where-to-buy-danuglipron-research-guide';
+import { article as aJUN15OVN_PEMVID_TIMELINE } from './articles/how-long-does-pemvidutide-take-to-work-research-timeline';
+import { article as aJUN15OVN_SURVO_TIMELINE } from './articles/how-long-does-survodutide-take-to-work-research-timeline';
 
 
 export const articles: BlogArticle[] = [
@@ -3517,6 +3520,9 @@ export const articles: BlogArticle[] = [
   aJUN16_BPC157_NERVE,
   aJUN16_GLP1_OZEMPIC,
   aJUN16_PEPTIDE_SAFETY,
+  aJUN15OVN_DANUGLIPRON_BUY,
+  aJUN15OVN_PEMVID_TIMELINE,
+  aJUN15OVN_SURVO_TIMELINE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
