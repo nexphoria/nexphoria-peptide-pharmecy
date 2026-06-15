@@ -1771,6 +1771,9 @@ import { article as aJUN16_GLP1_SUM2026 } from './articles/glp1-agonists-summer-
 import { article as aJUN16OVN_CYCLING } from './articles/peptide-cycling-on-off-protocols-research';
 import { article as aJUN16OVN_GLP1_MUSCLE } from './articles/glp1-peptides-muscle-preservation-research';
 import { article as aJUN16OVN_FAT_STACK } from './articles/best-peptide-stack-fat-loss-research-2026';
+import { article as aOVN_BPC157_SCAR } from './articles/bpc-157-scar-tissue-research';
+import { article as aOVN_WL2026 } from './articles/best-peptides-weight-loss-2026-complete-guide';
+import { article as aOVN_SUM2026 } from './articles/peptide-research-summer-2026-complete-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3561,6 +3564,9 @@ export const articles: BlogArticle[] = [
   aJUN16OVN_CYCLING,
   aJUN16OVN_GLP1_MUSCLE,
   aJUN16OVN_FAT_STACK,
+  aOVN_BPC157_SCAR,
+  aOVN_WL2026,
+  aOVN_SUM2026,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
