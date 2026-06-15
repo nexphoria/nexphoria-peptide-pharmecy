@@ -1686,6 +1686,9 @@ import { article as aJUN15OVN15 } from './articles/peptide-half-life-dosing-timi
 import { article as aJUN16OVN1 } from './articles/peptide-research-insulin-sensitivity-glp1-adiponectin';
 import { article as aJUN16OVN2 } from './articles/bpc-157-gut-microbiome-intestinal-permeability-research';
 import { article as aJUN16OVN3 } from './articles/longevity-peptides-autophagy-mtor-pathway-research';
+import { article as aJUN16OVN4 } from './articles/testagen-gonadal-peptide-bioregulator-research-guide';
+import { article as aJUN16OVN5 } from './articles/crystagen-bone-peptide-bioregulator-research-guide';
+import { article as aJUN16OVN6 } from './articles/chonluten-lung-peptide-bioregulator-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3388,6 +3391,9 @@ export const articles: BlogArticle[] = [
   aJUN16OVN1,
   aJUN16OVN2,
   aJUN16OVN3,
+  aJUN16OVN4,
+  aJUN16OVN5,
+  aJUN16OVN6,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
