@@ -1725,6 +1725,9 @@ import { article as aJUN16_BEGINNER_GUIDE } from './articles/peptide-beginner-gu
 import { article as aJUN16_TZ_RET } from './articles/tirzepatide-vs-retatrutide-weight-loss-research-june-2026';
 import { article as aJUN16_NAD_SUM } from './articles/nad-plus-summer-heat-exercise-research-2026';
 import { article as aJUN16_SEMA_APP } from './articles/semaglutide-appetite-suppression-mechanisms-research';
+import { article as aOVN_PRICE1 } from './articles/peptide-vendor-pricing-comparison-2026';
+import { article as aOVN_PRICE2 } from './articles/peptide-vendor-landscape-post-peptide-sciences-2026';
+import { article as aOVN_PRICE3 } from './articles/research-peptide-cost-comparison-vendors-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3466,6 +3469,9 @@ export const articles: BlogArticle[] = [
   aJUN16_TZ_RET,
   aJUN16_NAD_SUM,
   aJUN16_SEMA_APP,
+  aOVN_PRICE1,
+  aOVN_PRICE2,
+  aOVN_PRICE3,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
