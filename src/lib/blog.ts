@@ -1758,6 +1758,9 @@ import { article as aJUN15_GLP1_CKD } from './articles/glp1-agonists-kidney-prot
 import { article as aJUN15_WTBR_JUNE } from './articles/where-to-buy-research-peptides-june-2026';
 import { article as aJUN15_BEGINNER_CHECKLIST } from './articles/peptide-beginner-checklist-2026';
 import { article as aJUN15_SUMMER_PROTO } from './articles/peptide-research-summer-2026-protocol-guide';
+import { article as aOVN_GLP1_MAINTENANCE } from './articles/glp1-weight-maintenance-long-term-research-2026';
+import { article as aOVN_TZ_PCOS } from './articles/tirzepatide-pcos-research-2026';
+import { article as aOVN_LUPUS_SLE } from './articles/peptide-research-lupus-sle-autoimmune-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3535,6 +3538,9 @@ export const articles: BlogArticle[] = [
   aJUN15_WTBR_JUNE,
   aJUN15_BEGINNER_CHECKLIST,
   aJUN15_SUMMER_PROTO,
+  aOVN_GLP1_MAINTENANCE,
+  aOVN_TZ_PCOS,
+  aOVN_LUPUS_SLE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
