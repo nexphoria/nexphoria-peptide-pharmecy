@@ -1674,6 +1674,9 @@ import { article as aJUN15OVN12 } from './articles/nad-plus-sirtuins-parp-longev
 import { article as aOVN40 } from './articles/tirzepatide-weight-loss-plateau-research-guide';
 import { article as aOVN41 } from './articles/bpc-157-sciatica-nerve-pain-research';
 import { article as aOVN42 } from './articles/best-peptides-back-pain-research-2026';
+import { article as aOVN43 } from './articles/nad-plus-vs-nmn';
+import { article as aOVN44 } from './articles/peptide-sciences-alternative';
+import { article as aOVN45 } from './articles/selank-anxiety-research';
 
 
 export const articles: BlogArticle[] = [
@@ -3364,6 +3367,9 @@ export const articles: BlogArticle[] = [
   aOVN40,
   aOVN41,
   aOVN42,
+  aOVN43,
+  aOVN44,
+  aOVN45,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

@@ -4,10 +4,10 @@ export const article: BlogArticle = {
   slug: "peptide-reconstitution-guide",
   title: "How to Reconstitute Peptides: A Research Protocol Guide",
   description:
-    "Step-by-step research protocol for reconstituting lyophilized peptides. Covers bacteriostatic water, acetic acid, dilution math, aseptic technique, and storage best practices.",
+    "Step-by-step research protocol for reconstituting lyophilized peptides. Covers bacteriostatic water, acetic acid, dilution math, and storage best practices.",
   category: "Research Protocols",
   readMinutes: 8,
-  publishedAt: "2026-06-07",
+  publishedAt: "2026-06-15",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -52,21 +52,6 @@ export const article: BlogArticle = {
     },
     {
       type: "heading",
-      text: "Equipment Required",
-    },
-    {
-      type: "list",
-      items: [
-        "Lyophilized peptide vial",
-        "Diluent (bacteriostatic water or appropriate alternative)",
-        "Insulin syringe (1 mL, 28–31 gauge) or appropriate research-grade syringe",
-        "Alcohol swabs (70% isopropyl)",
-        "Clean preparation surface",
-        "Calculator or concentration calculation reference",
-      ],
-    },
-    {
-      type: "heading",
       text: "Step-by-Step Reconstitution Protocol",
     },
     {
@@ -83,7 +68,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Determine the concentration needed before adding any liquid. Formula: Concentration (mcg/mL) = Peptide mass (mcg) ÷ Volume of diluent (mL). Example: 5 mg (5,000 mcg) vial at target 2 mg/mL = 5,000 ÷ 2,000 = 2.5 mL diluent. For 1 mg/mL from the same vial, add 5 mL of diluent.",
+      text: "Determine the concentration needed for your research protocol before adding any liquid. The standard formula: Concentration (mcg/mL) = Peptide mass (mcg) ÷ Volume of diluent (mL). Example: for a 5 mg (5,000 mcg) vial at a target of 2 mg/mL, add 2.5 mL of diluent. For 1 mg/mL from the same vial, add 5 mL.",
     },
     {
       type: "subheading",
@@ -107,7 +92,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Critical: Direct the diluent stream down the side of the vial — not directly onto the peptide powder. Forceful contact can damage peptide structure. Allow the solution to run down and contact the lyophilized cake gradually.",
+      text: "Critical: direct the diluent stream down the side of the vial — not directly onto the peptide powder. Forceful contact can damage peptide structure. Allow the solution to run down and contact the lyophilized cake gradually.",
     },
     {
       type: "subheading",
@@ -123,7 +108,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Examine the reconstituted solution. It should be clear and colorless (some peptides may have a very slight tint), with no visible particles or cloudiness and no undissolved residue. Cloudiness or particulates may indicate incomplete dissolution, aggregation, or contamination — evaluate before proceeding.",
+      text: "Examine the reconstituted solution. It should be clear and colorless (some peptides may have a very slight tint), with no visible particles or cloudiness, and no undissolved residue. Cloudiness or particulates may indicate incomplete dissolution, aggregation, or contamination — evaluate before proceeding.",
     },
     {
       type: "heading",
@@ -146,13 +131,8 @@ export const article: BlogArticle = {
       text: "Storage After Reconstitution",
     },
     {
-      type: "list",
-      items: [
-        "Short-term (up to 4 weeks): Store in refrigerator at 2–8°C, away from light",
-        "Minimize freeze-thaw cycles — each cycle degrades peptide integrity; pre-aliquot if needed",
-        "Label each vial with compound name, concentration, reconstitution date, and lot number",
-        "Discard if solution becomes cloudy, discolored, or shows visible particulates",
-      ],
+      type: "paragraph",
+      text: "Once reconstituted, peptide stability decreases. For short-term storage (up to 4 weeks), store in refrigerator at 2–8°C and keep away from light. Minimize freeze-thaw cycles — each cycle degrades peptide integrity; pre-aliquot if needed. Label each vial with compound name, concentration, reconstitution date, and lot number. Discard if solution becomes cloudy, discolored, or shows visible particulates.",
     },
     {
       type: "heading",
