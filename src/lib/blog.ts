@@ -1722,6 +1722,9 @@ import { article as aJUN15_DULAGLUTIDE } from './articles/dulaglutide-trulicity-
 import { article as aJUN16_NEXPHORIA_REVIEW } from './articles/nexphoria-review-2026';
 import { article as aJUN16_SUMMER_STACK } from './articles/best-peptide-stack-summer-2026';
 import { article as aJUN16_BEGINNER_GUIDE } from './articles/peptide-beginner-guide-june-2026';
+import { article as aJUN16_TZ_RET } from './articles/tirzepatide-vs-retatrutide-weight-loss-research-june-2026';
+import { article as aJUN16_NAD_SUM } from './articles/nad-plus-summer-heat-exercise-research-2026';
+import { article as aJUN16_SEMA_APP } from './articles/semaglutide-appetite-suppression-mechanisms-research';
 
 
 export const articles: BlogArticle[] = [
@@ -3460,6 +3463,9 @@ export const articles: BlogArticle[] = [
   aJUN16_NEXPHORIA_REVIEW,
   aJUN16_SUMMER_STACK,
   aJUN16_BEGINNER_GUIDE,
+  aJUN16_TZ_RET,
+  aJUN16_NAD_SUM,
+  aJUN16_SEMA_APP,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
