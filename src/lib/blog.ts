@@ -1716,6 +1716,9 @@ import { article as aOVNJUN15C } from './articles/hexarelin-ghs-r1a-cd36-cardiac
 import { article as aJUN15OVN_JOINT } from './articles/peptide-research-joint-cartilage-repair-bpc157-collagen';
 import { article as aJUN15OVN_FAT } from './articles/best-peptides-fat-loss-research-2026';
 import { article as aJUN15OVN_SEMA_NAD } from './articles/how-to-combine-semaglutide-and-nad-plus-research';
+import { article as aJUN15_CAGRISEMA } from './articles/cagrisema-cagrilintide-semaglutide-combination-research-guide';
+import { article as aJUN15_BPC157_STORAGE } from './articles/does-bpc-157-need-refrigeration-storage-guide';
+import { article as aJUN15_DULAGLUTIDE } from './articles/dulaglutide-trulicity-glp1-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3448,6 +3451,9 @@ export const articles: BlogArticle[] = [
   aJUN15OVN_JOINT,
   aJUN15OVN_FAT,
   aJUN15OVN_SEMA_NAD,
+  aJUN15_CAGRISEMA,
+  aJUN15_BPC157_STORAGE,
+  aJUN15_DULAGLUTIDE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
