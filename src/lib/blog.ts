@@ -1701,6 +1701,9 @@ import { article as aJUN15OVN24 } from './articles/dsip-vs-melatonin-sleep-resea
 import { article as aJUN16COST1 } from './articles/how-much-does-igf-1-lr3-cost-research-pricing-guide';
 import { article as aJUN16COST2 } from './articles/how-much-does-dsip-cost-research-pricing-guide';
 import { article as aJUN16COST3 } from './articles/how-much-does-melanotan-2-cost-research-pricing-guide';
+import { article as aJUN15NEW1 } from './articles/does-ipamorelin-cause-water-retention-research-guide';
+import { article as aJUN15NEW2 } from './articles/how-to-combine-bpc-157-and-nad-plus-research-protocol';
+import { article as aJUN15NEW3 } from './articles/peptide-research-june-2026-trending-compounds-protocols';
 
 
 export const articles: BlogArticle[] = [
@@ -3418,6 +3421,9 @@ export const articles: BlogArticle[] = [
   aJUN16COST1,
   aJUN16COST2,
   aJUN16COST3,
+  aJUN15NEW1,
+  aJUN15NEW2,
+  aJUN15NEW3,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
