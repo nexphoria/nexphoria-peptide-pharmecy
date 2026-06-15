@@ -1671,6 +1671,9 @@ import { article as aJUN15OVN9 } from './articles/where-to-buy-pemvidutide-resea
 import { article as aJUN15OVN10 } from './articles/selank-gaba-bdnf-anxiolytic-peptide-research-2026';
 import { article as aJUN15OVN11 } from './articles/thymosin-alpha-1-t-cell-immune-modulation-research';
 import { article as aJUN15OVN12 } from './articles/nad-plus-sirtuins-parp-longevity-research-deep-dive';
+import { article as aOVN40 } from './articles/tirzepatide-weight-loss-plateau-research-guide';
+import { article as aOVN41 } from './articles/bpc-157-sciatica-nerve-pain-research';
+import { article as aOVN42 } from './articles/best-peptides-back-pain-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3358,6 +3361,9 @@ export const articles: BlogArticle[] = [
   aJUN15OVN10,
   aJUN15OVN11,
   aJUN15OVN12,
+  aOVN40,
+  aOVN41,
+  aOVN42,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
