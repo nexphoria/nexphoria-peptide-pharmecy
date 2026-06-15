@@ -1638,6 +1638,9 @@ import { article as aJUN17N3 } from './articles/peptide-research-sleep-recovery-
 import { article as aJUN14EV1 } from './articles/selank-anxiolytic-nootropic-research-guide';
 import { article as aJUN14EV2 } from './articles/nad-plus-longevity-research-sirtuins-parp-hallmarks-aging';
 import { article as aJUN14EV3 } from './articles/hplc-ms-lal-peptide-purity-testing-researchers-guide';
+import { article as aOVN28 } from './articles/semaglutide-faq-researchers-guide';
+import { article as aOVN29 } from './articles/bpc-157-faq-researchers-guide';
+import { article as aOVN30 } from './articles/peptide-research-q3-2026-quarterly-highlights';
 
 
 export const articles: BlogArticle[] = [
@@ -3292,6 +3295,9 @@ export const articles: BlogArticle[] = [
   aJUN14EV1,
   aJUN14EV2,
   aJUN14EV3,
+  aOVN28,
+  aOVN29,
+  aOVN30,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
