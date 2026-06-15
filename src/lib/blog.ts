@@ -1740,6 +1740,9 @@ import { article as aJUN15_USABUY } from './articles/how-to-source-research-pept
 import { article as aOVN_MUSCLE5_2026 } from './articles/muscle-repair-peptide-research-five-compound-overview-2026';
 import { article as aOVN_BPC157TB500_2026 } from './articles/bpc-157-tb500-combined-protocol-mechanistic-rationale-2026';
 import { article as aOVN_STORAGE_2026 } from './articles/peptide-storage-temperature-light-stability-research-protocols-2026';
+import { article as aJUN16_GLP1_SARCO } from './articles/glp1-agonists-sarcopenia-lean-mass-research-2026';
+import { article as aJUN16_BPC157_UV } from './articles/bpc-157-uv-sunburn-skin-repair-research-2026';
+import { article as aJUN16_NAD_HEAT } from './articles/nad-plus-heat-stability-summer-storage-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3499,6 +3502,9 @@ export const articles: BlogArticle[] = [
   aOVN_MUSCLE5_2026,
   aOVN_BPC157TB500_2026,
   aOVN_STORAGE_2026,
+  aJUN16_GLP1_SARCO,
+  aJUN16_BPC157_UV,
+  aJUN16_NAD_HEAT,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
