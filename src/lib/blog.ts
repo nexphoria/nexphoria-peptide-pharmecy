@@ -1752,6 +1752,9 @@ import { article as aJUN16_PEPTIDE_SAFETY } from './articles/how-to-use-research
 import { article as aJUN15OVN_DANUGLIPRON_BUY } from './articles/where-to-buy-danuglipron-research-guide';
 import { article as aJUN15OVN_PEMVID_TIMELINE } from './articles/how-long-does-pemvidutide-take-to-work-research-timeline';
 import { article as aJUN15OVN_SURVO_TIMELINE } from './articles/how-long-does-survodutide-take-to-work-research-timeline';
+import { article as aJUN15_DANUGLIPRON_GUIDE } from './articles/danuglipron-oral-glp1-research-complete-guide';
+import { article as aJUN15_KLOTHO_GUIDE } from './articles/klotho-protein-longevity-anti-aging-peptide-research';
+import { article as aJUN15_GLP1_CKD } from './articles/glp1-agonists-kidney-protection-ckd-research';
 
 
 export const articles: BlogArticle[] = [
@@ -3523,6 +3526,9 @@ export const articles: BlogArticle[] = [
   aJUN15OVN_DANUGLIPRON_BUY,
   aJUN15OVN_PEMVID_TIMELINE,
   aJUN15OVN_SURVO_TIMELINE,
+  aJUN15_DANUGLIPRON_GUIDE,
+  aJUN15_KLOTHO_GUIDE,
+  aJUN15_GLP1_CKD,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
