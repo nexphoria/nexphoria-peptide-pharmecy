@@ -1698,6 +1698,9 @@ import { article as aJUN15OVN21 } from './articles/selank-anxiety-research-guide
 import { article as aJUN15OVN22 } from './articles/pt-141-vs-melanotan-ii-melanocortin-comparison-guide';
 import { article as aJUN15OVN23 } from './articles/water-soluble-vs-lipophilic-peptides-solubility-research-guide';
 import { article as aJUN15OVN24 } from './articles/dsip-vs-melatonin-sleep-research-comparison';
+import { article as aJUN16COST1 } from './articles/how-much-does-igf-1-lr3-cost-research-pricing-guide';
+import { article as aJUN16COST2 } from './articles/how-much-does-dsip-cost-research-pricing-guide';
+import { article as aJUN16COST3 } from './articles/how-much-does-melanotan-2-cost-research-pricing-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3412,6 +3415,9 @@ export const articles: BlogArticle[] = [
   aJUN15OVN22,
   aJUN15OVN23,
   aJUN15OVN24,
+  aJUN16COST1,
+  aJUN16COST2,
+  aJUN16COST3,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
