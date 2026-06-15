@@ -1728,6 +1728,9 @@ import { article as aJUN16_SEMA_APP } from './articles/semaglutide-appetite-supp
 import { article as aOVN_PRICE1 } from './articles/peptide-vendor-pricing-comparison-2026';
 import { article as aOVN_PRICE2 } from './articles/peptide-vendor-landscape-post-peptide-sciences-2026';
 import { article as aOVN_PRICE3 } from './articles/research-peptide-cost-comparison-vendors-2026';
+import { article as aJUN15OVN_Q4 } from './articles/peptide-research-q4-2026-quarterly-highlights';
+import { article as aJUN15OVN_IPAHEX } from './articles/ipamorelin-vs-hexarelin-gh-secretagogue-comparison';
+import { article as aJUN15OVN_INJPREV } from './articles/best-peptides-for-injury-prevention-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3472,6 +3475,9 @@ export const articles: BlogArticle[] = [
   aOVN_PRICE1,
   aOVN_PRICE2,
   aOVN_PRICE3,
+  aJUN15OVN_Q4,
+  aJUN15OVN_IPAHEX,
+  aJUN15OVN_INJPREV,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
