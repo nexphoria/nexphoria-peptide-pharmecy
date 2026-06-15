@@ -1,0 +1,178 @@
+import type { BlogArticle } from '../blog-types';
+
+export const article: BlogArticle = {
+  slug: "muscle-repair-peptide-research-five-compound-overview-2026",
+  title: "5 Peptides Used in Muscle Repair Research: BPC-157, TB-500, IGF-1 LR3, Follistatin-344 & Ipamorelin",
+  description:
+    "Skeletal muscle regeneration research has examined BPC-157, TB-500, IGF-1 LR3, Follistatin-344, and Ipamorelin extensively in preclinical models. This overview covers the mechanism and key findings for each compound.",
+  category: "Research Fundamentals",
+  readMinutes: 9,
+  publishedAt: "2026-06-15",
+  ogImage: "/og-image.jpg",
+  body: [
+    {
+      type: "paragraph",
+      text: "Skeletal muscle repair is a complex, multi-phase biological process involving satellite cell activation, myoblast proliferation, extracellular matrix remodeling, and re-innervation. Several peptide compounds have been studied in preclinical models to better understand — and potentially modulate — these processes. Below is an evidence-based overview of five peptides that appear frequently in the muscle recovery research literature.",
+    },
+    {
+      type: "heading",
+      text: "1. BPC-157",
+    },
+    {
+      type: "paragraph",
+      text: "BPC-157 (Body Protection Compound-157) is a 15-amino acid peptide derived from gastric BPC protein. While often associated with GI research, it has been examined extensively in musculoskeletal models including muscle crush injuries, transected muscle fibers, and tendon repair.",
+    },
+    {
+      type: "subheading",
+      text: "Key findings in muscle research",
+    },
+    {
+      type: "list",
+      items: [
+        "Accelerated muscle fiber regeneration in rat crush injury models",
+        "Enhanced vascularization at injury sites via VEGF upregulation",
+        "Reduced local inflammatory markers in the acute phase",
+        "No observed systemic toxicity at studied doses in rodent models",
+      ],
+    },
+    {
+      type: "paragraph",
+      text: "BPC-157 is thought to act via nitric oxide modulation and FAK-paxillin signaling, enhancing cell migration and angiogenesis critical to repair. Reference: Sikiric et al. (multiple publications, University of Zagreb); Gwyer et al. systematic review (2019).",
+    },
+    {
+      type: "heading",
+      text: "2. TB-500 (Thymosin Beta-4)",
+    },
+    {
+      type: "paragraph",
+      text: "TB-500 is the synthetic analog of naturally occurring Thymosin Beta-4, a peptide involved in actin cytoskeletal dynamics across virtually all cell types.",
+    },
+    {
+      type: "subheading",
+      text: "Key findings in muscle research",
+    },
+    {
+      type: "list",
+      items: [
+        "G-actin sequestration promotes myoblast motility and migration to injury sites",
+        "Documented upregulation of myosin heavy chain expression in differentiating satellite cells",
+        "Accelerated muscle satellite cell recruitment in murine laceration models",
+        "Anti-inflammatory effects via NF-κB pathway modulation",
+      ],
+    },
+    {
+      type: "paragraph",
+      text: "TB-500's LKKTET actin-binding domain drives cytoskeletal remodeling, enabling faster cell migration and wound response. Downstream VEGF signaling supports revascularization of damaged tissue. TB-500 and BPC-157 are frequently studied together due to their mechanistically complementary profiles.",
+    },
+    {
+      type: "heading",
+      text: "3. IGF-1 LR3 (Insulin-like Growth Factor-1 Long Arg3)",
+    },
+    {
+      type: "paragraph",
+      text: "IGF-1 LR3 is a modified analog of Insulin-like Growth Factor-1 with a substituted arginine at position 3 and an N-terminal 13-amino acid extension. These modifications reduce binding affinity for IGF binding proteins (IGFBPs), extending its half-life from minutes to approximately 20–30 hours.",
+    },
+    {
+      type: "subheading",
+      text: "Key findings in muscle research",
+    },
+    {
+      type: "list",
+      items: [
+        "Potent stimulation of myoblast proliferation and differentiation via IGF-1R signaling",
+        "Activation of the PI3K/Akt/mTOR pathway — a central node in muscle protein synthesis",
+        "Upregulation of satellite cell activation markers (Pax7, MyoD) in muscle injury models",
+        "Documented increases in muscle fiber cross-sectional area in rodent studies",
+      ],
+    },
+    {
+      type: "callout",
+      text: "Important note: IGF-1 signaling is pleiotropic and intersects with multiple oncological pathways. Research protocols involving IGF-1 LR3 require careful experimental design and appropriate controls.",
+    },
+    {
+      type: "heading",
+      text: "4. Follistatin-344",
+    },
+    {
+      type: "paragraph",
+      text: "Follistatin-344 is an isoform of follistatin — a glycoprotein that acts primarily as a binding and neutralizing protein for myostatin (GDF-8) and other TGF-β superfamily members.",
+    },
+    {
+      type: "subheading",
+      text: "Key findings in muscle research",
+    },
+    {
+      type: "list",
+      items: [
+        "Myostatin inhibition — myostatin is the primary endogenous negative regulator of muscle mass; its suppression removes a brake on muscle hypertrophy",
+        "Documented increases in muscle fiber diameter in murine models",
+        "Follistatin gene therapy studies (Lee & McPherron, PNAS 2001) demonstrated dramatic muscle mass increases in myostatin-null and follistatin-overexpressing mice",
+        "Activin A inhibition, which also contributes to muscle fiber size regulation",
+      ],
+    },
+    {
+      type: "paragraph",
+      text: "By binding myostatin with high affinity, follistatin prevents myostatin from activating its receptor (ActRIIB), thereby disinhibiting muscle growth pathways including Akt/mTOR and satellite cell activation. Follistatin-344 research has clinical relevance to conditions involving muscle wasting including sarcopenia and Duchenne muscular dystrophy.",
+    },
+    {
+      type: "heading",
+      text: "5. Ipamorelin",
+    },
+    {
+      type: "paragraph",
+      text: "Ipamorelin is a synthetic pentapeptide and selective growth hormone secretagogue receptor (GHSR) agonist. Unlike earlier GHRPs such as GHRP-6, ipamorelin was designed for high selectivity — stimulating GH release without significant concomitant elevation of cortisol, prolactin, or ACTH.",
+    },
+    {
+      type: "subheading",
+      text: "Key findings in muscle research",
+    },
+    {
+      type: "list",
+      items: [
+        "Stimulates pulsatile GH release from the pituitary, increasing downstream IGF-1 production",
+        "Elevated GH/IGF-1 axis activity associated with improved nitrogen retention and muscle protein synthesis markers",
+        "Studied in combination with CJC-1295 (a GHRH analog) to amplify and sustain GH pulses",
+        "Anti-catabolic effects in models of muscle wasting",
+      ],
+    },
+    {
+      type: "paragraph",
+      text: "Ipamorelin mimics ghrelin's action at the GHSR-1a receptor in the hypothalamus and pituitary, triggering GH secretion. Its selectivity profile makes it particularly useful for isolated study of GH pulse effects without the confound of elevated stress hormones.",
+    },
+    {
+      type: "divider",
+    },
+    {
+      type: "heading",
+      text: "Comparative Overview",
+    },
+    {
+      type: "table",
+      headers: ["Peptide", "Primary Target", "Mechanism", "Key Model"],
+      rows: [
+        ["BPC-157", "Multi-system", "NO/VEGF/FAK", "Rat injury"],
+        ["TB-500", "Actin/cytoskeleton", "G-actin binding", "Mouse/rat"],
+        ["IGF-1 LR3", "IGF-1R", "PI3K/Akt/mTOR", "Rodent/in vitro"],
+        ["Follistatin-344", "Myostatin/ActRIIB", "TGF-β inhibition", "Mouse"],
+        ["Ipamorelin", "GHSR-1a", "GH pulse", "Rodent"],
+      ],
+    },
+    {
+      type: "heading",
+      text: "Sourcing for Research",
+    },
+    {
+      type: "list",
+      items: [
+        "HPLC purity ≥99%",
+        "Mass spectrometry identity confirmation",
+        "Endotoxin-free certification (LAL testing)",
+        "Cold-chain shipping and storage protocols",
+      ],
+    },
+    {
+      type: "disclaimer",
+      text: "These compounds are sold exclusively for qualified research use. They are not intended for human consumption, therapeutic use, or diagnostic purposes. Nothing in this article constitutes medical advice.",
+    },
+  ],
+};

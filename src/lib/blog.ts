@@ -1734,6 +1734,9 @@ import { article as aJUN15OVN_INJPREV } from './articles/best-peptides-for-injur
 import { article as aJUN15_RECONSTITUTION } from './articles/peptide-reconstitution-research-protocol-guide';
 import { article as aJUN15_STORAGE } from './articles/peptide-storage-temperature-light-shelf-life-guide';
 import { article as aJUN15_USABUY } from './articles/how-to-source-research-peptides-usa-buyers-guide';
+import { article as aOVN_MUSCLE5_2026 } from './articles/muscle-repair-peptide-research-five-compound-overview-2026';
+import { article as aOVN_BPC157TB500_2026 } from './articles/bpc-157-tb500-combined-protocol-mechanistic-rationale-2026';
+import { article as aOVN_STORAGE_2026 } from './articles/peptide-storage-temperature-light-stability-research-protocols-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3484,6 +3487,9 @@ export const articles: BlogArticle[] = [
   aJUN15_RECONSTITUTION,
   aJUN15_STORAGE,
   aJUN15_USABUY,
+  aOVN_MUSCLE5_2026,
+  aOVN_BPC157TB500_2026,
+  aOVN_STORAGE_2026,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
