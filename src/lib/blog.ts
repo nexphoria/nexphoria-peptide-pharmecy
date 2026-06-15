@@ -1743,6 +1743,9 @@ import { article as aOVN_STORAGE_2026 } from './articles/peptide-storage-tempera
 import { article as aJUN16_GLP1_SARCO } from './articles/glp1-agonists-sarcopenia-lean-mass-research-2026';
 import { article as aJUN16_BPC157_UV } from './articles/bpc-157-uv-sunburn-skin-repair-research-2026';
 import { article as aJUN16_NAD_HEAT } from './articles/nad-plus-heat-stability-summer-storage-2026';
+import { article as aJUN15OVN_GDF11 } from './articles/gdf-11-rejuvenation-peptide-research-guide';
+import { article as aJUN15OVN_DESMO } from './articles/desmopressin-ddavp-vasopressin-analog-research-guide';
+import { article as aJUN15OVN_TERLIP } from './articles/terlipressin-vasopressin-analog-portal-hypertension-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3505,6 +3508,9 @@ export const articles: BlogArticle[] = [
   aJUN16_GLP1_SARCO,
   aJUN16_BPC157_UV,
   aJUN16_NAD_HEAT,
+  aJUN15OVN_GDF11,
+  aJUN15OVN_DESMO,
+  aJUN15OVN_TERLIP,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
