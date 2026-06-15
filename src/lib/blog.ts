@@ -1665,6 +1665,9 @@ import { article as aJUN15OVN3 } from './articles/peptide-storage-temperature-li
 import { article as aJUN15OVN4 } from './articles/bpc-157-semaglutide-combination-research-protocol';
 import { article as aJUN15OVN5 } from './articles/peptide-solubility-guide-reconstitution-solvents-2026';
 import { article as aJUN15OVN6 } from './articles/peptide-dosing-frequency-half-life-research-guide';
+import { article as aJUN15OVN7 } from './articles/glp1-peptides-gut-motility-gastroparesis-research';
+import { article as aJUN15OVN8 } from './articles/peptide-research-heat-shock-proteins-hsp70-hsp90-bpc157';
+import { article as aJUN15OVN9 } from './articles/where-to-buy-pemvidutide-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3346,6 +3349,9 @@ export const articles: BlogArticle[] = [
   aJUN15OVN4,
   aJUN15OVN5,
   aJUN15OVN6,
+  aJUN15OVN7,
+  aJUN15OVN8,
+  aJUN15OVN9,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
