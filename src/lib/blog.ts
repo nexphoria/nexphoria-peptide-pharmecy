@@ -1647,6 +1647,9 @@ import { article as aOVN33 } from './articles/nad-plus-vs-nmn-longevity-research
 import { article as aOVN34 } from './articles/peptide-research-gut-permeability-tight-junctions-bpc157-kpv';
 import { article as aOVN35 } from './articles/mots-c-research-guide-mitochondrial-metabolic-peptide';
 import { article as aOVN36 } from './articles/cortistatin-neuropeptide-research-guide';
+import { article as aOVN37 } from './articles/peptide-third-party-testing-verification-guide';
+import { article as aOVN38 } from './articles/ghrp-2-vs-ghrp-6-comparison-research-guide';
+import { article as aOVN39 } from './articles/peptide-cycling-protocols-tolerance-breaks-research';
 
 
 export const articles: BlogArticle[] = [
@@ -3310,6 +3313,9 @@ export const articles: BlogArticle[] = [
   aOVN34,
   aOVN35,
   aOVN36,
+  aOVN37,
+  aOVN38,
+  aOVN39,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
