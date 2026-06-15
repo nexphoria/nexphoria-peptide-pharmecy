@@ -1765,6 +1765,9 @@ import { article as aGADS1 } from './articles/nexphoria-google-ads-campaign-stru
 import { article as aOVN_ACTIRII } from './articles/actirii-myostatin-inhibition-peptide-research-2026';
 import { article as aOVN_HPA } from './articles/cortisol-stress-peptides-hpa-axis-recovery-research-2026';
 import { article as aOVN_DOSERESP } from './articles/peptide-dose-response-curves-ec50-research-design-guide';
+import { article as aJUN16_HYDRATION } from './articles/peptide-research-hydration-electrolyte-protocols';
+import { article as aJUN16_HEAT_ADAPT } from './articles/best-peptides-heat-adaptation-research-2026';
+import { article as aJUN16_GLP1_SUM2026 } from './articles/glp1-agonists-summer-2026-research-update';
 
 
 export const articles: BlogArticle[] = [
@@ -3549,6 +3552,9 @@ export const articles: BlogArticle[] = [
   aOVN_ACTIRII,
   aOVN_HPA,
   aOVN_DOSERESP,
+  aJUN16_HYDRATION,
+  aJUN16_HEAT_ADAPT,
+  aJUN16_GLP1_SUM2026,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
