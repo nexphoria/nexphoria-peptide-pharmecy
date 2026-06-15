@@ -1768,6 +1768,9 @@ import { article as aOVN_DOSERESP } from './articles/peptide-dose-response-curve
 import { article as aJUN16_HYDRATION } from './articles/peptide-research-hydration-electrolyte-protocols';
 import { article as aJUN16_HEAT_ADAPT } from './articles/best-peptides-heat-adaptation-research-2026';
 import { article as aJUN16_GLP1_SUM2026 } from './articles/glp1-agonists-summer-2026-research-update';
+import { article as aJUN16OVN_CYCLING } from './articles/peptide-cycling-on-off-protocols-research';
+import { article as aJUN16OVN_GLP1_MUSCLE } from './articles/glp1-peptides-muscle-preservation-research';
+import { article as aJUN16OVN_FAT_STACK } from './articles/best-peptide-stack-fat-loss-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3555,6 +3558,9 @@ export const articles: BlogArticle[] = [
   aJUN16_HYDRATION,
   aJUN16_HEAT_ADAPT,
   aJUN16_GLP1_SUM2026,
+  aJUN16OVN_CYCLING,
+  aJUN16OVN_GLP1_MUSCLE,
+  aJUN16OVN_FAT_STACK,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
