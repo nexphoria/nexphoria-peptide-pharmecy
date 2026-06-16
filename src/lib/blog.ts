@@ -1825,6 +1825,9 @@ import { article as aOVN_MUSCLE_RECOVERY } from './articles/research-peptides-mu
 import { article as aOVN17_CATESTATIN } from './articles/catestatin-chromogranin-a-derived-peptide-cardiovascular-research';
 import { article as aOVN17_ADIPOKINES } from './articles/adipokine-peptides-visfatin-resistin-omentin-vaspin-metabolic-research';
 import { article as aOVN17_PREPTIN } from './articles/preptin-pancreatic-peptide-bone-metabolism-insulin-research';
+import { article as aJUN16OVN_HEXARELIN_CARDIO } from './articles/hexarelin-cardioprotection-research-guide';
+import { article as aJUN16OVN_LONGEVITY_STACK_2026 } from './articles/longevity-peptide-stack-2026-research-guide';
+import { article as aJUN16OVN_NAD_VS_NMN } from './articles/nad-plus-vs-nmn-longevity-research-comparison';
 
 
 export const articles: BlogArticle[] = [
@@ -3669,6 +3672,9 @@ export const articles: BlogArticle[] = [
   aOVN17_CATESTATIN,
   aOVN17_ADIPOKINES,
   aOVN17_PREPTIN,
+  aJUN16OVN_HEXARELIN_CARDIO,
+  aJUN16OVN_LONGEVITY_STACK_2026,
+  aJUN16OVN_NAD_VS_NMN,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

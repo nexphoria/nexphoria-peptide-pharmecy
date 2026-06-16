@@ -5,7 +5,7 @@ export const article: BlogArticle = {
   title: "NAD+ vs NMN: What Longevity Researchers Prefer",
   description:
     "A research-focused comparison of NAD+ precursors NMN and NR versus direct NAD+ supplementation. What the published science says about bioavailability, mechanism, and longevity applications.",
-  category: "Longevity Research",
+  category: "Research Fundamentals",
   readMinutes: 9,
   publishedAt: "2026-06-16",
   ogImage: "/og-image.jpg",
@@ -24,7 +24,15 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "NAD+ levels measurably decline with age across multiple organisms and tissue types. Human skeletal muscle NAD+ declines approximately 50% between ages 40 and 60 in some analyses. Reduced NAD+ correlates with decreased SIRT1 and SIRT3 activity — sirtuins that regulate mitochondrial function and stress responses. Aged mice with restored NAD+ levels show improvements in muscle function, metabolic markers, and lifespan in several studies.",
+      text: "NAD+ levels measurably decline with age across multiple organisms and tissue types. Key data points:",
+    },
+    {
+      type: "list",
+      items: [
+        "Human skeletal muscle NAD+ declines approximately 50% between ages 40 and 60 in some analyses",
+        "Reduced NAD+ correlates with decreased SIRT1 and SIRT3 activity — sirtuins that regulate mitochondrial function and stress responses",
+        "Aged mice with restored NAD+ levels show improvements in muscle function, metabolic markers, and lifespan in several studies",
+      ],
     },
     {
       type: "paragraph",
@@ -40,7 +48,15 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "NMN is a direct precursor to NAD+, one biosynthetic step upstream. It is converted to NAD+ via the enzyme NMNAT (Nicotinamide Mononucleotide Adenylyltransferase). David Sinclair's lab at Harvard published extensively on NMN's effects in aged mice, including improved vascular function, muscle endurance, and energy metabolism. A 2020 human pilot study (Yoshino et al.) showed that oral NMN supplementation raised blood NAD+ metabolite levels and improved insulin sensitivity in prediabetic women. NMN appears to be absorbed intestinally via a dedicated transporter (Slc12a8), enabling reasonably efficient uptake compared to NAD+ itself.",
+      text: "NMN is a direct precursor to NAD+, one biosynthetic step upstream. It is converted to NAD+ via the enzyme NMNAT (Nicotinamide Mononucleotide Adenylyltransferase). Key research includes David Sinclair's lab at Harvard, which published extensively on NMN's effects in aged mice including improved vascular function, muscle endurance, and energy metabolism. A 2020 human pilot study (Yoshino et al.) showed that oral NMN supplementation raised blood NAD+ metabolite levels and improved insulin sensitivity in prediabetic women. NMN appears to be absorbed intestinally via a dedicated transporter (Slc12a8), enabling reasonably efficient uptake compared to NAD+ itself.",
+    },
+    {
+      type: "list",
+      items: [
+        "Direct precursor pathway (one step to NAD+)",
+        "Human clinical trial data beginning to emerge",
+        "Stable as a supplement at room temperature",
+      ],
     },
     {
       type: "subheading",
@@ -48,67 +64,82 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "NR is another well-studied NAD+ precursor, two steps upstream from NAD+. It must first be converted to NMN, then to NAD+. NR has a more robust human clinical trial dataset than NMN: multiple randomized controlled trials have confirmed that oral NR raises whole-blood NAD+ levels in healthy adults. The CHROME trial (Elhassan et al., 2019) demonstrated increased NAD+ metabolites in skeletal muscle following 6 weeks of NR supplementation in older adults. NR does not require the Slc12a8 transporter and enters cells via equilibrative nucleoside transporters, which may give it broader tissue distribution.",
+      text: "NR is another well-studied NAD+ precursor, two steps upstream from NAD+. It must first be converted to NMN, then to NAD+. ChromaDex (maker of Tru Niagen) has sponsored multiple human trials showing NR raises whole-blood NAD+ levels. Elysium Health's Basis (NR + pterostilbene) showed sustained NAD+ elevation in a 2017 clinical trial. NR and NMN appear to produce comparable NAD+ elevation in several comparative studies; no definitive superiority for either has been established.",
     },
     {
       type: "subheading",
-      text: "Direct NAD+ Administration",
+      text: "Direct NAD+ Supplementation",
     },
     {
       type: "paragraph",
-      text: "Intravenous NAD+ infusion bypasses the absorption problem entirely and is increasingly used in both research and clinical contexts. Studies using IV NAD+ show rapid, measurable increases in plasma NAD+ and downstream metabolites. Research comparing IV NAD+ to oral NMN/NR in terms of tissue-specific bioavailability is limited, but IV routes are valuable in research models requiring precise, controlled dosing. Sublingual and intranasal NAD+ formulations are also under investigation for improved bioavailability without injection.",
+      text: "Oral NAD+ faces a significant bioavailability problem. Research suggests most ingested NAD+ is cleaved in the gut to nicotinamide before absorption. IV NAD+ infusion bypasses this limitation and is used in clinical research contexts for neurological function, addiction recovery applications (early research, limited evidence), and acute elevation of tissue NAD+ levels. Subcutaneous and intranasal NAD+ delivery are also under investigation, with some pre-clinical data suggesting improved bioavailability over oral routes.",
     },
     {
       type: "heading",
-      text: "Mechanistic Comparison",
+      text: "Mechanism Comparison",
     },
     {
       type: "table",
-      headers: ["Compound", "Upstream Steps to NAD+", "Primary Absorption Route", "Human Trial Data"],
+      headers: ["Compound", "Pathway to NAD+", "Human Bioavailability", "Human Clinical Data"],
       rows: [
-        ["NAD+", "0 (direct)", "Poor oral; IV effective", "Limited (mostly IV)"],
-        ["NMN", "1", "Slc12a8 intestinal transporter", "Emerging"],
-        ["NR", "2", "Equilibrative nucleoside transporters", "Multiple RCTs"],
-        ["Niacinamide (NAM)", "3+", "Passive diffusion", "Indirect (precursor data)"],
+        ["NAD+ (oral)", "Direct, but largely degraded", "Poor", "Limited"],
+        ["NAD+ (IV/SC)", "Direct", "High", "Emerging"],
+        ["NMN", "1 step (NMNAT)", "Moderate–Good", "Growing"],
+        ["NR", "2 steps (NRK → NMNAT)", "Good", "Established"],
+        ["Nicotinamide (NAM)", "Salvage pathway", "Good", "Established, but feedback inhibition concern"],
       ],
     },
     {
       type: "heading",
-      text: "Sirtuin Activation: The Longevity Connection",
+      text: "What Researchers Are Focusing On in 2026",
     },
     {
       type: "paragraph",
-      text: "The longevity relevance of NAD+ elevation is substantially mediated by sirtuin enzymes. Sirtuins (SIRT1-7) are NAD+-dependent deacylases that regulate a wide range of longevity-associated processes: mitochondrial biogenesis (SIRT1/3), inflammation suppression (SIRT1), DNA repair (SIRT6), and fatty acid oxidation (SIRT3). When NAD+ declines with age, sirtuin activity falls accordingly. Restoring NAD+ via precursors in research models rescues sirtuin activity and the downstream processes it governs.",
+      text: "The longevity research community has not converged on a single preferred compound. The current evidence landscape shows active investigation in multiple directions.",
     },
     {
-      type: "paragraph",
-      text: "PARP enzymes — which repair DNA damage — also consume NAD+ and compete with sirtuins for the available pool. Some research suggests that PARP hyperactivation in aged or stressed tissue may accelerate NAD+ depletion, creating a reinforcing cycle. NMN and NR administration in rodent models appears to break this cycle by replenishing the pool faster than baseline synthesis can.",
-    },
-    {
-      type: "heading",
-      text: "What the 2026 Research Landscape Shows",
-    },
-    {
-      type: "paragraph",
-      text: "As of 2026, NR retains the most extensive human clinical trial record, with consistently reproduced blood NAD+ elevation across multiple independent labs and populations. NMN has a smaller but growing human dataset and benefits from more mechanistic animal research. Researchers choosing between the two for human-adjacent study design typically favor NR when human biomarker data is the primary endpoint and NMN when mechanistic pathway work in animal models is the focus.",
-    },
-    {
-      type: "paragraph",
-      text: "A third emerging approach — CD38 inhibitor co-administration — aims to reduce the enzyme primarily responsible for NAD+ degradation. CD38 expression increases significantly with age and may be one reason NAD+ decline occurs even when precursor synthesis is preserved. Apigenin and quercetin are studied as natural CD38 inhibitors in this context, and some research groups now use NR or NMN plus a CD38 inhibitor to maximize NAD+ accumulation.",
-    },
-    {
-      type: "heading",
-      text: "Practical Considerations for Researchers",
+      type: "subheading",
+      text: "In Favor of NMN",
     },
     {
       type: "list",
       items: [
-        "NMN and NR are both stable in lyophilized form at -20°C; avoid freeze-thaw cycling to preserve integrity",
-        "Reconstituted solutions should be used promptly or stored at -80°C in single-use aliquots",
-        "Dose-response data in rodent models does not translate linearly to human equivalents — standard body surface area conversion factors apply",
-        "For in vitro work, confirm intracellular NAD+ uptake rather than assuming media supplementation is sufficient",
-        "Mass spectrometry-based NAD+ metabolomics is the gold standard for quantifying precursor conversion efficiency",
+        "More direct pathway (one enzymatic step to NAD+)",
+        "Emerging human data supports systemic NAD+ elevation",
+        "Interest in combining NMN with resveratrol or pterostilbene as SIRT1 activators (though evidence for synergy remains preliminary)",
       ],
+    },
+    {
+      type: "subheading",
+      text: "In Favor of NR",
+    },
+    {
+      type: "list",
+      items: [
+        "More extensive human clinical trial base",
+        "Published safety and tolerability data across multiple studies",
+        "Easier formulation stability",
+      ],
+    },
+    {
+      type: "subheading",
+      text: "Notable Research Directions",
+    },
+    {
+      type: "list",
+      items: [
+        "Tissue-specific delivery — whether different precursors preferentially elevate NAD+ in different tissues (liver vs. muscle vs. brain)",
+        "NAMPT activators — compounds that upregulate the enzyme limiting NAD+ biosynthesis from nicotinamide, potentially more efficient than precursor loading",
+        "CD38 inhibitors — CD38 is a major NAD+-consuming enzyme; reducing its activity may be as effective as increasing NAD+ supply",
+      ],
+    },
+    {
+      type: "heading",
+      text: "The Peptide Connection",
+    },
+    {
+      type: "paragraph",
+      text: "MOTS-c and Humanin — mitochondria-derived peptides currently under research — interact with NAD+ metabolism and mitochondrial function. Some longevity researchers are investigating whether peptide combinations that target mitochondrial signaling produce complementary effects with NAD+ precursor strategies. This intersection of peptide research and NAD+ biology represents one of the more active areas of longevity science investigation.",
     },
     {
       type: "heading",
@@ -116,7 +147,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Both NMN and NR are well-validated tools for NAD+ elevation in preclinical and early clinical research. NR has the stronger human RCT record; NMN has deeper mechanistic literature in animal aging models. For longevity-focused research programs, the two are often used interchangeably for NAD+ repletion with the choice driven by study-design specifics, available COA-verified supply, and the research group's existing expertise. The broader point — that NAD+ restoration is a viable longevity research strategy with mechanistic grounding — is no longer in dispute.",
+      text: "Neither direct NAD+ nor NMN has definitively emerged as the preferred approach. The evidence supports NMN and NR as more effective than oral NAD+ for systemic NAD+ elevation, with IV/subcutaneous NAD+ as an alternative when direct delivery is the research priority. The field is moving toward more sophisticated approaches — tissue-specific delivery, enzyme targeting, and combination protocols — that may ultimately supersede the NMN vs. NR question entirely.",
     },
     {
       type: "disclaimer",
