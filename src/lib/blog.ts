@@ -1837,6 +1837,9 @@ import { article as aOVNJUN17_CAGRISEMA } from './articles/how-long-does-cagrise
 import { article as aJUN16OVN_SLEEP_NEUROPEP } from './articles/peptide-research-sleep-circadian-rhythm-dsip-selank-ipamorelin-2026';
 import { article as aJUN16OVN_TIRZ_RETA } from './articles/tirzepatide-vs-retatrutide-dual-vs-triple-agonist-research-deep-dive-2026';
 import { article as aJUN16OVN_COGPEP } from './articles/peptide-research-cognitive-performance-semax-selank-ghk-cu-neuropeptide-guide';
+import { article as aJUN16_BPC157_HAMSTRING } from './articles/bpc-157-hamstring-injury-research-guide';
+import { article as aJUN16_BPC157_MENISCUS } from './articles/bpc-157-meniscus-knee-cartilage-research-guide';
+import { article as aJUN16_SEMA_PCOS } from './articles/semaglutide-pcos-research-hormonal-metabolic-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3693,6 +3696,9 @@ export const articles: BlogArticle[] = [
   aJUN16OVN_SLEEP_NEUROPEP,
   aJUN16OVN_TIRZ_RETA,
   aJUN16OVN_COGPEP,
+  aJUN16_BPC157_HAMSTRING,
+  aJUN16_BPC157_MENISCUS,
+  aJUN16_SEMA_PCOS,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
