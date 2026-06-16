@@ -1898,6 +1898,9 @@ import { article as aJUN16_STORAGE_GUIDE } from './articles/proper-peptide-stora
 import { article as aJUN17_HEXARELIN_CD36 } from './articles/hexarelin-cd36-cardiac-pathway-research-2026';
 import { article as aJUN17_TA1_TLR9 } from './articles/thymosin-alpha-1-tlr9-dendritic-cell-research-2026';
 import { article as aJUN17_COA_CHECKLIST } from './articles/reading-peptide-coa-researcher-checklist-2026';
+import { article as aJUN17OVN_CIRCADIAN_DOSING } from './articles/circadian-peptide-dosing-chronobiology-research-guide';
+import { article as aJUN17OVN_RESEARCH_GRADE } from './articles/research-grade-vs-pharmaceutical-grade-peptides-what-researchers-need-to-know';
+import { article as aJUN17OVN_GLP1_COGNITIVE } from './articles/glp1-agonists-cognitive-research-2026-alzheimers-parkinsons-tbi';
 
 
 export const articles: BlogArticle[] = [
@@ -3815,6 +3818,9 @@ export const articles: BlogArticle[] = [
   aJUN17_HEXARELIN_CD36,
   aJUN17_TA1_TLR9,
   aJUN17_COA_CHECKLIST,
+  aJUN17OVN_CIRCADIAN_DOSING,
+  aJUN17OVN_RESEARCH_GRADE,
+  aJUN17OVN_GLP1_COGNITIVE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
