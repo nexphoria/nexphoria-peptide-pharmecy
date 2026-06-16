@@ -1865,6 +1865,9 @@ import { article as aJUN16_PREPTIN } from './articles/preptin-pancreatic-islet-p
 import { article as aJUN16OVN_BPC157_NAD } from './articles/bpc-157-vs-nad-plus-recovery-stack-research-2026';
 import { article as aJUN16OVN_SUMMER_DEHYDRATION } from './articles/peptide-research-summer-2026-dehydration-electrolyte-protocols';
 import { article as aJUN16OVN_GHK_WOUND } from './articles/ghk-cu-wound-healing-mechanisms-protocols-2026';
+import { article as aJUN17_MASLD_TIRZ } from './articles/tirzepatide-masld-surmount-nash-liver-research-2026';
+import { article as aJUN17_SURMOUNT5 } from './articles/surmount-5-tirzepatide-vs-semaglutide-head-to-head-2026';
+import { article as aJUN17_MASLD_PEPTIDES } from './articles/peptide-research-masld-metabolic-liver-disease-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3749,6 +3752,9 @@ export const articles: BlogArticle[] = [
   aJUN16OVN_BPC157_NAD,
   aJUN16OVN_SUMMER_DEHYDRATION,
   aJUN16OVN_GHK_WOUND,
+  aJUN17_MASLD_TIRZ,
+  aJUN17_SURMOUNT5,
+  aJUN17_MASLD_PEPTIDES,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
