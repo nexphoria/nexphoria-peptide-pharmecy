@@ -1859,6 +1859,9 @@ import { article as aJUN16OVN_VENDOR_3WAY } from './articles/nexphoria-vs-amino-
 import { article as aJUN16_HEXARELIN_CD36 } from './articles/hexarelin-cd36-cardiac-mechanism-jun2026';
 import { article as aJUN16_EPITHALON_TEL2 } from './articles/epithalon-telomerase-longevity-evidence-jun2026';
 import { article as aJUN16_TA1_TLR9 } from './articles/thymosin-alpha-1-tlr9-immune-modulation-jun2026';
+import { article as aJUN16_CATESTATIN } from './articles/catestatin-chromogranin-cardiovascular-adrenergic-research-jun2026';
+import { article as aJUN16_HEAT_TRAIN } from './articles/peptide-research-heat-training-summer-performance-2026';
+import { article as aJUN16_PREPTIN } from './articles/preptin-pancreatic-islet-peptide-bone-insulin-research-jun2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3737,6 +3740,9 @@ export const articles: BlogArticle[] = [
   aJUN16_HEXARELIN_CD36,
   aJUN16_EPITHALON_TEL2,
   aJUN16_TA1_TLR9,
+  aJUN16_CATESTATIN,
+  aJUN16_HEAT_TRAIN,
+  aJUN16_PREPTIN,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
