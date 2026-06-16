@@ -1883,6 +1883,9 @@ import { article as aJUN16OVN_PEP_FRIDGE } from './articles/peptide-refrigeratio
 import { article as aJUN16OVN_BPC_TB_COMBO } from './articles/bpc-157-tb-500-combined-protocol-research-jun2026';
 import { article as aJUN16OVN_HEXARELIN_CARDIAC } from './articles/hexarelin-cardiac-gh-research-jun2026';
 import { article as aJUN16OVN_SELANK_ANXIETY } from './articles/selank-anxiolytic-nootropic-research-jun2026';
+import { article as aJUN16_PS_VS_NEX } from './articles/peptide-sciences-vs-nexphoria-comparison';
+import { article as aJUN16_WL_2026 } from './articles/best-peptides-weight-loss-research-2026';
+import { article as aJUN16_DOSE_CALC } from './articles/peptide-dosing-calculator-guide-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3785,6 +3788,9 @@ export const articles: BlogArticle[] = [
   aJUN16OVN_BPC_TB_COMBO,
   aJUN16OVN_HEXARELIN_CARDIAC,
   aJUN16OVN_SELANK_ANXIETY,
+  aJUN16_PS_VS_NEX,
+  aJUN16_WL_2026,
+  aJUN16_DOSE_CALC,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
