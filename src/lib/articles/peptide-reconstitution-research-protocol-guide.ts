@@ -4,15 +4,15 @@ export const article: BlogArticle = {
   slug: "peptide-reconstitution-research-protocol-guide",
   title: "How to Reconstitute Peptides: A Research Protocol Guide",
   description:
-    "Step-by-step research protocol for reconstituting lyophilized peptides. Covers diluent selection, concentration calculations, aseptic technique, and post-reconstitution storage.",
+    "Step-by-step research protocol for reconstituting lyophilized peptides. Covers bacteriostatic water, acetic acid, dilution math, and storage best practices.",
   category: "Handling & Storage",
-  readMinutes: 8,
-  publishedAt: "2026-06-15",
+  readMinutes: 9,
+  publishedAt: "2026-06-16",
   ogImage: "/og-image.jpg",
   body: [
     {
       type: "paragraph",
-      text: "Lyophilized peptides — freeze-dried to a stable powder — require reconstitution before use in research applications. Proper reconstitution directly affects peptide stability, accurate dosing, and the integrity of experimental results. This guide outlines the standard protocol used in pre-clinical research settings.",
+      text: "Lyophilized peptides — freeze-dried to a powder — require reconstitution before use in research applications. Proper reconstitution directly affects peptide stability, accurate dosing, and the integrity of experimental results. This guide outlines the standard protocol used in pre-clinical research settings.",
     },
     {
       type: "heading",
@@ -20,7 +20,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Peptides in lyophilized form are stable at controlled temperatures for extended periods. Once reconstituted in aqueous solution, they become significantly more vulnerable to hydrolysis (water-mediated peptide bond cleavage), aggregation (formation of non-bioactive molecular clusters), and bacterial contamination — particularly relevant in multi-use vials. Getting reconstitution right means choosing the correct diluent, calculating concentration accurately, and following aseptic technique throughout.",
+      text: "Peptides in lyophilized form are stable at controlled temperatures for extended periods. Once reconstituted in aqueous solution, they become significantly more vulnerable to hydrolysis (water-mediated peptide bond cleavage), aggregation (formation of non-bioactive molecular clusters), and bacterial contamination (particularly relevant in multi-use vials).",
+    },
+    {
+      type: "paragraph",
+      text: "Getting reconstitution right means choosing the correct diluent, calculating concentration accurately, and following aseptic technique.",
     },
     {
       type: "heading",
@@ -28,15 +32,15 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "The choice of reconstitution fluid depends on the specific peptide's solubility profile and intended use. Three options cover the vast majority of research scenarios.",
+      text: "The choice of reconstitution fluid depends on the specific peptide's solubility profile and intended use.",
     },
     {
       type: "subheading",
-      text: "Bacteriostatic Water",
+      text: "Bacteriostatic Water (BW)",
     },
     {
       type: "paragraph",
-      text: "Bacteriostatic water — sterile water containing 0.9% benzyl alcohol — is the most commonly used diluent for research peptides. Benzyl alcohol acts as a preservative, inhibiting bacterial growth in multi-use vials. It is appropriate for most GHRH analogs and GHSs (CJC-1295, Ipamorelin, Sermorelin), BPC-157, TB-500, PT-141, and any peptide that will be used from a single vial across multiple experimental sessions.",
+      text: "Bacteriostatic water — sterile water containing 0.9% benzyl alcohol — is the most commonly used diluent for research peptides. Benzyl alcohol acts as a preservative, inhibiting bacterial growth in multi-use vials. Recommended for most GHRH analogs and GHSs (CJC-1295, Ipamorelin, Sermorelin), BPC-157, TB-500, PT-141, and any peptide that will be used from a single vial over multiple sessions.",
     },
     {
       type: "subheading",
@@ -44,7 +48,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Plain sterile water (no preservative) is appropriate when the entire vial will be used in a single application, or when the peptide is incompatible with benzyl alcohol. Incompatibility is rare but documented for certain sequences — consult available solubility data before substituting.",
+      text: "Plain sterile water (no preservative) is appropriate when the entire vial will be used in a single application, or when the peptide is incompatible with benzyl alcohol (rare but documented for some sequences).",
     },
     {
       type: "subheading",
@@ -52,7 +56,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Some peptides — particularly hydrophobic sequences and certain GH-releasing peptide variants — require an acidic diluent for initial dissolution. IGF-1 and some modified GHRP variants dissolve more completely in dilute acetic acid. The standard protocol is to dissolve initially in acetic acid, then dilute to final concentration with bacteriostatic water or phosphate-buffered saline (PBS).",
+      text: "Some peptides, particularly hydrophobic sequences or those with poor aqueous solubility, require an acidic diluent for initial dissolution. IGF-1 and some variants of GH-releasing peptides may dissolve more completely in dilute acetic acid. Protocol: dissolve initially in acetic acid, then dilute to final concentration with bacteriostatic water or phosphate-buffered saline (PBS).",
     },
     {
       type: "heading",
@@ -62,7 +66,7 @@ export const article: BlogArticle = {
       type: "list",
       items: [
         "Lyophilized peptide vial",
-        "Appropriate diluent (bacteriostatic water or alternative)",
+        "Diluent (bacteriostatic water or appropriate alternative)",
         "Insulin syringe (1 mL, 28–31 gauge) or appropriate research-grade syringe",
         "Alcohol swabs (70% isopropyl)",
         "Clean preparation surface",
@@ -79,7 +83,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Work in a clean environment. Wipe down the preparation surface with 70% isopropyl alcohol. Wash hands thoroughly or use nitrile gloves. Minimize air currents and movement near the preparation area.",
+      text: "Work in a clean environment. Wipe down the preparation surface with 70% isopropyl alcohol. Wash hands thoroughly or use nitrile gloves.",
     },
     {
       type: "subheading",
@@ -87,7 +91,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Determine the concentration needed for your research protocol before adding any liquid. The formula: Concentration (mcg/mL) = Peptide mass (mcg) ÷ Volume of diluent (mL). For example, a 5 mg (5,000 mcg) vial reconstituted with 2.5 mL yields 2,000 mcg/mL. The same vial with 5 mL yields 1,000 mcg/mL. Calculate and confirm before proceeding.",
+      text: "Determine the concentration needed for your research protocol before adding any liquid. Standard formula: Concentration (mcg/mL) = Peptide mass (mcg) ÷ Volume of diluent (mL). Example: 5 mg (5,000 mcg) vial at target 2 mg/mL requires 5,000 ÷ 2,000 = 2.5 mL of diluent. For a 1 mg/mL concentration from the same vial, add 5 mL.",
     },
     {
       type: "subheading",
@@ -95,31 +99,39 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Wipe both the peptide vial and diluent vial septums with a fresh alcohol swab. Allow to air-dry for 10–15 seconds before piercing — this brief drying period ensures the alcohol disinfects rather than being carried into the vial on a wet needle.",
+      text: "Wipe both the peptide vial and diluent vial septums with a fresh alcohol swab. Allow to air-dry for 10–15 seconds.",
     },
     {
       type: "subheading",
-      text: "Step 4: Draw Diluent and Inject — Gently",
+      text: "Step 4: Draw Diluent",
     },
     {
       type: "paragraph",
-      text: "Draw the calculated volume of diluent and confirm visually. When injecting, direct the diluent stream down the side of the vial — not directly onto the peptide powder. Forceful contact with the lyophilized cake can damage peptide structure. Allow the solution to run down and contact the powder gradually.",
+      text: "Draw the calculated volume of diluent into the syringe. Confirm the volume visually.",
     },
     {
       type: "subheading",
-      text: "Step 5: Swirl — Never Shake",
+      text: "Step 5: Inject Diluent — Gently",
     },
     {
-      type: "paragraph",
-      text: "Gently swirl or roll the vial between your palms until the peptide is fully dissolved. The solution should become clear. Never shake a peptide vial. Agitation causes aggregation, foaming, and degradation — particularly for larger molecular weight peptides such as TB-500 and follistatin variants.",
+      type: "callout",
+      text: "Critical: Direct the diluent stream down the side of the vial — not directly onto the peptide powder. Forceful contact can damage peptide structure. Allow the solution to run down and contact the lyophilized cake gradually.",
     },
     {
       type: "subheading",
-      text: "Step 6: Inspect",
+      text: "Step 6: Swirl — Do Not Shake",
     },
     {
       type: "paragraph",
-      text: "Examine the reconstituted solution. It should be clear and colorless (some peptides may produce a very slight tint). No visible particles or cloudiness should be present, and no undissolved residue should remain. Cloudiness may indicate incomplete dissolution (continue gentle swirling), aggregation, or contamination. When in doubt, do not proceed with the preparation.",
+      text: "Gently swirl or roll the vial between your palms until the peptide is fully dissolved. The solution should become clear. Never shake a peptide vial — agitation can cause aggregation, foaming, and degradation, particularly for larger molecular weight peptides.",
+    },
+    {
+      type: "subheading",
+      text: "Step 7: Inspect",
+    },
+    {
+      type: "paragraph",
+      text: "Examine the reconstituted solution. It should be clear and colorless (some peptides may have a very slight tint) with no visible particles or cloudiness and no undissolved residue. Cloudiness or particulates may indicate incomplete dissolution (try gentle swirling), aggregation, or contamination — evaluate before proceeding.",
     },
     {
       type: "heading",
@@ -142,8 +154,13 @@ export const article: BlogArticle = {
       text: "Storage After Reconstitution",
     },
     {
-      type: "paragraph",
-      text: "Once reconstituted, peptide stability decreases. Store reconstituted peptides in the refrigerator at 2–8°C for short-term use (up to 4 weeks). Keep away from light. Minimize freeze-thaw cycles — each cycle degrades peptide integrity. If the volume is large, pre-aliquot into single-use portions before freezing. Label each vial with compound name, concentration, reconstitution date, and lot number. Discard if solution becomes cloudy, discolored, or shows visible particulates.",
+      type: "list",
+      items: [
+        "Short-term (up to 4 weeks): Store in refrigerator at 2–8°C. Keep away from light.",
+        "Minimize freeze-thaw cycles. Each cycle degrades peptide integrity. Pre-aliquot if needed.",
+        "Label each vial with compound name, concentration, reconstitution date, and lot number.",
+        "Discard if solution becomes cloudy, discolored, or shows visible particulates.",
+      ],
     },
     {
       type: "heading",
@@ -166,11 +183,15 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Proper reconstitution is foundational to reliable peptide research. The key principles — appropriate diluent selection, accurate concentration calculation, gentle handling, and immediate proper storage — protect peptide integrity from vial to experiment. When sourcing lyophilized peptides, verify that products come with purity documentation (HPLC ≥98%) and batch-specific certificates of analysis. Reconstitution protocol is only as reliable as the starting material.",
+      text: "Proper reconstitution is foundational to reliable peptide research. The key principles — appropriate diluent selection, accurate concentration calculation, gentle handling, and immediate proper storage — protect peptide integrity from vial to experiment.",
+    },
+    {
+      type: "paragraph",
+      text: "When sourcing lyophilized peptides, verify that products come with purity documentation (HPLC ≥98%) and batch-specific certificates of analysis. Reconstitution protocol is only as reliable as the starting material.",
     },
     {
       type: "disclaimer",
-      text: "For research purposes only. Not intended for human use or consumption.",
+      text: "For research purposes only. Not intended for human use.",
     },
   ],
 };
