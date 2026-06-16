@@ -1852,6 +1852,7 @@ import { article as aOVN_NAD_VS_PEPTIDES_2026 } from './articles/nad-plus-vs-pep
 import { article as aJUN16_COLD_CHAIN_QC } from './articles/inside-the-lab-cold-chain-qc-day-jun16';
 import { article as aJUN17_RECONSTITUTION_PROC } from './articles/reconstitution-clean-repeatable-procedure-jun17';
 import { article as aJUN19_BPC_TB_SYNERGY } from './articles/bpc-157-tb-500-synergy-evidence-review-jun19';
+import { article as aYT1 } from './articles/nexphoria-youtube-video-scripts-no-face-format';
 
 
 export const articles: BlogArticle[] = [
@@ -3723,6 +3724,7 @@ export const articles: BlogArticle[] = [
   aJUN16_COLD_CHAIN_QC,
   aJUN17_RECONSTITUTION_PROC,
   aJUN19_BPC_TB_SYNERGY,
+  aYT1,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
