@@ -1871,6 +1871,9 @@ import { article as aJUN17_MASLD_PEPTIDES } from './articles/peptide-research-ma
 import { article as aJUN16OVN_LONGEVITY_STACK_GUIDE } from './articles/longevity-peptide-stack-2026-research-guide';
 import { article as aJUN16OVN_RECON_PROTOCOL } from './articles/how-to-reconstitute-peptides-research-protocol';
 import { article as aJUN16OVN_MUSCLE_RECOVERY_5 } from './articles/research-peptides-muscle-recovery-bpc157-tb500-igf1';
+import { article as aJUN17_BPC157_QUAD } from './articles/bpc-157-quadriceps-quad-injury-research-guide';
+import { article as aJUN17_BPC157_CALF } from './articles/bpc-157-calf-strain-research-guide';
+import { article as aJUN17_NEWS } from './articles/peptide-research-news-june-17-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3761,6 +3764,9 @@ export const articles: BlogArticle[] = [
   aJUN16OVN_LONGEVITY_STACK_GUIDE,
   aJUN16OVN_RECON_PROTOCOL,
   aJUN16OVN_MUSCLE_RECOVERY_5,
+  aJUN17_BPC157_QUAD,
+  aJUN17_BPC157_CALF,
+  aJUN17_NEWS,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
