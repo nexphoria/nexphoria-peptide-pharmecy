@@ -1901,6 +1901,9 @@ import { article as aJUN17_COA_CHECKLIST } from './articles/reading-peptide-coa-
 import { article as aJUN17OVN_CIRCADIAN_DOSING } from './articles/circadian-peptide-dosing-chronobiology-research-guide';
 import { article as aJUN17OVN_RESEARCH_GRADE } from './articles/research-grade-vs-pharmaceutical-grade-peptides-what-researchers-need-to-know';
 import { article as aJUN17OVN_GLP1_COGNITIVE } from './articles/glp1-agonists-cognitive-research-2026-alzheimers-parkinsons-tbi';
+import { article as aJUN17EVE_DRUG_INTERACTIONS } from './articles/peptide-drug-interactions-research-guide';
+import { article as aJUN17EVE_BPC_METFORMIN } from './articles/bpc-157-metformin-combination-research-guide';
+import { article as aJUN17EVE_NAD_EXERCISE } from './articles/nad-plus-exercise-recovery-stack-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3821,6 +3824,9 @@ export const articles: BlogArticle[] = [
   aJUN17OVN_CIRCADIAN_DOSING,
   aJUN17OVN_RESEARCH_GRADE,
   aJUN17OVN_GLP1_COGNITIVE,
+  aJUN17EVE_DRUG_INTERACTIONS,
+  aJUN17EVE_BPC_METFORMIN,
+  aJUN17EVE_NAD_EXERCISE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
