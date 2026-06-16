@@ -1874,6 +1874,9 @@ import { article as aJUN16OVN_MUSCLE_RECOVERY_5 } from './articles/research-pept
 import { article as aJUN17_BPC157_QUAD } from './articles/bpc-157-quadriceps-quad-injury-research-guide';
 import { article as aJUN17_BPC157_CALF } from './articles/bpc-157-calf-strain-research-guide';
 import { article as aJUN17_NEWS } from './articles/peptide-research-news-june-17-2026';
+import { article as aJUN16OVN_BEGINNER_2026 } from './articles/peptide-beginner-guide-2026';
+import { article as aJUN16OVN_GH_COMPARE_2026 } from './articles/growth-hormone-peptides-comparison-2026';
+import { article as aJUN16OVN_TIRZ_SEMA_WL } from './articles/tirzepatide-vs-semaglutide-weight-loss-research';
 
 
 export const articles: BlogArticle[] = [
@@ -3767,6 +3770,9 @@ export const articles: BlogArticle[] = [
   aJUN17_BPC157_QUAD,
   aJUN17_BPC157_CALF,
   aJUN17_NEWS,
+  aJUN16OVN_BEGINNER_2026,
+  aJUN16OVN_GH_COMPARE_2026,
+  aJUN16OVN_TIRZ_SEMA_WL,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

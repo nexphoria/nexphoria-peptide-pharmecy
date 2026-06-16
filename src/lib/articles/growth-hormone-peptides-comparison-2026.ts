@@ -1,0 +1,80 @@
+import type { BlogArticle } from '../blog-types';
+
+export const article: BlogArticle = {
+  slug: "growth-hormone-peptides-comparison-2026",
+  title: "Growth Hormone Peptides Compared: GHRH Analogs vs. GHRPs vs. GHS in 2026",
+  description: "A head-to-head comparison of the major growth hormone–stimulating peptides — CJC-1295, Sermorelin, Ipamorelin, GHRP-2, GHRP-6, Hexarelin, Tesamorelin, and MK-677 — covering mechanism, selectivity, half-life, and research evidence.",
+  category: "Compound Profiles",
+  readMinutes: 13,
+  publishedAt: "2026-06-16",
+  ogImage: "/og-image.jpg",
+  body: [
+    { type: "paragraph", text: "Growth hormone secretagogues (GHS) are among the most widely studied classes of research peptides, with decades of published literature spanning athletic recovery models, metabolic research, aging, and body composition endpoints. Yet the category contains structurally and pharmacologically distinct compounds that are often conflated. This comparison breaks down the major GH-stimulating peptides — their mechanisms, selectivity profiles, half-lives, and what the published evidence actually shows." },
+    { type: "heading", text: "Two Pathways to GH Release" },
+    { type: "paragraph", text: "To understand how these compounds differ, you first need to understand that growth hormone release from the anterior pituitary is primarily driven by two endogenous signals: Growth Hormone-Releasing Hormone (GHRH) from the hypothalamus, which stimulates GH synthesis and secretion; and Ghrelin (and its receptor, GHSR), which primarily drives GH pulse amplitude and also has independent metabolic effects." },
+    { type: "paragraph", text: "Research peptides in the GH axis fall into two main mechanistic categories: GHRH analogs (which mimic GHRH at the pituitary) and GHRP/GHS compounds (which act at the ghrelin receptor). These two classes work through distinct receptors and can be synergistic when combined — a key insight that drove the popularity of ipamorelin/CJC-1295 combinations." },
+    { type: "heading", text: "GHRH Analogs" },
+    { type: "subheading", text: "Sermorelin (GRF 1-29)" },
+    { type: "paragraph", text: "Sermorelin is a truncated 29-amino-acid analog of GHRH that retains the minimal active sequence required for GHRH receptor binding. It was the first GHRH analog to receive FDA approval (in 1997, for pediatric growth hormone deficiency) and has the longest clinical safety record in the class. Half-life is approximately 10-20 minutes, making it one of the shortest-acting GHRH analogs. This short half-life produces a more physiological GH pulse pattern compared to longer-acting analogs." },
+    { type: "subheading", text: "CJC-1295 (Without DAC)" },
+    { type: "paragraph", text: "CJC-1295 without DAC (also called MOD GRF 1-29) is a modified 29-amino-acid GHRH analog with substitutions at positions 2, 8, 15, and 27 that confer resistance to plasma dipeptidyl aminopeptidase IV (DPP-IV) degradation. This extends the half-life to approximately 30 minutes compared to sermorelin's 10-20 minutes, while preserving the pulsatile GH release pattern. Published research has shown it produces significantly higher GH peaks than sermorelin at equivalent doses in human subjects." },
+    { type: "subheading", text: "CJC-1295 With DAC" },
+    { type: "paragraph", text: "The DAC (Drug Affinity Complex) version adds a lysine-modified chain that covalently binds to serum albumin, dramatically extending half-life to 6-8 days. This creates sustained, non-pulsatile GH elevation rather than the physiological pulse pattern. Research has documented elevated IGF-1 levels for up to two weeks from a single administration. This extended profile may be useful in certain chronic study designs but eliminates the pulsatile GH release that characterizes normal physiology — a consideration when designing protocols." },
+    { type: "subheading", text: "Tesamorelin (TH9507)" },
+    { type: "paragraph", text: "Tesamorelin is a GHRH analog conjugated with a trans-3-hexenoic acid group for enhanced stability. It received FDA approval in 2010 (Egrifta) for HIV-associated lipodystrophy — making it the only GHRH analog currently FDA-approved for an adult indication. Clinical trials demonstrated significant reductions in visceral adipose tissue with tesamorelin treatment, supporting its use in metabolic research models focused on body composition and adipose tissue biology." },
+    { type: "heading", text: "GHRP / Ghrelin Mimetics" },
+    { type: "subheading", text: "GHRP-2 (Pralmorelin)" },
+    { type: "paragraph", text: "GHRP-2 is a synthetic hexapeptide that binds the ghrelin receptor (GHSR-1a) to stimulate GH release. It is the most potent GH releaser per microgram among the GHRPs studied, but this potency comes with a less selective profile: at research doses, GHRP-2 also elevates cortisol and prolactin by approximately 30-50% above baseline in human studies. This cortisol co-stimulation is an important variable to account for in study design when endpoints involve stress response, immune function, or body composition." },
+    { type: "subheading", text: "GHRP-6" },
+    { type: "paragraph", text: "GHRP-6 is the original synthetic ghrelin mimetic, first described in the 1980s. Like GHRP-2, it drives robust GH release via GHSR-1a, but it is particularly notable for its significant appetite-stimulating effects — a direct consequence of ghrelin receptor activation in the hypothalamus. Research has quantified appetite increases of 30-40% above baseline in human subjects. This property makes it uniquely useful in research models exploring appetite regulation, but it is a significant confounding variable in body composition studies. GHRP-6 also elevates cortisol and prolactin similarly to GHRP-2." },
+    { type: "subheading", text: "Ipamorelin" },
+    { type: "paragraph", text: "Ipamorelin is a 5-amino-acid GHRP that is the most selective ghrelin mimetic in the class. Unlike GHRP-2 and GHRP-6, ipamorelin produces minimal to no elevation of cortisol or prolactin at research doses — a selectivity profile confirmed in both animal and human studies. Appetite stimulation is also significantly lower than with GHRP-6. This selective profile, combined with a half-life of approximately 2 hours, has made ipamorelin the most widely used GHRP in combination protocols and in research where GH stimulation without hormonal side effects is desired." },
+    { type: "subheading", text: "Hexarelin" },
+    { type: "paragraph", text: "Hexarelin is a hexapeptide GHRP with the strongest GH-releasing potency in the class, producing larger GH peaks than ipamorelin, GHRP-2, or GHRP-6 at equivalent doses. However, it is also notable for its direct cardiac effects — hexarelin has been shown to bind CD36 receptors in cardiac tissue and has demonstrated cardioprotective effects independent of GH release in animal models. This dual mechanism (GHSR + CD36) makes hexarelin scientifically interesting but complicates its use as a simple GH secretagogue. Tachyphylaxis (rapid desensitization) also occurs more quickly with hexarelin than with other GHRPs at continuous dosing." },
+    { type: "heading", text: "Non-Peptide GHS: MK-677 (Ibutamoren)" },
+    { type: "paragraph", text: "MK-677 is technically not a peptide — it is a small molecule ghrelin mimetic developed by Merck that activates GHSR-1a orally. This oral bioavailability distinguishes it from all injection-route GHRPs and makes it a uniquely useful research tool for studying long-term GH/IGF-1 elevation without injection methodology. Half-life is approximately 24 hours, producing sustained GH elevation with once-daily dosing. Phase II clinical trials in elderly subjects demonstrated significant increases in IGF-1 and improvements in lean mass over 12 months, providing a human evidence base that most injection peptides lack." },
+    { type: "heading", text: "Side-by-Side Comparison" },
+    { type: "table", headers: ["Compound", "Mechanism", "Half-Life", "Cortisol Effect", "Appetite Effect", "Key Research Notes"], rows: [
+      ["Sermorelin", "GHRH analog", "10-20 min", "Minimal", "None", "Longest clinical safety record; pulsatile GH"],
+      ["CJC-1295 (no DAC)", "GHRH analog", "~30 min", "Minimal", "None", "Higher GH peaks than sermorelin; most common GHRH in stacks"],
+      ["CJC-1295 (DAC)", "GHRH analog", "6-8 days", "Minimal", "None", "Non-pulsatile sustained IGF-1; less physiological"],
+      ["Tesamorelin", "GHRH analog", "~26 min", "Minimal", "None", "FDA-approved; best evidence for visceral fat reduction"],
+      ["GHRP-2", "Ghrelin mimetic (GHSR-1a)", "~1 hour", "↑30-50%", "Moderate", "Highest potency per µg; cortisol confound important"],
+      ["GHRP-6", "Ghrelin mimetic (GHSR-1a)", "~1.5 hours", "↑30-50%", "High (30-40%↑)", "Strongest appetite stimulation; useful in appetite studies"],
+      ["Ipamorelin", "Ghrelin mimetic (GHSR-1a)", "~2 hours", "Negligible", "Low", "Most selective GHRP; preferred for combination stacks"],
+      ["Hexarelin", "Ghrelin mimetic + CD36", "~2 hours", "Moderate", "Low", "Strongest GH release; direct cardiac effects; tachyphylaxis"],
+      ["MK-677", "Oral ghrelin mimetic", "~24 hours", "Moderate", "Moderate", "Only oral GHS; Phase II human data available"]
+    ]},
+    { type: "heading", text: "Combination Protocols in Research" },
+    { type: "paragraph", text: "The synergy between GHRH analogs and GHRPs is well-established in the literature. Combining a GHRH analog (which primes pituitary GH stores) with a GHRP (which drives pulse amplitude through the ghrelin receptor) produces significantly greater GH release than either compound alone — typically 5-10x the GH increase versus either agent individually." },
+    { type: "subheading", text: "Most Studied Combinations" },
+    { type: "list", items: [
+      "Ipamorelin + CJC-1295 (no DAC): The most widely used combination in research; selective GH release without cortisol or prolactin co-stimulation",
+      "GHRP-2 + Sermorelin: Earlier combination studied in anti-aging models; higher GH peaks but cortisol co-stimulation present",
+      "GHRP-6 + CJC-1295 (DAC): Used in chronic GH elevation studies; appetite effects must be controlled for",
+      "MK-677 + CJC-1295 (no DAC): Combining oral and injectable routes; useful when injection-free periods are needed"
+    ]},
+    { type: "callout", text: "In published literature comparing combination vs. monotherapy, the GHRH + GHRP combination consistently produces significantly larger GH peaks. If the research endpoint is GH-dependent, mono-protocol designs may underpower the study." },
+    { type: "heading", text: "Selecting the Right Compound for Your Research" },
+    { type: "paragraph", text: "The 'best' GH peptide is protocol-dependent. The selection criteria should match your research objective." },
+    { type: "list", items: [
+      "For physiological GH pulse research: Sermorelin or CJC-1295 (no DAC) with a selective GHRP (ipamorelin)",
+      "For chronic IGF-1 elevation studies: CJC-1295 with DAC or MK-677 (oral advantage for long protocols)",
+      "For body composition or visceral fat endpoints: Tesamorelin (best human evidence base)",
+      "For cardiovascular research alongside GH effects: Hexarelin (CD36 activity adds dimension)",
+      "For appetite regulation studies: GHRP-6 (most appetite-stimulating GHRP)",
+      "For clean GH secretagogue with minimal confounds: Ipamorelin (most selective)"
+    ]},
+    { type: "heading", text: "Sourcing Considerations" },
+    { type: "paragraph", text: "GH peptides are technically demanding to synthesize and purify correctly. Sequence errors in synthesis (wrong amino acid substitution), inadequate removal of synthesis byproducts, or improper lyophilization can all produce material that tests at 'acceptable' HPLC purity but has compromised biological activity. For this class of compounds, mass spectrometry identity verification is particularly important — HPLC alone cannot distinguish sequence isomers." },
+    { type: "list", items: [
+      "Require MS (mass spectrometry) identity confirmation alongside HPLC purity",
+      "Verify the correct CAS number for the specific compound (e.g., CJC-1295 with vs. without DAC have different CAS numbers)",
+      "Confirm cold-chain shipping — all GH peptides are temperature sensitive",
+      "Request lot-specific endotoxin testing for any IP or IV administration protocols"
+    ]},
+    { type: "heading", text: "Summary" },
+    { type: "paragraph", text: "The growth hormone peptide class contains mechanistically distinct compounds whose differences matter significantly for study design, data interpretation, and reproducibility. GHRH analogs and GHRPs work through separate receptors and are synergistic when combined. Within each class, selectivity, half-life, and off-target effects vary in ways that should directly inform which compound you select for a given research objective. Understanding these distinctions is foundational to designing valid GH-axis research protocols." },
+    { type: "disclaimer", text: "For research purposes only. All dosing and pharmacokinetic data reflects published preclinical and clinical literature. Not intended as medical advice or clinical guidance." }
+  ]
+};

@@ -1,0 +1,80 @@
+import type { BlogArticle } from '../blog-types';
+
+export const article: BlogArticle = {
+  slug: "tirzepatide-vs-semaglutide-weight-loss-research",
+  title: "Tirzepatide vs. Semaglutide: What the Head-to-Head Weight Loss Research Shows",
+  description: "A detailed comparison of tirzepatide and semaglutide for metabolic and weight loss research — covering mechanism of action, SURMOUNT vs. STEP trial data, responder rates, side effect profiles, and what the 2025-2026 literature adds.",
+  category: "Compound Profiles",
+  readMinutes: 12,
+  publishedAt: "2026-06-16",
+  ogImage: "/og-image.jpg",
+  body: [
+    { type: "paragraph", text: "No comparison in current metabolic peptide research generates more interest than tirzepatide versus semaglutide. Both are injectable incretin-based therapies. Both have landmark Phase III trial programs. And both have reshaped the field's understanding of how much weight loss is pharmacologically achievable. But they are not the same compound, and their differences matter for research design and endpoint interpretation." },
+    { type: "heading", text: "Mechanism of Action: The Core Difference" },
+    { type: "paragraph", text: "Semaglutide is a mono-agonist — it activates only the GLP-1 (Glucagon-Like Peptide-1) receptor. GLP-1 receptors are expressed in the pancreas (where activation enhances glucose-dependent insulin secretion and suppresses glucagon), the brain (particularly the hypothalamus and brainstem, where they regulate appetite and satiety), the gastrointestinal tract (where they slow gastric emptying), and the heart and vasculature (where they exert cardioprotective effects)." },
+    { type: "paragraph", text: "Tirzepatide is a dual GIP/GLP-1 co-agonist — it activates both the GIP (Glucose-dependent Insulinotropic Polypeptide) receptor and the GLP-1 receptor simultaneously. The addition of GIP receptor agonism was initially considered to be a minor enhancement, but trial data consistently shows greater weight loss with tirzepatide than with semaglutide at maximum approved doses. The mechanism by which GIP agonism enhances weight loss is still under active investigation — proposed mechanisms include enhanced adipose tissue lipid oxidation, central GIP receptor effects on energy homeostasis, and synergistic insulin sensitization." },
+    { type: "subheading", text: "Molecular Characteristics" },
+    { type: "table", headers: ["Property", "Semaglutide", "Tirzepatide"], rows: [
+      ["Mechanism", "GLP-1 receptor agonist (mono)", "GIP + GLP-1 dual agonist"],
+      ["Amino acids", "31 (GLP-1 analog)", "39 (GIP/GLP-1 hybrid)"],
+      ["Half-life", "~1 week (SC)", "~5 days (SC)"],
+      ["Dosing frequency", "Once weekly", "Once weekly"],
+      ["Molecular weight", "~4,114 Da", "~4,813 Da"],
+      ["CAS number", "910463-68-2", "2023788-19-2"]
+    ]},
+    { type: "heading", text: "Clinical Trial Evidence: STEP vs. SURMOUNT" },
+    { type: "paragraph", text: "The most direct evidence base comes from comparing the STEP program (semaglutide 2.4 mg, weekly SC) and the SURMOUNT program (tirzepatide 5/10/15 mg, weekly SC) in adults with obesity (without type 2 diabetes)." },
+    { type: "subheading", text: "STEP 1: Semaglutide 2.4 mg" },
+    { type: "paragraph", text: "Published in NEJM in 2021, STEP 1 enrolled 1,961 adults with obesity (BMI ≥30, or ≥27 with a weight-related comorbidity). At 68 weeks, semaglutide 2.4 mg produced a mean weight loss of 14.9% versus 2.4% with placebo. Approximately 86% of semaglutide-treated participants achieved ≥5% weight loss; 69% achieved ≥10%; 50% achieved ≥15%. These were unprecedented results for a pharmacological intervention at the time of publication." },
+    { type: "subheading", text: "SURMOUNT-1: Tirzepatide 5/10/15 mg" },
+    { type: "paragraph", text: "Published in NEJM in 2022, SURMOUNT-1 enrolled 2,539 adults with obesity. At 72 weeks, tirzepatide produced mean weight losses of 15.0% (5 mg), 19.5% (10 mg), and 20.9% (15 mg) versus 3.1% with placebo. At the 15 mg dose, 91% of participants achieved ≥5% weight loss; 79% achieved ≥15%; and 57% achieved ≥20% weight loss — a response rate that no prior obesity pharmacotherapy had approached." },
+    { type: "subheading", text: "SURMOUNT-5: Direct Head-to-Head" },
+    { type: "paragraph", text: "SURMOUNT-5, published in 2025, was the first randomized head-to-head comparison of tirzepatide (up to 15 mg weekly) versus semaglutide (up to 2.4 mg weekly) in adults with obesity. At 72 weeks, tirzepatide produced approximately 20.2% mean weight loss versus 13.7% with semaglutide — a statistically significant difference of approximately 6.5 percentage points, corresponding to an absolute weight difference of about 7.8 kg favoring tirzepatide. This was the first high-quality trial to directly quantify the magnitude of advantage." },
+    { type: "table", headers: ["Trial", "Drug", "Duration", "Mean Weight Loss", "≥15% Responders", "≥20% Responders"], rows: [
+      ["STEP 1 (2021)", "Semaglutide 2.4 mg", "68 weeks", "-14.9%", "50%", "~33%"],
+      ["SURMOUNT-1 (2022)", "Tirzepatide 10 mg", "72 weeks", "-19.5%", "~69%", "~43%"],
+      ["SURMOUNT-1 (2022)", "Tirzepatide 15 mg", "72 weeks", "-20.9%", "79%", "57%"],
+      ["SURMOUNT-5 (2025)", "Semaglutide 2.4 mg", "72 weeks", "-13.7%", "~46%", "~25%"],
+      ["SURMOUNT-5 (2025)", "Tirzepatide 15 mg", "72 weeks", "-20.2%", "~72%", "~50%"]
+    ]},
+    { type: "callout", text: "SURMOUNT-5 is the most methodologically clean comparison available. The ~6.5 percentage point weight loss advantage for tirzepatide was statistically significant (p<0.001) and clinically meaningful in the context of obesity pharmacotherapy." },
+    { type: "heading", text: "Cardiovascular Outcomes Data" },
+    { type: "paragraph", text: "Both compounds have major cardiovascular outcomes trials, but at different stages of completion and with different populations studied." },
+    { type: "subheading", text: "SUSTAIN-6 / SELECT (Semaglutide)" },
+    { type: "paragraph", text: "SUSTAIN-6 (2016) and the SELECT trial (2023) established semaglutide's cardiovascular benefit profile. SELECT — the largest trial in the class with 17,604 participants with established cardiovascular disease and obesity — demonstrated a 20% relative risk reduction in MACE (major adverse cardiovascular events) with semaglutide 2.4 mg over approximately 3.3 years. This was the first large-scale demonstration that GLP-1 agonism reduces CV events in an obesity-without-diabetes population." },
+    { type: "subheading", text: "SURPASS-CVOT (Tirzepatide)" },
+    { type: "paragraph", text: "Tirzepatide's cardiovascular outcomes trial program is ongoing as of mid-2026. Mechanistic studies and biomarker data from SURMOUNT trials show favorable changes in blood pressure, lipids, CRP, and adipokines, suggesting CV benefit is likely — but the definitive large-scale event-driven trial data that semaglutide now has is not yet available for tirzepatide's obesity indication." },
+    { type: "heading", text: "Gastrointestinal Side Effects" },
+    { type: "paragraph", text: "GI side effects are the primary tolerability concern for both compounds, driven by their shared mechanism of gastric emptying delay and GLP-1-mediated central satiety effects." },
+    { type: "subheading", text: "Comparison of GI Adverse Events" },
+    { type: "table", headers: ["Event", "Semaglutide 2.4 mg", "Tirzepatide 15 mg", "Notes"], rows: [
+      ["Nausea (any)", "~44%", "~33%", "Tirzepatide may have lower nausea rates"],
+      ["Vomiting (any)", "~24%", "~18%", "Similar pattern"],
+      ["Diarrhea (any)", "~30%", "~23%", "Similar pattern"],
+      ["Constipation (any)", "~24%", "~22%", "Similar between agents"],
+      ["Discontinuation due to GI AEs", "~4-5%", "~4-7%", "Similar discontinuation rates"]
+    ]},
+    { type: "paragraph", text: "Direct cross-trial comparisons of adverse events are limited by different study populations and assessment methodologies. SURMOUNT-5 head-to-head data suggests tirzepatide may have a modestly more favorable GI tolerability profile than semaglutide, though discontinuation rates for GI events were similar." },
+    { type: "heading", text: "Glycemic Endpoints: The Diabetes Context" },
+    { type: "paragraph", text: "Both compounds were developed first as type 2 diabetes treatments before their obesity indications. The SURPASS program (tirzepatide in T2D) and SUSTAIN program (semaglutide in T2D) provide extensive HbA1c reduction data." },
+    { type: "paragraph", text: "In T2D populations, tirzepatide consistently demonstrates greater HbA1c reduction than semaglutide in head-to-head trials (SURPASS-2, SURPASS-4), with tirzepatide 15 mg reducing HbA1c by 2.3-2.6% versus 1.7-1.9% for semaglutide 1.0 mg. This difference is likely driven by the additional GIP receptor-mediated insulin sensitization in adipose and muscle tissue." },
+    { type: "heading", text: "Muscle Mass Preservation" },
+    { type: "paragraph", text: "An important emerging research question for both compounds concerns the composition of weight lost — specifically, the proportion of fat versus lean mass. Rapid weight loss at the magnitudes seen with these agents risks significant muscle catabolism, with potential long-term metabolic consequences." },
+    { type: "paragraph", text: "Body composition data from SURMOUNT-1 shows that tirzepatide produced a greater proportion of fat mass loss (relative to lean mass) than typical caloric restriction models — approximately 90% of lost weight was fat mass in some sub-analyses. Preliminary comparative data suggests tirzepatide may preserve lean mass better than semaglutide, possibly due to GIP receptor effects on adipose tissue metabolism, but head-to-head DEXA-based body composition data from SURMOUNT-5 was not yet fully published as of early 2026." },
+    { type: "heading", text: "Research Implications: Which Compound for Which Endpoint?" },
+    { type: "list", items: [
+      "Maximum weight loss as primary endpoint: Tirzepatide 15 mg shows greater absolute and proportional weight reduction in direct comparison",
+      "Cardiovascular event reduction with established CVD: Semaglutide has the SELECT trial data; tirzepatide CVOT data pending",
+      "Glycemic control in T2D models: Tirzepatide shows greater HbA1c reduction in head-to-head comparisons",
+      "Body composition / fat vs. lean mass: Both show favorable composition, tirzepatide potentially superior (ongoing research)",
+      "GLP-1 mechanism isolation: Use semaglutide to study pure GLP-1 effects; tirzepatide cannot isolate GLP-1 from GIP",
+      "Long-term sustainability models: Both require ongoing treatment to maintain weight loss; no difference in durability demonstrated"
+    ]},
+    { type: "heading", text: "Sourcing Quality Considerations" },
+    { type: "paragraph", text: "Both semaglutide and tirzepatide are technically complex molecules to synthesize at research purity. Semaglutide's C18 fatty acid chain modification and tirzepatide's dual-agonist backbone both require advanced synthetic chemistry and rigorous purification. For both compounds, the documentation requirements are the same: HPLC ≥99% purity, MS identity confirmation (the fatty acid modifications make molecular weight verification especially important), endotoxin testing, and cold-chain shipping." },
+    { type: "paragraph", text: "An important note: the GLP-1 agonist class has attracted significant counterfeiting and substandard manufacturing activity due to commercial demand. Researchers should be especially diligent about sourcing documentation for these compounds compared to lower-profile peptides." },
+    { type: "heading", text: "Summary" },
+    { type: "paragraph", text: "Tirzepatide and semaglutide represent the two most clinically validated research peptides in metabolic science. Both produce unprecedented weight loss in clinical populations. The SURMOUNT-5 head-to-head trial establishes tirzepatide's quantitative advantage in weight reduction. Semaglutide retains superiority in cardiovascular outcomes evidence. For preclinical metabolic research, mechanism clarity favors semaglutide (pure GLP-1 agonism); for maximum weight loss endpoint studies, tirzepatide's dual mechanism produces greater magnitude. Understanding these distinctions is essential for valid study design in this high-profile research area." },
+    { type: "disclaimer", text: "For research purposes only. All trial data referenced reflects published peer-reviewed clinical literature. Not intended as medical advice or clinical guidance." }
+  ]
+};
