@@ -1831,6 +1831,9 @@ import { article as aJUN16OVN_NAD_VS_NMN } from './articles/nad-plus-vs-nmn-long
 import { article as aJUN16HEAT1 } from './articles/peptide-research-summer-heat-cooling-guide-2026';
 import { article as aJUN16HEAT2 } from './articles/bpc-157-vs-ipamorelin-recovery-research-comparison';
 import { article as aJUN16HEAT3 } from './articles/nad-plus-iv-infusion-vs-oral-supplementation-research';
+import { article as aOVNJUN17_ECNOG } from './articles/where-to-buy-ecnoglutide-research-guide';
+import { article as aOVNJUN17_EFRUX } from './articles/where-to-buy-efruxifermin-research-guide';
+import { article as aOVNJUN17_CAGRISEMA } from './articles/how-long-does-cagrisema-take-to-work-research-timeline';
 
 
 export const articles: BlogArticle[] = [
@@ -3681,6 +3684,9 @@ export const articles: BlogArticle[] = [
   aJUN16HEAT1,
   aJUN16HEAT2,
   aJUN16HEAT3,
+  aOVNJUN17_ECNOG,
+  aOVNJUN17_EFRUX,
+  aOVNJUN17_CAGRISEMA,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
