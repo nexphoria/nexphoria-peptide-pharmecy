@@ -1828,6 +1828,9 @@ import { article as aOVN17_PREPTIN } from './articles/preptin-pancreatic-peptide
 import { article as aJUN16OVN_HEXARELIN_CARDIO } from './articles/hexarelin-cardioprotection-research-guide';
 import { article as aJUN16OVN_LONGEVITY_STACK_2026 } from './articles/longevity-peptide-stack-2026-research-guide';
 import { article as aJUN16OVN_NAD_VS_NMN } from './articles/nad-plus-vs-nmn-longevity-research-comparison';
+import { article as aJUN16HEAT1 } from './articles/peptide-research-summer-heat-cooling-guide-2026';
+import { article as aJUN16HEAT2 } from './articles/bpc-157-vs-ipamorelin-recovery-research-comparison';
+import { article as aJUN16HEAT3 } from './articles/nad-plus-iv-infusion-vs-oral-supplementation-research';
 
 
 export const articles: BlogArticle[] = [
@@ -3675,6 +3678,9 @@ export const articles: BlogArticle[] = [
   aJUN16OVN_HEXARELIN_CARDIO,
   aJUN16OVN_LONGEVITY_STACK_2026,
   aJUN16OVN_NAD_VS_NMN,
+  aJUN16HEAT1,
+  aJUN16HEAT2,
+  aJUN16HEAT3,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
