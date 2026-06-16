@@ -1910,6 +1910,9 @@ import { article as aOVN_STORAGE_GUIDE } from './articles/peptide-storage-guide-
 import { article as aJUN16OVN_WOLVERINE_STACK } from './articles/wolverine-stack-bpc-157-tb-500-ghk-cu-complete-guide-2026';
 import { article as aJUN16OVN_VENDOR_CHECKLIST } from './articles/peptide-vendor-quality-checklist-buyers-guide-2026';
 import { article as aJUN16OVN_NAD_EXERCISE } from './articles/nad-plus-exercise-performance-mitochondrial-research-2026';
+import { article as aJUN16OVN_BPC157_SHOULDER } from './articles/bpc-157-shoulder-injury-rotator-cuff-research-2026';
+import { article as aJUN16OVN_TIRZ_PLATEAU } from './articles/tirzepatide-weight-loss-plateau-research-2026';
+import { article as aJUN16OVN_DRUG_INTERACTIONS } from './articles/peptide-research-drug-interactions-complete-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3839,6 +3842,9 @@ export const articles: BlogArticle[] = [
   aJUN16OVN_WOLVERINE_STACK,
   aJUN16OVN_VENDOR_CHECKLIST,
   aJUN16OVN_NAD_EXERCISE,
+  aJUN16OVN_BPC157_SHOULDER,
+  aJUN16OVN_TIRZ_PLATEAU,
+  aJUN16OVN_DRUG_INTERACTIONS,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
