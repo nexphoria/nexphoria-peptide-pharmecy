@@ -1856,6 +1856,9 @@ import { article as aYT1 } from './articles/nexphoria-youtube-video-scripts-no-f
 import { article as aJUN16OVN_ACL_RECOVERY } from './articles/peptide-research-acl-recovery-protocols-2026';
 import { article as aJUN16OVN_CIRCADIAN_SLEEP } from './articles/peptide-research-circadian-biology-sleep-dsip-epitalon-2026';
 import { article as aJUN16OVN_VENDOR_3WAY } from './articles/nexphoria-vs-amino-asylum-vs-umbrella-labs-comparison-2026';
+import { article as aJUN16_HEXARELIN_CD36 } from './articles/hexarelin-cd36-cardiac-mechanism-jun2026';
+import { article as aJUN16_EPITHALON_TEL2 } from './articles/epithalon-telomerase-longevity-evidence-jun2026';
+import { article as aJUN16_TA1_TLR9 } from './articles/thymosin-alpha-1-tlr9-immune-modulation-jun2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3731,6 +3734,9 @@ export const articles: BlogArticle[] = [
   aJUN16OVN_ACL_RECOVERY,
   aJUN16OVN_CIRCADIAN_SLEEP,
   aJUN16OVN_VENDOR_3WAY,
+  aJUN16_HEXARELIN_CD36,
+  aJUN16_EPITHALON_TEL2,
+  aJUN16_TA1_TLR9,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
