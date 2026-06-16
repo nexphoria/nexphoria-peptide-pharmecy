@@ -1801,6 +1801,9 @@ import { article as aJUN17_FEMALE_PROTO } from './articles/peptide-female-resear
 import { article as aOVN_BPC157_ELBOW } from './articles/bpc-157-elbow-injury-research-guide-2026';
 import { article as aOVN_GLP1_CV } from './articles/glp1-agonists-cardiovascular-protection-2026';
 import { article as aOVN_HEAT_PERF } from './articles/peptide-research-heat-resilience-performance-2026';
+import { article as aOVNJUN17_NEUROINFLAM } from './articles/peptide-research-neuroinflammation-microglial-activation-2026';
+import { article as aOVNJUN17_METASYN } from './articles/peptide-combinations-metabolic-syndrome-research-2026';
+import { article as aOVNJUN17_SELANKSEMAX } from './articles/selank-vs-semax-nootropic-peptide-comparison-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3621,6 +3624,9 @@ export const articles: BlogArticle[] = [
   aOVN_BPC157_ELBOW,
   aOVN_GLP1_CV,
   aOVN_HEAT_PERF,
+  aOVNJUN17_NEUROINFLAM,
+  aOVNJUN17_METASYN,
+  aOVNJUN17_SELANKSEMAX,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
