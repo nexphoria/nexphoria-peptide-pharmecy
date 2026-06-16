@@ -1798,6 +1798,9 @@ import { article as aOVNJUN16B_GLOSSARY } from './articles/peptide-glossary-june
 import { article as aJUN17_BEGINNER } from './articles/peptide-research-beginners-complete-2026';
 import { article as aJUN17_REDFLAGS_SUPPLIER } from './articles/peptide-supplier-red-flags-checklist';
 import { article as aJUN17_FEMALE_PROTO } from './articles/peptide-female-researcher-protocols-2026';
+import { article as aOVN_BPC157_ELBOW } from './articles/bpc-157-elbow-injury-research-guide-2026';
+import { article as aOVN_GLP1_CV } from './articles/glp1-agonists-cardiovascular-protection-2026';
+import { article as aOVN_HEAT_PERF } from './articles/peptide-research-heat-resilience-performance-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3615,6 +3618,9 @@ export const articles: BlogArticle[] = [
   aJUN17_BEGINNER,
   aJUN17_REDFLAGS_SUPPLIER,
   aJUN17_FEMALE_PROTO,
+  aOVN_BPC157_ELBOW,
+  aOVN_GLP1_CV,
+  aOVN_HEAT_PERF,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
