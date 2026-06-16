@@ -1780,6 +1780,9 @@ import { article as aJUN15_COGNITIVE_WORK } from './articles/peptide-research-wo
 import { article as aOVN_SLEEP_DSIP } from './articles/peptide-sleep-optimization-dsip-delta-sleep-research-2026';
 import { article as aOVN_GLP1_PLATEAU } from './articles/glp1-weight-loss-plateau-breaking-research-strategies-2026';
 import { article as aOVN_ALCOHOL_GUT } from './articles/peptide-research-alcohol-liver-gut-inflammation-recovery-2026';
+import { article as aOVN_JOINT_2026 } from './articles/peptide-research-joint-health-cartilage-repair-2026';
+import { article as aOVN_MOTSC_SS31 } from './articles/mots-c-vs-ss31-mitochondrial-peptide-research-comparison';
+import { article as aOVN_SKIN_COLLAGEN } from './articles/peptide-research-skin-collagen-ghk-cu-bpc157-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3579,6 +3582,9 @@ export const articles: BlogArticle[] = [
   aOVN_SLEEP_DSIP,
   aOVN_GLP1_PLATEAU,
   aOVN_ALCOHOL_GUT,
+  aOVN_JOINT_2026,
+  aOVN_MOTSC_SS31,
+  aOVN_SKIN_COLLAGEN,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
