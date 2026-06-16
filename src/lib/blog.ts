@@ -1804,6 +1804,9 @@ import { article as aOVN_HEAT_PERF } from './articles/peptide-research-heat-resi
 import { article as aOVNJUN17_NEUROINFLAM } from './articles/peptide-research-neuroinflammation-microglial-activation-2026';
 import { article as aOVNJUN17_METASYN } from './articles/peptide-combinations-metabolic-syndrome-research-2026';
 import { article as aOVNJUN17_SELANKSEMAX } from './articles/selank-vs-semax-nootropic-peptide-comparison-2026';
+import { article as aOVN_LONGEVITY_STACK_COMPLETE } from './articles/peptide-research-longevity-complete-stack-guide';
+import { article as aOVN_BPC157_LONGEVITY } from './articles/bpc-157-longevity-anti-aging-mechanisms-research';
+import { article as aOVN_NAD_LONGEVITY_2026 } from './articles/nad-plus-longevity-complete-researchers-guide-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3627,6 +3630,9 @@ export const articles: BlogArticle[] = [
   aOVNJUN17_NEUROINFLAM,
   aOVNJUN17_METASYN,
   aOVNJUN17_SELANKSEMAX,
+  aOVN_LONGEVITY_STACK_COMPLETE,
+  aOVN_BPC157_LONGEVITY,
+  aOVN_NAD_LONGEVITY_2026,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
