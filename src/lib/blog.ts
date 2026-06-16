@@ -1822,6 +1822,9 @@ import { article as aOVN_BPC157_SHOULDER } from './articles/bpc-157-rotator-cuff
 import { article as aOVN_SELANK_ANXIETY } from './articles/selank-anxiety-research-nexphoria';
 import { article as aOVN_BUY_USA } from './articles/how-to-source-research-peptides-usa';
 import { article as aOVN_MUSCLE_RECOVERY } from './articles/research-peptides-muscle-recovery-studies';
+import { article as aOVN17_CATESTATIN } from './articles/catestatin-chromogranin-a-derived-peptide-cardiovascular-research';
+import { article as aOVN17_ADIPOKINES } from './articles/adipokine-peptides-visfatin-resistin-omentin-vaspin-metabolic-research';
+import { article as aOVN17_PREPTIN } from './articles/preptin-pancreatic-peptide-bone-metabolism-insulin-research';
 
 
 export const articles: BlogArticle[] = [
@@ -3663,6 +3666,9 @@ export const articles: BlogArticle[] = [
   aOVN_SELANK_ANXIETY,
   aOVN_BUY_USA,
   aOVN_MUSCLE_RECOVERY,
+  aOVN17_CATESTATIN,
+  aOVN17_ADIPOKINES,
+  aOVN17_PREPTIN,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
