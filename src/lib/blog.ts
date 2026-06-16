@@ -1807,6 +1807,9 @@ import { article as aOVNJUN17_SELANKSEMAX } from './articles/selank-vs-semax-noo
 import { article as aOVN_LONGEVITY_STACK_COMPLETE } from './articles/peptide-research-longevity-complete-stack-guide';
 import { article as aOVN_BPC157_LONGEVITY } from './articles/bpc-157-longevity-anti-aging-mechanisms-research';
 import { article as aOVN_NAD_LONGEVITY_2026 } from './articles/nad-plus-longevity-complete-researchers-guide-2026';
+import { article as aJUN16OVN_AGING_MEN } from './articles/peptide-research-aging-men-testosterone-longevity-2026';
+import { article as aJUN16OVN_HEAT_STAB } from './articles/peptide-research-heat-stress-hydration-electrolyte-stability-2026';
+import { article as aJUN16OVN_TRIPLE_STACK } from './articles/peptide-research-bpc157-tb500-ghkcu-triple-recovery-protocol-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3633,6 +3636,9 @@ export const articles: BlogArticle[] = [
   aOVN_LONGEVITY_STACK_COMPLETE,
   aOVN_BPC157_LONGEVITY,
   aOVN_NAD_LONGEVITY_2026,
+  aJUN16OVN_AGING_MEN,
+  aJUN16OVN_HEAT_STAB,
+  aJUN16OVN_TRIPLE_STACK,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
