@@ -1786,6 +1786,9 @@ import { article as aOVN_SKIN_COLLAGEN } from './articles/peptide-research-skin-
 import { article as aJUN16OVN_VET } from './articles/veterinary-peptide-research-bpc157-tb500-animal-models';
 import { article as aJUN16OVN_DENTAL } from './articles/peptide-research-oral-dental-health-bpc157-ghk-cu';
 import { article as aJUN16OVN_SPORTMED } from './articles/peptide-research-sports-medicine-regenerative-applications';
+import { article as aOVN_NAD_NMN } from './articles/nad-plus-vs-nmn-longevity-research-comparison';
+import { article as aOVN_PS_ALT } from './articles/peptide-sciences-alternative-research-supplier-2026';
+import { article as aOVN_LONGEVITY_STACK } from './articles/longevity-peptide-stack-2026-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3591,6 +3594,9 @@ export const articles: BlogArticle[] = [
   aJUN16OVN_VET,
   aJUN16OVN_DENTAL,
   aJUN16OVN_SPORTMED,
+  aOVN_NAD_NMN,
+  aOVN_PS_ALT,
+  aOVN_LONGEVITY_STACK,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
