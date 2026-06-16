@@ -1877,6 +1877,9 @@ import { article as aJUN17_NEWS } from './articles/peptide-research-news-june-17
 import { article as aJUN16OVN_BEGINNER_2026 } from './articles/peptide-beginner-guide-2026';
 import { article as aJUN16OVN_GH_COMPARE_2026 } from './articles/growth-hormone-peptides-comparison-2026';
 import { article as aJUN16OVN_TIRZ_SEMA_WL } from './articles/tirzepatide-vs-semaglutide-weight-loss-research';
+import { article as aJUN16OVN_IPA_SE } from './articles/ipamorelin-side-effects-research';
+import { article as aJUN16OVN_HEX_IPA } from './articles/hexarelin-vs-ipamorelin-comparison';
+import { article as aJUN16OVN_PEP_FRIDGE } from './articles/peptide-refrigeration-temperature-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3773,6 +3776,9 @@ export const articles: BlogArticle[] = [
   aJUN16OVN_BEGINNER_2026,
   aJUN16OVN_GH_COMPARE_2026,
   aJUN16OVN_TIRZ_SEMA_WL,
+  aJUN16OVN_IPA_SE,
+  aJUN16OVN_HEX_IPA,
+  aJUN16OVN_PEP_FRIDGE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
