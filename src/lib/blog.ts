@@ -1810,6 +1810,9 @@ import { article as aOVN_NAD_LONGEVITY_2026 } from './articles/nad-plus-longevit
 import { article as aJUN16OVN_AGING_MEN } from './articles/peptide-research-aging-men-testosterone-longevity-2026';
 import { article as aJUN16OVN_HEAT_STAB } from './articles/peptide-research-heat-stress-hydration-electrolyte-stability-2026';
 import { article as aJUN16OVN_TRIPLE_STACK } from './articles/peptide-research-bpc157-tb500-ghkcu-triple-recovery-protocol-2026';
+import { article as aJUN16_GHKCU_BRAIN } from './articles/ghk-cu-brain-health-research-2026';
+import { article as aJUN16_IPA_AGING } from './articles/ipamorelin-aging-research-2026';
+import { article as aJUN16_GLP1_MENTAL } from './articles/glp1-agonists-mental-health-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3639,6 +3642,9 @@ export const articles: BlogArticle[] = [
   aJUN16OVN_AGING_MEN,
   aJUN16OVN_HEAT_STAB,
   aJUN16OVN_TRIPLE_STACK,
+  aJUN16_GHKCU_BRAIN,
+  aJUN16_IPA_AGING,
+  aJUN16_GLP1_MENTAL,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
