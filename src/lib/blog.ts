@@ -1816,6 +1816,9 @@ import { article as aJUN16_GLP1_MENTAL } from './articles/glp1-agonists-mental-h
 import { article as aJUN16_LONGEVITY_STACK } from './articles/longevity-peptide-stack-2026-guide';
 import { article as aJUN16_BPC157_TB500_COMBO } from './articles/bpc-157-tb-500-combined-protocol-research';
 import { article as aJUN16_RECON_GUIDE } from './articles/peptide-reconstitution-research-protocol-guide';
+import { article as aOVN_SUMMER_TRAIN_2026 } from './articles/peptide-research-summer-training-recovery-2026';
+import { article as aOVN_CJC_IPA_FATLOSS } from './articles/cjc-1295-ipamorelin-fat-loss-body-composition-research';
+import { article as aOVN_BPC157_SHOULDER } from './articles/bpc-157-rotator-cuff-shoulder-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3651,6 +3654,9 @@ export const articles: BlogArticle[] = [
   aJUN16_LONGEVITY_STACK,
   aJUN16_BPC157_TB500_COMBO,
   aJUN16_RECON_GUIDE,
+  aOVN_SUMMER_TRAIN_2026,
+  aOVN_CJC_IPA_FATLOSS,
+  aOVN_BPC157_SHOULDER,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
