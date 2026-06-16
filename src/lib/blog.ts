@@ -1783,6 +1783,9 @@ import { article as aOVN_ALCOHOL_GUT } from './articles/peptide-research-alcohol
 import { article as aOVN_JOINT_2026 } from './articles/peptide-research-joint-health-cartilage-repair-2026';
 import { article as aOVN_MOTSC_SS31 } from './articles/mots-c-vs-ss31-mitochondrial-peptide-research-comparison';
 import { article as aOVN_SKIN_COLLAGEN } from './articles/peptide-research-skin-collagen-ghk-cu-bpc157-2026';
+import { article as aJUN16OVN_VET } from './articles/veterinary-peptide-research-bpc157-tb500-animal-models';
+import { article as aJUN16OVN_DENTAL } from './articles/peptide-research-oral-dental-health-bpc157-ghk-cu';
+import { article as aJUN16OVN_SPORTMED } from './articles/peptide-research-sports-medicine-regenerative-applications';
 
 
 export const articles: BlogArticle[] = [
@@ -3585,6 +3588,9 @@ export const articles: BlogArticle[] = [
   aOVN_JOINT_2026,
   aOVN_MOTSC_SS31,
   aOVN_SKIN_COLLAGEN,
+  aJUN16OVN_VET,
+  aJUN16OVN_DENTAL,
+  aJUN16OVN_SPORTMED,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
