@@ -1834,6 +1834,9 @@ import { article as aJUN16HEAT3 } from './articles/nad-plus-iv-infusion-vs-oral-
 import { article as aOVNJUN17_ECNOG } from './articles/where-to-buy-ecnoglutide-research-guide';
 import { article as aOVNJUN17_EFRUX } from './articles/where-to-buy-efruxifermin-research-guide';
 import { article as aOVNJUN17_CAGRISEMA } from './articles/how-long-does-cagrisema-take-to-work-research-timeline';
+import { article as aJUN16OVN_SLEEP_NEUROPEP } from './articles/peptide-research-sleep-circadian-rhythm-dsip-selank-ipamorelin-2026';
+import { article as aJUN16OVN_TIRZ_RETA } from './articles/tirzepatide-vs-retatrutide-dual-vs-triple-agonist-research-deep-dive-2026';
+import { article as aJUN16OVN_COGPEP } from './articles/peptide-research-cognitive-performance-semax-selank-ghk-cu-neuropeptide-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3687,6 +3690,9 @@ export const articles: BlogArticle[] = [
   aOVNJUN17_ECNOG,
   aOVNJUN17_EFRUX,
   aOVNJUN17_CAGRISEMA,
+  aJUN16OVN_SLEEP_NEUROPEP,
+  aJUN16OVN_TIRZ_RETA,
+  aJUN16OVN_COGPEP,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
