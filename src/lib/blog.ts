@@ -1819,6 +1819,9 @@ import { article as aJUN16_RECON_GUIDE } from './articles/peptide-reconstitution
 import { article as aOVN_SUMMER_TRAIN_2026 } from './articles/peptide-research-summer-training-recovery-2026';
 import { article as aOVN_CJC_IPA_FATLOSS } from './articles/cjc-1295-ipamorelin-fat-loss-body-composition-research';
 import { article as aOVN_BPC157_SHOULDER } from './articles/bpc-157-rotator-cuff-shoulder-research-guide';
+import { article as aOVN_SELANK_ANXIETY } from './articles/selank-anxiety-research-nexphoria';
+import { article as aOVN_BUY_USA } from './articles/how-to-source-research-peptides-usa';
+import { article as aOVN_MUSCLE_RECOVERY } from './articles/research-peptides-muscle-recovery-studies';
 
 
 export const articles: BlogArticle[] = [
@@ -3657,6 +3660,9 @@ export const articles: BlogArticle[] = [
   aOVN_SUMMER_TRAIN_2026,
   aOVN_CJC_IPA_FATLOSS,
   aOVN_BPC157_SHOULDER,
+  aOVN_SELANK_ANXIETY,
+  aOVN_BUY_USA,
+  aOVN_MUSCLE_RECOVERY,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
