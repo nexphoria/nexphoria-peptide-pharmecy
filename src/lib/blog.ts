@@ -1880,6 +1880,9 @@ import { article as aJUN16OVN_TIRZ_SEMA_WL } from './articles/tirzepatide-vs-sem
 import { article as aJUN16OVN_IPA_SE } from './articles/ipamorelin-side-effects-research';
 import { article as aJUN16OVN_HEX_IPA } from './articles/hexarelin-vs-ipamorelin-comparison';
 import { article as aJUN16OVN_PEP_FRIDGE } from './articles/peptide-refrigeration-temperature-guide';
+import { article as aJUN16OVN_BPC_TB_COMBO } from './articles/bpc-157-tb-500-combined-protocol-research-jun2026';
+import { article as aJUN16OVN_HEXARELIN_CARDIAC } from './articles/hexarelin-cardiac-gh-research-jun2026';
+import { article as aJUN16OVN_SELANK_ANXIETY } from './articles/selank-anxiolytic-nootropic-research-jun2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3779,6 +3782,9 @@ export const articles: BlogArticle[] = [
   aJUN16OVN_IPA_SE,
   aJUN16OVN_HEX_IPA,
   aJUN16OVN_PEP_FRIDGE,
+  aJUN16OVN_BPC_TB_COMBO,
+  aJUN16OVN_HEXARELIN_CARDIAC,
+  aJUN16OVN_SELANK_ANXIETY,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
