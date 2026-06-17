@@ -1922,6 +1922,9 @@ import { article as aJUN17OVN_VENDOR_COMPARE } from './articles/peptide-vendor-c
 import { article as aJUN17OVN_BPC157_COMPLETE_2026 } from './articles/bpc-157-complete-research-guide-2026';
 import { article as aJUN17OVN_LONGEVITY_STACK_2026 } from './articles/longevity-peptide-stack-2026';
 import { article as aJUN17OVN_USA_BUYERS_GUIDE_2026 } from './articles/how-to-source-research-peptides-usa-buyers-guide';
+import { article as aOVN_KPV } from './articles/kpv-peptide-anti-inflammatory-research-guide';
+import { article as aOVN_LL37 } from './articles/ll-37-antimicrobial-peptide-research-guide-2026';
+import { article as aOVN_STRESS } from './articles/best-peptides-chronic-stress-cortisol-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3863,6 +3866,9 @@ export const articles: BlogArticle[] = [
   aJUN17OVN_BPC157_COMPLETE_2026,
   aJUN17OVN_LONGEVITY_STACK_2026,
   aJUN17OVN_USA_BUYERS_GUIDE_2026,
+  aOVN_KPV,
+  aOVN_LL37,
+  aOVN_STRESS,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
