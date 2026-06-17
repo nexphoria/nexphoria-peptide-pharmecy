@@ -1,13 +1,13 @@
 import type { BlogArticle } from '../blog-types';
 
 export const article: BlogArticle = {
-  slug: "nexphoria-quality-standards-hplc-lal-coa",
+  slug: "nexphoria-quality-standards",
   title: "Nexphoria Quality Standards: HPLC, LAL Testing, and COA Transparency",
   description:
     "How Nexphoria verifies research peptide quality — HPLC purity analysis, LAL endotoxin testing, mass spectrometry, and batch-level COA documentation. Our quality framework explained.",
   category: "About Nexphoria",
-  readMinutes: 9,
-  publishedAt: "2026-06-04",
+  readMinutes: 8,
+  publishedAt: "2026-06-17",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -28,21 +28,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Common quality failures in the commodity peptide market include:",
-    },
-    {
-      type: "list",
-      items: [
-        "Purity inflation — reported purity that reflects internal testing methods with lower sensitivity or less rigorous separation conditions",
-        "Generic COAs — documents that describe a compound category rather than a specific batch",
-        "No mass spectrometry — HPLC confirms purity but not identity; a peptide can pass HPLC at high purity while being the wrong sequence",
-        "Endotoxin contamination — bacterial LPS present in a research compound will activate inflammatory pathways in any cell culture or animal model, confounding experimental results",
-        "Cold-chain failures — peptides shipped without temperature control arrive degraded, regardless of initial quality",
-      ],
-    },
-    {
-      type: "paragraph",
-      text: "Nexphoria was built to address each of these failure modes with documented, systematic quality protocols.",
+      text: "Common quality failures in the commodity peptide market include purity inflation — reported purity that reflects internal testing methods with lower sensitivity or less rigorous separation conditions. Generic COAs describe a compound category rather than a specific batch. No mass spectrometry means HPLC confirms purity but not identity; a peptide can pass HPLC at high purity while being the wrong sequence. Endotoxin contamination — bacterial LPS present in a research compound — will activate inflammatory pathways in any cell culture or animal model, confounding experimental results. And cold-chain failures mean peptides shipped without temperature control arrive degraded, regardless of initial quality.",
     },
     {
       type: "heading",
@@ -58,7 +44,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "At ≥98% purity, impurities — including truncated sequences, modified residues, and reagent residuals from synthesis — are minimized to a level that does not materially affect research outcomes in standard protocols.",
+      text: "Impurities in research peptides typically include truncated sequences (incomplete synthesis products), modified residues (oxidized methionine, deamidated asparagine), and reagent residuals from the synthesis process. At ≥98% purity, these are minimized to a level that does not materially affect research outcomes in standard protocols.",
     },
     {
       type: "heading",
@@ -78,15 +64,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Endotoxin contamination is a quality concern specific to research applications — particularly cell culture and animal model work. Endotoxins (lipopolysaccharides, or LPS) are components of gram-negative bacterial cell walls. They are potent activators of the innate immune system, capable of triggering inflammatory responses at concentrations as low as picograms per milliliter.",
+      text: "Endotoxins (lipopolysaccharides, or LPS) are components of gram-negative bacterial cell walls. They are potent activators of the innate immune system, capable of triggering inflammatory responses at concentrations as low as picograms per milliliter. In research contexts, endotoxin-contaminated compounds will activate NF-κB and pro-inflammatory cytokine cascades in any cell expressing TLR4, confound cytokine measurements, gene expression studies, and functional assays, and produce spurious animal model results attributed to the compound under study.",
     },
     {
       type: "paragraph",
-      text: "In research contexts, endotoxin-contaminated compounds will activate NF-κB and pro-inflammatory cytokine cascades in any cell expressing TLR4, confound cytokine measurements and functional assays, and produce spurious animal model results attributed to the compound under study.",
-    },
-    {
-      type: "paragraph",
-      text: "The Limulus Amebocyte Lysate (LAL) test uses clotting enzymes from horseshoe crab blood cells that react specifically with LPS. The quantitative LAL assay provides a numerical endotoxin value in EU/mg or EU/mL.",
+      text: "The Limulus Amebocyte Lysate (LAL) test uses clotting enzymes from horseshoe crab (Limulus polyphemus) blood cells that react specifically with LPS. The quantitative LAL assay (rFC or traditional LAL) provides a numerical endotoxin value in EU/mg or EU/mL.",
     },
     {
       type: "callout",
@@ -98,7 +80,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "A Certificate of Analysis is the primary quality document for a research compound. At Nexphoria, every COA includes compound name and full sequence, batch/lot number for traceability, HPLC purity percentage and chromatogram, mass spectrometry data with theoretical and observed MW, LAL endotoxin result in EU/mg with pass/fail determination, third-party testing laboratory name and accreditation, testing date for this specific batch, and recommended storage conditions.",
+      text: "A Certificate of Analysis is the primary quality document for a research compound. At Nexphoria, every COA includes the compound name (full IUPAC and common name), amino acid sequence in single-letter code, unique batch/lot number for traceability, HPLC purity percentage with chromatogram, MS data with theoretical and observed MW, LAL endotoxin result in EU/mg with pass/fail, third-party testing laboratory name and accreditation, date of analysis, and recommended storage conditions.",
     },
     {
       type: "callout",
@@ -110,7 +92,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Quality testing can only validate what synthesis quality delivers. Nexphoria sources from synthesis partners that apply GMP-aligned synthesis protocols in controlled environments, Solid-Phase Peptide Synthesis (SPPS) with validated coupling efficiency, intermediate purification to minimize side-chain modification products, and final purification by preparative HPLC to achieve target purity before testing. The test results in the COA reflect real synthesis quality — they are not cosmetic.",
+      text: "Quality testing can only validate what synthesis quality delivers. Nexphoria sources from synthesis partners that maintain GMP-aligned synthesis protocols in controlled environments with documented procedures. Solid-Phase Peptide Synthesis (SPPS) is used with validated coupling efficiency. Intermediate purification minimizes side-chain modification products. Final purification by preparative HPLC achieves target purity before testing. The test results in the COA reflect real synthesis quality — they are not cosmetic.",
     },
     {
       type: "heading",
@@ -118,7 +100,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Quality at synthesis is only preserved if the cold chain is maintained through shipping and delivery. Nexphoria ships lyophilized products with cold packs for temperature-sensitive routes, uses amber/opaque vials to protect photosensitive compounds, includes sealed secondary packaging with moisture-control desiccant, and adds temperature indicators on shipments where required.",
+      text: "Quality at synthesis is only preserved if the cold chain is maintained through shipping and delivery. Lyophilized products ship with cold packs for temperature-sensitive routes. Amber and opaque vials protect photosensitive compounds. Sealed secondary packaging includes moisture-control desiccant. Temperature indicators are included on shipments where required.",
     },
     {
       type: "heading",
@@ -127,9 +109,6 @@ export const article: BlogArticle = {
     {
       type: "paragraph",
       text: "The research community depends on supplier transparency. When a compound produces unexpected results in an experiment, researchers need to be able to rule out compound quality as a variable. That requires documentation — specific, batch-level, independently verified documentation. Generic or interpolated COAs do not allow researchers to rule out quality as an experimental variable. Nexphoria's batch-specific documentation standard exists precisely to support the kind of rigorous experimental design that research requires.",
-    },
-    {
-      type: "divider",
     },
     {
       type: "disclaimer",
