@@ -1443,6 +1443,9 @@ import { article as a1493 } from './articles/efocipegtrutide-triple-agonist-rese
 import { article as aJUN17OVN8_FIRSTPROT } from './articles/first-timer-protocol-conservative-8-week-starter';
 import { article as aJUN17OVN8_BIOMARK } from './articles/how-to-read-your-response-biomarker-tracking';
 import { article as aJUN17OVN8_RECPHARM } from './articles/peptide-receptor-pharmacology-non-scientists';
+import { article as aJUN17OVN9_5AMQ } from './articles/5-amino-1mq-nnmt-inhibitor-metabolic-research-guide';
+import { article as aJUN17OVN9_AOD_LIPO } from './articles/aod-9604-lipolysis-complete-research-protocol-guide';
+import { article as aJUN17OVN9_ANTIAGING } from './articles/anti-aging-peptide-stack';
 import { article as aX01 } from './articles/does-tirzepatide-cause-hair-loss-research-guide';
 import { article as aX02 } from './articles/peptide-expiration-shelf-life-opened-vials-research-guide';
 import { article as aX03 } from './articles/peptide-research-news-july-2026';
@@ -3911,6 +3914,9 @@ export const articles: BlogArticle[] = [
   aJUN17OVN8_FIRSTPROT,
   aJUN17OVN8_BIOMARK,
   aJUN17OVN8_RECPHARM,
+  aJUN17OVN9_5AMQ,
+  aJUN17OVN9_AOD_LIPO,
+  aJUN17OVN9_ANTIAGING,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
