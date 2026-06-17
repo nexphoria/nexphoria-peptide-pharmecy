@@ -1934,6 +1934,9 @@ import { article as aJUN17OVN_TB500_ACTIN } from './articles/tb-500-thymosin-bet
 import { article as aOVN_WOLVERINE_TIMELINE } from './articles/how-long-does-wolverine-blend-take-to-work-research-timeline';
 import { article as aOVN_BPC157_TENNIS_ELBOW } from './articles/bpc-157-lateral-epicondylitis-tennis-elbow-research-guide';
 import { article as aOVN_BIOSTAR_COMPARE } from './articles/nexphoria-vs-biostar-peptides-vendor-comparison';
+import { article as aJUN17OVN_SELANK_SE } from './articles/selank-side-effects-research-guide';
+import { article as aJUN17OVN_PT141_SE } from './articles/pt-141-bremelanotide-side-effects-research';
+import { article as aJUN17OVN_MT2_SE } from './articles/melanotan-2-side-effects-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3887,6 +3890,9 @@ export const articles: BlogArticle[] = [
   aOVN_WOLVERINE_TIMELINE,
   aOVN_BPC157_TENNIS_ELBOW,
   aOVN_BIOSTAR_COMPARE,
+  aJUN17OVN_SELANK_SE,
+  aJUN17OVN_PT141_SE,
+  aJUN17OVN_MT2_SE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
