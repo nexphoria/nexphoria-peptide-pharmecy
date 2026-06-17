@@ -1964,6 +1964,9 @@ import { article as aOVN_COLDCHAIN_SCI } from './articles/cold-chain-peptide-shi
 import { article as aJUN17OVN4_BPC_CARTILAGE } from './articles/bpc-157-articular-cartilage-meniscus-research-guide';
 import { article as aJUN17OVN4_SELANK_PTSD } from './articles/selank-ptsd-trauma-anxiety-research-guide';
 import { article as aJUN17OVN4_NAD_COCHLEAR } from './articles/nad-plus-cochlear-hearing-protection-research-guide';
+import { article as aJUN17OVN5_SETMELANOTIDE } from './articles/where-to-buy-setmelanotide-research-guide';
+import { article as aJUN17OVN5_BIMAGRUMAB } from './articles/where-to-buy-bimagrumab-research-guide';
+import { article as aJUN17OVN5_PETRELINTIDE } from './articles/where-to-buy-petrelintide-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3851,6 +3854,9 @@ export const articles: BlogArticle[] = [
   aJUN17OVN4_BPC_CARTILAGE,
   aJUN17OVN4_SELANK_PTSD,
   aJUN17OVN4_NAD_COCHLEAR,
+  aJUN17OVN5_SETMELANOTIDE,
+  aJUN17OVN5_BIMAGRUMAB,
+  aJUN17OVN5_PETRELINTIDE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
