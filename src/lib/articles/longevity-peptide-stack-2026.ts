@@ -4,12 +4,16 @@ export const article: BlogArticle = {
   slug: "longevity-peptide-stack-2026",
   title: "The 2026 Longevity Peptide Stack Researchers Are Studying",
   description:
-    "A research-oriented overview of the peptide combinations longevity scientists are investigating in 2026. Covers GH axis restoration, telomere biology, tissue repair, mitochondrial targets, and neurological maintenance.",
-  category: "Research Fundamentals",
-  readMinutes: 11,
-  publishedAt: "2026-06-15",
+    "A research-oriented overview of the peptide combinations longevity scientists are investigating in 2026. Covers GH axis, telomere biology, tissue repair, mitochondrial targets, and neurological maintenance.",
+  category: "Longevity Research",
+  readMinutes: 12,
+  publishedAt: "2026-06-17",
   ogImage: "/og-image.jpg",
   body: [
+    {
+      type: "disclaimer",
+      text: "All compounds discussed are research chemicals for use by licensed researchers and scientific educators only. This is not medical advice.",
+    },
     {
       type: "paragraph",
       text: "Longevity research has evolved from broadly interventional approaches — caloric restriction, exercise biology, antioxidant supplementation — toward more targeted molecular strategies. Peptides and peptide-like compounds have emerged as particularly promising research tools because of their high specificity, relatively short development timelines, and the existence of endogenous analogs that provide mechanistic validation.",
@@ -44,7 +48,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Rather than administering exogenous GH (which suppresses endogenous production and carries IGF-1 overshoot risks), CJC-1295 + Ipamorelin targets the upstream regulatory system — preserving pulsatility while amplifying GH output. Research focus in 2026 includes tissue-specific effects of GH pulse restoration, interaction with IGF-1 axis in aged models, and potential synergy with senolytic compounds.",
+      text: "Rather than administering exogenous GH (which suppresses endogenous production and carries IGF-1 overshoot risks), CJC-1295 + Ipamorelin targets the upstream regulatory system — preserving pulsatility while amplifying GH output.",
+    },
+    {
+      type: "callout",
+      text: "Research focus in 2026: Tissue-specific effects of GH pulse restoration; interaction with IGF-1 axis in aged models; potential synergy with senolytic compounds.",
     },
     {
       type: "heading",
@@ -56,7 +64,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "The tetrapeptide Epithalon (Ala-Glu-Asp-Gly) has been studied since the 1980s for telomerase activation and longevity extension in multiple model organisms. It represents the most investigated peptide tool for direct telomere biology research. Research focus in 2026 includes combination with NAD+ precursors (NMN, NR) to address both telomere attrition and mitochondrial dysfunction hallmarks simultaneously, comparative studies against TA-65 (cycloastragenol), and epigenetic clock analysis in treated vs. untreated populations.",
+      text: "The tetrapeptide Epithalon (Ala-Glu-Asp-Gly) has been studied since the 1980s for telomerase activation and longevity extension in multiple model organisms. It represents the most investigated peptide tool for direct telomere biology research.",
+    },
+    {
+      type: "callout",
+      text: "Research focus in 2026: Combination with NAD+ precursors (NMN, NR) to address both telomere attrition and mitochondrial dysfunction hallmarks simultaneously; comparative studies against TA-65 (cycloastragenol); epigenetic clock analysis in treated vs. untreated populations.",
     },
     {
       type: "heading",
@@ -68,11 +80,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "BPC-157 (Body Protection Compound-157) is a pentadecapeptide derived from a gastric juice protein, studied extensively for tissue repair, angiogenesis, and neuroprotection. Its proposed mechanisms include nitric oxide system modulation (promoting vascular healing), tendon and ligament repair via upregulation of growth factor expression in connective tissue, GI tract cytoprotection, and neurological healing through dopamine system normalization in animal models.",
+      text: "BPC-157 (Body Protection Compound-157) is a pentadecapeptide derived from a gastric juice protein, studied extensively for tissue repair, angiogenesis, and neuroprotection. Its proposed mechanisms include nitric oxide system modulation promoting vascular healing, tendon and ligament repair via growth factor upregulation, GI tract cytoprotection, and dopamine system normalization in animal models.",
     },
     {
-      type: "paragraph",
-      text: "In a longevity context, BPC-157's tissue maintenance effects are relevant as scaffolding: preserving structural integrity while other interventions address cellular and molecular aging. Research focus in 2026 includes interaction with GH axis compounds, neuroprotective synergy with nootropic peptides, and gut-brain axis implications.",
+      type: "callout",
+      text: "Research focus in 2026: Interaction with GH axis compounds; neuroprotective synergy with nootropic peptides; gut-brain axis implications.",
     },
     {
       type: "subheading",
@@ -80,7 +92,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "TB-500 is a synthetic analog of Thymosin β4, a ubiquitous intracellular peptide involved in actin regulation, wound healing, and cardiac protection. Research has documented accelerated wound healing in multiple tissue types, cardioprotective effects following ischemic injury, and stem cell migration facilitation to sites of injury. TB-500 and BPC-157 are frequently studied in combination for their complementary tissue repair profiles — BPC-157 primarily vascular/gastrointestinal; TB-500 primarily musculoskeletal/cardiac.",
+      text: "TB-500 is a synthetic analog of Thymosin β4, a ubiquitous intracellular peptide involved in actin regulation, wound healing, and cardiac protection. Research has documented accelerated wound healing in multiple tissue types, cardioprotective effects following ischemic injury, and stem cell migration facilitation to injury sites.",
+    },
+    {
+      type: "paragraph",
+      text: "TB-500 and BPC-157 are frequently studied in combination for their complementary tissue repair profiles — BPC-157 primarily vascular/gastrointestinal; TB-500 primarily musculoskeletal/cardiac.",
     },
     {
       type: "heading",
@@ -92,7 +108,16 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "MOTS-c is a mitochondria-derived peptide (MDP) encoded within the mitochondrial 12S rRNA. It represents a newer class of research targets: peptides produced by mitochondria that regulate nuclear gene expression. Research findings include insulin sensitization (reversal of diet-induced insulin resistance in mouse models), exercise-mimetic effects through activation of AMPK and related metabolic sensors, lifespan extension demonstrated in C. elegans and explored in mammalian models, and age-dependent decline in MOTS-c levels suggesting it as both a biomarker and potential intervention target.",
+      text: "MOTS-c is a mitochondria-derived peptide (MDP) encoded within the mitochondrial 12S rRNA. It represents a newer class of research targets: peptides produced by mitochondria that regulate nuclear gene expression.",
+    },
+    {
+      type: "list",
+      items: [
+        "Insulin sensitization — reversal of diet-induced insulin resistance in mouse models",
+        "Exercise-mimetic effects — activation of AMPK and related metabolic sensors",
+        "Lifespan extension — demonstrated in C. elegans and explored in mammalian models",
+        "Age-dependent decline in MOTS-c levels suggests it as both a biomarker and potential intervention target",
+      ],
     },
     {
       type: "subheading",
@@ -112,7 +137,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Russia's two most studied nootropic peptides represent CNS-focused longevity components. Semax (ACTH 4-7 analog) drives BDNF upregulation, neuroprotection, and cognitive enhancement. Selank (tuftsin analog) provides anxiolytic effects, BDNF upregulation, and immune modulation. In longevity research, neurological aging — including cognitive decline, neuroinflammation, and HPA axis dysregulation — is an understudied target relative to metabolic and cardiovascular aging. Neuropeptide research addresses this gap.",
+      text: "Russia's two most studied nootropic peptides represent CNS-focused longevity components. Semax (ACTH 4-7 analog) has been studied for BDNF upregulation, neuroprotection, and cognitive enhancement. Selank (tuftsin analog) has been studied for anxiolytic activity, BDNF upregulation, and immune modulation. In longevity research, neurological aging — including cognitive decline, neuroinflammation, and HPA axis dysregulation — is an understudied target relative to metabolic and cardiovascular aging.",
     },
     {
       type: "heading",
@@ -152,8 +177,7 @@ export const article: BlogArticle = {
       text: "The 2026 longevity peptide research landscape reflects a maturing field — moving from individual compound characterization toward multi-target combination approaches grounded in the hallmarks-of-aging framework. GH axis restoration, telomere biology, mitochondrial function, tissue repair, and neurological maintenance represent the five primary research pillars, each with peptide tools of varying evidence maturity.",
     },
     {
-      type: "disclaimer",
-      text: "For research purposes only. Not intended for human use.",
+      type: "divider",
     },
   ],
 };

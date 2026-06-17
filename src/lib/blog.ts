@@ -1919,6 +1919,9 @@ import { article as aJUN17OVN_NAD_LONGEVITY } from './articles/nad-plus-longevit
 import { article as aJUN17OVN_EPITALON_NAD } from './articles/epithalon-nad-plus-longevity-stack-combination-protocol';
 import { article as aJUN17OVN_BPC_ORAL_VS_INJ } from './articles/bpc-157-oral-vs-injectable-route-comparison-research';
 import { article as aJUN17OVN_VENDOR_COMPARE } from './articles/peptide-vendor-comparison-2026-what-researchers-look-for';
+import { article as aJUN17OVN_BPC157_COMPLETE_2026 } from './articles/bpc-157-complete-research-guide-2026';
+import { article as aJUN17OVN_LONGEVITY_STACK_2026 } from './articles/longevity-peptide-stack-2026';
+import { article as aJUN17OVN_USA_BUYERS_GUIDE_2026 } from './articles/how-to-source-research-peptides-usa-buyers-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3857,6 +3860,9 @@ export const articles: BlogArticle[] = [
   aJUN17OVN_EPITALON_NAD,
   aJUN17OVN_BPC_ORAL_VS_INJ,
   aJUN17OVN_VENDOR_COMPARE,
+  aJUN17OVN_BPC157_COMPLETE_2026,
+  aJUN17OVN_LONGEVITY_STACK_2026,
+  aJUN17OVN_USA_BUYERS_GUIDE_2026,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

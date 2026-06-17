@@ -3,12 +3,17 @@ import type { BlogArticle } from '../blog-types';
 export const article: BlogArticle = {
   slug: "bpc-157-complete-research-guide-2026",
   title: "BPC-157: The Complete Research Guide (2026)",
-  description: "A comprehensive 2026 guide to BPC-157 covering its mechanism, key PubMed studies, preclinical dosing protocols, sourcing verification checklist, and storage requirements.",
-  category: "Compound Profiles",
-  readMinutes: 9,
-  publishedAt: "2026-06-14",
+  description:
+    "A comprehensive overview of BPC-157 (Body Protection Compound-157) for researchers in 2026. Covers mechanism of action, key PubMed studies, preclinical dosing protocols, sourcing criteria, and storage standards.",
+  category: "Research Guides",
+  readMinutes: 11,
+  publishedAt: "2026-06-17",
   ogImage: "/og-image.jpg",
   body: [
+    {
+      type: "disclaimer",
+      text: "All compounds discussed are research chemicals for use by licensed researchers and scientific educators only. Dosing information reflects preclinical animal research protocols only and is not medical advice.",
+    },
     {
       type: "paragraph",
       text: "BPC-157 (Body Protection Compound-157) is a synthetic pentadecapeptide derived from a protective protein found in the gastric juice of humans. With a sequence of 15 amino acids and a molecular formula of C62H98N16O22, it has accumulated a substantial body of preclinical research over the past three decades — making it one of the most referenced peptides in regenerative biology literature.",
@@ -36,7 +41,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Research suggests BPC-157 operates through several distinct pathways rather than a single characterized receptor interaction.",
+      text: "Research suggests BPC-157 operates through several distinct pathways that converge on tissue repair, vascular remodeling, and cytoprotection.",
     },
     {
       type: "subheading",
@@ -76,7 +81,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Research on BPC-157 is largely preclinical, but the volume of published work is notable. Key studies referenced in the literature include:",
+      text: "Research on BPC-157 is largely preclinical, but the volume of published work is notable. The following studies represent frequently cited references in the literature:",
     },
     {
       type: "list",
@@ -96,8 +101,8 @@ export const article: BlogArticle = {
       text: "Dosing Protocols Studied in Research",
     },
     {
-      type: "callout",
-      text: "Note: The following reflects dosing protocols used in preclinical animal research only. These figures are not clinical recommendations.",
+      type: "paragraph",
+      text: "The following reflects dosing protocols used in preclinical animal research only. These figures are not clinical recommendations and should not be extrapolated to human use.",
     },
     {
       type: "table",
@@ -136,7 +141,7 @@ export const article: BlogArticle = {
     },
     {
       type: "subheading",
-      text: "Red Flags to Avoid",
+      text: "Red Flags",
     },
     {
       type: "list",
@@ -161,11 +166,14 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "BPC-157 remains one of the most actively studied peptides in preclinical regenerative research. Its multi-pathway mechanism, stability profile, and volume of published literature make it a compound of significant interest to researchers across gastroenterology, musculoskeletal biology, and neuroscience. For researchers building a protocol around BPC-157 research peptides, the foundation starts with verified purity, proper cold-chain handling, and a clear understanding of the available preclinical evidence.",
+      text: "BPC-157 remains one of the most actively studied peptides in preclinical regenerative research. Its multi-pathway mechanism, stability profile, and volume of published literature make it a compound of significant interest to researchers across gastroenterology, musculoskeletal biology, and neuroscience.",
     },
     {
-      type: "disclaimer",
-      text: "For research purposes only. Not intended for human use.",
+      type: "paragraph",
+      text: "For researchers building a protocol around BPC-157 research peptides, the foundation starts with verified purity, proper cold-chain handling, and a clear understanding of the available preclinical evidence.",
+    },
+    {
+      type: "divider",
     },
   ],
 };
