@@ -1970,6 +1970,9 @@ import { article as aJUN17OVN5_PETRELINTIDE } from './articles/where-to-buy-petr
 import { article as aJUN18OVN_VK2735 } from './articles/vk2735-viking-therapeutics-glp1-gip-dual-agonist-research-guide';
 import { article as aJUN18OVN_CABERGOLINE } from './articles/cabergoline-dopamine-agonist-peptide-research-guide';
 import { article as aJUN18OVN_DESLORELIN } from './articles/deslorelin-gnrh-superagonist-research-guide';
+import { article as aJUN17_VK2735 } from './articles/where-to-buy-vk2735-research-guide';
+import { article as aJUN17_TZ_MUSCLE } from './articles/does-tirzepatide-cause-muscle-loss-research';
+import { article as aJUN17_GLP1_SUM2026 } from './articles/glp1-agonists-summer-2026-what-researchers-need';
 
 
 export const articles: BlogArticle[] = [
@@ -3863,6 +3866,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN_VK2735,
   aJUN18OVN_CABERGOLINE,
   aJUN18OVN_DESLORELIN,
+  aJUN17_VK2735,
+  aJUN17_TZ_MUSCLE,
+  aJUN17_GLP1_SUM2026,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
