@@ -1916,6 +1916,9 @@ import { article as aJUN16OVN_DRUG_INTERACTIONS } from './articles/peptide-resea
 import { article as aJUN17OVN_MUSCLE_RECOVERY } from './articles/muscle-recovery-peptides-bpc157-tb500-igf1-follistatin-ipamorelin';
 import { article as aJUN17OVN_USA_BUYERS_GUIDE } from './articles/how-to-source-research-peptides-usa-buyers-guide';
 import { article as aJUN17OVN_NAD_LONGEVITY } from './articles/nad-plus-longevity-research-sirtuins-parp-hallmarks-aging';
+import { article as aJUN17OVN_EPITALON_NAD } from './articles/epithalon-nad-plus-longevity-stack-combination-protocol';
+import { article as aJUN17OVN_BPC_ORAL_VS_INJ } from './articles/bpc-157-oral-vs-injectable-route-comparison-research';
+import { article as aJUN17OVN_VENDOR_COMPARE } from './articles/peptide-vendor-comparison-2026-what-researchers-look-for';
 
 
 export const articles: BlogArticle[] = [
@@ -3851,6 +3854,9 @@ export const articles: BlogArticle[] = [
   aJUN17OVN_MUSCLE_RECOVERY,
   aJUN17OVN_USA_BUYERS_GUIDE,
   aJUN17OVN_NAD_LONGEVITY,
+  aJUN17OVN_EPITALON_NAD,
+  aJUN17OVN_BPC_ORAL_VS_INJ,
+  aJUN17OVN_VENDOR_COMPARE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
