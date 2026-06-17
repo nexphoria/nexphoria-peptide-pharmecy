@@ -1925,6 +1925,9 @@ import { article as aJUN17OVN_USA_BUYERS_GUIDE_2026 } from './articles/how-to-so
 import { article as aOVN_KPV } from './articles/kpv-peptide-anti-inflammatory-research-guide';
 import { article as aOVN_LL37 } from './articles/ll-37-antimicrobial-peptide-research-guide-2026';
 import { article as aOVN_STRESS } from './articles/best-peptides-chronic-stress-cortisol-research-2026';
+import { article as aJUN17_BPC_CORT } from './articles/bpc-157-vs-cortisone-injection-research-comparison';
+import { article as aJUN17_MK677_SLEEP } from './articles/mk-677-sleep-gh-pulse-growth-hormone-secretagogue-2026';
+import { article as aJUN17_SELANK_SEMAX } from './articles/selank-semax-nootropic-stack-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3869,6 +3872,9 @@ export const articles: BlogArticle[] = [
   aOVN_KPV,
   aOVN_LL37,
   aOVN_STRESS,
+  aJUN17_BPC_CORT,
+  aJUN17_MK677_SLEEP,
+  aJUN17_SELANK_SEMAX,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
