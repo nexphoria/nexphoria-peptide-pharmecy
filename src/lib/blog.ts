@@ -1476,6 +1476,9 @@ import { article as aJUN17_BPC157_INJURY_2026 } from './articles/bpc-157-injurie
 import { article as aJUN20OVN1_GLOSSARY } from './articles/research-peptide-glossary-complete';
 import { article as aJUN20OVN2_HEXARELIN } from './articles/hexarelin-cardiac-gh-research-complete-guide';
 import { article as aJUN20OVN3_SELANK } from './articles/selank-anxiety-nootropic-research-complete';
+import { article as aJUN17OVN15_BPC_HPYLORI } from './articles/bpc-157-h-pylori-gastric-ulcer-research-guide';
+import { article as aJUN17OVN15_BARIATRIC } from './articles/peptide-research-bariatric-surgery-post-op-recovery';
+import { article as aJUN17OVN15_CAFFEINE } from './articles/peptide-caffeine-adenosine-interaction-research-guide';
 import { article as aX01 } from './articles/does-tirzepatide-cause-hair-loss-research-guide';
 import { article as aX02 } from './articles/peptide-expiration-shelf-life-opened-vials-research-guide';
 import { article as aX03 } from './articles/peptide-research-news-july-2026';
@@ -3989,6 +3992,9 @@ export const articles: BlogArticle[] = [
   aJUN20OVN1_GLOSSARY,
   aJUN20OVN2_HEXARELIN,
   aJUN20OVN3_SELANK,
+  aJUN17OVN15_BPC_HPYLORI,
+  aJUN17OVN15_BARIATRIC,
+  aJUN17OVN15_CAFFEINE,
   aJUN17_PINEALON,
   aJUN17_CORTAGEN,
   aJUN17_VILON,
