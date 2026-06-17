@@ -190,7 +190,6 @@ export const article: BlogArticle = {
       text: "High-quality research-grade Semax should be characterized by HPLC chromatography (single major peak ≥98%), confirmed molecular weight by mass spectrometry (MW: 887.1 Da for the free peptide), and stored as lyophilized powder with documented reconstitution instructions.",
     },
     {
-      type: "type" in {} ? "callout" : "callout",
       type: "callout",
       text: "Nexphoria provides HPLC-verified Semax with full CoA documentation. All lots are tested for purity, identity by mass spectrometry, and microbial safety before release.",
     },
