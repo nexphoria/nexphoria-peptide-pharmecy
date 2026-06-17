@@ -1985,6 +1985,9 @@ import { article as aJUN18OVN3_FGF21 } from './articles/where-to-buy-fgf-21-fibr
 import { article as aJUN19OVN1 } from './articles/peptide-reconstitution-diluent-selection-guide';
 import { article as aJUN19OVN2 } from './articles/semaglutide-glp1-mechanism-obesity-research-overview';
 import { article as aJUN19OVN3 } from './articles/cold-chain-peptide-shipping-temperature-integrity-research';
+import { article as aJUN17OVN6_PEPTSCI_ALT } from './articles/peptide-sciences-alternative-nexphoria-guide';
+import { article as aJUN17OVN6_LONGEVITY_STACK } from './articles/longevity-peptide-stack-2026-research-overview';
+import { article as aJUN17OVN6_BPC157_COMPLETE } from './articles/bpc-157-complete-research-guide-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3893,6 +3896,9 @@ export const articles: BlogArticle[] = [
   aJUN19OVN1,
   aJUN19OVN2,
   aJUN19OVN3,
+  aJUN17OVN6_PEPTSCI_ALT,
+  aJUN17OVN6_LONGEVITY_STACK,
+  aJUN17OVN6_BPC157_COMPLETE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
