@@ -1952,6 +1952,9 @@ import { article as aJUN17OVN2_FOOD_TIMING } from './articles/peptide-administra
 import { article as aJUN18_CJC_COMPLETE } from './articles/cjc-1295-complete-guide-2026';
 import { article as aJUN18_NAD_WORKOUT } from './articles/nad-plus-workout-recovery-research-2026';
 import { article as aJUN18_NEWS } from './articles/peptide-research-june-18-2026';
+import { article as aJUN17OVN3_DANUGLIPRON } from './articles/how-long-does-danuglipron-take-to-work-research-timeline';
+import { article as aJUN17OVN3_COTADUTIDE } from './articles/how-long-does-cotadutide-take-to-work-research-timeline';
+import { article as aJUN17OVN3_EVE_UPDATE } from './articles/peptide-research-evening-update-june-17-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3827,6 +3830,9 @@ export const articles: BlogArticle[] = [
   aJUN18_CJC_COMPLETE,
   aJUN18_NAD_WORKOUT,
   aJUN18_NEWS,
+  aJUN17OVN3_DANUGLIPRON,
+  aJUN17OVN3_COTADUTIDE,
+  aJUN17OVN3_EVE_UPDATE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
