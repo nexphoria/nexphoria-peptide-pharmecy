@@ -1452,6 +1452,9 @@ import { article as aJUN17OVN10_WOLVERINE } from './articles/wolverine-stack-com
 import { article as aJUN17OVN11_KPV } from './articles/kpv-tripeptide-gut-inflammation-ibd-research-guide';
 import { article as aJUN17OVN11_NETRIN } from './articles/netrin-1-axon-guidance-neuroprotection-research-guide';
 import { article as aJUN17OVN11_ORALPEP } from './articles/oral-peptide-bioavailability-research-challenges-strategies';
+import { article as aJUN17OVN12_IPAGHAXIS } from './articles/ipamorelin-cjc-1295-gh-axis-timing-research';
+import { article as aJUN17OVN12_BPC_GHK_WH } from './articles/bpc-157-vs-ghk-cu-wound-healing-comparison';
+import { article as aJUN17OVN12_ATHLETES } from './articles/best-peptides-injury-recovery-athletes-2026';
 import { article as aX01 } from './articles/does-tirzepatide-cause-hair-loss-research-guide';
 import { article as aX02 } from './articles/peptide-expiration-shelf-life-opened-vials-research-guide';
 import { article as aX03 } from './articles/peptide-research-news-july-2026';
@@ -3929,6 +3932,9 @@ export const articles: BlogArticle[] = [
   aJUN17OVN11_KPV,
   aJUN17OVN11_NETRIN,
   aJUN17OVN11_ORALPEP,
+  aJUN17OVN12_IPAGHAXIS,
+  aJUN17OVN12_BPC_GHK_WH,
+  aJUN17OVN12_ATHLETES,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
