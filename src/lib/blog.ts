@@ -1440,6 +1440,9 @@ import { article as aNX3 } from './articles/why-hplc-purity-testing-matters-pept
 import { article as a1491 } from './articles/where-to-buy-pe-22-28-research-guide';
 import { article as a1492 } from './articles/lotiglipron-oral-glp1-research-guide';
 import { article as a1493 } from './articles/efocipegtrutide-triple-agonist-research-overview';
+import { article as aJUN17OVN8_FIRSTPROT } from './articles/first-timer-protocol-conservative-8-week-starter';
+import { article as aJUN17OVN8_BIOMARK } from './articles/how-to-read-your-response-biomarker-tracking';
+import { article as aJUN17OVN8_RECPHARM } from './articles/peptide-receptor-pharmacology-non-scientists';
 import { article as aX01 } from './articles/does-tirzepatide-cause-hair-loss-research-guide';
 import { article as aX02 } from './articles/peptide-expiration-shelf-life-opened-vials-research-guide';
 import { article as aX03 } from './articles/peptide-research-news-july-2026';
@@ -3905,6 +3908,9 @@ export const articles: BlogArticle[] = [
   aJUN17OVN7_EPITHALON_TEL,
   aJUN17OVN7_NAD_NMN,
   aJUN17OVN7_SELANK,
+  aJUN17OVN8_FIRSTPROT,
+  aJUN17OVN8_BIOMARK,
+  aJUN17OVN8_RECPHARM,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
