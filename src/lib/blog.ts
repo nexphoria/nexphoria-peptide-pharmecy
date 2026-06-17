@@ -1967,6 +1967,9 @@ import { article as aJUN17_WOLVERINE_BLEND } from './articles/bpc-157-tb-500-wol
 import { article as aJUN17_BPC157_SPORT } from './articles/bpc-157-sports-injury-research-guide';
 import { article as aJUN17_PEPTIDE_ATHLETES } from './articles/research-peptides-athletes-sports-recovery';
 import { article as aJUN17_IPA_SLEEP } from './articles/ipamorelin-sleep-gh-pulse-research';
+import { article as aJUN17OVN16_PERIPH_NEURO } from './articles/bpc-157-peripheral-neuropathy-nerve-repair-research';
+import { article as aJUN17OVN16_PEYRONIES } from './articles/peptide-research-peyronies-disease-fibrosis-collagen';
+import { article as aJUN17OVN16_RAYNAUDS } from './articles/peptide-research-raynauds-phenomenon-vascular-microcirculation';
 import { article as aJUN17_HEXARELIN_CD36 } from './articles/hexarelin-cd36-cardiac-pathway-research-2026';
 import { article as aJUN17_TA1_TLR9 } from './articles/thymosin-alpha-1-tlr9-dendritic-cell-research-2026';
 import { article as aJUN17_COA_CHECKLIST } from './articles/reading-peptide-coa-researcher-checklist-2026';
@@ -4052,6 +4055,9 @@ export const articles: BlogArticle[] = [
   aJUN17_BPC157_SPORT,
   aJUN17_PEPTIDE_ATHLETES,
   aJUN17_IPA_SLEEP,
+  aJUN17OVN16_PERIPH_NEURO,
+  aJUN17OVN16_PEYRONIES,
+  aJUN17OVN16_RAYNAUDS,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
