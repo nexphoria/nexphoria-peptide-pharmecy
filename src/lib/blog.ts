@@ -1461,6 +1461,9 @@ import { article as aJUN17_VILON } from './articles/vilon-dipeptide-immune-biore
 import { article as aJUN17_TZ_HAIR } from './articles/tirzepatide-hair-loss-research-guide-2026';
 import { article as aJUN17_GOLFERS_ELBOW } from './articles/peptide-research-golfers-elbow-medial-epicondylitis';
 import { article as aJUN17_NAD_PD } from './articles/nad-plus-parkinsons-neuroprotection-research-2026';
+import { article as aOVN_TB500_ACTIN_2026 } from './articles/tb-500-thymosin-beta-4-actin-research-2026-deep-dive';
+import { article as aOVN_NEX_QUAL_2026 } from './articles/nexphoria-quality-standards-coa-hplc-lal-guide-2026-updated';
+import { article as aOVN_SUM_TRENDING_2026 } from './articles/peptide-research-summer-2026-trending-compounds-buyers-guide';
 import { article as aJUN20OVN1_GLOSSARY } from './articles/research-peptide-glossary-complete';
 import { article as aJUN20OVN2_HEXARELIN } from './articles/hexarelin-cardiac-gh-research-complete-guide';
 import { article as aJUN20OVN3_SELANK } from './articles/selank-anxiety-nootropic-research-complete';
@@ -3953,6 +3956,9 @@ export const articles: BlogArticle[] = [
   aJUN17_TZ_HAIR,
   aJUN17_GOLFERS_ELBOW,
   aJUN17_NAD_PD,
+  aOVN_TB500_ACTIN_2026,
+  aOVN_NEX_QUAL_2026,
+  aOVN_SUM_TRENDING_2026,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
