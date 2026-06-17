@@ -4,10 +4,10 @@ export const article: BlogArticle = {
   slug: "semaglutide-research-peptide-glp1-overview",
   title: "Semaglutide as a Research Peptide: What the Studies Show",
   description:
-    "Semaglutide as a research peptide: what the published studies show on GLP-1 receptor agonism, metabolic regulation, and obesity models. An evidence-based overview for researchers and longevity scientists.",
+    "What the published research shows on semaglutide GLP-1 receptor agonism, metabolic regulation, and obesity models. An evidence-based overview for researchers and longevity scientists.",
   category: "Compound Profiles",
-  readMinutes: 10,
-  publishedAt: "2026-06-14",
+  readMinutes: 9,
+  publishedAt: "2026-06-17",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -20,11 +20,16 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "GLP-1 (glucagon-like peptide-1) is an incretin hormone naturally secreted by L-cells in the small intestine in response to nutrient ingestion. Its primary physiological roles include stimulating glucose-dependent insulin secretion from pancreatic beta cells, suppressing glucagon release from alpha cells, slowing gastric emptying to reduce postprandial glucose spikes, and acting on hypothalamic receptors to reduce appetite and food intake.",
+      text: "GLP-1 (glucagon-like peptide-1) is an incretin hormone naturally secreted by L-cells in the small intestine in response to nutrient ingestion. Native GLP-1 has a half-life of only 1–2 minutes in vivo due to rapid degradation by the enzyme dipeptidyl peptidase-4 (DPP-4). Semaglutide was engineered to resist this degradation, featuring a C18 fatty acid chain attached via a linker to the GLP-1 backbone — extending its half-life to approximately 7 days in human studies.",
     },
     {
-      type: "paragraph",
-      text: "Native GLP-1 has a half-life of only 1–2 minutes in vivo due to rapid degradation by the enzyme dipeptidyl peptidase-4 (DPP-4). Semaglutide was engineered to resist this degradation, featuring a C18 fatty acid chain attached via a linker to the GLP-1 backbone — extending its half-life to approximately 7 days in human studies.",
+      type: "list",
+      items: [
+        "Stimulates glucose-dependent insulin secretion from pancreatic beta cells",
+        "Suppresses glucagon release from alpha cells",
+        "Slows gastric emptying, reducing postprandial glucose spikes",
+        "Acts on hypothalamic receptors to reduce appetite and food intake",
+      ],
     },
     {
       type: "heading",
@@ -32,11 +37,17 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Semaglutide binds with high affinity to the GLP-1 receptor (GLP-1R), a G-protein coupled receptor (GPCR) expressed throughout the body. Key expression sites include the pancreas (insulin secretion, beta-cell preservation), hypothalamus (satiety signaling, reduced caloric intake), liver (suppression of hepatic glucose output), GI tract (slowed gastric emptying), and the cardiovascular system (anti-inflammatory and cardioprotective effects under study).",
+      text: "Semaglutide binds with high affinity to the GLP-1 receptor (GLP-1R), a G-protein coupled receptor (GPCR) expressed throughout the body. The receptor binding triggers cAMP-dependent signaling cascades, ultimately increasing insulin secretion in a glucose-dependent manner — an important safety profile consideration compared to older insulin secretagogues.",
     },
     {
-      type: "paragraph",
-      text: "The receptor binding triggers cAMP-dependent signaling cascades, ultimately increasing insulin secretion in a glucose-dependent manner — an important safety profile consideration compared to older insulin secretagogues.",
+      type: "list",
+      items: [
+        "Pancreas — insulin secretion, beta-cell preservation",
+        "Hypothalamus — satiety signaling, reduced caloric intake",
+        "Liver — suppression of hepatic glucose output",
+        "GI tract — slowed gastric emptying",
+        "Cardiovascular system — anti-inflammatory and cardioprotective effects under study",
+      ],
     },
     {
       type: "heading",
@@ -48,7 +59,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "The most widely cited human clinical research on semaglutide is the STEP (Semaglutide Treatment Effect in People with Obesity) trial program, published in The New England Journal of Medicine. STEP 1 (Wilding et al., 2021) — a 68-week double-blind RCT — showed participants receiving semaglutide 2.4 mg weekly achieved a mean body weight reduction of 14.9% versus 2.4% in the placebo group. STEP 3 (Wadden et al., 2021) combined semaglutide with intensive behavioral intervention, averaging 16% weight reduction. STEP 4 (Rubino et al., 2021) was a withdrawal study demonstrating weight regain upon cessation, confirming metabolic effects are pharmacodynamically sustained only during active treatment.",
+      text: "The most widely cited human clinical research on semaglutide is the STEP (Semaglutide Treatment Effect in People with Obesity) trial program, published in The New England Journal of Medicine. STEP 1 (Wilding et al., 2021) — in a 68-week double-blind RCT, participants receiving semaglutide 2.4 mg weekly achieved a mean body weight reduction of 14.9% versus 2.4% in the placebo group. STEP 3 (Wadden et al., 2021) combined semaglutide with intensive behavioral intervention, achieving average weight reduction of 16%. STEP 4 (Rubino et al., 2021) was a withdrawal study confirming weight regain upon cessation.",
     },
     {
       type: "subheading",
@@ -84,24 +95,21 @@ export const article: BlogArticle = {
     },
     {
       type: "heading",
-      text: "Sourcing Considerations",
+      text: "Sourcing Considerations for Researchers",
+    },
+    {
+      type: "paragraph",
+      text: "Semaglutide's modified backbone requires careful verification. Sequence verification via mass spectrometry is essential — the C18 fatty acid chain integrity must be confirmed. HPLC purity ≥99% should be verified from a COA. Cold-chain shipping is required to prevent degradation.",
     },
     {
       type: "list",
       items: [
-        "Sequence verification via mass spectrometry is essential — semaglutide's modified backbone requires confirmation of the C18 fatty acid chain integrity",
-        "HPLC purity ≥99% should be verified from a COA",
-        "Endotoxin testing (LAL) is required for in vivo administration protocols",
-        "Proper cold-chain storage (2–8°C) is critical for maintaining biological activity",
+        "Mass spectrometry confirmation — verifies C18 fatty acid chain and molecular identity",
+        "HPLC purity ≥99% — verify from third-party COA",
+        "Cold-chain shipping — semaglutide degrades at elevated temperatures",
+        "Endotoxin (LAL) testing — confirm endotoxin-free status before use in sensitive models",
+        "Sterile filtration — use 0.22 μm syringe filter for injectable preparations",
       ],
-    },
-    {
-      type: "heading",
-      text: "Research Context vs. Clinical Use",
-    },
-    {
-      type: "paragraph",
-      text: "It is important to distinguish between semaglutide studied as a research tool — to understand GLP-1 biology, metabolic pathways, and obesity mechanisms — and its regulated clinical applications. The published literature on semaglutide represents some of the highest-quality metabolic research available, making it a valuable reference point for researchers studying energy homeostasis and related pathways.",
     },
     {
       type: "heading",
@@ -109,7 +117,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Semaglutide's documented mechanism as a long-acting GLP-1 receptor agonist, combined with a substantial body of published clinical and preclinical research, makes it one of the most data-rich compounds available for metabolic biology research. For researchers studying obesity models, insulin secretion, cardiovascular biology, or gut-brain axis signaling, the semaglutide literature provides an unusually well-characterized pharmacological foundation.",
+      text: "Semaglutide has become a cornerstone of GLP-1 biology research, with a uniquely robust clinical trial base complementing its preclinical literature. Researchers investigating metabolic disease, obesity, cardiovascular protection, and emerging neurological applications will find it among the most evidence-rich compounds in the peptide research landscape. Protocol design should account for its extended half-life, dose-dependent side effect profile, and the critical importance of sequence-verified sourcing.",
     },
     {
       type: "disclaimer",

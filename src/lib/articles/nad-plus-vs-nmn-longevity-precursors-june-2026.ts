@@ -3,10 +3,11 @@ import type { BlogArticle } from '../blog-types';
 export const article: BlogArticle = {
   slug: "nad-plus-vs-nmn-longevity-precursors-june-2026",
   title: "NAD+ vs NMN: What Longevity Researchers Prefer in 2026",
-  description: "A research-focused comparison of NAD+ precursors NMN and NR versus direct NAD+ supplementation. What the published science says about bioavailability, mechanism, and longevity applications in 2026.",
+  description:
+    "A research-focused comparison of NAD+ precursors NMN and NR versus direct NAD+ supplementation. What the published science says about bioavailability, mechanism, and longevity applications.",
   category: "Longevity Research",
   readMinutes: 10,
-  publishedAt: "2026-06-15",
+  publishedAt: "2026-06-17",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -42,6 +43,15 @@ export const article: BlogArticle = {
       text: "NMN is a direct precursor to NAD+, one biosynthetic step upstream. It is converted to NAD+ via the enzyme NMNAT (Nicotinamide Mononucleotide Adenylyltransferase). David Sinclair's lab at Harvard published extensively on NMN's effects in aged mice, including improved vascular function, muscle endurance, and energy metabolism. A 2020 human pilot study (Yoshino et al.) showed that oral NMN supplementation raised blood NAD+ metabolite levels and improved insulin sensitivity in prediabetic women. NMN appears to be absorbed intestinally via a dedicated transporter (Slc12a8), enabling reasonably efficient uptake compared to NAD+ itself.",
     },
     {
+      type: "list",
+      items: [
+        "Direct precursor pathway — one enzymatic step to NAD+",
+        "Human clinical trial data beginning to emerge",
+        "Stable as a supplement at room temperature",
+        "Dedicated intestinal transporter (Slc12a8) improves absorption vs. oral NAD+",
+      ],
+    },
+    {
       type: "subheading",
       text: "NR (Nicotinamide Riboside)",
     },
@@ -55,7 +65,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Oral NAD+ faces a significant bioavailability problem. Research suggests most ingested NAD+ is cleaved in the gut to nicotinamide before absorption. IV NAD+ infusion bypasses this limitation and is used in clinical research contexts. Studies on IV NAD+ have examined effects on neurological function, addiction recovery applications, and acute elevation of tissue NAD+ levels. Subcutaneous and intranasal NAD+ delivery are also under investigation, with some preclinical data suggesting improved bioavailability over oral routes.",
+      text: "Oral NAD+ faces a significant bioavailability problem. Research suggests most ingested NAD+ is cleaved in the gut to nicotinamide before absorption. IV NAD+ infusion bypasses this limitation and is used in clinical research contexts. Studies on IV NAD+ have examined effects on neurological function, addiction recovery applications (early research, limited evidence), and acute elevation of tissue NAD+ levels. Subcutaneous and intranasal NAD+ delivery are also under investigation, with some pre-clinical data suggesting improved bioavailability over oral routes.",
     },
     {
       type: "heading",
@@ -69,7 +79,7 @@ export const article: BlogArticle = {
         ["NAD+ (IV/SC)", "Direct", "High", "Emerging"],
         ["NMN", "1 step (NMNAT)", "Moderate-Good", "Growing"],
         ["NR", "2 steps (NRK → NMNAT)", "Good", "Established"],
-        ["Nicotinamide (NAM)", "Salvage pathway", "Good", "Established, but feedback inhibition concern"],
+        ["Nicotinamide (NAM)", "Salvage pathway", "Good", "Established, feedback inhibition concern"],
       ],
     },
     {
@@ -78,19 +88,15 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "The longevity research community has not converged on a single preferred compound. The current evidence landscape suggests NMN's more direct pathway and emerging human data make it appealing to researchers interested in systemic NAD+ elevation, while NR benefits from a more extensive human clinical trial base and well-established safety and tolerability data across multiple published studies.",
-    },
-    {
-      type: "subheading",
-      text: "Notable Research Directions",
+      text: "The longevity research community has not converged on a single preferred compound. The current evidence landscape suggests NMN has the more direct pathway and growing human data, while NR has a more extensive clinical trial base with published safety and tolerability data across multiple studies.",
     },
     {
       type: "list",
       items: [
-        "Tissue-specific delivery — some researchers are investigating whether different precursors preferentially elevate NAD+ in different tissues (liver vs. muscle vs. brain)",
-        "NAMPT activators — compounds that upregulate the enzyme limiting NAD+ biosynthesis from nicotinamide, potentially more efficient than precursor loading",
+        "Tissue-specific delivery — investigating whether different precursors preferentially elevate NAD+ in different tissues (liver vs. muscle vs. brain)",
+        "NAMPT activators — compounds that upregulate the enzyme limiting NAD+ biosynthesis from nicotinamide",
         "CD38 inhibitors — CD38 is a major NAD+-consuming enzyme; reducing its activity may be as effective as increasing NAD+ supply",
-        "NMN + resveratrol or pterostilbene combinations as SIRT1 activators (though evidence for synergy remains preliminary)",
+        "Combination protocols with SIRT1 activators such as resveratrol or pterostilbene",
       ],
     },
     {
