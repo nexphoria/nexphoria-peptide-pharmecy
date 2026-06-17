@@ -1988,6 +1988,9 @@ import { article as aJUN19OVN3 } from './articles/cold-chain-peptide-shipping-te
 import { article as aJUN17OVN6_PEPTSCI_ALT } from './articles/peptide-sciences-alternative-nexphoria-guide';
 import { article as aJUN17OVN6_LONGEVITY_STACK } from './articles/longevity-peptide-stack-2026-research-overview';
 import { article as aJUN17OVN6_BPC157_COMPLETE } from './articles/bpc-157-complete-research-guide-2026';
+import { article as aJUN17OVN7_EPITHALON_TEL } from './articles/epithalon-telomere-what-studies-show-2026';
+import { article as aJUN17OVN7_NAD_NMN } from './articles/nad-plus-vs-nmn-researchers-2026-comparison';
+import { article as aJUN17OVN7_SELANK } from './articles/selank-anxiolytic-peptide-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3899,6 +3902,9 @@ export const articles: BlogArticle[] = [
   aJUN17OVN6_PEPTSCI_ALT,
   aJUN17OVN6_LONGEVITY_STACK,
   aJUN17OVN6_BPC157_COMPLETE,
+  aJUN17OVN7_EPITHALON_TEL,
+  aJUN17OVN7_NAD_NMN,
+  aJUN17OVN7_SELANK,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
