@@ -1455,6 +1455,9 @@ import { article as aJUN17OVN11_ORALPEP } from './articles/oral-peptide-bioavail
 import { article as aJUN17OVN12_IPAGHAXIS } from './articles/ipamorelin-cjc-1295-gh-axis-timing-research';
 import { article as aJUN17OVN12_BPC_GHK_WH } from './articles/bpc-157-vs-ghk-cu-wound-healing-comparison';
 import { article as aJUN17OVN12_ATHLETES } from './articles/best-peptides-injury-recovery-athletes-2026';
+import { article as aJUN17_PINEALON } from './articles/pinealon-neuroprotective-peptide-research-guide';
+import { article as aJUN17_CORTAGEN } from './articles/cortagen-cardiac-bioregulator-peptide-research-guide';
+import { article as aJUN17_VILON } from './articles/vilon-dipeptide-immune-bioregulator-research-guide';
 import { article as aJUN20OVN1_GLOSSARY } from './articles/research-peptide-glossary-complete';
 import { article as aJUN20OVN2_HEXARELIN } from './articles/hexarelin-cardiac-gh-research-complete-guide';
 import { article as aJUN20OVN3_SELANK } from './articles/selank-anxiety-nootropic-research-complete';
@@ -3941,6 +3944,9 @@ export const articles: BlogArticle[] = [
   aJUN20OVN1_GLOSSARY,
   aJUN20OVN2_HEXARELIN,
   aJUN20OVN3_SELANK,
+  aJUN17_PINEALON,
+  aJUN17_CORTAGEN,
+  aJUN17_VILON,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
