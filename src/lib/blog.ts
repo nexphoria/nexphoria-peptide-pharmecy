@@ -1458,6 +1458,9 @@ import { article as aJUN17OVN12_ATHLETES } from './articles/best-peptides-injury
 import { article as aJUN17_PINEALON } from './articles/pinealon-neuroprotective-peptide-research-guide';
 import { article as aJUN17_CORTAGEN } from './articles/cortagen-cardiac-bioregulator-peptide-research-guide';
 import { article as aJUN17_VILON } from './articles/vilon-dipeptide-immune-bioregulator-research-guide';
+import { article as aJUN17_TZ_HAIR } from './articles/tirzepatide-hair-loss-research-guide-2026';
+import { article as aJUN17_GOLFERS_ELBOW } from './articles/peptide-research-golfers-elbow-medial-epicondylitis';
+import { article as aJUN17_NAD_PD } from './articles/nad-plus-parkinsons-neuroprotection-research-2026';
 import { article as aJUN20OVN1_GLOSSARY } from './articles/research-peptide-glossary-complete';
 import { article as aJUN20OVN2_HEXARELIN } from './articles/hexarelin-cardiac-gh-research-complete-guide';
 import { article as aJUN20OVN3_SELANK } from './articles/selank-anxiety-nootropic-research-complete';
@@ -3947,6 +3950,9 @@ export const articles: BlogArticle[] = [
   aJUN17_PINEALON,
   aJUN17_CORTAGEN,
   aJUN17_VILON,
+  aJUN17_TZ_HAIR,
+  aJUN17_GOLFERS_ELBOW,
+  aJUN17_NAD_PD,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
