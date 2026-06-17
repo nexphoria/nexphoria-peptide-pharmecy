@@ -1967,6 +1967,9 @@ import { article as aJUN17OVN4_NAD_COCHLEAR } from './articles/nad-plus-cochlear
 import { article as aJUN17OVN5_SETMELANOTIDE } from './articles/where-to-buy-setmelanotide-research-guide';
 import { article as aJUN17OVN5_BIMAGRUMAB } from './articles/where-to-buy-bimagrumab-research-guide';
 import { article as aJUN17OVN5_PETRELINTIDE } from './articles/where-to-buy-petrelintide-research-guide';
+import { article as aJUN18OVN_VK2735 } from './articles/vk2735-viking-therapeutics-glp1-gip-dual-agonist-research-guide';
+import { article as aJUN18OVN_CABERGOLINE } from './articles/cabergoline-dopamine-agonist-peptide-research-guide';
+import { article as aJUN18OVN_DESLORELIN } from './articles/deslorelin-gnrh-superagonist-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -3857,6 +3860,9 @@ export const articles: BlogArticle[] = [
   aJUN17OVN5_SETMELANOTIDE,
   aJUN17OVN5_BIMAGRUMAB,
   aJUN17OVN5_PETRELINTIDE,
+  aJUN18OVN_VK2735,
+  aJUN18OVN_CABERGOLINE,
+  aJUN18OVN_DESLORELIN,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
