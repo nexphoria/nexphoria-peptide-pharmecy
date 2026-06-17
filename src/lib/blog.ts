@@ -1958,6 +1958,9 @@ import { article as aOVN_SELANK_ANX } from './articles/selank-anxiety-research';
 import { article as aOVN_SEMA_RP } from './articles/semaglutide-research-peptide';
 import { article as aOVN_TB500_TB4 } from './articles/tb-500-thymosin-beta-4';
 import { article as aOVN_TA1_IMMUNE } from './articles/thymosin-alpha-1-immune';
+import { article as aOVN_CANCER_ONCO } from './articles/peptide-research-cancer-oncology-preclinical-review';
+import { article as aOVN_FERTILITY_HPG } from './articles/peptide-research-fertility-reproductive-axis-protocols';
+import { article as aOVN_OZEMPIC_GUIDE } from './articles/ozempic-research-guide-semaglutide-glp1-science';
 import { article as aJUN17_HEXARELIN_CD36 } from './articles/hexarelin-cd36-cardiac-pathway-research-2026';
 import { article as aJUN17_TA1_TLR9 } from './articles/thymosin-alpha-1-tlr9-dendritic-cell-research-2026';
 import { article as aJUN17_COA_CHECKLIST } from './articles/reading-peptide-coa-researcher-checklist-2026';
@@ -4034,6 +4037,9 @@ export const articles: BlogArticle[] = [
   aOVN_SEMA_RP,
   aOVN_TB500_TB4,
   aOVN_TA1_IMMUNE,
+  aOVN_CANCER_ONCO,
+  aOVN_FERTILITY_HPG,
+  aOVN_OZEMPIC_GUIDE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
