@@ -1464,6 +1464,9 @@ import { article as aJUN17_NAD_PD } from './articles/nad-plus-parkinsons-neuropr
 import { article as aOVN_TB500_ACTIN_2026 } from './articles/tb-500-thymosin-beta-4-actin-research-2026-deep-dive';
 import { article as aOVN_NEX_QUAL_2026 } from './articles/nexphoria-quality-standards-coa-hplc-lal-guide-2026-updated';
 import { article as aOVN_SUM_TRENDING_2026 } from './articles/peptide-research-summer-2026-trending-compounds-buyers-guide';
+import { article as aJUN17_TZ_SEMA_2026 } from './articles/tirzepatide-vs-semaglutide-research-2026';
+import { article as aJUN17_IPA_COMPLETE_2026 } from './articles/ipamorelin-complete-research-guide-2026';
+import { article as aJUN17_BPC157_INJURY_2026 } from './articles/bpc-157-injuries-research-protocol-2026';
 import { article as aJUN20OVN1_GLOSSARY } from './articles/research-peptide-glossary-complete';
 import { article as aJUN20OVN2_HEXARELIN } from './articles/hexarelin-cardiac-gh-research-complete-guide';
 import { article as aJUN20OVN3_SELANK } from './articles/selank-anxiety-nootropic-research-complete';
@@ -3959,6 +3962,9 @@ export const articles: BlogArticle[] = [
   aOVN_TB500_ACTIN_2026,
   aOVN_NEX_QUAL_2026,
   aOVN_SUM_TRENDING_2026,
+  aJUN17_TZ_SEMA_2026,
+  aJUN17_IPA_COMPLETE_2026,
+  aJUN17_BPC157_INJURY_2026,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
