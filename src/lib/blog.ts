@@ -1955,6 +1955,9 @@ import { article as aJUN18_NEWS } from './articles/peptide-research-june-18-2026
 import { article as aJUN17OVN3_DANUGLIPRON } from './articles/how-long-does-danuglipron-take-to-work-research-timeline';
 import { article as aJUN17OVN3_COTADUTIDE } from './articles/how-long-does-cotadutide-take-to-work-research-timeline';
 import { article as aJUN17OVN3_EVE_UPDATE } from './articles/peptide-research-evening-update-june-17-2026';
+import { article as aOVN_JULY2026_PROTOCOLS } from './articles/peptide-research-july-2026-trending-protocols';
+import { article as aOVN_BPC157_SHOULDER_IMPINGEMENT } from './articles/bpc-157-shoulder-impingement-rotator-cuff-research';
+import { article as aOVN_MK677_2026 } from './articles/mk-677-gh-pulse-research-guide-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -3833,6 +3836,9 @@ export const articles: BlogArticle[] = [
   aJUN17OVN3_DANUGLIPRON,
   aJUN17OVN3_COTADUTIDE,
   aJUN17OVN3_EVE_UPDATE,
+  aOVN_JULY2026_PROTOCOLS,
+  aOVN_BPC157_SHOULDER_IMPINGEMENT,
+  aOVN_MK677_2026,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
