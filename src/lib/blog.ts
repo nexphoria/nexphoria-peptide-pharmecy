@@ -3971,6 +3971,9 @@ export const articles: BlogArticle[] = [
   aJUN17_TZ_SEMA_2026,
   aJUN17_IPA_COMPLETE_2026,
   aJUN17_BPC157_INJURY_2026,
+  aJUL3,
+  aJUN16_RECON_PROTOCOL,
+  aJUN16_STORAGE_GUIDE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
