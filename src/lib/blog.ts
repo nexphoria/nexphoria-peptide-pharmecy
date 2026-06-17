@@ -1970,6 +1970,9 @@ import { article as aJUN17_IPA_SLEEP } from './articles/ipamorelin-sleep-gh-puls
 import { article as aJUN17OVN16_PERIPH_NEURO } from './articles/bpc-157-peripheral-neuropathy-nerve-repair-research';
 import { article as aJUN17OVN16_PEYRONIES } from './articles/peptide-research-peyronies-disease-fibrosis-collagen';
 import { article as aJUN17OVN16_RAYNAUDS } from './articles/peptide-research-raynauds-phenomenon-vascular-microcirculation';
+import { article as aJUN17OVN17_GHKCU_COLLAGEN } from './articles/ghk-cu-collagen-synthesis-anti-aging-research-2026';
+import { article as aJUN17OVN17_IPA_HEX } from './articles/ipamorelin-vs-hexarelin-complete-comparison-2026';
+import { article as aJUN17OVN17_KPV_GUT } from './articles/kpv-peptide-gut-inflammation-2026';
 import { article as aJUN17_HEXARELIN_CD36 } from './articles/hexarelin-cd36-cardiac-pathway-research-2026';
 import { article as aJUN17_TA1_TLR9 } from './articles/thymosin-alpha-1-tlr9-dendritic-cell-research-2026';
 import { article as aJUN17_COA_CHECKLIST } from './articles/reading-peptide-coa-researcher-checklist-2026';
@@ -4058,6 +4061,9 @@ export const articles: BlogArticle[] = [
   aJUN17OVN16_PERIPH_NEURO,
   aJUN17OVN16_PEYRONIES,
   aJUN17OVN16_RAYNAUDS,
+  aJUN17OVN17_GHKCU_COLLAGEN,
+  aJUN17OVN17_IPA_HEX,
+  aJUN17OVN17_KPV_GUT,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
