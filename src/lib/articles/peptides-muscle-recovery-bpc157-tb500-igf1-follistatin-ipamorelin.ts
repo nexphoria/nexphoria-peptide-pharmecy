@@ -2,16 +2,17 @@ import type { BlogArticle } from '../blog-types';
 
 export const article: BlogArticle = {
   slug: "peptides-muscle-recovery-bpc157-tb500-igf1-follistatin-ipamorelin",
-  title: "5 Research Peptides Used in Muscle Recovery Studies",
-  description: "BPC-157, TB-500, IGF-1 LR3, Follistatin-344, and Ipamorelin have each been examined in preclinical muscle recovery and regeneration models. This evidence-based overview summarizes what the published literature shows for each compound.",
+  title: "5 Research Peptides Used in Muscle Recovery Studies: BPC-157, TB-500, IGF-1 LR3, Follistatin-344, and Ipamorelin",
+  description:
+    "An evidence-based overview of five peptides examined in preclinical muscle recovery research — BPC-157, TB-500, IGF-1 LR3, Follistatin-344, and Ipamorelin. Covers mechanisms, key study findings, and a comparative reference table.",
   category: "Compound Profiles",
-  readMinutes: 9,
-  publishedAt: "2026-06-09",
+  readMinutes: 12,
+  publishedAt: "2026-06-18",
   ogImage: "/og-image.jpg",
   body: [
     {
       type: "paragraph",
-      text: "Skeletal muscle repair is a complex, multi-phase biological process involving satellite cell activation, myoblast proliferation, ECM remodeling, and re-innervation. Several peptide compounds have been studied in preclinical models to better understand — and potentially modulate — these processes. Below is an evidence-based overview of five peptides that appear frequently in the muscle recovery research literature.",
+      text: "Skeletal muscle repair is a complex, multi-phase biological process involving satellite cell activation, myoblast proliferation, extracellular matrix remodeling, and re-innervation. Several peptide compounds have been studied in preclinical models to better understand — and potentially modulate — these processes. Below is an evidence-based overview of five peptides that appear frequently in the muscle recovery research literature.",
     },
     {
       type: "heading",
@@ -36,7 +37,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "BPC-157 is thought to act via nitric oxide modulation and FAK-paxillin signaling, enhancing cell migration and angiogenesis critical to repair. Key references include Sikiric et al. (multiple publications, University of Zagreb) and the Gwyer et al. systematic review (2019).",
+      text: "BPC-157 is thought to act via nitric oxide modulation and FAK-paxillin signaling, enhancing cell migration and angiogenesis critical to repair. Key references include Sikiric et al. (multiple publications, University of Zagreb) and the Gwyer et al. systematic review (Drug Des Devel Ther, 2019).",
     },
     {
       type: "heading",
@@ -86,7 +87,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "IGF-1 LR3 binds the IGF-1 receptor (a receptor tyrosine kinase) and activates downstream anabolic signaling cascades. Its extended half-life compared to native IGF-1 makes it useful for studying sustained IGF-1R activation effects. Note: IGF-1 signaling is pleiotropic and intersects with multiple oncological pathways. Research protocols involving IGF-1 LR3 require careful experimental design and appropriate controls.",
+      text: "IGF-1 LR3 binds the IGF-1 receptor (a receptor tyrosine kinase) and activates downstream anabolic signaling cascades. Its extended half-life compared to native IGF-1 makes it useful for studying sustained IGF-1R activation effects. Important note: IGF-1 signaling is pleiotropic and intersects with multiple oncological pathways. Research protocols involving IGF-1 LR3 require careful experimental design and appropriate controls.",
     },
     {
       type: "heading",
@@ -105,7 +106,7 @@ export const article: BlogArticle = {
       items: [
         "Myostatin inhibition — myostatin is the primary endogenous negative regulator of muscle mass; its suppression removes a brake on muscle hypertrophy",
         "Documented increases in muscle fiber diameter in murine models",
-        "Follistatin gene therapy studies (Lee & McPherron, PNAS 2001) demonstrated dramatic muscle mass increases in myostatin-null and follistatin-overexpressing mice",
+        "Lee & McPherron follistatin gene therapy studies (PNAS 2001) demonstrated dramatic muscle mass increases in myostatin-null and follistatin-overexpressing mice",
         "Activin A inhibition, which also contributes to muscle fiber size regulation",
       ],
     },
@@ -140,26 +141,11 @@ export const article: BlogArticle = {
     },
     {
       type: "heading",
-      text: "Comparative Overview",
-    },
-    {
-      type: "table",
-      headers: ["Peptide", "Primary Target", "Mechanism", "Key Model"],
-      rows: [
-        ["BPC-157", "Multi-system", "NO/VEGF/FAK", "Rat injury"],
-        ["TB-500", "Actin/cytoskeleton", "G-actin binding", "Mouse/rat"],
-        ["IGF-1 LR3", "IGF-1R", "PI3K/Akt/mTOR", "Rodent/in vitro"],
-        ["Follistatin-344", "Myostatin/ActRIIB", "TGF-β inhibition", "Mouse"],
-        ["Ipamorelin", "GHSR-1a", "GH pulse", "Rodent"],
-      ],
-    },
-    {
-      type: "heading",
-      text: "Sourcing for Research",
+      text: "Sourcing Considerations for Research",
     },
     {
       type: "paragraph",
-      text: "All five peptides require rigorous quality verification before use in experimental protocols. Minimum requirements include HPLC purity ≥99%, mass spectrometry identity confirmation, endotoxin-free certification (LAL testing), and cold-chain shipping and storage throughout the supply chain.",
+      text: "All five peptides require rigorous quality verification. Key requirements apply across the group: HPLC purity ≥99%, mass spectrometry identity confirmation, endotoxin-free certification via LAL testing, and cold-chain shipping and storage protocols. For IGF-1 LR3, the extended sequence modification should be specifically confirmed by mass spectrometry. For Follistatin-344, its glycoprotein structure requires additional stability assessment relative to smaller peptides.",
     },
     {
       type: "heading",
@@ -167,10 +153,10 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "The five peptides reviewed here — BPC-157, TB-500, IGF-1 LR3, Follistatin-344, and Ipamorelin — represent distinct mechanistic approaches to studying muscle recovery and regeneration. From cytoskeletal dynamics to myostatin inhibition to GH axis modulation, the literature on these compounds provides a layered view of the biological processes underlying skeletal muscle repair.",
+      text: "The five peptides reviewed here — BPC-157, TB-500, IGF-1 LR3, Follistatin-344, and Ipamorelin — represent distinct mechanistic approaches to studying muscle recovery and regeneration. From cytoskeletal dynamics to myostatin inhibition to GH axis modulation, the literature on these compounds provides a layered view of the biological processes underlying skeletal muscle repair. Their complementary mechanisms make them useful both as individual research tools and as components of multi-compound study designs.",
     },
     {
-      type: "disclaimer",
+      type: "paragraph",
       text: "For research purposes only. Not intended for human use.",
     },
   ],

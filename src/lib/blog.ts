@@ -2102,6 +2102,9 @@ import { article as aJUN19OVN_MOTSC_PRICE } from './articles/how-much-does-mots-
 import { article as aJUN19OVN21_5AMQ } from './articles/5-amino-1mq-nnmt-inhibitor-metabolic-research-guide';
 import { article as aJUN19OVN21_ABALO } from './articles/abaloparatide-teriparatide-bone-repair-peptide-research-guide';
 import { article as aJUN19OVN21_ACE2 } from './articles/ace2-peptide-fragments-cardiovascular-research-guide';
+import { article as aJUN18OVN22_HEX_CD36 } from './articles/hexarelin-cardioprotection-cd36-gh-research-guide';
+import { article as aJUN18OVN22_TA1_TLR9 } from './articles/thymosin-alpha-1-immune-modulation-tlr9-clinical-research-guide';
+import { article as aJUN18OVN22_MUSCLE5 } from './articles/peptides-muscle-recovery-bpc157-tb500-igf1-follistatin-ipamorelin';
 
 
 export const articles: BlogArticle[] = [
@@ -4130,6 +4133,9 @@ export const articles: BlogArticle[] = [
   aJUN19OVN21_5AMQ,
   aJUN19OVN21_ABALO,
   aJUN19OVN21_ACE2,
+  aJUN18OVN22_HEX_CD36,
+  aJUN18OVN22_TA1_TLR9,
+  aJUN18OVN22_MUSCLE5,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
