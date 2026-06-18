@@ -2171,6 +2171,9 @@ import { article as aJUN18OVN40_BEGINNERS } from './articles/how-peptides-work-b
 import { article as aJUN18OVN41_CJC_IPAM } from './articles/cjc-1295-ipamorelin-gh-pulse-protocol-research-jun18';
 import { article as aJUN18OVN41_QUALITY_FLAGS } from './articles/research-peptide-quality-red-flags-sourcing-checklist-jun18';
 import { article as aJUN18OVN41_EPITHALON } from './articles/epithalon-telomere-biology-longevity-research-jun18';
+import { article as aJUN18OVN42_NAD_NMN } from './articles/nad-plus-vs-nmn-research-comparison-jun18';
+import { article as aJUN18OVN43_LONGEVITY_STACK } from './articles/longevity-peptide-stack-2026-complete-research-guide-jun18';
+import { article as aJUN18OVN44_MUSCLE_RECOVERY } from './articles/best-peptides-muscle-recovery-research-2026-jun18';
 
 
 export const articles: BlogArticle[] = [
@@ -4268,6 +4271,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN41_CJC_IPAM,
   aJUN18OVN41_QUALITY_FLAGS,
   aJUN18OVN41_EPITHALON,
+  aJUN18OVN42_NAD_NMN,
+  aJUN18OVN43_LONGEVITY_STACK,
+  aJUN18OVN44_MUSCLE_RECOVERY,
   a1213,
   a1216,
   a1217,
