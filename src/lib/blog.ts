@@ -1983,6 +1983,9 @@ import { article as aJUN19OVN_ACE031_BIMAG } from './articles/ace-031-vs-bimagru
 import { article as aOVN_NEWS_JUN18_2026 } from './articles/peptide-research-news-june-18-2026';
 import { article as aOVN_BPC157_LIGAMENT } from './articles/bpc-157-ligament-repair-research-guide';
 import { article as aOVN_GHK_MUSCLE } from './articles/ghk-cu-muscle-recovery-research-guide';
+import { article as aJUN17OVN18_TANNING } from './articles/tanning-peptides-melanotan-afamelanotide-research-guide';
+import { article as aJUN17OVN18_FOLLISTATIN315 } from './articles/follistatin-315-isoform-myostatin-inhibition-research-guide';
+import { article as aJUN17OVN18_NAD_IV } from './articles/nad-iv-injectable-vs-oral-precursor-research-comparison-2026';
 import { article as aJUN18OVN_ARA290_WTB } from './articles/where-to-buy-ara-290-research-guide';
 import { article as aJUN18OVN_PALMITOYL_WTB } from './articles/where-to-buy-palmitoyl-peptides-matrixyl-research-guide';
 import { article as aJUN18OVN_APC1_WTB } from './articles/where-to-buy-apc-1-antimicrobial-peptide-research-guide';
@@ -4094,6 +4097,9 @@ export const articles: BlogArticle[] = [
   aOVN_NEWS_JUN18_2026,
   aOVN_BPC157_LIGAMENT,
   aOVN_GHK_MUSCLE,
+  aJUN17OVN18_TANNING,
+  aJUN17OVN18_FOLLISTATIN315,
+  aJUN17OVN18_NAD_IV,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
