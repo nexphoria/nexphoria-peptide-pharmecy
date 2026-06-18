@@ -4,10 +4,10 @@ export const article: BlogArticle = {
   slug: "bpc-157-complete-research-guide-2026",
   title: "BPC-157: The Complete Research Guide (2026)",
   description:
-    "BPC-157 is one of the most studied peptides in regenerative research. This complete 2026 guide covers its mechanism, key PubMed studies, preclinical dosing protocols, sourcing criteria, and storage requirements.",
+    "A comprehensive research guide to BPC-157 covering its mechanism of action, key PubMed studies, preclinical dosing protocols, sourcing criteria, and storage requirements for researchers.",
   category: "Compound Profiles",
-  readMinutes: 10,
-  publishedAt: "2026-06-17",
+  readMinutes: 11,
+  publishedAt: "2026-06-18",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -37,7 +37,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Research suggests BPC-157 operates through several distinct pathways.",
+      text: "Research suggests BPC-157 operates through several distinct pathways, each contributing to its observed effects across tissue types:",
     },
     {
       type: "subheading",
@@ -77,7 +77,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Research on BPC-157 is largely preclinical, but the volume of published work is notable. Here are key studies referenced in the literature:",
+      text: "Research on BPC-157 is largely preclinical, but the volume of published work is notable. The following studies are frequently referenced across the literature:",
     },
     {
       type: "list",
@@ -97,7 +97,7 @@ export const article: BlogArticle = {
       text: "Dosing Protocols Studied in Research",
     },
     {
-      type: "paragraph",
+      type: "callout",
       text: "The following reflects dosing protocols used in preclinical animal research only. These figures are not clinical recommendations.",
     },
     {
@@ -111,7 +111,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Most rodent studies use a daily or twice-daily administration schedule over a defined period (often 7–14 days post-injury). BPC-157 is typically reconstituted in bacteriostatic water or sterile water for injection-based protocols.",
+      text: "Most rodent studies use a daily or twice-daily administration schedule over a defined period (often 7–14 days post-injury). BPC-157 is typically reconstituted in bacteriostatic water (0.9% NaCl or sterile water) for injection-based protocols.",
     },
     {
       type: "heading",
@@ -119,11 +119,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "The quality of BPC-157 research peptides varies significantly across suppliers. For accurate experimental results, sourcing matters as much as protocol design.",
-    },
-    {
-      type: "subheading",
-      text: "What to Verify Before Sourcing",
+      text: "The quality of BPC-157 research peptides varies significantly across suppliers. For accurate experimental results, sourcing matters as much as protocol design. Before acquiring any lot, researchers should verify the following:",
     },
     {
       type: "list",
@@ -134,6 +130,10 @@ export const article: BlogArticle = {
         "Cold-chain shipping — BPC-157 degrades rapidly at elevated temperatures",
         "Third-party verified COA — supplier-internal testing alone is insufficient",
       ],
+    },
+    {
+      type: "paragraph",
+      text: "When searching to buy BPC-157 in the USA, prioritize domestic suppliers with publicly accessible certificates of analysis (COAs) and verifiable third-party testing partnerships.",
     },
     {
       type: "subheading",
@@ -154,7 +154,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Lyophilized BPC-157 is stable at room temperature for short durations but should be stored at -20°C for long-term preservation. Once reconstituted, it should be kept at 4°C and used within 30 days. Avoid repeated freeze-thaw cycles, which can accelerate degradation.",
+      text: "Lyophilized BPC-157 is stable at room temperature for short durations but should be stored at -20°C for long-term preservation. Once reconstituted, it should be kept at 4°C and used within 30 days. Avoid repeated freeze-thaw cycles, which can accelerate degradation and reduce bioactivity.",
     },
     {
       type: "heading",
@@ -162,7 +162,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "BPC-157 remains one of the most actively studied peptides in preclinical regenerative research. Its multi-pathway mechanism, stability profile, and volume of published literature make it a compound of significant interest to researchers across gastroenterology, musculoskeletal biology, and neuroscience. For researchers building a protocol around BPC-157 research peptides, the foundation starts with verified purity, proper cold-chain handling, and a clear understanding of the available preclinical evidence.",
+      text: "BPC-157 remains one of the most actively studied peptides in preclinical regenerative research. Its multi-pathway mechanism, stability profile, and volume of published literature make it a compound of significant interest to researchers across gastroenterology, musculoskeletal biology, and neuroscience. For researchers building a protocol around BPC-157, the foundation starts with verified purity, proper cold-chain handling, and a clear understanding of the available preclinical evidence.",
     },
     {
       type: "disclaimer",

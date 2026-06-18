@@ -1449,6 +1449,9 @@ import { article as aJUN18OVN_NAD_DECLINE } from './articles/nad-plus-decline-ag
 import { article as aJUN18OVN46_SELANK } from './articles/selank-anxiety-nootropic-research-guide-2026';
 import { article as aJUN18OVN46_TA1_2026 } from './articles/thymosin-alpha-1-immune-modulation-research-guide-2026';
 import { article as aJUN18OVN46_LONGEVITY } from './articles/longevity-peptide-stack-2026-research-overview';
+import { article as aJUN18OVN47_BPC157 } from './articles/bpc-157-complete-research-guide-2026';
+import { article as aJUN18OVN47_CJC_IPAM } from './articles/cjc-1295-ipamorelin-gh-stack-research-guide-2026';
+import { article as aJUN18OVN47_USA_BUYERS } from './articles/how-to-source-research-peptides-usa-buyers-guide-2026';
 import { article as aJUN17OVN8_FIRSTPROT } from './articles/first-timer-protocol-conservative-8-week-starter';
 import { article as aJUN17OVN8_BIOMARK } from './articles/how-to-read-your-response-biomarker-tracking';
 import { article as aJUN17OVN8_RECPHARM } from './articles/peptide-receptor-pharmacology-non-scientists';
@@ -4368,6 +4371,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN46_SELANK,
   aJUN18OVN46_TA1_2026,
   aJUN18OVN46_LONGEVITY,
+  aJUN18OVN47_BPC157,
+  aJUN18OVN47_CJC_IPAM,
+  aJUN18OVN47_USA_BUYERS,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
