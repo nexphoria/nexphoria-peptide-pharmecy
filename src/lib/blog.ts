@@ -2120,6 +2120,9 @@ import { article as aJUN18OVN_SLEEP } from './articles/peptide-research-sleep-op
 import { article as aJUN18OVN25_PS_SHUTDOWN } from './articles/peptide-sciences-shutdown-what-researchers-need-now';
 import { article as aJUN18OVN25_LONGEVITY_5H } from './articles/longevity-peptide-research-2026-five-hallmark-targets';
 import { article as aJUN18OVN25_GLOSSARY_JUN } from './articles/research-peptide-glossary-50-essential-terms-june-2026';
+import { article as aJUN18OVN26_MARI_BUY } from './articles/where-to-buy-maridebart-cafraglutide-research-guide';
+import { article as aJUN18OVN26_EFIN_BUY } from './articles/where-to-buy-efinopegdutide-research-guide';
+import { article as aJUN18OVN26_MARI_TIME } from './articles/how-long-does-maridebart-cafraglutide-take-to-work-research-timeline';
 
 
 export const articles: BlogArticle[] = [
@@ -4166,6 +4169,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN25_PS_SHUTDOWN,
   aJUN18OVN25_LONGEVITY_5H,
   aJUN18OVN25_GLOSSARY_JUN,
+  aJUN18OVN26_MARI_BUY,
+  aJUN18OVN26_EFIN_BUY,
+  aJUN18OVN26_MARI_TIME,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
