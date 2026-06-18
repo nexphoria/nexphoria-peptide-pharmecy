@@ -2162,6 +2162,9 @@ import { article as aJUN18OVN37_FATLOSS } from './articles/best-peptides-fat-los
 import { article as aJUN19OVN38_NEWS } from './articles/peptide-research-news-june-19-overnight';
 import { article as aJUN19OVN38_CARDIO_STACK } from './articles/cardiovascular-peptide-stack-bpc157-tb500-hexarelin-2026';
 import { article as aJUN19OVN38_SUMMER_GUIDE } from './articles/nexphoria-summer-2026-sourcing-guide';
+import { article as aJUN18OVN39_STRENGTH } from './articles/peptide-for-strength-training-research-2026';
+import { article as aJUN18OVN39_SLEEP } from './articles/peptide-research-sleep-quality-complete-guide-2026';
+import { article as aJUN18OVN39_CYCLING } from './articles/how-to-cycle-peptides-beginners-guide-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -4250,6 +4253,9 @@ export const articles: BlogArticle[] = [
   aJUN19OVN38_NEWS,
   aJUN19OVN38_CARDIO_STACK,
   aJUN19OVN38_SUMMER_GUIDE,
+  aJUN18OVN39_STRENGTH,
+  aJUN18OVN39_SLEEP,
+  aJUN18OVN39_CYCLING,
   a1213,
   a1216,
   a1217,
