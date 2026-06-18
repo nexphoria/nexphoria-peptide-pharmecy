@@ -1971,6 +1971,9 @@ import { article as aJUN17OVN16_PERIPH_NEURO } from './articles/bpc-157-peripher
 import { article as aJUN17OVN16_PEYRONIES } from './articles/peptide-research-peyronies-disease-fibrosis-collagen';
 import { article as aJUN17OVN16_RAYNAUDS } from './articles/peptide-research-raynauds-phenomenon-vascular-microcirculation';
 import { article as aJUN17OVN17_GHKCU_COLLAGEN } from './articles/ghk-cu-collagen-synthesis-anti-aging-research-2026';
+import { article as aJUN18OVN18_P21_CDK } from './articles/p21-peptide-cdk-inhibitor-anti-aging-senescence-research-guide';
+import { article as aJUN18OVN18_OVAGEN } from './articles/ovagen-ovarian-bioregulator-peptide-reproductive-aging-research';
+import { article as aJUN18OVN18_EFPEG_AMPLITUDE } from './articles/efpeglenatide-glp1-once-monthly-cardiovascular-amplitude-research-guide';
 import { article as aJUN17OVN17_IPA_HEX } from './articles/ipamorelin-vs-hexarelin-complete-comparison-2026';
 import { article as aJUN17OVN17_KPV_GUT } from './articles/kpv-peptide-gut-inflammation-2026';
 import { article as aJUN17_HEXARELIN_CD36 } from './articles/hexarelin-cd36-cardiac-pathway-research-2026';
@@ -4064,6 +4067,9 @@ export const articles: BlogArticle[] = [
   aJUN17OVN17_GHKCU_COLLAGEN,
   aJUN17OVN17_IPA_HEX,
   aJUN17OVN17_KPV_GUT,
+  aJUN18OVN18_P21_CDK,
+  aJUN18OVN18_OVAGEN,
+  aJUN18OVN18_EFPEG_AMPLITUDE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
