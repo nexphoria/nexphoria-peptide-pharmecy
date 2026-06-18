@@ -2138,6 +2138,9 @@ import { article as aJUN18OVN30_ORFOGL_PRICE } from './articles/how-much-does-or
 import { article as aJUN18OVN31_BRAND_TRANS } from './articles/nexphoria-brand-transparency-research-standards';
 import { article as aJUN18OVN31_TRUST_SIG } from './articles/research-peptide-vendor-trust-signals-complete-guide';
 import { article as aJUN18OVN31_DESIGN_LANG } from './articles/nexphoria-design-language-research-brand-identity';
+import { article as aJUN19_NEWS } from './articles/peptide-research-news-june-19-2026';
+import { article as aJUN19_HEXVIPA } from './articles/hexarelin-vs-ipamorelin-ghs-comparison-2026';
+import { article as aJUN19_NADNMN } from './articles/nad-plus-vs-nmn-longevity-precursors-june-19-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -4202,6 +4205,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN31_BRAND_TRANS,
   aJUN18OVN31_TRUST_SIG,
   aJUN18OVN31_DESIGN_LANG,
+  aJUN19_NEWS,
+  aJUN19_HEXVIPA,
+  aJUN19_NADNMN,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
