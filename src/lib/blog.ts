@@ -2129,6 +2129,9 @@ import { article as aJUN18OVN27_NEWS_MORNING } from './articles/peptide-research
 import { article as aJUN18OVN28_VK2735_ORAL } from './articles/vk2735-oral-vs-subcutaneous-research-comparison-2026';
 import { article as aJUN18OVN28_TENDON } from './articles/tendon-tenocyte-biology-peptide-repair-research-2026';
 import { article as aJUN18OVN28_NEWS_EVE } from './articles/peptide-research-news-june-18-2026-evening';
+import { article as aJUN18OVN29_CORTISTATIN } from './articles/cortistatin-somatostatin-family-neuropeptide-research';
+import { article as aJUN18OVN29_HUMANIN } from './articles/humanin-mitochondrial-derived-peptide-cardioprotection-research';
+import { article as aJUN18OVN29_NOCICEPTIN } from './articles/pnoc-nociceptin-orphanin-fq-opioid-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -4184,6 +4187,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN28_VK2735_ORAL,
   aJUN18OVN28_TENDON,
   aJUN18OVN28_NEWS_EVE,
+  aJUN18OVN29_CORTISTATIN,
+  aJUN18OVN29_HUMANIN,
+  aJUN18OVN29_NOCICEPTIN,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
