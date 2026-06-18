@@ -1440,6 +1440,9 @@ import { article as aNX3 } from './articles/why-hplc-purity-testing-matters-pept
 import { article as a1491 } from './articles/where-to-buy-pe-22-28-research-guide';
 import { article as a1492 } from './articles/lotiglipron-oral-glp1-research-guide';
 import { article as a1493 } from './articles/efocipegtrutide-triple-agonist-research-overview';
+import { article as aJUN18OVN45_JOINT } from './articles/peptide-research-joint-health-2026';
+import { article as aJUN18OVN45_SEMA_PLATEAU } from './articles/semaglutide-plateau-research-strategies-2026';
+import { article as aJUN18OVN45_MOTSC } from './articles/mots-c-exercise-research-guide-2026';
 import { article as aJUN17OVN8_FIRSTPROT } from './articles/first-timer-protocol-conservative-8-week-starter';
 import { article as aJUN17OVN8_BIOMARK } from './articles/how-to-read-your-response-biomarker-tracking';
 import { article as aJUN17OVN8_RECPHARM } from './articles/peptide-receptor-pharmacology-non-scientists';
@@ -4350,6 +4353,9 @@ export const articles: BlogArticle[] = [
   aPRX4,
   aPRX5,
   aPRX6,
+  aJUN18OVN45_JOINT,
+  aJUN18OVN45_SEMA_PLATEAU,
+  aJUN18OVN45_MOTSC,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
