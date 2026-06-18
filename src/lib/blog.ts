@@ -2153,6 +2153,9 @@ import { article as aJUN18OVN34_SRC } from './articles/peptide-sourcing-red-flag
 import { article as aJUN18OVN35_THYMOGEN } from './articles/thymogen-tripeptide-thymic-immune-research-guide';
 import { article as aJUN18OVN35_PALGHK } from './articles/pal-ghk-palmitoyl-tripeptide-skin-research-guide';
 import { article as aJUN18OVN35_OREXIN } from './articles/orexin-hypocretin-peptide-sleep-arousal-research-guide';
+import { article as aJUN18OVN36_CARNOSINE } from './articles/carnosine-beta-alanyl-histidine-dipeptide-research-guide';
+import { article as aJUN18OVN36_ANG17 } from './articles/angiotensin-1-7-mas-receptor-cardiovascular-peptide-research';
+import { article as aJUN18OVN36_CAB } from './articles/cabergoline-prolactin-dopamine-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -4232,6 +4235,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN35_THYMOGEN,
   aJUN18OVN35_PALGHK,
   aJUN18OVN35_OREXIN,
+  aJUN18OVN36_CARNOSINE,
+  aJUN18OVN36_ANG17,
+  aJUN18OVN36_CAB,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
