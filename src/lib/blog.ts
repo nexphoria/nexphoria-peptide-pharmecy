@@ -1986,6 +1986,9 @@ import { article as aOVN_GHK_MUSCLE } from './articles/ghk-cu-muscle-recovery-re
 import { article as aJUN17OVN18_TANNING } from './articles/tanning-peptides-melanotan-afamelanotide-research-guide';
 import { article as aJUN17OVN18_FOLLISTATIN315 } from './articles/follistatin-315-isoform-myostatin-inhibition-research-guide';
 import { article as aJUN17OVN18_NAD_IV } from './articles/nad-iv-injectable-vs-oral-precursor-research-comparison-2026';
+import { article as aJUN18OVN_NAD_NMN } from './articles/nad-plus-vs-nmn-researchers-comparison';
+import { article as aJUN18OVN_HPLC_STD } from './articles/peptide-purity-hplc-testing-standards';
+import { article as aJUN18OVN_NEXP_QA } from './articles/nexphoria-quality-standards-research-peptides';
 import { article as aJUN18OVN_ARA290_WTB } from './articles/where-to-buy-ara-290-research-guide';
 import { article as aJUN18OVN_PALMITOYL_WTB } from './articles/where-to-buy-palmitoyl-peptides-matrixyl-research-guide';
 import { article as aJUN18OVN_APC1_WTB } from './articles/where-to-buy-apc-1-antimicrobial-peptide-research-guide';
@@ -4100,6 +4103,9 @@ export const articles: BlogArticle[] = [
   aJUN17OVN18_TANNING,
   aJUN17OVN18_FOLLISTATIN315,
   aJUN17OVN18_NAD_IV,
+  aJUN18OVN_NAD_NMN,
+  aJUN18OVN_HPLC_STD,
+  aJUN18OVN_NEXP_QA,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
