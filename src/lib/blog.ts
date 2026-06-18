@@ -2117,6 +2117,9 @@ import { article as aOVN_COLDCHAIN_EVAL } from './articles/peptide-vendor-evalua
 import { article as aJUN18OVN_PINEALON } from './articles/pinealon-neuropeptide-bioregulator-research-guide';
 import { article as aJUN18OVN_BPC157_PRICE } from './articles/how-much-does-bpc-157-cost-research-pricing-guide';
 import { article as aJUN18OVN_SLEEP } from './articles/peptide-research-sleep-optimization-dsip-pinealon-ghrp';
+import { article as aJUN18OVN25_PS_SHUTDOWN } from './articles/peptide-sciences-shutdown-what-researchers-need-now';
+import { article as aJUN18OVN25_LONGEVITY_5H } from './articles/longevity-peptide-research-2026-five-hallmark-targets';
+import { article as aJUN18OVN25_GLOSSARY_JUN } from './articles/research-peptide-glossary-50-essential-terms-june-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -4160,6 +4163,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN_PINEALON,
   aJUN18OVN_BPC157_PRICE,
   aJUN18OVN_SLEEP,
+  aJUN18OVN25_PS_SHUTDOWN,
+  aJUN18OVN25_LONGEVITY_5H,
+  aJUN18OVN25_GLOSSARY_JUN,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
