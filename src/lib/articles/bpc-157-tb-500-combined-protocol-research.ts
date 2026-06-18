@@ -4,10 +4,10 @@ export const article: BlogArticle = {
   slug: "bpc-157-tb-500-combined-protocol-research",
   title: "BPC-157 + TB-500: Research on the Combined Protocol",
   description:
-    "BPC-157 and TB-500 are frequently studied together in preclinical research. This article examines the mechanistic rationale for combined protocols, what the available literature shows, and how to source both at research grade.",
+    "BPC-157 and TB-500 are among the most studied tissue-repair peptides in preclinical literature. This article examines the mechanistic rationale for combined protocols, what the available evidence shows, and quality standards for sourcing both compounds.",
   category: "Compound Profiles",
-  readMinutes: 11,
-  publishedAt: "2026-06-16",
+  readMinutes: 10,
+  publishedAt: "2026-06-18",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -36,11 +36,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "The theoretical basis for combination research rests on the hypothesis that BPC-157's downstream signaling effects and TB-500's upstream cytoskeletal effects operate in sequence rather than competition: TB-500 facilitates cell migration to the injury site via actin dynamics, and BPC-157 promotes vascularization and signaling cascade activation to support those cells once recruited.",
-    },
-    {
-      type: "callout",
-      text: "This upstream-downstream complementarity suggests the compounds should not antagonize each other — a prediction consistent with the current absence of reported antagonistic interactions in the preclinical literature.",
+      text: "The theoretical basis for combination research rests on the hypothesis that BPC-157's downstream signaling effects and TB-500's upstream cytoskeletal effects operate in sequence rather than competition: TB-500 facilitates cell migration to the injury site via actin dynamics, while BPC-157 promotes vascularization and signaling cascade activation to support those cells once recruited. This upstream-downstream complementarity suggests the compounds should not antagonize each other — a prediction consistent with the current absence of reported antagonistic interactions in the preclinical literature.",
     },
     {
       type: "heading",
@@ -52,7 +48,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Both peptides upregulate VEGF (Vascular Endothelial Growth Factor), but through different entry points. BPC-157 activates VEGF via eNOS/NO signaling, while TB-500 promotes angiogenesis through cellular migration and VEGF receptor expression in progenitor cells. The hypothesis that dual VEGF pathway activation may produce additive angiogenic effects is mechanistically sound and aligns with general principles of multi-pathway angiogenesis research.",
+      text: "Both peptides upregulate VEGF (Vascular Endothelial Growth Factor), but through different entry points: BPC-157 activates VEGF via eNOS/NO signaling, while TB-500 promotes angiogenesis through cellular migration and VEGF receptor expression in progenitor cells. The hypothesis that dual VEGF pathway activation may produce additive angiogenic effects is mechanistically sound and aligns with general principles of multi-pathway angiogenesis research.",
     },
     {
       type: "subheading",
@@ -68,7 +64,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "In tendon injury models — one of the most studied contexts for both peptides — the repair process requires inflammatory clearance, progenitor cell migration and proliferation, collagen deposition and matrix organization, and vascularization of the repair tissue. BPC-157 and TB-500 have each been documented to support multiple steps in this sequence independently.",
+      text: "In tendon injury models — one of the most studied contexts for both peptides — the repair process requires: (1) inflammatory clearance, (2) progenitor cell migration and proliferation, (3) collagen deposition and matrix organization, and (4) vascularization of the repair tissue. BPC-157 and TB-500 have each been documented to support multiple steps in this sequence independently. Combined protocols are studied to determine whether each compound's activity in its respective phase can be simultaneously supported.",
     },
     {
       type: "heading",
@@ -76,11 +72,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Direct studies using BPC-157 + TB-500 combinations in the same experimental design are limited in the published literature; most available evidence is: (1) independent studies with overlapping models — allowing indirect comparison of effect sizes when each is used alone; (2) mechanistic reasoning based on pathway maps — suggesting no known antagonism; and (3) observational data from research communities — not published, but informing protocol design in active research groups.",
-    },
-    {
-      type: "callout",
-      text: "The absence of direct head-to-head combined studies represents a gap in the literature. Researchers designing combined protocols should note that this is an area where additional controlled preclinical work is needed.",
+      text: "Direct studies using BPC-157 + TB-500 combinations in the same experimental design are limited in the published literature; most available evidence consists of independent studies with overlapping models (allowing indirect comparison of effect sizes when each is used alone), mechanistic reasoning based on pathway maps (suggesting no known antagonism), and observational data from research communities (not published, but informing protocol design in active research groups). The absence of direct head-to-head combined studies represents a gap in the literature.",
     },
     {
       type: "heading",
@@ -88,7 +80,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "In preclinical models, combined BPC-157 + TB-500 protocols typically use the following parameters:",
+      text: "In preclinical models, combined BPC-157 + TB-500 protocols typically use established dosing parameters for each compound independently.",
     },
     {
       type: "subheading",
@@ -124,7 +116,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Researchers requiring both compounds for a combined protocol should apply uniform quality standards across both:",
+      text: "Researchers requiring both compounds for a combined protocol should apply uniform quality standards across both.",
     },
     {
       type: "subheading",
@@ -154,7 +146,7 @@ export const article: BlogArticle = {
     },
     {
       type: "callout",
-      text: "Bundled sourcing: Some research suppliers offer BPC-157 and TB-500 together with shared COA documentation. Researchers should verify that each compound's analytical documentation is independently certified — not pooled.",
+      text: "Bundled sourcing: Some research suppliers offer BPC-157 and TB-500 together with shared COA documentation. This is logistically convenient, but researchers should verify that each compound's analytical documentation is independently certified — not pooled.",
     },
     {
       type: "heading",

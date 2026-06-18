@@ -2144,6 +2144,9 @@ import { article as aJUN19_NADNMN } from './articles/nad-plus-vs-nmn-longevity-p
 import { article as aJUN19OVN32_MUSCLE } from './articles/peptide-muscle-recovery-comparison-2026';
 import { article as aJUN19OVN32_COA } from './articles/how-to-read-peptide-coa-hplc-ms-guide';
 import { article as aJUN19OVN32_RENAL } from './articles/glp1-agonists-kidney-renal-research-2026';
+import { article as aJUN18OVN33_PS_ALT } from './articles/peptide-sciences-alternative-supplier-guide-2026';
+import { article as aJUN18OVN33_LONGEVITY } from './articles/longevity-peptide-stack-2026';
+import { article as aJUN18OVN33_BPC_TB } from './articles/bpc-157-tb-500-combined-protocol-research';
 
 
 export const articles: BlogArticle[] = [
@@ -4214,6 +4217,9 @@ export const articles: BlogArticle[] = [
   aJUN19OVN32_MUSCLE,
   aJUN19OVN32_COA,
   aJUN19OVN32_RENAL,
+  aJUN18OVN33_PS_ALT,
+  aJUN18OVN33_LONGEVITY,
+  aJUN18OVN33_BPC_TB,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

@@ -4,10 +4,10 @@ export const article: BlogArticle = {
   slug: "peptide-sciences-alternative-supplier-guide-2026",
   title: "Looking for a Peptide Sciences Alternative? Here's What to Know",
   description:
-    "Peptide Sciences closed in March 2026, leaving thousands of researchers without a trusted supplier. This guide covers what rigorous researchers should require from any replacement vendor — and how to evaluate options with precision.",
-  category: "Quality & Testing",
+    "Peptide Sciences shut down in March 2026, leaving thousands of researchers without a supplier. Here's what rigorous criteria to apply when evaluating replacements — and why documentation standards matter more than ever.",
+  category: "Sourcing & Quality",
   readMinutes: 9,
-  publishedAt: "2026-06-04",
+  publishedAt: "2026-06-18",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -28,15 +28,15 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "The reasons have not been officially confirmed, but patterns like this in the research peptide space often trace back to one of a few causes: regulatory pressure from the FDA or DEA targeting online peptide distribution, supply chain failures at the synthesis or raw-material level, or operational insolvency from thin margins in a competitive, commoditized market.",
+      text: "The reasons have not been officially confirmed, but patterns like this in the research peptide space often trace back to regulatory pressure from the FDA or DEA targeting online peptide distribution, supply chain failures at the synthesis or raw-material level, or operational insolvency from thin margins in a competitive, commoditized market. Whatever the cause, the result is the same: tens of thousands of researchers who relied on a familiar vendor are now in a position to reassess.",
     },
     {
-      type: "callout",
-      text: "Whatever the cause, the result is the same: tens of thousands of researchers who relied on a familiar vendor are now reassessing. This is an opportunity. Disruption forces re-evaluation — and in the research peptide industry, not all suppliers are created equal.",
+      type: "paragraph",
+      text: "This is actually an opportunity. Disruption of any kind forces re-evaluation — and in the research peptide industry, not all suppliers are created equal.",
     },
     {
       type: "heading",
-      text: "What to Look for in a Replacement Supplier",
+      text: "What to Look for in a Peptide Sciences Replacement",
     },
     {
       type: "paragraph",
@@ -48,15 +48,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "High-Performance Liquid Chromatography (HPLC) is the gold standard for verifying peptide purity. Any credible supplier should provide HPLC chromatograms for each batch of product — not just a stated percentage on a label.",
-    },
-    {
-      type: "list",
-      items: [
-        "≥98% purity on HPLC reports (research-grade); ≥99% for premium research applications",
-        "Batch-specific certificates, not generic template documents",
-        "Third-party lab testing, not in-house only",
-      ],
+      text: "High-Performance Liquid Chromatography (HPLC) is the gold standard for verifying peptide purity. Any credible supplier should provide HPLC chromatograms for each batch of product — not just a stated percentage on a label. Look for ≥98% purity on HPLC reports, batch-specific certificates rather than generic template documents, and third-party lab testing rather than in-house only.",
     },
     {
       type: "subheading",
@@ -72,7 +64,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "HPLC alone confirms purity; mass spectrometry (MS) confirms identity. A peptide can pass HPLC with a high purity score but still be misidentified. Two different peptides with similar hydrophobicity can produce nearly identical chromatograms. Top-tier suppliers run both tests and make results available.",
+      text: "HPLC alone confirms purity; mass spectrometry (MS) confirms identity. A peptide can pass HPLC with a high purity score but still be misidentified. Top-tier suppliers run both tests and make results available.",
     },
     {
       type: "subheading",
@@ -80,15 +72,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Peptides are sensitive to temperature fluctuation, moisture, and UV exposure. A supplier's logistics chain should reflect this.",
-    },
-    {
-      type: "list",
-      items: [
-        "Products shipped with dry ice or cold packs when appropriate",
-        "Lyophilized (freeze-dried) form for longer shelf stability",
-        "Clear storage guidance provided with every shipment",
-      ],
+      text: "Peptides are sensitive to temperature fluctuation, moisture, and UV exposure. A supplier's logistics chain should reflect this. Key indicators: products shipped with dry ice or cold packs when appropriate; lyophilized (freeze-dried) form for longer shelf stability; and clear storage guidance provided with every shipment.",
     },
     {
       type: "subheading",
@@ -96,7 +80,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Research peptides must be labeled 'For Research Use Only. Not for human use.' Suppliers who obscure this, or who market products for unapproved human applications, create regulatory and liability risk for the researchers who use them.",
+      text: "Research peptides must be labeled 'For Research Use Only. Not for human use.' Suppliers who obscure this or who market products for unapproved human applications create regulatory and liability risk for the researchers who use them.",
     },
     {
       type: "heading",
@@ -104,15 +88,19 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "The research peptide market has a well-documented quality problem. With synthetic peptide production increasingly offshored to low-cost manufacturers — many without verified QA processes — the gap between claimed purity and actual purity can be significant.",
+      text: "The research peptide market has a well-documented quality problem. With synthetic peptide production increasingly offshored to low-cost manufacturers — many without verified QA processes — the gap between claimed purity and actual purity can be significant. A 2022 analysis of commercial peptide products found measurable discrepancies in a substantial portion of samples tested. Misidentified sequences, purity gaps, and contamination from unreacted reagents are documented problems.",
     },
     {
       type: "paragraph",
-      text: "A 2022 analysis of commercial peptide products found measurable discrepancies in a substantial portion of samples tested. Misidentified sequences, purity gaps, and contamination from unreacted reagents are documented problems in the market.",
+      text: "When a large supplier like Peptide Sciences exits the market, it creates demand that is quickly filled by lower-quality operators. Researchers who don't apply rigorous supplier evaluation risk compromising their work.",
     },
     {
-      type: "callout",
-      text: "When a large supplier like Peptide Sciences exits the market, it creates demand that is quickly filled by lower-quality operators. Researchers who don't apply rigorous supplier evaluation risk compromising their work.",
+      type: "heading",
+      text: "Nexphoria: Built for Researchers Who Require Precision",
+    },
+    {
+      type: "paragraph",
+      text: "Nexphoria was designed with the standards that serious researchers were clearly not getting from commodity suppliers. Every Nexphoria product includes HPLC and mass spectrometry verification (batch-specific, third-party confirmed), full COA transparency accessible at point of purchase, LAL (Limulus Amebocyte Lysate) endotoxin testing to ensure products are free of bacterial endotoxins that could compromise experimental integrity, lyophilized format with proper cold-chain logistics from synthesis to delivery, and strict research-only positioning with no clinical language or wellness marketing.",
     },
     {
       type: "heading",
@@ -120,7 +108,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "If you are currently mid-study or have established reconstitution and storage protocols, transitioning suppliers requires care. Use this checklist when evaluating and switching to any new vendor.",
+      text: "If you are currently mid-study or have established reconstitution and storage protocols, transitioning suppliers requires care.",
     },
     {
       type: "subheading",
@@ -132,7 +120,7 @@ export const article: BlogArticle = {
         "Review the COA for your specific compound and confirm batch-level data",
         "Verify HPLC purity ≥98% and mass spec identity match",
         "Confirm LAL endotoxin testing has been performed",
-        "Check shipping method and temperature control documentation",
+        "Check shipping method and temperature control",
       ],
     },
     {
@@ -144,7 +132,7 @@ export const article: BlogArticle = {
       items: [
         "Inspect packaging integrity and cold-chain indicators",
         "Verify lot number matches COA documentation",
-        "Store per compound-specific guidelines (typically -20°C for long-term lyophilized storage)",
+        "Store per compound-specific guidelines (typically -20°C for long-term)",
       ],
     },
     {
@@ -155,8 +143,7 @@ export const article: BlogArticle = {
       type: "list",
       items: [
         "Establish a single-supplier relationship to minimize batch-to-batch variability",
-        "Document each lot number used in your research records",
-        "Request new COAs when purchasing a new batch, even of the same compound",
+        "Document each lot used in your research records",
       ],
     },
     {
@@ -165,15 +152,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "The closure of Peptide Sciences is a reminder that supplier selection in research peptide procurement is not a passive decision. Continuity of supply matters — but so does quality consistency, documentation rigor, and regulatory posture.",
-    },
-    {
-      type: "paragraph",
-      text: "The researchers who treat supplier evaluation with the same rigor they bring to their protocols will be better positioned regardless of what happens to any individual vendor in the market.",
+      text: "The closure of Peptide Sciences is a reminder that supplier selection in research peptide procurement is not a passive decision. Continuity of supply matters — but so does quality consistency, documentation rigor, and regulatory posture. The researchers who treat supplier evaluation with the same rigor they bring to their protocols will be better positioned regardless of what happens to any individual vendor.",
     },
     {
       type: "disclaimer",
-      text: "For research purposes only. Not intended for human use. Nexphoria supplies research-grade peptides exclusively for pre-clinical and in-vitro research applications.",
+      text: "For research purposes only. Not intended for human use.",
     },
   ],
 };
