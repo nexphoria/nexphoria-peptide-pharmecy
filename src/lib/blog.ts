@@ -2126,6 +2126,9 @@ import { article as aJUN18OVN26_MARI_TIME } from './articles/how-long-does-marid
 import { article as aJUN18OVN27_VK2735_2026 } from './articles/where-to-buy-vk2735-research-guide-2026';
 import { article as aJUN18OVN27_BPC157_MORNING } from './articles/bpc-157-morning-dosing-research-guide';
 import { article as aJUN18OVN27_NEWS_MORNING } from './articles/peptide-research-news-june-18-2026-morning';
+import { article as aJUN18OVN28_VK2735_ORAL } from './articles/vk2735-oral-vs-subcutaneous-research-comparison-2026';
+import { article as aJUN18OVN28_TENDON } from './articles/tendon-tenocyte-biology-peptide-repair-research-2026';
+import { article as aJUN18OVN28_NEWS_EVE } from './articles/peptide-research-news-june-18-2026-evening';
 
 
 export const articles: BlogArticle[] = [
@@ -4178,6 +4181,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN27_VK2735_2026,
   aJUN18OVN27_BPC157_MORNING,
   aJUN18OVN27_NEWS_MORNING,
+  aJUN18OVN28_VK2735_ORAL,
+  aJUN18OVN28_TENDON,
+  aJUN18OVN28_NEWS_EVE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
