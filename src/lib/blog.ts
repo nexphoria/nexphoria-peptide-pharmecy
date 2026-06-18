@@ -2135,6 +2135,9 @@ import { article as aJUN18OVN29_NOCICEPTIN } from './articles/pnoc-nociceptin-or
 import { article as aJUN18OVN30_WOLVERINE_PRICE } from './articles/how-much-does-wolverine-stack-cost-research-pricing-guide';
 import { article as aJUN18OVN30_OXYTOCIN_PRICE } from './articles/how-much-does-oxytocin-cost-research-pricing-guide';
 import { article as aJUN18OVN30_ORFOGL_PRICE } from './articles/how-much-does-orforglipron-cost-research-pricing-guide';
+import { article as aJUN18OVN31_BRAND_TRANS } from './articles/nexphoria-brand-transparency-research-standards';
+import { article as aJUN18OVN31_TRUST_SIG } from './articles/research-peptide-vendor-trust-signals-complete-guide';
+import { article as aJUN18OVN31_DESIGN_LANG } from './articles/nexphoria-design-language-research-brand-identity';
 
 
 export const articles: BlogArticle[] = [
@@ -4196,6 +4199,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN30_WOLVERINE_PRICE,
   aJUN18OVN30_OXYTOCIN_PRICE,
   aJUN18OVN30_ORFOGL_PRICE,
+  aJUN18OVN31_BRAND_TRANS,
+  aJUN18OVN31_TRUST_SIG,
+  aJUN18OVN31_DESIGN_LANG,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
