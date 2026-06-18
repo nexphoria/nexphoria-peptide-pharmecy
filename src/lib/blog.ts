@@ -2201,6 +2201,9 @@ import { article as aJUN18OVN41_EPITHALON } from './articles/epithalon-telomere-
 import { article as aJUN18OVN42_NAD_NMN } from './articles/nad-plus-vs-nmn-research-comparison-jun18';
 import { article as aJUN18OVN43_LONGEVITY_STACK } from './articles/longevity-peptide-stack-2026-complete-research-guide-jun18';
 import { article as aJUN18OVN44_MUSCLE_RECOVERY } from './articles/best-peptides-muscle-recovery-research-2026-jun18';
+import { article as aJUN19EVN_NEWS } from './articles/peptide-research-news-june-19-2026-evening';
+import { article as aJUN19EVN_PARKOUR } from './articles/best-peptides-parkour-freerunning-research-2026';
+import { article as aJUN19EVN_GYMNASTICS } from './articles/best-peptides-gymnastics-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -4404,6 +4407,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN_SPAIN,
   aJUN18OVN_SKOREA,
   aJUN18OVN_ITALY,
+  aJUN19EVN_NEWS,
+  aJUN19EVN_PARKOUR,
+  aJUN19EVN_GYMNASTICS,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
