@@ -2096,6 +2096,9 @@ import { article as aJUN18OVN19_SEMAX } from './articles/semax-nootropic-peptide
 import { article as aJUN18OVN20_WHOLESALE } from './articles/nexphoria-wholesale-research-account-program';
 import { article as aJUN18OVN20_AFFILIATE } from './articles/nexphoria-influencer-affiliate-program-researchers';
 import { article as aJUN18OVN20_REDDIT } from './articles/peptide-research-reddit-strategy-2026-community-guide';
+import { article as aJUN19OVN_VK2735_PRICE } from './articles/how-much-does-vk2735-cost-research-pricing-guide';
+import { article as aJUN19OVN_KISS_PRICE } from './articles/how-much-does-kisspeptin-cost-research-pricing-guide';
+import { article as aJUN19OVN_MOTSC_PRICE } from './articles/how-much-does-mots-c-cost-research-pricing-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -4118,6 +4121,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN20_WHOLESALE,
   aJUN18OVN20_AFFILIATE,
   aJUN18OVN20_REDDIT,
+  aJUN19OVN_VK2735_PRICE,
+  aJUN19OVN_KISS_PRICE,
+  aJUN19OVN_MOTSC_PRICE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
