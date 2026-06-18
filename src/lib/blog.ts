@@ -2108,6 +2108,9 @@ import { article as aJUN18OVN22_MUSCLE5 } from './articles/peptides-muscle-recov
 import { article as aJUN18OVN23_HEAT_JULY4 } from './articles/peptide-research-july-4th-heat-storage-outdoor-guide-2026';
 import { article as aJUN18OVN23_OFFICE } from './articles/best-peptides-office-workers-sedentary-lifestyle-research-2026';
 import { article as aJUN18OVN23_NEURO } from './articles/peptide-research-neuroplasticity-bdnf-ngf-semax-selank-cerebrolysin-2026';
+import { article as aJUN18OVN24_OCR } from './articles/best-peptides-obstacle-course-racing-spartan-tough-mudder-research-2026';
+import { article as aJUN18OVN24_TRADES } from './articles/best-peptides-trades-construction-workers-repetitive-stress-research-2026';
+import { article as aJUN18OVN24_ULTRA } from './articles/peptide-research-ultra-endurance-100k-ultramarathon-athletes-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -4142,6 +4145,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN23_HEAT_JULY4,
   aJUN18OVN23_OFFICE,
   aJUN18OVN23_NEURO,
+  aJUN18OVN24_OCR,
+  aJUN18OVN24_TRADES,
+  aJUN18OVN24_ULTRA,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
