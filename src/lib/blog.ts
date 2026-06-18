@@ -2156,6 +2156,9 @@ import { article as aJUN18OVN35_OREXIN } from './articles/orexin-hypocretin-pept
 import { article as aJUN18OVN36_CARNOSINE } from './articles/carnosine-beta-alanyl-histidine-dipeptide-research-guide';
 import { article as aJUN18OVN36_ANG17 } from './articles/angiotensin-1-7-mas-receptor-cardiovascular-peptide-research';
 import { article as aJUN18OVN36_CAB } from './articles/cabergoline-prolactin-dopamine-research-guide';
+import { article as aJUN18OVN37_TENDON } from './articles/peptide-research-tendon-repair-2026';
+import { article as aJUN18OVN37_ANXIETY } from './articles/peptide-research-anxiety-nootropic-stack-2026';
+import { article as aJUN18OVN37_FATLOSS } from './articles/best-peptides-fat-loss-2026-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -4238,6 +4241,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN36_CARNOSINE,
   aJUN18OVN36_ANG17,
   aJUN18OVN36_CAB,
+  aJUN18OVN37_TENDON,
+  aJUN18OVN37_ANXIETY,
+  aJUN18OVN37_FATLOSS,
   a1213,
   a1216,
   a1217,
