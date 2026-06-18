@@ -2132,6 +2132,9 @@ import { article as aJUN18OVN28_NEWS_EVE } from './articles/peptide-research-new
 import { article as aJUN18OVN29_CORTISTATIN } from './articles/cortistatin-somatostatin-family-neuropeptide-research';
 import { article as aJUN18OVN29_HUMANIN } from './articles/humanin-mitochondrial-derived-peptide-cardioprotection-research';
 import { article as aJUN18OVN29_NOCICEPTIN } from './articles/pnoc-nociceptin-orphanin-fq-opioid-research-guide';
+import { article as aJUN18OVN30_WOLVERINE_PRICE } from './articles/how-much-does-wolverine-stack-cost-research-pricing-guide';
+import { article as aJUN18OVN30_OXYTOCIN_PRICE } from './articles/how-much-does-oxytocin-cost-research-pricing-guide';
+import { article as aJUN18OVN30_ORFOGL_PRICE } from './articles/how-much-does-orforglipron-cost-research-pricing-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -4190,6 +4193,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN29_CORTISTATIN,
   aJUN18OVN29_HUMANIN,
   aJUN18OVN29_NOCICEPTIN,
+  aJUN18OVN30_WOLVERINE_PRICE,
+  aJUN18OVN30_OXYTOCIN_PRICE,
+  aJUN18OVN30_ORFOGL_PRICE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
