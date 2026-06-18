@@ -2093,6 +2093,9 @@ import { article as aJUN17OVN7_SELANK } from './articles/selank-anxiolytic-pepti
 import { article as aJUN18OVN19_GLP1_SLEEP } from './articles/glp1-agonists-sleep-apnea-research-tirzepatide-semaglutide';
 import { article as aJUN18OVN19_GLP1_ALCOHOL } from './articles/glp1-agonists-alcohol-addiction-research-2026';
 import { article as aJUN18OVN19_SEMAX } from './articles/semax-nootropic-peptide-cognitive-research-complete-guide';
+import { article as aJUN18OVN20_WHOLESALE } from './articles/nexphoria-wholesale-research-account-program';
+import { article as aJUN18OVN20_AFFILIATE } from './articles/nexphoria-influencer-affiliate-program-researchers';
+import { article as aJUN18OVN20_REDDIT } from './articles/peptide-research-reddit-strategy-2026-community-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -4112,6 +4115,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN19_GLP1_SLEEP,
   aJUN18OVN19_GLP1_ALCOHOL,
   aJUN18OVN19_SEMAX,
+  aJUN18OVN20_WHOLESALE,
+  aJUN18OVN20_AFFILIATE,
+  aJUN18OVN20_REDDIT,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
