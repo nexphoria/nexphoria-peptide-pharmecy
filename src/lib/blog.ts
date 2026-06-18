@@ -2099,6 +2099,9 @@ import { article as aJUN18OVN20_REDDIT } from './articles/peptide-research-reddi
 import { article as aJUN19OVN_VK2735_PRICE } from './articles/how-much-does-vk2735-cost-research-pricing-guide';
 import { article as aJUN19OVN_KISS_PRICE } from './articles/how-much-does-kisspeptin-cost-research-pricing-guide';
 import { article as aJUN19OVN_MOTSC_PRICE } from './articles/how-much-does-mots-c-cost-research-pricing-guide';
+import { article as aJUN19OVN21_5AMQ } from './articles/5-amino-1mq-nnmt-inhibitor-metabolic-research-guide';
+import { article as aJUN19OVN21_ABALO } from './articles/abaloparatide-teriparatide-bone-repair-peptide-research-guide';
+import { article as aJUN19OVN21_ACE2 } from './articles/ace2-peptide-fragments-cardiovascular-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -4124,6 +4127,9 @@ export const articles: BlogArticle[] = [
   aJUN19OVN_VK2735_PRICE,
   aJUN19OVN_KISS_PRICE,
   aJUN19OVN_MOTSC_PRICE,
+  aJUN19OVN21_5AMQ,
+  aJUN19OVN21_ABALO,
+  aJUN19OVN21_ACE2,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
