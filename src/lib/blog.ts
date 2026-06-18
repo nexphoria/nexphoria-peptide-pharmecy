@@ -2165,6 +2165,9 @@ import { article as aJUN19OVN38_SUMMER_GUIDE } from './articles/nexphoria-summer
 import { article as aJUN18OVN39_STRENGTH } from './articles/peptide-for-strength-training-research-2026';
 import { article as aJUN18OVN39_SLEEP } from './articles/peptide-research-sleep-quality-complete-guide-2026';
 import { article as aJUN18OVN39_CYCLING } from './articles/how-to-cycle-peptides-beginners-guide-2026';
+import { article as aJUN18OVN40_TB500 } from './articles/tb-500-complete-guide-researchers-2026';
+import { article as aJUN18OVN40_HYDRATION } from './articles/peptide-research-summer-hydration-electrolytes-athletes';
+import { article as aJUN18OVN40_BEGINNERS } from './articles/how-peptides-work-beginners-plain-english';
 
 
 export const articles: BlogArticle[] = [
@@ -4256,6 +4259,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN39_STRENGTH,
   aJUN18OVN39_SLEEP,
   aJUN18OVN39_CYCLING,
+  aJUN18OVN40_TB500,
+  aJUN18OVN40_HYDRATION,
+  aJUN18OVN40_BEGINNERS,
   a1213,
   a1216,
   a1217,
