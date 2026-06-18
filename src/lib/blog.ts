@@ -1455,6 +1455,9 @@ import { article as aJUN18OVN47_USA_BUYERS } from './articles/how-to-source-rese
 import { article as aJUN18OVN48_JAPAN } from './articles/research-peptides-japan-guide';
 import { article as aJUN18OVN48_FRANCE } from './articles/research-peptides-france-guide';
 import { article as aJUN18OVN48_INDIA } from './articles/research-peptides-india-guide';
+import { article as aJUN18OVN49_SEMA } from './articles/semaglutide-research-peptide-glp1-complete-guide-jun18';
+import { article as aJUN18OVN49_CJC } from './articles/cjc-1295-ipamorelin-stack-gh-axis-jun18';
+import { article as aJUN18OVN49_SELANK } from './articles/selank-gaba-bdnf-anxiolytic-research-jun18';
 import { article as aJUN17OVN8_FIRSTPROT } from './articles/first-timer-protocol-conservative-8-week-starter';
 import { article as aJUN17OVN8_BIOMARK } from './articles/how-to-read-your-response-biomarker-tracking';
 import { article as aJUN17OVN8_RECPHARM } from './articles/peptide-receptor-pharmacology-non-scientists';
@@ -4380,6 +4383,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN48_JAPAN,
   aJUN18OVN48_FRANCE,
   aJUN18OVN48_INDIA,
+  aJUN18OVN49_SEMA,
+  aJUN18OVN49_CJC,
+  aJUN18OVN49_SELANK,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
