@@ -2089,6 +2089,9 @@ import { article as aJUN18OVN_CABERGOLINE } from './articles/cabergoline-dopamin
 import { article as aJUN18OVN50_BRAZIL } from './articles/research-peptides-brazil-guide';
 import { article as aJUN18OVN50_UAE } from './articles/research-peptides-uae-guide';
 import { article as aJUN18OVN50_BIOSTACK } from './articles/nexphoria-vs-biostack-labs-vendor-comparison';
+import { article as aOVN_BPC157_COMPLETE_GUIDE } from './articles/bpc-157-complete-guide';
+import { article as aOVN_LONGEVITY_STACK_2026_COMPLETE } from './articles/longevity-peptide-stack-2026';
+import { article as aOVN_SEMA_RP_COMPLETE } from './articles/semaglutide-research-peptide';
 import { article as aJUN18OVN_DESLORELIN } from './articles/deslorelin-gnrh-superagonist-research-guide';
 import { article as aJUN17_VK2735 } from './articles/where-to-buy-vk2735-research-guide';
 import { article as aJUN17_TZ_MUSCLE } from './articles/does-tirzepatide-cause-muscle-loss-research';
@@ -4392,6 +4395,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN50_BRAZIL,
   aJUN18OVN50_UAE,
   aJUN18OVN50_BIOSTACK,
+  aOVN_BPC157_COMPLETE_GUIDE,
+  aOVN_LONGEVITY_STACK_2026_COMPLETE,
+  aOVN_SEMA_RP_COMPLETE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
