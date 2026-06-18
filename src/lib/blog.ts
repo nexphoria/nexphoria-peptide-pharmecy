@@ -1446,6 +1446,9 @@ import { article as aJUN18OVN45_MOTSC } from './articles/mots-c-exercise-researc
 import { article as aJUN18OVN_BPC157_GUT } from './articles/bpc-157-gut-health-leaky-gut-research-guide';
 import { article as aJUN18OVN_PS_SHUTDOWN } from './articles/peptide-sciences-shutdown-what-happened-2026';
 import { article as aJUN18OVN_NAD_DECLINE } from './articles/nad-plus-decline-aging-mechanism-research-2026';
+import { article as aJUN18OVN46_SELANK } from './articles/selank-anxiety-nootropic-research-guide-2026';
+import { article as aJUN18OVN46_TA1_2026 } from './articles/thymosin-alpha-1-immune-modulation-research-guide-2026';
+import { article as aJUN18OVN46_LONGEVITY } from './articles/longevity-peptide-stack-2026-research-overview';
 import { article as aJUN17OVN8_FIRSTPROT } from './articles/first-timer-protocol-conservative-8-week-starter';
 import { article as aJUN17OVN8_BIOMARK } from './articles/how-to-read-your-response-biomarker-tracking';
 import { article as aJUN17OVN8_RECPHARM } from './articles/peptide-receptor-pharmacology-non-scientists';
@@ -4362,6 +4365,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN_BPC157_GUT,
   aJUN18OVN_PS_SHUTDOWN,
   aJUN18OVN_NAD_DECLINE,
+  aJUN18OVN46_SELANK,
+  aJUN18OVN46_TA1_2026,
+  aJUN18OVN46_LONGEVITY,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
