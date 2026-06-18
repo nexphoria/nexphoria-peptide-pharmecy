@@ -2168,6 +2168,9 @@ import { article as aJUN18OVN39_CYCLING } from './articles/how-to-cycle-peptides
 import { article as aJUN18OVN40_TB500 } from './articles/tb-500-complete-guide-researchers-2026';
 import { article as aJUN18OVN40_HYDRATION } from './articles/peptide-research-summer-hydration-electrolytes-athletes';
 import { article as aJUN18OVN40_BEGINNERS } from './articles/how-peptides-work-beginners-plain-english';
+import { article as aJUN18OVN41_CJC_IPAM } from './articles/cjc-1295-ipamorelin-gh-pulse-protocol-research-jun18';
+import { article as aJUN18OVN41_QUALITY_FLAGS } from './articles/research-peptide-quality-red-flags-sourcing-checklist-jun18';
+import { article as aJUN18OVN41_EPITHALON } from './articles/epithalon-telomere-biology-longevity-research-jun18';
 
 
 export const articles: BlogArticle[] = [
@@ -4262,6 +4265,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN40_TB500,
   aJUN18OVN40_HYDRATION,
   aJUN18OVN40_BEGINNERS,
+  aJUN18OVN41_CJC_IPAM,
+  aJUN18OVN41_QUALITY_FLAGS,
+  aJUN18OVN41_EPITHALON,
   a1213,
   a1216,
   a1217,
