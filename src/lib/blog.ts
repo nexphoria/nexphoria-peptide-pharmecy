@@ -2123,6 +2123,9 @@ import { article as aJUN18OVN25_GLOSSARY_JUN } from './articles/research-peptide
 import { article as aJUN18OVN26_MARI_BUY } from './articles/where-to-buy-maridebart-cafraglutide-research-guide';
 import { article as aJUN18OVN26_EFIN_BUY } from './articles/where-to-buy-efinopegdutide-research-guide';
 import { article as aJUN18OVN26_MARI_TIME } from './articles/how-long-does-maridebart-cafraglutide-take-to-work-research-timeline';
+import { article as aJUN18OVN27_VK2735_2026 } from './articles/where-to-buy-vk2735-research-guide-2026';
+import { article as aJUN18OVN27_BPC157_MORNING } from './articles/bpc-157-morning-dosing-research-guide';
+import { article as aJUN18OVN27_NEWS_MORNING } from './articles/peptide-research-news-june-18-2026-morning';
 
 
 export const articles: BlogArticle[] = [
@@ -4172,6 +4175,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN26_MARI_BUY,
   aJUN18OVN26_EFIN_BUY,
   aJUN18OVN26_MARI_TIME,
+  aJUN18OVN27_VK2735_2026,
+  aJUN18OVN27_BPC157_MORNING,
+  aJUN18OVN27_NEWS_MORNING,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
