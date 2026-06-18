@@ -2141,6 +2141,9 @@ import { article as aJUN18OVN31_DESIGN_LANG } from './articles/nexphoria-design-
 import { article as aJUN19_NEWS } from './articles/peptide-research-news-june-19-2026';
 import { article as aJUN19_HEXVIPA } from './articles/hexarelin-vs-ipamorelin-ghs-comparison-2026';
 import { article as aJUN19_NADNMN } from './articles/nad-plus-vs-nmn-longevity-precursors-june-19-2026';
+import { article as aJUN19OVN32_MUSCLE } from './articles/peptide-muscle-recovery-comparison-2026';
+import { article as aJUN19OVN32_COA } from './articles/how-to-read-peptide-coa-hplc-ms-guide';
+import { article as aJUN19OVN32_RENAL } from './articles/glp1-agonists-kidney-renal-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -4208,6 +4211,9 @@ export const articles: BlogArticle[] = [
   aJUN19_NEWS,
   aJUN19_HEXVIPA,
   aJUN19_NADNMN,
+  aJUN19OVN32_MUSCLE,
+  aJUN19OVN32_COA,
+  aJUN19OVN32_RENAL,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
