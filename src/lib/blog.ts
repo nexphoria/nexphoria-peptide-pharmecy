@@ -2150,6 +2150,9 @@ import { article as aJUN18OVN33_BPC_TB } from './articles/bpc-157-tb-500-combine
 import { article as aJUN18OVN34_TA1 } from './articles/thymosin-alpha-1-immune-research';
 import { article as aJUN18OVN34_NAD } from './articles/nad-plus-longevity-research-2026';
 import { article as aJUN18OVN34_SRC } from './articles/peptide-sourcing-red-flags-2026';
+import { article as aJUN18OVN35_THYMOGEN } from './articles/thymogen-tripeptide-thymic-immune-research-guide';
+import { article as aJUN18OVN35_PALGHK } from './articles/pal-ghk-palmitoyl-tripeptide-skin-research-guide';
+import { article as aJUN18OVN35_OREXIN } from './articles/orexin-hypocretin-peptide-sleep-arousal-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -4226,6 +4229,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN34_TA1,
   aJUN18OVN34_NAD,
   aJUN18OVN34_SRC,
+  aJUN18OVN35_THYMOGEN,
+  aJUN18OVN35_PALGHK,
+  aJUN18OVN35_OREXIN,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
