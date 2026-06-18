@@ -2090,6 +2090,9 @@ import { article as aJUN17OVN6_BPC157_COMPLETE } from './articles/bpc-157-comple
 import { article as aJUN17OVN7_EPITHALON_TEL } from './articles/epithalon-telomere-what-studies-show-2026';
 import { article as aJUN17OVN7_NAD_NMN } from './articles/nad-plus-vs-nmn-researchers-2026-comparison';
 import { article as aJUN17OVN7_SELANK } from './articles/selank-anxiolytic-peptide-research-2026';
+import { article as aJUN18OVN19_GLP1_SLEEP } from './articles/glp1-agonists-sleep-apnea-research-tirzepatide-semaglutide';
+import { article as aJUN18OVN19_GLP1_ALCOHOL } from './articles/glp1-agonists-alcohol-addiction-research-2026';
+import { article as aJUN18OVN19_SEMAX } from './articles/semax-nootropic-peptide-cognitive-research-complete-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -4106,6 +4109,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN_NAD_NMN,
   aJUN18OVN_HPLC_STD,
   aJUN18OVN_NEXP_QA,
+  aJUN18OVN19_GLP1_SLEEP,
+  aJUN18OVN19_GLP1_ALCOHOL,
+  aJUN18OVN19_SEMAX,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
