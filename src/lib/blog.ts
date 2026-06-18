@@ -2086,6 +2086,9 @@ import { article as aJUN17OVN5_BIMAGRUMAB } from './articles/where-to-buy-bimagr
 import { article as aJUN17OVN5_PETRELINTIDE } from './articles/where-to-buy-petrelintide-research-guide';
 import { article as aJUN18OVN_VK2735 } from './articles/vk2735-viking-therapeutics-glp1-gip-dual-agonist-research-guide';
 import { article as aJUN18OVN_CABERGOLINE } from './articles/cabergoline-dopamine-agonist-peptide-research-guide';
+import { article as aJUN18OVN50_BRAZIL } from './articles/research-peptides-brazil-guide';
+import { article as aJUN18OVN50_UAE } from './articles/research-peptides-uae-guide';
+import { article as aJUN18OVN50_BIOSTACK } from './articles/nexphoria-vs-biostack-labs-vendor-comparison';
 import { article as aJUN18OVN_DESLORELIN } from './articles/deslorelin-gnrh-superagonist-research-guide';
 import { article as aJUN17_VK2735 } from './articles/where-to-buy-vk2735-research-guide';
 import { article as aJUN17_TZ_MUSCLE } from './articles/does-tirzepatide-cause-muscle-loss-research';
@@ -4386,6 +4389,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN49_SEMA,
   aJUN18OVN49_CJC,
   aJUN18OVN49_SELANK,
+  aJUN18OVN50_BRAZIL,
+  aJUN18OVN50_UAE,
+  aJUN18OVN50_BIOSTACK,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
