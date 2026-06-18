@@ -2090,6 +2090,9 @@ import { article as aJUN18OVN50_BRAZIL } from './articles/research-peptides-braz
 import { article as aJUN18OVN50_UAE } from './articles/research-peptides-uae-guide';
 import { article as aJUN18OVN50_BIOSTACK } from './articles/nexphoria-vs-biostack-labs-vendor-comparison';
 import { article as aOVN_BPC157_COMPLETE_GUIDE } from './articles/bpc-157-complete-guide';
+import { article as aJUN18OVN_SPAIN } from './articles/research-peptides-spain-guide';
+import { article as aJUN18OVN_SKOREA } from './articles/research-peptides-south-korea-guide';
+import { article as aJUN18OVN_ITALY } from './articles/research-peptides-italy-guide';
 import { article as aOVN_LONGEVITY_STACK_2026_COMPLETE } from './articles/longevity-peptide-stack-2026';
 import { article as aOVN_SEMA_RP_COMPLETE } from './articles/semaglutide-research-peptide';
 import { article as aJUN18OVN_DESLORELIN } from './articles/deslorelin-gnrh-superagonist-research-guide';
@@ -4398,6 +4401,9 @@ export const articles: BlogArticle[] = [
   aOVN_BPC157_COMPLETE_GUIDE,
   aOVN_LONGEVITY_STACK_2026_COMPLETE,
   aOVN_SEMA_RP_COMPLETE,
+  aJUN18OVN_SPAIN,
+  aJUN18OVN_SKOREA,
+  aJUN18OVN_ITALY,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
