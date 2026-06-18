@@ -1443,6 +1443,9 @@ import { article as a1493 } from './articles/efocipegtrutide-triple-agonist-rese
 import { article as aJUN18OVN45_JOINT } from './articles/peptide-research-joint-health-2026';
 import { article as aJUN18OVN45_SEMA_PLATEAU } from './articles/semaglutide-plateau-research-strategies-2026';
 import { article as aJUN18OVN45_MOTSC } from './articles/mots-c-exercise-research-guide-2026';
+import { article as aJUN18OVN_BPC157_GUT } from './articles/bpc-157-gut-health-leaky-gut-research-guide';
+import { article as aJUN18OVN_PS_SHUTDOWN } from './articles/peptide-sciences-shutdown-what-happened-2026';
+import { article as aJUN18OVN_NAD_DECLINE } from './articles/nad-plus-decline-aging-mechanism-research-2026';
 import { article as aJUN17OVN8_FIRSTPROT } from './articles/first-timer-protocol-conservative-8-week-starter';
 import { article as aJUN17OVN8_BIOMARK } from './articles/how-to-read-your-response-biomarker-tracking';
 import { article as aJUN17OVN8_RECPHARM } from './articles/peptide-receptor-pharmacology-non-scientists';
@@ -4356,6 +4359,9 @@ export const articles: BlogArticle[] = [
   aJUN18OVN45_JOINT,
   aJUN18OVN45_SEMA_PLATEAU,
   aJUN18OVN45_MOTSC,
+  aJUN18OVN_BPC157_GUT,
+  aJUN18OVN_PS_SHUTDOWN,
+  aJUN18OVN_NAD_DECLINE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
