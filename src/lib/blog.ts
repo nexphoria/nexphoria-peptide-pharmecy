@@ -4449,6 +4449,9 @@ import { article as aJUN19OVN30_GUT_MOTILITY } from './articles/peptide-research
 import { article as aJUN19EVN_BELGIUM } from './articles/research-peptides-belgium-guide';
 import { article as aJUN19EVN_CZECH } from './articles/research-peptides-czech-republic-guide';
 import { article as aJUN19EVN_BPC157_VAGUS } from './articles/bpc-157-mechanism-vagus-nerve-gut-brain-axis';
+import { article as aJUN19OVN_STARTER_KIT } from './articles/peptide-research-beginners-starter-kit-2026';
+import { article as aJUN19OVN_GLP1_3WAY } from './articles/ozempic-vs-tirzepatide-vs-retatrutide-2026-comparison';
+import { article as aJUN19OVN_SUMMER_STORAGE } from './articles/peptide-storage-summer-heat-complete-guide-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -8900,6 +8903,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19EVN_BELGIUM,
   aJUN19EVN_CZECH,
   aJUN19EVN_BPC157_VAGUS,
+  aJUN19OVN_STARTER_KIT,
+  aJUN19OVN_GLP1_3WAY,
+  aJUN19OVN_SUMMER_STORAGE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
