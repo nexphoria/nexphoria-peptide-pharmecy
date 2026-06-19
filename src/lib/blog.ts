@@ -4419,6 +4419,9 @@ import { article as aJUN19OVN20_CYCLING } from './articles/peptide-cycling-on-of
 import { article as aJUN19OVN21_GHKCU } from './articles/ghk-cu-complete-research-guide-jun19-2026';
 import { article as aJUN19OVN21_TB500_BPC } from './articles/tb-500-vs-bpc-157-which-is-better-researchers-guide';
 import { article as aJUN19OVN21_SOURCING } from './articles/peptide-sourcing-guide-what-to-look-for-jun19-2026';
+import { article as aJUN19OVN22_GLP1_MUSCLE } from './articles/glp1-muscle-loss-prevention-peptide-strategies-research-2026';
+import { article as aJUN19OVN22_GLP1_METFORMIN } from './articles/glp1-vs-metformin-metabolic-research-comparison-2026';
+import { article as aJUN19OVN22_GLP1_REBOUND } from './articles/glp1-discontinuation-rebound-weight-regain-peptide-strategies-research';
 
 
 export const articles: BlogArticle[] = [
@@ -8840,6 +8843,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19OVN21_GHKCU,
   aJUN19OVN21_TB500_BPC,
   aJUN19OVN21_SOURCING,
+  aJUN19OVN22_GLP1_MUSCLE,
+  aJUN19OVN22_GLP1_METFORMIN,
+  aJUN19OVN22_GLP1_REBOUND,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
