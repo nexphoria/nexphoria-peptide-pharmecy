@@ -2225,6 +2225,9 @@ import { article as aJUN19OVN52_BPC157_ORAL } from './articles/bpc-157-oral-vs-i
 import { article as aJUN20OVN1_PEPTIDES_VS_SARMS } from './articles/peptides-vs-sarms-research-comparison-2026';
 import { article as aJUN20OVN2_HALF_LIFE_REF } from './articles/peptide-half-life-comparison-reference-2026';
 import { article as aJUN20OVN3_BEST_STACKS } from './articles/best-peptide-stacks-2026-research-guide';
+import { article as aJUN19OVN53_READ_STUDY } from './articles/how-to-read-peptide-research-study-guide';
+import { article as aJUN19OVN53_QUANTIFY } from './articles/quantifying-peptides-elisa-mass-spec-bioassay-guide';
+import { article as aJUN19OVN53_ALIQUOT } from './articles/aliquoting-peptides-single-use-vials-freeze-thaw-prevention';
 
 
 export const articles: BlogArticle[] = [
@@ -4452,6 +4455,9 @@ export const articles: BlogArticle[] = [
   aJUN20OVN1_PEPTIDES_VS_SARMS,
   aJUN20OVN2_HALF_LIFE_REF,
   aJUN20OVN3_BEST_STACKS,
+  aJUN19OVN53_READ_STUDY,
+  aJUN19OVN53_QUANTIFY,
+  aJUN19OVN53_ALIQUOT,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
