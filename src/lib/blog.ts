@@ -4323,6 +4323,9 @@ import { article as aNew_zinc_carnosine_gut_health_gastric_mucosal_research_guid
 import { article as aNew_zinc_thymulin_thymic_immune_peptide_research_guide } from './articles/zinc-thymulin-thymic-immune-peptide-research-guide';
 import { article as aNew_sleep_gh_cjc_1295_research_literature_review } from './articles/sleep-gh-cjc-1295-research-literature-review';
 import { article as aNew_why_peptides_are_different_from_hormones_research_comparison } from './articles/why-peptides-are-different-from-hormones-research-comparison';
+import { article as aJUN19OVN_HEXCD36 } from './articles/hexarelin-cd36-cardiac-research-jun19-2026';
+import { article as aJUN19OVN_EPITHALON } from './articles/epithalon-telomere-research-jun19-2026';
+import { article as aJUN19OVN_TA1IMMUNE } from './articles/thymosin-alpha-1-immune-modulation-jun19-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -8648,6 +8651,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aNew_zinc_thymulin_thymic_immune_peptide_research_guide,
   aNew_sleep_gh_cjc_1295_research_literature_review,
   aNew_why_peptides_are_different_from_hormones_research_comparison,
+  aJUN19OVN_HEXCD36,
+  aJUN19OVN_EPITHALON,
+  aJUN19OVN_TA1IMMUNE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
