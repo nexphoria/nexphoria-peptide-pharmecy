@@ -4362,6 +4362,9 @@ import { article as aOVNV2_THYMOSIN_A1 } from './articles/thymosin-alpha-1-immun
 import { article as aJUN19OVN3_METABOLIC_SYNDROME } from './articles/peptide-research-metabolic-syndrome-multi-target-protocol-2026';
 import { article as aJUN19OVN3_SLEEP_ARCH } from './articles/peptide-research-sleep-architecture-gh-pulse-optimization-2026';
 import { article as aJUN19OVN3_FEMALE_CYCLE } from './articles/peptide-research-female-hormonal-cycle-protocol-design-2026';
+import { article as aOVNV3_BPC157_COMPLETE } from './articles/bpc-157-complete-research-guide-2026';
+import { article as aOVNV3_STORAGE_GUIDE } from './articles/proper-peptide-storage-temperature-light-shelf-life';
+import { article as aOVNV3_LONGEVITY_STACK } from './articles/longevity-peptide-stack-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -8726,6 +8729,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19OVN3_METABOLIC_SYNDROME,
   aJUN19OVN3_SLEEP_ARCH,
   aJUN19OVN3_FEMALE_CYCLE,
+  aOVNV3_BPC157_COMPLETE,
+  aOVNV3_STORAGE_GUIDE,
+  aOVNV3_LONGEVITY_STACK,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
