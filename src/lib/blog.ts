@@ -2213,6 +2213,9 @@ import { article as aJUN19OVN_CYCLING } from './articles/peptide-cycling-protoco
 import { article as aJUN20_NEWS } from './articles/peptide-research-news-june-20-2026';
 import { article as aJUN20_HEX_SERM } from './articles/hexarelin-vs-sermorelin-gh-secretagogue-comparison';
 import { article as aJUN20_AOD_SEMA } from './articles/aod-9604-vs-semaglutide-fat-loss-research-comparison';
+import { article as aOVN_BPC157_CG_V2 } from './articles/bpc-157-complete-guide';
+import { article as aOVN_SELANK_ANX_V2 } from './articles/selank-anxiety-research';
+import { article as aOVN_HEXARELIN_CP_V2 } from './articles/hexarelin-cardioprotection';
 
 
 export const articles: BlogArticle[] = [
@@ -4428,6 +4431,9 @@ export const articles: BlogArticle[] = [
   aJUN20_NEWS,
   aJUN20_HEX_SERM,
   aJUN20_AOD_SEMA,
+  aOVN_BPC157_CG_V2,
+  aOVN_SELANK_ANX_V2,
+  aOVN_HEXARELIN_CP_V2,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

@@ -6,8 +6,8 @@ export const article: BlogArticle = {
   description:
     "An evidence-based overview of Selank, the heptapeptide developed in Russia and studied for anxiolytic and nootropic effects. Research findings, mechanism of action, and what the data shows.",
   category: "Compound Profiles",
-  readMinutes: 10,
-  publishedAt: "2026-06-14",
+  readMinutes: 9,
+  publishedAt: "2026-06-18",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -16,7 +16,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Selank has been approved as a pharmaceutical in Russia and several post-Soviet states for the treatment of anxiety and asthenia, and it has been the subject of a substantial body of peer-reviewed research.",
+      text: "Selank has been approved as a pharmaceutical in Russia and several post-Soviet states for the treatment of anxiety and asthenia, and it has been the subject of a substantial body of peer-reviewed research. This article examines what that research shows.",
     },
     {
       type: "heading",
@@ -24,14 +24,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Anxiety disorders represent a significant area of unmet pharmacological research need. Current first-line pharmacological approaches — primarily SSRIs, SNRIs, and benzodiazepines — are associated with well-documented limitations.",
-    },
-    {
-      type: "list",
-      items: [
-        "Benzodiazepines: Efficacious short-term but carry dependency risk, tolerance development, and cognitive impairment concerns",
-        "SSRIs/SNRIs: Delayed onset (2–6 weeks), incomplete responder rates, and discontinuation syndrome",
-      ],
+      text: "Anxiety disorders represent a significant area of unmet pharmacological research need. Current first-line pharmacological approaches — primarily SSRIs, SNRIs, and benzodiazepines — are associated with well-documented limitations: benzodiazepines carry dependency risk, tolerance development, and cognitive impairment concerns; SSRIs and SNRIs have delayed onset of 2–6 weeks, incomplete responder rates, and discontinuation syndrome.",
     },
     {
       type: "paragraph",
@@ -94,6 +87,10 @@ export const article: BlogArticle = {
       text: "Nootropic and Cognitive Effects",
     },
     {
+      type: "paragraph",
+      text: "Beyond anxiolytic activity, Selank has been studied for cognitive enhancement properties:",
+    },
+    {
       type: "list",
       items: [
         "Memory consolidation — animal studies report improved performance on learning and memory tasks",
@@ -111,21 +108,7 @@ export const article: BlogArticle = {
     },
     {
       type: "heading",
-      text: "Comparison to Related Compounds",
-    },
-    {
-      type: "table",
-      headers: ["Compound", "Mechanism", "Approved Use", "Evidence Quality"],
-      rows: [
-        ["Selank", "GABAergic modulation, BDNF, enkephalin", "Russia (approved)", "Moderate — primarily Russian literature"],
-        ["Semax", "ACTH analog, BDNF", "Russia (approved)", "Moderate — similar evidence base"],
-        ["Diazepam", "GABA-A direct agonist", "Global", "Extensive RCT data"],
-        ["Buspirone", "5-HT1A partial agonist", "Global", "Extensive RCT data"],
-      ],
-    },
-    {
-      type: "heading",
-      text: "Research Considerations",
+      text: "Research Protocol Considerations",
     },
     {
       type: "subheading",
@@ -133,28 +116,20 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Selank has been studied primarily via intranasal administration in clinical applications. Animal studies have also used subcutaneous and intraperitoneal routes. Intranasal delivery allows direct entry to CNS via the olfactory pathway, bypassing first-pass metabolism.",
+      text: "Selank has been studied primarily via intranasal administration in clinical applications. Animal studies have also used subcutaneous and intraperitoneal routes. Intranasal delivery allows direct entry to the CNS via the olfactory pathway, bypassing first-pass metabolism.",
     },
     {
       type: "subheading",
-      text: "Stability",
+      text: "Stability and Storage",
     },
     {
       type: "list",
       items: [
-        "Selank is a heptapeptide with moderate stability in solution",
         "Lyophilized form is preferred for storage",
         "Reconstituted solutions: store at 2–8°C, use within 2–4 weeks",
         "Sensitive to enzymatic degradation at elevated temperatures",
+        "HPLC ≥98% and mass spectrometry identity verification should be confirmed in supplier COA documentation",
       ],
-    },
-    {
-      type: "subheading",
-      text: "Purity Requirements",
-    },
-    {
-      type: "paragraph",
-      text: "Given CNS research applications, purity standards are particularly important. HPLC ≥98% and mass spectrometry identity verification should be confirmed in supplier COA documentation.",
     },
     {
       type: "heading",
@@ -162,7 +137,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "The primary limitation of Selank research is geographic concentration. The majority of published studies originate from Russian institutions, with limited independent replication in Western academic settings. Many key studies are published in Russian-language journals with limited English availability. This does not invalidate the research, but it does mean the evidence has not been subjected to the degree of independent scrutiny standard in globally-replicated pharmacological research. Selank remains a research-stage compound for Western investigators.",
+      text: "The primary limitation of Selank research is geographic concentration. The majority of published studies originate from Russian institutions, with limited independent replication in Western academic settings. Many key studies are published in Russian-language journals with limited English availability.",
+    },
+    {
+      type: "callout",
+      text: "This does not invalidate the research, but it does mean the evidence has not been subjected to the degree of independent scrutiny standard in globally-replicated pharmacological research. Selank remains a research-stage compound for Western investigators.",
     },
     {
       type: "heading",
@@ -173,7 +152,7 @@ export const article: BlogArticle = {
       text: "Selank is one of the more scientifically grounded Russian-origin research peptides, with a plausible mechanistic basis for anxiolytic and nootropic effects and a published evidence base spanning cell culture, animal models, and clinical observation. The GABAergic, BDNF-upregulating, and enkephalin-stabilizing mechanisms together offer a multi-pathway rationale for its observed effects. Independent replication outside Russian institutions remains the primary evidence gap.",
     },
     {
-      type: "disclaimer",
+      type: "callout",
       text: "For research purposes only. Not intended for human use.",
     },
   ],
