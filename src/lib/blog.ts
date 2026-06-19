@@ -4410,6 +4410,9 @@ import { article as aJUN19OVN17_STORAGE } from './articles/peptide-storage-guide
 import { article as aJUN19OVN18_ARGENTINA } from './articles/research-peptides-argentina-guide';
 import { article as aJUN19OVN18_SOUTH_AFRICA } from './articles/research-peptides-south-africa-guide';
 import { article as aJUN19OVN18_PORTUGAL } from './articles/research-peptides-portugal-guide';
+import { article as aJUN19OVN19_NAD_LONGEVITY } from './articles/nad-plus-longevity-sirtuins-parp-research-overview';
+import { article as aJUN19OVN19_SEMAGLUTIDE } from './articles/semaglutide-glp1-research-peptide-overview';
+import { article as aJUN19OVN19_THYMOSIN_A1 } from './articles/thymosin-alpha-1-immune-modulator-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -8822,6 +8825,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19OVN18_ARGENTINA,
   aJUN19OVN18_SOUTH_AFRICA,
   aJUN19OVN18_PORTUGAL,
+  aJUN19OVN19_NAD_LONGEVITY,
+  aJUN19OVN19_SEMAGLUTIDE,
+  aJUN19OVN19_THYMOSIN_A1,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
