@@ -4413,6 +4413,9 @@ import { article as aJUN19OVN18_PORTUGAL } from './articles/research-peptides-po
 import { article as aJUN19OVN19_NAD_LONGEVITY } from './articles/nad-plus-longevity-sirtuins-parp-research-overview';
 import { article as aJUN19OVN19_SEMAGLUTIDE } from './articles/semaglutide-glp1-research-peptide-overview';
 import { article as aJUN19OVN19_THYMOSIN_A1 } from './articles/thymosin-alpha-1-immune-modulator-research-guide';
+import { article as aJUN19OVN20_FIRST_ORDER } from './articles/peptide-research-beginners-first-order-guide-jun19-2026';
+import { article as aJUN19OVN20_RETATRUTIDE } from './articles/retatrutide-triple-agonist-research-mechanisms-jun19-2026';
+import { article as aJUN19OVN20_CYCLING } from './articles/peptide-cycling-on-off-protocols-complete-guide-jun19-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -8828,6 +8831,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19OVN19_NAD_LONGEVITY,
   aJUN19OVN19_SEMAGLUTIDE,
   aJUN19OVN19_THYMOSIN_A1,
+  aJUN19OVN20_FIRST_ORDER,
+  aJUN19OVN20_RETATRUTIDE,
+  aJUN19OVN20_CYCLING,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
