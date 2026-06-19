@@ -4425,6 +4425,9 @@ import { article as aJUN19OVN22_GLP1_REBOUND } from './articles/glp1-discontinua
 import { article as aJUN19OVN23_GREECE } from './articles/research-peptides-greece-guide';
 import { article as aJUN19OVN23_SINGAPORE } from './articles/research-peptides-singapore-guide';
 import { article as aJUN19OVN23_TURKEY } from './articles/research-peptides-turkey-guide';
+import { article as aJUN19OVN24_IPAM } from './articles/ipamorelin-complete-research-guide-2026';
+import { article as aJUN19OVN24_GHKCU } from './articles/ghk-cu-skin-anti-aging-complete-research-guide';
+import { article as aJUN19OVN24_COA } from './articles/how-to-read-peptide-coa-hplc-ms-guide-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -8852,6 +8855,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19OVN23_GREECE,
   aJUN19OVN23_SINGAPORE,
   aJUN19OVN23_TURKEY,
+  aJUN19OVN24_IPAM,
+  aJUN19OVN24_GHKCU,
+  aJUN19OVN24_COA,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
