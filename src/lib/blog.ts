@@ -4395,6 +4395,9 @@ import { article as aJUN19OVN12_OVERREACHING } from './articles/peptide-research
 import { article as aJUN19OVN13_LONGEVITY_STACK } from './articles/longevity-peptide-stack-2026-researchers-guide';
 import { article as aJUN19OVN13_PS_ALTERNATIVE } from './articles/peptide-sciences-alternative-2026';
 import { article as aJUN19OVN13_CJC_IPA_STACK } from './articles/cjc-1295-ipamorelin-stack-research-guide';
+import { article as aJUN19OVN14_SEMA_GLP1 } from './articles/semaglutide-research-peptide-glp1-overview-jun19-2026';
+import { article as aJUN19OVN14_EPITHALON } from './articles/epithalon-telomere-research-what-studies-say-jun19-2026';
+import { article as aJUN19OVN14_NAD_NMN } from './articles/nad-plus-vs-nmn-longevity-researchers-guide-jun19-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -8792,6 +8795,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19OVN13_LONGEVITY_STACK,
   aJUN19OVN13_PS_ALTERNATIVE,
   aJUN19OVN13_CJC_IPA_STACK,
+  aJUN19OVN14_SEMA_GLP1,
+  aJUN19OVN14_EPITHALON,
+  aJUN19OVN14_NAD_NMN,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
