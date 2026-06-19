@@ -4365,6 +4365,9 @@ import { article as aJUN19OVN3_FEMALE_CYCLE } from './articles/peptide-research-
 import { article as aOVNV3_BPC157_COMPLETE } from './articles/bpc-157-complete-research-guide-2026';
 import { article as aOVNV3_STORAGE_GUIDE } from './articles/proper-peptide-storage-temperature-light-shelf-life';
 import { article as aOVNV3_LONGEVITY_STACK } from './articles/longevity-peptide-stack-2026';
+import { article as aJUN19OVN4_IPA_AGING } from './articles/ipamorelin-aging-longevity-research-guide-2026';
+import { article as aJUN19OVN4_NEWS } from './articles/peptide-research-june-19-2026-overnight';
+import { article as aJUN19OVN4_BPC_PLANTAR } from './articles/bpc-157-plantar-fasciitis-heel-pain-research-2026-update';
 
 
 export const articles: BlogArticle[] = [
@@ -8732,6 +8735,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aOVNV3_BPC157_COMPLETE,
   aOVNV3_STORAGE_GUIDE,
   aOVNV3_LONGEVITY_STACK,
+  aJUN19OVN4_IPA_AGING,
+  aJUN19OVN4_NEWS,
+  aJUN19OVN4_BPC_PLANTAR,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
