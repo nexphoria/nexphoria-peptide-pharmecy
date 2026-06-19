@@ -4380,6 +4380,9 @@ import { article as aJUN19OVN7_TB500_NAD } from './articles/how-to-combine-tb-50
 import { article as aJUN19OVN8_BPC157_TENDON } from './articles/bpc-157-tendon-repair-ligament-healing-research-guide';
 import { article as aJUN19OVN8_STACKING_BEGINNERS } from './articles/peptide-stacking-beginners-guide-how-to-combine-compounds';
 import { article as aJUN19OVN8_ATHLETES_OVER40 } from './articles/best-peptides-for-athletes-over-40-research-2026';
+import { article as aJUN19OVN9_DSIP_MK677_SLEEP } from './articles/dsip-mk677-sleep-optimization-peptide-research-guide-2026';
+import { article as aJUN19OVN9_GHK_ARGIRELINE } from './articles/ghk-cu-vs-argireline-skin-aging-peptide-research-comparison-2026';
+import { article as aJUN19OVN9_METABOLIC_BIOMARKERS } from './articles/peptide-research-metabolic-biomarkers-insulin-glucose-lipid-endpoints-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -8762,6 +8765,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19OVN8_BPC157_TENDON,
   aJUN19OVN8_STACKING_BEGINNERS,
   aJUN19OVN8_ATHLETES_OVER40,
+  aJUN19OVN9_DSIP_MK677_SLEEP,
+  aJUN19OVN9_GHK_ARGIRELINE,
+  aJUN19OVN9_METABOLIC_BIOMARKERS,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
