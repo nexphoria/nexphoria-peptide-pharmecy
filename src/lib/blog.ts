@@ -4332,6 +4332,9 @@ import { article as aJUN19OVN54_NEWS } from './articles/peptide-research-news-ju
 import { article as aJUN19OVN55_NADNMN } from './articles/nad-plus-vs-nmn-longevity-precursors-june-19-2026';
 import { article as aJUN19OVN55_CJCIPA } from './articles/cjc-1295-ipamorelin-gh-stack-research-jun19-2026';
 import { article as aJUN19OVN55_STORAGE } from './articles/peptide-storage-reconstitution-complete-guide-jun19-2026';
+import { article as aJUN19OVN56_LONGEVITY } from './articles/longevity-peptide-stack-hallmarks-multi-target-2026';
+import { article as aJUN19OVN56_TA1 } from './articles/thymosin-alpha-1-immune-modulation-clinical-research';
+import { article as aJUN19OVN56_MUSCLE } from './articles/muscle-recovery-peptides-five-compounds-research-overview';
 
 
 export const articles: BlogArticle[] = [
@@ -8666,6 +8669,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19OVN55_NADNMN,
   aJUN19OVN55_CJCIPA,
   aJUN19OVN55_STORAGE,
+  aJUN19OVN56_LONGEVITY,
+  aJUN19OVN56_TA1,
+  aJUN19OVN56_MUSCLE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
