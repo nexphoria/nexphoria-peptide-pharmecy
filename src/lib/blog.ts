@@ -2210,6 +2210,9 @@ import { article as aOVN_DOES_NAD_PLUS } from './articles/does-nad-plus-work-res
 import { article as aJUN19OVN_JOINT_PAIN } from './articles/peptide-therapy-joint-pain-research-2026';
 import { article as aJUN19OVN_BPC_VS_IPAM } from './articles/bpc-157-vs-ipamorelin-which-to-research';
 import { article as aJUN19OVN_CYCLING } from './articles/peptide-cycling-protocols-researchers-guide';
+import { article as aJUN20_NEWS } from './articles/peptide-research-news-june-20-2026';
+import { article as aJUN20_HEX_SERM } from './articles/hexarelin-vs-sermorelin-gh-secretagogue-comparison';
+import { article as aJUN20_AOD_SEMA } from './articles/aod-9604-vs-semaglutide-fat-loss-research-comparison';
 
 
 export const articles: BlogArticle[] = [
@@ -4422,6 +4425,9 @@ export const articles: BlogArticle[] = [
   aJUN19OVN_JOINT_PAIN,
   aJUN19OVN_BPC_VS_IPAM,
   aJUN19OVN_CYCLING,
+  aJUN20_NEWS,
+  aJUN20_HEX_SERM,
+  aJUN20_AOD_SEMA,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
