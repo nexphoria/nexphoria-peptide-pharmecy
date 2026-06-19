@@ -4383,6 +4383,9 @@ import { article as aJUN19OVN8_ATHLETES_OVER40 } from './articles/best-peptides-
 import { article as aJUN19OVN9_DSIP_MK677_SLEEP } from './articles/dsip-mk677-sleep-optimization-peptide-research-guide-2026';
 import { article as aJUN19OVN9_GHK_ARGIRELINE } from './articles/ghk-cu-vs-argireline-skin-aging-peptide-research-comparison-2026';
 import { article as aJUN19OVN9_METABOLIC_BIOMARKERS } from './articles/peptide-research-metabolic-biomarkers-insulin-glucose-lipid-endpoints-2026';
+import { article as aJUN19OVN10_SEMA_GLP1 } from './articles/semaglutide-glp1-research-peptide-metabolic-guide-jun19-2026';
+import { article as aJUN19OVN10_HEXARELIN_CD36 } from './articles/hexarelin-cardioprotection-cd36-ghs-cardiac-research-jun19-2026';
+import { article as aJUN19OVN10_NAD_NMN } from './articles/nad-plus-vs-nmn-longevity-precursors-researchers-jun19-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -8768,6 +8771,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19OVN9_DSIP_MK677_SLEEP,
   aJUN19OVN9_GHK_ARGIRELINE,
   aJUN19OVN9_METABOLIC_BIOMARKERS,
+  aJUN19OVN10_SEMA_GLP1,
+  aJUN19OVN10_HEXARELIN_CD36,
+  aJUN19OVN10_NAD_NMN,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
