@@ -4422,6 +4422,9 @@ import { article as aJUN19OVN21_SOURCING } from './articles/peptide-sourcing-gui
 import { article as aJUN19OVN22_GLP1_MUSCLE } from './articles/glp1-muscle-loss-prevention-peptide-strategies-research-2026';
 import { article as aJUN19OVN22_GLP1_METFORMIN } from './articles/glp1-vs-metformin-metabolic-research-comparison-2026';
 import { article as aJUN19OVN22_GLP1_REBOUND } from './articles/glp1-discontinuation-rebound-weight-regain-peptide-strategies-research';
+import { article as aJUN19OVN23_GREECE } from './articles/research-peptides-greece-guide';
+import { article as aJUN19OVN23_SINGAPORE } from './articles/research-peptides-singapore-guide';
+import { article as aJUN19OVN23_TURKEY } from './articles/research-peptides-turkey-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -8846,6 +8849,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19OVN22_GLP1_MUSCLE,
   aJUN19OVN22_GLP1_METFORMIN,
   aJUN19OVN22_GLP1_REBOUND,
+  aJUN19OVN23_GREECE,
+  aJUN19OVN23_SINGAPORE,
+  aJUN19OVN23_TURKEY,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
