@@ -4326,6 +4326,9 @@ import { article as aNew_why_peptides_are_different_from_hormones_research_compa
 import { article as aJUN19OVN_HEXCD36 } from './articles/hexarelin-cd36-cardiac-research-jun19-2026';
 import { article as aJUN19OVN_EPITHALON } from './articles/epithalon-telomere-research-jun19-2026';
 import { article as aJUN19OVN_TA1IMMUNE } from './articles/thymosin-alpha-1-immune-modulation-jun19-2026';
+import { article as aJUN19OVN54_BPC_SEMA } from './articles/bpc-157-semaglutide-synergy-research-jun19-2026';
+import { article as aJUN19OVN54_GLP1_COG } from './articles/glp1-agonists-cognitive-research-2026-alzheimers-parkinsons';
+import { article as aJUN19OVN54_NEWS } from './articles/peptide-research-news-june-19-overnight-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -8654,6 +8657,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19OVN_HEXCD36,
   aJUN19OVN_EPITHALON,
   aJUN19OVN_TA1IMMUNE,
+  aJUN19OVN54_BPC_SEMA,
+  aJUN19OVN54_GLP1_COG,
+  aJUN19OVN54_NEWS,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
