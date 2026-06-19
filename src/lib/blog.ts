@@ -4389,6 +4389,9 @@ import { article as aJUN19OVN10_NAD_NMN } from './articles/nad-plus-vs-nmn-longe
 import { article as aJUN19OVN11_HPLC_COA } from './articles/peptide-purity-hplc-coa-researchers-guide-jun19-2026';
 import { article as aJUN19OVN11_NXPH_QA } from './articles/nexphoria-quality-standards-batch-coa-hplc-ms-lal-jun19-2026';
 import { article as aJUN19OVN11_TA1_IMMUNE } from './articles/thymosin-alpha-1-immune-modulation-clinical-evidence-jun19-2026';
+import { article as aJUN19OVN12_CIRCADIAN_TIMING } from './articles/morning-vs-evening-peptide-dosing-circadian-timing-guide-2026';
+import { article as aJUN19OVN12_GLP1_STACK } from './articles/glp1-peptide-stacking-semaglutide-bpc157-ghk-cu-research-2026';
+import { article as aJUN19OVN12_OVERREACHING } from './articles/peptide-research-overreaching-syndrome-athlete-recovery-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -8780,6 +8783,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19OVN11_HPLC_COA,
   aJUN19OVN11_NXPH_QA,
   aJUN19OVN11_TA1_IMMUNE,
+  aJUN19OVN12_CIRCADIAN_TIMING,
+  aJUN19OVN12_GLP1_STACK,
+  aJUN19OVN12_OVERREACHING,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
