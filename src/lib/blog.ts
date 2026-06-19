@@ -4437,6 +4437,9 @@ import { article as aJUN19OVN26_MICRONEEDLE } from './articles/peptide-microneed
 import { article as aJUN19OVN27_PROTEOMICS } from './articles/peptide-proteomics-phosphorylation-mass-spectrometry-research-guide';
 import { article as aJUN19OVN27_UPS } from './articles/ubiquitin-proteasome-peptide-degradation-research-guide';
 import { article as aJUN19OVN27_OOC } from './articles/organ-on-chip-peptide-research-models-guide';
+import { article as aJUN19OVN28_IPA_HEX } from './articles/ipamorelin-vs-hexarelin-complete-comparison-2026';
+import { article as aJUN19OVN28_HEAT_STORAGE } from './articles/peptide-storage-summer-heat-guide-2026';
+import { article as aJUN19OVN28_GLP1_JOINT } from './articles/glp1-agonists-joint-inflammation-arthritis-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -8876,6 +8879,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19OVN27_PROTEOMICS,
   aJUN19OVN27_UPS,
   aJUN19OVN27_OOC,
+  aJUN19OVN28_IPA_HEX,
+  aJUN19OVN28_HEAT_STORAGE,
+  aJUN19OVN28_GLP1_JOINT,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
