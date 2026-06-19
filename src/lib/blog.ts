@@ -4455,6 +4455,9 @@ import { article as aJUN19OVN_SUMMER_STORAGE } from './articles/peptide-storage-
 import { article as aJUN19EVN_LONGEVITY_STACK } from './articles/longevity-peptide-stack-researchers-2026';
 import { article as aJUN19EVN_STORAGE_GUIDE } from './articles/peptide-storage-temperature-light-shelf-life';
 import { article as aJUN19EVN_BPC157_COMPLETE } from './articles/bpc-157-complete-research-guide-2026';
+import { article as aJUN19EVN2_PS_SHUTDOWN } from './articles/peptide-sciences-shutdown-2026-what-researchers-need-now';
+import { article as aJUN19EVN2_MUSCLE_5 } from './articles/five-peptides-muscle-recovery-research-overview-2026';
+import { article as aJUN19EVN2_GLOSSARY_50 } from './articles/peptide-research-terminology-50-essential-definitions-jun19-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -8912,6 +8915,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19EVN_LONGEVITY_STACK,
   aJUN19EVN_STORAGE_GUIDE,
   aJUN19EVN_BPC157_COMPLETE,
+  aJUN19EVN2_PS_SHUTDOWN,
+  aJUN19EVN2_MUSCLE_5,
+  aJUN19EVN2_GLOSSARY_50,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
