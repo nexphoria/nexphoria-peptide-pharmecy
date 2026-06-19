@@ -4,9 +4,9 @@ export const article: BlogArticle = {
   slug: "bpc-157-complete-research-guide-2026",
   title: "BPC-157: The Complete Research Guide (2026)",
   description:
-    "BPC-157 is one of the most studied peptides in regenerative research. This complete 2026 guide covers its mechanism, key PubMed studies, preclinical dosing protocols, sourcing standards, and storage requirements.",
+    "A comprehensive 2026 research guide to BPC-157 — covering its mechanism of action, key PubMed studies, preclinical dosing protocols, sourcing standards, and storage requirements for researchers.",
   category: "Compound Profiles",
-  readMinutes: 9,
+  readMinutes: 11,
   publishedAt: "2026-06-19",
   ogImage: "/og-image.jpg",
   body: [
@@ -37,7 +37,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Research suggests BPC-157 operates through several distinct pathways — ranging from nitric oxide modulation to direct growth factor signaling and cytoskeletal remodeling.",
+      text: "Research suggests BPC-157 operates through several distinct pathways:",
     },
     {
       type: "subheading",
@@ -97,8 +97,8 @@ export const article: BlogArticle = {
       text: "Dosing Protocols Studied in Research",
     },
     {
-      type: "disclaimer",
-      text: "The following reflects dosing protocols used in preclinical animal research only. These figures are not clinical recommendations and do not apply to human use.",
+      type: "callout",
+      text: "The following reflects dosing protocols used in preclinical animal research only. These figures are not clinical recommendations.",
     },
     {
       type: "table",
@@ -162,15 +162,14 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "BPC-157 remains one of the most actively studied peptides in preclinical regenerative research. Its multi-pathway mechanism, stability profile, and volume of published literature make it a compound of significant interest to researchers across gastroenterology, musculoskeletal biology, and neuroscience.",
+      text: "BPC-157 remains one of the most actively studied peptides in preclinical regenerative research. Its multi-pathway mechanism, stability profile, and volume of published literature make it a compound of significant interest to researchers across gastroenterology, musculoskeletal biology, and neuroscience. For researchers building a protocol around BPC-157, the foundation starts with verified purity, proper cold-chain handling, and a clear understanding of the available preclinical evidence.",
     },
     {
-      type: "paragraph",
-      text: "For researchers building a protocol around BPC-157, the foundation starts with verified purity, proper cold-chain handling, and a clear understanding of the available preclinical evidence.",
+      type: "divider",
     },
     {
       type: "disclaimer",
-      text: "All content on this page is for educational and research purposes only. BPC-157 is sold exclusively for qualified research use and is not intended for human consumption, therapeutic use, or diagnostic purposes.",
+      text: "BPC-157 is a research compound available exclusively for qualified laboratory research use. It is not approved for human therapeutic use, is not a dietary supplement, and is not intended for human consumption. Nothing in this article constitutes medical advice.",
     },
   ],
 };

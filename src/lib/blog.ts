@@ -4452,6 +4452,9 @@ import { article as aJUN19EVN_BPC157_VAGUS } from './articles/bpc-157-mechanism-
 import { article as aJUN19OVN_STARTER_KIT } from './articles/peptide-research-beginners-starter-kit-2026';
 import { article as aJUN19OVN_GLP1_3WAY } from './articles/ozempic-vs-tirzepatide-vs-retatrutide-2026-comparison';
 import { article as aJUN19OVN_SUMMER_STORAGE } from './articles/peptide-storage-summer-heat-complete-guide-2026';
+import { article as aJUN19EVN_LONGEVITY_STACK } from './articles/longevity-peptide-stack-researchers-2026';
+import { article as aJUN19EVN_STORAGE_GUIDE } from './articles/peptide-storage-temperature-light-shelf-life';
+import { article as aJUN19EVN_BPC157_COMPLETE } from './articles/bpc-157-complete-research-guide-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -8906,6 +8909,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19OVN_STARTER_KIT,
   aJUN19OVN_GLP1_3WAY,
   aJUN19OVN_SUMMER_STORAGE,
+  aJUN19EVN_LONGEVITY_STACK,
+  aJUN19EVN_STORAGE_GUIDE,
+  aJUN19EVN_BPC157_COMPLETE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
