@@ -4446,6 +4446,9 @@ import { article as aJUN19OVN29_SPORTS } from './articles/research-peptide-athle
 import { article as aJUN19OVN30_THYROID } from './articles/peptide-research-thyroid-axis-tsh-t3-t4-bpc157-ghk-cu';
 import { article as aJUN19OVN30_PT141 } from './articles/where-to-buy-pt-141-bremelanotide-research-guide-2026';
 import { article as aJUN19OVN30_GUT_MOTILITY } from './articles/peptide-research-gut-motility-bpc157-vasoactive-intestinal-peptide';
+import { article as aJUN19EVN_BELGIUM } from './articles/research-peptides-belgium-guide';
+import { article as aJUN19EVN_CZECH } from './articles/research-peptides-czech-republic-guide';
+import { article as aJUN19EVN_BPC157_VAGUS } from './articles/bpc-157-mechanism-vagus-nerve-gut-brain-axis';
 
 
 export const articles: BlogArticle[] = [
@@ -8894,6 +8897,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19OVN30_THYROID,
   aJUN19OVN30_PT141,
   aJUN19OVN30_GUT_MOTILITY,
+  aJUN19EVN_BELGIUM,
+  aJUN19EVN_CZECH,
+  aJUN19EVN_BPC157_VAGUS,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
