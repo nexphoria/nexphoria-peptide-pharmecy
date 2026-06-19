@@ -4416,6 +4416,9 @@ import { article as aJUN19OVN19_THYMOSIN_A1 } from './articles/thymosin-alpha-1-
 import { article as aJUN19OVN20_FIRST_ORDER } from './articles/peptide-research-beginners-first-order-guide-jun19-2026';
 import { article as aJUN19OVN20_RETATRUTIDE } from './articles/retatrutide-triple-agonist-research-mechanisms-jun19-2026';
 import { article as aJUN19OVN20_CYCLING } from './articles/peptide-cycling-on-off-protocols-complete-guide-jun19-2026';
+import { article as aJUN19OVN21_GHKCU } from './articles/ghk-cu-complete-research-guide-jun19-2026';
+import { article as aJUN19OVN21_TB500_BPC } from './articles/tb-500-vs-bpc-157-which-is-better-researchers-guide';
+import { article as aJUN19OVN21_SOURCING } from './articles/peptide-sourcing-guide-what-to-look-for-jun19-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -8834,6 +8837,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19OVN20_FIRST_ORDER,
   aJUN19OVN20_RETATRUTIDE,
   aJUN19OVN20_CYCLING,
+  aJUN19OVN21_GHKCU,
+  aJUN19OVN21_TB500_BPC,
+  aJUN19OVN21_SOURCING,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
