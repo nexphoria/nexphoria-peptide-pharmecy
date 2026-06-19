@@ -4428,6 +4428,9 @@ import { article as aJUN19OVN23_TURKEY } from './articles/research-peptides-turk
 import { article as aJUN19OVN24_IPAM } from './articles/ipamorelin-complete-research-guide-2026';
 import { article as aJUN19OVN24_GHKCU } from './articles/ghk-cu-skin-anti-aging-complete-research-guide';
 import { article as aJUN19OVN24_COA } from './articles/how-to-read-peptide-coa-hplc-ms-guide-2026';
+import { article as aJUN19OVN25_STROKE } from './articles/semax-cerebrolysin-cerebrovascular-stroke-research-guide';
+import { article as aJUN19OVN25_SCAR } from './articles/peptide-wound-closure-scar-reduction-keloid-research';
+import { article as aJUN19OVN25_OCULAR } from './articles/peptide-research-ocular-corneal-dry-eye-neuroprotection';
 
 
 export const articles: BlogArticle[] = [
@@ -8858,6 +8861,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19OVN24_IPAM,
   aJUN19OVN24_GHKCU,
   aJUN19OVN24_COA,
+  aJUN19OVN25_STROKE,
+  aJUN19OVN25_SCAR,
+  aJUN19OVN25_OCULAR,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
