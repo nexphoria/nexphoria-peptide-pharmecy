@@ -4335,9 +4335,9 @@ import { article as aJUN19OVN55_STORAGE } from './articles/peptide-storage-recon
 import { article as aJUN19OVN56_LONGEVITY } from './articles/longevity-peptide-stack-hallmarks-multi-target-2026';
 import { article as aJUN19OVN56_TA1 } from './articles/thymosin-alpha-1-immune-modulation-clinical-research';
 import { article as aJUN19OVN56_MUSCLE } from './articles/muscle-recovery-peptides-five-compounds-research-overview';
-import { article as aJUN19OVN_BEST_MUSCLE } from './articles/best-peptides-muscle-recovery';
-import { article as aJUN19OVN_BUY_USA } from './articles/buy-peptides-usa-guide';
-import { article as aJUN19OVN_SEMA_RP } from './articles/semaglutide-research-peptide';
+import { article as aJUN19OVN_SELANK_MECH } from './articles/selank-anxiety-research-mechanisms-jun19-2026';
+import { article as aJUN19OVN_HPLC_GUIDE } from './articles/peptide-purity-hplc-testing-sourcing-guide-jun19';
+import { article as aJUN19OVN_LONGEVITY_STACK } from './articles/longevity-research-peptide-stack-jun19-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -8675,9 +8675,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19OVN56_LONGEVITY,
   aJUN19OVN56_TA1,
   aJUN19OVN56_MUSCLE,
-  aJUN19OVN_BEST_MUSCLE,
-  aJUN19OVN_BUY_USA,
-  aJUN19OVN_SEMA_RP,
+  aJUN19OVN_SELANK_MECH,
+  aJUN19OVN_HPLC_GUIDE,
+  aJUN19OVN_LONGEVITY_STACK,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
