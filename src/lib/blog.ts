@@ -2219,6 +2219,9 @@ import { article as aOVN_HEXARELIN_CP_V2 } from './articles/hexarelin-cardioprot
 import { article as aJUN19OVN_STORAGE_RECON } from './articles/peptide-storage-reconstitution-complete-guide-jun19-2026';
 import { article as aJUN19OVN_MUSCLE_5 } from './articles/best-peptides-muscle-recovery-five-compounds-jun19-2026';
 import { article as aJUN19OVN_CJC_IPAM_STACK } from './articles/cjc-1295-ipamorelin-gh-stack-research-jun19-2026';
+import { article as aJUN19OVN52_TIRZ_SEMA } from './articles/tirzepatide-vs-semaglutide-weight-loss-research-2026';
+import { article as aJUN19OVN52_FEMALE_DOSE } from './articles/peptide-research-female-dosing-protocols-sex-differences-2026';
+import { article as aJUN19OVN52_BPC157_ORAL } from './articles/bpc-157-oral-vs-injectable-bioavailability-research-comparison';
 
 
 export const articles: BlogArticle[] = [
@@ -4440,6 +4443,9 @@ export const articles: BlogArticle[] = [
   aJUN19OVN_STORAGE_RECON,
   aJUN19OVN_MUSCLE_5,
   aJUN19OVN_CJC_IPAM_STACK,
+  aJUN19OVN52_TIRZ_SEMA,
+  aJUN19OVN52_FEMALE_DOSE,
+  aJUN19OVN52_BPC157_ORAL,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
