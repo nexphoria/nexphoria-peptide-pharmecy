@@ -4443,6 +4443,9 @@ import { article as aJUN19OVN28_GLP1_JOINT } from './articles/glp1-agonists-join
 import { article as aJUN19OVN29_TB500_TENDON } from './articles/tb-500-tendon-ligament-repair-research-guide-2026';
 import { article as aJUN19OVN29_MOD_GRF } from './articles/mod-grf-1-29-ghrh-analog-complete-research-guide-2026';
 import { article as aJUN19OVN29_SPORTS } from './articles/research-peptide-athlete-sports-science-guide-2026';
+import { article as aJUN19OVN30_THYROID } from './articles/peptide-research-thyroid-axis-tsh-t3-t4-bpc157-ghk-cu';
+import { article as aJUN19OVN30_PT141 } from './articles/where-to-buy-pt-141-bremelanotide-research-guide-2026';
+import { article as aJUN19OVN30_GUT_MOTILITY } from './articles/peptide-research-gut-motility-bpc157-vasoactive-intestinal-peptide';
 
 
 export const articles: BlogArticle[] = [
@@ -8888,6 +8891,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19OVN29_TB500_TENDON,
   aJUN19OVN29_MOD_GRF,
   aJUN19OVN29_SPORTS,
+  aJUN19OVN30_THYROID,
+  aJUN19OVN30_PT141,
+  aJUN19OVN30_GUT_MOTILITY,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
