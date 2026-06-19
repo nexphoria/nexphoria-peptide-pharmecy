@@ -4377,6 +4377,9 @@ import { article as aJUN19OVN6_EPITHALON } from './articles/epithalon-telomere-r
 import { article as aJUN19OVN7_BPC_GHK } from './articles/how-to-combine-bpc-157-and-ghk-cu-research-protocol-jun19-2026';
 import { article as aJUN19OVN7_SEMA_JOINT } from './articles/semaglutide-joint-inflammation-arthritis-research-2026';
 import { article as aJUN19OVN7_TB500_NAD } from './articles/how-to-combine-tb-500-and-nad-plus-research-protocol-jun19-2026';
+import { article as aJUN19OVN8_BPC157_TENDON } from './articles/bpc-157-tendon-repair-ligament-healing-research-guide';
+import { article as aJUN19OVN8_STACKING_BEGINNERS } from './articles/peptide-stacking-beginners-guide-how-to-combine-compounds';
+import { article as aJUN19OVN8_ATHLETES_OVER40 } from './articles/best-peptides-for-athletes-over-40-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -8756,6 +8759,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19OVN7_BPC_GHK,
   aJUN19OVN7_SEMA_JOINT,
   aJUN19OVN7_TB500_NAD,
+  aJUN19OVN8_BPC157_TENDON,
+  aJUN19OVN8_STACKING_BEGINNERS,
+  aJUN19OVN8_ATHLETES_OVER40,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
