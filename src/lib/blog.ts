@@ -2222,6 +2222,9 @@ import { article as aJUN19OVN_CJC_IPAM_STACK } from './articles/cjc-1295-ipamore
 import { article as aJUN19OVN52_TIRZ_SEMA } from './articles/tirzepatide-vs-semaglutide-weight-loss-research-2026';
 import { article as aJUN19OVN52_FEMALE_DOSE } from './articles/peptide-research-female-dosing-protocols-sex-differences-2026';
 import { article as aJUN19OVN52_BPC157_ORAL } from './articles/bpc-157-oral-vs-injectable-bioavailability-research-comparison';
+import { article as aJUN20OVN1_PEPTIDES_VS_SARMS } from './articles/peptides-vs-sarms-research-comparison-2026';
+import { article as aJUN20OVN2_HALF_LIFE_REF } from './articles/peptide-half-life-comparison-reference-2026';
+import { article as aJUN20OVN3_BEST_STACKS } from './articles/best-peptide-stacks-2026-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -4446,6 +4449,9 @@ export const articles: BlogArticle[] = [
   aJUN19OVN52_TIRZ_SEMA,
   aJUN19OVN52_FEMALE_DOSE,
   aJUN19OVN52_BPC157_ORAL,
+  aJUN20OVN1_PEPTIDES_VS_SARMS,
+  aJUN20OVN2_HALF_LIFE_REF,
+  aJUN20OVN3_BEST_STACKS,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
