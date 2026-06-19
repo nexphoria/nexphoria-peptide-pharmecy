@@ -3,11 +3,10 @@ import type { BlogArticle } from '../blog-types';
 export const article: BlogArticle = {
   slug: "peptide-sciences-alternative-2026",
   title: "Looking for a Peptide Sciences Alternative? Here's What to Know",
-  description:
-    "Peptide Sciences shut down in March 2026, leaving thousands of researchers without a trusted supplier. Here's what rigorous researchers should require from any replacement and how to evaluate your options.",
+  description: "Peptide Sciences shut down in March 2026, leaving thousands of researchers without a supplier. Here's what to look for in a replacement and why Nexphoria meets the standard.",
   category: "Industry",
-  readMinutes: 9,
-  publishedAt: "2026-06-05",
+  readMinutes: 8,
+  publishedAt: "2026-06-19",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -28,7 +27,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "The reasons have not been officially confirmed, but patterns like this in the research peptide space often trace back to regulatory pressure from the FDA or DEA targeting online peptide distribution, supply chain failures at the synthesis or raw-material level, or operational insolvency from thin margins in a competitive, commoditized market.",
+      text: "The reasons have not been officially confirmed, but patterns like this in the research peptide space often trace back to one of a few causes: regulatory pressure from the FDA or DEA targeting online peptide distribution, supply chain failures at the synthesis or raw-material level, or operational insolvency from thin margins in a competitive, commoditized market.",
     },
     {
       type: "paragraph",
@@ -48,7 +47,15 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "High-Performance Liquid Chromatography (HPLC) is the gold standard for verifying peptide purity. Any credible supplier should provide HPLC chromatograms for each batch of product — not just a stated percentage on a label. Look for ≥98% purity on HPLC reports, batch-specific certificates (not generic template documents), and third-party lab testing rather than in-house only.",
+      text: "High-Performance Liquid Chromatography (HPLC) is the gold standard for verifying peptide purity. Any credible supplier should provide HPLC chromatograms for each batch of product — not just a stated percentage on a label.",
+    },
+    {
+      type: "list",
+      items: [
+        "≥98% purity on HPLC reports",
+        "Batch-specific certificates, not generic template documents",
+        "Third-party lab testing, not in-house only",
+      ],
     },
     {
       type: "subheading",
@@ -72,7 +79,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Peptides are sensitive to temperature fluctuation, moisture, and UV exposure. A supplier's logistics chain should reflect this. Key indicators include products shipped with dry ice or cold packs when appropriate, lyophilized (freeze-dried) form for longer shelf stability, and clear storage guidance provided with every shipment.",
+      text: "Peptides are sensitive to temperature fluctuation, moisture, and UV exposure. A supplier's logistics chain should reflect this with products shipped with dry ice or cold packs when appropriate, lyophilized (freeze-dried) form for longer shelf stability, and clear storage guidance provided with every shipment.",
     },
     {
       type: "subheading",
@@ -100,7 +107,21 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Nexphoria was designed with the standards that serious researchers were clearly not getting from commodity suppliers. Every Nexphoria product includes HPLC and mass spectrometry verification (batch-specific, third-party confirmed), full COA transparency accessible at point of purchase, LAL (Limulus Amebocyte Lysate) endotoxin testing ensuring products are free of bacterial endotoxins that could compromise experimental integrity, lyophilized format with proper cold-chain logistics from synthesis to delivery, and strict research-only positioning with no clinical language or wellness marketing.",
+      text: "Nexphoria was designed with the post-Peptide Sciences market in mind — not in terms of timing, but in terms of the standards that serious researchers were clearly not getting from commodity suppliers.",
+    },
+    {
+      type: "list",
+      items: [
+        "HPLC and mass spectrometry verification — batch-specific, third-party confirmed",
+        "Full COA transparency — accessible at point of purchase, not on request",
+        "LAL (Limulus Amebocyte Lysate) endotoxin testing — ensuring products are free of bacterial endotoxins that could compromise experimental integrity",
+        "Lyophilized format with proper cold-chain logistics — from synthesis to delivery",
+        "Strict research-only positioning — no clinical language, no wellness marketing",
+      ],
+    },
+    {
+      type: "paragraph",
+      text: "Nexphoria does not sell peptides for human use. The catalog is for in-vitro and pre-clinical research contexts, and every product is labeled and documented accordingly.",
     },
     {
       type: "heading",
@@ -108,7 +129,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "If you are currently mid-study or have established reconstitution and storage protocols, transitioning suppliers requires care. Here is a practical transition checklist.",
+      text: "If you are currently mid-study or have established reconstitution and storage protocols, transitioning suppliers requires care. Here is a practical transition checklist:",
     },
     {
       type: "subheading",
@@ -152,11 +173,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "The closure of Peptide Sciences is a reminder that supplier selection in research peptide procurement is not a passive decision. Continuity of supply matters — but so does quality consistency, documentation rigor, and regulatory posture. The researchers who treat supplier evaluation with the same rigor they bring to their protocols will be better positioned regardless of what happens to any individual vendor.",
+      text: "The closure of Peptide Sciences is a reminder that supplier selection in research peptide procurement is not a passive decision. Continuity of supply matters — but so does quality consistency, documentation rigor, and regulatory posture.",
     },
     {
       type: "paragraph",
-      text: "Nexphoria exists to be that supplier: reliable, transparent, and built around the documentation standards serious research requires.",
+      text: "The researchers who treat supplier evaluation with the same rigor they bring to their protocols will be better positioned regardless of what happens to any individual vendor. Nexphoria exists to be that supplier: reliable, transparent, and built around the documentation standards serious research requires.",
     },
     {
       type: "disclaimer",

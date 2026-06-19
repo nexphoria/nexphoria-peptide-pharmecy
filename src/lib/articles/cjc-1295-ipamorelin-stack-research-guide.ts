@@ -3,11 +3,10 @@ import type { BlogArticle } from '../blog-types';
 export const article: BlogArticle = {
   slug: "cjc-1295-ipamorelin-stack-research-guide",
   title: "CJC-1295 + Ipamorelin: Growth Hormone Research Stack",
-  description:
-    "A research-focused overview of the CJC-1295 and Ipamorelin combination — mechanisms, published data, and what the science says about this growth hormone secretagogue stack.",
-  category: "Compound Profiles",
+  description: "A research-focused overview of the CJC-1295 and Ipamorelin combination — mechanisms, published data, and what the science says about this growth hormone secretagogue stack.",
+  category: "Peptide Research",
   readMinutes: 9,
-  publishedAt: "2026-06-04",
+  publishedAt: "2026-06-19",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -24,7 +23,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Before examining either compound, it helps to understand the system they act on. Growth hormone (GH) secretion is regulated by two primary hypothalamic signals: Growth Hormone-Releasing Hormone (GHRH), which stimulates GH release, and somatostatin, which inhibits GH release. A third pathway, the ghrelin receptor (GHS-R1a), provides an independent stimulatory signal. Compounds targeting different nodes in this system can produce synergistic rather than merely additive effects.",
+      text: "Before examining either compound, it helps to understand the system they act on. Growth hormone (GH) secretion is regulated by two primary hypothalamic signals: Growth Hormone-Releasing Hormone (GHRH), which stimulates GH release, and Somatostatin, which inhibits GH release. A third pathway, the ghrelin receptor (GHS-R1a), provides an independent stimulatory signal. Compounds targeting different nodes in this system can produce synergistic rather than merely additive effects.",
     },
     {
       type: "heading",
@@ -40,19 +39,20 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "A 2006 study published in the Journal of Clinical Endocrinology & Metabolism (Teichman et al.) administered CJC-1295 to healthy adult subjects. Key observations included dose-dependent increases in plasma GH — up to 10-fold above baseline in some subjects — sustained IGF-1 elevation lasting 9–11 days after a single dose, and preservation of pulsatile GH release. CJC-1295 appeared to amplify rather than replace endogenous GH secretion rhythms, a notable distinction from exogenous GH administration, which typically suppresses endogenous production.",
+      text: "A 2006 study published in the Journal of Clinical Endocrinology & Metabolism (Teichman et al.) administered CJC-1295 to healthy adult subjects. Key observations included dose-dependent increases in plasma GH up to 10-fold above baseline in some subjects, sustained IGF-1 elevation lasting 9–11 days after a single dose, and preservation of pulsatile GH release — CJC-1295 appeared to amplify rather than replace endogenous GH secretion rhythms.",
     },
     {
-      type: "subheading",
-      text: "Mechanism Summary",
+      type: "paragraph",
+      text: "This pulsatility preservation is a notable distinction from exogenous GH administration, which typically suppresses endogenous production.",
     },
     {
-      type: "list",
-      items: [
-        "Target: GHRH receptor (GHRHR) on somatotroph cells",
-        "Effect: Stimulates GH synthesis and release",
-        "Half-life (DAC form): ~6–8 days",
-        "Half-life (without DAC): ~30 minutes",
+      type: "table",
+      headers: ["Parameter", "Value"],
+      rows: [
+        ["Target", "GHRH receptor (GHRHR) on somatotroph cells"],
+        ["Effect", "Stimulates GH synthesis and release"],
+        ["Half-life (DAC form)", "~6–8 days"],
+        ["Half-life (without DAC)", "~30 minutes"],
       ],
     },
     {
@@ -69,19 +69,20 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Research on Ipamorelin, primarily in animal models, has documented robust GH pulse stimulation comparable to GHRP-6 at equivalent molar doses, reduced off-target hormone release (selectivity for GH over cortisol distinguishes it from less selective GHS compounds), and potential effects on gastric motility under investigation in gastrointestinal research contexts. An Elbrønd et al. (1999) study in swine demonstrated significant, dose-dependent GH release with Ipamorelin, with a favorable selectivity profile compared to GHRP-2.",
+      text: "Research on Ipamorelin, primarily in animal models, has documented robust GH pulse stimulation comparable to GHRP-6 at equivalent molar doses, reduced off-target hormone release with selectivity for GH over cortisol distinguishing it from less selective GHS compounds, and potential effects on gastric motility under investigation in gastrointestinal research contexts.",
     },
     {
-      type: "subheading",
-      text: "Mechanism Summary",
+      type: "paragraph",
+      text: "An Elbrønd et al. (1999) study in swine demonstrated significant, dose-dependent GH release with Ipamorelin, with a favorable selectivity profile compared to GHRP-2.",
     },
     {
-      type: "list",
-      items: [
-        "Target: GHS-R1a (ghrelin receptor)",
-        "Effect: Stimulates GH release via pathway independent of GHRH receptor",
-        "Half-life: ~2 hours",
-        "Selectivity: High for GH; minimal cortisol/prolactin effect in research doses",
+      type: "table",
+      headers: ["Parameter", "Value"],
+      rows: [
+        ["Target", "GHS-R1a (ghrelin receptor)"],
+        ["Effect", "Stimulates GH release via pathway independent of GHRH receptor"],
+        ["Half-life", "~2 hours"],
+        ["Selectivity", "High for GH; minimal cortisol/prolactin effect in research doses"],
       ],
     },
     {
@@ -90,15 +91,19 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "The combination of a GHRH analog with a GHS targets two independent but synergistic pathways. Research on dual-pathway stimulation suggests complementary mechanisms: CJC-1295 activates the GHRH receptor, promoting GH synthesis, while Ipamorelin activates GHS-R1a, triggering GH release. Together, they create a 'double signal' — one that increases available GH and one that triggers its secretion.",
+      text: "The combination of a GHRH analog with a GHS targets two independent but synergistic pathways. CJC-1295 activates the GHRH receptor, promoting GH synthesis, while Ipamorelin activates GHS-R1a, triggering GH release. Together, they create a double signal — one that increases available GH and one that triggers its secretion.",
     },
     {
       type: "paragraph",
-      text: "Studies examining co-administration of GHRH analogs with GHS compounds have consistently shown greater GH output than either compound alone — a pattern consistent with synergistic rather than simply additive interaction. GHS-R1a agonism has also been shown to suppress somatostatin tone, reducing the inhibitory brake on GH release and further augmenting the response to concurrent GHRH stimulation.",
+      text: "Studies examining co-administration of GHRH analogs with GHS compounds have consistently shown greater GH output than either compound alone — a pattern consistent with synergistic rather than simply additive interaction. Additionally, GHS-R1a agonism has been shown to suppress somatostatin tone, reducing the inhibitory brake on GH release and further augmenting the response to concurrent GHRH stimulation.",
     },
     {
       type: "heading",
       text: "Research Dosing Protocols (Pre-Clinical Context)",
+    },
+    {
+      type: "paragraph",
+      text: "The following reflects protocols described in research literature — not clinical recommendations:",
     },
     {
       type: "table",

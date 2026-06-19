@@ -4392,6 +4392,9 @@ import { article as aJUN19OVN11_TA1_IMMUNE } from './articles/thymosin-alpha-1-i
 import { article as aJUN19OVN12_CIRCADIAN_TIMING } from './articles/morning-vs-evening-peptide-dosing-circadian-timing-guide-2026';
 import { article as aJUN19OVN12_GLP1_STACK } from './articles/glp1-peptide-stacking-semaglutide-bpc157-ghk-cu-research-2026';
 import { article as aJUN19OVN12_OVERREACHING } from './articles/peptide-research-overreaching-syndrome-athlete-recovery-2026';
+import { article as aJUN19OVN13_LONGEVITY_STACK } from './articles/longevity-peptide-stack-2026-researchers-guide';
+import { article as aJUN19OVN13_PS_ALTERNATIVE } from './articles/peptide-sciences-alternative-2026';
+import { article as aJUN19OVN13_CJC_IPA_STACK } from './articles/cjc-1295-ipamorelin-stack-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -8786,6 +8789,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19OVN12_CIRCADIAN_TIMING,
   aJUN19OVN12_GLP1_STACK,
   aJUN19OVN12_OVERREACHING,
+  aJUN19OVN13_LONGEVITY_STACK,
+  aJUN19OVN13_PS_ALTERNATIVE,
+  aJUN19OVN13_CJC_IPA_STACK,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
