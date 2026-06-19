@@ -4386,6 +4386,9 @@ import { article as aJUN19OVN9_METABOLIC_BIOMARKERS } from './articles/peptide-r
 import { article as aJUN19OVN10_SEMA_GLP1 } from './articles/semaglutide-glp1-research-peptide-metabolic-guide-jun19-2026';
 import { article as aJUN19OVN10_HEXARELIN_CD36 } from './articles/hexarelin-cardioprotection-cd36-ghs-cardiac-research-jun19-2026';
 import { article as aJUN19OVN10_NAD_NMN } from './articles/nad-plus-vs-nmn-longevity-precursors-researchers-jun19-2026';
+import { article as aJUN19OVN11_HPLC_COA } from './articles/peptide-purity-hplc-coa-researchers-guide-jun19-2026';
+import { article as aJUN19OVN11_NXPH_QA } from './articles/nexphoria-quality-standards-batch-coa-hplc-ms-lal-jun19-2026';
+import { article as aJUN19OVN11_TA1_IMMUNE } from './articles/thymosin-alpha-1-immune-modulation-clinical-evidence-jun19-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -8774,6 +8777,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19OVN10_SEMA_GLP1,
   aJUN19OVN10_HEXARELIN_CD36,
   aJUN19OVN10_NAD_NMN,
+  aJUN19OVN11_HPLC_COA,
+  aJUN19OVN11_NXPH_QA,
+  aJUN19OVN11_TA1_IMMUNE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
