@@ -4359,6 +4359,9 @@ import { article as aOVNV2_SELANK } from './articles/selank-anxiety-research';
 import { article as aOVNV2_SEMAGLUTIDE } from './articles/semaglutide-research-peptide';
 import { article as aOVNV2_TB500 } from './articles/tb-500-thymosin-beta-4';
 import { article as aOVNV2_THYMOSIN_A1 } from './articles/thymosin-alpha-1-immune';
+import { article as aJUN19OVN3_METABOLIC_SYNDROME } from './articles/peptide-research-metabolic-syndrome-multi-target-protocol-2026';
+import { article as aJUN19OVN3_SLEEP_ARCH } from './articles/peptide-research-sleep-architecture-gh-pulse-optimization-2026';
+import { article as aJUN19OVN3_FEMALE_CYCLE } from './articles/peptide-research-female-hormonal-cycle-protocol-design-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -8720,6 +8723,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aOVNV2_SEMAGLUTIDE,
   aOVNV2_TB500,
   aOVNV2_THYMOSIN_A1,
+  aJUN19OVN3_METABOLIC_SYNDROME,
+  aJUN19OVN3_SLEEP_ARCH,
+  aJUN19OVN3_FEMALE_CYCLE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
