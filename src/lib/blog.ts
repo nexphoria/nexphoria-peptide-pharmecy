@@ -4431,6 +4431,9 @@ import { article as aJUN19OVN24_COA } from './articles/how-to-read-peptide-coa-h
 import { article as aJUN19OVN25_STROKE } from './articles/semax-cerebrolysin-cerebrovascular-stroke-research-guide';
 import { article as aJUN19OVN25_SCAR } from './articles/peptide-wound-closure-scar-reduction-keloid-research';
 import { article as aJUN19OVN25_OCULAR } from './articles/peptide-research-ocular-corneal-dry-eye-neuroprotection';
+import { article as aJUN19OVN26_BIOAVAIL } from './articles/peptide-bioavailability-comparison-2026';
+import { article as aJUN19OVN26_BPC_ANXIETY } from './articles/bpc-157-anxiety-depression-research-2026';
+import { article as aJUN19OVN26_MICRONEEDLE } from './articles/peptide-microneedling-ghk-cu-cosmetic-research';
 
 
 export const articles: BlogArticle[] = [
@@ -8864,6 +8867,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19OVN25_STROKE,
   aJUN19OVN25_SCAR,
   aJUN19OVN25_OCULAR,
+  aJUN19OVN26_BIOAVAIL,
+  aJUN19OVN26_BPC_ANXIETY,
+  aJUN19OVN26_MICRONEEDLE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
