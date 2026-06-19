@@ -4434,6 +4434,9 @@ import { article as aJUN19OVN25_OCULAR } from './articles/peptide-research-ocula
 import { article as aJUN19OVN26_BIOAVAIL } from './articles/peptide-bioavailability-comparison-2026';
 import { article as aJUN19OVN26_BPC_ANXIETY } from './articles/bpc-157-anxiety-depression-research-2026';
 import { article as aJUN19OVN26_MICRONEEDLE } from './articles/peptide-microneedling-ghk-cu-cosmetic-research';
+import { article as aJUN19OVN27_PROTEOMICS } from './articles/peptide-proteomics-phosphorylation-mass-spectrometry-research-guide';
+import { article as aJUN19OVN27_UPS } from './articles/ubiquitin-proteasome-peptide-degradation-research-guide';
+import { article as aJUN19OVN27_OOC } from './articles/organ-on-chip-peptide-research-models-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -8870,6 +8873,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19OVN26_BIOAVAIL,
   aJUN19OVN26_BPC_ANXIETY,
   aJUN19OVN26_MICRONEEDLE,
+  aJUN19OVN27_PROTEOMICS,
+  aJUN19OVN27_UPS,
+  aJUN19OVN27_OOC,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
