@@ -1,221 +1,270 @@
 import type { BlogArticle } from '../blog-types';
 
 export const article: BlogArticle = {
-  slug: 'receptor-atlas-peptide-families-biological-systems',
-  title: 'The Receptor Atlas: How Peptide Families Map to Biological Systems',
+  slug: "receptor-atlas-peptide-families-biological-systems",
+  title: "The Receptor Atlas: How Peptide Families Map to Biological Systems",
   description:
-    'A systems-level reference mapping the major research peptide families to their receptor targets, signaling pathways, and primary biological systems. Understand why peptides produce the effects they do — and how to select compounds rationally for your research question.',
-  category: 'Research Guides',
+    "A structured reference for researchers: which peptide families act on which receptor classes, and what biological systems they modulate. From GPCR-targeting secretagogues to nuclear-acting steroids and mitochondria-derived peptides.",
+  category: "Research Fundamentals",
   readMinutes: 14,
-  publishedAt: '2026-06-22',
-  ogImage: '/og-image.jpg',
+  publishedAt: "2026-06-22",
+  ogImage: "/og-image.jpg",
   body: [
     {
-      type: 'paragraph',
-      text: 'Peptide research is often presented compound by compound — one peptide, one mechanism, one outcome. In reality, biological systems are organized around receptor families and signaling networks. Understanding which receptor families each peptide class engages, and how those receptor families connect to physiological systems, allows researchers to select compounds rationally, predict interaction effects, and design protocols that address the right biological layer for their question.',
+      type: "paragraph",
+      text: "Peptide pharmacology is not monolithic. The term 'peptide' encompasses a broad structural class — short chains of amino acids ranging from two to several hundred residues — that act through fundamentally different mechanisms depending on their sequence, conformation, and target receptor class. Understanding which receptor families each peptide class engages is foundational to experimental design, expected pharmacokinetics, and interpretation of results.",
     },
     {
-      type: 'paragraph',
-      text: 'This guide organizes the major research peptide categories by receptor family, maps each family to the primary biological systems it governs, and provides a working reference for connecting compound selection to experimental design.',
+      type: "paragraph",
+      text: "This reference organizes the major research peptide families by their primary receptor targets and the biological systems they modulate. It is not a dosing guide. It is a structural map — a receptor atlas — for researchers navigating an increasingly complex compound landscape.",
     },
     {
-      type: 'callout',
-      text: 'This article is a research reference. All compounds discussed are peptides for qualified laboratory use only. Nothing herein constitutes medical advice or guidance for human use.',
+      type: "heading",
+      text: "Class 1: G Protein-Coupled Receptor (GPCR) Peptide Ligands",
     },
     {
-      type: 'heading',
-      text: 'Framework: How to Read This Atlas',
+      type: "paragraph",
+      text: "The largest class of research peptide targets, GPCRs are membrane-spanning receptors that transduce extracellular signals into intracellular second messenger cascades (cAMP, IP3, DAG). A significant proportion of approved pharmaceuticals target this receptor family, and many research peptides operate through it.",
     },
     {
-      type: 'paragraph',
-      text: 'Most peptides exert their primary effects through G protein-coupled receptors (GPCRs) — the largest receptor superfamily, accounting for approximately 800 genes in the human genome and the target of roughly 34% of approved pharmaceuticals. A smaller but significant set of research peptides act through receptor tyrosine kinases (RTKs), nuclear receptors, ion channels, or intracellular binding partners. Understanding which receptor class a peptide engages shapes predictions about signaling kinetics, desensitization, off-target effects, and combination logic.',
+      type: "subheading",
+      text: "Growth Hormone Secretagogue Receptor (GHSR-1a)",
     },
     {
-      type: 'table',
-      headers: ['Receptor Class', 'Signaling Mechanism', 'Key Peptide Families'],
+      type: "paragraph",
+      text: "GHSR-1a is the target of the ghrelin peptide family and synthetic mimetics. Compounds acting here stimulate GH release from the anterior pituitary via Gq/11 coupling and downstream calcium mobilization. Research peptides in this class include Ipamorelin, GHRP-2, GHRP-6, and Hexarelin. Each differs in selectivity profile — Ipamorelin is highly selective with minimal cortisol or prolactin elevation; GHRP-6 produces notable ghrelin-like appetite stimulation via orexigenic circuits.",
+    },
+    {
+      type: "paragraph",
+      text: "Hexarelin is notable for secondary cardioprotective effects via CD36 receptor binding, independent of GHSR activation — illustrating why receptor atlases must account for multi-target pharmacology.",
+    },
+    {
+      type: "subheading",
+      text: "GHRH Receptor (Growth Hormone-Releasing Hormone Receptor)",
+    },
+    {
+      type: "paragraph",
+      text: "The GHRH receptor on pituitary somatotrophs is a Gs-coupled GPCR that stimulates adenylyl cyclase and cAMP-mediated GH synthesis and release. CJC-1295, Sermorelin, and Tesamorelin are research analogs of endogenous GHRH targeting this receptor. Their primary distinction is half-life: native GHRH has a half-life of minutes; CJC-1295 with DAC extends activity via albumin binding to several days; Tesamorelin is FDA-approved (Egrifta) for HIV-associated lipodystrophy.",
+    },
+    {
+      type: "subheading",
+      text: "Melanocortin Receptors (MC1R–MC5R)",
+    },
+    {
+      type: "paragraph",
+      text: "The melanocortin receptor family has five subtypes with distinct tissue distributions and functions. MC1R mediates skin pigmentation; MC3R and MC4R regulate energy homeostasis and sexual function. Research peptides targeting this family include PT-141 (Bremelanotide), Melanotan II, and alpha-MSH analogs. PT-141 selectively engages MC3R and MC4R, producing its studied effects on sexual behavior and potentially mood via central melanocortin signaling.",
+    },
+    {
+      type: "subheading",
+      text: "GLP-1 and GIP Receptors",
+    },
+    {
+      type: "paragraph",
+      text: "GLP-1R and GIPR are incretin hormone receptors with broad systemic distribution beyond the pancreatic beta cell — including brain, heart, kidney, and gut. Semaglutide (GLP-1R monoagonist), Tirzepatide (GLP-1R/GIPR dual agonist), and Retatrutide (GLP-1R/GIPR/GCGR triple agonist) represent the most clinically advanced research compounds in this receptor class. Their CNS distribution underpins emerging research on neuroprotection, addiction, and neuroinflammation.",
+    },
+    {
+      type: "heading",
+      text: "Class 2: Receptor Tyrosine Kinase (RTK) Peptide Ligands",
+    },
+    {
+      type: "paragraph",
+      text: "Receptor tyrosine kinases autophosphorylate upon ligand binding and activate downstream signaling cascades including MAPK/ERK and PI3K/Akt/mTOR. Many growth factors act through this class.",
+    },
+    {
+      type: "subheading",
+      text: "IGF-1 Receptor (IGF-1R)",
+    },
+    {
+      type: "paragraph",
+      text: "IGF-1 LR3, a modified IGF-1 analog with reduced IGFBP binding and extended half-life, acts on IGF-1R — a receptor tyrosine kinase that activates the PI3K/Akt/mTOR axis and MAPK pathways. The primary downstream effects include myoblast proliferation, satellite cell activation, and anabolic signaling in skeletal muscle. Because IGF-1R signaling intersects with cell survival and growth pathways, research protocols require careful oncological controls.",
+    },
+    {
+      type: "subheading",
+      text: "EGF Receptor (EGFR)",
+    },
+    {
+      type: "paragraph",
+      text: "BPC-157 has been shown in preclinical studies to interact with the EGFR signaling pathway, contributing to epithelial proliferation and mucosal repair. This is one mechanism among several for BPC-157 and does not involve direct receptor binding in the classical ligand-receptor sense — rather, BPC-157 appears to upregulate EGFR-mediated signaling via intracellular pathway modulation.",
+    },
+    {
+      type: "heading",
+      text: "Class 3: Nuclear Receptor-Adjacent Pathways",
+    },
+    {
+      type: "paragraph",
+      text: "While classical nuclear receptors (androgen, estrogen, glucocorticoid) are not peptide targets in the primary sense, several research peptides modulate nuclear receptor activity indirectly.",
+    },
+    {
+      type: "subheading",
+      text: "Follistatin-344 and ActRIIB/Smad Pathway",
+    },
+    {
+      type: "paragraph",
+      text: "Follistatin-344 acts by binding and neutralizing myostatin (GDF-8) and activin A — TGF-β superfamily ligands that would otherwise activate the activin receptor IIB (ActRIIB) and downstream Smad2/3 signaling. Smad pathway activation suppresses muscle anabolic gene expression; follistatin-mediated neutralization disinhibits it. This is a competitive antagonism-by-sequestration mechanism rather than direct receptor binding.",
+    },
+    {
+      type: "subheading",
+      text: "Thymosin Alpha-1 and TLR/NF-κB Pathways",
+    },
+    {
+      type: "paragraph",
+      text: "Thymosin Alpha-1 (Tα1) modulates immune function through multiple pathways including Toll-like receptor (TLR) signaling, NF-κB activation, and dendritic cell maturation. It does not bind a single dedicated receptor but instead acts as an immunomodulatory signal that enhances innate and adaptive immune responses — relevant to infectious disease and oncology research models.",
+    },
+    {
+      type: "heading",
+      text: "Class 4: Cytoskeletal and Intracellular Targets",
+    },
+    {
+      type: "paragraph",
+      text: "A subset of research peptides act intracellularly rather than through membrane receptors, targeting structural proteins or intracellular signaling nodes.",
+    },
+    {
+      type: "subheading",
+      text: "TB-500 (Thymosin β4) and G-Actin",
+    },
+    {
+      type: "paragraph",
+      text: "TB-500's primary binding target is monomeric G-actin, via its LKKTET motif. By sequestering G-actin, TB-500 regulates actin polymerization dynamics — the addition of new actin monomers to filaments — which drives cell migration and wound healing responses. This intracellular mechanism distinguishes TB-500 from receptor-ligand peptides; its effects require cellular uptake, and its downstream signaling involves VEGF and MMP expression modulation.",
+    },
+    {
+      type: "subheading",
+      text: "SS-31 (Elamipretide) and Cardiolipin",
+    },
+    {
+      type: "paragraph",
+      text: "SS-31 is a mitochondria-targeted antioxidant peptide that accumulates at the inner mitochondrial membrane and binds cardiolipin — a phospholipid critical for electron transport chain organization and cristae morphology. By stabilizing cardiolipin, SS-31 preserves mitochondrial membrane potential and reduces reactive oxygen species generation. It does not bind a traditional receptor; its specificity is structural, based on its cationic character and lipophilic aromatic residues.",
+    },
+    {
+      type: "heading",
+      text: "Class 5: Mitochondria-Derived Peptides (MDPs)",
+    },
+    {
+      type: "paragraph",
+      text: "Mitochondria-derived peptides represent a recently characterized class encoded within mitochondrial rRNA sequences. They are secreted in response to mitochondrial stress and act on nuclear gene expression programs.",
+    },
+    {
+      type: "subheading",
+      text: "MOTS-c",
+    },
+    {
+      type: "paragraph",
+      text: "MOTS-c is encoded within the 12S rRNA of mitochondrial DNA and acts as a retrograde signal to the nucleus. Its primary mechanism involves activation of the AMPK pathway, driving metabolic adaptation analogous to exercise. MOTS-c also directly interacts with the ARE (antioxidant response element) via Nrf2 modulation. Age-related decline in circulating MOTS-c levels has been documented in humans, supporting its investigation as both a biomarker and intervention target.",
+    },
+    {
+      type: "subheading",
+      text: "Humanin",
+    },
+    {
+      type: "paragraph",
+      text: "Humanin, encoded within the 16S rRNA, acts through at least two receptor pathways: direct FPRL1 (formyl peptide receptor-like 1) binding and a tripartite receptor complex involving CNTFR, WSX-1, and gp130. Through these pathways it mediates neuroprotective, cytoprotective, and metabolic effects. Circulating humanin declines with age, and correlations with longevity biomarkers have been documented in centenarian studies.",
+    },
+    {
+      type: "heading",
+      text: "Class 6: Neuropeptides and CNS-Active Compounds",
+    },
+    {
+      type: "paragraph",
+      text: "CNS-active peptides present unique pharmacological considerations: blood-brain barrier penetration, receptor distribution, and interaction with neurotransmitter systems require specialized study designs.",
+    },
+    {
+      type: "subheading",
+      text: "Selank and Semax",
+    },
+    {
+      type: "paragraph",
+      text: "Selank (a tuftsin analog) and Semax (an ACTH 4-7 Pro-Gly-Pro analog) are among the most studied nootropic peptides. Both are thought to act partly via BDNF upregulation, but their receptor mechanisms are not fully characterized. Selank appears to modulate the enkephalin system and has anxiolytic effects via GABAergic circuitry interaction. Semax influences BDNF/TrkB signaling and the serotonin and dopamine systems in the prefrontal cortex.",
+    },
+    {
+      type: "subheading",
+      text: "Kisspeptin-10",
+    },
+    {
+      type: "paragraph",
+      text: "Kisspeptin acts through Kiss1R (GPR54), a Gq-coupled GPCR expressed in GnRH neurons of the hypothalamus. Kisspeptin-10 is the shortest active fragment and a potent stimulator of LH and FSH release. Research uses include reproductive neuroendocrinology, puberty timing research, and hypothalamic-pituitary-gonadal axis characterization.",
+    },
+    {
+      type: "heading",
+      text: "Receptor Atlas: Quick Reference Table",
+    },
+    {
+      type: "table",
+      headers: ["Peptide", "Primary Receptor / Target", "Class", "System"],
       rows: [
-        ['GPCRs — Gs-coupled', 'cAMP elevation → PKA → CREB', 'GLP-1 analogs, secretin family, GHRH analogs'],
-        ['GPCRs — Gi-coupled', 'cAMP reduction → Gi-effectors', 'Opioid peptides, somatostatin analogs, DSIP targets'],
-        ['GPCRs — Gq-coupled', 'PLC → IP3/DAG → PKC/Ca²⁺', 'Oxytocin/vasopressin, angiotensin, GnRH/kisspeptin'],
-        ['RTKs — IGF/insulin family', 'PI3K-Akt-mTOR, RAS-MAPK', 'IGF-1, IGF-1 LR3, insulin analogs'],
-        ['Cytokine receptors — JAK/STAT', 'JAK1/2 → STAT phosphorylation', 'GH (somatotropin), thymosin Alpha-1'],
-        ['Nuclear / intracellular', 'Direct transcriptional regulation', 'Thyroid hormone peptides, some bioregulators'],
-        ['Intracellular / actin-binding', 'G-actin sequestration, cytoskeletal remodeling', 'TB-500 (Thymosin Beta-4), cytoskeletal peptides'],
-        ['Multi-pathway / structural', 'NO pathway, VEGF, FAK signaling', 'BPC-157, GHK-Cu, tissue-remodeling peptides'],
+        ["Ipamorelin", "GHSR-1a", "GPCR", "GH axis"],
+        ["CJC-1295", "GHRH-R", "GPCR", "GH axis"],
+        ["Sermorelin", "GHRH-R", "GPCR", "GH axis"],
+        ["PT-141", "MC3R / MC4R", "GPCR", "CNS / sexual function"],
+        ["Semaglutide", "GLP-1R", "GPCR", "Metabolic / CNS"],
+        ["Tirzepatide", "GLP-1R + GIPR", "GPCR (dual)", "Metabolic"],
+        ["Retatrutide", "GLP-1R + GIPR + GCGR", "GPCR (triple)", "Metabolic"],
+        ["IGF-1 LR3", "IGF-1R", "RTK", "Anabolic / muscle"],
+        ["BPC-157", "EGFR (indirect) / NO system", "Multi-target", "Repair / vascular"],
+        ["TB-500", "G-actin (intracellular)", "Cytoskeletal", "Repair / migration"],
+        ["SS-31", "Cardiolipin (IMM)", "Mitochondrial", "Mitochondria / ROS"],
+        ["Follistatin-344", "Myostatin (sequestration)", "TGF-β blockade", "Muscle"],
+        ["Thymosin Alpha-1", "TLR / NF-κB", "Immunomodulatory", "Immune"],
+        ["MOTS-c", "AMPK / Nrf2", "MDP / nuclear", "Metabolic / mitochondria"],
+        ["Humanin", "FPRL1 / gp130 complex", "MDP / GPCR", "Neuroprotection"],
+        ["Kisspeptin-10", "Kiss1R (GPR54)", "GPCR", "HPG axis / reproductive"],
+        ["Selank", "Enkephalin / GABA (indirect)", "Neuropeptide", "CNS / anxiety"],
+        ["Epithalon", "Telomerase (TERT activation)", "Epigenetic", "Longevity / telomere"],
       ],
     },
     {
-      type: 'heading',
-      text: 'Family 1: GH Axis Peptides — GHRH Analogs and GHS',
+      type: "heading",
+      text: "Implications for Research Design",
     },
     {
-      type: 'subheading',
-      text: 'Receptor Targets: GHRH-R (Gs-coupled GPCR), GHSR-1a (Gq/Gi-coupled GPCR)',
+      type: "paragraph",
+      text: "Receptor class determines much of what researchers must account for in experimental design. GPCR-targeting peptides typically require pharmacodynamic modeling around receptor desensitization and internalization — prolonged exposure to GHSR agonists like GHRP-6, for example, produces tachyphylaxis via receptor downregulation. This is a documented phenomenon that complicates chronic dosing studies.",
     },
     {
-      type: 'paragraph',
-      text: 'The growth hormone axis peptides divide into two mechanistically distinct subclasses: GHRH analogs (which activate the GHRH receptor on pituitary somatotrophs) and growth hormone secretagogues (GHS), which activate the ghrelin receptor GHSR-1a. Both ultimately increase GH pulse amplitude, but through different receptor families with different physiological consequences.',
+      type: "paragraph",
+      text: "RTK-targeting compounds like IGF-1 LR3 require attention to autocrine and paracrine loop disruption — because IGF-1R signaling upregulates IGF-1 production in some cell types, feedback effects must be considered in study interpretation.",
     },
     {
-      type: 'list',
-      items: [
-        'GHRH analogs (Sermorelin, CJC-1295 no-DAC, CJC-1295 with DAC, Tesamorelin): Bind GHRH-R → Gs → adenylyl cyclase → cAMP → PKA → CREB phosphorylation → GH gene transcription and secretion. Physiologically pulsatile when using short-acting analogs; tonically elevated with DAC forms.',
-        'GH Secretagogues / GHRPs (Ipamorelin, Hexarelin, GHRP-2, GHRP-6, MK-677): Bind GHSR-1a → Gq-coupled calcium mobilization and Gi-mediated cAMP suppression → GH release synergistic with endogenous GHRH. MK-677 is an oral non-peptide GHS acting on the same receptor.',
-        'Synergy logic: GHRH analogs + GHS act on different receptors with complementary signal amplification — explaining why CJC-1295/Ipamorelin stacks produce supra-additive GH pulses compared to either compound alone.',
-        'Downstream biology: elevated GH → IGF-1 production in liver → mTOR/PI3K/Akt activation → protein synthesis, lipolysis, anti-fibrosis. Also GHRP-specific effects: GHSR-1a expressed in heart, gut, brain — explaining cardioprotective (Hexarelin), appetite (GHRP-6), and cognitive effects beyond GH axis.',
-      ],
+      type: "paragraph",
+      text: "Intracellularly acting peptides like TB-500 require distinct penetration and uptake considerations. Concentrations effective in cell culture may not translate linearly to in vivo models without pharmacokinetic data on tissue distribution.",
     },
     {
-      type: 'heading',
-      text: 'Family 2: GLP-1 / Incretin Peptides — Gs-Coupled GPCR System',
+      type: "paragraph",
+      text: "MDPs like MOTS-c and Humanin introduce a newer complexity: because they are encoded in mitochondrial DNA and released in response to cellular stress, exogenous administration of synthetic analogs may not fully replicate endogenous signaling dynamics. Dose-response characterization and endogenous level baselines are essential controls in this class.",
     },
     {
-      type: 'subheading',
-      text: 'Receptor Targets: GLP-1R, GIPR, GcgR (all Gs-coupled GPCRs)',
+      type: "heading",
+      text: "Multi-Target Pharmacology",
     },
     {
-      type: 'paragraph',
-      text: 'The incretin axis peptides represent the most pharmacologically advanced research peptide category, with approved clinical analogs providing a deep evidence base for the underlying biology. GLP-1R is a Gs-coupled GPCR that, upon activation, elevates intracellular cAMP in pancreatic beta-cells (enhancing glucose-stimulated insulin secretion), hypothalamic neurons (suppressing appetite via arcuate and dorsal vagal complex signaling), and a wide range of peripheral tissues including cardiovascular tissue, kidney, liver, and brain.',
+      type: "paragraph",
+      text: "Several prominent research peptides do not fit cleanly into a single receptor class. BPC-157 is perhaps the clearest example: its documented effects span gastrointestinal mucosal protection, vascular repair, neurological healing, and musculoskeletal recovery — and no single receptor has been identified that accounts for all of these. Current evidence implicates NO synthase modulation, VEGF pathway interaction, EGFR signaling, and possibly dopaminergic circuitry normalization as distinct mechanistic contributions.",
     },
     {
-      type: 'table',
-      headers: ['Compound', 'Receptor Profile', 'Primary Research Systems'],
-      rows: [
-        ['Semaglutide', 'GLP-1R agonist', 'Metabolic, cardiovascular, CNS, renal'],
-        ['Tirzepatide', 'GLP-1R + GIPR dual agonist', 'Metabolic, body composition, cardiovascular'],
-        ['Retatrutide', 'GLP-1R + GIPR + GcgR triple agonist', 'Metabolic, hepatic, BAT thermogenesis, cardiovascular'],
-        ['Liraglutide', 'GLP-1R agonist (shorter half-life)', 'Metabolic, neuroprotection, cardiovascular'],
-        ['Cagrilintide', 'Amylin receptor (AMY1/2/3) + CT receptor', 'Satiety, energy expenditure — combination studies'],
-      ],
+      type: "paragraph",
+      text: "Multi-target pharmacology is both a scientific asset and an interpretive challenge. It expands potential research applications but makes mechanism attribution harder. Studies using knockout models, specific receptor antagonists, or pathway inhibitors provide the cleanest mechanistic evidence; general outcome measures alone are insufficient to attribute effect to any single receptor.",
     },
     {
-      type: 'paragraph',
-      text: 'The biological scope of GLP-1R signaling extends well beyond glucose regulation. GLP-1R is expressed in dopamine neurons (addiction research), microglia (neuroinflammation and Parkinson\'s models), cardiomyocytes (cardioprotection in ischemia models), glomerular cells (renal protection), and hepatocytes (NASH/NAFLD models). This explains the active research frontier using GLP-1 analogs in CNS, cardiovascular, and oncology contexts.',
+      type: "heading",
+      text: "A Note on Receptor Specificity and Vendor Quality",
     },
     {
-      type: 'heading',
-      text: 'Family 3: Tissue Repair and Cytoprotective Peptides',
+      type: "paragraph",
+      text: "Receptor pharmacology research depends critically on compound identity and purity. A peptide with even minor sequence errors — a single substituted amino acid — can lose target selectivity, bind off-target receptors, or become inactive entirely. This is not a theoretical concern: documented purity gaps in commercial peptide preparations have produced conflicting literature where sequence verification was not performed.",
     },
     {
-      type: 'subheading',
-      text: 'Receptor Targets: Multi-pathway — NO/VEGF/FAK, G-actin, Cu²⁺ coordination',
+      type: "paragraph",
+      text: "For receptor studies, mass spectrometry confirmation of sequence identity is not optional. HPLC purity alone confirms the absence of major contaminants but does not confirm that the correct peptide was synthesized. Both tests together provide the minimum evidence standard for mechanistic receptor research.",
     },
     {
-      type: 'paragraph',
-      text: 'The tissue repair peptides do not fit neatly into a single receptor class — which is part of what makes them scientifically interesting and mechanistically complex. BPC-157, TB-500, and GHK-Cu each engage different molecular targets with converging downstream effects on angiogenesis, inflammation resolution, and tissue matrix remodeling.',
+      type: "heading",
+      text: "Summary",
     },
     {
-      type: 'list',
-      items: [
-        'BPC-157 (Body Protection Compound-157): No confirmed canonical receptor identified. Primary mechanisms involve upregulation of eNOS and nNOS (NO system activation), VEGF-independent angiogenesis via FAK-paxillin pathway, and GABAergic/dopaminergic modulation. Research consistently demonstrates anti-inflammatory and healing effects in musculoskeletal, GI, and CNS models.',
-        'TB-500 (Thymosin Beta-4 synthetic fragment): Mechanism via G-actin sequestration — TB-500 binds free G-actin in a 1:1 complex, maintaining the pool of unpolymerized actin available for directed cell migration and cytoskeletal remodeling. Downstream: upregulates anti-inflammatory Lck kinase pathway, promotes endothelial and smooth muscle cell migration, reduces fibrosis.',
-        'GHK-Cu (Glycine-Histidine-Lysine-Copper): Functions as a copper-transport tripeptide that coordinates Cu²⁺ and delivers it to copper-dependent enzymes including lysyl oxidase (collagen crosslinking), superoxide dismutase (oxidative stress defense), and cytochrome c oxidase (mitochondrial respiration). GHK also functions as a signaling molecule activating over 4,000 genes in human genome studies (Pickart et al., 2012).',
-      ],
+      type: "paragraph",
+      text: "Peptide research spans at least six major receptor/target classes: GPCRs, receptor tyrosine kinases, nuclear receptor-adjacent pathways, intracellular/cytoskeletal targets, mitochondria-derived peptide pathways, and CNS neuropeptide systems. Each class carries distinct design requirements, pharmacokinetic considerations, and interpretive challenges. The receptor atlas above provides a working framework for situating specific compounds within this landscape — a starting point for protocol design, not a substitute for deep mechanistic literature review on each compound of interest.",
     },
     {
-      type: 'heading',
-      text: 'Family 4: Immune-Modulating Peptides — Thymic and Innate Immune Systems',
-    },
-    {
-      type: 'subheading',
-      text: 'Receptor Targets: TCR co-stimulation (TA-1), TLR pathways (LL-37), formyl peptide receptors',
-    },
-    {
-      type: 'paragraph',
-      text: 'The immune-modulating peptide family targets different layers of immune regulation. Thymosin Alpha-1 (TA-1) is an endogenous thymic hormone that enhances T-cell differentiation and function — it promotes Th1-polarized responses, increases dendritic cell maturation, and upregulates MHC class II expression, making it relevant to immune senescence, cancer immunology, and chronic infection research.',
-    },
-    {
-      type: 'list',
-      items: [
-        'Thymosin Alpha-1 (TA-1): Activates TLR2 and TLR9 signaling; enhances NK cell function; promotes Th1 cytokine (IL-2, IFN-γ) over Th2 profile. Clinically studied in hepatitis B/C, sepsis, and cancer immunotherapy adjuvant roles.',
-        'LL-37 (Cathelicidin): Antimicrobial host-defense peptide engaging formyl peptide receptor-like 1 (FPRL1) and TLR4 antagonism. Membrane-disrupting effect against bacteria and biofilm; immunomodulatory role promoting wound healing and suppressing excessive LPS-driven inflammation.',
-        'KPV (Lys-Pro-Val): C-terminal MSH fragment engaging melanocortin receptors (MC1R, MC3R) expressed on macrophages and intestinal epithelium. Anti-inflammatory via inhibition of NF-κB nuclear translocation. Research focus: IBD, gut permeability, skin inflammation.',
-        'Thymulin: Zinc-dependent thymic hormone required for T-cell maturation markers (Thy-1, Lyt antigens). Falls with age; research interest in immune senescence and thymus regeneration models.',
-      ],
-    },
-    {
-      type: 'heading',
-      text: 'Family 5: Neuropeptides — CNS Signaling and Neuromodulation',
-    },
-    {
-      type: 'subheading',
-      text: 'Receptor Targets: CRF-R, MC4R, OTR, V1/V2, sigma-1, dopamine/serotonin modulators',
-    },
-    {
-      type: 'paragraph',
-      text: 'The neuropeptide research category encompasses compounds that modulate central neurotransmitter systems, stress-response circuits, and cognitive function via peptidergic signaling pathways distinct from classical small-molecule neuropharmacology. Unlike monoamine reuptake inhibitors, most neuropeptides act on specific GPCRs in discrete neural circuits with receptor distributions that predict their behavioral effects.',
-    },
-    {
-      type: 'table',
-      headers: ['Compound', 'Primary CNS Receptor', 'Research Focus'],
-      rows: [
-        ['Selank', 'Uncertain; potentiates GABAergic signaling; inhibits enkephalin degradation', 'Anxiety, stress HPA axis, cognitive performance'],
-        ['Semax (N-Acetyl-Semax)', 'BDNF/TrkB pathway upregulation; sigma-1 receptor interactions', 'Neuroprotection, BDNF induction, cognitive enhancement'],
-        ['Oxytocin', 'OTR (Gq-coupled GPCR) — amygdala, hypothalamus, nucleus accumbens', 'Social behavior, trust, autism models, stress'],
-        ['PT-141 (Bremelanotide)', 'MC3R/MC4R in hypothalamus', 'Sexual arousal circuits, melanocortin pathway'],
-        ['Epithalon', 'Indirect: telomerase activation, pineal regulation', 'Aging, sleep-wake, circadian, telomere research'],
-        ['DSIP', 'Uncertain; likely opioid-adjacent and sigma receptor interactions', 'Sleep architecture, SWS promotion, stress buffering'],
-        ['Dihexa', 'HGF/Met receptor potentiation; PAI-1 inhibition', 'Cognitive enhancement, BDNF/HGF axis, memory models'],
-      ],
-    },
-    {
-      type: 'heading',
-      text: 'Family 6: Metabolic and Longevity Peptides — Mitochondria and Redox Systems',
-    },
-    {
-      type: 'subheading',
-      text: 'Receptor Targets: Mitochondrial membrane (SS-31), AMPK pathway (MOTS-c), NAD⁺ biosynthetic enzymes',
-    },
-    {
-      type: 'paragraph',
-      text: 'The mitopeptide and metabolic peptide class targets intracellular energy regulation at the mitochondrial level — mechanistically distinct from the GPCR-mediated peptides described above. This family includes peptides endogenously derived from the mitochondrial genome (MOTS-c, Humanin, SHLP2) as well as synthetic mitochondria-targeted compounds (SS-31/Elamipretide).',
-    },
-    {
-      type: 'list',
-      items: [
-        'SS-31 (Elamipretide): Cardiolipin-targeting tetrapeptide that selectively concentrates in the inner mitochondrial membrane. Mechanism: stabilizes cardiolipin-cytochrome c interaction, reduces ROS generation from Complex I/III, and preserves mitochondrial cristae morphology during ischemia-reperfusion. Research in cardiac, skeletal muscle, renal, and age-related disease models.',
-        'MOTS-c: Encoded by the mitochondrial 12S rRNA gene; activates AMPK and downstream metabolic reprogramming. Promotes glucose uptake independently of insulin signaling. Research focus: insulin resistance, exercise mimetics, skeletal muscle metabolic health, aging.',
-        'NAD+ and precursors (NMN, NR): Not peptides in the strict sense, but often studied alongside peptide protocols. NAD+ is the cofactor for sirtuins (SIRT1–7), PARP enzymes, and CD38. Declining with age; restoration research relevant to sirtuin-mediated epigenetic regulation, DNA repair, and mitochondrial biogenesis.',
-        'Humanin / SHLP2: Mitochondrial-derived peptides with neuroprotective and insulin-sensitizing properties. Engage formyl peptide receptor-2 (FPR2) and CNTF receptor complex. Decline with age; research in neurodegeneration and metabolic syndrome.',
-      ],
-    },
-    {
-      type: 'heading',
-      text: 'Practical Application: Matching Receptor Family to Research Question',
-    },
-    {
-      type: 'paragraph',
-      text: 'The receptor atlas framework provides a structured approach to protocol design. Rather than selecting compounds by name or popularity, a rational approach begins with the biological question, maps it to the relevant receptor system, and then selects the compound most appropriate for that system given the experimental model.',
-    },
-    {
-      type: 'table',
-      headers: ['Research Question', 'Primary Receptor System', 'Candidate Compounds'],
-      rows: [
-        ['Tissue healing in a tendon injury model', 'NO/VEGF/FAK pathway + G-actin remodeling', 'BPC-157, TB-500, or BPC-157/TB-500 combination'],
-        ['GH axis stimulation without exogenous GH', 'GHRH-R + GHSR-1a', 'CJC-1295/Ipamorelin, Sermorelin + GHRP-2'],
-        ['Metabolic syndrome insulin resistance', 'GLP-1R, GIPR, AMPK', 'Semaglutide, MOTS-c, Tirzepatide'],
-        ['Anxiety and HPA axis attenuation', 'GABAergic modulation, enkephalin system', 'Selank, Semax, BPC-157 (GABAergic pathway)'],
-        ['Mitochondrial protection in ischemia model', 'Cardiolipin stabilization, Complex I/III', 'SS-31 (Elamipretide), NAD+'],
-        ['Immune senescence reversal', 'TLR signaling, thymic axis', 'Thymosin Alpha-1, Thymulin, LL-37'],
-        ['Collagen synthesis and skin aging', 'Cu-dependent enzymes, NRF2 pathway', 'GHK-Cu, Snap-8'],
-        ['Longevity multi-target protocol', 'Telomerase, mitochondria, sirtuin, immune', 'Epithalon, NAD+, SS-31, GHK-Cu, TA-1'],
-      ],
-    },
-    {
-      type: 'heading',
-      text: 'Interaction Considerations When Combining Receptor Families',
-    },
-    {
-      type: 'paragraph',
-      text: 'Combining compounds from different receptor families generally produces additive or complementary effects, since the mechanisms are non-redundant. The primary considerations in multi-compound protocols are: receptor desensitization (relevant for GHRPs with chronic GHSR-1a activation — see cycling protocols), downstream pathway convergence (GLP-1R and GH axis both feed IGF-1/mTOR — monitoring for supra-additive anabolic signals), and competition for the same biological substrate (multiple antioxidant peptides may not add linearly if oxidative stress load is already maximally addressed).',
-    },
-    {
-      type: 'paragraph',
-      text: 'The receptor atlas is not a clinical protocol guide — it is a mechanistic framework for hypothesis generation and experimental design. The value of understanding receptor biology is that it constrains the space of plausible mechanisms, guides biomarker selection for outcomes, and helps interpret unexpected results in terms of underlying receptor pharmacology.',
-    },
-    {
-      type: 'disclaimer',
-      text: 'All compounds discussed are research peptides for qualified laboratory use only. Receptor pharmacology described is based on preclinical and mechanistic literature. Nothing in this article constitutes medical advice, clinical guidance, or endorsement for human use.',
+      type: "disclaimer",
+      text: "For research purposes only. Not intended for human use. All compounds referenced are for in vitro and preclinical research contexts only.",
     },
   ],
 };

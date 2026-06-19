@@ -4321,6 +4321,8 @@ import { article as aNew_wolverine_stack_bpc_157_tb_500_ghk_cu_complete_guide_20
 import { article as aNew_wolverine_stack_complete_research_2026 } from './articles/wolverine-stack-complete-research-2026';
 import { article as aNew_zinc_carnosine_gut_health_gastric_mucosal_research_guide } from './articles/zinc-carnosine-gut-health-gastric-mucosal-research-guide';
 import { article as aNew_zinc_thymulin_thymic_immune_peptide_research_guide } from './articles/zinc-thymulin-thymic-immune-peptide-research-guide';
+import { article as aNew_sleep_gh_cjc_1295_research_literature_review } from './articles/sleep-gh-cjc-1295-research-literature-review';
+import { article as aNew_why_peptides_are_different_from_hormones_research_comparison } from './articles/why-peptides-are-different-from-hormones-research-comparison';
 
 
 export const articles: BlogArticle[] = [
@@ -8644,6 +8646,8 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aNew_wolverine_stack_complete_research_2026,
   aNew_zinc_carnosine_gut_health_gastric_mucosal_research_guide,
   aNew_zinc_thymulin_thymic_immune_peptide_research_guide,
+  aNew_sleep_gh_cjc_1295_research_literature_review,
+  aNew_why_peptides_are_different_from_hormones_research_comparison,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
