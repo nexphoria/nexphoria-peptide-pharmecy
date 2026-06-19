@@ -4401,6 +4401,9 @@ import { article as aJUN19OVN14_NAD_NMN } from './articles/nad-plus-vs-nmn-longe
 import { article as aJUN19OVN15_NETHERLANDS } from './articles/research-peptides-netherlands-guide';
 import { article as aJUN19OVN15_SWEDEN } from './articles/research-peptides-sweden-guide';
 import { article as aJUN19OVN15_POLAND } from './articles/research-peptides-poland-guide';
+import { article as aJUN19OVN16_SWITZERLAND } from './articles/research-peptides-switzerland-guide';
+import { article as aJUN19OVN16_DENMARK } from './articles/research-peptides-denmark-guide';
+import { article as aJUN19OVN16_NORWAY } from './articles/research-peptides-norway-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -8804,6 +8807,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19OVN15_NETHERLANDS,
   aJUN19OVN15_SWEDEN,
   aJUN19OVN15_POLAND,
+  aJUN19OVN16_SWITZERLAND,
+  aJUN19OVN16_DENMARK,
+  aJUN19OVN16_NORWAY,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
