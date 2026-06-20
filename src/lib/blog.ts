@@ -4590,6 +4590,9 @@ import { article as aJUN20EVN37_RECON_GUIDE } from './articles/peptide-reconstit
 import { article as aJUN20OVN38_KHAVINSON } from './articles/cortagen-vilon-khavinson-bioregulator-peptides-research-guide';
 import { article as aJUN20OVN38_HEPATO } from './articles/hepatoprotective-peptides-liver-research-bpc157-ghk-cu-thymosin';
 import { article as aJUN20OVN38_MENOPAUSE } from './articles/peptide-research-menopause-perimenopause-hormone-peptide-protocols-2026-guide';
+import { article as aJUN20OVN39_DSIP } from './articles/dsip-sleep-peptide-circadian-research-protocols-2026';
+import { article as aJUN20OVN39_CREATINE } from './articles/creatine-peptide-synergies-muscle-research-2026';
+import { article as aJUN20OVN39_FOXO4 } from './articles/foxo4-dri-senolytic-peptide-research-guide-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -11280,6 +11283,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN38_KHAVINSON,
   aJUN20OVN38_HEPATO,
   aJUN20OVN38_MENOPAUSE,
+  aJUN20OVN39_DSIP,
+  aJUN20OVN39_CREATINE,
+  aJUN20OVN39_FOXO4,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
