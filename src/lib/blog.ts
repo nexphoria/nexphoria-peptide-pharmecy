@@ -4509,6 +4509,9 @@ import { article as aJUN20OVN16_COLOMBIA } from './articles/research-peptides-co
 import { article as aJUN20OVN17_TAIWAN } from './articles/research-peptides-taiwan-guide';
 import { article as aJUN20OVN17_FINLAND } from './articles/research-peptides-finland-guide';
 import { article as aJUN20OVN17_SAUDI } from './articles/research-peptides-saudi-arabia-guide';
+import { article as aJUN20OVN18_PILOTS } from './articles/best-peptides-pilots-aviation-professionals-research-2026';
+import { article as aJUN20OVN18_MUSICIANS } from './articles/best-peptides-musicians-performing-artists-research-2026';
+import { article as aJUN20OVN18_TRUCKERS } from './articles/best-peptides-truck-drivers-long-haul-transport-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -9020,6 +9023,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN17_TAIWAN,
   aJUN20OVN17_FINLAND,
   aJUN20OVN17_SAUDI,
+  aJUN20OVN18_PILOTS,
+  aJUN20OVN18_MUSICIANS,
+  aJUN20OVN18_TRUCKERS,
   aJUN15N1b,
   aJUN15N2b,
   aJUN15N3b,
