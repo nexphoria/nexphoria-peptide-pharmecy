@@ -98,6 +98,9 @@ import { article as a94 } from './articles/peptide-research-sex-differences-fema
 import { article as a95 } from './articles/bpc-157-gut-health-research-gi-protection-leaky-gut-intestinal-repair';
 import { article as a96 } from './articles/peptide-research-funding-nih-grants-iacuc-regulatory-frameworks';
 import { article as a97 } from './articles/adiponectin-insulin-resistance-glp1-metabolic-peptide-endpoints';
+import { article as aJUN20OVN6_EPITHALON_NAD } from './articles/epithalon-nad-plus-longevity-combination-research-jun20-2026';
+import { article as aJUN20OVN6_GHK_WOUND } from './articles/ghk-cu-wound-healing-mechanism-deep-dive-jun20-2026';
+import { article as aJUN20OVN6_IPA_SERM } from './articles/ipamorelin-vs-sermorelin-research-comparison-jun20-2026';
 import { article as aJUN20OVN5_NAD_LONGEVITY } from './articles/nad-plus-longevity-sirtuins-parp-research-jun20-2026';
 import { article as aJUN20OVN5_THYMOSIN_A1 } from './articles/thymosin-alpha-1-immune-modulation-clinical-research-jun20-2026';
 import { article as aJUN20OVN5_SELANK } from './articles/selank-anxiolytic-nootropic-peptide-research-jun20-2026';
@@ -8948,6 +8951,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN5_NAD_LONGEVITY,
   aJUN20OVN5_THYMOSIN_A1,
   aJUN20OVN5_SELANK,
+  aJUN20OVN6_EPITHALON_NAD,
+  aJUN20OVN6_GHK_WOUND,
+  aJUN20OVN6_IPA_SERM,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
