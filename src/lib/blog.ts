@@ -4557,6 +4557,9 @@ import { article as aJUN20OVN28_VK2735_ORAL } from './articles/vk2735-oral-weigh
 import { article as aJUN20OVN29_HOW_BPC157 } from './articles/how-to-use-bpc-157-research-protocol-guide';
 import { article as aJUN20OVN29_HOW_TB500 } from './articles/how-to-use-tb-500-research-protocol-guide';
 import { article as aJUN20OVN29_HOW_IPA } from './articles/how-to-use-ipamorelin-research-protocol-guide';
+import { article as aJUN20OVN30_HOW_SEMAX } from './articles/how-to-use-semax-research-protocol-guide';
+import { article as aJUN20OVN30_HOW_SELANK } from './articles/how-to-use-selank-research-protocol-guide';
+import { article as aJUN20OVN30_HOW_HEXARELIN } from './articles/how-to-use-hexarelin-research-protocol-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -11214,6 +11217,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN29_HOW_BPC157,
   aJUN20OVN29_HOW_TB500,
   aJUN20OVN29_HOW_IPA,
+  aJUN20OVN30_HOW_SEMAX,
+  aJUN20OVN30_HOW_SELANK,
+  aJUN20OVN30_HOW_HEXARELIN,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
