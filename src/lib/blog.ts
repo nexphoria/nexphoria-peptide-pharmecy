@@ -101,6 +101,9 @@ import { article as a97 } from './articles/adiponectin-insulin-resistance-glp1-m
 import { article as aJUN20OVN6_EPITHALON_NAD } from './articles/epithalon-nad-plus-longevity-combination-research-jun20-2026';
 import { article as aJUN20OVN6_GHK_WOUND } from './articles/ghk-cu-wound-healing-mechanism-deep-dive-jun20-2026';
 import { article as aJUN20OVN6_IPA_SERM } from './articles/ipamorelin-vs-sermorelin-research-comparison-jun20-2026';
+import { article as aJUN20OVN7_BPC157_GUT } from './articles/bpc-157-gut-health-complete-research-guide-jun20-2026';
+import { article as aJUN20OVN7_BEGINNERS } from './articles/peptide-research-beginners-complete-protocol-guide-jun20-2026';
+import { article as aJUN20OVN7_TB500_BPC } from './articles/thymosin-beta-4-tb500-vs-bpc-157-mechanism-comparison-jun20-2026';
 import { article as aJUN20OVN5_NAD_LONGEVITY } from './articles/nad-plus-longevity-sirtuins-parp-research-jun20-2026';
 import { article as aJUN20OVN5_THYMOSIN_A1 } from './articles/thymosin-alpha-1-immune-modulation-clinical-research-jun20-2026';
 import { article as aJUN20OVN5_SELANK } from './articles/selank-anxiolytic-nootropic-peptide-research-jun20-2026';
@@ -8954,6 +8957,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN6_EPITHALON_NAD,
   aJUN20OVN6_GHK_WOUND,
   aJUN20OVN6_IPA_SERM,
+  aJUN20OVN7_BPC157_GUT,
+  aJUN20OVN7_BEGINNERS,
+  aJUN20OVN7_TB500_BPC,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
