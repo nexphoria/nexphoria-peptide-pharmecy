@@ -4503,6 +4503,9 @@ import { article as aJUN20OVN14_INHALED } from './articles/peptide-research-inha
 import { article as aJUN20OVN15_SLEEP } from './articles/peptide-research-sleep-architecture-dsip-epitalon-mk677-complete-guide-jun20-2026';
 import { article as aJUN20OVN15_WOMEN40 } from './articles/peptide-research-women-over-40-hormonal-optimization-complete-guide-jun20-2026';
 import { article as aJUN20OVN15_ATHLETIC } from './articles/peptide-research-athletic-performance-sprint-power-endurance-protocols-jun20-2026';
+import { article as aJUN20OVN16_THAILAND } from './articles/research-peptides-thailand-guide';
+import { article as aJUN20OVN16_IRELAND } from './articles/research-peptides-ireland-guide';
+import { article as aJUN20OVN16_COLOMBIA } from './articles/research-peptides-colombia-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -9008,6 +9011,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN15_SLEEP,
   aJUN20OVN15_WOMEN40,
   aJUN20OVN15_ATHLETIC,
+  aJUN20OVN16_THAILAND,
+  aJUN20OVN16_IRELAND,
+  aJUN20OVN16_COLOMBIA,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
