@@ -4587,6 +4587,9 @@ import { article as aJUN20EVN36_TB500_SOURCING } from './articles/tb-500-thymosi
 import { article as aJUN20EVN37_BPC157_GUIDE } from './articles/bpc-157-complete-research-guide-jun20-2026';
 import { article as aJUN20EVN37_HPLC_TESTING } from './articles/why-hplc-purity-testing-matters-peptide-sourcing-jun20-2026-v2';
 import { article as aJUN20EVN37_RECON_GUIDE } from './articles/peptide-reconstitution-complete-protocol-guide-jun20-2026';
+import { article as aJUN20OVN38_KHAVINSON } from './articles/cortagen-vilon-khavinson-bioregulator-peptides-research-guide';
+import { article as aJUN20OVN38_HEPATO } from './articles/hepatoprotective-peptides-liver-research-bpc157-ghk-cu-thymosin';
+import { article as aJUN20OVN38_MENOPAUSE } from './articles/peptide-research-menopause-perimenopause-hormone-peptide-protocols-2026-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -11274,6 +11277,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20EVN37_BPC157_GUIDE,
   aJUN20EVN37_HPLC_TESTING,
   aJUN20EVN37_RECON_GUIDE,
+  aJUN20OVN38_KHAVINSON,
+  aJUN20OVN38_HEPATO,
+  aJUN20OVN38_MENOPAUSE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
