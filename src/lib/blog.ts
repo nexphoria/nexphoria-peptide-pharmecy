@@ -4545,6 +4545,9 @@ import { article as aJUN20OVN24_BPC_TB_COMBO } from './articles/bpc-157-tb-500-c
 import { article as aJUN20OVN25_FASTING_SYNERGY } from './articles/peptide-fasting-caloric-restriction-research-synergies';
 import { article as aJUN20OVN25_FEMALE_MENOPAUSE } from './articles/peptide-research-female-menopause-hormonal-optimization';
 import { article as aJUN20OVN25_LEGAL_REGS } from './articles/research-peptides-legal-status-regulations-by-country-2026';
+import { article as aJUN20OVN26_POLYPHARMACY } from './articles/peptide-research-polypharmacy-elderly-considerations';
+import { article as aJUN20OVN26_GLP1_HEAT } from './articles/glp1-peptide-summer-heat-storage-injection-guide-2026';
+import { article as aJUN20OVN26_ORGAN_TARGET } from './articles/peptide-research-organ-specific-targeting-review-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -11190,6 +11193,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN25_FASTING_SYNERGY,
   aJUN20OVN25_FEMALE_MENOPAUSE,
   aJUN20OVN25_LEGAL_REGS,
+  aJUN20OVN26_POLYPHARMACY,
+  aJUN20OVN26_GLP1_HEAT,
+  aJUN20OVN26_ORGAN_TARGET,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
