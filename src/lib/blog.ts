@@ -4584,6 +4584,9 @@ import { article as aJUN20OVN_VASC_DEM } from './articles/vascular-dementia-pept
 import { article as aJUN20EVN36_CJC_IPA_STACK } from './articles/cjc-1295-ipamorelin-growth-hormone-research-stack-jun20-2026';
 import { article as aJUN20EVN36_SELANK_ANXIETY } from './articles/selank-anxiolytic-peptide-research-overview-jun20-2026';
 import { article as aJUN20EVN36_TB500_SOURCING } from './articles/tb-500-thymosin-beta-4-mechanism-research-sourcing-jun20-2026';
+import { article as aJUN20EVN37_BPC157_GUIDE } from './articles/bpc-157-complete-research-guide-jun20-2026';
+import { article as aJUN20EVN37_HPLC_TESTING } from './articles/why-hplc-purity-testing-matters-peptide-sourcing-jun20-2026-v2';
+import { article as aJUN20EVN37_RECON_GUIDE } from './articles/peptide-reconstitution-complete-protocol-guide-jun20-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -11268,6 +11271,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20EVN36_CJC_IPA_STACK,
   aJUN20EVN36_SELANK_ANXIETY,
   aJUN20EVN36_TB500_SOURCING,
+  aJUN20EVN37_BPC157_GUIDE,
+  aJUN20EVN37_HPLC_TESTING,
+  aJUN20EVN37_RECON_GUIDE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
