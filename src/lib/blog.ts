@@ -108,6 +108,9 @@ import { article as aJUN20OVN8_NAD_NMN } from './articles/nad-plus-vs-nmn-longev
 import { article as aJUN20OVN9_MOTS_C } from './articles/mots-c-mitochondrial-derived-peptide-metabolic-aging-research-jun20-2026';
 import { article as aJUN20OVN9_KISSPEPTIN } from './articles/kisspeptin-10-hpg-axis-lh-surge-research-protocols-jun20-2026';
 import { article as aJUN20OVN9_DOSING_FREQ } from './articles/peptide-dosing-frequency-pulsatile-vs-continuous-research-design-jun20-2026';
+import { article as aJUN20OVN10_RETINALAMIN } from './articles/retinalamin-retinal-peptide-eye-health-research-jun20-2026';
+import { article as aJUN20OVN10_HAIR_PEPTIDES } from './articles/hair-growth-peptides-research-guide-2026';
+import { article as aJUN20OVN10_WEIGHT_LOSS } from './articles/weight-loss-peptides-2026-complete-research-guide';
 import { article as aJUN20OVN7_BEGINNERS } from './articles/peptide-research-beginners-complete-protocol-guide-jun20-2026';
 import { article as aJUN20OVN7_TB500_BPC } from './articles/thymosin-beta-4-tb500-vs-bpc-157-mechanism-comparison-jun20-2026';
 import { article as aJUN20OVN5_NAD_LONGEVITY } from './articles/nad-plus-longevity-sirtuins-parp-research-jun20-2026';
@@ -8972,6 +8975,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN9_MOTS_C,
   aJUN20OVN9_KISSPEPTIN,
   aJUN20OVN9_DOSING_FREQ,
+  aJUN20OVN10_RETINALAMIN,
+  aJUN20OVN10_HAIR_PEPTIDES,
+  aJUN20OVN10_WEIGHT_LOSS,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
