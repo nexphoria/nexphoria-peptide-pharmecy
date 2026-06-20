@@ -4593,6 +4593,8 @@ import { article as aJUN20OVN38_MENOPAUSE } from './articles/peptide-research-me
 import { article as aJUN20OVN39_DSIP } from './articles/dsip-sleep-peptide-circadian-research-protocols-2026';
 import { article as aJUN20OVN39_CREATINE } from './articles/creatine-peptide-synergies-muscle-research-2026';
 import { article as aJUN20OVN39_FOXO4 } from './articles/foxo4-dri-senolytic-peptide-research-guide-2026';
+import { article as aJUN20OVN40_BPC157_V2 } from './articles/bpc-157-complete-research-guide-2026-v2';
+import { article as aJUN20OVN40_SEMA_V2 } from './articles/semaglutide-research-peptide-glp1-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -11286,6 +11288,8 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN39_DSIP,
   aJUN20OVN39_CREATINE,
   aJUN20OVN39_FOXO4,
+  aJUN20OVN40_BPC157_V2,
+  aJUN20OVN40_SEMA_V2,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

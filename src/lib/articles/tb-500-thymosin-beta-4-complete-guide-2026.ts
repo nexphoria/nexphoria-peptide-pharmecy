@@ -2,11 +2,11 @@ import type { BlogArticle } from '../blog-types';
 
 export const article: BlogArticle = {
   slug: "tb-500-thymosin-beta-4-complete-guide-2026",
-  title: "TB-500 (Thymosin Beta-4): Mechanism, Research & Sourcing Guide",
+  title: "TB-500 (Thymosin Beta-4): Mechanism, Research & Sourcing Guide (2026)",
   description:
-    "A comprehensive research guide to TB-500 (Thymosin Beta-4) — covering its actin-binding mechanism, key study findings in wound healing and tissue repair, cardiac research, and how it combines with BPC-157.",
+    "TB-500 (Thymosin Beta-4) is a naturally occurring peptide studied extensively for its role in actin binding, tissue repair, and wound healing. This guide covers its mechanism, key research findings, and how it compares and combines with BPC-157.",
   category: "Compound Profiles",
-  readMinutes: 11,
+  readMinutes: 10,
   publishedAt: "2026-06-20",
   ogImage: "/og-image.jpg",
   body: [
@@ -41,11 +41,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "The primary and best-characterized function of Thymosin Beta-4 is its ability to bind G-actin (globular actin) monomers. By sequestering free actin, Tβ4 regulates the polymerization of F-actin (filamentous actin), which is critical for cell motility and migration, cytoskeletal remodeling, and formation of lamellipodia during wound response.",
-    },
-    {
-      type: "paragraph",
-      text: "This actin-binding capacity is encoded in the central domain of the peptide, specifically a conserved LKKTET motif that directly interacts with actin monomers. This makes TB-500's mechanism unusually well-characterized at the molecular level relative to many other research peptides.",
+      text: "The primary and best-characterized function of Thymosin Beta-4 is its ability to bind G-actin (globular actin) monomers. By sequestering free actin, Tβ4 regulates the polymerization of F-actin (filamentous actin), which is critical for cell motility and migration, cytoskeletal remodeling, and formation of lamellipodia during wound response. This actin-binding capacity is encoded in the central domain of the peptide, specifically a conserved LKKTET motif that directly interacts with actin monomers.",
     },
     {
       type: "subheading",
@@ -89,7 +85,15 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Multiple rodent studies have examined Tβ4 in the context of tendon rupture and skeletal muscle injury. Findings across studies include accelerated collagen deposition at injury sites, reduced fibrosis compared to untreated controls, and enhanced myoblast migration and differentiation markers.",
+      text: "Multiple rodent studies have examined Tβ4 in the context of tendon rupture and skeletal muscle injury:",
+    },
+    {
+      type: "list",
+      items: [
+        "Accelerated collagen deposition at injury sites",
+        "Reduced fibrosis compared to untreated controls",
+        "Enhanced myoblast migration and differentiation markers",
+      ],
     },
     {
       type: "subheading",
@@ -97,66 +101,71 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Beyond musculoskeletal applications, Tβ4 has been studied in post-infarct cardiac models (regeneration and scar reduction), spinal cord injury models (neuroprotection and axonal sprouting), and stroke models (behavioral recovery and white matter repair).",
+      text: "Beyond musculoskeletal applications, Tβ4 has been studied in post-infarct cardiac models (regeneration and scar reduction), spinal cord injury (neuroprotection and axonal sprouting), and stroke models (behavioral recovery and white matter repair).",
     },
     {
       type: "heading",
-      text: "Stacking TB-500 with BPC-157",
+      text: "TB-500 vs. BPC-157: Complementary Mechanisms",
     },
     {
       type: "paragraph",
-      text: "Researchers studying tissue repair have increasingly examined combined TB-500 and BPC-157 protocols, based on the hypothesis that the two peptides operate through complementary pathways. In combined protocols studied in preclinical literature, no antagonistic interactions have been reported.",
+      text: "While both peptides are studied in the context of tissue repair, their mechanisms are distinct and potentially complementary. BPC-157 primarily operates via nitric oxide modulation and the FAK-paxillin pathway; TB-500 works through actin dynamics and angiogenic signaling. Some researchers have explored combination protocols based on this mechanistic rationale.",
     },
     {
       type: "table",
-      headers: ["Property", "BPC-157", "TB-500"],
+      headers: ["Feature", "TB-500", "BPC-157"],
       rows: [
-        ["Primary mechanism", "NO modulation, VEGF, FAK-paxillin", "Actin sequestration, VEGF, anti-inflammatory"],
-        ["Primary study model", "Rat, subcutaneous", "Rat/mouse, subcutaneous/IV"],
-        ["Tissue focus", "GI, tendon, systemic", "Cardiac, skin, tendon, muscle"],
-        ["Half-life", "Short (minutes)", "Moderate (hours)"],
-      ],
-    },
-    {
-      type: "paragraph",
-      text: "The theoretical rationale for stacking centers on upstream (actin/cellular) + downstream (vascular/signaling) complementarity. Researchers designing combined protocols should consult primary literature for each compound individually before designing multi-compound studies.",
-    },
-    {
-      type: "heading",
-      text: "Dosing Protocols in Research",
-    },
-    {
-      type: "paragraph",
-      text: "The following reflects doses used in preclinical animal studies only. These figures are not clinical recommendations.",
-    },
-    {
-      type: "table",
-      headers: ["Model", "Administration Route", "Dose Range Studied"],
-      rows: [
-        ["Mouse (cardiac)", "Intraperitoneal", "150–600 µg/animal"],
-        ["Rat (wound)", "Subcutaneous", "0.5–5 mg/kg"],
-        ["Rat (tendon)", "Subcutaneous", "2.5 mg/kg"],
+        ["Primary mechanism", "Actin binding (G-actin sequestration)", "NO modulation / FAK-paxillin pathway"],
+        ["Molecular weight", "~4,963 Da", "~1,420 Da"],
+        ["Main research areas", "Cardiac, tendon, wound healing", "GI, musculoskeletal, neurological"],
+        ["Administration (animal models)", "Subcutaneous, IV", "Subcutaneous, intragastric, IP"],
       ],
     },
     {
       type: "heading",
-      text: "Storage and Handling",
-    },
-    {
-      type: "paragraph",
-      text: "TB-500 is supplied as a lyophilized (freeze-dried) powder. Proper storage protocol: lyophilized peptide should be stored at -20°C or below until use. Reconstituted solution should be refrigerated at 2-8°C and used within 2-4 weeks. Avoid repeated freeze-thaw cycles, which degrade peptide integrity. Protect from light and moisture at all stages.",
-    },
-    {
-      type: "heading",
-      text: "Quality Considerations",
-    },
-    {
-      type: "paragraph",
-      text: "When sourcing TB-500 for research, researchers should verify purity via HPLC (≥99% is the benchmark), confirm identity via mass spectrometry, and check for Limulus Amebocyte Lysate (LAL) testing to confirm the absence of bacterial endotoxins. These three testing pillars — HPLC, MS, LAL — represent the minimum quality documentation standard for research-grade peptides.",
+      text: "Dosing Protocols in Preclinical Literature",
     },
     {
       type: "callout",
-      text: "TB-500 is intended for research purposes only. All dosing information reflects preclinical research data. This is not medical advice.",
+      text: "The following reflects doses used in animal research only and does not constitute clinical guidance.",
+    },
+    {
+      type: "list",
+      items: [
+        "Cardiac models: 150–300 µg/kg subcutaneous, single or repeated doses",
+        "Wound healing models: 50–200 µg total dose applied locally or systemically",
+        "Tendon repair models: 100–500 µg/kg subcutaneous in rodents",
+      ],
+    },
+    {
+      type: "heading",
+      text: "Sourcing TB-500 for Research",
+    },
+    {
+      type: "paragraph",
+      text: "TB-500 requires the same rigorous verification standards as any research peptide. Given its larger molecular weight and structural complexity versus shorter peptides, quality control is especially important.",
+    },
+    {
+      type: "list",
+      items: [
+        "HPLC purity ≥98% — required minimum for research-grade material",
+        "Mass spec verification — confirms correct molecular weight and identity",
+        "Endotoxin testing (LAL) — essential for any injectable research peptide",
+        "Cold-chain logistics — lyophilized TB-500 should be shipped on ice packs",
+        "Batch-specific COA — not a generic certificate shared across products",
+      ],
+    },
+    {
+      type: "heading",
+      text: "Storage",
+    },
+    {
+      type: "paragraph",
+      text: "Lyophilized TB-500 should be stored at -20°C. Once reconstituted in bacteriostatic water, keep refrigerated at 2–8°C and use within 4 weeks. Protect from light and avoid freeze-thaw cycling of reconstituted solution.",
+    },
+    {
+      type: "disclaimer",
+      text: "For research purposes only. Not intended for human use.",
     },
   ],
 };
