@@ -4491,6 +4491,9 @@ import { article as aJUN20OVN4_HRV } from './articles/hrv-sleep-tracking-biometr
 import { article as aJUN20OVN11_BRAIN_FOG } from './articles/peptide-research-brain-fog-cognitive-clarity-jun20-2026';
 import { article as aJUN20OVN11_MICRODOSE } from './articles/microdosing-peptides-research-protocol-design-jun20-2026';
 import { article as aJUN20OVN11_STEM_CELL } from './articles/peptide-stem-cell-signaling-research-guide-jun20-2026';
+import { article as aJUN20OVN13_LONGEVITY_STACK } from './articles/longevity-peptide-stack-2026-research-guide-jun20-2026';
+import { article as aJUN20OVN13_SEMAGLUTIDE } from './articles/semaglutide-research-peptide-glp1-studies-jun20-2026';
+import { article as aJUN20OVN13_THYMOSIN_A1 } from './articles/thymosin-alpha-1-immune-modulating-peptide-jun20-2026';
 import { article as aJUN20OVN12_HEAT_STABILITY } from './articles/peptide-research-summer-heat-stability-jun20-2026';
 import { article as aJUN20OVN12_INJURY_PREV } from './articles/peptide-research-injury-prevention-protocols-jun20-2026';
 import { article as aJUN20OVN12_PS_VS_NEX } from './articles/nexphoria-vs-peptide-sciences-post-shutdown-jun20-2026';
@@ -8990,6 +8993,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN12_HEAT_STABILITY,
   aJUN20OVN12_INJURY_PREV,
   aJUN20OVN12_PS_VS_NEX,
+  aJUN20OVN13_LONGEVITY_STACK,
+  aJUN20OVN13_SEMAGLUTIDE,
+  aJUN20OVN13_THYMOSIN_A1,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
