@@ -4515,6 +4515,9 @@ import { article as aJUN20OVN18_TRUCKERS } from './articles/best-peptides-truck-
 import { article as aJUN20OVN19_TEACHERS } from './articles/best-peptides-teachers-educators-research-2026';
 import { article as aJUN20OVN19_PLANTAR } from './articles/bpc-157-plantar-fasciitis-research-guide-2026';
 import { article as aJUN20OVN19_CAREGIVERS } from './articles/peptide-research-caregivers-chronic-stress-immune-support-2026';
+import { article as aJUN20OVN21_MALAYSIA } from './articles/research-peptides-malaysia-guide';
+import { article as aJUN20OVN21_HUNGARY } from './articles/research-peptides-hungary-guide';
+import { article as aJUN20OVN21_ROMANIA } from './articles/research-peptides-romania-guide';
 import { article as aJUN20OVN20_AUSTRIA } from './articles/research-peptides-austria-guide';
 import { article as aJUN20OVN20_INDONESIA } from './articles/research-peptides-indonesia-guide';
 import { article as aJUN20OVN20_PHILIPPINES } from './articles/research-peptides-philippines-guide';
@@ -9035,6 +9038,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN19_TEACHERS,
   aJUN20OVN19_PLANTAR,
   aJUN20OVN19_CAREGIVERS,
+  aJUN20OVN21_MALAYSIA,
+  aJUN20OVN21_HUNGARY,
+  aJUN20OVN21_ROMANIA,
   aJUN20OVN20_AUSTRIA,
   aJUN20OVN20_INDONESIA,
   aJUN20OVN20_PHILIPPINES,
