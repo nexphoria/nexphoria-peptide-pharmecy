@@ -4569,6 +4569,9 @@ import { article as aJUN20OVN_SEMA_GLP1 } from './articles/semaglutide-research-
 import { article as aJUN20OVN_LONGEVITY_STACK_2026 } from './articles/longevity-peptide-stack-2026-research-guide';
 import { article as aJUN20OVN_TB500_COMPLETE_2026 } from './articles/tb-500-thymosin-beta-4-complete-guide-2026';
 import { article as aJUN20OVN_RECON_2026 } from './articles/peptide-reconstitution-step-by-step-protocol-2026';
+import { article as aJUN20OVN32_5AMINO1MQ } from './articles/5-amino-1mq-nnmt-inhibitor-metabolic-research-guide';
+import { article as aJUN20OVN32_ABALO_TERI } from './articles/abaloparatide-teriparatide-bone-repair-peptide-research-guide';
+import { article as aJUN20OVN32_ACE031 } from './articles/ace-031-myostatin-inhibitor-research-peptide-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -11238,6 +11241,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN_LONGEVITY_STACK_2026,
   aJUN20OVN_TB500_COMPLETE_2026,
   aJUN20OVN_RECON_2026,
+  aJUN20OVN32_5AMINO1MQ,
+  aJUN20OVN32_ABALO_TERI,
+  aJUN20OVN32_ACE031,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
