@@ -105,6 +105,9 @@ import { article as aJUN20OVN7_BPC157_GUT } from './articles/bpc-157-gut-health-
 import { article as aJUN20OVN8_GLOSSARY } from './articles/peptide-research-glossary-50-terms-jun20-2026';
 import { article as aJUN20OVN8_TA1 } from './articles/thymosin-alpha-1-immune-modulating-peptide-research-overview-jun20-2026';
 import { article as aJUN20OVN8_NAD_NMN } from './articles/nad-plus-vs-nmn-longevity-precursor-comparison-jun20-2026';
+import { article as aJUN20OVN9_MOTS_C } from './articles/mots-c-mitochondrial-derived-peptide-metabolic-aging-research-jun20-2026';
+import { article as aJUN20OVN9_KISSPEPTIN } from './articles/kisspeptin-10-hpg-axis-lh-surge-research-protocols-jun20-2026';
+import { article as aJUN20OVN9_DOSING_FREQ } from './articles/peptide-dosing-frequency-pulsatile-vs-continuous-research-design-jun20-2026';
 import { article as aJUN20OVN7_BEGINNERS } from './articles/peptide-research-beginners-complete-protocol-guide-jun20-2026';
 import { article as aJUN20OVN7_TB500_BPC } from './articles/thymosin-beta-4-tb500-vs-bpc-157-mechanism-comparison-jun20-2026';
 import { article as aJUN20OVN5_NAD_LONGEVITY } from './articles/nad-plus-longevity-sirtuins-parp-research-jun20-2026';
@@ -8966,6 +8969,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN8_GLOSSARY,
   aJUN20OVN8_TA1,
   aJUN20OVN8_NAD_NMN,
+  aJUN20OVN9_MOTS_C,
+  aJUN20OVN9_KISSPEPTIN,
+  aJUN20OVN9_DOSING_FREQ,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
