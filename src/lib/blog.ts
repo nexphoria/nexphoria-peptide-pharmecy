@@ -4542,6 +4542,9 @@ import { article as aJUN20OVN23_MARITIDE_VS_TRZ } from './articles/maritide-vs-t
 import { article as aJUN20OVN24_PS_ALT } from './articles/peptide-sciences-alternative-nexphoria-guide';
 import { article as aJUN20OVN24_LONGEVITY_STACK } from './articles/longevity-peptide-stack-2026-research-guide';
 import { article as aJUN20OVN24_BPC_TB_COMBO } from './articles/bpc-157-tb-500-combined-protocol-research-guide';
+import { article as aJUN20OVN25_FASTING_SYNERGY } from './articles/peptide-fasting-caloric-restriction-research-synergies';
+import { article as aJUN20OVN25_FEMALE_MENOPAUSE } from './articles/peptide-research-female-menopause-hormonal-optimization';
+import { article as aJUN20OVN25_LEGAL_REGS } from './articles/research-peptides-legal-status-regulations-by-country-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -11184,6 +11187,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN24_PS_ALT,
   aJUN20OVN24_LONGEVITY_STACK,
   aJUN20OVN24_BPC_TB_COMBO,
+  aJUN20OVN25_FASTING_SYNERGY,
+  aJUN20OVN25_FEMALE_MENOPAUSE,
+  aJUN20OVN25_LEGAL_REGS,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
