@@ -4572,6 +4572,9 @@ import { article as aJUN20OVN_RECON_2026 } from './articles/peptide-reconstituti
 import { article as aJUN20OVN32_5AMINO1MQ } from './articles/5-amino-1mq-nnmt-inhibitor-metabolic-research-guide';
 import { article as aJUN20OVN32_ABALO_TERI } from './articles/abaloparatide-teriparatide-bone-repair-peptide-research-guide';
 import { article as aJUN20OVN32_ACE031 } from './articles/ace-031-myostatin-inhibitor-research-peptide-guide';
+import { article as aJUN20OVN33_GHK_BPC157 } from './articles/ghk-cu-bpc157-longevity-recovery-stack-research-2026';
+import { article as aJUN20OVN33_BERBERINE } from './articles/berberine-glp1-synergy-metabolic-research-2026';
+import { article as aJUN20OVN33_CYTOKINE } from './articles/cytokine-endpoint-selection-peptide-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -11244,6 +11247,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN32_5AMINO1MQ,
   aJUN20OVN32_ABALO_TERI,
   aJUN20OVN32_ACE031,
+  aJUN20OVN33_GHK_BPC157,
+  aJUN20OVN33_BERBERINE,
+  aJUN20OVN33_CYTOKINE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
