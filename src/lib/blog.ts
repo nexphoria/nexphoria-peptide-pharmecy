@@ -4524,6 +4524,9 @@ import { article as aJUN20OVN21_ROMANIA } from './articles/research-peptides-rom
 import { article as aJUN20OVN20_AUSTRIA } from './articles/research-peptides-austria-guide';
 import { article as aJUN20OVN20_INDONESIA } from './articles/research-peptides-indonesia-guide';
 import { article as aJUN20OVN20_PHILIPPINES } from './articles/research-peptides-philippines-guide';
+import { article as aJUN20OVN_BUY_USA } from './articles/buy-research-peptides-usa-guide-jun20-2026';
+import { article as aJUN20OVN_HEXARELIN_CARDIAC } from './articles/hexarelin-cardioprotection-cd36-research-jun20-2026';
+import { article as aJUN20OVN_NAD_NMN_LONGEVITY } from './articles/nad-plus-vs-nmn-longevity-researchers-jun20-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -11148,6 +11151,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aNew_wolverine_stack_complete_research_2026,
   aNew_zinc_carnosine_gut_health_gastric_mucosal_research_guide,
   aNew_zinc_thymulin_thymic_immune_peptide_research_guide,
+  aJUN20OVN_BUY_USA,
+  aJUN20OVN_HEXARELIN_CARDIAC,
+  aJUN20OVN_NAD_NMN_LONGEVITY,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
