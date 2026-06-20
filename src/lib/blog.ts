@@ -102,6 +102,9 @@ import { article as aJUN20OVN6_EPITHALON_NAD } from './articles/epithalon-nad-pl
 import { article as aJUN20OVN6_GHK_WOUND } from './articles/ghk-cu-wound-healing-mechanism-deep-dive-jun20-2026';
 import { article as aJUN20OVN6_IPA_SERM } from './articles/ipamorelin-vs-sermorelin-research-comparison-jun20-2026';
 import { article as aJUN20OVN7_BPC157_GUT } from './articles/bpc-157-gut-health-complete-research-guide-jun20-2026';
+import { article as aJUN20OVN8_GLOSSARY } from './articles/peptide-research-glossary-50-terms-jun20-2026';
+import { article as aJUN20OVN8_TA1 } from './articles/thymosin-alpha-1-immune-modulating-peptide-research-overview-jun20-2026';
+import { article as aJUN20OVN8_NAD_NMN } from './articles/nad-plus-vs-nmn-longevity-precursor-comparison-jun20-2026';
 import { article as aJUN20OVN7_BEGINNERS } from './articles/peptide-research-beginners-complete-protocol-guide-jun20-2026';
 import { article as aJUN20OVN7_TB500_BPC } from './articles/thymosin-beta-4-tb500-vs-bpc-157-mechanism-comparison-jun20-2026';
 import { article as aJUN20OVN5_NAD_LONGEVITY } from './articles/nad-plus-longevity-sirtuins-parp-research-jun20-2026';
@@ -8960,6 +8963,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN7_BPC157_GUT,
   aJUN20OVN7_BEGINNERS,
   aJUN20OVN7_TB500_BPC,
+  aJUN20OVN8_GLOSSARY,
+  aJUN20OVN8_TA1,
+  aJUN20OVN8_NAD_NMN,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
