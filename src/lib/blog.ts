@@ -4461,6 +4461,9 @@ import { article as aJUN19EVN2_GLOSSARY_50 } from './articles/peptide-research-t
 import { article as aJUN20OVN1_BPC_TB_STACK } from './articles/how-long-does-bpc-157-tb-500-stack-take-to-work';
 import { article as aJUN20OVN1_CONCUSSION } from './articles/peptide-research-concussion-protocol-2026';
 import { article as aJUN20OVN1_LONGTERM } from './articles/peptide-research-long-term-use-safety-guide';
+import { article as aJUN20OVN2_HEXARELIN_CD36 } from './articles/hexarelin-cardiac-cd36-cardioprotective-research-jun20-2026';
+import { article as aJUN20OVN2_MUSCLE_5 } from './articles/5-research-peptides-muscle-recovery-preclinical-data-jun20-2026';
+import { article as aJUN20OVN2_CJC_IPA } from './articles/cjc-1295-ipamorelin-stack-gh-axis-research-jun20-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -8924,6 +8927,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN1_BPC_TB_STACK,
   aJUN20OVN1_CONCUSSION,
   aJUN20OVN1_LONGTERM,
+  aJUN20OVN2_HEXARELIN_CD36,
+  aJUN20OVN2_MUSCLE_5,
+  aJUN20OVN2_CJC_IPA,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
