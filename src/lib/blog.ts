@@ -4551,6 +4551,9 @@ import { article as aJUN20OVN26_ORGAN_TARGET } from './articles/peptide-research
 import { article as aJUN20OVN27_EPITALON_COST } from './articles/how-much-does-epitalon-cost-research-pricing-guide';
 import { article as aJUN20OVN27_CAGRI_COST } from './articles/how-much-does-cagrilintide-cost-research-pricing-guide';
 import { article as aJUN20OVN27_FOXO4_COST } from './articles/how-much-does-foxo4-dri-cost-research-pricing-guide';
+import { article as aJUN20OVN28_ACNE_SKIN } from './articles/peptide-research-acne-skin-inflammation-bpc157-kpv-ghk-cu-2026';
+import { article as aJUN20OVN28_SUMMER_ATHLETIC } from './articles/peptide-research-athletic-recovery-summer-heat-dehydration-2026';
+import { article as aJUN20OVN28_VK2735_ORAL } from './articles/vk2735-oral-weight-loss-research-complete-guide-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -11202,6 +11205,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN27_EPITALON_COST,
   aJUN20OVN27_CAGRI_COST,
   aJUN20OVN27_FOXO4_COST,
+  aJUN20OVN28_ACNE_SKIN,
+  aJUN20OVN28_SUMMER_ATHLETIC,
+  aJUN20OVN28_VK2735_ORAL,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
