@@ -4560,6 +4560,9 @@ import { article as aJUN20OVN29_HOW_IPA } from './articles/how-to-use-ipamorelin
 import { article as aJUN20OVN30_HOW_SEMAX } from './articles/how-to-use-semax-research-protocol-guide';
 import { article as aJUN20OVN30_HOW_SELANK } from './articles/how-to-use-selank-research-protocol-guide';
 import { article as aJUN20OVN30_HOW_HEXARELIN } from './articles/how-to-use-hexarelin-research-protocol-guide';
+import { article as aJUN20OVN31_PE2228 } from './articles/pe22-28-nootropic-peptide-research-guide';
+import { article as aJUN20OVN31_SERM_VS_IPA } from './articles/sermorelin-vs-ipamorelin-growth-hormone-research-comparison';
+import { article as aJUN20OVN31_PEP_VS_SARMS } from './articles/peptides-vs-sarms-research-comparison-mechanisms-selectivity';
 
 
 export const articles: BlogArticle[] = [
@@ -11220,6 +11223,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN30_HOW_SEMAX,
   aJUN20OVN30_HOW_SELANK,
   aJUN20OVN30_HOW_HEXARELIN,
+  aJUN20OVN31_PE2228,
+  aJUN20OVN31_SERM_VS_IPA,
+  aJUN20OVN31_PEP_VS_SARMS,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
