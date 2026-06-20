@@ -4536,6 +4536,9 @@ import { article as aJUN20OVN_STORAGE_GUIDE } from './articles/peptide-storage-t
 import { article as aJUN20OVN22_TB500_JOINT } from './articles/tb-500-joint-tendon-repair-research-protocols';
 import { article as aJUN20OVN22_BERBERINE_GLP1 } from './articles/berberine-glp1-peptide-metabolic-synergy-research';
 import { article as aJUN20OVN22_CYTOKINE_ENDPOINTS } from './articles/peptide-research-inflammation-tnf-il6-cytokine-endpoints';
+import { article as aJUN20OVN23_MARITIDE_BUY } from './articles/where-to-buy-maritide-research-guide';
+import { article as aJUN20OVN23_EFOCIPEG_BUY } from './articles/where-to-buy-efocipegtrutide-research-guide';
+import { article as aJUN20OVN23_MARITIDE_VS_TRZ } from './articles/maritide-vs-tirzepatide-gipr-mechanism-research-comparison';
 
 
 export const articles: BlogArticle[] = [
@@ -11172,6 +11175,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN22_TB500_JOINT,
   aJUN20OVN22_BERBERINE_GLP1,
   aJUN20OVN22_CYTOKINE_ENDPOINTS,
+  aJUN20OVN23_MARITIDE_BUY,
+  aJUN20OVN23_EFOCIPEG_BUY,
+  aJUN20OVN23_MARITIDE_VS_TRZ,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
