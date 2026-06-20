@@ -4554,6 +4554,9 @@ import { article as aJUN20OVN27_FOXO4_COST } from './articles/how-much-does-foxo
 import { article as aJUN20OVN28_ACNE_SKIN } from './articles/peptide-research-acne-skin-inflammation-bpc157-kpv-ghk-cu-2026';
 import { article as aJUN20OVN28_SUMMER_ATHLETIC } from './articles/peptide-research-athletic-recovery-summer-heat-dehydration-2026';
 import { article as aJUN20OVN28_VK2735_ORAL } from './articles/vk2735-oral-weight-loss-research-complete-guide-2026';
+import { article as aJUN20OVN29_HOW_BPC157 } from './articles/how-to-use-bpc-157-research-protocol-guide';
+import { article as aJUN20OVN29_HOW_TB500 } from './articles/how-to-use-tb-500-research-protocol-guide';
+import { article as aJUN20OVN29_HOW_IPA } from './articles/how-to-use-ipamorelin-research-protocol-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -11208,6 +11211,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN28_ACNE_SKIN,
   aJUN20OVN28_SUMMER_ATHLETIC,
   aJUN20OVN28_VK2735_ORAL,
+  aJUN20OVN29_HOW_BPC157,
+  aJUN20OVN29_HOW_TB500,
+  aJUN20OVN29_HOW_IPA,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
