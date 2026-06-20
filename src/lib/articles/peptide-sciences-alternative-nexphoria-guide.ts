@@ -4,15 +4,15 @@ export const article: BlogArticle = {
   slug: "peptide-sciences-alternative-nexphoria-guide",
   title: "Looking for a Peptide Sciences Alternative? Here's What to Know",
   description:
-    "Peptide Sciences shut down in early 2026, leaving thousands of researchers without a supplier. Here is what rigorous researchers should require from any replacement and how to evaluate options with precision.",
-  category: "Sourcing & Quality",
+    "Peptide Sciences shut down in March 2026, leaving thousands of researchers without a supplier. Here's what to look for in a replacement and why Nexphoria meets the standard.",
+  category: "Quality & Testing",
   readMinutes: 8,
-  publishedAt: "2026-06-17",
+  publishedAt: "2026-06-20",
   ogImage: "/og-image.jpg",
   body: [
     {
       type: "paragraph",
-      text: "In early 2026, Peptide Sciences — one of the most trafficked research peptide suppliers in North America — abruptly ceased operations. The closure left an estimated 70,000+ weekly visitors without a trusted source, and sent the research community searching for answers.",
+      text: "In March 2026, Peptide Sciences — one of the most trafficked research peptide suppliers in North America — abruptly ceased operations. The closure left an estimated 70,000+ weekly visitors without a trusted source, and sent the research community searching for answers.",
     },
     {
       type: "paragraph",
@@ -40,7 +40,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Whatever the cause, the result is the same: tens of thousands of researchers who relied on a familiar vendor are now in a position to reassess. This is actually an opportunity — disruption forces re-evaluation, and in the research peptide industry, not all suppliers are created equal.",
+      text: "Whatever the cause, the result is the same: tens of thousands of researchers who relied on a familiar vendor are now in a position to reassess. This is actually an opportunity. Disruption of any kind forces re-evaluation — and in the research peptide industry, not all suppliers are created equal.",
     },
     {
       type: "heading",
@@ -72,7 +72,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "A Certificate of Analysis should accompany every product and include molecular weight confirmation, purity percentage, lab name and date of testing, and batch or lot number. If a supplier cannot produce a COA on demand, or provides a single COA for all product variants, that is a disqualifying signal.",
+      text: "A Certificate of Analysis should accompany every product and include molecular weight confirmation, purity percentage, lab name and date of testing, and a batch or lot number. If a supplier cannot produce a COA on demand, or provides a single COA for all product variants, that is a disqualifying signal.",
     },
     {
       type: "subheading",
@@ -88,7 +88,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Peptides are sensitive to temperature fluctuation, moisture, and UV exposure. Key indicators include products shipped with dry ice or cold packs when appropriate, lyophilized (freeze-dried) form for longer shelf stability, and clear storage guidance provided with every shipment.",
+      text: "Peptides are sensitive to temperature fluctuation, moisture, and UV exposure. A supplier's logistics chain should reflect this. Key indicators include products shipped with dry ice or cold packs when appropriate, lyophilized (freeze-dried) form for longer shelf stability, and clear storage guidance provided with every shipment.",
     },
     {
       type: "subheading",
@@ -108,7 +108,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "A 2022 analysis of commercial peptide products found measurable discrepancies in a substantial portion of samples tested. Misidentified sequences, purity gaps, and contamination from unreacted reagents are documented problems. When a large supplier exits the market, it creates demand that is quickly filled by lower-quality operators.",
+      text: "A 2022 analysis of commercial peptide products found measurable discrepancies in a substantial portion of samples tested. Misidentified sequences, purity gaps, and contamination from unreacted reagents are documented problems. When a large supplier like Peptide Sciences exits the market, it creates demand that is quickly filled by lower-quality operators. Researchers who don't apply rigorous supplier evaluation risk compromising their work.",
     },
     {
       type: "heading",
@@ -116,7 +116,21 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Nexphoria was designed around the documentation standards serious research requires. Every product includes HPLC and mass spectrometry verification (batch-specific, third-party confirmed), full COA transparency accessible at point of purchase, LAL endotoxin testing, lyophilized format with proper cold-chain logistics, and strict research-only positioning with no clinical language.",
+      text: "Nexphoria was designed with the post-Peptide Sciences market in mind — not in terms of timing, but in terms of the standards that serious researchers were clearly not getting from commodity suppliers.",
+    },
+    {
+      type: "list",
+      items: [
+        "HPLC and mass spectrometry verification — batch-specific, third-party confirmed",
+        "Full COA transparency — accessible at point of purchase, not on request",
+        "LAL (Limulus Amebocyte Lysate) endotoxin testing — ensuring products are free of bacterial endotoxins that could compromise experimental integrity",
+        "Lyophilized format with proper cold-chain logistics — from synthesis to delivery",
+        "Strict research-only positioning — no clinical language, no wellness marketing",
+      ],
+    },
+    {
+      type: "paragraph",
+      text: "Nexphoria does not sell peptides for human use. The catalog is for in-vitro and pre-clinical research contexts, and every product is labeled and documented accordingly.",
     },
     {
       type: "heading",
@@ -124,43 +138,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "If you are currently mid-study or have established reconstitution and storage protocols, transitioning suppliers requires care.",
+      text: "If you are currently mid-study or have established reconstitution and storage protocols, transitioning suppliers requires care. Before ordering, review the COA for your specific compound and confirm batch-level data, verify HPLC purity ≥98% and mass spec identity match, confirm LAL endotoxin testing has been performed, and check shipping method and temperature control.",
     },
     {
-      type: "subheading",
-      text: "Before Ordering",
-    },
-    {
-      type: "list",
-      items: [
-        "Review the COA for your specific compound and confirm batch-level data",
-        "Verify HPLC purity ≥98% and mass spec identity match",
-        "Confirm LAL endotoxin testing has been performed",
-        "Check shipping method and temperature control",
-      ],
-    },
-    {
-      type: "subheading",
-      text: "Upon Receipt",
-    },
-    {
-      type: "list",
-      items: [
-        "Inspect packaging integrity and cold-chain indicators",
-        "Verify lot number matches COA documentation",
-        "Store per compound-specific guidelines (typically -20°C for long-term)",
-      ],
-    },
-    {
-      type: "subheading",
-      text: "For Ongoing Sourcing",
-    },
-    {
-      type: "list",
-      items: [
-        "Establish a single-supplier relationship to minimize batch-to-batch variability",
-        "Document each lot used in your research records",
-      ],
+      type: "paragraph",
+      text: "Upon receipt, inspect packaging integrity and cold-chain indicators, verify lot number matches COA documentation, and store per compound-specific guidelines (typically -20°C for long-term). For ongoing sourcing, establish a single-supplier relationship to minimize batch-to-batch variability and document each lot used in your research records.",
     },
     {
       type: "heading",
@@ -169,6 +151,10 @@ export const article: BlogArticle = {
     {
       type: "paragraph",
       text: "The closure of Peptide Sciences is a reminder that supplier selection in research peptide procurement is not a passive decision. Continuity of supply matters — but so does quality consistency, documentation rigor, and regulatory posture. The researchers who treat supplier evaluation with the same rigor they bring to their protocols will be better positioned regardless of what happens to any individual vendor.",
+    },
+    {
+      type: "paragraph",
+      text: "Nexphoria exists to be that supplier: reliable, transparent, and built around the documentation standards serious research requires.",
     },
     {
       type: "disclaimer",

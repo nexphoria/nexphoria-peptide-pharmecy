@@ -6,8 +6,8 @@ export const article: BlogArticle = {
   description:
     "BPC-157 and TB-500 are frequently studied together in preclinical research. This article examines the mechanistic rationale for combined protocols, what the available literature shows, and how to source both at research grade.",
   category: "Compound Profiles",
-  readMinutes: 10,
-  publishedAt: "2026-06-09",
+  readMinutes: 9,
+  publishedAt: "2026-06-20",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -20,7 +20,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "To understand the rationale for combined research protocols, it helps to contrast each compound's primary mechanism. BPC-157 is a 15 amino acid peptide that acts primarily through NO modulation, VEGF upregulation, and FAK-paxillin signaling, with strong systemic anti-inflammatory effects via nitric oxide. TB-500 is a 43 amino acid sequence whose primary mechanism is G-actin sequestration, enabling direct cell migration facilitation and more localized anti-inflammatory activity via NF-κB suppression.",
+      text: "To understand the rationale for combined research protocols, it helps to contrast each compound's primary mechanism.",
     },
     {
       type: "table",
@@ -36,11 +36,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "The theoretical basis for combination research rests on the hypothesis that BPC-157's downstream signaling effects and TB-500's upstream cytoskeletal effects operate in sequence rather than competition: TB-500 facilitates cell migration to the injury site via actin dynamics, while BPC-157 promotes vascularization and signaling cascade activation to support those cells once recruited.",
-    },
-    {
-      type: "callout",
-      text: "This upstream-downstream complementarity suggests the compounds should not antagonize each other — a prediction consistent with the current absence of reported antagonistic interactions in the preclinical literature.",
+      text: "The theoretical basis for combination research rests on the hypothesis that BPC-157's downstream signaling effects and TB-500's upstream cytoskeletal effects operate in sequence rather than competition. TB-500 facilitates cell migration to the injury site via actin dynamics; BPC-157 promotes vascularization and signaling cascade activation to support those cells once recruited. This upstream-downstream complementarity suggests the compounds should not antagonize each other — a prediction consistent with the current absence of reported antagonistic interactions in the preclinical literature.",
     },
     {
       type: "heading",
@@ -68,7 +64,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "In tendon injury models — one of the most studied contexts for both peptides — the repair process requires: inflammatory clearance, progenitor cell migration and proliferation, collagen deposition and matrix organization, and vascularization of the repair tissue. BPC-157 and TB-500 have each been documented to support multiple steps in this sequence independently. Combined protocols are studied to determine whether each compound's activity in its respective phase can be simultaneously supported.",
+      text: "In tendon injury models — one of the most studied contexts for both peptides — the repair process requires inflammatory clearance, progenitor cell migration and proliferation, collagen deposition and matrix organization, and vascularization of the repair tissue. BPC-157 and TB-500 have each been documented to support multiple steps in this sequence independently. Combined protocols are studied to determine whether each compound's activity in its respective phase can be simultaneously supported.",
     },
     {
       type: "heading",
@@ -76,7 +72,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Direct studies using BPC-157 + TB-500 combinations in the same experimental design are limited in the published literature; most available evidence is based on independent studies with overlapping models (allowing indirect comparison of effect sizes), mechanistic reasoning from pathway maps suggesting no known antagonism, and observational data from active research communities.",
+      text: "Direct studies using BPC-157 + TB-500 combinations in the same experimental design are limited in the published literature; most available evidence is derived from independent studies with overlapping models (allowing indirect comparison of effect sizes when each is used alone), mechanistic reasoning based on pathway maps suggesting no known antagonism, and observational data from research communities (not published, but informing protocol design in active research groups).",
     },
     {
       type: "callout",
@@ -88,16 +84,35 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "In preclinical models, combined BPC-157 + TB-500 protocols typically separate the two compounds by injection site while maintaining the same research timeframe. No pharmacokinetic interaction studies between BPC-157 and TB-500 have been published.",
+      text: "In preclinical models, combined BPC-157 + TB-500 protocols typically use the following approach for each compound.",
     },
     {
-      type: "table",
-      headers: ["Parameter", "BPC-157 (Rodent Models)", "TB-500 (Rodent Models)"],
-      rows: [
-        ["Route", "Subcutaneous or intraperitoneal", "Subcutaneous"],
-        ["Dose", "10–100 µg/kg/day", "200–500 µg/kg, 2–3x per week"],
-        ["Duration", "7–21 days, depending on injury model", "3–6 weeks"],
+      type: "subheading",
+      text: "BPC-157 Dosing (Rodent Models)",
+    },
+    {
+      type: "list",
+      items: [
+        "Route: Subcutaneous or intraperitoneal",
+        "Dose: 10–100 µg/kg/day",
+        "Duration: 7–21 days, depending on injury model",
       ],
+    },
+    {
+      type: "subheading",
+      text: "TB-500 Dosing (Rodent Models)",
+    },
+    {
+      type: "list",
+      items: [
+        "Route: Subcutaneous",
+        "Dose: 200–500 µg/kg, 2–3x per week",
+        "Duration: 3–6 weeks",
+      ],
+    },
+    {
+      type: "paragraph",
+      text: "In most published protocols, each compound is administered separately (different injection sites, same timeframe). No pharmacokinetic interaction studies between BPC-157 and TB-500 have been published.",
     },
     {
       type: "heading",
@@ -105,15 +120,37 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Researchers requiring both compounds for a combined protocol should apply uniform quality standards across both. For BPC-157: HPLC ≥99% purity with chromatogram required, ESI-MS molecular weight confirmation, LAL endotoxin testing (<1 EU/mg), lyophilized form with cold-chain shipping.",
+      text: "Researchers requiring both compounds for a combined protocol should apply uniform quality standards across both.",
+    },
+    {
+      type: "subheading",
+      text: "For BPC-157",
+    },
+    {
+      type: "list",
+      items: [
+        "HPLC ≥99% purity — chromatogram required",
+        "ESI-MS molecular weight confirmation",
+        "LAL endotoxin testing (<1 EU/mg)",
+        "Lyophilized form; cold-chain shipping",
+      ],
+    },
+    {
+      type: "subheading",
+      text: "For TB-500",
+    },
+    {
+      type: "list",
+      items: [
+        "HPLC ≥99% purity — particularly important for the 43-amino acid sequence, which has more potential truncation points",
+        "ESI-MS or MALDI-TOF confirmation — confirm MW: ~4,963 Da",
+        "LAL endotoxin testing",
+        "Cold-chain required; avoid pre-reconstituted forms from suppliers",
+      ],
     },
     {
       type: "paragraph",
-      text: "For TB-500: HPLC ≥99% purity is particularly important for the 43-amino acid sequence, which has more potential truncation points. ESI-MS or MALDI-TOF confirmation is required to confirm MW (~4,963 Da). LAL endotoxin testing and cold-chain shipping are required; avoid pre-reconstituted forms from suppliers.",
-    },
-    {
-      type: "callout",
-      text: "Bundled sourcing: Some research suppliers offer BPC-157 and TB-500 together with shared COA documentation. This is logistically convenient, but researchers should verify that each compound's analytical documentation is independently certified — not pooled.",
+      text: "Some research suppliers offer BPC-157 and TB-500 together with shared COA documentation. This is logistically convenient, but researchers should verify that each compound's analytical documentation is independently certified — not pooled.",
     },
     {
       type: "heading",
@@ -121,7 +158,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "When running a combined BPC-157 + TB-500 protocol, experimental design should include control conditions for vehicle-only, BPC-157 alone, TB-500 alone, and combined — to isolate additive vs. synergistic effects.",
+      text: "When running a combined BPC-157 + TB-500 protocol, experimental variables to track include:",
     },
     {
       type: "list",
@@ -130,7 +167,7 @@ export const article: BlogArticle = {
         "Angiogenesis markers (CD31 immunostaining)",
         "Inflammatory markers (IL-6, TNF-α, neutrophil/macrophage infiltration)",
         "Functional recovery metrics (if motor or mechanical testing applies)",
-        "Control conditions: vehicle-only, BPC-157 alone, TB-500 alone, combined",
+        "Control conditions: vehicle-only, BPC-157 alone, TB-500 alone, combined — to isolate additive vs. synergistic effects",
       ],
     },
     {
@@ -143,7 +180,7 @@ export const article: BlogArticle = {
     },
     {
       type: "disclaimer",
-      text: "All compounds are sold for qualified research use only. Not intended for human consumption, therapeutic use, or diagnostic purposes. Nothing on this site constitutes medical advice.",
+      text: "For research purposes only. Not intended for human use.",
     },
   ],
 };

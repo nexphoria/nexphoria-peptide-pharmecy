@@ -4539,6 +4539,9 @@ import { article as aJUN20OVN22_CYTOKINE_ENDPOINTS } from './articles/peptide-re
 import { article as aJUN20OVN23_MARITIDE_BUY } from './articles/where-to-buy-maritide-research-guide';
 import { article as aJUN20OVN23_EFOCIPEG_BUY } from './articles/where-to-buy-efocipegtrutide-research-guide';
 import { article as aJUN20OVN23_MARITIDE_VS_TRZ } from './articles/maritide-vs-tirzepatide-gipr-mechanism-research-comparison';
+import { article as aJUN20OVN24_PS_ALT } from './articles/peptide-sciences-alternative-nexphoria-guide';
+import { article as aJUN20OVN24_LONGEVITY_STACK } from './articles/longevity-peptide-stack-2026-research-guide';
+import { article as aJUN20OVN24_BPC_TB_COMBO } from './articles/bpc-157-tb-500-combined-protocol-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -11178,6 +11181,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN23_MARITIDE_BUY,
   aJUN20OVN23_EFOCIPEG_BUY,
   aJUN20OVN23_MARITIDE_VS_TRZ,
+  aJUN20OVN24_PS_ALT,
+  aJUN20OVN24_LONGEVITY_STACK,
+  aJUN20OVN24_BPC_TB_COMBO,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
