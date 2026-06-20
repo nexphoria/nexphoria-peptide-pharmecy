@@ -4512,6 +4512,9 @@ import { article as aJUN20OVN17_SAUDI } from './articles/research-peptides-saudi
 import { article as aJUN20OVN18_PILOTS } from './articles/best-peptides-pilots-aviation-professionals-research-2026';
 import { article as aJUN20OVN18_MUSICIANS } from './articles/best-peptides-musicians-performing-artists-research-2026';
 import { article as aJUN20OVN18_TRUCKERS } from './articles/best-peptides-truck-drivers-long-haul-transport-research-2026';
+import { article as aJUN20OVN19_TEACHERS } from './articles/best-peptides-teachers-educators-research-2026';
+import { article as aJUN20OVN19_PLANTAR } from './articles/bpc-157-plantar-fasciitis-research-guide-2026';
+import { article as aJUN20OVN19_CAREGIVERS } from './articles/peptide-research-caregivers-chronic-stress-immune-support-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -9026,6 +9029,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN18_PILOTS,
   aJUN20OVN18_MUSICIANS,
   aJUN20OVN18_TRUCKERS,
+  aJUN20OVN19_TEACHERS,
+  aJUN20OVN19_PLANTAR,
+  aJUN20OVN19_CAREGIVERS,
   aJUN15N1b,
   aJUN15N2b,
   aJUN15N3b,
