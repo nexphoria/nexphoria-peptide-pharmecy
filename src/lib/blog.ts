@@ -4497,6 +4497,9 @@ import { article as aJUN20OVN13_THYMOSIN_A1 } from './articles/thymosin-alpha-1-
 import { article as aJUN20OVN12_HEAT_STABILITY } from './articles/peptide-research-summer-heat-stability-jun20-2026';
 import { article as aJUN20OVN12_INJURY_PREV } from './articles/peptide-research-injury-prevention-protocols-jun20-2026';
 import { article as aJUN20OVN12_PS_VS_NEX } from './articles/nexphoria-vs-peptide-sciences-post-shutdown-jun20-2026';
+import { article as aJUN20OVN14_SMOKING } from './articles/peptide-research-nicotine-smoking-cessation-glp1-2026';
+import { article as aJUN20OVN14_PELVIC } from './articles/peptide-research-pelvic-floor-bladder-incontinence-2026';
+import { article as aJUN20OVN14_INHALED } from './articles/peptide-research-inhaled-nebulized-pulmonary-delivery-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -8996,6 +8999,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN13_LONGEVITY_STACK,
   aJUN20OVN13_SEMAGLUTIDE,
   aJUN20OVN13_THYMOSIN_A1,
+  aJUN20OVN14_SMOKING,
+  aJUN20OVN14_PELVIC,
+  aJUN20OVN14_INHALED,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
