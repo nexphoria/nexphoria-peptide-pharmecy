@@ -4458,6 +4458,9 @@ import { article as aJUN19EVN_BPC157_COMPLETE } from './articles/bpc-157-complet
 import { article as aJUN19EVN2_PS_SHUTDOWN } from './articles/peptide-sciences-shutdown-2026-what-researchers-need-now';
 import { article as aJUN19EVN2_MUSCLE_5 } from './articles/five-peptides-muscle-recovery-research-overview-2026';
 import { article as aJUN19EVN2_GLOSSARY_50 } from './articles/peptide-research-terminology-50-essential-definitions-jun19-2026';
+import { article as aJUN20OVN1_BPC_TB_STACK } from './articles/how-long-does-bpc-157-tb-500-stack-take-to-work';
+import { article as aJUN20OVN1_CONCUSSION } from './articles/peptide-research-concussion-protocol-2026';
+import { article as aJUN20OVN1_LONGTERM } from './articles/peptide-research-long-term-use-safety-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -8918,6 +8921,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN19EVN2_PS_SHUTDOWN,
   aJUN19EVN2_MUSCLE_5,
   aJUN19EVN2_GLOSSARY_50,
+  aJUN20OVN1_BPC_TB_STACK,
+  aJUN20OVN1_CONCUSSION,
+  aJUN20OVN1_LONGTERM,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
