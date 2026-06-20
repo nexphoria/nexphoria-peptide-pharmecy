@@ -4500,6 +4500,9 @@ import { article as aJUN20OVN12_PS_VS_NEX } from './articles/nexphoria-vs-peptid
 import { article as aJUN20OVN14_SMOKING } from './articles/peptide-research-nicotine-smoking-cessation-glp1-2026';
 import { article as aJUN20OVN14_PELVIC } from './articles/peptide-research-pelvic-floor-bladder-incontinence-2026';
 import { article as aJUN20OVN14_INHALED } from './articles/peptide-research-inhaled-nebulized-pulmonary-delivery-2026';
+import { article as aJUN20OVN15_SLEEP } from './articles/peptide-research-sleep-architecture-dsip-epitalon-mk677-complete-guide-jun20-2026';
+import { article as aJUN20OVN15_WOMEN40 } from './articles/peptide-research-women-over-40-hormonal-optimization-complete-guide-jun20-2026';
+import { article as aJUN20OVN15_ATHLETIC } from './articles/peptide-research-athletic-performance-sprint-power-endurance-protocols-jun20-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -9002,6 +9005,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN14_SMOKING,
   aJUN20OVN14_PELVIC,
   aJUN20OVN14_INHALED,
+  aJUN20OVN15_SLEEP,
+  aJUN20OVN15_WOMEN40,
+  aJUN20OVN15_ATHLETIC,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
