@@ -4548,6 +4548,9 @@ import { article as aJUN20OVN25_LEGAL_REGS } from './articles/research-peptides-
 import { article as aJUN20OVN26_POLYPHARMACY } from './articles/peptide-research-polypharmacy-elderly-considerations';
 import { article as aJUN20OVN26_GLP1_HEAT } from './articles/glp1-peptide-summer-heat-storage-injection-guide-2026';
 import { article as aJUN20OVN26_ORGAN_TARGET } from './articles/peptide-research-organ-specific-targeting-review-2026';
+import { article as aJUN20OVN27_EPITALON_COST } from './articles/how-much-does-epitalon-cost-research-pricing-guide';
+import { article as aJUN20OVN27_CAGRI_COST } from './articles/how-much-does-cagrilintide-cost-research-pricing-guide';
+import { article as aJUN20OVN27_FOXO4_COST } from './articles/how-much-does-foxo4-dri-cost-research-pricing-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -11196,6 +11199,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN26_POLYPHARMACY,
   aJUN20OVN26_GLP1_HEAT,
   aJUN20OVN26_ORGAN_TARGET,
+  aJUN20OVN27_EPITALON_COST,
+  aJUN20OVN27_CAGRI_COST,
+  aJUN20OVN27_FOXO4_COST,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
