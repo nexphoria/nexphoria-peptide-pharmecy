@@ -4467,6 +4467,9 @@ import { article as aJUN20OVN2_CJC_IPA } from './articles/cjc-1295-ipamorelin-st
 import { article as aJUN20OVN3_STORAGE } from './articles/peptide-storage-guide-jun20-2026';
 import { article as aJUN20OVN3_RECON } from './articles/peptide-reconstitution-guide-jun20-2026';
 import { article as aJUN20OVN3_MUSCLE5 } from './articles/best-peptides-muscle-recovery-jun20-2026';
+import { article as aJUN20OVN4_CGM } from './articles/peptide-research-cgm-continuous-glucose-monitoring-jun20-2026';
+import { article as aJUN20OVN4_ZONE2 } from './articles/zone-2-training-peptide-research-synergies-2026';
+import { article as aJUN20OVN4_HRV } from './articles/hrv-sleep-tracking-biometrics-peptide-research-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -8936,6 +8939,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN3_STORAGE,
   aJUN20OVN3_RECON,
   aJUN20OVN3_MUSCLE5,
+  aJUN20OVN4_CGM,
+  aJUN20OVN4_ZONE2,
+  aJUN20OVN4_HRV,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
