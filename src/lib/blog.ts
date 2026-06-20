@@ -4575,6 +4575,9 @@ import { article as aJUN20OVN32_ACE031 } from './articles/ace-031-myostatin-inhi
 import { article as aJUN20OVN33_GHK_BPC157 } from './articles/ghk-cu-bpc157-longevity-recovery-stack-research-2026';
 import { article as aJUN20OVN33_BERBERINE } from './articles/berberine-glp1-synergy-metabolic-research-2026';
 import { article as aJUN20OVN33_CYTOKINE } from './articles/cytokine-endpoint-selection-peptide-research-guide';
+import { article as aJUN20AFT_BPC_NO } from './articles/bpc-157-nitric-oxide-no-pathway-mechanism-deep-dive';
+import { article as aJUN20AFT_PAYMENT } from './articles/research-peptide-payment-methods-credit-card-crypto-guide';
+import { article as aJUN20AFT_SUBSCRIPTION } from './articles/peptide-research-subscription-autoship-vs-one-time-orders';
 
 
 export const articles: BlogArticle[] = [
@@ -11250,6 +11253,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN33_GHK_BPC157,
   aJUN20OVN33_BERBERINE,
   aJUN20OVN33_CYTOKINE,
+  aJUN20AFT_BPC_NO,
+  aJUN20AFT_PAYMENT,
+  aJUN20AFT_SUBSCRIPTION,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
