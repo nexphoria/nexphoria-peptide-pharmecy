@@ -4578,6 +4578,9 @@ import { article as aJUN20OVN33_CYTOKINE } from './articles/cytokine-endpoint-se
 import { article as aJUN20AFT_BPC_NO } from './articles/bpc-157-nitric-oxide-no-pathway-mechanism-deep-dive';
 import { article as aJUN20AFT_PAYMENT } from './articles/research-peptide-payment-methods-credit-card-crypto-guide';
 import { article as aJUN20AFT_SUBSCRIPTION } from './articles/peptide-research-subscription-autoship-vs-one-time-orders';
+import { article as aJUN20OVN_PSORIASIS } from './articles/peptide-research-psoriasis-skin-autoimmune-bpc157-kpv-ghk-cu';
+import { article as aJUN20OVN_T3D } from './articles/alzheimers-type-3-diabetes-peptide-research-insulin-resistance-brain';
+import { article as aJUN20OVN_VASC_DEM } from './articles/vascular-dementia-peptide-research-bpc157-ss31-nad-glp1';
 
 
 export const articles: BlogArticle[] = [
@@ -11256,6 +11259,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20AFT_BPC_NO,
   aJUN20AFT_PAYMENT,
   aJUN20AFT_SUBSCRIPTION,
+  aJUN20OVN_PSORIASIS,
+  aJUN20OVN_T3D,
+  aJUN20OVN_VASC_DEM,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
