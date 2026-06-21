@@ -4703,6 +4703,9 @@ import { article as aJUN21OVN_OUTDOOR_SUMMER } from './articles/peptide-research
 import { article as aJUN21OVN_SEMA_VS_TIRZ } from './articles/semaglutide-vs-tirzepatide-research-comparison-jun21-2026';
 import { article as aJUN21OVN_STORAGE_HEAT } from './articles/peptide-storage-reconstitution-summer-heat-guide-jun21-2026';
 import { article as aJUN21OVN_EPITHALON_COMPLETE } from './articles/epithalon-complete-research-guide-jun21-2026';
+import { article as aJUN21OVN_VIETNAM } from './articles/research-peptides-vietnam-guide';
+import { article as aJUN21OVN_PAKISTAN } from './articles/research-peptides-pakistan-guide';
+import { article as aJUN21OVN_EGYPT } from './articles/research-peptides-egypt-guide';
 import { article as aJUN21OVN_BPC_TB_HEAT } from './articles/bpc-157-tb-500-heat-recovery-stack-jun21-2026';
 import { article as aJUN21OVN_NAD_SUMMER } from './articles/nad-plus-summer-athletes-mitochondrial-heat-tolerance-2026';
 import { article as aJUN22_NEWS_MORNING } from './articles/peptide-research-news-june-22-2026-morning';
@@ -11516,6 +11519,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN21OVN_SEMA_VS_TIRZ,
   aJUN21OVN_STORAGE_HEAT,
   aJUN21OVN_EPITHALON_COMPLETE,
+  aJUN21OVN_VIETNAM,
+  aJUN21OVN_PAKISTAN,
+  aJUN21OVN_EGYPT,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
