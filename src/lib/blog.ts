@@ -4676,6 +4676,9 @@ import { article as aJUN21OVN_MUSCLE_REC_JUN21 } from './articles/best-peptides-
 import { article as aJUN22OVN_ANS_VAGUS } from './articles/peptide-research-autonomic-nervous-system-vagus-nerve-2026';
 import { article as aJUN22OVN_SUMMER_ENDURANCE } from './articles/best-peptides-summer-endurance-heat-racing-2026';
 import { article as aJUN22OVN_MITO_UCP1 } from './articles/peptide-research-mitochondrial-uncoupling-ucp1-brown-fat-2026';
+import { article as aJUN21OVN20_MK677_WORK } from './articles/does-mk-677-work-research-guide';
+import { article as aJUN21OVN20_SEMA_WORK } from './articles/does-semaglutide-work-research-guide';
+import { article as aJUN21OVN20_GHK_WORK } from './articles/does-ghk-cu-work-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -11452,6 +11455,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN21OVN_SELANK,
   aJUN21OVN_HEXARELIN_CARDIAC,
   aJUN21OVN_LONGEVITY_STACK,
+  aJUN21OVN20_MK677_WORK,
+  aJUN21OVN20_SEMA_WORK,
+  aJUN21OVN20_GHK_WORK,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
