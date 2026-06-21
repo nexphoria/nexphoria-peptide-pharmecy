@@ -107,6 +107,9 @@ import { article as aJUN21OVN_LONGEVITY_STACK } from './articles/longevity-pepti
 import { article as aJUN22OVN_UV_RECOVERY } from './articles/peptide-research-sun-damage-uv-recovery-stack-2026';
 import { article as aJUN22OVN_IPA_HEX_H2H } from './articles/ipamorelin-versus-hexarelin-head-to-head-research-2026';
 import { article as aJUN22OVN_DIGEST_JUN22 } from './articles/peptide-research-sunday-june-22-2026';
+import { article as aJUN21OVN_SLEEP_DSIP } from './articles/peptide-research-sleep-quality-dsip-delta-wave-optimization-2026';
+import { article as aJUN21OVN_COLLAGEN } from './articles/collagen-peptides-research-joint-skin-connective-tissue-2026';
+import { article as aJUN21OVN_RESOLUTION } from './articles/peptide-research-inflammation-resolution-spms-annexin-2026';
 import { article as aJUN20OVN6_EPITHALON_NAD } from './articles/epithalon-nad-plus-longevity-combination-research-jun20-2026';
 import { article as aJUN20OVN6_GHK_WOUND } from './articles/ghk-cu-wound-healing-mechanism-deep-dive-jun20-2026';
 import { article as aJUN20OVN6_IPA_SERM } from './articles/ipamorelin-vs-sermorelin-research-comparison-jun20-2026';
@@ -11464,6 +11467,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN21OVN20_MK677_WORK,
   aJUN21OVN20_SEMA_WORK,
   aJUN21OVN20_GHK_WORK,
+  aJUN21OVN_SLEEP_DSIP,
+  aJUN21OVN_COLLAGEN,
+  aJUN21OVN_RESOLUTION,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
