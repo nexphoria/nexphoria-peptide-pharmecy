@@ -98,6 +98,9 @@ import { article as a94 } from './articles/peptide-research-sex-differences-fema
 import { article as a95 } from './articles/bpc-157-gut-health-research-gi-protection-leaky-gut-intestinal-repair';
 import { article as a96 } from './articles/peptide-research-funding-nih-grants-iacuc-regulatory-frameworks';
 import { article as a97 } from './articles/adiponectin-insulin-resistance-glp1-metabolic-peptide-endpoints';
+import { article as aJUN22OVN_N_ACETYL_SEMAX } from './articles/how-long-does-n-acetyl-semax-take-to-work-research-timeline';
+import { article as aJUN22OVN_N_ACETYL_SELANK } from './articles/how-long-does-n-acetyl-selank-take-to-work-research-timeline';
+import { article as aJUN22OVN_VK2735 } from './articles/how-long-does-vk2735-take-to-work-research-timeline';
 import { article as aJUN20OVN6_EPITHALON_NAD } from './articles/epithalon-nad-plus-longevity-combination-research-jun20-2026';
 import { article as aJUN20OVN6_GHK_WOUND } from './articles/ghk-cu-wound-healing-mechanism-deep-dive-jun20-2026';
 import { article as aJUN20OVN6_IPA_SERM } from './articles/ipamorelin-vs-sermorelin-research-comparison-jun20-2026';
@@ -11440,6 +11443,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN_ANS_VAGUS,
   aJUN22OVN_SUMMER_ENDURANCE,
   aJUN22OVN_MITO_UCP1,
+  aJUN22OVN_N_ACETYL_SEMAX,
+  aJUN22OVN_N_ACETYL_SELANK,
+  aJUN22OVN_VK2735,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
