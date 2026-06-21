@@ -101,6 +101,9 @@ import { article as a97 } from './articles/adiponectin-insulin-resistance-glp1-m
 import { article as aJUN22OVN_N_ACETYL_SEMAX } from './articles/how-long-does-n-acetyl-semax-take-to-work-research-timeline';
 import { article as aJUN22OVN_N_ACETYL_SELANK } from './articles/how-long-does-n-acetyl-selank-take-to-work-research-timeline';
 import { article as aJUN22OVN_VK2735 } from './articles/how-long-does-vk2735-take-to-work-research-timeline';
+import { article as aJUN21OVN_SELANK } from './articles/selank-anxiety-research';
+import { article as aJUN21OVN_HEXARELIN_CARDIAC } from './articles/hexarelin-cardioprotection';
+import { article as aJUN21OVN_LONGEVITY_STACK } from './articles/longevity-peptide-stack-2026';
 import { article as aJUN20OVN6_EPITHALON_NAD } from './articles/epithalon-nad-plus-longevity-combination-research-jun20-2026';
 import { article as aJUN20OVN6_GHK_WOUND } from './articles/ghk-cu-wound-healing-mechanism-deep-dive-jun20-2026';
 import { article as aJUN20OVN6_IPA_SERM } from './articles/ipamorelin-vs-sermorelin-research-comparison-jun20-2026';
@@ -11446,6 +11449,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN_N_ACETYL_SEMAX,
   aJUN22OVN_N_ACETYL_SELANK,
   aJUN22OVN_VK2735,
+  aJUN21OVN_SELANK,
+  aJUN21OVN_HEXARELIN_CARDIAC,
+  aJUN21OVN_LONGEVITY_STACK,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
