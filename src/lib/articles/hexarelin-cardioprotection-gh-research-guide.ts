@@ -4,10 +4,10 @@ export const article: BlogArticle = {
   slug: "hexarelin-cardioprotection-gh-research-guide",
   title: "Hexarelin: Research on Cardiac and GH Applications",
   description:
-    "A research overview of Hexarelin — a synthetic hexapeptide studied for growth hormone secretagogue activity and cardioprotective effects. What the published science shows.",
+    "A research overview of Hexarelin — a synthetic hexapeptide studied for growth hormone secretagogue activity and cardioprotective effects via CD36 receptor binding. What the published science shows.",
   category: "Compound Profiles",
-  readMinutes: 9,
-  publishedAt: "2026-06-05",
+  readMinutes: 8,
+  publishedAt: "2026-06-21",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -55,8 +55,12 @@ export const article: BlogArticle = {
       text: "Comparison to Other GHSs",
     },
     {
-      type: "paragraph",
-      text: "In comparative studies examining GH-releasing potency: Hexarelin produces greater peak GH secretion than GHRP-6 and Ipamorelin in most rodent models. This potency advantage is partially offset by rapid desensitization — repeated Hexarelin administration leads to blunted GH response more rapidly than with Ipamorelin. Co-administration with GHRH analogs (synergistic effect) has been documented for Hexarelin as with other GHSs.",
+      type: "list",
+      items: [
+        "Hexarelin produces greater peak GH secretion than GHRP-6 and Ipamorelin in most rodent models",
+        "This potency advantage is partially offset by rapid desensitization — repeated administration leads to blunted GH response more rapidly than with Ipamorelin",
+        "Co-administration with GHRH analogs (synergistic effect) has been documented for Hexarelin as with other GHSs",
+      ],
     },
     {
       type: "subheading",
@@ -92,10 +96,10 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "GH-deficient patients and animal models consistently show impaired cardiac function — reduced cardiac output, increased vascular resistance, and altered cardiac morphology. Hexarelin treatment in GH-deficient models has shown improved cardiac output and ejection fraction, reduction in left ventricular hypertrophy in some models, and improved ventricular contractility — with inotropic effects documented in isolated heart preparations.",
+      text: "GH-deficient patients and animal models consistently show impaired cardiac function — reduced cardiac output, increased vascular resistance, and altered cardiac morphology. Hexarelin treatment in GH-deficient models has shown improved cardiac output and ejection fraction, reduction in left ventricular hypertrophy in some models, and improved ventricular contractility through inotropic effects documented in isolated heart preparations.",
     },
     {
-      type: "paragraph",
+      type: "callout",
       text: "Some of these effects are mediated via GH/IGF-1, while others (particularly contractility effects) appear to involve direct cardiac receptor activation.",
     },
     {
@@ -103,8 +107,12 @@ export const article: BlogArticle = {
       text: "Anti-Apoptotic Effects",
     },
     {
-      type: "paragraph",
-      text: "Hexarelin treatment in cardiac research models has been associated with reduced cardiomyocyte apoptosis following ischemic stress, upregulation of anti-apoptotic proteins (Bcl-2 family), and reduced cytochrome c release from mitochondria.",
+      type: "list",
+      items: [
+        "Reduced cardiomyocyte apoptosis following ischemic stress",
+        "Upregulation of anti-apoptotic proteins (Bcl-2 family)",
+        "Reduced cytochrome c release from mitochondria",
+      ],
     },
     {
       type: "heading",
