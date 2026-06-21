@@ -4692,6 +4692,9 @@ import { article as aJUN21OVN20_MK677_WORK } from './articles/does-mk-677-work-r
 import { article as aJUN21OVN20_SEMA_WORK } from './articles/does-semaglutide-work-research-guide';
 import { article as aJUN21OVN20_GHK_WORK } from './articles/does-ghk-cu-work-research-guide';
 import { article as aJUN21OVN_HEXARELIN_CARDIO } from './articles/hexarelin-cardioprotection';
+import { aOVN_V2_LONGEVITY_STACK_2026 } from './articles/longevity-peptide-stack-2026-overnight-v2';
+import { aOVN_V2_COLD_CHAIN_SHIPPING } from './articles/cold-chain-peptide-shipping-overnight-v2';
+import { aOVN_V2_SEMAGLUTIDE_RESEARCH } from './articles/semaglutide-research-peptide-overnight-v2';
 import { article as aJUN21OVN_SELANK_ANXIETY } from './articles/selank-anxiety-research';
 
 
@@ -11486,6 +11489,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN21OVN_MOTSC_MITO,
   aJUN21OVN_HEXARELIN_CARDIO,
   aJUN21OVN_SELANK_ANXIETY,
+  aOVN_V2_LONGEVITY_STACK_2026,
+  aOVN_V2_COLD_CHAIN_SHIPPING,
+  aOVN_V2_SEMAGLUTIDE_RESEARCH,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
