@@ -1,13 +1,13 @@
 import type { BlogArticle } from '../blog-types';
 
 export const article: BlogArticle = {
-  slug: "longevity-peptide-stack-2026-overnight-jun20-v2",
+  slug: "longevity-peptide-stack-2026-research-guide",
   title: "The 2026 Longevity Peptide Stack Researchers Are Studying",
   description:
     "A research-oriented overview of the peptide combinations longevity scientists are investigating in 2026. Covers GH axis, telomere biology, tissue repair, and mitochondrial targets.",
-  category: "Compound Profiles",
-  readMinutes: 12,
-  publishedAt: "2026-06-20",
+  category: "Longevity Research",
+  readMinutes: 11,
+  publishedAt: "2026-06-21",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -47,12 +47,8 @@ export const article: BlogArticle = {
       text: "Rather than administering exogenous GH (which suppresses endogenous production and carries IGF-1 overshoot risks), CJC-1295 + Ipamorelin targets the upstream regulatory system — preserving pulsatility while amplifying GH output.",
     },
     {
-      type: "list",
-      items: [
-        "Research focus in 2026: Tissue-specific effects of GH pulse restoration",
-        "Interaction with IGF-1 axis in aged models",
-        "Potential synergy with senolytic compounds",
-      ],
+      type: "paragraph",
+      text: "Research focus in 2026: Tissue-specific effects of GH pulse restoration; interaction with IGF-1 axis in aged models; potential synergy with senolytic compounds.",
     },
     {
       type: "heading",
@@ -80,11 +76,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "BPC-157 (Body Protection Compound-157) is a pentadecapeptide derived from a gastric juice protein, studied extensively for tissue repair, angiogenesis, and neuroprotection. Its proposed mechanisms include nitric oxide system modulation promoting vascular healing, tendon and ligament repair via upregulation of growth factor expression in connective tissue, GI tract cytoprotection, and neurological healing via dopamine system normalization in animal models.",
+      text: "BPC-157 (Body Protection Compound-157) is a pentadecapeptide derived from a gastric juice protein, studied extensively for tissue repair, angiogenesis, and neuroprotection. Its proposed mechanisms include nitric oxide system modulation for vascular healing, tendon and ligament repair via growth factor expression upregulation, GI tract cytoprotective effects, and neurological healing through dopamine system normalization in animal models.",
     },
     {
       type: "paragraph",
-      text: "In a longevity context, BPC-157's tissue maintenance effects are relevant as scaffolding: preserving structural integrity while other interventions address cellular and molecular aging. Research focus in 2026 includes interaction with GH axis compounds, neuroprotective synergy with nootropic peptides, and gut-brain axis implications.",
+      text: "In a longevity context, BPC-157's tissue maintenance effects are relevant as scaffolding: preserving structural integrity while other interventions address cellular and molecular aging. Research focus in 2026: Interaction with GH axis compounds; neuroprotective synergy with nootropic peptides; gut-brain axis implications.",
     },
     {
       type: "subheading",
@@ -116,7 +112,7 @@ export const article: BlogArticle = {
         "Insulin sensitization — reversal of diet-induced insulin resistance in mouse models",
         "Exercise-mimetic effects — activation of AMPK and related metabolic sensors",
         "Lifespan extension — demonstrated in C. elegans and explored in mammalian models",
-        "Age-dependent decline in MOTS-c levels suggests it as both a biomarker and intervention target",
+        "Age-dependent decline in MOTS-c levels suggests it as both a biomarker and potential intervention target",
       ],
     },
     {
@@ -125,11 +121,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Humanin is another MDP — one of the first identified — with documented roles in neuroprotection (originally identified in Alzheimer's disease context), cardiovascular protection, metabolic regulation, and shows age-related decline in circulating levels.",
-    },
-    {
-      type: "paragraph",
-      text: "Humanin and MOTS-c are increasingly studied together as a mitochondria-derived peptide combination targeting multiple aspects of mitochondrial decline.",
+      text: "Humanin is another MDP — one of the first identified — with documented roles in neuroprotection (originally identified in an Alzheimer's disease context), cardiovascular protection, metabolic regulation, and age-related decline in circulating levels. Humanin and MOTS-c are increasingly studied together as a mitochondria-derived peptide combination targeting multiple aspects of mitochondrial decline.",
     },
     {
       type: "heading",
@@ -141,7 +133,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Russia's two most studied nootropic peptides represent CNS-focused longevity components. Semax (ACTH 4-7 analog) targets BDNF upregulation, neuroprotection, and cognitive enhancement. Selank (tuftsin analog) provides anxiolytic effects, BDNF upregulation, and immune modulation.",
+      text: "Russia's two most studied nootropic peptides represent CNS-focused longevity components. Semax (ACTH 4-7 analog) is studied for BDNF upregulation, neuroprotection, and cognitive enhancement. Selank (tuftsin analog) is studied for anxiolytic effects, BDNF upregulation, and immune modulation.",
     },
     {
       type: "paragraph",
@@ -171,7 +163,7 @@ export const article: BlogArticle = {
       items: [
         "Most longevity data remains in animal models. Human longevity trials are long-duration by necessity; reliable human data for most peptides is limited.",
         "Combination effects are largely unstudied. Most compounds have been researched individually; interaction effects in stacks are not well characterized.",
-        "IGF-1 elevation has a complex relationship with longevity. Higher IGF-1 is associated with improved function in some contexts and increased cancer risk in others.",
+        "IGF-1 elevation has a complex relationship with longevity. Higher IGF-1 is associated with improved function in some contexts and increased cancer risk in others; this tension is a live area of research.",
         "Regulatory status varies by jurisdiction. Researchers must operate within applicable regulatory frameworks.",
       ],
     },
@@ -182,6 +174,10 @@ export const article: BlogArticle = {
     {
       type: "paragraph",
       text: "The 2026 longevity peptide research landscape reflects a maturing field — moving from individual compound characterization toward multi-target combination approaches grounded in the hallmarks-of-aging framework. GH axis restoration, telomere biology, mitochondrial function, tissue repair, and neurological maintenance represent the five primary research pillars, each with peptide tools of varying evidence maturity.",
+    },
+    {
+      type: "paragraph",
+      text: "For research purposes only. Not intended for human use.",
     },
   ],
 };

@@ -4735,6 +4735,9 @@ import { article as aJUN22OVN_INSULIN_ADIPOSE } from './articles/peptide-researc
 import { article as aJUN21_MUSCLE_RECOVERY } from './articles/best-peptides-muscle-recovery-research';
 import { article as aJUN21_HEXARELIN_CARDIAC } from './articles/hexarelin-cardiac-gh-research';
 import { article as aJUN21_SELANK_ANXIETY } from './articles/selank-anxiety-research-overview';
+import { article as aJUN21OVN_NEW_LONGEVITY_STACK } from './articles/longevity-peptide-stack-2026-research-guide';
+import { article as aJUN21OVN_NEW_NAD_VS_NMN } from './articles/nad-plus-vs-nmn-longevity-researchers-guide';
+import { article as aJUN21OVN_NEW_EPITHALON_TELOMERE } from './articles/epithalon-telomere-research-what-studies-say';
 
 
 export const articles: BlogArticle[] = [
@@ -11570,6 +11573,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN21_MUSCLE_RECOVERY,
   aJUN21_HEXARELIN_CARDIAC,
   aJUN21_SELANK_ANXIETY,
+  aJUN21OVN_NEW_LONGEVITY_STACK,
+  aJUN21OVN_NEW_NAD_VS_NMN,
+  aJUN21OVN_NEW_EPITHALON_TELOMERE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
