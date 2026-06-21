@@ -4723,6 +4723,9 @@ import { article as aJUN22_HEAT_SKIN_STACK } from './articles/peptide-research-h
 import { article as aJUN21OVN_NAD_SIRTUINS } from './articles/nad-plus-sirtuins-parp-longevity-research-jun21-2026';
 import { article as aJUN21OVN_TA1_IMMUNE } from './articles/thymosin-alpha-1-immune-modulating-peptide-research-jun21-2026';
 import { article as aJUN21OVN_NEXPHORIA_QC } from './articles/nexphoria-quality-standards-hplc-lal-coa-jun21-2026';
+import { article as aJUN21OVN_DOSING_FREQ } from './articles/peptide-dosing-frequency-research-guide-jun21';
+import { article as aJUN21OVN_MOTS_C } from './articles/mots-c-exercise-mimetic-mitochondrial-peptide-jun21';
+import { article as aJUN21OVN_CONTROLS_BLINDING } from './articles/peptide-research-placebo-controls-blinding-study-design-jun21';
 
 
 export const articles: BlogArticle[] = [
@@ -11546,6 +11549,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN21OVN_NAD_SIRTUINS,
   aJUN21OVN_TA1_IMMUNE,
   aJUN21OVN_NEXPHORIA_QC,
+  aJUN21OVN_DOSING_FREQ,
+  aJUN21OVN_MOTS_C,
+  aJUN21OVN_CONTROLS_BLINDING,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
