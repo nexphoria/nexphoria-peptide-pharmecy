@@ -4613,6 +4613,9 @@ import { article as aJUN21OVN4_BUY_USA } from './articles/how-to-source-research
 import { article as aJUN21OVN5_GHK_CU } from './articles/ghk-cu-copper-peptide-anti-aging-skin-hair-research-jun21-2026';
 import { article as aJUN21OVN5_NEWS } from './articles/peptide-research-news-june-21-2026';
 import { article as aJUN21OVN5_TB500 } from './articles/tb-500-complete-research-guide-jun21-2026';
+import { article as aJUN21OVN7_FOXO4 } from './articles/foxo4-dri-senolytic-peptide-research-2026';
+import { article as aJUN21OVN7_IGF1LR3 } from './articles/igf-1-lr3-extended-half-life-research-guide';
+import { article as aJUN21OVN7_GHRELIN } from './articles/ghrelin-mimetics-agonists-antagonists-research-2026';
 import { article as aJUN21OVN6_BPC_SCI } from './articles/bpc-157-spinal-cord-injury-neuroprotection-2026';
 import { article as aJUN21OVN6_SEMA_FERTILITY } from './articles/semaglutide-fertility-research-pcos-ovulation';
 import { article as aJUN21OVN6_GUT_DYSBIOSIS } from './articles/peptide-research-gut-dysbiosis-bpc157-ta1-ll37-2026';
@@ -11332,6 +11335,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN21OVN6_BPC_SCI,
   aJUN21OVN6_SEMA_FERTILITY,
   aJUN21OVN6_GUT_DYSBIOSIS,
+  aJUN21OVN7_FOXO4,
+  aJUN21OVN7_IGF1LR3,
+  aJUN21OVN7_GHRELIN,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
