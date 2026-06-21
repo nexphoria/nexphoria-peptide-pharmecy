@@ -4691,6 +4691,8 @@ import { article as aJUN22OVN_MITO_UCP1 } from './articles/peptide-research-mito
 import { article as aJUN21OVN20_MK677_WORK } from './articles/does-mk-677-work-research-guide';
 import { article as aJUN21OVN20_SEMA_WORK } from './articles/does-semaglutide-work-research-guide';
 import { article as aJUN21OVN20_GHK_WORK } from './articles/does-ghk-cu-work-research-guide';
+import { article as aJUN21OVN_HEXARELIN_CARDIO } from './articles/hexarelin-cardioprotection';
+import { article as aJUN21OVN_SELANK_ANXIETY } from './articles/selank-anxiety-research';
 
 
 export const articles: BlogArticle[] = [
@@ -11482,6 +11484,8 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN21OVN_SS31_MITO,
   aJUN21OVN_CYCLING,
   aJUN21OVN_MOTSC_MITO,
+  aJUN21OVN_HEXARELIN_CARDIO,
+  aJUN21OVN_SELANK_ANXIETY,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
