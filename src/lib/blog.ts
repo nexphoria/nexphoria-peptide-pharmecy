@@ -4649,6 +4649,9 @@ import { article as aJUN21OVN16_INTERACTIONS } from './articles/peptide-drug-int
 import { article as aJUN21OVN17_NAD_LONGEVITY } from './articles/nad-plus-longevity-sirtuins-parp-research-jun21-2026';
 import { article as aJUN21OVN17_NEXPHORIA_QC } from './articles/nexphoria-quality-standards-hplc-ms-lal-coa-jun21-2026';
 import { article as aJUN21OVN17_BPC_TB500_STACK } from './articles/bpc-157-tb-500-combined-protocol-research-jun21-2026';
+import { article as aJUN21OVN18_HEXARELIN_CARDIAC } from './articles/hexarelin-cardioprotection-research-guide-jun21-2026';
+import { article as aJUN21OVN18_LONGEVITY_STACK } from './articles/longevity-peptide-stack-2026-research-overview';
+import { article as aJUN21OVN18_MUSCLE_RECOVERY } from './articles/best-peptides-muscle-recovery-research-guide-jun21-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -11398,6 +11401,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN21OVN17_NAD_LONGEVITY,
   aJUN21OVN17_NEXPHORIA_QC,
   aJUN21OVN17_BPC_TB500_STACK,
+  aJUN21OVN18_HEXARELIN_CARDIAC,
+  aJUN21OVN18_LONGEVITY_STACK,
+  aJUN21OVN18_MUSCLE_RECOVERY,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
