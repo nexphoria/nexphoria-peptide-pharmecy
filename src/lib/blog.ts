@@ -4696,6 +4696,9 @@ import { aOVN_V2_LONGEVITY_STACK_2026 } from './articles/longevity-peptide-stack
 import { aOVN_V2_COLD_CHAIN_SHIPPING } from './articles/cold-chain-peptide-shipping-overnight-v2';
 import { aOVN_V2_SEMAGLUTIDE_RESEARCH } from './articles/semaglutide-research-peptide-overnight-v2';
 import { article as aJUN21OVN_SELANK_ANXIETY } from './articles/selank-anxiety-research';
+import { article as aJUN21OVN_SURGICAL_RECOVERY } from './articles/peptide-research-surgical-recovery-bpc157-tb500-thymosin';
+import { article as aJUN21OVN_ENDURANCE_PERF } from './articles/peptide-research-endurance-athletes-vo2max-lactate-mitochondria';
+import { article as aJUN21OVN_LIVER_FIBROSIS } from './articles/peptide-research-liver-fibrosis-nash-nafld-hepatoprotective';
 
 
 export const articles: BlogArticle[] = [
@@ -11489,6 +11492,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN21OVN_MOTSC_MITO,
   aJUN21OVN_HEXARELIN_CARDIO,
   aJUN21OVN_SELANK_ANXIETY,
+  aJUN21OVN_SURGICAL_RECOVERY,
+  aJUN21OVN_ENDURANCE_PERF,
+  aJUN21OVN_LIVER_FIBROSIS,
   aOVN_V2_LONGEVITY_STACK_2026,
   aOVN_V2_COLD_CHAIN_SHIPPING,
   aOVN_V2_SEMAGLUTIDE_RESEARCH,
