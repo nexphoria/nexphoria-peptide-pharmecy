@@ -4732,6 +4732,9 @@ import { article as aJUN21OVN_GLP1_LEAN } from './articles/glp1-agonist-muscle-m
 import { article as aJUN22OVN_IMMUNE_CHECKPOINT } from './articles/peptide-research-immune-checkpoint-pd1-ctla4-cancer-immunology-jun22-2026';
 import { article as aJUN22OVN_GUT_BRAIN } from './articles/peptide-research-microbiome-gut-brain-axis-jun22-2026';
 import { article as aJUN22OVN_INSULIN_ADIPOSE } from './articles/peptide-research-insulin-sensitization-adipose-tissue-jun22-2026';
+import { article as aJUN21_MUSCLE_RECOVERY } from './articles/best-peptides-muscle-recovery-research';
+import { article as aJUN21_HEXARELIN_CARDIAC } from './articles/hexarelin-cardiac-gh-research';
+import { article as aJUN21_SELANK_ANXIETY } from './articles/selank-anxiety-research-overview';
 
 
 export const articles: BlogArticle[] = [
@@ -11564,6 +11567,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN_IMMUNE_CHECKPOINT,
   aJUN22OVN_GUT_BRAIN,
   aJUN22OVN_INSULIN_ADIPOSE,
+  aJUN21_MUSCLE_RECOVERY,
+  aJUN21_HEXARELIN_CARDIAC,
+  aJUN21_SELANK_ANXIETY,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

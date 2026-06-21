@@ -4,10 +4,10 @@ export const article: BlogArticle = {
   slug: "best-peptides-muscle-recovery-research",
   title: "5 Research Peptides Used in Muscle Recovery Studies",
   description:
-    "BPC-157, TB-500, IGF-1 LR3, Follistatin-344, and Ipamorelin are among the most studied peptides in preclinical muscle recovery research. Here's an evidence-based overview of what the literature shows.",
-  category: "Research Protocols",
-  readMinutes: 8,
-  publishedAt: "2026-06-09",
+    "BPC-157, TB-500, IGF-1 LR3, Follistatin-344, and Ipamorelin have been examined in muscle recovery and regeneration studies. This article summarizes the preclinical evidence for each compound.",
+  category: "Compound Profiles",
+  readMinutes: 10,
+  publishedAt: "2026-06-21",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -37,7 +37,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "BPC-157 is thought to act via nitric oxide modulation and FAK-paxillin signaling, enhancing cell migration and angiogenesis critical to repair. Study references include Sikiric et al. (multiple publications, University of Zagreb) and Gwyer et al. systematic review (2019).",
+      text: "Mechanism: BPC-157 is thought to act via nitric oxide modulation and FAK-paxillin signaling, enhancing cell migration and angiogenesis critical to repair. Study reference: Sikiric et al. (multiple publications, University of Zagreb); Gwyer et al. systematic review (2019).",
     },
     {
       type: "heading",
@@ -62,7 +62,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "TB-500's LKKTET actin-binding domain drives cytoskeletal remodeling, enabling faster cell migration and wound response. Downstream VEGF signaling supports revascularization of damaged tissue. TB-500 and BPC-157 are frequently studied together due to their mechanistically complementary profiles — actin-level cell movement (TB-500) paired with vascular and signaling pathway activation (BPC-157).",
+      text: "Mechanism: TB-500's LKKTET actin-binding domain drives cytoskeletal remodeling, enabling faster cell migration and wound response. Downstream VEGF signaling supports revascularization of damaged tissue. TB-500 and BPC-157 are frequently studied together due to their mechanistically complementary profiles — actin-level cell movement (TB-500) paired with vascular and signaling pathway activation (BPC-157).",
     },
     {
       type: "heading",
@@ -87,7 +87,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "IGF-1 LR3 binds the IGF-1 receptor (a receptor tyrosine kinase) and activates downstream anabolic signaling cascades. Its extended half-life compared to native IGF-1 makes it useful for studying sustained IGF-1R activation effects. Important note: IGF-1 signaling is pleiotropic and intersects with multiple oncological pathways. Research protocols involving IGF-1 LR3 require careful experimental design and appropriate controls.",
+      text: "Mechanism: IGF-1 LR3 binds the IGF-1 receptor (a receptor tyrosine kinase) and activates downstream anabolic signaling cascades. Its extended half-life compared to native IGF-1 makes it useful for studying sustained IGF-1R activation effects. Important note: IGF-1 signaling is pleiotropic and intersects with multiple oncological pathways. Research protocols involving IGF-1 LR3 require careful experimental design and appropriate controls.",
     },
     {
       type: "heading",
@@ -112,7 +112,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "By binding myostatin with high affinity, follistatin prevents myostatin from activating its receptor (ActRIIB), thereby disinhibiting muscle growth pathways including Akt/mTOR and satellite cell activation. Follistatin-344 research has clinical relevance to conditions involving muscle wasting (sarcopenia, Duchenne muscular dystrophy), making it an active area of gene therapy and peptide research.",
+      text: "Mechanism: By binding myostatin with high affinity, follistatin prevents myostatin from activating its receptor (ActRIIB), thereby disinhibiting muscle growth pathways including Akt/mTOR and satellite cell activation. Research context: Follistatin-344 research has clinical relevance to conditions involving muscle wasting (sarcopenia, Duchenne muscular dystrophy), making it an active area of gene therapy and peptide research.",
     },
     {
       type: "heading",
@@ -137,7 +137,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Ipamorelin mimics ghrelin's action at the GHSR-1a receptor in the hypothalamus and pituitary, triggering GH secretion. Its selectivity profile makes it particularly useful for isolated study of GH pulse effects without the confound of elevated stress hormones.",
+      text: "Mechanism: Ipamorelin mimics ghrelin's action at the GHSR-1a receptor in the hypothalamus and pituitary, triggering GH secretion. Its selectivity profile makes it particularly useful for isolated study of GH pulse effects without the confound of elevated stress hormones.",
     },
     {
       type: "heading",
@@ -160,7 +160,16 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "All five peptides require rigorous quality verification: HPLC purity ≥99%, mass spectrometry identity confirmation, endotoxin-free certification (LAL testing), and cold-chain shipping and storage protocols.",
+      text: "All five peptides require rigorous quality verification before use in research contexts.",
+    },
+    {
+      type: "list",
+      items: [
+        "HPLC purity ≥99%",
+        "Mass spectrometry identity confirmation",
+        "Endotoxin-free certification (LAL testing)",
+        "Cold-chain shipping and storage protocols",
+      ],
     },
     {
       type: "heading",
