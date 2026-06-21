@@ -4629,6 +4629,9 @@ import { article as aJUN21OVN11_HPLC } from './articles/hplc-purity-testing-rese
 import { article as aJUN21OVN12_GLOSSARY } from './articles/research-peptide-glossary-jun21-2026';
 import { article as aJUN21OVN12_QC } from './articles/nexphoria-quality-standards-hplc-lal-coa';
 import { article as aJUN21OVN12_STORAGE } from './articles/peptide-storage-guide-temperature-light-shelf-life';
+import { article as aJUN21OVN13_BPC157 } from './articles/bpc-157-complete-guide-jun21-2026';
+import { article as aJUN21OVN13_STORAGE2 } from './articles/peptide-storage-guide-temperature-light-shelf-life-jun21-2026';
+import { article as aJUN21OVN13_SEMA } from './articles/semaglutide-research-peptide-glp1-jun21-2026';
 import { article as aJUN21OVN10_CJC_IPA_STACK } from './articles/cjc-1295-ipamorelin-research-stack-2026';
 import { article as aJUN21OVN10_SELANK_ANXIETY } from './articles/selank-anxiety-research-2026';
 import { article as aJUN21OVN6_BPC_SCI } from './articles/bpc-157-spinal-cord-injury-neuroprotection-2026';
@@ -11368,6 +11371,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN21OVN12_GLOSSARY,
   aJUN21OVN12_QC,
   aJUN21OVN12_STORAGE,
+  aJUN21OVN13_BPC157,
+  aJUN21OVN13_STORAGE2,
+  aJUN21OVN13_SEMA,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
