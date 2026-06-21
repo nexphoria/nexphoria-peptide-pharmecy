@@ -4601,6 +4601,9 @@ import { article as aJUN20OVN41_HEXARELIN } from './articles/hexarelin-cardiopro
 import { article as aJUN21OVN1_HEXARELIN_CD36 } from './articles/hexarelin-cardioprotection-cd36-research-jun21-2026';
 import { article as aJUN21OVN1_EPITHALON } from './articles/epithalon-telomere-longevity-research-jun21-2026';
 import { article as aJUN21OVN1_TA1_IMMUNE } from './articles/thymosin-alpha-1-immune-research-jun21-2026';
+import { article as aJUN21OVN2_PEP_SCI_ALT } from './articles/peptide-sciences-alternative-nexphoria-jun21-2026';
+import { article as aJUN21OVN2_LONGEVITY_STACK } from './articles/longevity-peptide-stack-2026-research-overview-jun21';
+import { article as aJUN21OVN2_MUSCLE_RECOVERY } from './articles/best-peptides-muscle-recovery-research-jun21-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -11302,6 +11305,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN21OVN1_HEXARELIN_CD36,
   aJUN21OVN1_EPITHALON,
   aJUN21OVN1_TA1_IMMUNE,
+  aJUN21OVN2_PEP_SCI_ALT,
+  aJUN21OVN2_LONGEVITY_STACK,
+  aJUN21OVN2_MUSCLE_RECOVERY,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
