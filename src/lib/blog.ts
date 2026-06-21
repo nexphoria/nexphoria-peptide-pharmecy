@@ -4726,6 +4726,9 @@ import { article as aJUN21OVN_NEXPHORIA_QC } from './articles/nexphoria-quality-
 import { article as aJUN21OVN_DOSING_FREQ } from './articles/peptide-dosing-frequency-research-guide-jun21';
 import { article as aJUN21OVN_MOTS_C } from './articles/mots-c-exercise-mimetic-mitochondrial-peptide-jun21';
 import { article as aJUN21OVN_CONTROLS_BLINDING } from './articles/peptide-research-placebo-controls-blinding-study-design-jun21';
+import { article as aJUN21OVN_BODY_COMP } from './articles/peptide-research-bioelectrical-impedance-body-composition-tracking-jun21';
+import { article as aJUN21OVN_KHAVINSON } from './articles/pituitary-bioregulator-peptide-complex-khavinson-longevity-jun21';
+import { article as aJUN21OVN_GLP1_LEAN } from './articles/glp1-agonist-muscle-mass-preservation-lean-body-composition-jun21';
 
 
 export const articles: BlogArticle[] = [
@@ -11552,6 +11555,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN21OVN_DOSING_FREQ,
   aJUN21OVN_MOTS_C,
   aJUN21OVN_CONTROLS_BLINDING,
+  aJUN21OVN_BODY_COMP,
+  aJUN21OVN_KHAVINSON,
+  aJUN21OVN_GLP1_LEAN,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
