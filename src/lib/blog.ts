@@ -4595,6 +4595,9 @@ import { article as aJUN20OVN39_CREATINE } from './articles/creatine-peptide-syn
 import { article as aJUN20OVN39_FOXO4 } from './articles/foxo4-dri-senolytic-peptide-research-guide-2026';
 import { article as aJUN20OVN40_BPC157_V2 } from './articles/bpc-157-complete-research-guide-2026-v2';
 import { article as aJUN20OVN40_SEMA_V2 } from './articles/semaglutide-research-peptide-glp1-2026';
+import { article as aJUN20OVN41_PEP_SCI_ALT } from './articles/peptide-sciences-alternative-research-guide-jun20-2026';
+import { article as aJUN20OVN41_LONGEVITY_STACK } from './articles/longevity-peptide-stack-2026-research-guide';
+import { article as aJUN20OVN41_HEXARELIN } from './articles/hexarelin-cardioprotection-gh-research-guide-jun20-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -11290,6 +11293,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN20OVN39_FOXO4,
   aJUN20OVN40_BPC157_V2,
   aJUN20OVN40_SEMA_V2,
+  aJUN20OVN41_PEP_SCI_ALT,
+  aJUN20OVN41_LONGEVITY_STACK,
+  aJUN20OVN41_HEXARELIN,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
