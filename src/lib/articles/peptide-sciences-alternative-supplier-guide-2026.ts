@@ -4,10 +4,10 @@ export const article: BlogArticle = {
   slug: "peptide-sciences-alternative-supplier-guide-2026",
   title: "Looking for a Peptide Sciences Alternative? Here's What to Know",
   description:
-    "Peptide Sciences shut down in March 2026, leaving thousands of researchers without a supplier. Here's what rigorous criteria to apply when evaluating replacements — and why documentation standards matter more than ever.",
-  category: "Sourcing & Quality",
+    "Peptide Sciences shut down in March 2026, leaving thousands of researchers without a supplier. Here's what to look for in a replacement and why Nexphoria meets the standard.",
+  category: "Industry",
   readMinutes: 9,
-  publishedAt: "2026-06-18",
+  publishedAt: "2026-06-22",
   ogImage: "/og-image.jpg",
   body: [
     {
@@ -24,15 +24,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Peptide Sciences was a long-standing supplier known for accessible pricing and a broad catalog. In early 2026, the site went dark with no formal announcement. Orders were left unfulfilled, and customer support went silent.",
+      text: "Peptide Sciences was a long-standing supplier known for accessible pricing and a broad catalog. In early 2026, the site went dark with no formal announcement. Orders were left unfulfilled, and customer support went silent. The reasons have not been officially confirmed, but patterns like this in the research peptide space often trace back to regulatory pressure from the FDA or DEA, supply chain failures at the synthesis or raw-material level, or operational insolvency from thin margins in a competitive, commoditized market.",
     },
     {
       type: "paragraph",
-      text: "The reasons have not been officially confirmed, but patterns like this in the research peptide space often trace back to regulatory pressure from the FDA or DEA targeting online peptide distribution, supply chain failures at the synthesis or raw-material level, or operational insolvency from thin margins in a competitive, commoditized market. Whatever the cause, the result is the same: tens of thousands of researchers who relied on a familiar vendor are now in a position to reassess.",
-    },
-    {
-      type: "paragraph",
-      text: "This is actually an opportunity. Disruption of any kind forces re-evaluation — and in the research peptide industry, not all suppliers are created equal.",
+      text: "Whatever the cause, the result is the same: tens of thousands of researchers who relied on a familiar vendor are now in a position to reassess. This is actually an opportunity. Disruption of any kind forces re-evaluation — and in the research peptide industry, not all suppliers are created equal.",
     },
     {
       type: "heading",
@@ -48,7 +44,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "High-Performance Liquid Chromatography (HPLC) is the gold standard for verifying peptide purity. Any credible supplier should provide HPLC chromatograms for each batch of product — not just a stated percentage on a label. Look for ≥98% purity on HPLC reports, batch-specific certificates rather than generic template documents, and third-party lab testing rather than in-house only.",
+      text: "High-Performance Liquid Chromatography (HPLC) is the gold standard for verifying peptide purity. Any credible supplier should provide HPLC chromatograms for each batch of product — not just a stated percentage on a label. Look for ≥98% purity on HPLC reports, batch-specific certificates (not generic template documents), and third-party lab testing rather than in-house only.",
     },
     {
       type: "subheading",
@@ -72,7 +68,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Peptides are sensitive to temperature fluctuation, moisture, and UV exposure. A supplier's logistics chain should reflect this. Key indicators: products shipped with dry ice or cold packs when appropriate; lyophilized (freeze-dried) form for longer shelf stability; and clear storage guidance provided with every shipment.",
+      text: "Peptides are sensitive to temperature fluctuation, moisture, and UV exposure. A supplier's logistics chain should reflect this. Key indicators include products shipped with dry ice or cold packs when appropriate, lyophilized (freeze-dried) form for longer shelf stability, and clear storage guidance provided with every shipment.",
     },
     {
       type: "subheading",
@@ -100,7 +96,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Nexphoria was designed with the standards that serious researchers were clearly not getting from commodity suppliers. Every Nexphoria product includes HPLC and mass spectrometry verification (batch-specific, third-party confirmed), full COA transparency accessible at point of purchase, LAL (Limulus Amebocyte Lysate) endotoxin testing to ensure products are free of bacterial endotoxins that could compromise experimental integrity, lyophilized format with proper cold-chain logistics from synthesis to delivery, and strict research-only positioning with no clinical language or wellness marketing.",
+      text: "Nexphoria was designed with the post-Peptide Sciences market in mind — not in terms of timing, but in terms of the standards that serious researchers were clearly not getting from commodity suppliers. Every Nexphoria product includes HPLC and mass spectrometry verification (batch-specific, third-party confirmed), full COA transparency accessible at point of purchase, LAL endotoxin testing to ensure products are free of bacterial endotoxins that could compromise experimental integrity, lyophilized format with proper cold-chain logistics from synthesis to delivery, and strict research-only positioning with no clinical language or wellness marketing.",
     },
     {
       type: "heading",
@@ -108,43 +104,11 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "If you are currently mid-study or have established reconstitution and storage protocols, transitioning suppliers requires care.",
+      text: "If you are currently mid-study or have established reconstitution and storage protocols, transitioning suppliers requires care. Before ordering, review the COA for your specific compound and confirm batch-level data, verify HPLC purity ≥98% and mass spec identity match, confirm LAL endotoxin testing has been performed, and check shipping method and temperature control.",
     },
     {
-      type: "subheading",
-      text: "Before Ordering",
-    },
-    {
-      type: "list",
-      items: [
-        "Review the COA for your specific compound and confirm batch-level data",
-        "Verify HPLC purity ≥98% and mass spec identity match",
-        "Confirm LAL endotoxin testing has been performed",
-        "Check shipping method and temperature control",
-      ],
-    },
-    {
-      type: "subheading",
-      text: "Upon Receipt",
-    },
-    {
-      type: "list",
-      items: [
-        "Inspect packaging integrity and cold-chain indicators",
-        "Verify lot number matches COA documentation",
-        "Store per compound-specific guidelines (typically -20°C for long-term)",
-      ],
-    },
-    {
-      type: "subheading",
-      text: "For Ongoing Sourcing",
-    },
-    {
-      type: "list",
-      items: [
-        "Establish a single-supplier relationship to minimize batch-to-batch variability",
-        "Document each lot used in your research records",
-      ],
+      type: "paragraph",
+      text: "Upon receipt, inspect packaging integrity and cold-chain indicators, verify lot number matches COA documentation, and store per compound-specific guidelines (typically -20°C for long-term storage). For ongoing sourcing, establish a single-supplier relationship to minimize batch-to-batch variability and document each lot used in your research records.",
     },
     {
       type: "heading",

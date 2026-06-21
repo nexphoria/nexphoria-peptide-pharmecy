@@ -4658,6 +4658,9 @@ import { article as aJUN21OVN18_MUSCLE_RECOVERY } from './articles/best-peptides
 import { article as aJUN22_NEWS } from './articles/peptide-research-news-june-22-2026';
 import { article as aJUN22_BOMBESIN } from './articles/bombesin-grp-gastrin-releasing-peptide-research-guide';
 import { article as aJUN22_NMU } from './articles/neuromedin-u-nmu-peptide-energy-expenditure-research-guide';
+import { article as aJUN22_NAD_NMN } from './articles/nad-plus-vs-nmn-longevity-research-comparison-jun22-2026';
+import { article as aJUN22_PEP_SCI_ALT } from './articles/peptide-sciences-alternative-supplier-guide-2026';
+import { article as aJUN22_GLOSSARY } from './articles/peptide-research-glossary-50-essential-terms-jun22-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -11416,6 +11419,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22_NEWS,
   aJUN22_BOMBESIN,
   aJUN22_NMU,
+  aJUN22_NAD_NMN,
+  aJUN22_PEP_SCI_ALT,
+  aJUN22_GLOSSARY,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
