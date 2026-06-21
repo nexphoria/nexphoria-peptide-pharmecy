@@ -4667,6 +4667,9 @@ import { article as aJUN21OVN_TB500_JUN21 } from './articles/tb-500-thymosin-bet
 import { article as aJUN21OVN_CJC_IPA_JUN21 } from './articles/cjc-1295-ipamorelin-stack-research-jun21-2026';
 import { article as aJUN21OVN_PS_ALT_JUN21 } from './articles/peptide-sciences-alternative-sourcing-guide-jun21-2026';
 import { article as aJUN21OVN_MUSCLE_REC_JUN21 } from './articles/best-peptides-muscle-recovery-research-guide-jun21-2026';
+import { article as aJUN22OVN_ANS_VAGUS } from './articles/peptide-research-autonomic-nervous-system-vagus-nerve-2026';
+import { article as aJUN22OVN_SUMMER_ENDURANCE } from './articles/best-peptides-summer-endurance-heat-racing-2026';
+import { article as aJUN22OVN_MITO_UCP1 } from './articles/peptide-research-mitochondrial-uncoupling-ucp1-brown-fat-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -11434,6 +11437,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN21OVN_CJC_IPA_JUN21,
   aJUN21OVN_PS_ALT_JUN21,
   aJUN21OVN_MUSCLE_REC_JUN21,
+  aJUN22OVN_ANS_VAGUS,
+  aJUN22OVN_SUMMER_ENDURANCE,
+  aJUN22OVN_MITO_UCP1,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
