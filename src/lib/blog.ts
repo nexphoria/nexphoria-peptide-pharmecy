@@ -4664,6 +4664,9 @@ import { article as aJUN22_GLOSSARY } from './articles/peptide-research-glossary
 import { article as aJUN21OVN_PS_ALT_V2 } from './articles/peptide-sciences-alternative-nexphoria-jun21-2026';
 import { article as aJUN21OVN_SEMA_GLP1_V2 } from './articles/semaglutide-research-peptide-glp1-overview-jun21';
 import { article as aJUN21OVN_TB500_JUN21 } from './articles/tb-500-thymosin-beta-4-mechanism-sourcing-jun21';
+import { article as aJUN21OVN_CJC_IPA_JUN21 } from './articles/cjc-1295-ipamorelin-stack-research-jun21-2026';
+import { article as aJUN21OVN_PS_ALT_JUN21 } from './articles/peptide-sciences-alternative-sourcing-guide-jun21-2026';
+import { article as aJUN21OVN_MUSCLE_REC_JUN21 } from './articles/best-peptides-muscle-recovery-research-guide-jun21-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -11428,6 +11431,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN21OVN_PS_ALT_V2,
   aJUN21OVN_SEMA_GLP1_V2,
   aJUN21OVN_TB500_JUN21,
+  aJUN21OVN_CJC_IPA_JUN21,
+  aJUN21OVN_PS_ALT_JUN21,
+  aJUN21OVN_MUSCLE_REC_JUN21,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
