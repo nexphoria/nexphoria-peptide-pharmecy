@@ -4702,6 +4702,9 @@ import { article as aJUN21OVN_LIVER_FIBROSIS } from './articles/peptide-research
 import { article as aJUN21OVN_OUTDOOR_SUMMER } from './articles/peptide-research-outdoor-summer-training-protocols-jun21-2026';
 import { article as aJUN21OVN_BPC_TB_HEAT } from './articles/bpc-157-tb-500-heat-recovery-stack-jun21-2026';
 import { article as aJUN21OVN_NAD_SUMMER } from './articles/nad-plus-summer-athletes-mitochondrial-heat-tolerance-2026';
+import { article as aJUN22_NEWS_MORNING } from './articles/peptide-research-news-june-22-2026-morning';
+import { article as aJUN22_TIRZ_VS_RETA } from './articles/tirzepatide-vs-retatrutide-best-weight-loss-2026';
+import { article as aJUN22_HEAT_SKIN_STACK } from './articles/peptide-research-heat-sunscreen-protection-stack-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -11504,6 +11507,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN21OVN_OUTDOOR_SUMMER,
   aJUN21OVN_BPC_TB_HEAT,
   aJUN21OVN_NAD_SUMMER,
+  aJUN22_NEWS_MORNING,
+  aJUN22_TIRZ_VS_RETA,
+  aJUN22_HEAT_SKIN_STACK,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
