@@ -4851,6 +4851,9 @@ import { article as aJUN22OVN34_TA1 } from './articles/thymosin-alpha-1-immune-m
 import { article as aJUN22OVN35_SELANK } from './articles/selank-anxiolytic-nootropic-research-guide-jun22-2026';
 import { article as aJUN22OVN35_SEMA } from './articles/semaglutide-glp1-research-peptide-metabolic-guide-jun22-2026';
 import { article as aJUN22OVN35_NAD_NMN } from './articles/nad-plus-vs-nmn-longevity-research-comparison-jun22-2026';
+import { article as aJUN22OVN36_ANXIETY } from './articles/peptides-anxiety-stress-research-guide-jun22-2026';
+import { article as aJUN22OVN36_JOINT } from './articles/peptides-joint-tendon-repair-research-guide-jun22-2026';
+import { article as aJUN22OVN36_HAIR } from './articles/peptides-hair-growth-research-guide-jun22-2026';
 import { article as aJUN22OVN30_ALZHEIMER } from './articles/best-peptides-alzheimers-prevention-cognitive-decline-research-2026';
 import { article as aJUN22OVN30_KLOTHO } from './articles/alpha-klotho-longevity-anti-aging-peptide-research-2026';
 import { article as aJUN22OVN30_BRAINFOG } from './articles/peptide-stack-brain-fog-cognitive-clarity-complete-protocol-2026';
@@ -11893,6 +11896,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN35_SELANK,
   aJUN22OVN35_SEMA,
   aJUN22OVN35_NAD_NMN,
+  // June 22 overnight loop 36 — 3 original articles: anxiety/stress peptides, joint/tendon repair peptides, hair growth peptides
+  aJUN22OVN36_ANXIETY,
+  aJUN22OVN36_JOINT,
+  aJUN22OVN36_HAIR,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
