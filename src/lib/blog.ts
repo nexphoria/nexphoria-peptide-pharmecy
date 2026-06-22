@@ -4759,6 +4759,9 @@ import { article as aJUN23OVN2_SUMMER_STABILITY } from './articles/peptide-resea
 import { article as aJUN22OVN4_BPC_TB_STACK } from './articles/bpc-157-vs-tb-500-combined-protocol-jun22-2026';
 import { article as aJUN22OVN4_HEXARELIN_CD36 } from './articles/hexarelin-cardioprotection-cd36-research-jun22-2026';
 import { article as aJUN22OVN4_SELANK_ANXIETY } from './articles/selank-anxiety-research-mechanisms-jun22-2026';
+import { article as aJUN22OVN5_KAZAKHSTAN } from './articles/research-peptides-kazakhstan-guide';
+import { article as aJUN22OVN5_UKRAINE } from './articles/research-peptides-ukraine-guide';
+import { article as aJUN22OVN5_NIGERIA } from './articles/research-peptides-nigeria-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -11674,6 +11677,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN4_BPC_TB_STACK,
   aJUN22OVN4_HEXARELIN_CD36,
   aJUN22OVN4_SELANK_ANXIETY,
+  // June 22 overnight loop 5 — 3 new country guides
+  aJUN22OVN5_KAZAKHSTAN,
+  aJUN22OVN5_UKRAINE,
+  aJUN22OVN5_NIGERIA,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
