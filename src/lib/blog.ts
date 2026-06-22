@@ -4741,6 +4741,9 @@ import { article as aJUN22OVN_SEMA_PLATEAU } from './articles/semaglutide-weight
 import { article as aJUN21OVN_NEW_LONGEVITY_STACK } from './articles/longevity-peptide-stack-2026-research-guide';
 import { article as aJUN21OVN_NEW_NAD_VS_NMN } from './articles/nad-plus-vs-nmn-longevity-researchers-guide';
 import { article as aJUN21OVN_NEW_EPITHALON_TELOMERE } from './articles/epithalon-telomere-research-what-studies-say';
+import { article as aJUN22EVE_NEWS } from './articles/peptide-research-news-june-22-2026-evening';
+import { article as aJUN22EVE_ALZHEIMER } from './articles/alzheimer-peptide-research-amyloid-tau-2026';
+import { article as aJUN22EVE_COMPOUNDING } from './articles/compounding-pharmacy-vs-research-peptides-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -11633,6 +11636,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aDEC3,
   aGADS1,
   aYT1,
+  // June 22 evening loop — 3 new articles
+  aJUN22EVE_NEWS,
+  aJUN22EVE_ALZHEIMER,
+  aJUN22EVE_COMPOUNDING,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
