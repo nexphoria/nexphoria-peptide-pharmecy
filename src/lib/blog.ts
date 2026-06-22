@@ -4815,6 +4815,9 @@ import { article as aJUN22OVN22_SLEEP } from './articles/peptide-sleep-research-
 import { article as aJUN22OVN23_HEXARELIN } from './articles/hexarelin-cardioprotection-research-guide-ovn23';
 import { article as aJUN22OVN23_SELANK } from './articles/selank-anxiety-research-mechanisms-jun22-2026';
 import { article as aJUN22OVN23_LONGEVITY } from './articles/longevity-peptide-stack-2026-research-overview-jun22';
+import { article as aJUN22OVN24_ORAL_DELIVERY } from './articles/peptide-oral-delivery-bioavailability-strategies-research';
+import { article as aJUN22OVN24_AUTOPHAGY } from './articles/autophagy-peptide-research-mtor-beclin1-mechanisms';
+import { article as aJUN22OVN24_PAIN } from './articles/peptide-pain-research-substance-p-delta-opioid-spantide-models';
 import { article as aJUN22OVN21_FM } from './articles/fibromyalgia-chronic-fatigue-peptide-research-models-ovn21';
 import { article as aJUN22OVN21_WOUND } from './articles/chronic-wound-healing-peptide-research-protocols-ovn21';
 import { article as aJUN22OVN21_KINETICS } from './articles/peptide-receptor-binding-kinetics-kd-kon-koff-ec50-research-guide-ovn21';
@@ -11809,6 +11812,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN23_HEXARELIN,
   aJUN22OVN23_SELANK,
   aJUN22OVN23_LONGEVITY,
+  // June 22 overnight loop 24 — 3 original articles: peptide oral delivery bioavailability, autophagy/mTOR/Beclin-1 mechanisms, peptide pain research (Substance P, delta-opioid, CGRP)
+  aJUN22OVN24_ORAL_DELIVERY,
+  aJUN22OVN24_AUTOPHAGY,
+  aJUN22OVN24_PAIN,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
