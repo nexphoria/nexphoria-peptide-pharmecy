@@ -4839,6 +4839,9 @@ import { article as aJUN22OVN29_QUALITY } from './articles/nexphoria-quality-sta
 import { article as aJUN22OVN31_MUSCLE5 } from './articles/best-peptides-muscle-recovery-five-compounds-ovn-jun22';
 import { article as aJUN22OVN31_BPC157 } from './articles/bpc-157-complete-research-guide-2026-overnight';
 import { article as aJUN22OVN31_RECON } from './articles/how-to-reconstitute-peptides-research-protocol-ovn-jun22';
+import { article as aJUN22OVN32_SIDEEFFECTS } from './articles/research-peptide-side-effects-safety-profile-guide';
+import { article as aJUN22OVN32_BACWATER } from './articles/bacteriostatic-water-peptide-research-complete-guide';
+import { article as aJUN22OVN32_GLUCOSE } from './articles/peptides-blood-glucose-insulin-sensitivity-research-2026';
 import { article as aJUN22OVN30_ALZHEIMER } from './articles/best-peptides-alzheimers-prevention-cognitive-decline-research-2026';
 import { article as aJUN22OVN30_KLOTHO } from './articles/alpha-klotho-longevity-anti-aging-peptide-research-2026';
 import { article as aJUN22OVN30_BRAINFOG } from './articles/peptide-stack-brain-fog-cognitive-clarity-complete-protocol-2026';
@@ -11865,6 +11868,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN31_MUSCLE5,
   aJUN22OVN31_BPC157,
   aJUN22OVN31_RECON,
+  // June 22 overnight loop 32 — 3 original articles: peptide side effects guide, bacteriostatic water reconstitution guide, peptides + blood glucose/insulin sensitivity
+  aJUN22OVN32_SIDEEFFECTS,
+  aJUN22OVN32_BACWATER,
+  aJUN22OVN32_GLUCOSE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
