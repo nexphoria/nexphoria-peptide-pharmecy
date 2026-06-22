@@ -4858,6 +4858,9 @@ import { article as aJUN22OVN37_TB500 } from './articles/tb-500-thymosin-beta-4-
 import { article as aJUN22OVN38_GUT_IMMUNE } from './articles/peptide-research-immune-gut-axis-bpc157-kpv-jun22-2026';
 import { article as aJUN22OVN38_CIRCADIAN } from './articles/peptide-dose-timing-circadian-research-protocols-jun22-2026';
 import { article as aJUN22OVN38_COA_GUIDE } from './articles/peptide-vendor-quality-third-party-testing-what-researchers-need-jun22-2026';
+import { article as aJUN22OVN39_NAD } from './articles/nad-plus-longevity-sirtuins-parp-jun22-2026';
+import { article as aJUN22OVN39_BPC_TB } from './articles/bpc-157-tb-500-combined-protocol-jun22-2026';
+import { article as aJUN22OVN39_RECON } from './articles/how-to-reconstitute-peptides-research-protocol-ovn-jun22';
 import { article as aJUN22OVN37_TA1 } from './articles/thymosin-alpha-1-immune-modulating-peptide-research-guide-jun22-2026';
 import { article as aJUN22OVN37_SLEEP } from './articles/peptide-research-sleep-architecture-recovery-ghrh-ghrp-dsip-2026';
 import { article as aJUN22OVN30_ALZHEIMER } from './articles/best-peptides-alzheimers-prevention-cognitive-decline-research-2026';
@@ -11914,6 +11917,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN38_GUT_IMMUNE,
   aJUN22OVN38_CIRCADIAN,
   aJUN22OVN38_COA_GUIDE,
+  // June 22 overnight loop 39 — 3 new articles: NAD+ longevity/sirtuins/PARP, BPC-157+TB-500 combined protocol, peptide reconstitution guide
+  aJUN22OVN39_NAD,
+  aJUN22OVN39_BPC_TB,
+  aJUN22OVN39_RECON,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
