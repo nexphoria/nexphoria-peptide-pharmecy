@@ -4771,6 +4771,9 @@ import { article as aJUN22OVN7_SOLSTICE } from './articles/peptide-research-summ
 import { article as aJUN22OVN8_NAD_LONGEVITY } from './articles/nad-plus-longevity-sirtuins-parp-jun22-2026';
 import { article as aJUN22OVN8_BPC_TB_STACK } from './articles/bpc-157-tb-500-combined-protocol-jun22-2026';
 import { article as aJUN22OVN8_HEXARELIN_CD36 } from './articles/hexarelin-cd36-cardiac-research-jun22-2026';
+import { article as aJUN22OVN9_PEPTIDE_SCI_ALT } from './articles/peptide-sciences-alternative-supplier-guide-jun22-2026';
+import { article as aJUN22OVN9_TA1_IMMUNE } from './articles/thymosin-alpha-1-immune-modulation-research-guide-jun22-2026';
+import { article as aJUN22OVN9_LONGEVITY_STACK } from './articles/longevity-peptide-stack-2026-multi-target-research-framework';
 
 
 export const articles: BlogArticle[] = [
@@ -11702,6 +11705,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN8_NAD_LONGEVITY,
   aJUN22OVN8_BPC_TB_STACK,
   aJUN22OVN8_HEXARELIN_CD36,
+  // June 22 overnight loop 9 — 3 new articles from overnight-v2 folder
+  aJUN22OVN9_PEPTIDE_SCI_ALT,
+  aJUN22OVN9_TA1_IMMUNE,
+  aJUN22OVN9_LONGEVITY_STACK,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
