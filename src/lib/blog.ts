@@ -4777,6 +4777,9 @@ import { article as aJUN22OVN9_LONGEVITY_STACK } from './articles/longevity-pept
 import { article as aJUN22OVN10_BUY_USA } from './articles/buy-peptides-usa-guide-jun22-2026';
 import { article as aJUN22OVN10_QUALITY } from './articles/nexphoria-quality-standards-jun22-2026';
 import { article as aJUN22OVN10_RECONSTITUTION } from './articles/peptide-reconstitution-guide-jun22-2026';
+import { article as aJUN22OVN11_CJC_IPA } from './articles/cjc-1295-ipamorelin-stack-ovn11';
+import { article as aJUN22OVN11_SEMA } from './articles/semaglutide-glp1-research-peptide-overview-ovn11';
+import { article as aJUN22OVN11_TB500 } from './articles/tb-500-thymosin-beta-4-mechanism-research-ovn11';
 
 
 export const articles: BlogArticle[] = [
@@ -11716,6 +11719,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN10_BUY_USA,
   aJUN22OVN10_QUALITY,
   aJUN22OVN10_RECONSTITUTION,
+  // June 22 overnight loop 11 — 3 new articles: CJC+IPA stack, semaglutide overview, TB-500
+  aJUN22OVN11_CJC_IPA,
+  aJUN22OVN11_SEMA,
+  aJUN22OVN11_TB500,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
