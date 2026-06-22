@@ -4799,6 +4799,10 @@ import { article as aJUN22OVN16_SEMA } from './articles/semaglutide-research-pep
 import { article as aJUN22OVN17_MUSCLE } from './articles/best-peptides-muscle-recovery-ovn17';
 import { article as aJUN22OVN17_STORAGE } from './articles/peptide-storage-guide-temperature-shelf-life-ovn17';
 import { article as aJUN22OVN17_NAD_NMN } from './articles/nad-plus-vs-nmn-longevity-research-ovn17';
+// June 22 overnight loop 18 — 3 new articles: MOTS-c mitochondrial peptide, Dihexa cognitive peptide, weight-based dosing protocols
+import { article as aJUN22OVN18_MOTS_C } from './articles/mots-c-mitochondria-metabolic-peptide-research-ovn18';
+import { article as aJUN22OVN18_DIHEXA } from './articles/dihexa-cognitive-peptide-hgf-met-signaling-research-ovn18';
+import { article as aJUN22OVN18_DOSING } from './articles/weight-based-peptide-dosing-research-protocol-design-ovn18';
 
 
 export const articles: BlogArticle[] = [
@@ -11766,6 +11770,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN17_MUSCLE,
   aJUN22OVN17_STORAGE,
   aJUN22OVN17_NAD_NMN,
+  // June 22 overnight loop 18 — 3 new articles: MOTS-c mitochondrial peptide, Dihexa cognitive peptide, weight-based dosing protocols
+  aJUN22OVN18_MOTS_C,
+  aJUN22OVN18_DIHEXA,
+  aJUN22OVN18_DOSING,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
