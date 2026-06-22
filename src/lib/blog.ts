@@ -106,6 +106,9 @@ import { article as aJUN22OVN40_HPLC } from './articles/hplc-purity-testing-rese
 import { article as aJUN22OVN41_CYCLIC } from './articles/cyclic-peptides-constrained-conformation-research-guide-jun22-2026';
 import { article as aJUN22OVN41_PEPTIDOMIMETICS } from './articles/peptidomimetics-non-natural-amino-acids-research-guide-jun22-2026';
 import { article as aJUN22OVN41_NANOPARTICLE } from './articles/peptide-nanoparticle-delivery-systems-research-guide-jun22-2026';
+import { article as aJUN22OVN42_MMP } from './articles/mmp-matrix-metalloproteinase-peptide-research-ghk-cu-bpc157-jun22-2026';
+import { article as aJUN22OVN42_PPB } from './articles/peptide-plasma-protein-binding-pharmacokinetics-research-guide-jun22-2026';
+import { article as aJUN22OVN42_INTEGRIN } from './articles/integrin-targeting-peptides-rgd-ikvav-yigsr-research-guide-jun22-2026';
 import { article as aJUN22OVN_N_ACETYL_SEMAX } from './articles/how-long-does-n-acetyl-semax-take-to-work-research-timeline';
 import { article as aJUN22OVN_N_ACETYL_SELANK } from './articles/how-long-does-n-acetyl-selank-take-to-work-research-timeline';
 import { article as aJUN22OVN_VK2735 } from './articles/how-long-does-vk2735-take-to-work-research-timeline';
@@ -11937,6 +11940,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN41_CYCLIC,
   aJUN22OVN41_PEPTIDOMIMETICS,
   aJUN22OVN41_NANOPARTICLE,
+  // June 22 overnight loop 42 — 3 original articles: MMP remodeling by research peptides, plasma protein binding PK guide, integrin-targeting peptides
+  aJUN22OVN42_MMP,
+  aJUN22OVN42_PPB,
+  aJUN22OVN42_INTEGRIN,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
