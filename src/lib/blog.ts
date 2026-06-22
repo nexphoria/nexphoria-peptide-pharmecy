@@ -4836,6 +4836,9 @@ import { article as aJUN22OVN28_NEUROPATHY } from './articles/peripheral-neuropa
 import { article as aJUN22OVN29_PSCI_ALT } from './articles/peptide-sciences-alternative-supplier-guide-ovn29';
 import { article as aJUN22OVN29_USA_GUIDE } from './articles/how-to-source-research-peptides-usa-buyers-guide-ovn29';
 import { article as aJUN22OVN29_QUALITY } from './articles/nexphoria-quality-standards-hplc-lal-coa-transparency-ovn29';
+import { article as aJUN22OVN31_MUSCLE5 } from './articles/best-peptides-muscle-recovery-five-compounds-ovn-jun22';
+import { article as aJUN22OVN31_BPC157 } from './articles/bpc-157-complete-research-guide-2026-overnight';
+import { article as aJUN22OVN31_RECON } from './articles/how-to-reconstitute-peptides-research-protocol-ovn-jun22';
 import { article as aJUN22OVN30_ALZHEIMER } from './articles/best-peptides-alzheimers-prevention-cognitive-decline-research-2026';
 import { article as aJUN22OVN30_KLOTHO } from './articles/alpha-klotho-longevity-anti-aging-peptide-research-2026';
 import { article as aJUN22OVN30_BRAINFOG } from './articles/peptide-stack-brain-fog-cognitive-clarity-complete-protocol-2026';
@@ -11858,6 +11861,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN30_ALZHEIMER,
   aJUN22OVN30_KLOTHO,
   aJUN22OVN30_BRAINFOG,
+  // June 22 overnight loop 31 — 3 articles from nexphoria-overnight-v2 source folder
+  aJUN22OVN31_MUSCLE5,
+  aJUN22OVN31_BPC157,
+  aJUN22OVN31_RECON,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
