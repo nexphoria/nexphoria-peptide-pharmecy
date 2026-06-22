@@ -4845,6 +4845,9 @@ import { article as aJUN22OVN32_GLUCOSE } from './articles/peptides-blood-glucos
 import { article as aJUN22OVN33_KHAVINSON } from './articles/khavinson-peptide-bioregulators-complete-guide';
 import { article as aJUN22OVN33_CJC_AGING } from './articles/cjc-1295-ipamorelin-aging-over-50';
 import { article as aJUN22OVN33_HEAT_DEGRADATION } from './articles/peptide-heat-degradation-summer-2026';
+import { article as aJUN22OVN34_HEXARELIN } from './articles/hexarelin-cardioprotection-cd36-ghs-cardiac-jun22-2026';
+import { article as aJUN22OVN34_EPITHALON } from './articles/epithalon-telomere-longevity-research-jun22-2026';
+import { article as aJUN22OVN34_TA1 } from './articles/thymosin-alpha-1-immune-modulation-t-cell-tlr9-jun22-2026';
 import { article as aJUN22OVN30_ALZHEIMER } from './articles/best-peptides-alzheimers-prevention-cognitive-decline-research-2026';
 import { article as aJUN22OVN30_KLOTHO } from './articles/alpha-klotho-longevity-anti-aging-peptide-research-2026';
 import { article as aJUN22OVN30_BRAINFOG } from './articles/peptide-stack-brain-fog-cognitive-clarity-complete-protocol-2026';
@@ -11879,6 +11882,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN33_KHAVINSON,
   aJUN22OVN33_CJC_AGING,
   aJUN22OVN33_HEAT_DEGRADATION,
+  // June 22 overnight loop 34 — 3 articles from nexphoria-overnight-v2: Hexarelin CD36 cardioprotection, Epithalon telomere longevity, Thymosin Alpha-1 TLR9 immune
+  aJUN22OVN34_HEXARELIN,
+  aJUN22OVN34_EPITHALON,
+  aJUN22OVN34_TA1,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
