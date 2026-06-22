@@ -4818,6 +4818,9 @@ import { article as aJUN22OVN23_LONGEVITY } from './articles/longevity-peptide-s
 import { article as aJUN22OVN24_ORAL_DELIVERY } from './articles/peptide-oral-delivery-bioavailability-strategies-research';
 import { article as aJUN22OVN24_AUTOPHAGY } from './articles/autophagy-peptide-research-mtor-beclin1-mechanisms';
 import { article as aJUN22OVN24_PAIN } from './articles/peptide-pain-research-substance-p-delta-opioid-spantide-models';
+import { article as aJUN22OVN25_SEMA } from './articles/semaglutide-research-peptide-glp1-overview-ovn25';
+import { article as aJUN22OVN25_HPLC } from './articles/peptide-purity-hplc-testing-coa-guide-ovn25';
+import { article as aJUN22OVN25_GLOSSARY } from './articles/research-peptide-glossary-50-terms-ovn25';
 import { article as aJUN22OVN21_FM } from './articles/fibromyalgia-chronic-fatigue-peptide-research-models-ovn21';
 import { article as aJUN22OVN21_WOUND } from './articles/chronic-wound-healing-peptide-research-protocols-ovn21';
 import { article as aJUN22OVN21_KINETICS } from './articles/peptide-receptor-binding-kinetics-kd-kon-koff-ec50-research-guide-ovn21';
@@ -11816,6 +11819,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN24_ORAL_DELIVERY,
   aJUN22OVN24_AUTOPHAGY,
   aJUN22OVN24_PAIN,
+  // June 22 overnight loop 25 — 3 new articles: semaglutide GLP-1 overview, HPLC purity testing guide, peptide research glossary
+  aJUN22OVN25_SEMA,
+  aJUN22OVN25_HPLC,
+  aJUN22OVN25_GLOSSARY,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
