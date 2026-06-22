@@ -4787,6 +4787,9 @@ import { article as aJUN22OVN12_IGF1_LR3 } from './articles/igf-1-lr3-extended-h
 import { article as aJUN22OVN13_NAD_NMN } from './articles/nad-plus-vs-nmn-longevity-research-comparison-ovn13';
 import { article as aJUN22OVN13_EPITHALON } from './articles/epithalon-telomere-research-studies-review-ovn13';
 import { article as aJUN22OVN13_BPC_TB } from './articles/bpc-157-tb-500-combined-protocol-research-review-ovn13';
+import { article as aJUN22OVN14_PERU } from './articles/research-peptides-peru-guide';
+import { article as aJUN22OVN14_CHILE } from './articles/research-peptides-chile-guide';
+import { article as aJUN22OVN14_BANGLADESH } from './articles/research-peptides-bangladesh-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -11738,6 +11741,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN13_NAD_NMN,
   aJUN22OVN13_EPITHALON,
   aJUN22OVN13_BPC_TB,
+  // June 22 overnight loop 14 — 3 new country research guides: Peru, Chile, Bangladesh
+  aJUN22OVN14_PERU,
+  aJUN22OVN14_CHILE,
+  aJUN22OVN14_BANGLADESH,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
