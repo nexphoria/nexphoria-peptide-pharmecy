@@ -4855,6 +4855,9 @@ import { article as aJUN22OVN36_ANXIETY } from './articles/peptides-anxiety-stre
 import { article as aJUN22OVN36_JOINT } from './articles/peptides-joint-tendon-repair-research-guide-jun22-2026';
 import { article as aJUN22OVN36_HAIR } from './articles/peptides-hair-growth-research-guide-jun22-2026';
 import { article as aJUN22OVN37_TB500 } from './articles/tb-500-thymosin-beta-4-complete-research-guide-jun22-2026';
+import { article as aJUN22OVN38_GUT_IMMUNE } from './articles/peptide-research-immune-gut-axis-bpc157-kpv-jun22-2026';
+import { article as aJUN22OVN38_CIRCADIAN } from './articles/peptide-dose-timing-circadian-research-protocols-jun22-2026';
+import { article as aJUN22OVN38_COA_GUIDE } from './articles/peptide-vendor-quality-third-party-testing-what-researchers-need-jun22-2026';
 import { article as aJUN22OVN37_TA1 } from './articles/thymosin-alpha-1-immune-modulating-peptide-research-guide-jun22-2026';
 import { article as aJUN22OVN37_SLEEP } from './articles/peptide-research-sleep-architecture-recovery-ghrh-ghrp-dsip-2026';
 import { article as aJUN22OVN30_ALZHEIMER } from './articles/best-peptides-alzheimers-prevention-cognitive-decline-research-2026';
@@ -11907,6 +11910,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN37_TB500,
   aJUN22OVN37_TA1,
   aJUN22OVN37_SLEEP,
+  // June 22 overnight loop 38 — 3 original articles: immune-gut axis research, circadian timing protocols, vendor COA guide
+  aJUN22OVN38_GUT_IMMUNE,
+  aJUN22OVN38_CIRCADIAN,
+  aJUN22OVN38_COA_GUIDE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
