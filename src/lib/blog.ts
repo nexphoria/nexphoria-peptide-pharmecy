@@ -4765,6 +4765,9 @@ import { article as aJUN22OVN5_NIGERIA } from './articles/research-peptides-nige
 import { article as aJUN22OVN6_INDIA } from './articles/research-peptides-india-guide';
 import { article as aJUN22OVN6_GLP1_SLEEP } from './articles/glp1-agonists-sleep-apnea-research-2026';
 import { article as aJUN22OVN6_DIHEXA } from './articles/dihexa-peptide-nootropic-cognitive-research-guide';
+import { article as aJUN22OVN7_NEWS_OVERNIGHT } from './articles/peptide-research-news-june-23-2026-overnight';
+import { article as aJUN22OVN7_SUMMER_ATHLETE } from './articles/best-peptides-summer-athlete-recovery-stack-jun22-2026';
+import { article as aJUN22OVN7_SOLSTICE } from './articles/peptide-research-summer-solstice-june-22-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -11688,6 +11691,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN6_INDIA,
   aJUN22OVN6_GLP1_SLEEP,
   aJUN22OVN6_DIHEXA,
+  // June 22 overnight loop 7 — 3 new articles
+  aJUN22OVN7_NEWS_OVERNIGHT,
+  aJUN22OVN7_SUMMER_ATHLETE,
+  aJUN22OVN7_SOLSTICE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
