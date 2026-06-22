@@ -4783,6 +4783,10 @@ import { article as aJUN22OVN11_TB500 } from './articles/tb-500-thymosin-beta-4-
 import { article as aJUN22OVN12_GHK_SKIN } from './articles/ghk-cu-skin-aging-collagen-research-2026';
 import { article as aJUN22OVN12_CYCLING } from './articles/peptide-cycling-protocols-on-off-research-design';
 import { article as aJUN22OVN12_IGF1_LR3 } from './articles/igf-1-lr3-extended-half-life-growth-factor-research-guide';
+// June 22 overnight loop 13 — 3 new articles from overnight-v2 folder
+import { article as aJUN22OVN13_NAD_NMN } from './articles/nad-plus-vs-nmn-longevity-research-comparison-ovn13';
+import { article as aJUN22OVN13_EPITHALON } from './articles/epithalon-telomere-research-studies-review-ovn13';
+import { article as aJUN22OVN13_BPC_TB } from './articles/bpc-157-tb-500-combined-protocol-research-review-ovn13';
 
 
 export const articles: BlogArticle[] = [
@@ -11730,6 +11734,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN12_GHK_SKIN,
   aJUN22OVN12_CYCLING,
   aJUN22OVN12_IGF1_LR3,
+  // June 22 overnight loop 13 — 3 new articles: NAD+ vs NMN, Epithalon telomere research, BPC-157+TB-500 combined protocol
+  aJUN22OVN13_NAD_NMN,
+  aJUN22OVN13_EPITHALON,
+  aJUN22OVN13_BPC_TB,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
