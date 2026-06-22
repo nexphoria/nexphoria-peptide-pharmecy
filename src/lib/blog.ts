@@ -4762,6 +4762,9 @@ import { article as aJUN22OVN4_SELANK_ANXIETY } from './articles/selank-anxiety-
 import { article as aJUN22OVN5_KAZAKHSTAN } from './articles/research-peptides-kazakhstan-guide';
 import { article as aJUN22OVN5_UKRAINE } from './articles/research-peptides-ukraine-guide';
 import { article as aJUN22OVN5_NIGERIA } from './articles/research-peptides-nigeria-guide';
+import { article as aJUN22OVN6_INDIA } from './articles/research-peptides-india-guide';
+import { article as aJUN22OVN6_GLP1_SLEEP } from './articles/glp1-agonists-sleep-apnea-research-2026';
+import { article as aJUN22OVN6_DIHEXA } from './articles/dihexa-peptide-nootropic-cognitive-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -11681,6 +11684,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN5_KAZAKHSTAN,
   aJUN22OVN5_UKRAINE,
   aJUN22OVN5_NIGERIA,
+  // June 22 overnight loop 6 — 3 new articles
+  aJUN22OVN6_INDIA,
+  aJUN22OVN6_GLP1_SLEEP,
+  aJUN22OVN6_DIHEXA,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
