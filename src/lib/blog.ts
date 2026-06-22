@@ -4848,6 +4848,9 @@ import { article as aJUN22OVN33_HEAT_DEGRADATION } from './articles/peptide-heat
 import { article as aJUN22OVN34_HEXARELIN } from './articles/hexarelin-cardioprotection-cd36-ghs-cardiac-jun22-2026';
 import { article as aJUN22OVN34_EPITHALON } from './articles/epithalon-telomere-longevity-research-jun22-2026';
 import { article as aJUN22OVN34_TA1 } from './articles/thymosin-alpha-1-immune-modulation-t-cell-tlr9-jun22-2026';
+import { article as aJUN22OVN35_SELANK } from './articles/selank-anxiolytic-nootropic-research-guide-jun22-2026';
+import { article as aJUN22OVN35_SEMA } from './articles/semaglutide-glp1-research-peptide-metabolic-guide-jun22-2026';
+import { article as aJUN22OVN35_NAD_NMN } from './articles/nad-plus-vs-nmn-longevity-research-comparison-jun22-2026';
 import { article as aJUN22OVN30_ALZHEIMER } from './articles/best-peptides-alzheimers-prevention-cognitive-decline-research-2026';
 import { article as aJUN22OVN30_KLOTHO } from './articles/alpha-klotho-longevity-anti-aging-peptide-research-2026';
 import { article as aJUN22OVN30_BRAINFOG } from './articles/peptide-stack-brain-fog-cognitive-clarity-complete-protocol-2026';
@@ -11886,6 +11889,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN34_HEXARELIN,
   aJUN22OVN34_EPITHALON,
   aJUN22OVN34_TA1,
+  // June 22 overnight loop 35 — 3 articles from nexphoria-overnight-v2: Selank anxiolytic/nootropic, Semaglutide GLP-1 research guide, NAD+ vs NMN longevity comparison
+  aJUN22OVN35_SELANK,
+  aJUN22OVN35_SEMA,
+  aJUN22OVN35_NAD_NMN,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
