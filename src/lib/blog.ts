@@ -4830,6 +4830,9 @@ import { article as aJUN22OVN27_AGING } from './articles/peptide-aging-hallmarks
 import { article as aJUN22OVN21_FM } from './articles/fibromyalgia-chronic-fatigue-peptide-research-models-ovn21';
 import { article as aJUN22OVN21_WOUND } from './articles/chronic-wound-healing-peptide-research-protocols-ovn21';
 import { article as aJUN22OVN21_KINETICS } from './articles/peptide-receptor-binding-kinetics-kd-kon-koff-ec50-research-guide-ovn21';
+import { article as aJUN22OVN28_GUT_LIVER } from './articles/peptide-research-gut-liver-axis-masld-nafld-bpc157-glp1-ovn28';
+import { article as aJUN22OVN28_THYMIC } from './articles/thymic-aging-immune-senescence-thymosin-alpha1-ta1-research-ovn28';
+import { article as aJUN22OVN28_NEUROPATHY } from './articles/peripheral-neuropathy-nerve-regeneration-peptide-research-bpc157-ss31-ovn28';
 
 
 export const articles: BlogArticle[] = [
@@ -11837,6 +11840,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN27_NEUROINFLAM,
   aJUN22OVN27_BPC157_SYS,
   aJUN22OVN27_AGING,
+  // June 22 overnight loop 28 — 3 new articles: gut-liver axis MASLD/NAFLD, thymic aging/immunosenescence, peripheral neuropathy/nerve regeneration
+  aJUN22OVN28_GUT_LIVER,
+  aJUN22OVN28_THYMIC,
+  aJUN22OVN28_NEUROPATHY,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
