@@ -1,232 +1,172 @@
 import type { BlogArticle } from '../blog-types';
 
 export const article: BlogArticle = {
-  slug: 'peptide-research-glioblastoma-brain-tumor-preclinical-2026',
-  title: 'Peptide Research and Glioblastoma: Preclinical Targets and Emerging Approaches (2026)',
+  slug: "peptide-research-glioblastoma-brain-tumor-preclinical-2026",
+  title: "Peptide Research and Glioblastoma: Preclinical Findings in 2026",
   description:
-    'A research-oriented overview of peptide-based approaches to glioblastoma (GBM) and malignant brain tumor biology. Covers BBB-penetrating delivery strategies, tumor microenvironment peptides, GLP-1 neuroprotection data, and what the 2026 preclinical literature shows.',
-  category: 'Compound Profiles',
-  readMinutes: 13,
-  publishedAt: '2026-06-23',
-  ogImage: '/og-image.jpg',
+    "Glioblastoma multiforme remains one of the most treatment-resistant cancers. This overview examines emerging preclinical peptide research — including BPC-157, LL-37, and novel anticancer peptides — targeting glioblastoma cell proliferation, angiogenesis, and tumor microenvironment modulation.",
+  category: "Cancer Research",
+  readMinutes: 11,
+  publishedAt: "2026-06-23",
+  ogImage: "/og-image.jpg",
   body: [
     {
-      type: 'paragraph',
-      text: 'Glioblastoma multiforme (GBM) remains one of the most treatment-resistant malignancies in oncology. Despite surgery, radiation, and temozolomide chemotherapy — the standard-of-care established in 2005 — median survival hovers around 15 months, and five-year survival rates remain below 10%. The blood-brain barrier, tumor heterogeneity, and GBM\'s aggressive invasion of surrounding brain tissue create compounding challenges that have defeated most therapeutic candidates in clinical translation.',
+      type: "paragraph",
+      text: "Glioblastoma multiforme (GBM) is a WHO Grade IV primary brain tumor and the most aggressive malignancy of the central nervous system. Median survival with standard care — surgical resection, radiotherapy, and temozolomide — remains approximately 15 months, with fewer than 5% of patients surviving beyond five years. The blood-brain barrier (BBB), intratumoural heterogeneity, and the immunosuppressive glioblastoma microenvironment collectively render most systemic therapies ineffective.",
     },
     {
-      type: 'paragraph',
-      text: 'Peptide-based research approaches have attracted growing interest in neuro-oncology for several reasons: peptides can be engineered for BBB penetration, they can target the tumor microenvironment with high specificity, and several endogenous peptide systems are dysregulated in GBM biology in ways that may be therapeutically exploitable. This article surveys the major peptide research directions in glioblastoma as of 2026.',
+      type: "paragraph",
+      text: "In this context, peptide-based research compounds have attracted growing interest as potential complementary research tools. Their small molecular size, customizable sequence chemistry, and ability to be engineered for BBB penetration make them candidates for CNS oncology research that larger biologics and many small molecules cannot readily access.",
     },
     {
-      type: 'paragraph',
-      text: 'Note: All research described here is preclinical. No peptide discussed has received FDA approval for GBM treatment. This article is intended for researchers studying these compounds in model systems.',
+      type: "heading",
+      text: "Why Glioblastoma Is a Priority Target in Peptide Oncology Research",
     },
     {
-      type: 'heading',
-      text: 'The Core Challenge: Getting Past the Blood-Brain Barrier',
-    },
-    {
-      type: 'paragraph',
-      text: 'The blood-brain barrier (BBB) is a selective endothelial membrane that protects the central nervous system from circulating pathogens and toxins — and, unfortunately, from most therapeutic agents. Tight junctions between cerebral endothelial cells, efflux pumps (particularly P-glycoprotein), and limited transcytosis combine to exclude the vast majority of systemically administered compounds.',
-    },
-    {
-      type: 'paragraph',
-      text: 'GBM creates a paradox: the tumor itself disrupts the BBB locally (forming a "blood-tumor barrier" with different permeability characteristics), yet the invasive margins extend into regions where the BBB remains largely intact. Effective therapy must reach both zones.',
-    },
-    {
-      type: 'subheading',
-      text: 'Cell-Penetrating Peptides as Delivery Vehicles',
-    },
-    {
-      type: 'paragraph',
-      text: 'Cell-penetrating peptides (CPPs) — short cationic sequences capable of crossing cellular and endothelial membranes — have been extensively studied as carriers for chemotherapeutic payloads in GBM models. TAT (from HIV-1), penetratin (from Drosophila antennapedia homeodomain), and polyarginine sequences can facilitate CNS delivery of attached drug cargo when conjugated appropriately.',
-    },
-    {
-      type: 'paragraph',
-      text: 'The key research challenge with CPPs is selectivity. Most CPPs lack tumor specificity — they penetrate healthy CNS cells as well as tumor cells, raising off-target toxicity concerns. Active research in 2026 focuses on conditional activation strategies: CPPs that remain inactive until cleaved by proteases overexpressed in the tumor microenvironment (such as matrix metalloproteinases MMP-2 and MMP-9), limiting BBB penetration and cytotoxic payload release to tumor-adjacent tissue.',
-    },
-    {
-      type: 'subheading',
-      text: 'RGD Peptides and Integrin-Targeted Delivery',
-    },
-    {
-      type: 'paragraph',
-      text: 'Integrins — particularly αvβ3 and αvβ5 — are overexpressed on GBM vasculature and tumor cells, where they mediate invasion, proliferation, and angiogenesis. The Arg-Gly-Asp (RGD) tripeptide sequence binds αvβ3 with high affinity, making RGD-functionalized nanoparticles and peptide conjugates a widely studied targeting ligand for GBM-directed drug delivery.',
-    },
-    {
-      type: 'paragraph',
-      text: 'Cyclic RGD (cRGD) variants demonstrate superior integrin binding compared to linear forms due to constrained conformation and resistance to proteolytic degradation. Multiple preclinical studies have demonstrated that cRGD-conjugated drug carriers achieve higher tumor accumulation and reduced off-target distribution compared to unconjugated equivalents in orthotopic GBM mouse models.',
-    },
-    {
-      type: 'heading',
-      text: 'GLP-1 Receptor Agonism and Glioblastoma Biology',
-    },
-    {
-      type: 'paragraph',
-      text: 'The observation that GLP-1 receptors are expressed in neural tissue — and that GLP-1 agonists demonstrate neuroprotective effects in Parkinson\'s and Alzheimer\'s models — has prompted researchers to investigate their role in GBM biology. The findings are mechanistically complex and, in some respects, counterintuitive.',
-    },
-    {
-      type: 'subheading',
-      text: 'Anti-Proliferative Effects in GBM Cell Lines',
-    },
-    {
-      type: 'paragraph',
-      text: 'Several in vitro studies have reported anti-proliferative and pro-apoptotic effects of GLP-1 receptor agonists (liraglutide, exendin-4) in GBM cell lines. Proposed mechanisms include cAMP-mediated inhibition of mTOR signaling, upregulation of FOXO transcription factors that promote apoptosis, and modulation of Wnt/β-catenin pathway activity — all of which are relevant to GBM proliferation.',
-    },
-    {
-      type: 'paragraph',
-      text: 'A critical caveat: GBM cell lines are notoriously poor predictors of in vivo behavior due to the loss of tumor microenvironment interactions during cell culture. Findings from GBM cell lines should be interpreted cautiously and validated in organoid or in vivo models before drawing conclusions about therapeutic potential.',
-    },
-    {
-      type: 'subheading',
-      text: 'Tumor Microenvironment and Neuroinflammation',
-    },
-    {
-      type: 'paragraph',
-      text: 'GBM is characterized by an immunosuppressive tumor microenvironment (TME) populated by tumor-associated macrophages (TAMs), regulatory T cells, and myeloid-derived suppressor cells. Neuroinflammation — mediated by IL-6, TNF-α, and the NLRP3 inflammasome — contributes to tumor progression and resistance to immunotherapy.',
-    },
-    {
-      type: 'paragraph',
-      text: 'GLP-1 agonists\' well-documented anti-inflammatory effects (reducing IL-6, TNF-α, and NF-κB activity in multiple tissue types) have generated interest in their potential to modify the GBM TME. Whether systemic GLP-1 agonism achieves sufficient CNS concentrations to meaningfully alter tumor microenvironment inflammatory signaling remains an open research question.',
-    },
-    {
-      type: 'heading',
-      text: 'BPC-157 in Neuro-Oncology Models',
-    },
-    {
-      type: 'paragraph',
-      text: 'BPC-157\'s documented neuroprotective and angiogenic-modulating effects have prompted limited investigation in brain tumor contexts. The relevant question is mechanistically nuanced: does the same angiogenic upregulation that supports neural tissue repair also risk supporting tumor vasculature?',
-    },
-    {
-      type: 'paragraph',
-      text: 'The available preclinical data on BPC-157 in oncological models is sparse and should be interpreted cautiously. BPC-157\'s pro-angiogenic effects — mediated through VEGF upregulation and eNOS modulation — are the primary theoretical concern. However, tumor angiogenesis involves distinct signaling pathways (particularly PDGFR-β and Notch signaling) that may not be substantially activated by BPC-157\'s known mechanisms.',
-    },
-    {
-      type: 'paragraph',
-      text: 'This remains an unresolved area where additional preclinical work is needed before any conclusions can be drawn. Researchers working in this area should design studies that specifically assess tumor growth and vascularization endpoints alongside any neuroprotective outcomes.',
-    },
-    {
-      type: 'heading',
-      text: 'Tumor-Homing Peptides: Direct Anti-GBM Approaches',
-    },
-    {
-      type: 'subheading',
-      text: 'CEND-1 and Tumor-Penetrating Peptides',
-    },
-    {
-      type: 'paragraph',
-      text: 'CEND-1 (iRGD-based tumor-penetrating peptide) and related compounds exploit a tumor-specific transport pathway involving neuropilin-1 (NRP-1) — a co-receptor overexpressed on GBM cells and tumor vasculature. After integrin engagement via the RGD motif, proteolytic cleavage exposes a C-terminal CendR motif that binds NRP-1, triggering transcellular transport (transcytosis) of the peptide and co-administered drugs deep into tumor parenchyma.',
-    },
-    {
-      type: 'paragraph',
-      text: 'This "tumor-penetrating" mechanism is mechanistically distinct from standard diffusion-based drug delivery, and preclinical studies have demonstrated substantially improved tumor drug concentrations compared to standard RGD peptides alone. Multiple clinical trials are currently investigating CEND-1 as a co-delivery enhancer for chemotherapy in solid tumors; GBM-specific applications are in earlier research stages.',
-    },
-    {
-      type: 'subheading',
-      text: 'EGFR-Targeted Peptides',
-    },
-    {
-      type: 'paragraph',
-      text: 'EGFR (epidermal growth factor receptor) is amplified or mutated in approximately 50–60% of GBMs, with the EGFRvIII variant being the most GBM-specific mutation. Peptides designed to bind EGFRvIII with high selectivity have been studied as: (1) targeting ligands for cytotoxic conjugates, (2) immunization antigens for peptide vaccines, and (3) inhibitors of downstream EGFR signaling.',
-    },
-    {
-      type: 'paragraph',
-      text: 'The EGFRvIII peptide vaccine approach has reached clinical trials (Rindopepimut/CDX-110 was the most advanced candidate). While early trials showed promising immunogenicity and survival signals, the phase III ACT IV trial failed to demonstrate survival benefit — highlighting the challenge of tumor antigen heterogeneity and immunological escape in GBM.',
-    },
-    {
-      type: 'subheading',
-      text: 'p53-Reactivating Peptides',
-    },
-    {
-      type: 'paragraph',
-      text: 'The p53 tumor suppressor pathway is disrupted in the majority of GBMs — through direct TP53 mutation, MDM2 amplification (which promotes p53 degradation), or CDKN2A deletion (which removes an upstream p53 stabilizer). Peptide-based approaches to reactivate p53 signaling in GBM include stapled peptides that mimic p53\'s MDM2-binding domain and block MDM2-mediated degradation, cell-penetrating p53 activation sequences, and peptide mimetics of PUMA and other p53 target genes that directly engage the apoptotic machinery.',
-    },
-    {
-      type: 'paragraph',
-      text: 'Stapled peptide technology — which uses hydrocarbon crosslinks to lock peptides in alpha-helical conformations, improving both cell penetration and protease resistance — has been particularly productive in this space. ALRN-6924, a stapled peptide MDM2/MDMX dual inhibitor, has advanced into clinical trials for TP53-wild-type tumors and represents the most clinically advanced example of this approach in oncology.',
-    },
-    {
-      type: 'heading',
-      text: 'NAD+ Pathway Peptides and Glioblastoma Metabolism',
-    },
-    {
-      type: 'paragraph',
-      text: 'GBM exhibits Warburg metabolism — preferential use of aerobic glycolysis — alongside significant mitochondrial dysfunction. NAD+ depletion is a feature of GBM that contributes to metabolic reprogramming, DNA repair deficits, and resistance to temozolomide.',
-    },
-    {
-      type: 'paragraph',
-      text: 'NAMPT (nicotinamide phosphoribosyltransferase) — the rate-limiting enzyme in the salvage pathway for NAD+ biosynthesis — is paradoxically overexpressed in GBM compared to normal brain tissue, where it supports the high NAD+ demand of rapidly proliferating tumor cells. NAMPT inhibitor peptides and small molecules have been studied as metabolic vulnerabilities in GBM; however, systemic NAMPT inhibition causes dose-limiting thrombocytopenia, making tumor-selective delivery critical.',
-    },
-    {
-      type: 'paragraph',
-      text: 'The mitochondria-targeted peptide SS-31 (elamipretide) has been studied in models of neurological injury for its ability to preserve mitochondrial cristae structure and electron transport chain function. Whether SS-31 has differential effects on GBM mitochondria versus normal neurons — and whether such differential effects could be therapeutically exploited — is an open research question.',
-    },
-    {
-      type: 'heading',
-      text: 'Substance P and Neuropeptide Y in GBM Biology',
-    },
-    {
-      type: 'paragraph',
-      text: 'Several neuropeptide receptor systems are dysregulated in GBM and have been studied as both biomarkers and potential therapeutic targets.',
-    },
-    {
-      type: 'subheading',
-      text: 'Substance P and NK1R',
-    },
-    {
-      type: 'paragraph',
-      text: 'Substance P — an 11-amino acid neuropeptide — signals through the neurokinin-1 receptor (NK1R), which is overexpressed in GBM. Substance P/NK1R signaling promotes GBM cell proliferation, migration, and angiogenesis through multiple downstream pathways including MAPK/ERK activation and VEGF upregulation. NK1R antagonists (primarily developed as antiemetics, e.g., aprepitant/Emend) have demonstrated anti-proliferative effects in GBM cell lines and xenograft models, generating interest in repurposing approaches.',
-    },
-    {
-      type: 'paragraph',
-      text: 'Substance P itself has also been studied as a targeting vector for GBM drug delivery due to NK1R overexpression — conjugating cytotoxic payloads to Substance P analogs to direct drug accumulation toward NK1R-expressing tumor cells.',
-    },
-    {
-      type: 'subheading',
-      text: 'Neuropeptide Y (NPY) and GBM',
-    },
-    {
-      type: 'paragraph',
-      text: 'NPY receptors (Y1, Y2, Y5) are expressed in GBM, where NPY signaling has been implicated in tumor cell survival signaling and resistance to apoptosis. NPY receptor antagonist peptides have been explored as anti-survival approaches in GBM models; the Y1 receptor in particular has attracted interest as a therapeutic target due to its role in PI3K/Akt survival signaling downstream of NPY in glioma cells.',
-    },
-    {
-      type: 'heading',
-      text: 'Research Design Considerations for GBM Peptide Studies',
-    },
-    {
-      type: 'paragraph',
-      text: 'Several methodological considerations are critical for researchers entering this field:',
-    },
-    {
-      type: 'list',
+      type: "list",
       items: [
-        'Model selection: Standard GBM cell lines (U87, U251, LN229) are useful for mechanistic screening but poorly recapitulate in vivo tumor biology. Patient-derived glioblastoma stem cells (GSCs), organoid models, and orthotopic intracranial xenografts provide higher translational validity.',
-        'BBB penetration assays: In vitro BBB models (transwell systems with co-cultured endothelial/astrocyte/pericyte layers) should precede in vivo CNS delivery studies. Brain microdialysis or CSF sampling can confirm CNS compound levels in vivo.',
-        'Tumor heterogeneity: GBM is molecularly heterogeneous. Studies should characterize tumor subtype (IDH wild-type vs. IDH-mutant, MGMT methylation status, EGFRvIII presence) to ensure findings are interpreted in appropriate molecular context.',
-        'Imaging endpoints: Bioluminescent xenografts or MRI volumetry provide quantitative tumor growth data. Histological endpoints (Ki67 proliferation index, cleaved caspase-3 for apoptosis, CD31 for vascularity) complement imaging.',
-        'Temozolomide combination: Standard of care context requires testing peptide approaches in combination with TMZ, not as standalone therapies. Synergy, additivity, or antagonism with TMZ should be explicitly characterized.',
+        "Unmet clinical need: No breakthrough survival improvements since temozolomide approval in 2005",
+        "BBB penetration challenge: Most drug classes fail to achieve therapeutic CNS concentrations",
+        "Immunosuppressive TME: GBM actively suppresses T-cell infiltration and creates a tolerogenic environment",
+        "VEGF-driven angiogenesis: GBM is one of the most vascularized tumors known; anti-angiogenic strategies have partial clinical validation",
+        "Peptide advantages: Ease of BBB modification (cyclization, d-amino acid substitution), receptor targeting precision, combinability with existing SOC",
       ],
     },
     {
-      type: 'heading',
-      text: 'The 2026 Landscape: Where Peptide Research Fits',
+      type: "heading",
+      text: "Antimicrobial Peptides and Anti-Glioblastoma Activity: LL-37",
     },
     {
-      type: 'paragraph',
-      text: 'The most compelling peptide-based directions in GBM research as of 2026 are: (1) tumor-penetrating delivery vehicles (particularly iRGD/CEND-1 family) that address the fundamental drug distribution problem, (2) stapled peptides reactivating p53 in wild-type tumors, and (3) neuropeptide receptor-targeted approaches that exploit consistent overexpression patterns (NK1R, Y1R, αvβ3 integrin) across GBM subtypes.',
+      type: "paragraph",
+      text: "LL-37, the human cathelicidin antimicrobial peptide, has been studied for antitumor properties in multiple cancer cell lines. Its mechanism in tumor biology differs from its antimicrobial role: rather than membrane disruption (which would be toxic to all cells), LL-37 appears to modulate receptor-mediated signaling in cancer cells.",
     },
     {
-      type: 'paragraph',
-      text: 'Repurposing approaches — using GLP-1 agonists, NK1R antagonists (aprepitant), or other approved peptide-targeting drugs in GBM — represent a lower-cost research path worth systematic investigation, particularly in combination with standard temozolomide/radiation.',
+      type: "subheading",
+      text: "LL-37 and Glioblastoma Cell Lines",
     },
     {
-      type: 'paragraph',
-      text: 'For researchers at earlier stages of inquiry, the key question is not "can peptides affect GBM cells in a dish" — they frequently can — but "can sufficient concentrations reach the tumor in vivo, with acceptable CNS toxicity, and can this effect be demonstrated in models that reflect the clinical reality of GBM?" The gap between in vitro promise and clinical translation remains the defining challenge in this research area.',
+      type: "paragraph",
+      text: "In vitro studies using U87-MG and U251 human GBM cell lines have shown that LL-37 at concentrations of 10–50 µM inhibits glioblastoma cell proliferation, migration, and invasion. Proposed mechanisms include modulation of EGFR transactivation, inhibition of MAPK/ERK pathway signaling, and induction of apoptosis via caspase-3 activation. Notably, LL-37's effects on normal glial cells appear to be concentration-dependent, with a therapeutic window observed in several in vitro models.",
     },
     {
-      type: 'disclaimer',
-      text: 'All compounds and research directions described in this article are for research purposes only. Nothing in this article constitutes medical advice or clinical recommendation. Researchers should operate in compliance with applicable institutional and regulatory requirements.',
+      type: "subheading",
+      text: "Paradoxical Immunomodulation in the TME",
+    },
+    {
+      type: "paragraph",
+      text: "The tumor microenvironment adds complexity to LL-37's research potential. GBM's immunosuppressive niche — characterized by M2-polarized tumor-associated macrophages, regulatory T cells, and TGF-β/IL-10 secretion — may be partially modulated by LL-37's ability to repolarize macrophages toward M1 phenotypes and stimulate dendritic cell maturation. Whether these effects are sufficient to overcome GBM's immunosuppressive architecture remains an active area of preclinical study.",
+    },
+    {
+      type: "heading",
+      text: "BPC-157 in CNS Tumor Research: Dual Considerations",
+    },
+    {
+      type: "paragraph",
+      text: "BPC-157's status in glioblastoma research is scientifically nuanced and requires careful interpretation. The compound's pro-angiogenic and pro-survival signaling properties — beneficial in wound healing contexts — raise valid questions when considered in an oncological setting.",
+    },
+    {
+      type: "subheading",
+      text: "VEGF Pathway and Tumor Angiogenesis",
+    },
+    {
+      type: "paragraph",
+      text: "BPC-157 upregulates VEGF and eNOS, promoting new blood vessel formation — a mechanism central to its tissue repair activity. In tumor biology, VEGF-driven angiogenesis (tumor angiogenesis) is a hallmark of cancer that enables tumor growth beyond diffusion limits. This theoretical concern has prompted research questions about whether BPC-157 administration could affect tumor vasculature in existing GBM models.",
+    },
+    {
+      type: "paragraph",
+      text: "Current preclinical data on BPC-157 in GBM-bearing animal models is limited. The theoretical pro-angiogenic concern must be weighed against data showing BPC-157 modulates rather than dysregulates vascular growth — and that physiological VEGF responses differ qualitatively from tumor VEGF overexpression. This remains an unresolved research question warranting dedicated study.",
+    },
+    {
+      type: "subheading",
+      text: "Cytoprotective Signaling in Normal Neural Tissue",
+    },
+    {
+      type: "paragraph",
+      text: "A separate line of inquiry examines whether BPC-157's neuroprotective properties could reduce radiation-induced CNS toxicity in GBM treatment — a significant quality-of-life issue for patients undergoing whole-brain radiotherapy. BPC-157's documented effects on oxidative stress reduction and neuronal survival signaling (Akt/mTOR pathway) make this a mechanistically reasonable hypothesis for preclinical investigation.",
+    },
+    {
+      type: "heading",
+      text: "Targeted Peptide Delivery: BBB Penetration Strategies",
+    },
+    {
+      type: "paragraph",
+      text: "A major research challenge for any peptide-based GBM strategy is achieving sufficient CNS concentrations. Several engineering approaches are under investigation:",
+    },
+    {
+      type: "table",
+      headers: ["Strategy", "Mechanism", "Research Status"],
+      rows: [
+        ["Cyclization", "Constrains peptide conformation; increases proteolytic resistance and passive BBB diffusion", "Preclinical; multiple candidates in development"],
+        ["d-Amino acid substitution", "Reduces protease cleavage; extends plasma half-life", "Preclinical; improves CNS exposure in rodent models"],
+        ["Cell-penetrating peptide conjugation", "TAT, penetratin sequences shuttle cargo across BBB via endocytosis", "Preclinical; cargo size limits efficacy"],
+        ["Nanoparticle encapsulation", "Lipid or PLGA nanoparticles protect peptide and enable receptor-targeted CNS delivery", "Preclinical; scale-up challenges remain"],
+        ["Intranasal delivery", "Bypasses BBB via olfactory and trigeminal nerve pathways", "Preclinical; limited to smaller peptides and volatile compounds"],
+      ],
+    },
+    {
+      type: "heading",
+      text: "Novel Anticancer Peptide Classes Under Investigation",
+    },
+    {
+      type: "subheading",
+      text: "Tumor-Homing Peptides",
+    },
+    {
+      type: "paragraph",
+      text: "Peptides that selectively bind to overexpressed receptors on GBM cells — including integrins (αvβ3, αvβ5), EGFR variants (EGFRvIII), and neuropilin-1 — are being developed as targeting vehicles for both imaging and therapeutic payload delivery. RGD-containing peptides and iRGD (internalizing RGD) have shown tumor accumulation in intracranial GBM models.",
+    },
+    {
+      type: "subheading",
+      text: "Proapoptotic Peptides",
+    },
+    {
+      type: "paragraph",
+      text: "KLAK peptides, designed to disrupt mitochondrial membranes selectively in cancer cells (where mitochondrial potential differs from normal cells), have shown activity in multiple cancer models including GBM cell lines in vitro. Their delivery challenge in vivo remains substantial.",
+    },
+    {
+      type: "subheading",
+      text: "Checkpoint-Modulating Peptides",
+    },
+    {
+      type: "paragraph",
+      text: "Small peptide mimetics of PD-1/PD-L1 interaction sites are being studied as alternatives to monoclonal antibody checkpoint inhibitors. For GBM, where checkpoint blockade monotherapy has shown limited efficacy, combination approaches pairing checkpoint-modulating peptides with TME-remodeling compounds represent an area of active investigation.",
+    },
+    {
+      type: "heading",
+      text: "Preclinical Model Considerations for GBM Peptide Research",
+    },
+    {
+      type: "paragraph",
+      text: "Glioblastoma research requires careful model selection, as GBM's biological complexity is poorly recapitulated in simple cell culture systems.",
+    },
+    {
+      type: "list",
+      items: [
+        "2D cell line models (U87-MG, U251, T98G): Useful for mechanistic screening; do not recapitulate tumor microenvironment or BBB interaction",
+        "3D tumor spheroid models: Better recapitulate hypoxic core, cell-to-cell signaling, and drug penetration barriers",
+        "Orthotopic intracranial implantation: Gold standard for in vivo GBM research; allows tumor microenvironment, BBB, and intracranial pressure modeling",
+        "Patient-derived xenografts (PDX): Highest translational relevance; tumor heterogeneity and treatment history preserved",
+        "Syngeneic mouse models (GL261, CT-2A): Immune-competent host for immunotherapy research; important for TME studies",
+      ],
+    },
+    {
+      type: "heading",
+      text: "2026 Research Directions",
+    },
+    {
+      type: "paragraph",
+      text: "The most promising near-term research directions in GBM peptide biology include: (1) BBB-penetrant LL-37 analogs with reduced non-specific cytotoxicity; (2) peptide-drug conjugates using tumor-homing sequences to deliver TMZ or checkpoint inhibitor payloads; (3) peptide-based TME reprogramming to convert immunosuppressive GBM niches toward immunostimulatory phenotypes; and (4) neuroprotective peptide co-administration in radiotherapy models to reduce treatment-related CNS toxicity.",
+    },
+    {
+      type: "paragraph",
+      text: "The intersection of peptide chemistry and glioblastoma biology represents a challenging but potentially high-reward research frontier. The same properties that make peptides attractive — tunability, specificity, and potential for CNS engineering — align directly with the unmet needs of GBM treatment research.",
+    },
+    {
+      type: "divider",
+    },
+    {
+      type: "disclaimer",
+      text: "All information on this page is for research and educational purposes only. Nexphoria's peptides are sold exclusively for in vitro and animal research. They are not intended for human consumption, diagnosis, treatment, or prevention of any medical condition. Always follow institutional review board (IRB) and IACUC guidelines when conducting research.",
     },
   ],
 };
