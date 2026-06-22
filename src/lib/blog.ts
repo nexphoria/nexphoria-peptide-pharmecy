@@ -4824,6 +4824,9 @@ import { article as aJUN22OVN25_GLOSSARY } from './articles/research-peptide-glo
 import { article as aJUN22OVN26_SS31 } from './articles/ss-31-elamipretide-mitochondria-research-ovn26';
 import { article as aJUN22OVN26_PT141 } from './articles/pt-141-bremelanotide-melanocortin-research-ovn26';
 import { article as aJUN22OVN26_HALFLIFE } from './articles/peptide-half-life-quick-reference-guide-ovn26';
+import { article as aJUN22OVN27_NEUROINFLAM } from './articles/neuroinflammation-peptide-research-microglia-ovn27';
+import { article as aJUN22OVN27_BPC157_SYS } from './articles/bpc-157-systemic-effects-beyond-gut-organ-protection-ovn27';
+import { article as aJUN22OVN27_AGING } from './articles/peptide-aging-hallmarks-telomeres-senescence-proteostasis-ovn27';
 import { article as aJUN22OVN21_FM } from './articles/fibromyalgia-chronic-fatigue-peptide-research-models-ovn21';
 import { article as aJUN22OVN21_WOUND } from './articles/chronic-wound-healing-peptide-research-protocols-ovn21';
 import { article as aJUN22OVN21_KINETICS } from './articles/peptide-receptor-binding-kinetics-kd-kon-koff-ec50-research-guide-ovn21';
@@ -11830,6 +11833,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN26_SS31,
   aJUN22OVN26_PT141,
   aJUN22OVN26_HALFLIFE,
+  // June 22 overnight loop 27 — 3 new articles: neuroinflammation/microglia, BPC-157 systemic effects, peptides and aging hallmarks
+  aJUN22OVN27_NEUROINFLAM,
+  aJUN22OVN27_BPC157_SYS,
+  aJUN22OVN27_AGING,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
