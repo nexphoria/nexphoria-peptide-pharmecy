@@ -4803,6 +4803,9 @@ import { article as aJUN22OVN17_NAD_NMN } from './articles/nad-plus-vs-nmn-longe
 import { article as aJUN22OVN18_MOTS_C } from './articles/mots-c-mitochondria-metabolic-peptide-research-ovn18';
 import { article as aJUN22OVN18_DIHEXA } from './articles/dihexa-cognitive-peptide-hgf-met-signaling-research-ovn18';
 import { article as aJUN22OVN18_DOSING } from './articles/weight-based-peptide-dosing-research-protocol-design-ovn18';
+import { article as aJUN22OVN19_SEMA } from './articles/semaglutide-glp1-receptor-agonist-research-overview-ovn19';
+import { article as aJUN22OVN19_COLD_CHAIN } from './articles/cold-chain-peptide-shipping-temperature-degradation-ovn19';
+import { article as aJUN22OVN19_RECON } from './articles/peptide-reconstitution-protocol-step-by-step-ovn19';
 
 
 export const articles: BlogArticle[] = [
@@ -11774,6 +11777,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN18_MOTS_C,
   aJUN22OVN18_DIHEXA,
   aJUN22OVN18_DOSING,
+  // June 22 overnight loop 19 — 3 new articles: Semaglutide GLP-1 overview, cold-chain shipping, reconstitution protocol
+  aJUN22OVN19_SEMA,
+  aJUN22OVN19_COLD_CHAIN,
+  aJUN22OVN19_RECON,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
