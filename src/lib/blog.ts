@@ -4821,6 +4821,9 @@ import { article as aJUN22OVN24_PAIN } from './articles/peptide-pain-research-su
 import { article as aJUN22OVN25_SEMA } from './articles/semaglutide-research-peptide-glp1-overview-ovn25';
 import { article as aJUN22OVN25_HPLC } from './articles/peptide-purity-hplc-testing-coa-guide-ovn25';
 import { article as aJUN22OVN25_GLOSSARY } from './articles/research-peptide-glossary-50-terms-ovn25';
+import { article as aJUN22OVN26_SS31 } from './articles/ss-31-elamipretide-mitochondria-research-ovn26';
+import { article as aJUN22OVN26_PT141 } from './articles/pt-141-bremelanotide-melanocortin-research-ovn26';
+import { article as aJUN22OVN26_HALFLIFE } from './articles/peptide-half-life-quick-reference-guide-ovn26';
 import { article as aJUN22OVN21_FM } from './articles/fibromyalgia-chronic-fatigue-peptide-research-models-ovn21';
 import { article as aJUN22OVN21_WOUND } from './articles/chronic-wound-healing-peptide-research-protocols-ovn21';
 import { article as aJUN22OVN21_KINETICS } from './articles/peptide-receptor-binding-kinetics-kd-kon-koff-ec50-research-guide-ovn21';
@@ -11823,6 +11826,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN25_SEMA,
   aJUN22OVN25_HPLC,
   aJUN22OVN25_GLOSSARY,
+  // June 22 overnight loop 26 — 3 new articles: SS-31 mitochondrial peptide, PT-141 melanocortin, peptide half-life reference
+  aJUN22OVN26_SS31,
+  aJUN22OVN26_PT141,
+  aJUN22OVN26_HALFLIFE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
