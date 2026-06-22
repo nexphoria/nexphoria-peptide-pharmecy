@@ -4747,6 +4747,9 @@ import { article as aJUN22OVN2_WOUND } from './articles/peptide-research-skin-wo
 import { article as aJUN22EVE_NEWS } from './articles/peptide-research-news-june-22-2026-evening';
 import { article as aJUN22EVE_ALZHEIMER } from './articles/alzheimer-peptide-research-amyloid-tau-2026';
 import { article as aJUN22EVE_COMPOUNDING } from './articles/compounding-pharmacy-vs-research-peptides-2026';
+import { article as aJUN23OVN_GLIOBLASTOMA } from './articles/peptide-research-glioblastoma-brain-tumor-preclinical-2026';
+import { article as aJUN23OVN_CONOTOXIN } from './articles/conotoxin-ziconotide-peptide-pain-research-2026';
+import { article as aJUN23OVN_NEWS } from './articles/peptide-research-news-june-23-2026-morning';
 
 
 export const articles: BlogArticle[] = [
@@ -11647,6 +11650,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22EVE_NEWS,
   aJUN22EVE_ALZHEIMER,
   aJUN22EVE_COMPOUNDING,
+  // June 23 overnight loop — 3 new articles
+  aJUN23OVN_GLIOBLASTOMA,
+  aJUN23OVN_CONOTOXIN,
+  aJUN23OVN_NEWS,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
