@@ -4833,6 +4833,9 @@ import { article as aJUN22OVN21_KINETICS } from './articles/peptide-receptor-bin
 import { article as aJUN22OVN28_GUT_LIVER } from './articles/peptide-research-gut-liver-axis-masld-nafld-bpc157-glp1-ovn28';
 import { article as aJUN22OVN28_THYMIC } from './articles/thymic-aging-immune-senescence-thymosin-alpha1-ta1-research-ovn28';
 import { article as aJUN22OVN28_NEUROPATHY } from './articles/peripheral-neuropathy-nerve-regeneration-peptide-research-bpc157-ss31-ovn28';
+import { article as aJUN22OVN29_PSCI_ALT } from './articles/peptide-sciences-alternative-supplier-guide-ovn29';
+import { article as aJUN22OVN29_USA_GUIDE } from './articles/how-to-source-research-peptides-usa-buyers-guide-ovn29';
+import { article as aJUN22OVN29_QUALITY } from './articles/nexphoria-quality-standards-hplc-lal-coa-transparency-ovn29';
 
 
 export const articles: BlogArticle[] = [
@@ -11844,6 +11847,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN28_GUT_LIVER,
   aJUN22OVN28_THYMIC,
   aJUN22OVN28_NEUROPATHY,
+  // June 22 overnight loop 29 — 3 high-value commercial articles: Peptide Sciences alternative, USA sourcing guide, Nexphoria quality standards
+  aJUN22OVN29_PSCI_ALT,
+  aJUN22OVN29_USA_GUIDE,
+  aJUN22OVN29_QUALITY,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
