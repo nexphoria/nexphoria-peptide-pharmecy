@@ -4806,6 +4806,9 @@ import { article as aJUN22OVN18_DOSING } from './articles/weight-based-peptide-d
 import { article as aJUN22OVN19_SEMA } from './articles/semaglutide-glp1-receptor-agonist-research-overview-ovn19';
 import { article as aJUN22OVN19_COLD_CHAIN } from './articles/cold-chain-peptide-shipping-temperature-degradation-ovn19';
 import { article as aJUN22OVN19_RECON } from './articles/peptide-reconstitution-protocol-step-by-step-ovn19';
+import { article as aJUN22OVN20_COA } from './articles/how-to-spot-fake-peptide-coa-red-flags-ovn20';
+import { article as aJUN22OVN20_PH } from './articles/peptide-ph-buffer-reconstitution-chemistry-ovn20';
+import { article as aJUN22OVN20_LIGHT } from './articles/peptide-light-sensitivity-uv-degradation-protection-ovn20';
 
 
 export const articles: BlogArticle[] = [
@@ -11781,6 +11784,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN19_SEMA,
   aJUN22OVN19_COLD_CHAIN,
   aJUN22OVN19_RECON,
+  // June 22 overnight loop 20 — 3 new original articles: fake COA detection, pH/buffer chemistry, UV/light degradation
+  aJUN22OVN20_COA,
+  aJUN22OVN20_PH,
+  aJUN22OVN20_LIGHT,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
