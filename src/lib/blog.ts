@@ -4735,6 +4735,9 @@ import { article as aJUN22OVN_INSULIN_ADIPOSE } from './articles/peptide-researc
 import { article as aJUN21_MUSCLE_RECOVERY } from './articles/best-peptides-muscle-recovery-research';
 import { article as aJUN21_HEXARELIN_CARDIAC } from './articles/hexarelin-cardiac-gh-research';
 import { article as aJUN21_SELANK_ANXIETY } from './articles/selank-anxiety-research-overview';
+import { article as aJUN22OVN_BPC157_ORAL_VS_INJECT } from './articles/bpc-157-oral-vs-injectable-absorption-research-2026';
+import { article as aJUN22OVN_PEPTIDE_CYCLING } from './articles/peptide-cycling-periodization-research-protocol-guide';
+import { article as aJUN22OVN_SEMA_PLATEAU } from './articles/semaglutide-weight-loss-plateau-research-strategies-2026';
 import { article as aJUN21OVN_NEW_LONGEVITY_STACK } from './articles/longevity-peptide-stack-2026-research-guide';
 import { article as aJUN21OVN_NEW_NAD_VS_NMN } from './articles/nad-plus-vs-nmn-longevity-researchers-guide';
 import { article as aJUN21OVN_NEW_EPITHALON_TELOMERE } from './articles/epithalon-telomere-research-what-studies-say';
@@ -11576,6 +11579,9 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN21OVN_NEW_LONGEVITY_STACK,
   aJUN21OVN_NEW_NAD_VS_NMN,
   aJUN21OVN_NEW_EPITHALON_TELOMERE,
+  aJUN22OVN_BPC157_ORAL_VS_INJECT,
+  aJUN22OVN_PEPTIDE_CYCLING,
+  aJUN22OVN_SEMA_PLATEAU,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
