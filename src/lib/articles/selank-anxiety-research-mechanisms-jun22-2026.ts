@@ -2,9 +2,9 @@ import type { BlogArticle } from '../blog-types';
 
 export const article: BlogArticle = {
   slug: "selank-anxiety-research-mechanisms-jun22-2026",
-  title: "Selank: The Heptapeptide Studied for Anxiety and Nootropic Effects",
+  title: "Selank: The Russian Peptide Studied for Anxiety",
   description:
-    "An evidence-based overview of Selank, the heptapeptide developed in Russia and studied for anxiolytic and nootropic effects. Research findings on GABAergic modulation, BDNF upregulation, enkephalin degradation inhibition, and clinical observations.",
+    "An evidence-based overview of Selank, the heptapeptide developed in Russia and studied for anxiolytic and nootropic effects. Research findings, mechanism of action, and what the data shows.",
   category: "Compound Profiles",
   readMinutes: 10,
   publishedAt: "2026-06-22",
@@ -20,14 +20,14 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Anxiety disorders represent a significant area of unmet pharmacological research need. Current first-line pharmacological approaches — primarily SSRIs, SNRIs, and benzodiazepines — are associated with well-documented limitations: benzodiazepines carry dependency risk, tolerance development, and cognitive impairment concerns, while SSRIs/SNRIs have delayed onset (2–6 weeks), incomplete responder rates, and discontinuation syndrome. The search for compounds with anxiolytic activity, rapid onset, and reduced dependency or cognitive impairment profiles has driven research into several peptide-based approaches. Selank is among the more extensively studied.",
+      text: "Anxiety disorders represent a significant area of unmet pharmacological research need. Current first-line pharmacological approaches — primarily SSRIs, SNRIs, and benzodiazepines — are associated with well-documented limitations: benzodiazepines carry dependency risk, tolerance development, and cognitive impairment concerns; SSRIs/SNRIs have delayed onset (2–6 weeks), incomplete responder rates, and discontinuation syndrome. The search for compounds with anxiolytic activity, rapid onset, and reduced dependency profiles has driven research into peptide and neuropeptide-based approaches.",
     },
     {
       type: "heading",
       text: "Mechanism of Action",
     },
     {
-      type: "heading",
+      type: "subheading",
       text: "GABAergic Modulation",
     },
     {
@@ -35,7 +35,7 @@ export const article: BlogArticle = {
       text: "Selank has been shown to interact with the GABA-A receptor system, the primary inhibitory neurotransmitter pathway targeted by benzodiazepines. Unlike classic benzodiazepines, Selank's interaction with this system appears more modulatory than directly agonistic, which may account for its reported lack of tolerance development in animal models.",
     },
     {
-      type: "heading",
+      type: "subheading",
       text: "BDNF Upregulation",
     },
     {
@@ -43,15 +43,15 @@ export const article: BlogArticle = {
       text: "Research has documented that Selank elevates Brain-Derived Neurotrophic Factor (BDNF) expression. BDNF plays a key role in synaptic plasticity, neurogenesis, and stress resilience at the cellular level. The BDNF-upregulating property is of particular interest because reduced BDNF levels are consistently associated with anxiety and depressive disorders in both human and animal research.",
     },
     {
-      type: "heading",
+      type: "subheading",
       text: "Enkephalin Degradation Inhibition",
     },
     {
       type: "paragraph",
-      text: "Selank inhibits the breakdown of enkephalins — endogenous opioid peptides involved in pain modulation and anxiety regulation — by inhibiting the enzymes responsible for their degradation. This prolongs enkephalin activity without directly activating opioid receptors, a mechanistic distinction with important implications for dependency potential.",
+      text: "Selank inhibits the breakdown of enkephalins — endogenous opioid peptides involved in pain modulation and anxiety regulation — by inhibiting the enzymes responsible for their degradation. This prolongs enkephalin activity without directly activating opioid receptors.",
     },
     {
-      type: "heading",
+      type: "subheading",
       text: "Serotonin and Dopamine System Interaction",
     },
     {
@@ -63,16 +63,20 @@ export const article: BlogArticle = {
       text: "Published Research Findings",
     },
     {
-      type: "heading",
+      type: "subheading",
       text: "Anxiolytic Effects",
     },
     {
       type: "paragraph",
-      text: "Multiple studies in rodent models have documented dose-dependent anxiolytic effects using validated anxiety paradigms (elevated plus maze, open field test, Vogel conflict test). Semenova et al. documented that Selank reduced anxiety-related behavior in animals exposed to chronic mild stress, with effects comparable to diazepam in some measures but without the sedation observed with benzodiazepine treatment. Uchakina et al. (2008) reported in a human clinical context that Selank reduced anxiety symptoms in patients with generalized anxiety disorder with a faster onset than conventional pharmacological treatment, and without the sedating side effects typical of benzodiazepines.",
+      text: "Multiple studies in rodent models have documented dose-dependent anxiolytic effects using validated anxiety paradigms (elevated plus maze, open field test, Vogel conflict test). Semenova et al. documented that Selank reduced anxiety-related behavior in animals exposed to chronic mild stress, with effects comparable to diazepam in some measures but without the sedation observed with benzodiazepine treatment. Uchakina et al. (2008) reported in a human clinical context that Selank reduced anxiety symptoms in patients with generalized anxiety disorder with faster onset than conventional pharmacological treatment, and without typical benzodiazepine sedating side effects.",
     },
     {
-      type: "heading",
+      type: "subheading",
       text: "Nootropic and Cognitive Effects",
+    },
+    {
+      type: "paragraph",
+      text: "Beyond anxiolytic activity, Selank has been studied for cognitive enhancement properties:",
     },
     {
       type: "list",
@@ -83,7 +87,7 @@ export const article: BlogArticle = {
       ],
     },
     {
-      type: "heading",
+      type: "subheading",
       text: "Immune System Interaction",
     },
     {
@@ -92,25 +96,44 @@ export const article: BlogArticle = {
     },
     {
       type: "heading",
-      text: "Administration Routes in Research",
+      text: "Comparison to Related Compounds",
     },
     {
       type: "paragraph",
-      text: "Selank is typically administered via intranasal or subcutaneous routes in research settings. The intranasal route is notable for CNS delivery — bypassing the blood-brain barrier — and is the approved route in Russian pharmaceutical preparations. Subcutaneous administration has been used in preclinical rodent studies. The peptide degrades rapidly in systemic circulation, which is why intranasal delivery is often preferred for CNS-targeted research.",
+      text: "Selank operates via GABAergic modulation, BDNF upregulation, and enkephalin stabilization — and is approved in Russia for anxiety treatment. Its related compound Semax operates as an ACTH analog with BDNF upregulation, also approved in Russia. Both share a similar evidence base (primarily Russian literature) and require HPLC ≥98% purity with mass spec identity for research use. In contrast, classic anxiolytics like diazepam (GABA-A direct agonist) and buspirone (5-HT1A partial agonist) have extensive global RCT data.",
     },
     {
       type: "heading",
-      text: "Research Protocol Notes",
+      text: "Research Considerations",
+    },
+    {
+      type: "subheading",
+      text: "Delivery Route",
+    },
+    {
+      type: "paragraph",
+      text: "Selank has been studied primarily via intranasal administration in clinical applications. Animal studies have also used subcutaneous and intraperitoneal routes. Intranasal delivery allows direct entry to CNS via the olfactory pathway, bypassing first-pass metabolism.",
+    },
+    {
+      type: "subheading",
+      text: "Stability",
     },
     {
       type: "list",
       items: [
-        "Purity: HPLC ≥98% required; mass spectrometry confirmation of molecular identity",
-        "Storage: Lyophilized form at -20°C; reconstituted solution at 2–8°C for up to 4 weeks",
-        "Intranasal preparation: Use sterile water or saline; preserve with benzalkonium chloride if needed",
-        "Tolerance profile: Animal models do not show classic benzodiazepine-type tolerance with repeated dosing",
-        "Selectivity: Unlike benzodiazepines, does not cause sedation at typical research doses",
+        "Selank is a heptapeptide with moderate stability in solution",
+        "Lyophilized form is preferred for storage",
+        "Reconstituted solutions: store at 2–8°C, use within 2–4 weeks",
+        "Sensitive to enzymatic degradation at elevated temperatures",
       ],
+    },
+    {
+      type: "heading",
+      text: "Limitations of the Evidence Base",
+    },
+    {
+      type: "paragraph",
+      text: "The primary limitation of Selank research is geographic concentration. The majority of published studies originate from Russian institutions, with limited independent replication in Western academic settings. Many key studies are published in Russian-language journals with limited English availability. This does not invalidate the research, but it does mean the evidence has not been subjected to the degree of independent scrutiny standard in globally-replicated pharmacological research.",
     },
     {
       type: "heading",
@@ -118,11 +141,7 @@ export const article: BlogArticle = {
     },
     {
       type: "paragraph",
-      text: "Selank represents a distinct class of research peptide with an unusually well-characterized mechanism profile for an anxiolytic compound. The combination of GABAergic modulation, BDNF upregulation, and enkephalin pathway activity differentiates it mechanistically from existing pharmacological classes. Its approved status in Russia and the body of published clinical data — though largely Russian-language — provide a foundation for further investigation. Researchers should note that Selank's rapid CNS-targeted delivery via intranasal route is central to its pharmacological profile.",
-    },
-    {
-      type: "paragraph",
-      text: "For research purposes only. Not intended for human use.",
+      text: "Selank is one of the more scientifically grounded Russian-origin research peptides, with a plausible mechanistic basis for anxiolytic and nootropic effects and a published evidence base spanning cell culture, animal models, and clinical observation. The GABAergic, BDNF-upregulating, and enkephalin-stabilizing mechanisms together offer a multi-pathway rationale for its observed effects. Independent replication outside Russian institutions remains the primary evidence gap. For research purposes only. Not intended for human use.",
     },
   ],
 };

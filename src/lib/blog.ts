@@ -4812,6 +4812,9 @@ import { article as aJUN22OVN20_LIGHT } from './articles/peptide-light-sensitivi
 import { article as aJUN22OVN22_GLP1_ADDICTION } from './articles/glp1-addiction-reward-dopamine-research-ovn22';
 import { article as aJUN22OVN22_TA1_CHECKPOINT } from './articles/thymosin-alpha-1-immunotherapy-checkpoint-research-ovn22';
 import { article as aJUN22OVN22_SLEEP } from './articles/peptide-sleep-research-dsip-vip-orexin-crf-ovn22';
+import { article as aJUN22OVN23_HEXARELIN } from './articles/hexarelin-cardioprotection-research-guide-ovn23';
+import { article as aJUN22OVN23_SELANK } from './articles/selank-anxiety-research-mechanisms-jun22-2026';
+import { article as aJUN22OVN23_LONGEVITY } from './articles/longevity-peptide-stack-2026-research-overview-jun22';
 import { article as aJUN22OVN21_FM } from './articles/fibromyalgia-chronic-fatigue-peptide-research-models-ovn21';
 import { article as aJUN22OVN21_WOUND } from './articles/chronic-wound-healing-peptide-research-protocols-ovn21';
 import { article as aJUN22OVN21_KINETICS } from './articles/peptide-receptor-binding-kinetics-kd-kon-koff-ec50-research-guide-ovn21';
@@ -11802,6 +11805,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN22_GLP1_ADDICTION,
   aJUN22OVN22_TA1_CHECKPOINT,
   aJUN22OVN22_SLEEP,
+  // June 22 overnight loop 23 — 3 new articles: Hexarelin cardioprotection, Selank anxiety research, Longevity peptide stack 2026
+  aJUN22OVN23_HEXARELIN,
+  aJUN22OVN23_SELANK,
+  aJUN22OVN23_LONGEVITY,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
