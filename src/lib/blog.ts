@@ -4793,6 +4793,9 @@ import { article as aJUN22OVN14_BANGLADESH } from './articles/research-peptides-
 import { article as aJUN22OVN15_AUSTRALIA } from './articles/peptide-research-australia-legal-guide-2026';
 import { article as aJUN22OVN15_CANADA } from './articles/peptide-research-canada-legal-guide-2026';
 import { article as aJUN22OVN15_TESA_SERM } from './articles/tesamorelin-vs-sermorelin-research-comparison';
+import { article as aJUN22OVN16_PEPTIDE_SCI } from './articles/peptide-sciences-alternative-supplier-guide-ovn16';
+import { article as aJUN22OVN16_CJC_IPA } from './articles/cjc-1295-ipamorelin-stack-research-guide-ovn16';
+import { article as aJUN22OVN16_SEMA } from './articles/semaglutide-research-peptide-glp1-overview-ovn16';
 
 
 export const articles: BlogArticle[] = [
@@ -11752,6 +11755,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN15_AUSTRALIA,
   aJUN22OVN15_CANADA,
   aJUN22OVN15_TESA_SERM,
+  // June 22 overnight loop 16 — 3 new articles from overnight-v2 folder
+  aJUN22OVN16_PEPTIDE_SCI,
+  aJUN22OVN16_CJC_IPA,
+  aJUN22OVN16_SEMA,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
