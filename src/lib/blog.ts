@@ -4753,6 +4753,9 @@ import { article as aJUN22OVN3_HPLC } from './articles/peptide-purity-hplc-testi
 import { article as aJUN23OVN_GLIOBLASTOMA } from './articles/peptide-research-glioblastoma-brain-tumor-preclinical-2026';
 import { article as aJUN23OVN_CONOTOXIN } from './articles/conotoxin-ziconotide-peptide-pain-research-2026';
 import { article as aJUN23OVN_NEWS } from './articles/peptide-research-news-june-23-2026-morning';
+import { article as aJUN23OVN2_GLP1_STRENGTH } from './articles/peptide-research-strength-training-glp1-muscle-preservation-2026';
+import { article as aJUN23OVN2_NOOTROPIC_STACK } from './articles/peptide-research-nootropic-stack-semax-selank-dihexa-cerebrolysin-2026';
+import { article as aJUN23OVN2_SUMMER_STABILITY } from './articles/peptide-research-heat-summer-stability-cold-chain-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -11660,6 +11663,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN23OVN_GLIOBLASTOMA,
   aJUN23OVN_CONOTOXIN,
   aJUN23OVN_NEWS,
+  // June 22–23 overnight loop — 3 new articles
+  aJUN23OVN2_GLP1_STRENGTH,
+  aJUN23OVN2_NOOTROPIC_STACK,
+  aJUN23OVN2_SUMMER_STABILITY,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
