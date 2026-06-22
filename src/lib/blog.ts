@@ -102,6 +102,10 @@ import { article as a97 } from './articles/adiponectin-insulin-resistance-glp1-m
 import { article as aJUN22OVN40_LONGEVITY } from './articles/longevity-peptide-stack-2026-research-guide';
 import { article as aJUN22OVN40_CJC_IPAM } from './articles/cjc-1295-ipamorelin-growth-hormone-research-stack';
 import { article as aJUN22OVN40_HPLC } from './articles/hplc-purity-testing-research-peptides-guide';
+// June 22 overnight loop 41 — 3 original articles: cyclic peptides, peptidomimetics/non-natural amino acids, peptide nanoparticle delivery systems
+import { article as aJUN22OVN41_CYCLIC } from './articles/cyclic-peptides-constrained-conformation-research-guide-jun22-2026';
+import { article as aJUN22OVN41_PEPTIDOMIMETICS } from './articles/peptidomimetics-non-natural-amino-acids-research-guide-jun22-2026';
+import { article as aJUN22OVN41_NANOPARTICLE } from './articles/peptide-nanoparticle-delivery-systems-research-guide-jun22-2026';
 import { article as aJUN22OVN_N_ACETYL_SEMAX } from './articles/how-long-does-n-acetyl-semax-take-to-work-research-timeline';
 import { article as aJUN22OVN_N_ACETYL_SELANK } from './articles/how-long-does-n-acetyl-selank-take-to-work-research-timeline';
 import { article as aJUN22OVN_VK2735 } from './articles/how-long-does-vk2735-take-to-work-research-timeline';
@@ -11929,6 +11933,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN40_LONGEVITY,
   aJUN22OVN40_CJC_IPAM,
   aJUN22OVN40_HPLC,
+  // June 22 overnight loop 41 — 3 original articles: cyclic peptides, peptidomimetics/non-natural amino acids, peptide nanoparticle delivery systems
+  aJUN22OVN41_CYCLIC,
+  aJUN22OVN41_PEPTIDOMIMETICS,
+  aJUN22OVN41_NANOPARTICLE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
