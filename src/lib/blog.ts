@@ -4780,6 +4780,9 @@ import { article as aJUN22OVN10_RECONSTITUTION } from './articles/peptide-recons
 import { article as aJUN22OVN11_CJC_IPA } from './articles/cjc-1295-ipamorelin-stack-ovn11';
 import { article as aJUN22OVN11_SEMA } from './articles/semaglutide-glp1-research-peptide-overview-ovn11';
 import { article as aJUN22OVN11_TB500 } from './articles/tb-500-thymosin-beta-4-mechanism-research-ovn11';
+import { article as aJUN22OVN12_GHK_SKIN } from './articles/ghk-cu-skin-aging-collagen-research-2026';
+import { article as aJUN22OVN12_CYCLING } from './articles/peptide-cycling-protocols-on-off-research-design';
+import { article as aJUN22OVN12_IGF1_LR3 } from './articles/igf-1-lr3-extended-half-life-growth-factor-research-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -11723,6 +11726,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN11_CJC_IPA,
   aJUN22OVN11_SEMA,
   aJUN22OVN11_TB500,
+  // June 22 overnight loop 12 — 3 new articles: GHK-Cu skin research, peptide cycling protocols, IGF-1 LR3
+  aJUN22OVN12_GHK_SKIN,
+  aJUN22OVN12_CYCLING,
+  aJUN22OVN12_IGF1_LR3,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
