@@ -98,6 +98,10 @@ import { article as a94 } from './articles/peptide-research-sex-differences-fema
 import { article as a95 } from './articles/bpc-157-gut-health-research-gi-protection-leaky-gut-intestinal-repair';
 import { article as a96 } from './articles/peptide-research-funding-nih-grants-iacuc-regulatory-frameworks';
 import { article as a97 } from './articles/adiponectin-insulin-resistance-glp1-metabolic-peptide-endpoints';
+// June 22 overnight loop 40 — 3 articles from nexphoria-overnight-v2: 2026 longevity stack, CJC-1295+Ipamorelin GH stack, HPLC purity testing guide
+import { article as aJUN22OVN40_LONGEVITY } from './articles/longevity-peptide-stack-2026-research-guide';
+import { article as aJUN22OVN40_CJC_IPAM } from './articles/cjc-1295-ipamorelin-growth-hormone-research-stack';
+import { article as aJUN22OVN40_HPLC } from './articles/hplc-purity-testing-research-peptides-guide';
 import { article as aJUN22OVN_N_ACETYL_SEMAX } from './articles/how-long-does-n-acetyl-semax-take-to-work-research-timeline';
 import { article as aJUN22OVN_N_ACETYL_SELANK } from './articles/how-long-does-n-acetyl-selank-take-to-work-research-timeline';
 import { article as aJUN22OVN_VK2735 } from './articles/how-long-does-vk2735-take-to-work-research-timeline';
@@ -11921,6 +11925,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN39_NAD,
   aJUN22OVN39_BPC_TB,
   aJUN22OVN39_RECON,
+  // June 22 overnight loop 40 — 3 articles from nexphoria-overnight-v2: 2026 longevity stack, CJC-1295+Ipamorelin GH stack, HPLC purity testing guide
+  aJUN22OVN40_LONGEVITY,
+  aJUN22OVN40_CJC_IPAM,
+  aJUN22OVN40_HPLC,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
