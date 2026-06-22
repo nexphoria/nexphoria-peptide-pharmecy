@@ -4836,6 +4836,9 @@ import { article as aJUN22OVN28_NEUROPATHY } from './articles/peripheral-neuropa
 import { article as aJUN22OVN29_PSCI_ALT } from './articles/peptide-sciences-alternative-supplier-guide-ovn29';
 import { article as aJUN22OVN29_USA_GUIDE } from './articles/how-to-source-research-peptides-usa-buyers-guide-ovn29';
 import { article as aJUN22OVN29_QUALITY } from './articles/nexphoria-quality-standards-hplc-lal-coa-transparency-ovn29';
+import { article as aJUN22OVN30_ALZHEIMER } from './articles/best-peptides-alzheimers-prevention-cognitive-decline-research-2026';
+import { article as aJUN22OVN30_KLOTHO } from './articles/alpha-klotho-longevity-anti-aging-peptide-research-2026';
+import { article as aJUN22OVN30_BRAINFOG } from './articles/peptide-stack-brain-fog-cognitive-clarity-complete-protocol-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -11851,6 +11854,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN29_PSCI_ALT,
   aJUN22OVN29_USA_GUIDE,
   aJUN22OVN29_QUALITY,
+  // June 22 overnight loop 30 — 3 original articles: Alzheimer's prevention peptides, alpha-Klotho longevity research, brain fog peptide stack protocol
+  aJUN22OVN30_ALZHEIMER,
+  aJUN22OVN30_KLOTHO,
+  aJUN22OVN30_BRAINFOG,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
