@@ -132,6 +132,10 @@ import { article as aJUN23OVN7_HEXARELIN } from './articles/hexarelin-cardioprot
 import { article as aJUN23OVN8_LONGEVITY } from './articles/longevity-peptide-stack-2026-jun23';
 import { article as aJUN23OVN8_COLD_CHAIN } from './articles/cold-chain-peptide-shipping-jun23-2026';
 import { article as aJUN23OVN8_EPITHALON } from './articles/epithalon-telomere-research-jun23-2026';
+// June 23 overnight loop (v2 source articles) — 3 new articles
+import { article as aJUN23V2_MUSCLE } from './articles/best-peptides-muscle-recovery-jun23-2026';
+import { article as aJUN23V2_SELANK } from './articles/selank-anxiety-research-jun23-2026';
+import { article as aJUN23V2_BUYPEPTIDES } from './articles/buy-peptides-usa-guide-jun23-2026';
 // June 23 overnight loop 3 — 3 articles from nexphoria-overnight-v2: NAD+ longevity/sirtuins/PARP biology, peptide research glossary 50 terms, BPC-157+TB-500 combined protocol
 import { article as aJUN23OVN3_NAD_LONGEVITY } from './articles/nad-plus-longevity-sirtuins-parp-biology-jun23-2026';
 import { article as aJUN23OVN3_GLOSSARY } from './articles/research-peptide-glossary-50-essential-terms-jun23-2026';
@@ -12011,6 +12015,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN23OVN8_LONGEVITY,
   aJUN23OVN8_COLD_CHAIN,
   aJUN23OVN8_EPITHALON,
+  // June 23 overnight loop (v2 source articles) — 3 new articles from nexphoria-overnight-v2 blog-articles folder
+  aJUN23V2_MUSCLE,
+  aJUN23V2_SELANK,
+  aJUN23V2_BUYPEPTIDES,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
