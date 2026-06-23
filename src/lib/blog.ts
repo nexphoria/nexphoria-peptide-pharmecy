@@ -122,6 +122,9 @@ import { article as aJUN22OVN_VK2735 } from './articles/how-long-does-vk2735-tak
 import { article as aJUN23OVN10_SEMA } from './articles/semaglutide-research-peptide-glp1-receptor-agonist-jun23-2026';
 import { article as aJUN23OVN10_TA1 } from './articles/thymosin-alpha-1-immune-modulating-peptide-research-overview-jun23-2026';
 import { article as aJUN23OVN10_LIVER } from './articles/peptide-research-liver-fibrosis-hepatic-stellate-cells-jun23-2026';
+import { article as aJUN23OVN11_HYPERTROPHY } from './articles/peptide-research-muscle-hypertrophy-mtor-igf1-jun23-2026';
+import { article as aJUN23OVN11_SLEEP } from './articles/peptide-research-sleep-architecture-gh-pulse-optimization-2026';
+import { article as aJUN23OVN11_SEPSIS } from './articles/peptide-research-sepsis-antimicrobial-host-defense-jun23-2026';
 // June 23 overnight loop 5 — 3 articles from nexphoria-overnight-v2: BPC-157 complete guide, Selank anxiety research, Nexphoria quality standards
 import { article as aJUN23OVN5_BPC157_COMPLETE } from './articles/bpc-157-complete-research-guide-2026-jun23';
 import { article as aJUN23OVN5_SELANK_ANXIETY } from './articles/selank-anxiety-research-guide-jun23-2026';
@@ -12035,6 +12038,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN23OVN10_SEMA,
   aJUN23OVN10_TA1,
   aJUN23OVN10_LIVER,
+  // June 23 overnight loop 11 — 3 new articles: muscle hypertrophy mTOR/IGF-1, sleep architecture GH pulse optimization, sepsis/antimicrobial host defense
+  aJUN23OVN11_HYPERTROPHY,
+  aJUN23OVN11_SLEEP,
+  aJUN23OVN11_SEPSIS,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
