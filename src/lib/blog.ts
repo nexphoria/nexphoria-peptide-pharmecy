@@ -129,6 +129,10 @@ import { article as aJUN23OVN11_SEPSIS } from './articles/peptide-research-sepsi
 import { article as aJUN23OVN12_RECON } from './articles/peptide-reconstitution-guide-jun23-2026';
 import { article as aJUN23OVN12_STORAGE } from './articles/peptide-storage-guide-jun23-2026';
 import { article as aJUN23OVN12_SEMA } from './articles/semaglutide-research-peptide-jun23-2026';
+// June 23 overnight loop 13 — 3 new articles: Fractalkine CX3CL1 neuroinflammation, Sclerostin SOST bone formation, Meteorin-like METRNL exercise adipokine
+import { article as aJUN23OVN13_FRACTALKINE } from './articles/fractalkine-cx3cl1-neuroinflammation-microglia-research-jun23-2026';
+import { article as aJUN23OVN13_SCLEROSTIN } from './articles/sclerostin-sost-wnt-bone-formation-research-jun23-2026';
+import { article as aJUN23OVN13_METRNL } from './articles/meteorin-like-metrnl-anti-inflammatory-exercise-adipokine-research-jun23-2026';
 // June 23 overnight loop 5 — 3 articles from nexphoria-overnight-v2: BPC-157 complete guide, Selank anxiety research, Nexphoria quality standards
 import { article as aJUN23OVN5_BPC157_COMPLETE } from './articles/bpc-157-complete-research-guide-2026-jun23';
 import { article as aJUN23OVN5_SELANK_ANXIETY } from './articles/selank-anxiety-research-guide-jun23-2026';
@@ -12050,6 +12054,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN23OVN12_RECON,
   aJUN23OVN12_STORAGE,
   aJUN23OVN12_SEMA,
+  // June 23 overnight loop 13 — Fractalkine, Sclerostin, Meteorin-like
+  aJUN23OVN13_FRACTALKINE,
+  aJUN23OVN13_SCLEROSTIN,
+  aJUN23OVN13_METRNL,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
