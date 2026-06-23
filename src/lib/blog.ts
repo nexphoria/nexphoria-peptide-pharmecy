@@ -132,6 +132,10 @@ import { article as aJUN23OVN7_HEXARELIN } from './articles/hexarelin-cardioprot
 import { article as aJUN23OVN8_LONGEVITY } from './articles/longevity-peptide-stack-2026-jun23';
 import { article as aJUN23OVN8_COLD_CHAIN } from './articles/cold-chain-peptide-shipping-jun23-2026';
 import { article as aJUN23OVN8_EPITHALON } from './articles/epithalon-telomere-research-jun23-2026';
+// June 23 overnight loop 9 — 3 original articles: stroke/cerebrovascular neuroprotection, sepsis antimicrobial/host defense, glaucoma/optic nerve peptide research
+import { article as aJUN23OVN9_STROKE } from './articles/peptide-research-stroke-cerebrovascular-neuroprotection-jun23-2026';
+import { article as aJUN23OVN9_SEPSIS } from './articles/peptide-research-sepsis-antimicrobial-host-defense-jun23-2026';
+import { article as aJUN23OVN9_GLAUCOMA } from './articles/peptide-research-glaucoma-optic-nerve-intraocular-pressure-jun23-2026';
 // June 23 overnight loop (v2 source articles) — 3 new articles
 import { article as aJUN23V2_MUSCLE } from './articles/best-peptides-muscle-recovery-jun23-2026';
 import { article as aJUN23V2_SELANK } from './articles/selank-anxiety-research-jun23-2026';
@@ -12019,6 +12023,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN23V2_MUSCLE,
   aJUN23V2_SELANK,
   aJUN23V2_BUYPEPTIDES,
+  // June 23 overnight loop 9 — stroke, sepsis, glaucoma
+  aJUN23OVN9_STROKE,
+  aJUN23OVN9_SEPSIS,
+  aJUN23OVN9_GLAUCOMA,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
