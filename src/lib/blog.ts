@@ -118,6 +118,10 @@ import { article as aJUN23OVN1_BEGINNERS } from './articles/research-peptides-be
 import { article as aJUN22OVN_N_ACETYL_SEMAX } from './articles/how-long-does-n-acetyl-semax-take-to-work-research-timeline';
 import { article as aJUN22OVN_N_ACETYL_SELANK } from './articles/how-long-does-n-acetyl-selank-take-to-work-research-timeline';
 import { article as aJUN22OVN_VK2735 } from './articles/how-long-does-vk2735-take-to-work-research-timeline';
+// June 23 overnight loop 10 — 3 new articles: semaglutide as research peptide (GLP-1 receptor agonism), thymosin alpha-1 immune modulator, and peptide research in liver fibrosis/hepatic stellate cells
+import { article as aJUN23OVN10_SEMA } from './articles/semaglutide-research-peptide-glp1-receptor-agonist-jun23-2026';
+import { article as aJUN23OVN10_TA1 } from './articles/thymosin-alpha-1-immune-modulating-peptide-research-overview-jun23-2026';
+import { article as aJUN23OVN10_LIVER } from './articles/peptide-research-liver-fibrosis-hepatic-stellate-cells-jun23-2026';
 // June 23 overnight loop 5 — 3 articles from nexphoria-overnight-v2: BPC-157 complete guide, Selank anxiety research, Nexphoria quality standards
 import { article as aJUN23OVN5_BPC157_COMPLETE } from './articles/bpc-157-complete-research-guide-2026-jun23';
 import { article as aJUN23OVN5_SELANK_ANXIETY } from './articles/selank-anxiety-research-guide-jun23-2026';
@@ -12027,6 +12031,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN23OVN9_STROKE,
   aJUN23OVN9_SEPSIS,
   aJUN23OVN9_GLAUCOMA,
+  // June 23 overnight loop 10 — 3 new articles: semaglutide as research peptide (GLP-1 receptor agonism), thymosin alpha-1 immune modulator, and peptide research in liver fibrosis/hepatic stellate cells
+  aJUN23OVN10_SEMA,
+  aJUN23OVN10_TA1,
+  aJUN23OVN10_LIVER,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
