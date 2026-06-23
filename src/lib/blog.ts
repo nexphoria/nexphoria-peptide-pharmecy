@@ -118,6 +118,10 @@ import { article as aJUN23OVN1_BEGINNERS } from './articles/research-peptides-be
 import { article as aJUN22OVN_N_ACETYL_SEMAX } from './articles/how-long-does-n-acetyl-semax-take-to-work-research-timeline';
 import { article as aJUN22OVN_N_ACETYL_SELANK } from './articles/how-long-does-n-acetyl-selank-take-to-work-research-timeline';
 import { article as aJUN22OVN_VK2735 } from './articles/how-long-does-vk2735-take-to-work-research-timeline';
+// June 23 overnight loop 2 — 3 articles from nexphoria-overnight-v2: USA peptide sourcing buyer's guide, Peptide Sciences alternative, NAD+ longevity/sirtuins/PARP
+import { article as aJUN23OVN2_BUY_USA } from './articles/buy-peptides-usa-sourcing-guide-jun23-2026';
+import { article as aJUN23OVN2_PS_ALT } from './articles/peptide-sciences-alternative-jun23-2026';
+import { article as aJUN23OVN2_NAD_LONGEVITY } from './articles/nad-plus-longevity-sirtuins-parp-jun23-2026';
 import { article as aJUN21OVN_SELANK } from './articles/selank-anxiety-research';
 import { article as aJUN21OVN_HEXARELIN_CARDIAC } from './articles/hexarelin-cardioprotection';
 import { article as aJUN21OVN_LONGEVITY_STACK } from './articles/longevity-peptide-stack-2026';
@@ -11958,6 +11962,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN23OVN1_HYPERTROPHY,
   aJUN23OVN1_COLD_CHAIN,
   aJUN23OVN1_BEGINNERS,
+  // June 23 overnight loop 2 — 3 articles from nexphoria-overnight-v2: USA peptide sourcing buyer's guide, Peptide Sciences alternative, NAD+ longevity/sirtuins/PARP
+  aJUN23OVN2_BUY_USA,
+  aJUN23OVN2_PS_ALT,
+  aJUN23OVN2_NAD_LONGEVITY,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
