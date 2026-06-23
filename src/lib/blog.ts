@@ -118,6 +118,10 @@ import { article as aJUN23OVN1_BEGINNERS } from './articles/research-peptides-be
 import { article as aJUN22OVN_N_ACETYL_SEMAX } from './articles/how-long-does-n-acetyl-semax-take-to-work-research-timeline';
 import { article as aJUN22OVN_N_ACETYL_SELANK } from './articles/how-long-does-n-acetyl-selank-take-to-work-research-timeline';
 import { article as aJUN22OVN_VK2735 } from './articles/how-long-does-vk2735-take-to-work-research-timeline';
+// June 23 overnight loop 3 — 3 articles from nexphoria-overnight-v2: NAD+ longevity/sirtuins/PARP biology, peptide research glossary 50 terms, BPC-157+TB-500 combined protocol
+import { article as aJUN23OVN3_NAD_LONGEVITY } from './articles/nad-plus-longevity-sirtuins-parp-biology-jun23-2026';
+import { article as aJUN23OVN3_GLOSSARY } from './articles/research-peptide-glossary-50-essential-terms-jun23-2026';
+import { article as aJUN23OVN3_BPC_TB } from './articles/bpc-157-tb-500-combined-protocol-research-jun23-2026';
 // June 23 overnight loop 2 — 3 articles from nexphoria-overnight-v2: USA peptide sourcing buyer's guide, Peptide Sciences alternative, NAD+ longevity/sirtuins/PARP
 import { article as aJUN23OVN2_BUY_USA } from './articles/buy-peptides-usa-sourcing-guide-jun23-2026';
 import { article as aJUN23OVN2_PS_ALT } from './articles/peptide-sciences-alternative-jun23-2026';
@@ -11966,6 +11970,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN23OVN2_BUY_USA,
   aJUN23OVN2_PS_ALT,
   aJUN23OVN2_NAD_LONGEVITY,
+  // June 23 overnight loop 3 — 3 articles from nexphoria-overnight-v2: NAD+ longevity/sirtuins/PARP biology, peptide research glossary 50 terms, BPC-157+TB-500 combined protocol
+  aJUN23OVN3_NAD_LONGEVITY,
+  aJUN23OVN3_GLOSSARY,
+  aJUN23OVN3_BPC_TB,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
