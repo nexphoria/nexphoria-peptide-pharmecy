@@ -118,6 +118,10 @@ import { article as aJUN23OVN1_BEGINNERS } from './articles/research-peptides-be
 import { article as aJUN22OVN_N_ACETYL_SEMAX } from './articles/how-long-does-n-acetyl-semax-take-to-work-research-timeline';
 import { article as aJUN22OVN_N_ACETYL_SELANK } from './articles/how-long-does-n-acetyl-selank-take-to-work-research-timeline';
 import { article as aJUN22OVN_VK2735 } from './articles/how-long-does-vk2735-take-to-work-research-timeline';
+// June 23 overnight loop 5 — 3 articles from nexphoria-overnight-v2: BPC-157 complete guide, Selank anxiety research, Nexphoria quality standards
+import { article as aJUN23OVN5_BPC157_COMPLETE } from './articles/bpc-157-complete-research-guide-2026-jun23';
+import { article as aJUN23OVN5_SELANK_ANXIETY } from './articles/selank-anxiety-research-guide-jun23-2026';
+import { article as aJUN23OVN5_QUALITY_STANDARDS } from './articles/nexphoria-quality-standards-hplc-lal-coa-jun23-2026';
 // June 23 overnight loop 3 — 3 articles from nexphoria-overnight-v2: NAD+ longevity/sirtuins/PARP biology, peptide research glossary 50 terms, BPC-157+TB-500 combined protocol
 import { article as aJUN23OVN3_NAD_LONGEVITY } from './articles/nad-plus-longevity-sirtuins-parp-biology-jun23-2026';
 import { article as aJUN23OVN3_GLOSSARY } from './articles/research-peptide-glossary-50-essential-terms-jun23-2026';
@@ -11981,6 +11985,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN23OVN4_MUSCLE,
   aJUN23OVN4_CJC_IPA,
   aJUN23OVN4_STORAGE,
+  // June 23 overnight loop 5 — 3 articles from nexphoria-overnight-v2: BPC-157 complete guide, Selank anxiety research, Nexphoria quality standards
+  aJUN23OVN5_BPC157_COMPLETE,
+  aJUN23OVN5_SELANK_ANXIETY,
+  aJUN23OVN5_QUALITY_STANDARDS,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
