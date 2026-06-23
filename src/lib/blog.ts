@@ -122,6 +122,9 @@ import { article as aJUN22OVN_VK2735 } from './articles/how-long-does-vk2735-tak
 import { article as aJUN23OVN3_NAD_LONGEVITY } from './articles/nad-plus-longevity-sirtuins-parp-biology-jun23-2026';
 import { article as aJUN23OVN3_GLOSSARY } from './articles/research-peptide-glossary-50-essential-terms-jun23-2026';
 import { article as aJUN23OVN3_BPC_TB } from './articles/bpc-157-tb-500-combined-protocol-research-jun23-2026';
+import { article as aJUN23OVN4_MUSCLE } from './articles/best-peptides-muscle-recovery-jun23-2026';
+import { article as aJUN23OVN4_CJC_IPA } from './articles/cjc-1295-ipamorelin-gh-research-stack-jun23-2026';
+import { article as aJUN23OVN4_STORAGE } from './articles/peptide-storage-guide-temperature-light-shelf-life-jun23-2026';
 // June 23 overnight loop 2 — 3 articles from nexphoria-overnight-v2: USA peptide sourcing buyer's guide, Peptide Sciences alternative, NAD+ longevity/sirtuins/PARP
 import { article as aJUN23OVN2_BUY_USA } from './articles/buy-peptides-usa-sourcing-guide-jun23-2026';
 import { article as aJUN23OVN2_PS_ALT } from './articles/peptide-sciences-alternative-jun23-2026';
@@ -11974,6 +11977,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN23OVN3_NAD_LONGEVITY,
   aJUN23OVN3_GLOSSARY,
   aJUN23OVN3_BPC_TB,
+  // June 23 overnight loop 4 — 3 articles from nexphoria-overnight-v2: muscle recovery peptides, CJC-1295+Ipamorelin GH stack, peptide storage guide
+  aJUN23OVN4_MUSCLE,
+  aJUN23OVN4_CJC_IPA,
+  aJUN23OVN4_STORAGE,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
