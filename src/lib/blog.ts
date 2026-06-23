@@ -125,6 +125,10 @@ import { article as aJUN23OVN10_LIVER } from './articles/peptide-research-liver-
 import { article as aJUN23OVN11_HYPERTROPHY } from './articles/peptide-research-muscle-hypertrophy-mtor-igf1-jun23-2026';
 import { article as aJUN23OVN11_SLEEP } from './articles/peptide-research-sleep-architecture-gh-pulse-optimization-2026';
 import { article as aJUN23OVN11_SEPSIS } from './articles/peptide-research-sepsis-antimicrobial-host-defense-jun23-2026';
+// June 23 overnight loop 12 — 3 articles from nexphoria-overnight-v2 source folder
+import { article as aJUN23OVN12_RECON } from './articles/peptide-reconstitution-guide-jun23-2026';
+import { article as aJUN23OVN12_STORAGE } from './articles/peptide-storage-guide-jun23-2026';
+import { article as aJUN23OVN12_SEMA } from './articles/semaglutide-research-peptide-jun23-2026';
 // June 23 overnight loop 5 — 3 articles from nexphoria-overnight-v2: BPC-157 complete guide, Selank anxiety research, Nexphoria quality standards
 import { article as aJUN23OVN5_BPC157_COMPLETE } from './articles/bpc-157-complete-research-guide-2026-jun23';
 import { article as aJUN23OVN5_SELANK_ANXIETY } from './articles/selank-anxiety-research-guide-jun23-2026';
@@ -12042,6 +12046,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN23OVN11_HYPERTROPHY,
   aJUN23OVN11_SLEEP,
   aJUN23OVN11_SEPSIS,
+  // June 23 overnight loop 12 — 3 articles from nexphoria-overnight-v2: reconstitution guide, storage guide, semaglutide research peptide
+  aJUN23OVN12_RECON,
+  aJUN23OVN12_STORAGE,
+  aJUN23OVN12_SEMA,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
