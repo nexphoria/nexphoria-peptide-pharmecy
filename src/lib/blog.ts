@@ -109,6 +109,9 @@ import { article as aJUN22OVN41_NANOPARTICLE } from './articles/peptide-nanopart
 import { article as aJUN22OVN42_MMP } from './articles/mmp-matrix-metalloproteinase-peptide-research-ghk-cu-bpc157-jun22-2026';
 import { article as aJUN22OVN42_PPB } from './articles/peptide-plasma-protein-binding-pharmacokinetics-research-guide-jun22-2026';
 import { article as aJUN22OVN42_INTEGRIN } from './articles/integrin-targeting-peptides-rgd-ikvav-yigsr-research-guide-jun22-2026';
+import { article as aJUN22OVN43_GHKCU } from './articles/ghk-cu-skin-collagen-wound-healing-research-jun22-2026';
+import { article as aJUN22OVN43_FEMALE } from './articles/peptide-research-female-sex-differences-dosing-jun22-2026';
+import { article as aJUN22OVN43_EPIGENETICS } from './articles/peptide-research-epigenetics-histone-dna-methylation-jun22-2026';
 import { article as aJUN22OVN_N_ACETYL_SEMAX } from './articles/how-long-does-n-acetyl-semax-take-to-work-research-timeline';
 import { article as aJUN22OVN_N_ACETYL_SELANK } from './articles/how-long-does-n-acetyl-selank-take-to-work-research-timeline';
 import { article as aJUN22OVN_VK2735 } from './articles/how-long-does-vk2735-take-to-work-research-timeline';
@@ -11944,6 +11947,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN42_MMP,
   aJUN22OVN42_PPB,
   aJUN22OVN42_INTEGRIN,
+  // June 22 overnight loop 43 — 3 original articles: GHK-Cu skin/collagen/wound healing, female sex differences in peptide dosing, peptides and epigenetic mechanisms
+  aJUN22OVN43_GHKCU,
+  aJUN22OVN43_FEMALE,
+  aJUN22OVN43_EPIGENETICS,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
