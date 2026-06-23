@@ -112,6 +112,9 @@ import { article as aJUN22OVN42_INTEGRIN } from './articles/integrin-targeting-p
 import { article as aJUN22OVN43_GHKCU } from './articles/ghk-cu-skin-collagen-wound-healing-research-jun22-2026';
 import { article as aJUN22OVN43_FEMALE } from './articles/peptide-research-female-sex-differences-dosing-jun22-2026';
 import { article as aJUN22OVN43_EPIGENETICS } from './articles/peptide-research-epigenetics-histone-dna-methylation-jun22-2026';
+import { article as aJUN23OVN1_HYPERTROPHY } from './articles/peptide-research-muscle-hypertrophy-mtor-igf1-jun23-2026';
+import { article as aJUN23OVN1_COLD_CHAIN } from './articles/peptide-cold-chain-shipping-degradation-mechanisms-jun23-2026';
+import { article as aJUN23OVN1_BEGINNERS } from './articles/research-peptides-beginners-complete-guide-jun23-2026';
 import { article as aJUN22OVN_N_ACETYL_SEMAX } from './articles/how-long-does-n-acetyl-semax-take-to-work-research-timeline';
 import { article as aJUN22OVN_N_ACETYL_SELANK } from './articles/how-long-does-n-acetyl-selank-take-to-work-research-timeline';
 import { article as aJUN22OVN_VK2735 } from './articles/how-long-does-vk2735-take-to-work-research-timeline';
@@ -11951,6 +11954,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN22OVN43_GHKCU,
   aJUN22OVN43_FEMALE,
   aJUN22OVN43_EPIGENETICS,
+  // June 23 overnight loop 1 — 3 new original articles: muscle hypertrophy/mTOR/IGF-1, cold-chain degradation mechanisms, research peptides beginner guide
+  aJUN23OVN1_HYPERTROPHY,
+  aJUN23OVN1_COLD_CHAIN,
+  aJUN23OVN1_BEGINNERS,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
