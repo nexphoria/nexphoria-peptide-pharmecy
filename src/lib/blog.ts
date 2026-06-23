@@ -129,6 +129,9 @@ import { article as aJUN23OVN6_HYDROGEL } from './articles/peptide-hydrogel-scaf
 import { article as aJUN23OVN7_RECON } from './articles/peptide-reconstitution-protocol-guide-jun23-2026';
 import { article as aJUN23OVN7_GLOSSARY } from './articles/peptide-research-glossary-50-terms-jun23-2026';
 import { article as aJUN23OVN7_HEXARELIN } from './articles/hexarelin-cardioprotection-cd36-research-jun23-2026';
+import { article as aJUN23OVN8_LONGEVITY } from './articles/longevity-peptide-stack-2026-jun23';
+import { article as aJUN23OVN8_COLD_CHAIN } from './articles/cold-chain-peptide-shipping-jun23-2026';
+import { article as aJUN23OVN8_EPITHALON } from './articles/epithalon-telomere-research-jun23-2026';
 // June 23 overnight loop 3 — 3 articles from nexphoria-overnight-v2: NAD+ longevity/sirtuins/PARP biology, peptide research glossary 50 terms, BPC-157+TB-500 combined protocol
 import { article as aJUN23OVN3_NAD_LONGEVITY } from './articles/nad-plus-longevity-sirtuins-parp-biology-jun23-2026';
 import { article as aJUN23OVN3_GLOSSARY } from './articles/research-peptide-glossary-50-essential-terms-jun23-2026';
@@ -12004,6 +12007,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN23OVN7_RECON,
   aJUN23OVN7_GLOSSARY,
   aJUN23OVN7_HEXARELIN,
+  // June 23 overnight loop 8 — 3 new articles: longevity peptide stack 2026, cold-chain shipping guide, Epithalon telomere research
+  aJUN23OVN8_LONGEVITY,
+  aJUN23OVN8_COLD_CHAIN,
+  aJUN23OVN8_EPITHALON,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
