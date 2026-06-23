@@ -133,6 +133,9 @@ import { article as aJUN23OVN12_SEMA } from './articles/semaglutide-research-pep
 import { article as aJUN23OVN13_FRACTALKINE } from './articles/fractalkine-cx3cl1-neuroinflammation-microglia-research-jun23-2026';
 import { article as aJUN23OVN13_SCLEROSTIN } from './articles/sclerostin-sost-wnt-bone-formation-research-jun23-2026';
 import { article as aJUN23OVN13_METRNL } from './articles/meteorin-like-metrnl-anti-inflammatory-exercise-adipokine-research-jun23-2026';
+import { article as aJUN24_NEWS_MORNING } from './articles/peptide-research-news-june-24-2026-morning';
+import { article as aJUN24_CJC_IPA_DEEP } from './articles/cjc-1295-ipamorelin-combined-protocol-2026-deep-dive';
+import { article as aJUN24_JULY_BUYERS } from './articles/peptide-research-july-2026-hot-compounds-buyers-guide';
 // June 23 overnight loop 5 — 3 articles from nexphoria-overnight-v2: BPC-157 complete guide, Selank anxiety research, Nexphoria quality standards
 import { article as aJUN23OVN5_BPC157_COMPLETE } from './articles/bpc-157-complete-research-guide-2026-jun23';
 import { article as aJUN23OVN5_SELANK_ANXIETY } from './articles/selank-anxiety-research-guide-jun23-2026';
@@ -12058,6 +12061,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN23OVN13_FRACTALKINE,
   aJUN23OVN13_SCLEROSTIN,
   aJUN23OVN13_METRNL,
+  // June 24 overnight loop — 3 new articles: morning news brief, CJC-1295+Ipamorelin deep dive, July 2026 buyers guide
+  aJUN24_NEWS_MORNING,
+  aJUN24_CJC_IPA_DEEP,
+  aJUN24_JULY_BUYERS,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
