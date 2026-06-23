@@ -126,6 +126,9 @@ import { article as aJUN23OVN5_QUALITY_STANDARDS } from './articles/nexphoria-qu
 import { article as aJUN23OVN6_ORAL } from './articles/peptide-research-oral-dental-periodontal-health-jun23-2026';
 import { article as aJUN23OVN6_COCHLEAR } from './articles/peptide-research-hearing-tinnitus-cochlear-health-jun23-2026';
 import { article as aJUN23OVN6_HYDROGEL } from './articles/peptide-hydrogel-scaffold-drug-delivery-tissue-engineering-jun23-2026';
+import { article as aJUN23OVN7_RECON } from './articles/peptide-reconstitution-protocol-guide-jun23-2026';
+import { article as aJUN23OVN7_GLOSSARY } from './articles/peptide-research-glossary-50-terms-jun23-2026';
+import { article as aJUN23OVN7_HEXARELIN } from './articles/hexarelin-cardioprotection-cd36-research-jun23-2026';
 // June 23 overnight loop 3 — 3 articles from nexphoria-overnight-v2: NAD+ longevity/sirtuins/PARP biology, peptide research glossary 50 terms, BPC-157+TB-500 combined protocol
 import { article as aJUN23OVN3_NAD_LONGEVITY } from './articles/nad-plus-longevity-sirtuins-parp-biology-jun23-2026';
 import { article as aJUN23OVN3_GLOSSARY } from './articles/research-peptide-glossary-50-essential-terms-jun23-2026';
@@ -11997,6 +12000,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN23OVN6_ORAL,
   aJUN23OVN6_COCHLEAR,
   aJUN23OVN6_HYDROGEL,
+  // June 23 overnight loop 7 — 3 articles from nexphoria-overnight-v2: reconstitution guide, glossary, hexarelin cardioprotection
+  aJUN23OVN7_RECON,
+  aJUN23OVN7_GLOSSARY,
+  aJUN23OVN7_HEXARELIN,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
