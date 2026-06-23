@@ -146,6 +146,9 @@ import { article as aJUN23OVN16_BPC157_COMPLETE } from './articles/bpc-157-compl
 import { article as aJUN23OVN17_MUSCLE } from './articles/best-peptides-muscle-recovery-jun23-ovn17';
 import { article as aJUN23OVN17_BPC_TB } from './articles/bpc-157-tb500-combined-protocol-research-jun23-ovn17';
 import { article as aJUN23OVN17_LONGEVITY } from './articles/longevity-peptide-stack-2026-jun23-ovn17';
+import { article as aJUN23OVN18_SEMA } from './articles/semaglutide-research-peptide-jun23-ovn18';
+import { article as aJUN23OVN18_COLD_CHAIN } from './articles/cold-chain-peptide-shipping-jun23-ovn18';
+import { article as aJUN23OVN18_BUY_USA } from './articles/how-to-source-research-peptides-usa-jun23-ovn18';
 import { article as aJUN23OVN14_HPLC } from './articles/jun23-hplc-purity-testing-explained';
 import { article as aJUN23OVN14_GLOSSARY } from './articles/jun23-research-peptide-glossary-50-terms';
 // June 23 overnight loop 5 — 3 articles from nexphoria-overnight-v2: BPC-157 complete guide, Selank anxiety research, Nexphoria quality standards
@@ -12093,6 +12096,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN23OVN17_MUSCLE,
   aJUN23OVN17_BPC_TB,
   aJUN23OVN17_LONGEVITY,
+  // June 23 overnight loop 18 — 3 new articles from nexphoria-overnight-v2 source folder
+  aJUN23OVN18_SEMA,
+  aJUN23OVN18_COLD_CHAIN,
+  aJUN23OVN18_BUY_USA,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
