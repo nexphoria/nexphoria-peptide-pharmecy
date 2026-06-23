@@ -143,6 +143,9 @@ import { article as aJUN23OVN15_TA1_V2 } from './articles/thymosin-alpha-1-immun
 import { article as aJUN23OVN16_CJC_IPA } from './articles/cjc-1295-ipamorelin-stack-gh-research-jun23-ovn16';
 import { article as aJUN23OVN16_NAD_LONGEVITY } from './articles/nad-plus-longevity-sirtuins-parp-research-jun23-ovn16';
 import { article as aJUN23OVN16_BPC157_COMPLETE } from './articles/bpc-157-complete-research-guide-2026-jun23-ovn16';
+import { article as aJUN23OVN17_MUSCLE } from './articles/best-peptides-muscle-recovery-jun23-ovn17';
+import { article as aJUN23OVN17_BPC_TB } from './articles/bpc-157-tb500-combined-protocol-research-jun23-ovn17';
+import { article as aJUN23OVN17_LONGEVITY } from './articles/longevity-peptide-stack-2026-jun23-ovn17';
 import { article as aJUN23OVN14_HPLC } from './articles/jun23-hplc-purity-testing-explained';
 import { article as aJUN23OVN14_GLOSSARY } from './articles/jun23-research-peptide-glossary-50-terms';
 // June 23 overnight loop 5 — 3 articles from nexphoria-overnight-v2: BPC-157 complete guide, Selank anxiety research, Nexphoria quality standards
@@ -12086,6 +12089,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN23OVN16_CJC_IPA,
   aJUN23OVN16_NAD_LONGEVITY,
   aJUN23OVN16_BPC157_COMPLETE,
+  // June 23 overnight loop 17 — 3 articles from nexphoria-overnight-v2 source folder: muscle recovery peptides, BPC-157+TB-500 combined protocol, longevity stack 2026
+  aJUN23OVN17_MUSCLE,
+  aJUN23OVN17_BPC_TB,
+  aJUN23OVN17_LONGEVITY,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
