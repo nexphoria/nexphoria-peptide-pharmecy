@@ -137,6 +137,9 @@ import { article as aJUN24_NEWS_MORNING } from './articles/peptide-research-news
 import { article as aJUN24_CJC_IPA_DEEP } from './articles/cjc-1295-ipamorelin-combined-protocol-2026-deep-dive';
 import { article as aJUN24_JULY_BUYERS } from './articles/peptide-research-july-2026-hot-compounds-buyers-guide';
 import { article as aJUN23OVN14_COLD_CHAIN } from './articles/jun23-cold-chain-shipping-integrity';
+import { article as aJUN23OVN15_BPC_TB_STACK } from './articles/bpc-157-vs-tb500-combined-protocol-research-jun23-2026';
+import { article as aJUN23OVN15_NAD_NMN } from './articles/nad-plus-vs-nmn-longevity-researchers-comparison-jun23-2026';
+import { article as aJUN23OVN15_TA1_V2 } from './articles/thymosin-alpha-1-immune-modulating-peptide-research-jun23-v2-2026';
 import { article as aJUN23OVN14_HPLC } from './articles/jun23-hplc-purity-testing-explained';
 import { article as aJUN23OVN14_GLOSSARY } from './articles/jun23-research-peptide-glossary-50-terms';
 // June 23 overnight loop 5 — 3 articles from nexphoria-overnight-v2: BPC-157 complete guide, Selank anxiety research, Nexphoria quality standards
@@ -12072,6 +12075,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN23OVN14_COLD_CHAIN,
   aJUN23OVN14_HPLC,
   aJUN23OVN14_GLOSSARY,
+  // June 23 overnight loop 15 — 3 articles from nexphoria-overnight-v2: BPC-157+TB-500 combined protocol, NAD+ vs NMN longevity comparison, Thymosin Alpha-1 immune modulator (v2)
+  aJUN23OVN15_BPC_TB_STACK,
+  aJUN23OVN15_NAD_NMN,
+  aJUN23OVN15_TA1_V2,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
