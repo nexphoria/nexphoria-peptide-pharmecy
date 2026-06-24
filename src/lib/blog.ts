@@ -152,6 +152,10 @@ import { article as aJUN23OVN18_BUY_USA } from './articles/how-to-source-researc
 import { article as aJUN23OVN19_NAD_LONGEVITY } from './articles/nad-plus-longevity-sirtuins-parp-hallmarks-jun23-ovn19';
 import { article as aJUN23OVN19_BPC_TB_STACK } from './articles/bpc-157-tb-500-combined-protocol-mechanistic-rationale-jun23-ovn19';
 import { article as aJUN23OVN19_CJC_IPA } from './articles/cjc-1295-ipamorelin-growth-hormone-research-stack-jun23-ovn19';
+// June 23 overnight loop 20 (v2 source articles) — 3 new articles: NAD+ longevity deep dive, Hexarelin cardiac/GH research, Thymosin Alpha-1 T-cell immune research
+import { article as aJUN24OVN20_NAD_DEEP } from './articles/nad-plus-longevity-researchers-deep-dive-jun24-2026';
+import { article as aJUN24OVN20_HEX_CARDIAC } from './articles/hexarelin-cardiac-gh-research-jun24-2026';
+import { article as aJUN24OVN20_TA1_TCELL } from './articles/thymosin-alpha-1-tcell-immune-research-jun24-2026';
 import { article as aJUN23OVN14_HPLC } from './articles/jun23-hplc-purity-testing-explained';
 import { article as aJUN23OVN14_GLOSSARY } from './articles/jun23-research-peptide-glossary-50-terms';
 // June 23 overnight loop 5 — 3 articles from nexphoria-overnight-v2: BPC-157 complete guide, Selank anxiety research, Nexphoria quality standards
@@ -12113,6 +12117,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN23OVN19_NAD_LONGEVITY,
   aJUN23OVN19_BPC_TB_STACK,
   aJUN23OVN19_CJC_IPA,
+  // June 24 overnight loop 20 — 3 articles from nexphoria-overnight-v2 source: NAD+ longevity deep dive, Hexarelin cardiac/GH, Thymosin Alpha-1 T-cell immune
+  aJUN24OVN20_NAD_DEEP,
+  aJUN24OVN20_HEX_CARDIAC,
+  aJUN24OVN20_TA1_TCELL,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
