@@ -18,10 +18,7 @@ export const article: BlogArticle = {
       type: "paragraph",
       text: "This guide covers what to look for, what to avoid, and how to evaluate the documentation that separates a credible research supplier from one that merely looks legitimate.",
     },
-    {
-      type: "heading",
-      text: "Why Peptide Quality Matters for Research",
-    },
+    { type: "heading", text: "Why Peptide Quality Matters for Research" },
     {
       type: "paragraph",
       text: "Unlike small-molecule compounds, peptides are structurally sensitive. A 99% pure peptide and a 95% pure peptide are not interchangeable in research:",
@@ -39,18 +36,12 @@ export const article: BlogArticle = {
       type: "paragraph",
       text: "In short: the compound you administer in your protocol needs to be the compound you think you're administering. That verification happens through documentation, not trust.",
     },
-    {
-      type: "heading",
-      text: "HPLC Certificates: What to Look For",
-    },
+    { type: "heading", text: "HPLC Certificates: What to Look For" },
     {
       type: "paragraph",
       text: "HPLC (High-Performance Liquid Chromatography) separates compounds in a sample based on their interaction with a stationary phase, generating a chromatogram with peaks representing individual molecular species. For peptide purity assessment, reverse-phase HPLC (RP-HPLC) is the standard method.",
     },
-    {
-      type: "subheading",
-      text: "What a legitimate HPLC certificate includes:",
-    },
+    { type: "subheading", text: "What a legitimate HPLC certificate includes:" },
     {
       type: "list",
       items: [
@@ -61,10 +52,7 @@ export const article: BlogArticle = {
         "Analysis date and sample identifier matching your lot",
       ],
     },
-    {
-      type: "subheading",
-      text: "What to be skeptical of:",
-    },
+    { type: "subheading", text: "What to be skeptical of:" },
     {
       type: "list",
       items: [
@@ -77,10 +65,7 @@ export const article: BlogArticle = {
       type: "paragraph",
       text: "The 99% standard: For research-grade peptides, ≥99% HPLC purity is the accepted minimum. Anything below 98% should be considered unsuitable for controlled research use.",
     },
-    {
-      type: "heading",
-      text: "Certificates of Analysis (COAs): Interpreting Them Correctly",
-    },
+    { type: "heading", text: "Certificates of Analysis (COAs): Interpreting Them Correctly" },
     {
       type: "paragraph",
       text: "A Certificate of Analysis (COA) is the primary documentation artifact accompanying a research peptide. A comprehensive COA should include:",
@@ -102,10 +87,7 @@ export const article: BlogArticle = {
       type: "paragraph",
       text: "Third-party vs. in-house testing: In-house COAs (performed by the seller's own lab) are less credible than third-party COAs from independent analytical laboratories. Suppliers who publish third-party COAs — and make them accessible without requiring a purchase — signal greater transparency and accountability.",
     },
-    {
-      type: "heading",
-      text: "Mass Spectrometry Confirmation",
-    },
+    { type: "heading", text: "Mass Spectrometry Confirmation" },
     {
       type: "paragraph",
       text: "HPLC tells you how pure a compound is. Mass spectrometry tells you what the compound actually is. ESI-MS (Electrospray Ionization Mass Spectrometry) and MALDI-TOF are the standard methods for peptide identity confirmation. The observed molecular weight should match the theoretical molecular weight of the target sequence within ±0.1–0.5 Da (instrument-dependent).",
@@ -114,18 +96,12 @@ export const article: BlogArticle = {
       type: "paragraph",
       text: "For longer peptides (>20 amino acids), or peptides with modifications (fatty acid chains, PEG linkers, arginine substitutions), MS confirmation becomes especially important — these modifications can be omitted in synthesis without immediately obvious visual changes to the product.",
     },
-    {
-      type: "heading",
-      text: "Endotoxin Testing (LAL)",
-    },
+    { type: "heading", text: "Endotoxin Testing (LAL)" },
     {
       type: "paragraph",
       text: "Limulus Amebocyte Lysate (LAL) testing measures endotoxin contamination — bacterial lipopolysaccharide (LPS) and related pyrogens that can elicit severe inflammatory responses in in vivo models.",
     },
-    {
-      type: "subheading",
-      text: "Why it matters:",
-    },
+    { type: "subheading", text: "Why it matters:" },
     {
       type: "list",
       items: [
@@ -138,18 +114,12 @@ export const article: BlogArticle = {
       type: "paragraph",
       text: "Acceptable standards: Most research-grade suppliers should certify <1 EU/mg. Suppliers offering injectable-grade protocols should target <0.1 EU/mg.",
     },
-    {
-      type: "heading",
-      text: "Cold-Chain Requirements",
-    },
+    { type: "heading", text: "Cold-Chain Requirements" },
     {
       type: "paragraph",
       text: "Peptides are temperature-sensitive. Improper shipping conditions are one of the most common causes of reduced potency in received peptides — and one of the least visible.",
     },
-    {
-      type: "subheading",
-      text: "Storage standards:",
-    },
+    { type: "subheading", text: "Storage standards:" },
     {
       type: "list",
       items: [
@@ -158,10 +128,7 @@ export const article: BlogArticle = {
         "Extended storage: -80°C for research stocks held >6 months",
       ],
     },
-    {
-      type: "subheading",
-      text: "Shipping standards:",
-    },
+    { type: "subheading", text: "Shipping standards:" },
     {
       type: "list",
       items: [
@@ -174,10 +141,7 @@ export const article: BlogArticle = {
       type: "paragraph",
       text: "Ask suppliers directly how they ship during warm months. A supplier without a seasonal cold-chain protocol is not a research-grade supplier.",
     },
-    {
-      type: "heading",
-      text: "Red Flags to Avoid",
-    },
+    { type: "heading", text: "Red Flags to Avoid" },
     {
       type: "table",
       headers: ["Red Flag", "Why It Matters"],
@@ -192,25 +156,16 @@ export const article: BlogArticle = {
         ["Unusually low prices", "Synthesis corners being cut"],
       ],
     },
-    {
-      type: "heading",
-      text: "What Nexphoria Does Differently",
-    },
+    { type: "heading", text: "What Nexphoria Does Differently" },
     {
       type: "paragraph",
       text: "At Nexphoria, every peptide is synthesized to ≥99% HPLC purity (verified by reverse-phase chromatography), confirmed by ESI mass spectrometry for sequence identity, tested for endotoxins via LAL assay with results included on every COA, and shipped via validated cold-chain protocols with temperature-controlled packaging. COAs are published proactively and accessible on the website by lot number. If a supplier makes you ask twice, that tells you something.",
     },
-    {
-      type: "heading",
-      text: "Summary",
-    },
+    { type: "heading", text: "Summary" },
     {
       type: "paragraph",
       text: "Sourcing research peptides in the USA requires the same rigor as any other component of experimental design. HPLC purity, mass spectrometry identity confirmation, endotoxin testing, and cold-chain compliance are not optional extras — they are the baseline for research-grade material. Evaluate suppliers on documentation, not price or marketing language.",
     },
-    {
-      type: "disclaimer",
-      text: "For research purposes only. Not intended for human use.",
-    },
+    { type: "disclaimer", text: "For research purposes only. Not intended for human use." },
   ],
 };
