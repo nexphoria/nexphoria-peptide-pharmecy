@@ -17,6 +17,12 @@ export const metadata: Metadata = {
 
 const PAGES = [
   {
+    href: "/marketing/automation-blueprint",
+    title: "Automation Blueprint",
+    desc: "The always-on operating system for email, SEO, social, influencers, and wholesale.",
+    tag: "New",
+  },
+  {
     href: "/marketing/customer-personas",
     title: "Customer Personas",
     desc: "Three core buyer archetypes and the messaging/channel map for each.",
