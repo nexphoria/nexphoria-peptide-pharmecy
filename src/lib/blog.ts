@@ -4959,6 +4959,9 @@ import { article as aJUN22OVN37_SLEEP } from './articles/peptide-research-sleep-
 import { article as aJUN22OVN30_ALZHEIMER } from './articles/best-peptides-alzheimers-prevention-cognitive-decline-research-2026';
 import { article as aJUN22OVN30_KLOTHO } from './articles/alpha-klotho-longevity-anti-aging-peptide-research-2026';
 import { article as aJUN22OVN30_BRAINFOG } from './articles/peptide-stack-brain-fog-cognitive-clarity-complete-protocol-2026';
+import { article as aJUN29_BUY_USA_GUIDE } from './articles/buy-peptides-usa-guide-jun29-2026';
+import { article as aJUN29_PSCI_ALT } from './articles/peptide-sciences-alternative-jun29-2026';
+import { article as aJUN29_SELANK } from './articles/selank-anxiety-research-jun29-2026';
 
 
 export const articles: BlogArticle[] = [
@@ -12121,6 +12124,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN24OVN20_NAD_DEEP,
   aJUN24OVN20_HEX_CARDIAC,
   aJUN24OVN20_TA1_TCELL,
+  // June 29 overnight loop — 3 fresh entries from nexphoria-overnight-v2 source folder
+  aJUN29_BUY_USA_GUIDE,
+  aJUN29_PSCI_ALT,
+  aJUN29_SELANK,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
