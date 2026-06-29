@@ -4,11 +4,10 @@ import Breadcrumb from "@/components/Breadcrumb";
 export const metadata: Metadata = {
   title: "Customer Personas | Nexphoria",
   description:
-    "Three Nexphoria buyer archetypes: the methodical researcher, longevity optimizer, and recovery-focused researcher.",
+    "Three Nexphoria buyer archetypes: the methodical researcher, the longevity optimizer, and the recovery-focused researcher.",
   openGraph: {
     title: "Customer Personas — Nexphoria",
-    description:
-      "The three core Nexphoria buyer archetypes and how to market to each.",
+    description: "The three core Nexphoria buyer archetypes and how to market to each.",
     url: "https://nexphoria.com/marketing/customer-personas",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
   },
@@ -20,7 +19,7 @@ const PERSONAS = [
     tagline: "I need documentation I can actually cite.",
     audience: "Research-first buyers",
     bullets: [
-      "35–55, academic literacy, highly skeptical of vendor hype",
+      "35–55, academic literacy, skeptical of vendor hype",
       "Reads studies, compares COAs, and buys after a longer evaluation cycle",
       "Best reached with deep-dive guides, quality proof, and honest limitations",
     ],
@@ -53,6 +52,18 @@ const PERSONAS = [
   },
 ];
 
+const COMPARISON_ROWS = [
+  ["Age", "35–55", "40–65", "28–45"],
+  ["Income", "$80K–$200K", "$150K–$500K+", "$60K–$150K"],
+  ["Avg first order", "$250–$500", "$200–$350", "$100–$200"],
+  ["LTV potential", "Very high", "Very high", "Medium–high"],
+  ["Decision speed", "Slow (weeks)", "Medium (days–week)", "Fast (hours–days)"],
+  ["Primary channel", "Search + Email", "Instagram + Search", "Search + Reddit"],
+  ["Key motivator", "Data integrity", "Longevity optimization", "Performance / repair"],
+  ["Top products", "Varied", "Epithalon, GHK-Cu, NAD+, CJC", "BPC-157, TB-500, MK-677"],
+  ["Trust signal", "Third-party COA", "Research citations + credibility", "Community endorsement + COA"],
+];
+
 export default function CustomerPersonasPage() {
   return (
     <main className="min-h-screen bg-zinc-950 text-white">
@@ -65,8 +76,7 @@ export default function CustomerPersonasPage() {
           <p className="eyebrow mb-3">Marketing Strategy</p>
           <h1 className="text-page-hero font-bold tracking-tight mb-5">Customer Personas</h1>
           <p className="body-lg text-zinc-400 max-w-2xl">
-            Nexphoria&apos;s audience clusters into three clear buyer archetypes. Use this page to match messaging,
-            channel, and offer structure to the person on the other side of the click.
+            Nexphoria&apos;s audience clusters into three clear buyer archetypes. Match message, channel, and offer structure to the person on the other side of the click.
           </p>
         </div>
       </section>
@@ -115,13 +125,31 @@ export default function CustomerPersonasPage() {
           </article>
         ))}
 
-        <div className="rounded-3xl border border-[#B8A44C]/30 bg-[#B8A44C]/8 p-7">
-          <h2 className="text-xl font-semibold mb-3">How to use this</h2>
-          <p className="text-zinc-300 leading-7">
-            Build Google Ads, email sequences, blog topics, and Instagram hooks around the persona you want to
-            move. Marcus wants proof, Elena wants premium science, and Jake wants direct utility.
-          </p>
-        </div>
+        <article className="rounded-3xl border border-white/8 bg-zinc-900 p-7">
+          <h2 className="text-2xl font-semibold mb-4">Persona comparison table</h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full text-sm">
+              <thead>
+                <tr className="text-left text-zinc-500 uppercase tracking-[0.16em] text-[11px]">
+                  <th className="py-3 pr-4">Attribute</th>
+                  <th className="py-3 pr-4">Marcus</th>
+                  <th className="py-3 pr-4">Elena</th>
+                  <th className="py-3 pr-4">Jake</th>
+                </tr>
+              </thead>
+              <tbody>
+                {COMPARISON_ROWS.map(([label, marcus, elena, jake]) => (
+                  <tr key={label} className="border-t border-white/8">
+                    <td className="py-3 pr-4 text-zinc-400">{label}</td>
+                    <td className="py-3 pr-4 text-zinc-200">{marcus}</td>
+                    <td className="py-3 pr-4 text-zinc-200">{elena}</td>
+                    <td className="py-3 pr-4 text-zinc-200">{jake}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </article>
       </section>
     </main>
   );
