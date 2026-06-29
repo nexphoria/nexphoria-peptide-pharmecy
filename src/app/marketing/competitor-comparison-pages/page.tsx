@@ -5,7 +5,14 @@ import Breadcrumb from "@/components/Breadcrumb";
 export const metadata: Metadata = {
   title: "Competitor Comparison Pages | Nexphoria",
   description:
-    "SEO comparison-page blueprint for Nexphoria's competitor-displacement strategy, including priority URLs and on-page conversion notes.",
+    "SEO comparison-page blueprint for Nexphoria's competitor-displacement strategy, including priority URLs, page structure, and conversion notes.",
+  openGraph: {
+    title: "Competitor Comparison Pages — Nexphoria",
+    description:
+      "A practical framework for comparison pages that convert vendor-comparison traffic into catalog visits.",
+    url: "https://nexphoria.com/marketing/competitor-comparison-pages",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+  },
 };
 
 const PRIORITY_PAGES = [
@@ -26,6 +33,15 @@ const ON_PAGE_RULES = [
   "Link internally from blog posts and product pages where the competitor is mentioned.",
 ];
 
+const PAGE_TEMPLATE = [
+  ["Hero", "Name the competitor and answer the switch question immediately."],
+  ["Comparison table", "Put the most important buying variables in one scan-friendly table."],
+  ["Why switch", "Explain the market gap without sounding defensive."],
+  ["Trust proof", "COAs, cold-chain handling, and quality standards."],
+  ["FAQ", "Use short answers to remove remaining objections."],
+  ["CTA", "Drive to the catalog or a product page — only one primary action."],
+];
+
 export default function CompetitorComparisonPages() {
   return (
     <main className="min-h-screen bg-zinc-950 text-white">
@@ -38,8 +54,8 @@ export default function CompetitorComparisonPages() {
           <p className="eyebrow mb-3">SEO Landing Pages</p>
           <h1 className="text-page-hero font-bold tracking-tight mb-5">Competitor Comparison Pages</h1>
           <p className="body-lg text-zinc-400 max-w-2xl">
-            These pages capture high-intent search traffic from researchers comparing vendors.
-            Each one should answer the buying question fast, then route the visitor to the catalog.
+            These pages capture high-intent researchers comparing vendors. Each page should answer the buying
+            question quickly, prove trust with documentation, and route the visitor to the catalog.
           </p>
         </div>
       </section>
@@ -75,14 +91,25 @@ export default function CompetitorComparisonPages() {
         </article>
 
         <article className="rounded-3xl border border-white/8 bg-zinc-900 p-7 space-y-4">
+          <h2 className="text-2xl font-semibold">Recommended page template</h2>
+          <div className="grid gap-3 md:grid-cols-2">
+            {PAGE_TEMPLATE.map(([section, purpose]) => (
+              <div key={section} className="rounded-2xl border border-white/8 bg-zinc-950 p-4">
+                <div className="text-sm uppercase tracking-[0.18em] text-zinc-500 mb-2">{section}</div>
+                <p className="text-sm text-zinc-300 leading-6">{purpose}</p>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <article className="rounded-3xl border border-white/8 bg-zinc-900 p-7 space-y-4">
           <h2 className="text-2xl font-semibold">Internal linking plan</h2>
           <p className="text-zinc-300 leading-7">
-            Link these pages from relevant blog articles, product detail pages, and the marketing hub. The goal is to
-            turn comparison traffic into catalog traffic without forcing the visitor to hunt for the next step.
+            Link these pages from relevant blog articles, product pages, and the marketing hub. The goal is to turn
+            comparison traffic into catalog traffic without making the visitor hunt for the next step.
           </p>
           <p className="text-zinc-300 leading-7">
-            Use the compare pages as the conversion bridge for buyers who already know the category and are choosing the
-            vendor.
+            Use comparison pages as the bridge for buyers who already know the category and are choosing the vendor.
           </p>
         </article>
 
