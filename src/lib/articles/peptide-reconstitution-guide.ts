@@ -5,7 +5,7 @@ export const article: BlogArticle = {
   title: "How to Reconstitute Peptides: A Research Protocol Guide",
   description:
     "Step-by-step research protocol for reconstituting lyophilized peptides. Covers bacteriostatic water, acetic acid, dilution math, and storage best practices.",
-  category: "Handling & Storage",
+  category: "Research Protocols",
   readMinutes: 8,
   publishedAt: "2026-06-17",
   ogImage: "/og-image.jpg",

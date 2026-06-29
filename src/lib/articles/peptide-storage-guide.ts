@@ -5,7 +5,7 @@ export const article: BlogArticle = {
   title: "Proper Peptide Storage: Temperature, Light, and Shelf Life",
   description:
     "Research-grade guidelines for storing lyophilized and reconstituted peptides. Temperature requirements, light sensitivity, freeze-thaw cycles, and shelf life by compound type.",
-  category: "Handling & Storage",
+  category: "Research Protocols",
   readMinutes: 9,
   publishedAt: "2026-06-17",
   ogImage: "/og-image.jpg",
