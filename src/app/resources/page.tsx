@@ -23,51 +23,6 @@ export const metadata: Metadata = {
 
 /* ─── Data ─── */
 
-const TOOLS = [
-  {
-    href: "/quiz",
-    label: "Protocol Finder Quiz",
-    desc: "5-question funnel → 3 personalized compound recommendations",
-    badge: "Quiz",
-    highlight: true,
-  },
-  { href: "/tools/reconstitution-calculator", label: "Reconstitution Calculator", desc: "BAC water volume, dose volume, doses per vial" },
-  { href: "/tools/half-life-calculator", label: "Half-Life Calculator", desc: "Decay curve, clearance milestones, dosing interval" },
-  { href: "/tools/dosing-frequency-planner", label: "Dosing Frequency Planner", desc: "Weekly injection schedule builder" },
-  { href: "/tools/cost-per-dose-calculator", label: "Cost Per Dose Calculator", desc: "Per-dose, per-week, monthly cost breakdown" },
-  { href: "/tools/stack-builder", label: "Stack Builder", desc: "Goal-based compound stacking with synergy data" },
-  { href: "/tools/purity-checker", label: "Purity Checker", desc: "HPLC standards, red flags, COA reading guide" },
-  { href: "/tools/unit-converter", label: "Unit Converter", desc: "mcg/mg/IU, syringe units, nmol/L ↔ ng/mL, dilution" },
-  { href: "/tools/bac-water-guide", label: "BAC Water Guide", desc: "Benzyl alcohol mechanism, reconstitution steps, mistakes" },
-  { href: "/tools/igf-1-calculator", label: "IGF-1 Response Calculator", desc: "Estimate IGF-1 elevation from GH secretagogue stacks" },
-  { href: "/tools/half-life-calculator", label: "Peptide Interaction Checker", desc: "Synergies, conflicts, receptor overlap warnings" },
-  { href: "/tools/peptide-interaction-checker", label: "Peptide Interaction Checker", desc: "Compatibility matrix for up to 5 compounds" },
-  { href: "/tools/peptide-cycle-planner", label: "Peptide Cycle Planner", desc: "Calendar-based 3/6-month research cycle builder" },
-  { href: "/tools/dosing-frequency-planner", label: "Dosing Frequency Planner", desc: "Weekly injection schedule grid builder" },
-  { href: "/tools/body-weight-dose-calculator", label: "Body Weight Dose Calculator", desc: "mg/kg ↔ absolute dose with species presets" },
-  { href: "/tools/peptide-safety-checker", label: "Peptide Safety Checker", desc: "Side effects, contraindications, and handling warnings per compound" },
-  { href: "/tools/peptide-stability-checker", label: "Peptide Stability Checker", desc: "Shelf life by storage condition and compound" },
-  { href: "/tools/protocol-template-generator", label: "Protocol Template Generator", desc: "Printable research protocol document builder" },
-  { href: "/tools/research-log", label: "Research Log", desc: "LocalStorage research journal with CSV export" },
-  { href: "/tools/vial-inventory-tracker", label: "Vial Inventory Tracker", desc: "Track vial counts, expiry dates, reconstituted status" },
-  { href: "/tools/biomarker-reference", label: "Biomarker Reference", desc: "32 lab markers with compound interactions and ranges" },
-  { href: "/tools/peptide-timer", label: "Peptide Injection Timer", desc: "Live countdown to next dose, multi-compound status tracking" },
-  { href: "/tools/injection-site-diagram", label: "Injection Site Diagram", desc: "Interactive body diagram — needle length, angle, volume limits per zone" },
-  { href: "/tools/peptide-research-planner", label: "Peptide Research Planner", desc: "All-in-one 4-step wizard to generate a complete printable research protocol" },
-  { href: "/tools/peptide-dose-response-planner", label: "Dose-Response Study Planner", desc: "Log-spaced dose arms, power-calculated group sizes, compound requirements" },
-  { href: "/tools/peptide-news-feed", label: "Research News Feed", desc: "Curated landmark PubMed papers — filter by compound, category, or impact level" },
-  { href: "/tools/compound-half-life-reference", label: "Half-Life Reference Table", desc: "Fast-load static reference for 35+ compounds: half-life, Tmax, dosing frequency, route" },
-  { href: "/tools/molarity-calculator", label: "Molarity Calculator", desc: "Convert molar ↔ mass concentration (nM/μM ↔ mg/mL) for any peptide — 30+ compound MW database, rodent dose → nmol converter" },
-  { href: "/tools/peptide-label-generator", label: "Vial Label Generator", desc: "Generate printable 1\"×2.5\" cryo vial labels with compound, concentration, lot, reconstitution date, and auto-expiry" },
-  { href: "/tools/peptide-roi-calculator", label: "Research ROI Calculator", desc: "Estimate total compound cost by study type, subject count, and compound stack — includes CRO cost comparison and grant budget breakdown" },
-  { href: "/compare", label: "Compare Compounds", desc: "Side-by-side purity, MW, storage, and pricing for up to 3 compounds" },
-];
-
-// Deduplicated tools
-const TOOLS_DEDUPED = Array.from(
-  new Map(TOOLS.map((t) => [t.href, t])).values()
-).filter((t) => t.href.startsWith("/tools") || t.href === "/quiz" || t.href === "/compare");
-
 const GUIDES = [
   {
     href: "/guides/storage",
@@ -235,6 +190,7 @@ export default function ResourcesPage() {
               { href: "/tools", label: "All Tools", icon: "🧰" },
               { href: "/products", label: "Shop", icon: "🛒" },
               { href: "/wholesale", label: "Wholesale", icon: "📦" },
+              { href: "/marketing", label: "Marketing Hub", icon: "📣" },
             ].map(({ href, label, icon }) => (
               <Link
                 key={href}
