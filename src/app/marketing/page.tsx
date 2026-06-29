@@ -29,6 +29,12 @@ const PAGES = [
     tag: "Source doc",
   },
   {
+    href: "/marketing/competitor-comparison-pages",
+    title: "Competitor Comparison Pages",
+    desc: "SEO deployment plan for vendor-comparison landing pages.",
+    tag: "New",
+  },
+  {
     href: "/marketing/crisis-comms-playbook",
     title: "Crisis Comms Playbook",
     desc: "Response framework, escalation ladder, and holding statements.",
