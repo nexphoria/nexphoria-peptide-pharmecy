@@ -398,6 +398,9 @@ import { article as a247 } from './articles/nexphoria-vs-behemoth-labz-vendor-co
 import { article as a248 } from './articles/nexphoria-vs-biotech-peptides-vendor-comparison';
 import { article as a249 } from './articles/best-peptides-muscle-recovery';
 import { article as a250 } from './articles/cold-chain-peptide-shipping';
+import { article as aJUN29OVNV2_MUSCLE } from './articles/best-peptides-muscle-recovery-ovn-v2-jun29-2026';
+import { article as aJUN29OVNV2_BPC157 } from './articles/bpc-157-complete-guide-ovn-v2-jun29-2026';
+import { article as aJUN29OVNV2_COLD_CHAIN } from './articles/cold-chain-peptide-shipping-ovn-v2-jun29-2026';
 import { article as a251 } from './articles/peptide-purity-hplc-testing';
 import { article as a252 } from './articles/peptide-sciences-alternative';
 import { article as a253 } from './articles/tb-500-thymosin-beta-4';
@@ -5215,6 +5218,10 @@ export const articles: BlogArticle[] = [
   a248,
   a249,
   a250,
+  // June 29 overnight loop — 3 source-folder articles promoted as fresh entries
+  aJUN29OVNV2_MUSCLE,
+  aJUN29OVNV2_BPC157,
+  aJUN29OVNV2_COLD_CHAIN,
   a251,
   a252,
   a253,
