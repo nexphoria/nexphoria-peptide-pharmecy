@@ -4968,6 +4968,10 @@ import { article as aJUN29_SELANK } from './articles/selank-anxiety-research-jun
 import { article as aJUN29_NEX_QUALITY } from './articles/nexphoria-quality-standards-jun29-2026';
 import { article as aJUN29_HPLC_TESTING } from './articles/peptide-purity-hplc-testing-jun29-2026';
 import { article as aJUN29_STORAGE } from './articles/peptide-storage-guide-jun29-2026';
+// June 29 source-folder articles promoted into the blog index
+import { article as aJUN29_SRC_BPC157_COMPLETE } from './articles/bpc-157-complete-guide';
+import { article as aJUN29_SRC_BPC_TB_STACK } from './articles/bpc-157-vs-tb500-stack';
+import { article as aJUN29_SRC_BUY_USA } from './articles/buy-peptides-usa-guide';
 
 
 export const articles: BlogArticle[] = [
@@ -12141,6 +12145,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN29_NEX_QUALITY,
   aJUN29_HPLC_TESTING,
   aJUN29_STORAGE,
+  // June 29 source-folder articles promoted into the blog index
+  aJUN29_SRC_BPC157_COMPLETE,
+  aJUN29_SRC_BPC_TB_STACK,
+  aJUN29_SRC_BUY_USA,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
