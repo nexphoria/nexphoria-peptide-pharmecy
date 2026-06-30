@@ -4969,6 +4969,9 @@ import { article as aJUN29_SELANK } from './articles/selank-anxiety-research-jun
 import { article as aJUN29_NEX_QUALITY } from './articles/nexphoria-quality-standards-jun29-2026';
 import { article as aJUN29_HPLC_TESTING } from './articles/peptide-purity-hplc-testing-jun29-2026';
 import { article as aJUN29_STORAGE } from './articles/peptide-storage-guide-jun29-2026';
+import { article as aJUN30_BUY_USA_GUIDE } from './articles/buy-peptides-usa-guide-jun30-2026';
+import { article as aJUN30_NEX_QUALITY } from './articles/nexphoria-quality-standards-jun30-2026';
+import { article as aJUN30_STORAGE } from './articles/peptide-storage-guide-jun30-2026';
 // June 29 source-folder articles promoted into the blog index
 import { article as aJUN29_SRC_BPC157_COMPLETE } from './articles/bpc-157-complete-guide';
 import { article as aJUN29_SRC_BPC_TB_STACK } from './articles/bpc-157-vs-tb500-stack';
@@ -12148,6 +12151,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN29_NEX_QUALITY,
   aJUN29_HPLC_TESTING,
   aJUN29_STORAGE,
+  // June 30 overnight loop — 3 fresh entries from nexphoria-overnight-v2 source folder
+  aJUN30_BUY_USA_GUIDE,
+  aJUN30_NEX_QUALITY,
+  aJUN30_STORAGE,
   // June 29 source-folder articles promoted into the blog index
   aJUN29_SRC_BPC157_COMPLETE,
   aJUN29_SRC_BPC_TB_STACK,
