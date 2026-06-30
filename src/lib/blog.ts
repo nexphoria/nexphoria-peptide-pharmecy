@@ -4474,6 +4474,7 @@ import { article as aJUN19OVN_SELANK_MECH } from './articles/selank-anxiety-rese
 import { article as aJUN19OVN_HPLC_GUIDE } from './articles/peptide-purity-hplc-testing-sourcing-guide-jun19';
 import { article as aJUN19OVN_LONGEVITY_STACK } from './articles/longevity-research-peptide-stack-jun19-2026';
 import { article as aOVNV2_MUSCLE_RECOVERY } from './articles/best-peptides-muscle-recovery';
+import { article as aJUN30OVNV2_MUSCLE_RECOVERY } from './articles/best-peptides-muscle-recovery-overnight-v2-jun30-2026';
 import { article as aOVNV2_BPC157_COMPLETE } from './articles/bpc-157-complete-guide';
 import { article as aOVNV2_BPC157_TB500_STACK } from './articles/bpc-157-vs-tb500-stack';
 import { article as aOVNV2_BUY_PEPTIDES_USA } from './articles/buy-peptides-usa-guide';
@@ -5229,6 +5230,8 @@ export const articles: BlogArticle[] = [
   aJUN29OVNV2_MUSCLE,
   aJUN29OVNV2_BPC157,
   aJUN29OVNV2_COLD_CHAIN,
+  // June 30 overnight loop — refreshed muscle recovery entry from nexphoria-overnight-v2
+  aJUN30OVNV2_MUSCLE_RECOVERY,
   a251,
   a252,
   a253,
