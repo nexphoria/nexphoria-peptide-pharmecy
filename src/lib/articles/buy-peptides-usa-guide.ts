@@ -7,7 +7,7 @@ export const article: BlogArticle = {
     "A practical buyer's guide to sourcing research peptides in the USA — what HPLC certificates mean, why COAs matter, cold-chain requirements, red flags to avoid, and what sets premium suppliers apart.",
   category: "Sourcing",
   readMinutes: 9,
-  publishedAt: "2026-06-19",
+  publishedAt: "2026-06-29",
   ogImage: "/og-image.jpg",
   body: [
     {
