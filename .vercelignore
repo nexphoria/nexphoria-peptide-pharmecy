@@ -1,0 +1,24 @@
+# Exclude massive article library from Vercel build
+# These are static TS data files — 2,660 files that kill build time
+src/lib/articles/
+
+# Exclude non-essential directories
+audit-logs/
+backups/
+brand-assets/
+brand-source/
+content/
+design-reference/
+designs/
+docs/
+workers/
+scripts/
+_api_backup/
+.wrangler/
+packages/
+apps/
+
+# Exclude dev files
+*.md
+!README.md
+
