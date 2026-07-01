@@ -102,12 +102,12 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
         scrolled
-          ? "backdrop-blur-md shadow-sm"
-          : "backdrop-blur-sm"
+          ? "backdrop-blur-md border-[#2A2A28]"
+          : "backdrop-blur-sm border-transparent"
       }`}
-      style={{ height: "72px", backgroundColor: scrolled ? "rgba(250,248,245,0.97)" : "rgba(250,248,245,0.72)" }}
+      style={{ height: "72px", backgroundColor: scrolled ? "rgba(15,15,14,0.97)" : "rgba(15,15,14,0.72)" }}
     >
       <div
         className="max-w-7xl mx-auto px-6 md:px-10 h-full flex items-center justify-between"
@@ -137,7 +137,7 @@ export function Header() {
               aria-haspopup="true"
               aria-expanded={activeDropdown === "shop"}
               className={`flex items-center gap-1 px-2 lg:px-3 py-2 text-[11px] rounded-md transition-colors uppercase ${
-                activeDropdown === "shop" ? "text-black" : "text-black/60 hover:text-black"
+                activeDropdown === "shop" ? "text-white" : "text-[#6A6050] hover:text-white"
               }`}
               style={{ letterSpacing: "0.15em", fontWeight: 500 }}
             >
@@ -164,10 +164,10 @@ export function Header() {
                             <Link
                               href={item.href}
                               onClick={() => setActiveDropdown(null)}
-                              className="block px-2 py-1.5 rounded-lg hover:bg-[#F0EDE7] transition-colors"
+                              className="block px-2 py-1.5 rounded-lg hover:bg-[#1C1C1A] transition-colors"
                             >
-                              <span className="text-sm font-medium text-black block">{item.label}</span>
-                              <span className="text-xs text-[#666666]">{item.sub}</span>
+                              <span className="text-sm font-medium text-white block">{item.label}</span>
+                              <span className="text-xs text-[#4A4440]">{item.sub}</span>
                             </Link>
                           </li>
                         ))}
@@ -226,7 +226,7 @@ export function Header() {
                   <Link
                     href="/build-your-stack"
                     onClick={() => setActiveDropdown(null)}
-                    className="text-sm font-medium text-[#555] hover:text-black"
+                    className="text-sm font-medium text-[#6A6050] hover:text-white"
                   >
                     Build Your Stack &#8594;
                   </Link>
@@ -242,7 +242,7 @@ export function Header() {
               aria-haspopup="true"
               aria-expanded={activeDropdown === "research"}
               className={`flex items-center gap-1 px-2 lg:px-3 py-2 text-[11px] rounded-md transition-colors uppercase ${
-                activeDropdown === "research" ? "text-black" : "text-black/60 hover:text-black"
+                activeDropdown === "research" ? "text-white" : "text-[#6A6050] hover:text-white"
               }`}
               style={{ letterSpacing: "0.15em", fontWeight: 500 }}
             >
@@ -268,7 +268,7 @@ export function Header() {
                           <Link
                             href={item.href}
                             onClick={() => setActiveDropdown(null)}
-                            className="block px-2 py-1.5 text-sm rounded-lg hover:bg-[#F0EDE7] transition-colors text-black/80 hover:text-black"
+                            className="block px-2 py-1.5 text-sm rounded-lg hover:bg-[#1C1C1A] transition-colors text-[#9A9080] hover:text-white"
                           >
                             {item.label}
                           </Link>
@@ -286,7 +286,7 @@ export function Header() {
                           <Link
                             href={item.href}
                             onClick={() => setActiveDropdown(null)}
-                            className="block px-2 py-1.5 text-sm rounded-lg hover:bg-[#F0EDE7] transition-colors text-black/80 hover:text-black"
+                            className="block px-2 py-1.5 text-sm rounded-lg hover:bg-[#1C1C1A] transition-colors text-[#9A9080] hover:text-white"
                           >
                             {item.label}
                           </Link>
@@ -309,7 +309,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="px-2 lg:px-3 py-2 text-[11px] uppercase text-black/60 hover:text-black rounded-md transition-colors"
+              className="px-2 lg:px-3 py-2 text-[11px] uppercase text-[#6A6050] hover:text-white rounded-md transition-colors"
               style={{ letterSpacing: "0.15em", fontWeight: 500 }}
             >
               {link.label}
@@ -550,3 +550,4 @@ export function Header() {
     </header>
   );
 }
+

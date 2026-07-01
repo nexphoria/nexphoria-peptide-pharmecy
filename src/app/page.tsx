@@ -1,993 +1,323 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import TrustBadges from "@/components/TrustBadges";
-import { products } from "@/lib/products";
-import { articles } from "@/lib/blog";
-import { hasProductPhoto, getProductImagePath } from "@/lib/product-images";
-import HomepageContinueResearch from "@/components/HomepageContinueResearch";
-import HeroParallaxImage from "@/components/HeroParallaxImage";
+import { TypewriterHeadline } from "@/components/TypewriterHeadline";
+import { MarqueeTicker } from "@/components/MarqueeTicker";
+import { StackGrid } from "@/components/StackGrid";
+import { StatsSection } from "@/components/StatsSection";
 import SectionReveal from "@/components/SectionReveal";
-import VialSVG from "@/components/VialSVG";
-import { getCategoryColor } from "@/lib/vial-colors";
-import AnnouncementBar from "@/components/AnnouncementBar";
-import RUOBanner from "@/components/RUOBanner";
-import { EmailCapture } from "@/components/email-capture";
 
 export const metadata: Metadata = {
-  title: "Nexphoria — Research-Grade Peptide Compounds",
+  title: "Nexphoria — Peptides, Prescribed.",
   description:
-    "Pharmaceutical-grade peptide compounds manufactured under cGMP standards. Third-party tested for identity, purity, and potency. BPC-157, Semaglutide, Tirzepatide, GHK-Cu, and 30+ more. For qualified research use only.",
-  alternates: {
-    canonical: "https://nexphoria.com",
-  },
+    "Physician-guided peptide therapy. Board-certified MDs write your protocol. 503A compounded. Free Foundation bloodwork panel with every protocol. Cold-chain shipped to all 50 states.",
+  alternates: { canonical: "https://nexphoria.com" },
   openGraph: {
-    title: "Nexphoria — Research-Grade Peptide Compounds",
-    description:
-      "Pharmaceutical-grade peptide compounds manufactured under cGMP standards. Third-party tested for identity, purity, and potency.",
+    title: "Nexphoria — Peptides, Prescribed.",
+    description: "Physician-guided peptide therapy. Board-certified MDs. 503A compounded. Free bloodwork with every protocol.",
     url: "https://nexphoria.com",
     siteName: "Nexphoria",
     type: "website",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Nexphoria — Research-Grade Peptide Compounds",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Nexphoria — Research-Grade Peptide Compounds",
-    description:
-      "Pharmaceutical-grade peptide compounds manufactured under cGMP standards.",
-    images: ["/og-image.jpg"],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Nexphoria — Peptide Pharmacy" }],
   },
 };
 
-const FEATURED_SLUGS = [
-  "bpc-157",
-  "tirzepatide",
-  "ghk-cu",
-  "ipamorelin",
-  "retatrutide",
-  "nad-plus",
-];
-
-function priceFor(slug: string): number {
-  const p = products.find((x) => x.slug === slug);
-  if (!p) return 0;
-  return p.dosages && p.dosages.length > 0
-    ? Math.min(...p.dosages.map((d) => d.price))
-    : p.price;
-}
-
-const RESEARCH_CATEGORIES = [
+/* ── HOW IT WORKS ── */
+const HOW_STEPS = [
   {
-    label: "Recovery & Healing",
-    slug: "Recovery & Healing",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M14 4v20M4 14h20" stroke="#B8A44C" strokeWidth="1.8" strokeLinecap="round"/>
-        <circle cx="14" cy="14" r="12" stroke="#B8A44C" strokeWidth="1.4"/>
-      </svg>
-    ),
+    n: "01",
+    title: "Take the intake",
+    body: "Five-minute medical questionnaire. Your goal, your history, your baseline.",
   },
   {
-    label: "Weight Management",
-    slug: "Weight Management",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M6 22l4-8 4 4 4-12 4 6" stroke="#B8A44C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
+    n: "02",
+    title: "Physician writes your Rx",
+    body: "A board-certified MD reviews and writes your protocol within 24–48 hours.",
   },
   {
-    label: "Cognitive",
-    slug: "Cognitive",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <ellipse cx="14" cy="13" rx="9" ry="8" stroke="#B8A44C" strokeWidth="1.5"/>
-        <path d="M9 10c0-2.761 2.239-5 5-5" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M10 18c-.667 1.333-1 2.5-.667 3.5" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M18 18c.667 1.333 1 2.5.667 3.5" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round"/>
-      </svg>
-    ),
-  },
-  {
-    label: "Immune Support",
-    slug: "Immune Support",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M14 4l7 4v6c0 5-3.5 9-7 10C10.5 23 7 19 7 14V8l7-4z" stroke="#B8A44C" strokeWidth="1.5"/>
-        <path d="M10.5 14l2.5 2.5 5-5" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
-  },
-  {
-    label: "Longevity",
-    slug: "Longevity",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <circle cx="14" cy="14" r="10" stroke="#B8A44C" strokeWidth="1.5"/>
-        <path d="M14 8v6l4 2" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
-  },
-  {
-    label: "Growth Hormone",
-    slug: "Growth Hormone",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M7 22V12l7-8 7 8v10" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <rect x="11" y="16" width="6" height="6" rx="0.5" stroke="#B8A44C" strokeWidth="1.5"/>
-      </svg>
-    ),
-  },
-  {
-    label: "Anti-Aging",
-    slug: "Anti-Aging",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M7 16c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M11 20c0-1.657 1.343-3 3-3s3 1.343 3 3" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M14 5v2" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M6 9l1.5 1.5M20.5 10.5L22 9" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round"/>
-      </svg>
-    ),
-  },
-  {
-    label: "Dermatological",
-    slug: "Dermatological",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M8 22c0-5.523 2.686-9.333 6-9.333S20 16.477 20 22" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M12 12c0-2.5 1.5-5.5 2-8 .5 2.5 2 5.5 2 8" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
+    n: "03",
+    title: "Delivered to your door",
+    body: "Compounded in a licensed US 503A pharmacy. Cold-chain shipped. Discreet.",
   },
 ];
 
-const recentArticles = [...articles]
-  .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
-  .slice(0, 3);
-
-export default function HomePage() {
-  const featuredProducts = FEATURED_SLUGS.map((slug) =>
-    products.find((p) => p.slug === slug)
-  ).filter((p): p is NonNullable<typeof p> => Boolean(p));
-
+/* ── BLOODWORK SECTION ── */
+function BloodworkSection() {
   return (
-    <>
-      {/* ─── TRUST MICROBAR ─── */}
-      <AnnouncementBar />
-
-      {/* ─── HERO v2 — Niance-inspired ─── */}
-      <section
-        className="relative overflow-hidden"
-        style={{ backgroundColor: "#0F0F0E", minHeight: "100vh" }}
-      >
-
-        {/* ── DESKTOP ── */}
-        <div className="hidden md:block" style={{ minHeight: "100vh", position: "relative" }}>
-
-          {/* Main packaging shot — parallax, right side */}
-          <HeroParallaxImage />
-
-          {/* Dark vignette — solid left panel fading into image */}
-          <div
-            style={{
-              position: "absolute",
-              left: 0,
-              top: 0,
-              bottom: 0,
-              width: "58%",
-              background:
-                "linear-gradient(to right, #0F0F0E 0%, #0F0F0E 52%, rgba(15,15,14,0.88) 72%, transparent 100%)",
-              zIndex: 3,
-              pointerEvents: "none",
-            }}
-          />
-
-          {/* Top fade */}
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              height: "140px",
-              background: "linear-gradient(to bottom, #0F0F0E 0%, transparent 100%)",
-              zIndex: 3,
-              pointerEvents: "none",
-            }}
-          />
-
-          {/* Bottom fade — transition to next section */}
-          <div
-            style={{
-              position: "absolute",
-              bottom: 0,
-              left: 0,
-              right: 0,
-              height: "160px",
-              background: "linear-gradient(to top, #0F0F0E 0%, transparent 100%)",
-              zIndex: 3,
-              pointerEvents: "none",
-            }}
-          />
-
-          {/* Floating credential pills — over the image */}
-          <div
-            className="hero-pill-float"
-            style={{ position: "absolute", right: "29%", top: "28%", zIndex: 10, animationDelay: "0.75s" }}
-          >
-            <div className="hero-pill">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-                <circle cx="5" cy="5" r="4" stroke="#B8A44C" strokeWidth="1.1" />
-                <path d="M2.5 5.2l1.5 1.5 3.5-3.5" stroke="#B8A44C" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              99.2% Purity
-            </div>
-          </div>
-
-          <div
-            className="hero-pill-float"
-            style={{ position: "absolute", right: "14%", top: "44%", zIndex: 10, animationDelay: "0.9s" }}
-          >
-            <div className="hero-pill">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-                <rect x="1.5" y="1" width="7" height="8" rx="1" stroke="#B8A44C" strokeWidth="1.1" />
-                <path d="M3 4h4M3 6h2.5" stroke="#B8A44C" strokeWidth="1.1" strokeLinecap="round" />
-              </svg>
-              COA Every Order
-            </div>
-          </div>
-
-          <div
-            className="hero-pill-float"
-            style={{ position: "absolute", right: "27%", top: "61%", zIndex: 10, animationDelay: "1.05s" }}
-          >
-            <div className="hero-pill">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-                <path d="M1.5 5h7M5.5 2.5l3 2.5-3 2.5" stroke="#B8A44C" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              Cold-Chain Delivery
-            </div>
-          </div>
-
-          {/* Text block — left, vertically centered */}
-          <div
-            style={{
-              position: "absolute",
-              left: "6%",
-              top: "50%",
-              transform: "translateY(-50%)",
-              zIndex: 10,
-              maxWidth: "520px",
-            }}
-          >
-            <p
-              className="hero-eyebrow-animate eyebrow"
-              style={{ color: "#B8A44C", marginBottom: "2.25rem" }}
-            >
-              Research-Grade Peptides
-            </p>
-
-            <h1
-              className="hero-text-animate"
-              style={{
-                fontSize: "clamp(4.5rem, 7.5vw, 8.5rem)",
-                lineHeight: 0.88,
-                letterSpacing: "-0.04em",
-                marginBottom: "2.5rem",
-              }}
-            >
-              <span
-                style={{
-                  display: "block",
-                  fontFamily: "var(--font-display)",
-                  fontStyle: "italic",
-                  fontWeight: 300,
-                  color: "#F5F5F0",
-                }}
-              >
-                Compounds
-              </span>
-              <span
-                style={{
-                  display: "block",
-                  fontFamily: "var(--font-display)",
-                  fontWeight: 700,
-                  color: "#C9DD69",
-                  letterSpacing: "-0.045em",
-                }}
-              >
-                built for
-              </span>
-              <span
-                style={{
-                  display: "block",
-                  fontFamily: "var(--font-display)",
-                  fontStyle: "italic",
-                  fontWeight: 300,
-                  color: "rgba(245,245,240,0.45)",
-                }}
-              >
-                serious researchers.
-              </span>
-            </h1>
-
-            <p
-              className="hero-sub-animate"
-              style={{
-                fontSize: "0.9375rem",
-                color: "rgba(245,245,240,0.52)",
-                lineHeight: 1.75,
-                maxWidth: "340px",
-                marginBottom: "2.5rem",
-              }}
-            >
-              Pharmaceutical-grade synthesis. ≥99% purity verified by independent HPLC-MS.
-              Cold-chain shipped with lot-specific Certificate of Analysis.
-            </p>
-
-            {/* Inline featured product mini-cards */}
-            <div
-              className="hero-sub-animate"
-              style={{
-                display: "flex",
-                gap: "0.625rem",
-                marginBottom: "2.5rem",
-                flexWrap: "wrap",
-              }}
-            >
-              {[
-                { slug: "bpc-157", name: "BPC-157", cat: "Recovery", price: 50 },
-                { slug: "tirzepatide", name: "Tirzepatide", cat: "Weight Mgmt", price: 120 },
-                { slug: "ghk-cu", name: "GHK-Cu", cat: "Anti-Aging", price: 66 },
-              ].map((item) => (
-                <Link
-                  key={item.slug}
-                  href={`/products/${item.slug}`}
-                  className="hero-product-card"
-                >
-                  <span style={{ fontSize: "0.5rem", fontWeight: 500, letterSpacing: "0.18em", textTransform: "uppercase", color: "#B8A44C", marginBottom: "0.25rem", display: "block" }}>
-                    {item.cat}
-                  </span>
-                  <span style={{ fontSize: "0.875rem", fontWeight: 400, color: "#F5F5F0", lineHeight: 1.2, marginBottom: "0.375rem", display: "block" }}>
-                    {item.name}
-                  </span>
-                  <span style={{ fontSize: "0.75rem", fontWeight: 500, color: "rgba(245,245,240,0.45)", display: "block" }}>
-                    from ${item.price}
-                  </span>
-                </Link>
-              ))}
-            </div>
-
-            <div className="hero-cta-animate flex flex-col gap-3">
-              <Link href="/products" className="btn-hero-white cta-pulse">
-                Discover the Collection
-                <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
-                  <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </Link>
-              <Link
-                href="/quiz"
-                style={{
-                  fontSize: "0.6875rem",
-                  fontWeight: 400,
-                  letterSpacing: "0.12em",
-                  textTransform: "uppercase",
-                  color: "rgba(245,245,240,0.38)",
-                  textDecoration: "none",
-                  transition: "color 200ms",
-                  alignSelf: "flex-start",
-                }}
-                className="hover:!text-[rgba(245,245,240,0.75)]"
-              >
-                Find your protocol →
-              </Link>
-            </div>
-          </div>
-
-          {/* Bottom editorial strip */}
-          <div
-            style={{
-              position: "absolute",
-              bottom: 0,
-              left: "6%",
-              right: "6%",
-              zIndex: 20,
-              paddingBottom: "1.5rem",
-              paddingTop: "1rem",
-              borderTop: "1px solid rgba(255,255,255,0.07)",
-              display: "flex",
-              alignItems: "center",
-              gap: "1.75rem",
-            }}
-          >
-            {[
-              "Nexphoria Laboratories",
-              "Janoshik Analytical Certified",
-              "99.2% Average Purity",
-              "Cold-Chain Every Shipment",
-              "COA Included",
-            ].map((item, i) => (
-              <div key={item} style={{ display: "flex", alignItems: "center", gap: "1.75rem" }}>
-                {i > 0 && (
-                  <span style={{ color: "rgba(255,255,255,0.12)", userSelect: "none" }}>·</span>
-                )}
-                <span
-                  style={{
-                    fontSize: "0.5625rem",
-                    fontWeight: 500,
-                    letterSpacing: "0.22em",
-                    textTransform: "uppercase",
-                    color: "rgba(255,255,255,0.28)",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  {item}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* ── MOBILE ── */}
-        <div
-          className="md:hidden flex flex-col"
-          style={{ minHeight: "100vh", paddingTop: "88px" }}
-        >
-          <div className="px-6 pt-8 pb-6">
-            <p
-              className="eyebrow"
-              style={{ color: "#B8A44C", marginBottom: "1.5rem" }}
-            >
-              Research-Grade Peptides
-            </p>
-
-            <h1
-              style={{
-                fontSize: "clamp(3rem, 12vw, 4.5rem)",
-                lineHeight: 0.92,
-                letterSpacing: "-0.03em",
-                marginBottom: "1.5rem",
-              }}
-            >
-              <span
-                style={{
-                  display: "block",
-                  fontFamily: "var(--font-display)",
-                  fontStyle: "italic",
-                  fontWeight: 300,
-                  color: "#F5F5F0",
-                }}
-              >
-                Precision,
-              </span>
-              <span
-                style={{
-                  display: "block",
-                  fontFamily: "var(--font-display)",
-                  fontWeight: 700,
-                  color: "#C9DD69",
-                }}
-              >
-                delivered.
-              </span>
-            </h1>
-
-            <p
-              style={{
-                fontSize: "0.9375rem",
-                color: "rgba(245,245,240,0.52)",
-                lineHeight: 1.7,
-                marginBottom: "2.25rem",
-                maxWidth: "300px",
-              }}
-            >
-              Research-grade compounds. 99%+ purity.
-              Cold-chain shipped with COA.
-            </p>
-
-            <Link href="/products" className="btn-hero-white">
-              Discover Collection
-            </Link>
-          </div>
-
-          <div className="px-4 pb-8 flex-1 flex flex-col justify-end">
-            <div
-              style={{
-                borderRadius: "20px",
-                overflow: "hidden",
-                boxShadow: "0 24px 56px rgba(0,0,0,0.5)",
-                backgroundColor: "#1C1C1A",
-                position: "relative",
-              }}
-            >
-              <picture>
-                <source media="(max-width: 480px)" srcSet="/brand/packaging-unboxing-mobile.webp" type="image/webp" />
-                <Image
-                  src="/brand/packaging-unboxing.webp"
-                  alt="Nexphoria premium peptide presentation"
-                  width={800}
-                  height={534}
-                  className="w-full h-auto"
-                  priority
-                  fetchPriority="high"
-                  sizes="(max-width: 480px) 480px, (max-width: 768px) 100vw, 800px"
-                  unoptimized
-                />
-              </picture>
-              {/* Floating pills over mobile image */}
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: "1rem",
-                  left: "1rem",
-                  display: "flex",
-                  gap: "0.5rem",
-                }}
-              >
-                <div className="hero-pill" style={{ fontSize: "10px", padding: "5px 10px" }}>99.2% Purity</div>
-                <div className="hero-pill" style={{ fontSize: "10px", padding: "5px 10px" }}>COA Every Order</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── SOCIAL PROOF STRIP — subtle ─── */}
-      <section className="py-8 px-6" style={{ borderTop: "1px solid #E5E5E5", borderBottom: "1px solid #E5E5E5" }}>
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-3 gap-2 md:gap-8">
-            {[
-              {
-                stat: "99.2%",
-                label: "Average Purity",
-                sub: "Tested at Janoshik Analytical · HPLC + MS verified",
-                icon: (
-                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                    <circle cx="14" cy="14" r="13" stroke="#B8A44C" strokeWidth="1.5"/>
-                    <path d="M8 14.5l4 4 8-8" stroke="#B8A44C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                ),
-              },
-              {
-                stat: "48-Hour",
-                label: "Cold-Chain Shipping",
-                sub: "Sub-8°C gel-packed, every shipment",
-                icon: (
-                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                    <rect x="1.75" y="7" width="24.5" height="15" rx="2" stroke="#B8A44C" strokeWidth="1.5"/>
-                    <path d="M7 7V5a2 2 0 012-2h10a2 2 0 012 2v2" stroke="#B8A44C" strokeWidth="1.5"/>
-                    <path d="M9 14h10M14 11v6" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round"/>
-                  </svg>
-                ),
-              },
-              {
-                stat: "COA",
-                label: "With Every Order",
-                sub: "Lot-specific, Janoshik Analytical certified",
-                icon: (
-                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                    <rect x="5" y="2" width="18" height="24" rx="2" stroke="#B8A44C" strokeWidth="1.5"/>
-                    <path d="M9 9h10M9 13h10M9 17h6" stroke="#B8A44C" strokeWidth="1.5" strokeLinecap="round"/>
-                  </svg>
-                ),
-              },
-            ].map((item) => (
-              <div
-                key={item.label}
-                className="flex flex-col items-center text-center px-1 sm:px-4 py-5"
-              >
-                <div className="mb-3">{item.icon}</div>
-                <div
-                  className="text-sm sm:text-xl md:text-2xl tracking-tight mb-0.5"
-                  style={{ fontWeight: 300, color: "#1A1A1A", letterSpacing: "-0.02em" }}
-                >
-                  {item.stat}
-                </div>
-                <div className="text-[10px] sm:text-xs font-medium mb-1" style={{ color: "#666" }}>{item.label}</div>
-                <div className="text-[11px] leading-relaxed hidden md:block" style={{ color: "#666666" }}>{item.sub}</div>
-              </div>
-            ))}
-          </div>
-          {/* Lab partner credit line */}
-          <div className="hidden sm:flex mt-5 pt-4 sm:flex-row items-center justify-center gap-3 sm:gap-6" style={{ borderTop: "1px solid #EBEBEB" }}>
-            <span className="text-[10px] uppercase tracking-widest font-medium" style={{ color: "#737373" }}>Independent Testing Partners</span>
-            <div className="flex items-center gap-4">
-              <span
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-medium"
-                style={{ background: "#F5F5F0", color: "#555", border: "1px solid #E0E0E0" }}
-              >
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <circle cx="6" cy="6" r="5" stroke="#B8A44C" strokeWidth="1.2"/>
-                  <path d="M3.5 6.2l1.8 1.8 3.2-3.2" stroke="#B8A44C" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                Janoshik Analytical
-              </span>
-              <span
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-medium"
-                style={{ background: "#F5F5F0", color: "#555", border: "1px solid #E0E0E0" }}
-              >
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <circle cx="6" cy="6" r="5" stroke="#B8A44C" strokeWidth="1.2"/>
-                  <path d="M3.5 6.2l1.8 1.8 3.2-3.2" stroke="#B8A44C" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                Freedom Diagnostics
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── SHOP BY RESEARCH CATEGORY ─── */}
-      <SectionReveal>
-        <section className="py-24 md:py-36 px-6" style={{ backgroundColor: "#F9F9F9" }}>
-          <div className="max-w-6xl mx-auto">
-            <div className="mb-12">
-              <p className="eyebrow mb-4">Shop by Research Category</p>
-              <h2 className="text-3xl md:text-4xl font-medium tracking-tight">
-                Find your compound.
+    <section className="bg-[#0F0F0E] py-24 px-4">
+      <div className="max-w-7xl mx-auto">
+        <div className="rounded-3xl border border-[#B8A44C]/20 bg-[#111110] overflow-hidden">
+          <div className="grid lg:grid-cols-2 gap-0">
+            {/* Left */}
+            <div className="p-12 lg:p-16 flex flex-col justify-center">
+              <p className="text-[10px] font-bold tracking-[0.25em] text-[#B8A44C] uppercase mb-4">
+                The Bloodwork Pillar
+              </p>
+              <h2 className="font-display text-[clamp(2rem,4vw,3rem)] leading-tight text-white mb-6">
+                The panel is<br />
+                <span className="italic text-[#B8A44C]">the protocol.</span>
               </h2>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-              {RESEARCH_CATEGORIES.map((cat, i) => {
-                const count = products.filter((p) =>
-                  p.category === cat.slug ||
-                  (cat.slug === "Immune Support" && (p.category === "Immune" || p.category === "Immune Support")) ||
-                  (cat.slug === "Longevity" && (p.category === "Longevity" || p.category === "Wellness"))
-                ).length;
-                return (
-                  <Link
-                    key={cat.slug}
-                    href={`/products?category=${encodeURIComponent(cat.label)}`}
-                    className="category-card block bg-white p-5"
-                    style={{ animationDelay: `${i * 0.05}s`, border: "1px solid #E5E5E5", borderRadius: "8px" }}
-                  >
-                    <div className="mb-3">{cat.icon}</div>
-                    <h3 className="text-sm font-semibold mb-1 leading-snug">{cat.label}</h3>
-                    <p className="text-xs text-[#666666]">
-                      {count > 0 ? `${count} compound${count !== 1 ? "s" : ""}` : "Browse"}
-                    </p>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      </SectionReveal>
-
-      {/* ─── FEATURED PRODUCTS ─── */}
-      <SectionReveal>
-        <section className="py-24 md:py-36 px-6" style={{ backgroundColor: "#F7F7F7" }}>
-          <div className="max-w-7xl mx-auto">
-            <div className="flex items-end justify-between mb-12">
-              <div>
-                <p className="eyebrow mb-4">Bestsellers</p>
-                <h2 className="text-3xl md:text-4xl font-medium tracking-tight">
-                  Most researched compounds.
-                </h2>
-              </div>
-              <Link
-                href="/products"
-                className="hidden md:inline-flex items-center gap-2 text-sm font-medium hover:opacity-60 transition-opacity"
-              >
-                View All <span aria-hidden>&#8594;</span>
-              </Link>
-            </div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {featuredProducts.map((product) => {
-                const price = priceFor(product.slug);
-                return (
-                  <Link
-                    key={product.slug}
-                    href={`/products/${product.slug}`}
-                    className="group block"
-                  >
-                    <div
-                      className="overflow-hidden transition-all duration-300"
-                      style={{ backgroundColor: "#FFFFFF", border: "1px solid #E5E5E5", borderRadius: "8px" }}
-                    >
-                      <div className="w-full h-56 overflow-hidden relative" style={{ backgroundColor: "#F7F7F7" }}>
-                        {hasProductPhoto(product.slug) ? (
-                          <img
-                            src={getProductImagePath(product.slug)}
-                            alt={product.name}
-                            width={400}
-                            height={224}
-                            className="w-full h-full object-cover"
-                            loading="lazy"
-                            decoding="async"
-                            sizes="(max-width: 640px) 100vw, 300px"
-                          />
-                        ) : (
-                          <div className="w-full h-full flex items-center justify-center p-6" style={{ backgroundColor: "#1A1A18" }}>
-                            <VialSVG
-                              name={product.name}
-                              size={product.dosages?.[0]?.size || product.size || "5mg"}
-                              capColor={getCategoryColor(product.category)}
-                              className="max-h-full"
-                            />
-                          </div>
-                        )}
-                        {/* Badges removed — luxury doesn't label itself */}
-                      </div>
-                      <div className="p-5">
-                        <p
-                          className="text-[10px] uppercase mb-1.5 font-medium"
-                          style={{ letterSpacing: "0.2em", color: "#7A6B2A" }}
-                        >
-                          {product.category}
-                        </p>
-                        <h3 className="text-base font-normal mb-1 group-hover:opacity-70 transition-opacity" style={{ color: "#1A1A1A", fontWeight: 400 }}>
-                          {product.name}
-                        </h3>
-                        <p className="text-xs mb-3 leading-snug" style={{ color: "#666666" }}>{product.tagline}</p>
-                        <div className="flex items-center justify-between pt-3" style={{ borderTop: "1px solid #E5E5E5" }}>
-                          <span className="text-base font-medium" style={{ color: "#7A6B2A" }}>${price}</span>
-                          <span
-                            className="text-[10px] font-medium uppercase opacity-0 group-hover:opacity-100 transition-opacity"
-                            style={{ letterSpacing: "0.1em", color: "#666666" }}
-                          >
-                            View →
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
-
-            <div className="text-center mt-10 md:hidden">
-              <Link href="/products" className="btn-outline">
-                View All Products
-              </Link>
-            </div>
-          </div>
-        </section>
-      </SectionReveal>
-
-      {/* ─── THE NEXPHORIA STANDARD ─── */}
-      <SectionReveal>
-        <section className="py-24 md:py-36 px-6" style={{ backgroundColor: "#1A1A18" }}>
-          <div className="max-w-6xl mx-auto">
-            <div className="mb-14 text-center">
-              {/* Lighter gold for dark bg accessibility (AA on #1A1A18) */}
-              <p className="eyebrow mb-4" style={{ color: "#D4B26A" }}>The Nexphoria Standard</p>
-              <h2 className="text-3xl md:text-4xl font-medium tracking-tight" style={{ color: "#F5F5F0" }}>
-                Manufactured under pharmaceutical standards.
-                <br className="hidden md:block" /> Every lot independently verified.
-              </h2>
-              <div className="mt-8 flex justify-center">
-                <TrustBadges variant="dark" size="md" />
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  num: "01",
-                  title: "Purity Testing",
-                  body: "Every production lot undergoes HPLC analysis and ESI-MS identity confirmation by accredited third-party laboratories. Purity threshold: 98.0% minimum for catalog compounds, 99.0%+ for COA certification. Raw chromatographic data retained on file.",
-                  detail: "Janoshik Analytical / Freedom Diagnostics",
-                },
-                {
-                  num: "02",
-                  title: "Cold-Chain Logistics",
-                  body: "Lyophilized compounds are packed in temperature-controlled, light-shielding containers for 48-hour cold-chain transit. Each shipment includes gel packs rated to maintain sub-8°C for the full delivery window, regardless of ambient temperature.",
-                  detail: "Temperature-controlled 48-hour delivery",
-                },
-                {
-                  num: "03",
-                  title: "Batch Tracking",
-                  body: "Every vial carries a unique lot identifier traceable back to synthesis, purification, and QC records. Certificate of Analysis is issued per batch — not per compound class. Order documentation includes the full COA for your specific lot.",
-                  detail: "Lot-specific COA enclosed with every order",
-                },
-              ].map((block) => (
-                <div
-                  key={block.num}
-                  className="p-8 rounded-xl border"
-                  style={{ borderColor: "#2A2A28", backgroundColor: "#1C1C1A" }}
-                >
-                  {/* Dark-bg accessible accents: brighter gold + lighter body for AA on #1C1C1A */}
-                  <div className="text-xs font-mono mb-5 font-semibold" style={{ color: "#D4B26A" }}>
-                    {block.num}
-                  </div>
-                  <h3 className="text-lg font-semibold mb-3" style={{ color: "#F5F5F0" }}>
-                    {block.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed mb-5" style={{ color: "#B8B8B8" }}>
-                    {block.body}
-                  </p>
-                  <p className="text-xs font-medium" style={{ color: "#D4B26A" }}>
-                    {block.detail}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </SectionReveal>
-
-      {/* ─── PACKAGING ─── */}
-      <SectionReveal>
-        <section className="py-24 md:py-36 px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-              <div className="relative">
-                <div className="rounded-lg overflow-hidden">
-                  <Image
-                    src="/brand/packaging-unboxing.webp"
-                    alt="Nexphoria pharmaceutical-grade packaging"
-                    width={1536}
-                    height={1024}
-                    className="w-full h-auto"
-                    loading="lazy"
-                    sizes="(max-width: 768px) 100vw, 700px"
-                    unoptimized
-                  />
-                </div>
-              </div>
-
-              <div>
-                <p className="eyebrow mb-4">What Arrives</p>
-                <h2 className="text-3xl md:text-4xl font-medium mb-6 tracking-tight">
-                  Considered down to the seal.
-                </h2>
-                <p className="text-base leading-relaxed text-[#555] mb-8">
-                  Each order arrives in rigid, light-shielding packaging built to
-                  protect lyophilized material in transit. Vials are nested in
-                  cold-chain insulation, sealed, and labeled with batch identifiers.
-                </p>
-
-                <div className="space-y-3">
-                  {[
-                    "Temperature-controlled cold-chain shipping",
-                    "Lot-specific Certificate of Analysis enclosed",
-                    "Discreet, rigid, light-shielding packaging",
-                    "Batch IDs traceable to HPLC records",
-                  ].map((line) => (
-                    <div key={line} className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 bg-[#B8A44C]" />
-                      <p className="text-sm text-[#555]">{line}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </SectionReveal>
-
-      {/* ─── LATEST FROM THE JOURNAL ─── */}
-      <SectionReveal>
-        <section className="py-24 md:py-36 px-6" style={{ backgroundColor: "#F7F7F7" }}>
-          <div className="max-w-6xl mx-auto">
-            <div className="flex items-end justify-between mb-12">
-              <div>
-                <p className="eyebrow mb-4">Research Journal</p>
-                <h2 className="text-3xl md:text-4xl font-medium tracking-tight">
-                  Latest from the Journal.
-                </h2>
-              </div>
-              <Link
-                href="/blog"
-                className="hidden md:inline-flex items-center gap-2 text-sm font-medium hover:opacity-60 transition-opacity"
-              >
-                View All <span aria-hidden>&#8594;</span>
-              </Link>
-            </div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {recentArticles.map((article) => (
+              <p className="text-[#6A6050] text-[15px] leading-relaxed mb-8 max-w-lg">
+                Peptides move labs. Every dose, every week. Without a baseline panel and a 90-day retest,
+                you're guessing. We run the labs, a physician reads them, and your protocol adjusts to the data.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
                 <Link
-                  key={article.slug}
-                  href={`/blog/${article.slug}`}
-                  className="blog-card block bg-white rounded-lg overflow-hidden card-shadow"
+                  href="/bloodwork"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#B8A44C] text-[#0F0F0E] text-[12px] font-bold tracking-[0.1em] uppercase hover:bg-[#D4BF6A] transition-colors"
                 >
-                  <div className="p-6">
-                    <p className="text-[11px] uppercase tracking-wider text-[#7A6B2A] mb-3 font-medium" style={{ letterSpacing: "0.2em" }}>
-                      {article.category}
-                    </p>
-                    <h3 className="text-base font-medium mb-3 leading-snug">
-                      {article.title}
-                    </h3>
-                    <p className="text-xs text-[#666666] leading-relaxed mb-4 line-clamp-2">
-                      {article.description}
-                    </p>
-                    <div className="flex items-center gap-3 pt-4 border-t border-[#E5E5E5]">
-                      <span className="text-xs text-[#666666]">
-                        {new Date(article.publishedAt).toLocaleDateString("en-US", {
-                          month: "short",
-                          day: "numeric",
-                          year: "numeric",
-                        })}
-                      </span>
-                      <span className="text-xs text-[#737373]">·</span>
-                      <span className="text-xs text-[#666666]">{article.readMinutes} min read</span>
-                    </div>
-                  </div>
+                  See the bloodwork program →
                 </Link>
+                <Link
+                  href="/stacks"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#2A2A28] text-[#6A6050] text-[12px] font-semibold tracking-[0.08em] uppercase hover:border-[#B8A44C]/40 hover:text-[#B8A44C] transition-all"
+                >
+                  View protocols
+                </Link>
+              </div>
+            </div>
+            {/* Right — stats */}
+            <div className="border-t lg:border-t-0 lg:border-l border-[#1E1E1C] p-12 lg:p-16 grid grid-cols-2 gap-8 content-center">
+              {[
+                { n: "Free", label: "Foundation Panel with every active protocol" },
+                { n: "90-day", label: "Retest cadence to track your biomarkers" },
+                { n: "HSA/FSA", label: "Eligible — superbill for reimbursement" },
+                { n: "Nationwide", label: "Draw sites — no clinic visit required" },
+              ].map((s) => (
+                <div key={s.n}>
+                  <div className="font-display text-[2rem] text-[#B8A44C] mb-1">{s.n}</div>
+                  <p className="text-[11px] text-[#4A4440] leading-relaxed">{s.label}</p>
+                </div>
               ))}
             </div>
-
-            <div className="text-center mt-8 md:hidden">
-              <Link href="/blog" className="btn-outline">
-                View All Articles
-              </Link>
-            </div>
           </div>
-        </section>
-      </SectionReveal>
-
-      {/* ─── CONTINUE YOUR RESEARCH ─── */}
-      <HomepageContinueResearch />
-
-      {/* ─── EMAIL CAPTURE ─── */}
-      <SectionReveal>
-        <section className="py-20 px-6" style={{ backgroundColor: "#F7F7F7", borderTop: "1px solid #E5E5E5" }}>
-          <div className="max-w-xl mx-auto text-center">
-            <p
-              className="text-[10px] uppercase mb-4"
-              style={{ letterSpacing: "0.18em", color: "#B8A44C", fontWeight: 500 }}
-            >
-              Research Intelligence
-            </p>
-            <h2
-              style={{
-                fontFamily: "var(--font-display)",
-                fontSize: "clamp(1.5rem, 3vw, 2.25rem)",
-                fontWeight: 300,
-                color: "#1A1A1A",
-                letterSpacing: "-0.02em",
-                marginBottom: "0.75rem",
-              }}
-            >
-              Stay informed on new compounds and protocols
-            </h2>
-            <p className="text-sm text-[#666666] mb-8">
-              No promotions. Only research updates, COA announcements, and new compound releases.
-            </p>
-            <div className="max-w-sm mx-auto">
-              <EmailCapture variant="light" />
-            </div>
-          </div>
-        </section>
-      </SectionReveal>
-
-      {/* ─── CLOSING CTA ─── */}
-      <SectionReveal>
-        <section className="py-20 md:py-28 px-6 text-center">
-          <div className="max-w-2xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-medium mb-4 tracking-tight">
-              Ready to begin?
-            </h2>
-            <p className="text-base text-[#555] mb-8 leading-relaxed">
-              Browse our full catalog of research-grade peptide compounds.
-              Every product ships with a Certificate of Analysis.
-            </p>
-            <Link href="/products" className="btn-primary">
-View Collection
-            </Link>
-          </div>
-        </section>
-      </SectionReveal>
-
-      {/* ─── SITE-WIDE RUO DISCLAIMER ─── */}
-      <SectionReveal>
-        <section className="px-6 pb-16">
-          <div className="max-w-3xl mx-auto">
-            <RUOBanner variant="card" />
-          </div>
-        </section>
-      </SectionReveal>
-    </>
+        </div>
+      </div>
+    </section>
   );
 }
+
+/* ── HOW IT WORKS SECTION ── */
+function HowItWorksSection() {
+  return (
+    <section className="bg-[#080807] py-24 px-4">
+      <div className="max-w-7xl mx-auto">
+        <SectionReveal>
+          <p className="text-[10px] font-bold tracking-[0.25em] text-[#B8A44C] uppercase mb-4">
+            How It Works
+          </p>
+          <h2 className="font-display text-[clamp(2rem,4vw,3rem)] leading-tight text-white mb-16">
+            Three steps.<br />
+            <span className="italic text-[#6A6050]">No clinic visit.</span>
+          </h2>
+        </SectionReveal>
+
+        <div className="grid md:grid-cols-3 gap-px bg-[#1A1A18]">
+          {HOW_STEPS.map((step) => (
+            <div key={step.n} className="bg-[#080807] p-10 flex flex-col gap-4">
+              <span className="font-display text-[3rem] text-[#1E1E1C] leading-none">
+                {step.n}
+              </span>
+              <h3 className="font-display text-[1.3rem] text-white">{step.title}</h3>
+              <p className="text-[14px] text-[#4A4440] leading-relaxed">{step.body}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link
+            href="/quiz"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#B8A44C] text-[#0F0F0E] text-[12px] font-bold tracking-[0.12em] uppercase hover:bg-[#D4BF6A] transition-colors"
+          >
+            Begin your assessment
+          </Link>
+          <p className="mt-3 text-[11px] text-[#3A3830]">
+            No commitment · Physician-reviewed in 24–48h · 5-min intake
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── THE PHARMACY SECTION ── */
+function PharmacySection() {
+  return (
+    <section className="bg-[#0F0F0E] py-24 px-4 border-t border-[#1A1A18]">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        <SectionReveal>
+          <p className="text-[10px] font-bold tracking-[0.25em] text-[#B8A44C] uppercase mb-4">
+            The Pharmacy
+          </p>
+          <h2 className="font-display text-[clamp(2rem,4vw,3rem)] leading-tight text-white mb-6">
+            Weighed to the<br />
+            <span className="italic text-[#B8A44C]">thousandth of a gram.</span>
+          </h2>
+          <p className="text-[#6A6050] text-[15px] leading-relaxed mb-8">
+            Every dose is compounded in a US 503A pharmacy on Sartorius analytical balances
+            accurate to 0.0001g. Third-party sterility and identity tested. Cold-chain shipped.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {["503A US Pharmacy", "USP-797 Sterile", "3rd-Party Tested", "HIPAA Compliant"].map((b) => (
+              <span
+                key={b}
+                className="text-[10px] font-semibold tracking-[0.1em] uppercase px-3 py-1.5 rounded border border-[#2A2A28] text-[#4A4440]"
+              >
+                {b}
+              </span>
+            ))}
+          </div>
+        </SectionReveal>
+
+        {/* Visual placeholder — replaced with actual vial photo once approved */}
+        <div className="relative rounded-2xl border border-[#2A2A28] bg-[#111110] aspect-square overflow-hidden flex items-center justify-center">
+          <div className="text-center">
+            <div className="w-16 h-24 mx-auto mb-4 rounded-full border-2 border-[#B8A44C]/30 flex items-center justify-center">
+              <div className="w-2 h-12 bg-gradient-to-b from-[#B8A44C] to-[#B8A44C]/20 rounded-full" />
+            </div>
+            <p className="text-[10px] tracking-[0.2em] text-[#2A2A28] uppercase">Vial photography coming</p>
+          </div>
+          {/* Diagonal tile pattern */}
+          <div
+            className="absolute inset-0 opacity-5"
+            style={{
+              backgroundImage: `repeating-linear-gradient(-45deg, transparent, transparent 20px, #B8A44C 20px, #B8A44C 21px)`,
+            }}
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── FINAL CTA SECTION ── */
+function FinalCTA() {
+  return (
+    <section className="bg-[#080807] py-32 px-4 border-t border-[#1A1A18]">
+      <div className="max-w-3xl mx-auto text-center">
+        <p className="text-[10px] font-bold tracking-[0.25em] text-[#B8A44C] uppercase mb-6">
+          Physician-Guided Protocol
+        </p>
+        <h2 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-tight text-white mb-6">
+          Your biology is<br />
+          <span className="italic text-[#B8A44C]">speaking.</span>
+        </h2>
+        <p className="text-[#6A6050] text-[16px] leading-relaxed mb-10 max-w-xl mx-auto">
+          A board-certified physician will review your intake and write your protocol within 24–48 hours.
+          Free bloodwork panel included. No commitment required.
+        </p>
+        <Link
+          href="/quiz"
+          className="inline-flex items-center gap-2 px-10 py-5 rounded-full bg-[#B8A44C] text-[#0F0F0E] text-[13px] font-bold tracking-[0.12em] uppercase hover:bg-[#D4BF6A] transition-colors"
+        >
+          Begin Assessment →
+        </Link>
+        <p className="mt-4 text-[11px] text-[#2A2A28]">
+          5-min intake · No commitment · HIPAA compliant
+        </p>
+      </div>
+    </section>
+  );
+}
+
+/* ── MAIN PAGE ── */
+export default function HomePage() {
+  return (
+    <main className="bg-[#0F0F0E] min-h-screen">
+
+      {/* ── HERO ── */}
+      <section className="relative min-h-[100svh] flex flex-col justify-end bg-[#0F0F0E] overflow-hidden">
+
+        {/* Diagonal tile texture */}
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage: `repeating-linear-gradient(-55deg, transparent, transparent 24px, #B8A44C 24px, #B8A44C 25px)`,
+          }}
+        />
+
+        {/* Radial amber glow — center */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div
+            className="w-[600px] h-[600px] rounded-full opacity-10"
+            style={{ background: "radial-gradient(circle, #B8A44C 0%, transparent 70%)" }}
+          />
+        </div>
+
+        {/* Video placeholder — swap for actual hero video once chosen */}
+        <div className="absolute inset-0 z-0">
+          {/* Hero video slot — uncomment when video is finalized:
+          <video
+            autoPlay muted loop playsInline
+            className="w-full h-full object-cover opacity-30"
+            src="/hero-loop.mp4"
+          /> */}
+        </div>
+
+        {/* Hero content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-16 pt-40 w-full">
+          <div className="max-w-3xl">
+
+            {/* Eyebrow */}
+            <p className="text-[10px] font-bold tracking-[0.25em] text-[#B8A44C] uppercase mb-6 flex items-center gap-2">
+              <span className="w-8 h-px bg-[#B8A44C]" />
+              Physician-Guided Peptide Therapy
+            </p>
+
+            {/* Typewriter headline */}
+            <TypewriterHeadline />
+
+            {/* Subline */}
+            <p className="text-[#6A6050] text-[16px] leading-relaxed mb-10 max-w-xl">
+              Board-certified MDs write your protocol in 24–48h.
+              503A compounded. Free Foundation bloodwork panel with every Rx.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap items-center gap-4">
+              <Link
+                href="/quiz"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#B8A44C] text-[#0F0F0E] text-[12px] font-bold tracking-[0.12em] uppercase hover:bg-[#D4BF6A] transition-colors"
+              >
+                Begin Assessment
+              </Link>
+              <Link
+                href="/how-it-works"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-[#2A2A28] text-[#6A6050] text-[12px] font-semibold tracking-[0.08em] uppercase hover:border-[#B8A44C]/40 hover:text-[#B8A44C] transition-all"
+              >
+                How it works →
+              </Link>
+            </div>
+
+            {/* Micro trust */}
+            <p className="mt-6 text-[11px] text-[#2A2A28]">
+              No commitment · Physician-reviewed in 24–48h · 5-min intake
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── MARQUEE ── */}
+      <MarqueeTicker />
+
+      {/* ── STACK GRID ── */}
+      <StackGrid />
+
+      {/* ── STATS ── */}
+      <StatsSection />
+
+      {/* ── HOW IT WORKS ── */}
+      <HowItWorksSection />
+
+      {/* ── BLOODWORK ── */}
+      <BloodworkSection />
+
+      {/* ── THE PHARMACY ── */}
+      <PharmacySection />
+
+      {/* ── FINAL CTA ── */}
+      <FinalCTA />
+
+    </main>
+  );
+}
+
