@@ -48,8 +48,8 @@
   }
   body {
     font-family: var(--font-sans);
-    background-color: #0F0F0E;
-    color: #F5F5F0;
+    background-color: #FAF7F2;
+    color: #1A1A18;
     overflow-x: hidden;
     line-height: 1.7;
     position: relative;
@@ -1314,4 +1314,5 @@
   background: linear-gradient(90deg, transparent 0%, #C4A265 30%, #C4A265 70%, transparent 100%);
   height: 1px;
 }
+
 

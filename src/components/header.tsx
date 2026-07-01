@@ -104,10 +104,10 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
         scrolled
-          ? "backdrop-blur-md border-[#2A2A28]"
+          ? "backdrop-blur-md border-[#EAE6DF]"
           : "backdrop-blur-sm border-transparent"
       }`}
-      style={{ height: "72px", backgroundColor: scrolled ? "rgba(15,15,14,0.97)" : "rgba(15,15,14,0.72)" }}
+      style={{ height: "72px", backgroundColor: scrolled ? "rgba(250,247,242,0.98)" : "rgba(250,247,242,0.95)" }}
     >
       <div
         className="max-w-7xl mx-auto px-6 md:px-10 h-full flex items-center justify-between"
@@ -137,7 +137,7 @@ export function Header() {
               aria-haspopup="true"
               aria-expanded={activeDropdown === "shop"}
               className={`flex items-center gap-1 px-2 lg:px-3 py-2 text-[11px] rounded-md transition-colors uppercase ${
-                activeDropdown === "shop" ? "text-white" : "text-[#6A6050] hover:text-white"
+                activeDropdown === "shop" ? "text-[#1A1A18]" : "text-[#1A1A18] hover:text-[#B8A44C]"
               }`}
               style={{ letterSpacing: "0.15em", fontWeight: 500 }}
             >
@@ -164,10 +164,10 @@ export function Header() {
                             <Link
                               href={item.href}
                               onClick={() => setActiveDropdown(null)}
-                              className="block px-2 py-1.5 rounded-lg hover:bg-[#1C1C1A] transition-colors"
+                              className="block px-2 py-1.5 rounded-lg hover:bg-[#F5F0E8] transition-colors"
                             >
-                              <span className="text-sm font-medium text-white block">{item.label}</span>
-                              <span className="text-xs text-[#4A4440]">{item.sub}</span>
+                              <span className="text-sm font-medium text-[#1A1A18] block">{item.label}</span>
+                              <span className="text-xs text-[#6A6050]">{item.sub}</span>
                             </Link>
                           </li>
                         ))}
@@ -226,7 +226,7 @@ export function Header() {
                   <Link
                     href="/build-your-stack"
                     onClick={() => setActiveDropdown(null)}
-                    className="text-sm font-medium text-[#6A6050] hover:text-white"
+                    className="text-sm font-medium text-[#1A1A18] hover:text-[#B8A44C]"
                   >
                     Build Your Stack &#8594;
                   </Link>
@@ -242,7 +242,7 @@ export function Header() {
               aria-haspopup="true"
               aria-expanded={activeDropdown === "research"}
               className={`flex items-center gap-1 px-2 lg:px-3 py-2 text-[11px] rounded-md transition-colors uppercase ${
-                activeDropdown === "research" ? "text-white" : "text-[#6A6050] hover:text-white"
+                activeDropdown === "research" ? "text-[#1A1A18]" : "text-[#1A1A18] hover:text-[#B8A44C]"
               }`}
               style={{ letterSpacing: "0.15em", fontWeight: 500 }}
             >
@@ -268,7 +268,7 @@ export function Header() {
                           <Link
                             href={item.href}
                             onClick={() => setActiveDropdown(null)}
-                            className="block px-2 py-1.5 text-sm rounded-lg hover:bg-[#1C1C1A] transition-colors text-[#9A9080] hover:text-white"
+                            className="block px-2 py-1.5 text-sm rounded-lg hover:bg-[#F5F0E8] transition-colors text-[#9A9080] hover:text-[#1A1A18]"
                           >
                             {item.label}
                           </Link>
@@ -286,7 +286,7 @@ export function Header() {
                           <Link
                             href={item.href}
                             onClick={() => setActiveDropdown(null)}
-                            className="block px-2 py-1.5 text-sm rounded-lg hover:bg-[#1C1C1A] transition-colors text-[#9A9080] hover:text-white"
+                            className="block px-2 py-1.5 text-sm rounded-lg hover:bg-[#F5F0E8] transition-colors text-[#9A9080] hover:text-[#1A1A18]"
                           >
                             {item.label}
                           </Link>
@@ -309,7 +309,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="px-2 lg:px-3 py-2 text-[11px] uppercase text-[#6A6050] hover:text-white rounded-md transition-colors"
+              className="px-2 lg:px-3 py-2 text-[11px] uppercase text-[#1A1A18] hover:text-[#B8A44C] rounded-md transition-colors"
               style={{ letterSpacing: "0.15em", fontWeight: 500 }}
             >
               {link.label}
@@ -328,7 +328,7 @@ export function Header() {
             <ShoppingBag className="w-5 h-5 transition-colors group-hover:text-[#7A6B2A]" strokeWidth={1.5} />
             {totalItems > 0 && (
               <span
-                className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full text-[10px] font-bold flex items-center justify-center text-white"
+                className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full text-[10px] font-bold flex items-center justify-center text-[#1A1A18]"
                 style={{ backgroundColor: "#C9A96E" }}
               >
                 {totalItems}
@@ -347,7 +347,7 @@ export function Header() {
             <ShoppingBag className="w-5 h-5 transition-colors group-hover:text-[#7A6B2A]" strokeWidth={1.5} />
             {totalItems > 0 && (
               <span
-                className="absolute top-1 right-1 w-4 h-4 rounded-full text-[10px] font-bold flex items-center justify-center text-white"
+                className="absolute top-1 right-1 w-4 h-4 rounded-full text-[10px] font-bold flex items-center justify-center text-[#1A1A18]"
                 style={{ backgroundColor: "#C9A96E" }}
               >
                 {totalItems}
@@ -407,7 +407,7 @@ export function Header() {
                   size={24}
                   strokeWidth={1.5}
                   aria-hidden="true"
-                  className="transition-colors text-white/60 group-hover:text-[#C4A265]"
+                  className="transition-colors text-[#1A1A18]/60 group-hover:text-[#C4A265]"
                 />
               </button>
             </div>
@@ -550,4 +550,6 @@ export function Header() {
     </header>
   );
 }
+
+
 
