@@ -4795,6 +4795,8 @@ import { aOVN_V2_SEMAGLUTIDE_RESEARCH } from './articles/semaglutide-research-pe
 import { aOVN_V2_MUSCLE_RECOVERY } from './articles/best-peptides-muscle-recovery-ovn-v2-jun21-2026';
 import { aOVN_V2_HPLC_PURITY } from './articles/hplc-purity-testing-peptide-sourcing-ovn-v2-jun21-2026';
 import { aOVN_V2_NAD_VS_NMN } from './articles/nad-plus-vs-nmn-longevity-research-ovn-v2-jun21-2026';
+import { article as aOVN_V2_HAIR_GROWTH } from './articles/peptides-hair-growth-research-guide-jun22-2026';
+import { article as aOVN_V2_JOINT_TENDON } from './articles/peptides-joint-tendon-repair-research-guide-jun22-2026';
 import { article as aJUN21OVN_SELANK_ANXIETY } from './articles/selank-anxiety-research';
 import { article as aJUN21OVN_SURGICAL_RECOVERY } from './articles/peptide-research-surgical-recovery-bpc157-tb500-thymosin';
 import { article as aJUN21OVN_ENDURANCE_PERF } from './articles/peptide-research-endurance-athletes-vo2max-lactate-mitochondria';
@@ -12159,6 +12161,10 @@ aNew_100_articles_complete_nexphoria_research_library_overview,
   aJUN29_SRC_BPC157_COMPLETE,
   aJUN29_SRC_BPC_TB_STACK,
   aJUN29_SRC_BUY_USA,
+  // Additional overnight-v2 source-folder entries promoted into the blog index
+  aOVN_V2_HPLC_PURITY,
+  aOVN_V2_HAIR_GROWTH,
+  aOVN_V2_JOINT_TENDON,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
