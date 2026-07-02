@@ -1,4 +1,3 @@
-"use client";
 
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -135,7 +134,7 @@ export default function GrowthProtocolPage() {
       <section className="relative min-h-[92vh] flex flex-col justify-end overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/stacks/balance.jpg"
+            src="https://d8j0ntlcm91z4.cloudfront.net/user_3Ft13W9B0KpsVCGoTUaXE6wshlh/hf_20260701_235309_1807427d-3929-419f-824b-32b633515dc9.png"
             alt="The Growth Protocol — CJC-1295 + Ipamorelin"
             fill
             priority
@@ -467,6 +466,51 @@ export default function GrowthProtocolPage() {
         </div>
       </section>
 
+
+      {/* ── FAQ ──────────────────────────────────────────────────────────── */}
+      <section className="py-24 md:py-32 px-6 md:px-12 bg-[#FAF7F2]">
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={stagger}
+            className="mb-16"
+          >
+            <motion.p variants={fadeUp} className="text-xs font-bold tracking-[0.22em] uppercase mb-4" style={{ color: "#B8A44C" }}>
+              Common Questions
+            </motion.p>
+            <motion.h2 variants={fadeUp} className="font-display text-4xl md:text-5xl font-light" style={{ color: "#1A1A18", letterSpacing: "-0.02em" }}>
+              Frequently asked questions
+            </motion.h2>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+            variants={stagger}
+            className="space-y-4"
+          >
+            {FAQS.map((item, i) => (
+              <motion.div
+                key={i}
+                variants={fadeUp}
+                className="rounded-2xl p-8 bg-white"
+                style={{ border: "1px solid rgba(26,26,24,0.08)" }}
+              >
+                <h3 className="font-display text-xl md:text-2xl font-light mb-3" style={{ color: "#1A1A18" }}>
+                  {item.q}
+                </h3>
+                <p className="text-sm leading-relaxed" style={{ color: "#6A6050" }}>
+                  {item.a}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── PRICING ──────────────────────────────────────────────────────── */}
       <section id="pricing" className="py-24 md:py-32 px-6 md:px-12 bg-[#0F0F0E]">
         <div className="max-w-4xl mx-auto">
@@ -611,4 +655,5 @@ export default function GrowthProtocolPage() {
     </div>
   );
 }
+
 

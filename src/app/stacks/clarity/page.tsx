@@ -1,4 +1,3 @@
-"use client";
 
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -109,6 +108,25 @@ const BLOODWORK = [
   { marker: "hsCRP", direction: "↓", note: "Neuroinflammation — a key driver of brain fog" },
 ];
 
+const FAQS = [
+  {
+    q: "Can I use Semax and Selank together, or do they interfere with each other?",
+    a: "Semax and Selank are designed to work synergistically. Semax drives upward cognitive pressure — BDNF, dopaminergic tone, processing speed — while Selank modulates the GABAergic system to reduce anxiety-mediated cognitive interference. Used together, the anxiolytic effect of Selank prevents the overstimulation some patients experience with Semax alone, and Semax amplifies the memory-consolidation benefits of Selank. Our physicians have consistently observed this combination outperform either compound individually for sustained cognitive enhancement.",
+  },
+  {
+    q: "How is the Clarity Stack delivered — do I need to inject it?",
+    a: "No. Both Semax and Selank are formulated as intranasal solutions — nasal drops or spray. Intranasal delivery allows the peptides to reach the CNS via the olfactory pathway, partially bypassing the blood-brain barrier and achieving rapid central uptake. This is the clinically preferred and validated route for both compounds. It is non-invasive, simple to self-administer, and produces onset within 30–60 minutes.",
+  },
+  {
+    q: "Is this similar to a nootropic supplement or a stimulant like Adderall?",
+    a: "Neither. Semax and Selank are peptides — short amino acid chains — that work through endogenous neurological pathways rather than flooding the synapse with neurotransmitters or blocking reuptake. They do not produce classical pharmacological tolerance, carry no schedule classification, and do not cause the crash, insomnia, or appetite suppression associated with stimulants. The cognitive improvement is more akin to restoring optimal neurological function than to pharmacological override.",
+  },
+  {
+    q: "How long do I need to stay on the Clarity Stack to see lasting benefit?",
+    a: "Initial effects — particularly Selank's anxiolytic action — are often noticeable within 1–3 days. The deeper neuroplasticity benefits of Semax (BDNF-driven structural changes in the prefrontal cortex) build cumulatively over 8–12 weeks. Our standard protocol is a 3-month cycle with a follow-up physician assessment. Many patients continue, or cycle 5 weeks on / 2 weeks off for maintenance. Unlike pharmaceutical anxiolytics, these compounds do not require gradual tapering.",
+  },
+];
+
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } },
@@ -127,7 +145,7 @@ export default function ClarityStackPage() {
       <section className="relative min-h-[92vh] flex flex-col justify-end overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/stacks/clarity.jpg"
+            src="https://d8j0ntlcm91z4.cloudfront.net/user_3Ft13W9B0KpsVCGoTUaXE6wshlh/hf_20260701_235307_9fbda3d5-bd1b-4a10-a75b-8111b5b0b436.png"
             alt="The Clarity Stack — Semax + Selank"
             fill
             priority
@@ -198,7 +216,7 @@ export default function ClarityStackPage() {
         </div>
       </section>
 
-      {/* ── COMPOUNDS ────────────────────────────────────────────────────── */}
+      {/* ── COMPOUNDS ──���─────────────────────────────────────────────────── */}
       <section className="py-24 md:py-32 px-6 md:px-12 bg-[#0F0F0E]">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -430,6 +448,51 @@ export default function ClarityStackPage() {
         </div>
       </section>
 
+
+      {/* ── FAQ ──────────────────────────────────────────────────────────── */}
+      <section className="py-24 md:py-32 px-6 md:px-12 bg-[#FAF7F2]">
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={stagger}
+            className="mb-16"
+          >
+            <motion.p variants={fadeUp} className="text-xs font-bold tracking-[0.22em] uppercase mb-4" style={{ color: "#B8A44C" }}>
+              Common Questions
+            </motion.p>
+            <motion.h2 variants={fadeUp} className="font-display text-4xl md:text-5xl font-light" style={{ color: "#1A1A18", letterSpacing: "-0.02em" }}>
+              Frequently asked questions
+            </motion.h2>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+            variants={stagger}
+            className="space-y-4"
+          >
+            {FAQS.map((item, i) => (
+              <motion.div
+                key={i}
+                variants={fadeUp}
+                className="rounded-2xl p-8 bg-white"
+                style={{ border: "1px solid rgba(26,26,24,0.08)" }}
+              >
+                <h3 className="font-display text-xl md:text-2xl font-light mb-3" style={{ color: "#1A1A18" }}>
+                  {item.q}
+                </h3>
+                <p className="text-sm leading-relaxed" style={{ color: "#6A6050" }}>
+                  {item.a}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── PRICING ──────────────────────────────────────────────────────── */}
       <section id="pricing" className="py-24 md:py-32 px-6 md:px-12 bg-[#0F0F0E]">
         <div className="max-w-4xl mx-auto">
@@ -574,4 +637,7 @@ export default function ClarityStackPage() {
     </div>
   );
 }
+
+
+
 
