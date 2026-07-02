@@ -54,10 +54,10 @@ function Marquee() {
 const STACKS = [
   {
     slug: "wolverine",
-    category: "WEIGHT",
+    category: "RECOVERY",
     name: "Wolverine",
     tagline: "Advanced weight optimization.",
-    href: "/products/wolverine",
+    href: "/stacks/wolverine",
     img: "/images/stacks/wolverine.jpg",
   },
   {
@@ -65,7 +65,7 @@ const STACKS = [
     category: "BEAUTY",
     name: "Glow",
     tagline: "Radiant skin. From within.",
-    href: "/products/ghk-cu",
+    href: "/stacks/glow",
     img: "/images/stacks/glow.jpg",
   },
   {
@@ -73,7 +73,7 @@ const STACKS = [
     category: "LONGEVITY",
     name: "Restore",
     tagline: "Support recovery. Extend vitality.",
-    href: "/products/nad-plus",
+    href: "/stacks/restore",
     img: "/images/stacks/restore.jpg",
   },
   {
@@ -81,23 +81,23 @@ const STACKS = [
     category: "FOCUS",
     name: "Clarity",
     tagline: "Sharpen mind. Improve focus.",
-    href: "/products/semax",
+    href: "/stacks/clarity",
     img: "/images/stacks/clarity.jpg",
   },
   {
-    slug: "prime",
-    category: "PERFORMANCE",
-    name: "Prime",
-    tagline: "Elevate training. Boost performance.",
-    href: "/products/ipamorelin",
+    slug: "glp1",
+    category: "BODY COMP",
+    name: "GLP-1",
+    tagline: "Metabolic reset. Body recomposition.",
+    href: "/stacks/glp1",
     img: "/images/stacks/prime.jpg",
   },
   {
-    slug: "balance",
-    category: "WELLNESS",
-    name: "Balance",
-    tagline: "Hormonal balance. Total wellness.",
-    href: "/products/sermorelin",
+    slug: "growth",
+    category: "SLEEP & HGH",
+    name: "Growth",
+    tagline: "Deep sleep. Hormonal optimization.",
+    href: "/stacks/growth",
     img: "/images/stacks/balance.jpg",
   },
 ];
@@ -191,7 +191,7 @@ export default function HomePage() {
             {/* CTAs — Hims style */}
             <div className="flex flex-wrap gap-3">
               <Link
-                href="/quiz"
+                href="/intake"
                 className="inline-flex items-center px-8 py-4 rounded-full bg-[#0F0F0E] text-white text-[13px] font-semibold tracking-[0.04em] hover:bg-[#2A2A28] transition-colors"
               >
                 Start Assessment
@@ -328,7 +328,7 @@ export default function HomePage() {
 
           <div className="mt-14">
             <Link
-              href="/quiz"
+              href="/intake"
               className="inline-flex items-center px-8 py-4 rounded-full bg-[#0F0F0E] text-white text-[13px] font-semibold tracking-[0.04em] hover:bg-[#2A2A28] transition-colors"
             >
               Begin Assessment →
@@ -448,10 +448,10 @@ export default function HomePage() {
             protocol within 24–48 hours. Free bloodwork included. No commitment.
           </p>
           <Link
-            href="/quiz"
-            className="inline-flex items-center px-10 py-5 rounded-full bg-[#B8A44C] text-[#0F0F0E] text-[13px] font-bold tracking-[0.1em] hover:bg-[#D4BF6A] transition-colors"
-          >
-            Begin Assessment →
+            href="/intake"
+              className="inline-flex items-center px-10 py-5 rounded-full bg-[#B8A44C] text-[#0F0F0E] text-[13px] font-bold tracking-[0.1em] hover:bg-[#D4BF6A] transition-colors"
+            >
+              Begin Assessment →
           </Link>
           <p className="mt-4 text-[11px] text-[#2A2A28]">
             5-min intake · No commitment · HIPAA compliant
@@ -462,6 +462,10 @@ export default function HomePage() {
     </main>
   );
 }
+
+
+
+
 
 
 
