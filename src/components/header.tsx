@@ -2,19 +2,50 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { Menu, X, ShoppingBag, ChevronDown } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, ShoppingBag, ChevronDown, ArrowRight } from "lucide-react";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { useCart } from "@/lib/cart";
 
-// ── Data ─────────────────────────────────────────────────────────────────────
+// ── Data ──────────────────────────────────────────────────────────────────────
 
 const PROTOCOLS = [
-  { label: "Wolverine Stack", sub: "Recovery", href: "/stacks/wolverine" },
-  { label: "Glow Stack", sub: "Beauty", href: "/stacks/glow" },
-  { label: "Restore Stack", sub: "Longevity", href: "/stacks/restore" },
-  { label: "Clarity Stack", sub: "Focus", href: "/stacks/clarity" },
-  { label: "GLP-1 Protocol", sub: "Body Comp", href: "/stacks/glp1" },
-  { label: "Growth Protocol", sub: "Sleep & HGH", href: "/stacks/growth" },
+  {
+    label: "Wolverine Stack",
+    sub: "Recovery",
+    href: "/stacks/wolverine",
+    // Unsplash lifestyle image — tiny 40px circle, loads instantly
+    img: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=80&q=70&fit=crop",
+  },
+  {
+    label: "Glow Stack",
+    sub: "Beauty",
+    href: "/stacks/glow",
+    img: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=80&q=70&fit=crop",
+  },
+  {
+    label: "Restore Stack",
+    sub: "Longevity",
+    href: "/stacks/restore",
+    img: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=80&q=70&fit=crop",
+  },
+  {
+    label: "Clarity Stack",
+    sub: "Focus",
+    href: "/stacks/clarity",
+    img: "https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?w=80&q=70&fit=crop",
+  },
+  {
+    label: "GLP-1 Protocol",
+    sub: "Body Comp",
+    href: "/stacks/glp1",
+    img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=80&q=70&fit=crop",
+  },
+  {
+    label: "Growth Protocol",
+    sub: "Sleep & HGH",
+    href: "/stacks/growth",
+    img: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=80&q=70&fit=crop",
+  },
 ];
 
 const PEPTIDES = [
@@ -30,21 +61,19 @@ const PEPTIDES = [
 
 type DropdownKey = "protocols" | "peptides" | null;
 
-// ── Dropdown animation variants ───────────────────────────────────────────────
+// ── Dropdown animation (Hims-spec: opacity 0→1, translateY -8px→0, 200ms ease) ──
 
-const dropdownVariants = {
-  hidden: { opacity: 0, y: -6, scale: 0.98 },
+const dropdownVariants: Variants = {
+  hidden: { opacity: 0, y: -8 },
   visible: {
     opacity: 1,
     y: 0,
-    scale: 1,
-    transition: { duration: 0.18, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
+    transition: { duration: 0.2, ease: [0.25, 0.1, 0.25, 1.0] as [number, number, number, number] },
   },
   exit: {
     opacity: 0,
-    y: -4,
-    scale: 0.98,
-    transition: { duration: 0.12, ease: "easeIn" },
+    y: -8,
+    transition: { duration: 0.15 },
   },
 };
 
@@ -101,8 +130,9 @@ export function Header() {
   const { openDrawer, getTotalItems } = useCart();
   const totalItems = getTotalItems();
 
+  // Hims spec: scroll threshold is 50px
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -135,12 +165,14 @@ export function Header() {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b"
+      className="fixed top-0 left-0 right-0 transition-all duration-300 border-b"
       style={{
         height: "72px",
+        zIndex: 100,
         backgroundColor: scrolled ? "rgba(250,247,242,0.97)" : "transparent",
         borderColor: scrolled ? "#EAE6DF" : "transparent",
         backdropFilter: scrolled ? "blur(12px)" : "none",
+        WebkitBackdropFilter: scrolled ? "blur(12px)" : "none",
       }}
     >
       <div
@@ -150,16 +182,17 @@ export function Header() {
         {/* ── Logo ── */}
         <Link href="/" className="flex items-center gap-2.5 flex-shrink-0" aria-label="Nexphoria home">
           <LogoMark className="h-7 w-7" />
-          <div className="flex flex-col leading-none">
+          {/* Hims spec: NEXPHORIA (display font) + inline '— PEPTIDE PHARMACY' muted */}
+          <div className="flex items-baseline gap-1.5 leading-none">
             <span
-              className="font-display text-[#0F0F0E] tracking-[0.1em] text-[13px] uppercase"
-              style={{ fontWeight: 600, letterSpacing: "0.1em" }}
+              className="font-display text-[#0F0F0E] uppercase"
+              style={{ fontWeight: 600, letterSpacing: "0.12em", fontSize: "14px" }}
             >
               NEXPHORIA
             </span>
             <span
-              className="text-[9px] text-[#9A8F82] tracking-[0.06em] uppercase mt-[1px]"
-              style={{ fontWeight: 400 }}
+              className="text-[#9A8F82] hidden sm:inline"
+              style={{ fontSize: "9px", fontWeight: 400, letterSpacing: "0.06em" }}
             >
               — PEPTIDE PHARMACY
             </span>
@@ -170,23 +203,31 @@ export function Header() {
         <nav
           className="hidden md:flex items-center gap-0.5"
           aria-label="Main navigation"
-          style={{ fontFamily: "Inter, sans-serif", fontSize: "13px", letterSpacing: "0.01em" }}
+          style={{ fontFamily: "Inter, sans-serif" }}
         >
-          {/* Protocols dropdown */}
+          {/* Protocols mega menu */}
           <div className="relative">
             <button
               onClick={() => toggleDropdown("protocols")}
               aria-haspopup="true"
               aria-expanded={activeDropdown === "protocols"}
-              className="flex items-center gap-1 px-3 py-2 text-[13px] text-[#1A1A18] hover:text-[#B8A44C] rounded-md transition-colors"
-              style={{ fontWeight: 500 }}
+              className="flex items-center gap-1 px-3 py-2 rounded-md transition-colors duration-150"
+              style={{
+                fontSize: "13px",
+                fontWeight: 500,
+                color: activeDropdown === "protocols" ? "#B8A44C" : "#392e25",
+                letterSpacing: "0.01em",
+              }}
             >
               Protocols
               <ChevronDown
-                size={13}
+                size={12}
                 aria-hidden="true"
-                className="transition-transform duration-200"
-                style={{ transform: activeDropdown === "protocols" ? "rotate(180deg)" : "rotate(0deg)" }}
+                style={{
+                  transition: "transform 200ms ease",
+                  transform: activeDropdown === "protocols" ? "rotate(180deg)" : "rotate(0deg)",
+                  color: "#B8A44C",
+                }}
               />
             </button>
 
@@ -197,36 +238,90 @@ export function Header() {
                   initial="hidden"
                   animate="visible"
                   exit="exit"
-                  className="absolute top-full left-0 mt-2 rounded-xl shadow-xl border border-[#EAE6DF] overflow-hidden"
+                  className="absolute top-full left-1/2 mt-3 rounded-2xl shadow-xl overflow-hidden"
                   style={{
-                    backgroundColor: "#FAF7F2",
-                    minWidth: "280px",
-                    zIndex: 60,
-                    boxShadow: "0 8px 32px rgba(0,0,0,0.10)",
+                    background: "#ffffff",
+                    minWidth: "480px",
+                    zIndex: 200,
+                    transform: "translateX(-50%)",
+                    border: "1px solid rgba(234,230,223,0.6)",
+                    boxShadow: "0 20px 60px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.06)",
                   }}
                 >
-                  <div className="p-3">
+                  {/* Mega menu header */}
+                  <div
+                    className="px-5 pt-4 pb-3 border-b"
+                    style={{ borderColor: "#F0EDE8" }}
+                  >
+                    <p
+                      className="uppercase tracking-[0.08em]"
+                      style={{ fontSize: "10px", fontWeight: 600, color: "#9A8F82" }}
+                    >
+                      Treatment Protocols
+                    </p>
+                  </div>
+
+                  {/* 3×2 grid of protocol tiles */}
+                  <div className="p-4 grid grid-cols-3 gap-2">
                     {PROTOCOLS.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}
                         onClick={() => setActiveDropdown(null)}
-                        className="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-[#F0EDE7] transition-colors group"
+                        className="group flex items-center gap-3 p-2.5 rounded-xl transition-all duration-150 hover:bg-[#FAF7F2]"
                       >
-                        <span className="text-[13px] font-medium text-[#1A1A18] group-hover:text-[#0F0F0E]">
-                          {item.label}
-                        </span>
-                        <span className="text-[11px] text-[#9A8F82]">{item.sub}</span>
+                        {/* 40px circle lifestyle image */}
+                        <div
+                          className="flex-shrink-0 rounded-full overflow-hidden"
+                          style={{ width: "40px", height: "40px", background: "#F0EDE8" }}
+                        >
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={item.img}
+                            alt=""
+                            aria-hidden="true"
+                            style={{ width: "40px", height: "40px", objectFit: "cover" }}
+                          />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p
+                            className="truncate leading-tight group-hover:text-[#0F0F0E]"
+                            style={{ fontSize: "12px", fontWeight: 600, color: "#1A1A18" }}
+                          >
+                            {item.label}
+                          </p>
+                          <p
+                            className="truncate leading-tight"
+                            style={{ fontSize: "11px", fontWeight: 400, color: "#9A8F82" }}
+                          >
+                            {item.sub}
+                          </p>
+                        </div>
+                        <ArrowRight
+                          size={12}
+                          className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-150"
+                          style={{ color: "#B8A44C" }}
+                        />
                       </Link>
                     ))}
                   </div>
-                  <div className="px-3 pb-3">
+
+                  {/* Footer CTA */}
+                  <div className="px-4 pb-4">
                     <Link
                       href="/protocols"
                       onClick={() => setActiveDropdown(null)}
-                      className="block text-center text-[11px] font-semibold tracking-[0.04em] text-[#B8A44C] hover:text-[#8A7430] py-2 rounded-lg border border-[#D4CFC8] hover:bg-[#F0EDE7] transition-colors"
+                      className="flex items-center justify-center gap-1.5 w-full py-2.5 rounded-xl border transition-all duration-150 hover:bg-[#FAF7F2]"
+                      style={{
+                        fontSize: "12px",
+                        fontWeight: 600,
+                        color: "#B8A44C",
+                        borderColor: "#D4CFC8",
+                        letterSpacing: "0.03em",
+                      }}
                     >
-                      View all protocols →
+                      View all protocols
+                      <ArrowRight size={12} />
                     </Link>
                   </div>
                 </motion.div>
@@ -240,15 +335,23 @@ export function Header() {
               onClick={() => toggleDropdown("peptides")}
               aria-haspopup="true"
               aria-expanded={activeDropdown === "peptides"}
-              className="flex items-center gap-1 px-3 py-2 text-[13px] text-[#1A1A18] hover:text-[#B8A44C] rounded-md transition-colors"
-              style={{ fontWeight: 500 }}
+              className="flex items-center gap-1 px-3 py-2 rounded-md transition-colors duration-150"
+              style={{
+                fontSize: "13px",
+                fontWeight: 500,
+                color: activeDropdown === "peptides" ? "#B8A44C" : "#392e25",
+                letterSpacing: "0.01em",
+              }}
             >
               Peptides
               <ChevronDown
-                size={13}
+                size={12}
                 aria-hidden="true"
-                className="transition-transform duration-200"
-                style={{ transform: activeDropdown === "peptides" ? "rotate(180deg)" : "rotate(0deg)" }}
+                style={{
+                  transition: "transform 200ms ease",
+                  transform: activeDropdown === "peptides" ? "rotate(180deg)" : "rotate(0deg)",
+                  color: "#B8A44C",
+                }}
               />
             </button>
 
@@ -259,33 +362,66 @@ export function Header() {
                   initial="hidden"
                   animate="visible"
                   exit="exit"
-                  className="absolute top-full left-0 mt-2 rounded-xl shadow-xl border border-[#EAE6DF] overflow-hidden"
+                  className="absolute top-full left-1/2 mt-3 rounded-2xl shadow-xl overflow-hidden"
                   style={{
-                    backgroundColor: "#FAF7F2",
+                    background: "#ffffff",
                     minWidth: "220px",
-                    zIndex: 60,
-                    boxShadow: "0 8px 32px rgba(0,0,0,0.10)",
+                    zIndex: 200,
+                    transform: "translateX(-50%)",
+                    border: "1px solid rgba(234,230,223,0.6)",
+                    boxShadow: "0 20px 60px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.06)",
                   }}
                 >
-                  <div className="p-3 grid grid-cols-2 gap-0.5">
+                  {/* Dropdown header */}
+                  <div className="px-4 pt-4 pb-2.5 border-b" style={{ borderColor: "#F0EDE8" }}>
+                    <p
+                      className="uppercase tracking-[0.08em]"
+                      style={{ fontSize: "10px", fontWeight: 600, color: "#9A8F82" }}
+                    >
+                      Compounds
+                    </p>
+                  </div>
+
+                  {/* Simple compound list */}
+                  <div className="p-2">
                     {PEPTIDES.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}
                         onClick={() => setActiveDropdown(null)}
-                        className="px-3 py-2 rounded-lg hover:bg-[#F0EDE7] transition-colors text-[13px] font-medium text-[#1A1A18] hover:text-[#0F0F0E]"
+                        className="flex items-center justify-between px-3 py-2.5 rounded-xl transition-all duration-150 hover:bg-[#FAF7F2] group"
                       >
-                        {item.label}
+                        <span
+                          className="group-hover:text-[#0F0F0E] transition-colors"
+                          style={{ fontSize: "13px", fontWeight: 500, color: "#392e25" }}
+                        >
+                          {item.label}
+                        </span>
+                        <ArrowRight
+                          size={11}
+                          className="opacity-0 group-hover:opacity-100 transition-opacity duration-150"
+                          style={{ color: "#B8A44C" }}
+                        />
                       </Link>
                     ))}
                   </div>
+
+                  {/* Footer CTA */}
                   <div className="px-3 pb-3">
                     <Link
                       href="/products"
                       onClick={() => setActiveDropdown(null)}
-                      className="block text-center text-[11px] font-semibold tracking-[0.04em] text-[#B8A44C] hover:text-[#8A7430] py-2 rounded-lg border border-[#D4CFC8] hover:bg-[#F0EDE7] transition-colors"
+                      className="flex items-center justify-center gap-1.5 w-full py-2.5 rounded-xl border transition-all duration-150 hover:bg-[#FAF7F2]"
+                      style={{
+                        fontSize: "12px",
+                        fontWeight: 600,
+                        color: "#B8A44C",
+                        borderColor: "#D4CFC8",
+                        letterSpacing: "0.03em",
+                      }}
                     >
-                      All compounds →
+                      All compounds
+                      <ArrowRight size={12} />
                     </Link>
                   </div>
                 </motion.div>
@@ -293,16 +429,25 @@ export function Header() {
             </AnimatePresence>
           </div>
 
-          {/* Simple nav links */}
+          {/* Simple nav links — Hims spec: 13px Inter 500, #392e25, hover #B8A44C */}
           {[
             { href: "/how-it-works", label: "How It Works" },
             { href: "/about", label: "About" },
+            { href: "/bloodwork", label: "Bloodwork" },
           ].map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="px-3 py-2 text-[13px] text-[#1A1A18] hover:text-[#B8A44C] rounded-md transition-colors"
-              style={{ fontWeight: 500 }}
+              className="px-3 py-2 rounded-md transition-colors duration-150"
+              style={{
+                fontSize: "13px",
+                fontWeight: 500,
+                color: "#392e25",
+                letterSpacing: "0.01em",
+                textDecoration: "none",
+              }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#B8A44C"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#392e25"; }}
             >
               {link.label}
             </Link>
@@ -311,26 +456,69 @@ export function Header() {
 
         {/* ── Right: Auth + Cart ── */}
         <div className="hidden md:flex items-center gap-2">
+          {/* Ghost pill — 34px height, border #D4CFC8 */}
           <Link
             href="/account/login"
-            className="px-4 py-2 rounded-full text-[13px] font-medium text-[#1A1A18] border border-[#D4CFC8] hover:border-[#B8A44C] hover:text-[#B8A44C] transition-all"
-            style={{ letterSpacing: "0.01em" }}
+            className="flex items-center rounded-full border transition-all duration-150"
+            style={{
+              height: "34px",
+              paddingLeft: "16px",
+              paddingRight: "16px",
+              fontSize: "13px",
+              fontWeight: 500,
+              color: "#392e25",
+              borderColor: "#D4CFC8",
+              letterSpacing: "0.01em",
+              textDecoration: "none",
+              fontFamily: "Inter, sans-serif",
+            }}
+            onMouseEnter={(e) => {
+              const el = e.currentTarget as HTMLAnchorElement;
+              el.style.borderColor = "#B8A44C";
+              el.style.color = "#B8A44C";
+            }}
+            onMouseLeave={(e) => {
+              const el = e.currentTarget as HTMLAnchorElement;
+              el.style.borderColor = "#D4CFC8";
+              el.style.color = "#392e25";
+            }}
           >
             Log in
           </Link>
+
+          {/* Solid black pill — 34px height */}
           <Link
             href="/intake"
-            className="px-4 py-2 rounded-full text-[13px] font-semibold bg-[#0F0F0E] text-white hover:bg-[#2A2A28] transition-colors"
-            style={{ letterSpacing: "0.01em" }}
+            className="flex items-center rounded-full transition-all duration-150"
+            style={{
+              height: "34px",
+              paddingLeft: "16px",
+              paddingRight: "16px",
+              fontSize: "13px",
+              fontWeight: 600,
+              backgroundColor: "#0F0F0E",
+              color: "#ffffff",
+              letterSpacing: "0.01em",
+              textDecoration: "none",
+              fontFamily: "Inter, sans-serif",
+            }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#2A2A28"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#0F0F0E"; }}
           >
             Get Started
           </Link>
+
+          {/* Cart icon */}
           <button
             onClick={openDrawer}
             className="relative p-2 ml-1 transition-colors group"
             aria-label="Open cart"
           >
-            <ShoppingBag className="w-5 h-5 text-[#1A1A18] group-hover:text-[#7A6B2A] transition-colors" strokeWidth={1.5} />
+            <ShoppingBag
+              className="w-5 h-5 transition-colors group-hover:text-[#7A6B2A]"
+              style={{ color: "#392e25" }}
+              strokeWidth={1.5}
+            />
             {totalItems > 0 && (
               <span
                 className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full text-[10px] font-bold flex items-center justify-center text-[#1A1A18]"
@@ -349,7 +537,11 @@ export function Header() {
             className="relative flex items-center justify-center w-10 h-10 group"
             aria-label="Open cart"
           >
-            <ShoppingBag className="w-5 h-5 text-[#1A1A18] group-hover:text-[#7A6B2A] transition-colors" strokeWidth={1.5} />
+            <ShoppingBag
+              className="w-5 h-5 transition-colors group-hover:text-[#7A6B2A]"
+              style={{ color: "#392e25" }}
+              strokeWidth={1.5}
+            />
             {totalItems > 0 && (
               <span
                 className="absolute top-1 right-0.5 w-4 h-4 rounded-full text-[10px] font-bold flex items-center justify-center text-[#1A1A18]"
@@ -367,73 +559,86 @@ export function Header() {
             aria-controls="mobile-nav"
           >
             {mobileMenuOpen
-              ? <X size={22} strokeWidth={1.5} aria-hidden="true" />
-              : <Menu size={22} strokeWidth={1.5} aria-hidden="true" />
+              ? <X size={22} strokeWidth={1.5} style={{ color: "#392e25" }} aria-hidden="true" />
+              : <Menu size={22} strokeWidth={1.5} style={{ color: "#392e25" }} aria-hidden="true" />
             }
           </button>
         </div>
       </div>
 
-      {/* ── Mobile Menu — Full-Screen Overlay ── */}
+      {/* ── Mobile Menu — Full-Screen Overlay, cream background (Hims-spec) ── */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             id="mobile-nav"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden fixed inset-0 z-[55] overflow-y-auto"
-            style={{ backgroundColor: "#1A1A18" }}
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1.0] }}
+            className="md:hidden fixed inset-0 overflow-y-auto flex flex-col"
+            style={{ backgroundColor: "#FAF7F2", zIndex: 99 }}
             aria-label="Mobile navigation"
           >
-            {/* Header row */}
-            <div className="flex items-center justify-between px-6 pt-6 pb-4" style={{ height: "72px" }}>
+            {/* Header row — mirrors main nav */}
+            <div
+              className="flex items-center justify-between px-6 flex-shrink-0 border-b"
+              style={{ height: "72px", borderColor: "#EAE6DF" }}
+            >
               <Link
                 href="/"
                 className="flex items-center gap-2.5"
                 onClick={closeAll}
                 aria-label="Nexphoria home"
               >
-                <LogoMarkGold className="h-7 w-7" />
+                <LogoMark className="h-7 w-7" />
                 <div className="flex flex-col leading-none">
-                  <span className="font-display text-[#C4A265] tracking-[0.1em] text-[13px] uppercase" style={{ fontWeight: 600 }}>
+                  <span
+                    className="font-display text-[#0F0F0E] uppercase"
+                    style={{ fontWeight: 600, letterSpacing: "0.12em", fontSize: "14px" }}
+                  >
                     NEXPHORIA
                   </span>
-                  <span className="text-[9px] text-[#7A6B50] tracking-[0.06em] uppercase mt-[1px]">
+                  <span
+                    className="text-[#9A8F82]"
+                    style={{ fontSize: "9px", fontWeight: 400, letterSpacing: "0.06em" }}
+                  >
                     — PEPTIDE PHARMACY
                   </span>
                 </div>
               </Link>
               <button
                 onClick={closeAll}
-                className="flex items-center justify-center w-10 h-10 rounded-full transition-colors hover:bg-white/10"
+                className="flex items-center justify-center w-10 h-10 rounded-full transition-colors hover:bg-black/5"
                 aria-label="Close menu"
               >
-                <X size={22} strokeWidth={1.5} className="text-white/70" aria-hidden="true" />
+                <X size={22} strokeWidth={1.5} style={{ color: "#392e25" }} aria-hidden="true" />
               </button>
             </div>
 
-            {/* Nav items */}
+            {/* Nav items — staggered entrance */}
             <motion.nav
-              className="flex flex-col px-6 pb-10"
+              className="flex flex-col px-6 pt-4 pb-6 flex-1"
               initial="hidden"
               animate="visible"
               variants={{
                 hidden: {},
-                visible: { transition: { staggerChildren: 0.05, delayChildren: 0.08 } },
+                visible: { transition: { staggerChildren: 0.05, delayChildren: 0.06 } },
               }}
               aria-label="Mobile main navigation"
             >
               {/* Protocols accordion */}
               <motion.div
-                variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.3 } } }}
+                variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0, transition: { duration: 0.28 } } }}
               >
                 <button
-                  className="flex items-center justify-between w-full py-5 text-2xl uppercase font-light tracking-widest transition-colors"
+                  className="flex items-center justify-between w-full py-5 transition-colors"
                   style={{
-                    color: mobileSection === "protocols" ? "#C4A265" : "rgba(255,255,255,0.85)",
-                    letterSpacing: "0.15em",
+                    fontSize: "22px",
+                    fontFamily: "Inter, sans-serif",
+                    fontWeight: 400,
+                    color: mobileSection === "protocols" ? "#B8A44C" : "#1A1A18",
+                    letterSpacing: "0.02em",
+                    textDecoration: "none",
                   }}
                   onClick={() => setMobileSection(mobileSection === "protocols" ? null : "protocols")}
                   aria-expanded={mobileSection === "protocols"}
@@ -442,14 +647,14 @@ export function Header() {
                   <ChevronDown
                     size={20}
                     aria-hidden="true"
-                    className="transition-transform"
                     style={{
+                      transition: "transform 200ms ease",
                       transform: mobileSection === "protocols" ? "rotate(180deg)" : "rotate(0deg)",
-                      color: "#C4A265",
+                      color: "#B8A44C",
                     }}
                   />
                 </button>
-                <div style={{ height: "1px", backgroundColor: "rgba(196,162,101,0.2)" }} />
+                <div style={{ height: "1px", backgroundColor: "#EAE6DF" }} />
                 <AnimatePresence>
                   {mobileSection === "protocols" && (
                     <motion.div
@@ -459,26 +664,39 @@ export function Header() {
                       transition={{ duration: 0.2 }}
                       className="overflow-hidden"
                     >
-                      <div className="py-4 space-y-1">
+                      <div className="py-3 space-y-0.5">
                         {PROTOCOLS.map((item) => (
                           <Link
                             key={item.href}
                             href={item.href}
-                            className="flex items-center justify-between py-2.5 px-2 rounded-lg transition-colors"
-                            style={{ color: "rgba(255,255,255,0.7)" }}
+                            className="flex items-center gap-3 py-2.5 px-2 rounded-xl transition-colors hover:bg-white/60"
                             onClick={closeAll}
                           >
-                            <span className="text-sm">{item.label}</span>
-                            <span className="text-[11px] text-[#7A6B50]">{item.sub}</span>
+                            <div
+                              className="flex-shrink-0 rounded-full overflow-hidden"
+                              style={{ width: "36px", height: "36px", background: "#EAE6DF" }}
+                            >
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img
+                                src={item.img}
+                                alt=""
+                                aria-hidden="true"
+                                style={{ width: "36px", height: "36px", objectFit: "cover" }}
+                              />
+                            </div>
+                            <div>
+                              <p style={{ fontSize: "14px", fontWeight: 600, color: "#1A1A18" }}>{item.label}</p>
+                              <p style={{ fontSize: "11px", fontWeight: 400, color: "#9A8F82" }}>{item.sub}</p>
+                            </div>
                           </Link>
                         ))}
                         <Link
                           href="/protocols"
-                          className="block py-2 px-2 text-sm font-medium mt-2"
-                          style={{ color: "#C4A265" }}
+                          className="flex items-center gap-1 py-2 px-2 mt-1"
+                          style={{ fontSize: "13px", fontWeight: 600, color: "#B8A44C" }}
                           onClick={closeAll}
                         >
-                          View all protocols →
+                          View all protocols <ArrowRight size={12} />
                         </Link>
                       </div>
                     </motion.div>
@@ -488,13 +706,16 @@ export function Header() {
 
               {/* Peptides accordion */}
               <motion.div
-                variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.3 } } }}
+                variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0, transition: { duration: 0.28 } } }}
               >
                 <button
-                  className="flex items-center justify-between w-full py-5 text-2xl uppercase font-light tracking-widest transition-colors"
+                  className="flex items-center justify-between w-full py-5 transition-colors"
                   style={{
-                    color: mobileSection === "peptides" ? "#C4A265" : "rgba(255,255,255,0.85)",
-                    letterSpacing: "0.15em",
+                    fontSize: "22px",
+                    fontFamily: "Inter, sans-serif",
+                    fontWeight: 400,
+                    color: mobileSection === "peptides" ? "#B8A44C" : "#1A1A18",
+                    letterSpacing: "0.02em",
                   }}
                   onClick={() => setMobileSection(mobileSection === "peptides" ? null : "peptides")}
                   aria-expanded={mobileSection === "peptides"}
@@ -503,14 +724,14 @@ export function Header() {
                   <ChevronDown
                     size={20}
                     aria-hidden="true"
-                    className="transition-transform"
                     style={{
+                      transition: "transform 200ms ease",
                       transform: mobileSection === "peptides" ? "rotate(180deg)" : "rotate(0deg)",
-                      color: "#C4A265",
+                      color: "#B8A44C",
                     }}
                   />
                 </button>
-                <div style={{ height: "1px", backgroundColor: "rgba(196,162,101,0.2)" }} />
+                <div style={{ height: "1px", backgroundColor: "#EAE6DF" }} />
                 <AnimatePresence>
                   {mobileSection === "peptides" && (
                     <motion.div
@@ -520,13 +741,13 @@ export function Header() {
                       transition={{ duration: 0.2 }}
                       className="overflow-hidden"
                     >
-                      <div className="py-4 grid grid-cols-2 gap-1">
+                      <div className="py-3 grid grid-cols-2 gap-0.5">
                         {PEPTIDES.map((item) => (
                           <Link
                             key={item.href}
                             href={item.href}
-                            className="py-2.5 px-2 text-sm rounded-lg transition-colors"
-                            style={{ color: "rgba(255,255,255,0.7)" }}
+                            className="py-2.5 px-3 rounded-xl transition-colors hover:bg-white/60"
+                            style={{ fontSize: "14px", fontWeight: 500, color: "#392e25" }}
                             onClick={closeAll}
                           >
                             {item.label}
@@ -534,11 +755,11 @@ export function Header() {
                         ))}
                         <Link
                           href="/products"
-                          className="col-span-2 py-2 px-2 text-sm font-medium mt-1"
-                          style={{ color: "#C4A265" }}
+                          className="col-span-2 flex items-center gap-1 py-2 px-3 mt-1"
+                          style={{ fontSize: "13px", fontWeight: 600, color: "#B8A44C" }}
                           onClick={closeAll}
                         >
-                          All compounds →
+                          All compounds <ArrowRight size={12} />
                         </Link>
                       </div>
                     </motion.div>
@@ -550,38 +771,64 @@ export function Header() {
               {[
                 { href: "/how-it-works", label: "How It Works" },
                 { href: "/about", label: "About" },
+                { href: "/bloodwork", label: "Bloodwork" },
               ].map((link) => (
                 <motion.div
                   key={link.href}
-                  variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.3 } } }}
+                  variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0, transition: { duration: 0.28 } } }}
                 >
                   <Link
                     href={link.href}
-                    className="flex items-center justify-between w-full py-5 text-2xl uppercase font-light tracking-widest transition-colors hover:text-[#C4A265]"
-                    style={{ color: "rgba(255,255,255,0.85)", letterSpacing: "0.15em" }}
+                    className="flex items-center w-full py-5 transition-colors hover:text-[#B8A44C]"
+                    style={{
+                      fontSize: "22px",
+                      fontFamily: "Inter, sans-serif",
+                      fontWeight: 400,
+                      color: "#1A1A18",
+                      letterSpacing: "0.02em",
+                    }}
                     onClick={closeAll}
                   >
                     {link.label}
                   </Link>
-                  <div style={{ height: "1px", backgroundColor: "rgba(196,162,101,0.2)" }} />
+                  <div style={{ height: "1px", backgroundColor: "#EAE6DF" }} />
                 </motion.div>
               ))}
 
-              {/* CTA buttons */}
+              {/* Bottom CTAs — Hims spec: full-width pills, black + ghost */}
               <motion.div
-                variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.3 } } }}
-                className="mt-8 flex flex-col gap-3"
+                variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0, transition: { duration: 0.28 } } }}
+                className="mt-auto pt-8 flex flex-col gap-3"
               >
                 <Link
                   href="/intake"
-                  className="w-full text-center py-4 rounded-full bg-[#B8A44C] text-[#0F0F0E] text-[13px] font-bold tracking-[0.06em] hover:bg-[#D4BF6A] transition-colors"
+                  className="w-full flex items-center justify-center rounded-full transition-colors"
+                  style={{
+                    height: "52px",
+                    backgroundColor: "#0F0F0E",
+                    color: "#ffffff",
+                    fontSize: "14px",
+                    fontWeight: 600,
+                    fontFamily: "Inter, sans-serif",
+                    letterSpacing: "0.02em",
+                    textDecoration: "none",
+                  }}
                   onClick={closeAll}
                 >
                   Get Started
                 </Link>
                 <Link
                   href="/account/login"
-                  className="w-full text-center py-4 rounded-full border border-white/20 text-white text-[13px] font-medium hover:border-white/40 transition-colors"
+                  className="w-full flex items-center justify-center rounded-full border transition-colors hover:border-[#B8A44C] hover:text-[#B8A44C]"
+                  style={{
+                    height: "52px",
+                    borderColor: "#D4CFC8",
+                    color: "#392e25",
+                    fontSize: "14px",
+                    fontWeight: 500,
+                    fontFamily: "Inter, sans-serif",
+                    textDecoration: "none",
+                  }}
                   onClick={closeAll}
                 >
                   Log in
@@ -594,4 +841,6 @@ export function Header() {
     </header>
   );
 }
+
+
 
