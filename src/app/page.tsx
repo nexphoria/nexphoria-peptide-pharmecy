@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { TypewriterHeadline } from "@/components/TypewriterHeadline";
+import { PhysiciansSection } from "@/components/PhysiciansSection";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
 
 export const metadata: Metadata = {
   title: "Nexphoria — Peptides, Prescribed.",
@@ -100,7 +102,39 @@ const STACKS = [
   },
 ];
 
-// ── HOW IT WORKS ─────────────────────────────────────────
+// ── PRESS LOGOS ──────────────────────────────────────────────────────────
+const PRESS_LOGOS = [
+  "Men's Health",
+  "Forbes",
+  "Healthline",
+  "WebMD",
+  "Longevity",
+  "Biohacking Magazine",
+];
+
+function PressLogos() {
+  return (
+    <section className="bg-[#FAF7F2] py-10 px-8 border-y border-[#EAE6DF]">
+      <div className="max-w-[1400px] mx-auto">
+        <p className="text-center text-[10px] font-bold tracking-[0.22em] text-[#B8A44C] uppercase mb-6">
+          As seen in
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+          {PRESS_LOGOS.map((logo) => (
+            <span
+              key={logo}
+              className="text-[15px] font-semibold tracking-[0.04em] text-[#9A8F82] opacity-60 hover:opacity-100 transition-opacity duration-200 select-none"
+            >
+              {logo}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── HOW IT WORKS ─────────────────────────────────────────────────────────
 const STEPS = [
   {
     n: "01",
@@ -237,6 +271,15 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* ── PRESS LOGOS ── */}
+      <PressLogos />
+
+      {/* ── PHYSICIANS ── */}
+      <PhysiciansSection />
+
+      {/* ── TESTIMONIALS ── */}
+      <TestimonialsSection />
 
       {/* ── TRUST BADGES ── */}
       <section className="bg-[#FAF7F2] py-14 border-t border-[#EAE6DF]">
@@ -419,4 +462,7 @@ export default function HomePage() {
     </main>
   );
 }
+
+
+
 
