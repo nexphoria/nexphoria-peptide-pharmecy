@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
-import RUOBanner from "@/components/RUOBanner";
+import { Footer } from "@/components/Footer";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import ClientModals from "@/components/ClientModals";
 
@@ -241,10 +240,11 @@ export default function RootLayout({
         </a>
         <Header />
         <main id="main-content">{children}</main>
-        <RUOBanner variant="band" />
         <Footer />
         <ClientModals />
       </body>
     </html>
   );
 }
+
+
