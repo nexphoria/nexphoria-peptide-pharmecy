@@ -1,5 +1,7 @@
 // Server Component — no 'use client'
 
+import PromoBar from "@/components/PromoBar";
+
 export default function HomePage() {
   const protocols = [
     {
@@ -162,36 +164,7 @@ export default function HomePage() {
       `}</style>
 
       {/* ─── 1. PROMO BAR ─────────────────────────────────────────────── */}
-      <div
-        id="promo-bar"
-        style={{ backgroundColor: "#0F0F0E", position: "relative", zIndex: 50 }}
-        className="w-full py-2.5 px-4"
-      >
-        <div className="max-w-[1400px] mx-auto flex items-center justify-center gap-2 relative">
-          <p className="text-white text-xs sm:text-sm text-center leading-snug" style={{ fontFamily: "var(--font-inter, sans-serif)" }}>
-            Free Foundation bloodwork panel with every protocol.&nbsp;·&nbsp;Board-certified MDs&nbsp;·&nbsp;503A compounded&nbsp;
-            <a href="/quiz" style={{ color: "#B8A44C", fontWeight: 600, textDecoration: "none" }}>
-              Start now →
-            </a>
-          </p>
-          <button
-            aria-label="Dismiss promotion"
-            style={{
-              position: "absolute", right: 0,
-              background: "none", border: "none",
-              color: "rgba(255,255,255,0.5)",
-              fontSize: "1.1rem", lineHeight: 1,
-              cursor: "pointer", padding: "2px 6px",
-            }}
-            onClick={() => {
-              const bar = document.getElementById("promo-bar");
-              if (bar) bar.style.display = "none";
-            }}
-          >
-            ×
-          </button>
-        </div>
-      </div>
+      <PromoBar />
 
       {/* ─── 2. HERO ──────────────────────────────────────────────────── */}
       <section
