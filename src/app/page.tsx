@@ -161,6 +161,13 @@ export default function HomePage() {
           transition: color 0.2s;
         }
         .press-name:hover { color: #0F0F0E; }
+        /* CTA hover states — CSS rather than onMouseOver/onMouseOut handlers,
+           which cannot be passed from this Server Component. */
+        .cta-solid:hover { background-color: #1e1e1c; transform: translateY(-1px); }
+        .cta-outline:hover { background-color: #0F0F0E; color: #FAF7F2; transform: translateY(-1px); }
+        .cta-lift:hover { opacity: 0.88; transform: translateY(-1px); }
+        .cta-lift-lg:hover { opacity: 0.88; transform: translateY(-2px); }
+        .cta-fade:hover { opacity: 0.88; }
       `}</style>
 
       {/* ─── 1. PROMO BAR ─────────────────────────────────────────────── */}
@@ -238,14 +245,7 @@ export default function HomePage() {
                   transition: "background 0.2s ease, transform 0.15s ease",
                   whiteSpace: "nowrap",
                 }}
-                onMouseOver={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#1e1e1c";
-                  (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-1px)";
-                }}
-                onMouseOut={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#0F0F0E";
-                  (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
-                }}
+                className="cta-solid"
               >
                 Start Assessment
               </a>
@@ -270,16 +270,7 @@ export default function HomePage() {
                   transition: "background 0.2s ease, color 0.2s ease, transform 0.15s ease",
                   whiteSpace: "nowrap",
                 }}
-                onMouseOver={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#0F0F0E";
-                  (e.currentTarget as HTMLAnchorElement).style.color = "#FAF7F2";
-                  (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-1px)";
-                }}
-                onMouseOut={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent";
-                  (e.currentTarget as HTMLAnchorElement).style.color = "#0F0F0E";
-                  (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
-                }}
+                className="cta-outline"
               >
                 See Protocols
               </a>
@@ -581,14 +572,7 @@ export default function HomePage() {
                 marginTop: "2.5rem",
                 transition: "opacity 0.2s ease, transform 0.15s ease",
               }}
-              onMouseOver={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.opacity = "0.88";
-                (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-1px)";
-              }}
-              onMouseOut={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.opacity = "1";
-                (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
-              }}
+              className="cta-lift"
             >
               Begin My Assessment
             </a>
@@ -757,8 +741,7 @@ export default function HomePage() {
               textDecoration: "none",
               transition: "opacity 0.2s ease",
             }}
-            onMouseOver={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = "0.88"; }}
-            onMouseOut={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = "1"; }}
+            className="cta-fade"
           >
             Claim Free Panel →
           </a>
@@ -1259,14 +1242,7 @@ export default function HomePage() {
               marginBottom: "1.75rem",
               transition: "opacity 0.2s ease, transform 0.15s ease",
             }}
-            onMouseOver={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.opacity = "0.88";
-              (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)";
-            }}
-            onMouseOut={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.opacity = "1";
-              (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
-            }}
+            className="cta-lift-lg"
           >
             Begin Assessment →
           </a>
