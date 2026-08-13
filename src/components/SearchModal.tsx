@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, X, ArrowRight } from "lucide-react";
 import { products } from "@/lib/products";
-import { articles } from "@/lib/blog";
+import { articleIndex as articles } from "@/lib/blog-index";
 import Link from "next/link";
 import { trackSearch } from "@/lib/analytics";
 

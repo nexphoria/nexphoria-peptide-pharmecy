@@ -9,6 +9,13 @@ export interface BlogArticle {
   body: BlogSection[];
 }
 
+/**
+ * An article without its body — everything a listing or search result needs.
+ * Client components should use this (via ./blog-index) so article bodies stay
+ * out of the client bundle.
+ */
+export type BlogArticleMeta = Omit<BlogArticle, "body" | "ogImage">;
+
 export interface BlogSection {
   type: "paragraph" | "heading" | "subheading" | "list" | "callout" | "divider" | "table" | "disclaimer";
   text?: string;

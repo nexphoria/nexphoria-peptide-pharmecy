@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { articles } from "@/lib/blog";
+import { articleIndex as articles } from "@/lib/blog-index";
 
 interface RelatedArticlesProps {
   articleSlugs: string[];

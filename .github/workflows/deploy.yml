@@ -1,8 +1,11 @@
 name: Deploy to Cloudflare Pages
 
+# Superseded by the Cloudflare Pages GitHub integration, which builds and
+# deploys automatically on push. Kept as a manual fallback only — it needs
+# CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN secrets, and its
+# --project-name would need updating for the current Pages project.
 on:
-  push:
-    branches: [main]
+  workflow_dispatch:
 
 concurrency:
   group: deploy-${{ github.ref }}
