@@ -91,7 +91,9 @@ export default async function BlogCategoryPage({ params }: Props) {
       name: "Nexphoria",
       url: "https://nexphoria.com",
     },
-    hasPart: categoryArticles.map((a) => ({
+    // Only the articles actually on this page — describing all of them here
+    // put the entire category back into the document as structured data.
+    hasPart: pageArticles.map((a) => ({
       "@type": "BlogPosting",
       headline: a.title,
       url: `https://nexphoria.com/blog/${a.slug}`,
