@@ -3,31 +3,17 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { articles } from "@/lib/blog";
 import Breadcrumb from "@/components/Breadcrumb";
+import ArticleCard from "@/components/ArticleCard";
+import BlogPagination from "@/components/BlogPagination";
+import {
+  categoryMap,
+  categoryToSlug,
+  ARTICLES_PER_PAGE,
+  totalPagesFor,
+} from "@/lib/blog-categories";
 
 interface Props {
   params: Promise<{ category: string }>;
-}
-
-// All valid categories — slug → display name
-const categoryMap: Record<string, string> = {
-  "compound-profiles": "Compound Profiles",
-  "gh-axis": "GH Axis",
-  "handling-storage": "Handling & Storage",
-  "immunology": "Immunology",
-  "longevity": "Longevity",
-  "nootropics": "Nootropics",
-  "quality-testing": "Quality & Testing",
-  "research-fundamentals": "Research Fundamentals",
-  "cosmetic": "Cosmetic",
-};
-
-// Inverse: display name → slug
-const categorySlugMap: Record<string, string> = Object.fromEntries(
-  Object.entries(categoryMap).map(([slug, name]) => [name, slug])
-);
-
-export function categoryToSlug(name: string): string {
-  return categorySlugMap[name] ?? name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 }
 
 export async function generateStaticParams() {
@@ -83,6 +69,9 @@ export default async function BlogCategoryPage({ params }: Props) {
       (a, b) =>
         new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
     );
+
+  const totalPages = totalPagesFor(categoryArticles.length);
+  const pageArticles = categoryArticles.slice(0, ARTICLES_PER_PAGE);
 
   // Count for each category
   const categoryCounts: Record<string, number> = {};
@@ -219,80 +208,18 @@ export default async function BlogCategoryPage({ params }: Props) {
                 </Link>
               </div>
             ) : (
-              <div className="grid md:grid-cols-2 gap-6">
-                {categoryArticles.map((article) => (
-                  <Link
-                    key={article.slug}
-                    href={`/blog/${article.slug}`}
-                    className="group block"
-                  >
-                    <div
-                      className="rounded-lg h-full"
-                      style={{
-                        border: "1px solid rgba(0,0,0,0.06)",
-                        borderTop: "2px solid #B8A44C",
-                        backgroundColor: "#fff",
-                        transition: "transform 0.2s, box-shadow 0.2s",
-                      }}
-                    >
-                      <div className="p-7">
-                        <div className="flex flex-wrap items-center gap-3 mb-4">
-                          <span
-                            className="text-xs uppercase tracking-widest px-2 py-0.5 rounded-full"
-                            style={{
-                              backgroundColor: "#B8A44C",
-                              color: "#010101",
-                            }}
-                          >
-                            {article.category}
-                          </span>
-                          <span
-                            className="text-xs"
-                            style={{ color: "#A0A0A0" }}
-                          >
-                            {article.readMinutes} min read
-                          </span>
-                        </div>
-                        <h2
-                          className="text-lg mb-3 group-hover:opacity-80 transition-opacity"
-                          style={{
-                            fontWeight: 500,
-                            color: "#010101",
-                            lineHeight: 1.3,
-                            letterSpacing: "-0.01em",
-                          }}
-                        >
-                          {article.title}
-                        </h2>
-                        <p
-                          className="text-sm mb-5"
-                          style={{
-                            color: "#666",
-                            lineHeight: 1.65,
-                            fontWeight: 300,
-                          }}
-                        >
-                          {article.description}
-                        </p>
-                        <div className="flex items-center justify-between">
-                          <span
-                            className="text-xs"
-                            style={{ color: "#A0A0A0" }}
-                          >
-                            {formatDate(article.publishedAt)}
-                          </span>
-                          <span
-                            className="text-xs inline-flex items-center gap-1"
-                            style={{ color: "#B8923A", fontWeight: 500 }}
-                          >
-                            Read <span aria-hidden>→</span>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
+              <>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {pageArticles.map((article) => (
+                    <ArticleCard key={article.slug} article={article} />
+                  ))}
+                </div>
+                <BlogPagination
+                  currentPage={1}
+                  totalPages={totalPages}
+                  basePath={`/blog/category/${category}`}
+                />
+              </>
             )}
           </div>
         </section>

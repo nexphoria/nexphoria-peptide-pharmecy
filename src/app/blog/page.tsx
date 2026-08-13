@@ -2,7 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { articles } from "@/lib/blog";
 import Breadcrumb from "@/components/Breadcrumb";
-import { categoryToSlug } from "./category/[category]/page";
+import {
+  categoryToSlug,
+  ARTICLES_PER_PAGE,
+  totalPagesFor,
+} from "@/lib/blog-categories";
+import ArticleCard from "@/components/ArticleCard";
+import BlogPagination from "@/components/BlogPagination";
 
 export const metadata: Metadata = {
   title: "Research Blog | Nexphoria",
@@ -65,6 +71,10 @@ export default function BlogIndexPage() {
 
   const [featured, ...rest] = sorted;
   const categoryStats = getCategoryStats(articles);
+
+  // Only the first page renders here; /blog/page/N covers the remainder.
+  const totalPages = totalPagesFor(rest.length);
+  const pageArticles = rest.slice(0, ARTICLES_PER_PAGE);
 
   return (
     <>
@@ -228,7 +238,7 @@ export default function BlogIndexPage() {
         {/* Article grid */}
         <section className="px-6 py-20 md:py-28">
           <div className="max-w-5xl mx-auto">
-            {rest.length > 0 && (
+            {pageArticles.length > 0 && (
               <>
                 <p
                   className="text-xs uppercase tracking-widest mb-8"
@@ -237,88 +247,15 @@ export default function BlogIndexPage() {
                   More Articles
                 </p>
                 <div className="grid md:grid-cols-2 gap-6">
-                  {rest.map((article) => (
-                    <div
-                      key={article.slug}
-                      className="group"
-                    >
-                      <div
-                        className="rounded-lg h-full"
-                        style={{
-                          border: "1px solid rgba(0,0,0,0.06)",
-                          borderTop: `2px solid ${
-                            categoryColors[article.category] || "#C9DD69"
-                          }`,
-                          backgroundColor: "#fff",
-                        }}
-                      >
-                        <div className="p-7">
-                          <div className="flex flex-wrap items-center gap-3 mb-4">
-                            <Link
-                              href={`/blog/category/${categoryToSlug(article.category)}`}
-                              className="text-xs uppercase tracking-widest px-2 py-0.5 rounded-full hover:opacity-80 transition-opacity"
-                              style={{
-                                backgroundColor:
-                                  categoryColors[article.category] || "#C9DD69",
-                                color: "#010101",
-                              }}
-                            >
-                              {article.category}
-                            </Link>
-                            <span
-                              className="text-xs"
-                              style={{ color: "#A0A0A0" }}
-                            >
-                              {article.readMinutes} min
-                            </span>
-                          </div>
-                          <h3
-                            className="text-lg mb-3"
-                            style={{
-                              fontWeight: 500,
-                              color: "#010101",
-                              lineHeight: 1.3,
-                              letterSpacing: "-0.01em",
-                            }}
-                          >
-                            <Link
-                              href={`/blog/${article.slug}`}
-                              className="hover:opacity-80 transition-opacity"
-                              style={{ color: "inherit" }}
-                            >
-                              {article.title}
-                            </Link>
-                          </h3>
-                          <p
-                            className="text-sm mb-5"
-                            style={{
-                              color: "#666",
-                              lineHeight: 1.65,
-                              fontWeight: 300,
-                            }}
-                          >
-                            {article.description}
-                          </p>
-                          <div className="flex items-center justify-between">
-                            <span
-                              className="text-xs"
-                              style={{ color: "#A0A0A0" }}
-                            >
-                              {formatDate(article.publishedAt)}
-                            </span>
-                            <Link
-                              href={`/blog/${article.slug}`}
-                              className="text-xs inline-flex items-center gap-1"
-                              style={{ color: "#B8923A", fontWeight: 500 }}
-                            >
-                              Read <span aria-hidden>→</span>
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  {pageArticles.map((article) => (
+                    <ArticleCard key={article.slug} article={article} />
                   ))}
                 </div>
+                <BlogPagination
+                  currentPage={1}
+                  totalPages={totalPages}
+                  basePath="/blog"
+                />
               </>
             )}
           </div>

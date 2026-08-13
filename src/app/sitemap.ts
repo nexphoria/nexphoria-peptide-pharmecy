@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { products } from "@/lib/products";
 import { articles } from "@/lib/blog";
-import { categoryToSlug } from "./blog/category/[category]/page";
+import { categoryToSlug } from "@/lib/blog-categories";
 import { getAllTagSlugs } from "@/lib/article-tags";
 
 export const dynamic = "force-static";

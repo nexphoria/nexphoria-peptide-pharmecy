@@ -4,7 +4,7 @@ import Link from "next/link";
 import { articles, getArticleBySlug, type BlogSection } from "@/lib/blog";
 import Breadcrumb from "@/components/Breadcrumb";
 import ShareButtons from "@/components/ShareButtons";
-import { categoryToSlug } from "../category/[category]/page";
+import { categoryToSlug } from "@/lib/blog-categories";
 import { getTagsForArticle } from "@/lib/article-tags";
 
 interface Props {
