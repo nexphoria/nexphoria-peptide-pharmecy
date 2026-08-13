@@ -116,6 +116,25 @@ const CLINICAL_EVIDENCE = [
   { trial: "SUSTAIN-6", finding: "26% reduction in CV events", compound: "Semaglutide 0.5–1.0 mg" },
 ];
 
+const FAQS = [
+  {
+    q: "Will I be prescribed Semaglutide or Tirzepatide?",
+    a: "That determination is made by your physician, not selected at checkout. Your health history, current medications, goals, and metabolic panel all inform which GLP-1 receptor agonist is appropriate and what starting dose is indicated. Both compounds are included in the protocol at the same monthly rate, so the decision is made on clinical grounds alone.",
+  },
+  {
+    q: "How is the protocol administered?",
+    a: "Both compounds are weekly subcutaneous injections that you self-administer at home. Semaglutide begins at 0.25 mg weekly and is titrated over 4–16 weeks toward a 1.0–2.4 mg maintenance dose. Tirzepatide begins at 2.5 mg weekly and is titrated over roughly 20 weeks toward 5–15 mg. Titration is gradual by design — it is what allows the gastrointestinal side effects associated with dose escalation to be managed.",
+  },
+  {
+    q: "What is included in the $399 monthly cost?",
+    a: "Physician consultation, the physician-prescribed and compounded Semaglutide or Tirzepatide itself, and ongoing monthly monitoring with regular check-ins and dose adjustments. There is no separate consultation charge and no per-visit fee for dose changes.",
+  },
+  {
+    q: "How long does the protocol run?",
+    a: "The standard course is 6–12 months. The first months are titration, where dosing climbs toward the therapeutic range; the later phase transitions to maintenance dosing. Your physician reassesses at each monitoring interval, and the protocol length is adjusted to your response rather than fixed in advance.",
+  },
+];
+
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } },

@@ -116,6 +116,25 @@ const STATS = [
   { value: "Month 3", label: "Peak body composition effect" },
 ];
 
+const FAQS = [
+  {
+    q: "Why are CJC-1295 and Ipamorelin prescribed together rather than individually?",
+    a: "They act on two different points of the same axis. CJC-1295 is a growth hormone releasing hormone analogue that raises the baseline signal to the pituitary, while Ipamorelin is a selective ghrelin receptor agonist that triggers a discrete pulse of GH release. Dosed simultaneously, the pulse occurs against an elevated baseline, which is why the combination amplifies GH output beyond what either compound produces alone.",
+  },
+  {
+    q: "When and how often do I inject?",
+    a: "CJC-1295 is a subcutaneous injection of 1–2 mg taken once or twice per week. Ipamorelin is dosed at 100–300 mcg subcutaneously, two to three times daily, with the key dose taken 30–45 minutes before bed. The bedtime timing is deliberate: it aligns the induced GH pulse with the body's largest natural nocturnal pulse during slow-wave sleep.",
+  },
+  {
+    q: "Does Ipamorelin raise cortisol the way other GH secretagogues do?",
+    a: "No — this is the specific reason it is used here. Unlike GHRP-2 and GHRP-6, Ipamorelin is highly selective for the ghrelin receptor and does not meaningfully stimulate cortisol, prolactin, or ACTH release. That selectivity is what makes it suitable for sustained multi-month protocols where the off-target hormonal effects of less selective secretagogues would accumulate.",
+  },
+  {
+    q: "What is included, and how long does the protocol run?",
+    a: "The $279 monthly rate covers physician consultation, the prescribed compounds, and ongoing monitoring. The standard course is 3–6 months, with bloodwork tracking IGF-1 and lean mass across that window. Your physician reassesses at each monitoring interval and adjusts dosing to your response.",
+  },
+];
+
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } },
