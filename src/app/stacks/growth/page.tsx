@@ -1,24 +1,10 @@
+"use client";
 
-import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Breadcrumb from "@/components/Breadcrumb";
 
-export const metadata: Metadata = {
-  title: "The Growth Protocol — CJC-1295 + Ipamorelin HGH Stack | Nexphoria",
-  description:
-    "CJC-1295 + Ipamorelin — the physician-guided growth hormone secretagogue protocol for deeper sleep, elevated HGH, faster recovery, and lean muscle. $279/mo.",
-  alternates: { canonical: "https://nexphoria.com/stacks/growth" },
-  openGraph: {
-    title: "The Growth Protocol — CJC-1295 + Ipamorelin | Nexphoria",
-    description: "Sleep, HGH, recovery, muscle. The Growth Protocol stack.",
-    url: "https://nexphoria.com/stacks/growth",
-    siteName: "Nexphoria",
-    type: "website",
-    images: [{ url: "https://nexphoria.com/og-image.jpg", width: 1200, height: 630 }],
-  },
-};
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
